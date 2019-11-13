@@ -1,0 +1,34 @@
+<! ------------------------------------------------------------------------->
+<! Operación:  PROCESO  env_enviodirecto_pr ---------------------------------------->
+<! OPERACION ------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pagos.PrEnvEnvioDirecto id=env_enviodirecto_pr operationContext=OperationContext>
+	<refKColl refId=env_enviodirecto_pr-data>
+
+	<! ESTADOS --------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=env_configurar_seleccion_op_multipais>
+		<estadoPr id=0 operacion=env_enviarfichero_op>
+		<estadoPr id=0 operacion=adt_enviarfichero_op>
+		<estadoPr id=0 operacion=firma_orden_pago_op>
+	</navegacionPr>
+	
+	<! SALIDAS -------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=env_configurar_seleccion_op_multipais estadoOP=0 jspFile=env_enviodirecto_multipais>
+		
+		<salidaPr id=0 operacion=adt_enviarfichero_op estadoOP=1 jspFile=emisores_tipo_pago_response>
+		<salidaPr id=0 operacion=adt_enviarfichero_op estadoOP=2 jspFile=cuentas_emisor_response>
+		
+		<salidaPr id=0 operacion=firma_orden_pago_op estadoOP=1 jspFile=firma_orden_pago>
+		<salidaPr id=0 operacion=firma_orden_pago_op estadoOP=2 jspFile=confirmacion_orden_pago>	
+		<salidaPr id=0 operacion=firma_orden_pago_op estadoOP=ERRORCANAL jspFile=contingencia_canal_inactivo>	
+		
+	</resultadoPr>
+	
+	
+</com.grupobbva.bc.col.web.pagos.PrEnvEnvioDirecto>
+
+<! DATOS ------------------------------------------------------------------------------->
+<kColl id=env_enviodirecto_pr-data>
+	<field id=encriptadoPr>
+</kColl>

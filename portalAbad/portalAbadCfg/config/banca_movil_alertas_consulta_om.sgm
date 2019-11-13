@@ -1,0 +1,65 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------->
+<! Operación:  MULTICANAL banca_movil_alertas_consulta_om  ------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=banca_movil_alertas_consulta_om operationContext=OperationContext>
+	<refKColl refId=banca_movil_alertas_consulta_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------------------------------------------->
+
+<kColl id=banca_movil_alertas_consulta_om-data>
+	<field id=IdTx value=TxFN49ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01 value=&@D06/16/2000>
+	  <field id=BFECHA02 value=&@D06/16/2000>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+  	  <field id="INDICADOR-DATOS" >
+  	  <field id="TIPO-TELEFONO-1" >
+  	  <field id="PREFIJO-TELEF-1" >
+  	  <field id="NUMERO-TELEFO-1" >
+  	  <field id="EXTENSION-TEL-1" >
+  	  <field id="TIPO-TELEFONO-2" >
+  	  <field id="PREFIJO-TELEF-2" >
+  	  <field id="NUMERO-TELEFO-2" >
+  	  <field id="EXTENSION-TEL-2" >
+  	  <field id="TIPO-TELEFONO-3" >
+  	  <field id="PREFIJO-TELEF-3" >
+  	  <field id="NUMERO-TELEFO-3" >
+  	  <field id="EXTENSION-TEL-3" >
+  	  <field id="INDICADOR-PE001" >
+  	  <field id="INDICADOR-TELEFONICO" >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR ------------------------------------------------------------------------------------------------------------>
+<kColl id= banca_movil_alertas_consulta_om-copiar>
+	<kColl id=a-TxFN49ENET>
+		<field id=Entrada value=TxFN49ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN49ENET>
+		<field id=Salida value=TxFN49ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------->

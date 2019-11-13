@@ -1,0 +1,25 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  funciones_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.og.PrFunciones id=funciones_pr operationContext=OperationContext>
+	<refKColl refId=funciones_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=inicio_op>
+	</navegacionPr>		
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>	
+		<salidaPr id=1 operacion=inicio_op estadoOP=1 jspFile=f001_listado_func>			
+	</resultadoPr>	
+
+</com.grupobbva.bc.col.web.og.PrFunciones>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=funciones_pr-data>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

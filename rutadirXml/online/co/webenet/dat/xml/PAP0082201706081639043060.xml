@@ -1,0 +1,72 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<remesa>
+<cabecera>
+<referenciafichero>PAP 08/06/2017</referenciafichero>
+<codigoregistro>5110</codigoregistro>
+<tipodocemisor>03</tipodocemisor>
+<numdocidentemisor>0000008605251485</numdocidentemisor>
+<sufijo>01</sufijo>
+<fechafichero>20170608</fechafichero>
+<fechaproceso>20170608</fechaproceso>
+<asuntoemisor>00130309000200001485</asuntoemisor>
+<coddivisaasunto>COP</coddivisaasunto>
+<inddevolucion>0</inddevolucion>
+<nombrefichero>70608747.PRO</nombrefichero>
+<claveemisor>MDAZA          </claveemisor>
+<desFichero>                  </desFichero>
+<codigoregistroregcab2>5120</codigoregistroregcab2>
+<tipodocemisorregcab2>03</tipodocemisorregcab2>
+<numdocidentemisorregcab2>0000008605251485</numdocidentemisorregcab2>
+<sufijoregcab2>01</sufijoregcab2>
+<nombreemisor>FIDUCIARIA LA PREVISORA S. A.       </nombreemisor>
+<domicilioemisor1>CL 72  10  03 P 4,5,8 Y 9           </domicilioemisor1>
+<domicilioemisor2>                                    </domicilioemisor2>
+<codigoregistroregcab3>5130</codigoregistroregcab3>
+<tipodocemisorregcab3>03</tipodocemisorregcab3>
+<numdocidentemisorregcab3>0000008605251485</numdocidentemisorregcab3>
+<sufijoregcab3>01</sufijoregcab3>
+<localidademisor>                                    </localidademisor>
+<codigopostalemisor2>00</codigopostalemisor2>
+<codigopostalemisor>00000</codigopostalemisor>
+</cabecera>
+<ordenes>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008605251485</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0309000100005205</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000002674869.18</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>FIDUCIARIA LA PREVISORA S. A.       </nombrebeneficiario>
+<direccionbeneficiario>CL 72  10  03 P 4,5,8 Y 9           </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>001291                                  </cptotextoconcepto>
+</concepto>
+<concepto>
+<cptotextoconcepto>                                        </cptotextoconcepto>
+</concepto>
+<concepto>
+<cptotextoconcepto>                                        </cptotextoconcepto>
+</concepto>
+<concepto>
+<cptotextoconcepto>GL197-13-1485-0000001440                </cptotextoconcepto>
+</concepto>
+</orden>
+</ordenes>
+<totales>
+<codigoregistro>5910</codigoregistro>
+<tipodocemisorregpie>03</tipodocemisorregpie>
+<numdocidentemisorregpie>0000008605251485</numdocidentemisorregpie>
+<sufijoregpie>01</sufijoregpie>
+<importetotal>0000002674869.18</importetotal>
+<totaloperaciones>00000001</totaloperaciones>
+<totalregistros>00000011</totalregistros>
+<filler>                                                                                                                   </filler>
+</totales>
+</remesa>

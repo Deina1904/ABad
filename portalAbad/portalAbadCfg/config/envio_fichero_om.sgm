@@ -1,0 +1,49 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL envio_fichero_om ------------------------------------------>
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=envio_fichero_om operationContext=OperationContext>
+	<refKColl refId=envio_fichero_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=envio_fichero_om-data>
+	<field id=IdTx value=TxFN67ENET>
+	<kColl id=Entrada>
+	  <field id=INDPAGINA>
+	  <field id=CAMPLIBRE>
+	  <iColl id=ESTARCHIV>
+	        <kColl id=REGISTRO>
+	          <field id=TIPREGIST>
+	          <field id=RESTOARCH>
+	        </kColl >
+      </iColl >
+	  <field id="IMPORTE TOTAL">
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=NUMCONF>
+      <field id=FECOPER>
+      <field id=IMPMOVI>
+      <field id=NUMREGI>
+    </kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=envio_fichero_om-copiar>
+	<kColl id=a-TxFN67ENET>
+		<field id=Entrada value=TxFN67ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN67ENET>
+		<field id=Salida value=TxFN67ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

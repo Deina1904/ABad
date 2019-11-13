@@ -1,0 +1,22 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION capacitacion_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.cmc.capacitacion.PRcapacitacion id=capacitacion_pr operationContext=OperationContext>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=capacitacion_op>
+	</navegacionPr>
+	
+	<resultadoPr>				
+		<salidaPr id=0 operacion=capacitacion_op estadoOP=1 jspFile=capasitacionSalida>		
+		<salidaPr id=0 operacion=capacitacion_op estadoOP=2 jspFile=capasitacionSalida>
+		<salidaPr id=0 operacion=capacitacion_op estadoOP=3 jspFile=capasitacionSalida>
+		<salidaPr id=0 operacion=capacitacion_op estadoOP=4 jspFile=capasitacionSalida>	
+	</resultadoPr>	
+</com.cmc.capacitacion.PRcapacitacion>
+<! --------------------------------------------------------------------------------->
+
+
+

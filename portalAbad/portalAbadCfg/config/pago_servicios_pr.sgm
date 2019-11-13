@@ -1,0 +1,56 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  pago_servicios_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.ps.PrPagoServ id=pago_servicios_pr operationContext=OperationContext>
+
+	<refKColl refId=pago_servicios_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+	
+		<estadoPr id=0 operacion=ctas_pserv_op>				
+		<estadoPr id=1 operacion=consultar_pago_op>
+		<estadoPr id=1 operacion=ctas_pserv_op>
+		<estadoPr id=2 operacion=consultar_pago_op>					
+		<estadoPr id=2 operacion=realizar_pserv_op>
+		<estadoPr id=2 operacion=ctas_pserv_op>
+	
+	</navegacionPr>		
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>	
+
+		<salidaPr id=0 operacion=ctas_pserv_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=ctas_pserv_op estadoOP=VALIDAR jspFile=r002_traspasos>
+		
+		<salidaPr id=1 operacion=ctas_pserv_op estadoOP=1 jspFile=ps001_pet_datospserv>
+		<salidaPr id=1 operacion=consultar_pago_op estadoOP=ERROR jspFile=gn001_error>
+		
+		<salidaPr id=2 operacion=consultar_pago_op estadoOP=1 jspFile=ps002_conf_pago>
+		<salidaPr id=2 operacion=consultar_pago_op estadoOP=AYUDA jspFile=ayuda_clave_oper>		
+		<salidaPr id=2 operacion=realizar_pserv_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=realizar_pserv_op estadoOP=MENSAJE jspFile=gn001_error>
+
+		<salidaPr id=0 operacion=realizar_pserv_op estadoOP=1 jspFile=ps003_realizado_pserv>
+
+	</resultadoPr>	
+
+</com.grupobbva.bc.col.web.ps.PrPagoServ>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_servicios_pr-data>
+	<field id=ClaveCtaPServ>
+	<field id=TipoCtaPServ>
+	<field id=CtaPServ>
+	<field id=TipoServicio>	
+	<field id=Factura>
+	<field id=FechaOpe>
+	<field id=Divisa>
+	<field id=ImportePago>
+	<field id=DescripServ>
+	<field id=ObservPago>	
+</kColl>
+<! --------------------------------------------------------------------------------->
+

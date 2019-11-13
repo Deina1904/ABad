@@ -1,0 +1,92 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION relacion_prorroga_op  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cdts.OPRelacionProrroga id=relacion_prorroga_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=RelacionCdtsOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=TipoCOPHTMLFmt>
+	<refKColl refId=relacion_prorroga_op-data>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=relacionCdts metodo=relacionCtas requestFmt=TipoCOPHTMLFmt>>
+		<estadoOP id=1 accion=relacionCdts metodo=relacionCtas requestFmt=TipoCOPHTMLFmt>>
+		<estadoOP id=ERROR accion=relacionCdts metodo=relacionCtas>
+
+
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=RelacionCdtsOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.bc.col.web.cdts.OPRelacionProrroga>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=relacion_prorroga_op-data>
+
+	<iColl id=listaCdts>
+				<kColl id=s_cuenta>
+					<field id=s_banco>
+					<field id=s_oficina>
+					<field id=s_dcontrol>
+					<field id=s_num_cuenta>
+					<field id=s_permiso>
+					<field id=s_clave_asunto>
+					<field id=s_tipo>
+					<field id=s_estado>
+					<field id=s_valaso>
+				</kColl>
+	</iColl>
+
+	<field id=Error>
+	<field id=tipo>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=RelacionCdtsOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<iCollVector dataName=listaCdts description=ListaCuentas>
+			<record dataName=s_cuenta>
+					<fString dataName=s_banco><nullCheck>
+					<fString dataName=s_oficina><nullCheck>
+					<fString dataName=s_dcontrol><nullCheck>
+					<fString dataName=s_num_cuenta><nullCheck>
+					<fString dataName=s_permiso><nullCheck>
+					<fString dataName=s_clave_asunto><nullCheck>
+					<fString dataName=s_tipo><nullCheck>
+					<fString dataName=s_estado><nullCheck>
+			        <fString dataName=s_valaso><nullCheck>
+			</record>
+		</iCollVector>
+		<fString dataName=prtipo><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->
+
+
+<fmtDef id=TipoCOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=tipo>
+	</fHTMLReq>
+</fmtDef>

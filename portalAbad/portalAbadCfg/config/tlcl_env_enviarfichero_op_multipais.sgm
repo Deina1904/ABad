@@ -1,0 +1,67 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PRESENTACION tlcl_env_enviarfichero_op_multipais  -------------------------------->
+<! OPERACION ------------------------------------------------------------------------->
+<tlcl.multipais.web.env.enviodirecto.TLCLOpEnvEnviarFichero id=tlcl_env_enviarfichero_op_multipais operationContext=OperationContext>
+	<refFormat name=htmlRequestFormat refId=tlcl_envio_fichero_HTMLFmt>
+	<refKColl refId=tlcl_env_enviarfichero_op_multipais-data>
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=lanzarValidacion metodo=lanzarValidacion requestFmt=tlcl_envio_fichero_HTMLFmt>
+		<estadoOP id=1 accion=lanzarValidacion metodo=lanzarValidacion requestFmt=tlcl_envio_fichero_HTMLFmt>
+		<estadoOP id=5 accion=lanzarValidacion metodo=lanzarValidacion requestFmt=tlcl_envio_fichero_HTMLFmt>
+	</navegacionOP>
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=0 jspFmt=enviando_fichero_JspFmt>
+	</resultadoOP>
+</tlcl.multipais.web.env.enviodirecto.TLCLOpEnvEnviarFichero>
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=tlcl_env_enviarfichero_op_multipais-data>
+	<field id=codClaseOrd>
+	<field id=codExtensio>
+	<field id=codBancoCSB>
+	<field id=nombreCompletoFichero>
+	<field id=filesize>
+	<field id=versionPGP>
+	<field id=fechaMinima>
+	<field id=fechaMaxima>
+	<field id=descAsunbanc>
+	<field id=validaServicio>
+    <field id=encriptado>
+    <field id=tipoOrden>
+    <field id=path>
+    <field id=descClaseOrd>
+    <field id=registros>
+    <field id=valor>
+    <field id=descripcion>
+</kColl>
+
+<! FORMATOS DE SALIDA -------------------------------------------------------------------------->
+<fmtDef id=enviando_fichero_JspFmt>
+	<fJsp>
+		<fString dataName=codClaseOrd><nullCheck>
+		<fString dataName=descClaseOrd><nullCheck>
+		<fString dataName=descAsunbanc><nullCheck>
+		<fString dataName=registros><nullCheck>
+		<fString dataName=descripcion><nullCheck>
+		<fString dataName=valor><nullCheck>
+		<fString dataName=s_cod_buzon description=referencia><nullCheck>
+		<fString dataName=codBancoCSB><nullCheck>
+		<fString dataName=nombreCompletoFichero><nullCheck>
+		<fString dataName=fechaMinima><nullCheck>
+	</fJsp>
+</fmtDef>
+<! FORMATOS DE ENTRADA --------------------------------------------------------------->
+<fmtDef id=tlcl_envio_fichero_HTMLFmt>
+	<fHTMLReq>
+		<fString dataName=tipoOrden><nullCheck>
+		<fString dataName=codExtensio><nullCheck>
+		<fString dataName=codBancoCSB><nullCheck>
+		<fString dataName=nombreCompletoFichero><nullCheck>
+		<fString dataName=filesize><nullCheck>
+		<fString dataName=path><nullCheck>
+
+		<fString dataName=encriptado><nullCheck>
+	</fHTMLReq>
+</fmtDef>

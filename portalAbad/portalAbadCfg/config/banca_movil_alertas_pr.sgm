@@ -1,0 +1,81 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  banca_movil_alertas_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.bancamovil.PrBancaMovilAlertas id=banca_movil_alertas_pr operationContext=OperationContext>
+
+	<refKColl refId=banca_movil_alertas_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=banca_movil_alertas_consulta_op>
+
+		<estadoPr id=1 operacion=banca_movil_alertas_consulta_op>
+		<estadoPr id=1 operacion=banca_movil_alertas_confirmar_op>
+
+		<estadoPr id=2 operacion=banca_movil_alertas_confirmar_op>
+		<estadoPr id=2 operacion=banca_movil_alertas_consulta_op>
+		<estadoPr id=2 operacion=banca_movil_alertas_realizar_op>
+
+		<estadoPr id=3 operacion=banca_movil_alertas_realizar_op>
+		<estadoPr id=3 operacion=banca_movil_alertas_confirmar_op>
+		<estadoPr id=3 operacion=banca_movil_alertas_consulta_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=banca_movil_alertas_consulta_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=banca_movil_alertas_consulta_op estadoOP=VALIDAR jspFile=contratobm>
+
+		<salidaPr id=1 operacion=banca_movil_alertas_consulta_op estadoOP=1 jspFile=consulta_banca_movil_alertas_001>
+		<salidaPr id=1 operacion=banca_movil_alertas_consulta_op OP estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=banca_movil_alertas_confirmar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=banca_movil_alertas_consulta_op estadoOP=VALIDAR jspFile=contratobm>
+
+		<salidaPr id=2 operacion=banca_movil_alertas_confirmar_op estadoOP=1 jspFile=confirma_banca_movil_alertas_002>
+		<salidaPr id=2 operacion=banca_movil_alertas_confirmar_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=banca_movil_alertas_confirmar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=banca_movil_alertas_realizar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=banca_movil_alertas_consulta_op estadoOP=VALIDAR jspFile=contratobm>
+
+		<salidaPr id=3 operacion=banca_movil_alertas_realizar_op estadoOP=1 jspFile=realiza_banca_movil_alertas_003>
+		<salidaPr id=3 operacion=banca_movil_alertas_realizar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=banca_movil_alertas_consulta_op estadoOP=VALIDAR jspFile=contratobm>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.bancamovil.PrBancaMovilAlertas>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=banca_movil_alertas_pr-data>
+
+	<field id=PrStrRadioSeleccion>
+	<field id=PrStrIndicadorDatos>
+	<field id=PrStrTipoTelefono1>
+	<field id=PrStrPrefijoTelefono1>
+	<field id=PrStrNumeroTelefono1>
+	<field id=PrStrNumeroExtension1>
+	<field id=PrStrTipoTelefono2>
+	<field id=PrStrPrefijoTelefono2>
+	<field id=PrStrNumeroTelefono2>
+	<field id=PrStrNumeroExtension2>
+	<field id=PrStrTipoTelefono3>
+	<field id=PrStrPrefijoTelefono3>
+	<field id=PrStrNumeroTelefono3>
+	<field id=PrStrNumeroExtension3>
+	<field id=PrStrPrefijoTelefonoM>
+	<field id=PrStrNumeroTelefonoM>
+    <field id=PrStrTipoTelefono3Antes>
+	<field id=PrStrPrefijoTelefono3Antes>
+	<field id=PrStrNumeroTelefono3Antes>
+	<field id=PrStrNumeroExtension3Antes>
+	<field id=PrStrIndicadorPe001>
+	<field id=PrStrIndicadorTelefonico>
+	<field id=PrStrIndicadorTelefonicoBP>
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

@@ -1,0 +1,98 @@
+<! BBVA  ------------------------------------------------------------------------------------------------------------------------------>
+<! Operación:  PRESENTACION banca_movil_alertas_realizar_op  ----------------------------------------------------------------------->
+
+<! OPERACION -------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.bancamovil.OpRealizarBancaMovilAlertas id=banca_movil_alertas_realizar_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=RealizarBancaMovilOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=BancaMovilRealizarOPHTMLFmt>
+
+	<refKColl refId=banca_movil_alertas_realizar_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=banca_movil_alertas_consulta_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! ------------------------------------------------------------------------------------------------------------------------------------>
+<! ESTADOS ---------------------------------------------------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=realizar metodo=realizarBancaMovil requestFmt=BancaMovilRealizarOPHTMLFmt>
+		<estadoOP id=0 accion=cancelar metodo=cancelar>
+		<estadoOP id=1 accion=realizar metodo=realizarBancaMovil requestFmt=BancaMovilRealizarOPHTMLFmt>
+		<estadoOP id=1 accion=cancelar metodo=cancelar>
+		<estadoOP id=ERROR accion=realizar metodo=realizarBancaMovil requestFmt=BancaMovilRealizarOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=realizar metodo=realizarBancaMovil requestFmt=BancaMovilRealizarOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ---------------------------------------------------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RealizarBancaMovilOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.bancamovil.OpRealizarBancaMovilAlertas>
+
+<! DATOS ------------------------------------------------------------------------------------------------------------------------------>
+<kColl id=banca_movil_alertas_realizar_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+
+	<field id=OpStrRadioSeleccion>
+	<field id=OpStrPrefijoTelefono3>
+	<field id=OpStrNumeroTelefono3>
+	<field id=OpStrPrefijoTelefonoM>
+	<field id=OpStrNumeroTelefonoM>
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------------------------------------------------------->
+
+<fmtDef id=RealizarBancaMovilOPJspFmt>
+	<fJsp>
+
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	    <fString dataName=OpStrRadioSeleccion description=OpStrRadioSeleccion >
+	    <fString dataName=OpStrPrefijoTelefono3 description=OpStrPrefijoTelefono3 >
+	    <fString dataName=OpStrNumeroTelefono3 description=OpStrNumeroTelefono3 >
+	    <fString dataName=OpStrPrefijoTelefonoM description=OpStrPrefijoTelefonoM >
+  	    <fString dataName=OpStrNumeroTelefonoM description=OpStrNumeroTelefonoM >
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA---------------------------------------------------------------------------------------------------------------->
+
+<fmtDef id=BancaMovilRealizarOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+	</fHTMLReq>
+</fmtDef>
+<! ------------------------------------------------------------------------------------------------------------------------------------>

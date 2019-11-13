@@ -1,0 +1,73 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consulta_comision_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=consulta_comision_om operationContext=OperationContext>
+	<refKColl refId=consulta_comision_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=consulta_comision_om-data>
+	<field id=IdTx value=TxF132ENET>
+
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+
+	<kColl id=Salida>	
+		<field id=EMAIL001-OM >     
+		<field id=NOMBRE01-OM >     
+		<field id=APELLIDO-OM >     
+		<field id=NUMCLIEN-OM >     
+		<field id=CEDULA01-OM >     
+		<field id=ASUNTO01-OM >     
+		<field id=ASUNTO02-OM >     
+		<field id=ASUNTO03-OM >     
+		<field id=LIBRE001-OM >     
+		<field id=LIBRE002-OM >     
+		<field id=VALOR001-OM >     
+		<field id=VALOR002-OM >     
+		<field id=VALOR001-ALF1-OM >
+		<field id=VALOR002-ALF2-OM >	
+	</kColl >
+
+</kColl >
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=consulta_comision_om-copiar>
+	<kColl id=a-TxF132ENET>
+		<field id=Entrada value=TxF132ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF132ENET>
+		<field id=Salida value=TxF132ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

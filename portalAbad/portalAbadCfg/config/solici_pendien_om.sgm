@@ -1,0 +1,63 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL solici_pendien_om  --------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=solici_pendien_om operationContext=OperationContext>
+	<refKColl refId=solici_pendien_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=solici_pendien_om-data>
+	<field id=IdTx value=TxFE11ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl>
+			
+  <kColl id=Salida>
+    <field id=INDICADOR-PAGINACION>
+    <field id=ARGUMENTO-BUSQUEDA>
+	  <iColl id=ListaPendientes>
+	    <kColl id=Pendiente>
+    		 <field id=FUNCION >
+		 <field id=SECUENCIA >
+       	 	 <field id=DESCRIP_FUNCION >
+       	 	 <field id=NOMBRE_USUARIO >
+     		 <field id=IMPORTE >
+         	 <field id=DIVISA >
+         	 <field id=FECHA_ALTA >
+	    </kColl>
+	  </iColl>
+  </kColl >
+</kColl>
+
+<! COPIADOR ------------------------------------------------------------------------->
+<kColl id= solici_pendien_om-copiar>
+
+	<kColl id=a-TxFE11ENET>
+	  <field id=Entrada value=TxFE11ENETEntrada>		
+	</kColl>
+	<kColl id=desde-TxFE11ENET>
+	  <field id=Salida value=TxFE11ENETSalida-01>
+	</kColl>
+	
+</kColl>
+<! ---------------------------------------------------------------------------------->
+

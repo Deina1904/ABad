@@ -1,0 +1,109 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION prog_cons_detalle_op  ------------------------------------>
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.poenet.OPProg_Consultar_Detalle id=prog_cons_detalle_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionDetalleOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=EntradaOPHTMLFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=prog_cons_detalle_op-data>
+	<refOM refId=prog_cons_detalle_om>
+<! -------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=continuar metodo=consultarDetalle requestFmt=EntradaOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=consultarDetalle requestFmt=EntradaOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=consultarDetalle requestFmt=EntradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=consultarDetalle requestFmt=EntradaOPHTMLFmt>
+
+	</navegacionOP>
+<! -------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=1 jspFmt=RelacionDetalleOPJspFmt>
+		<salidaOP id=2 jspFmt=RelacionDetalleOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.bc.col.web.poenet.OPProg_Consultar_Detalle>
+<! -------------------------------------------------------------------------------->
+<! DATOS -------------------------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<kColl id=prog_cons_detalle_op-data>
+	<field id=Error>
+	<field id=CtaOri>
+	<field id=CtaDesti>
+	<field id=Consecu>
+	<field id=NumCon>
+	<field id=FechaPro>
+	<kColl id=SalidaCtasDe>
+	  <iColl id=ListaCuentasDe>
+	    <kColl id=Cuentas>
+		    <field id=NumPosi>
+			<field id=FechaTra>
+			<field id=FechaOper>
+			<field id=Estado>
+			<field id=NumConfi>
+			<field id=Descrip>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>
+<! -------------------------------------------------------------------------------->
+<! formatos de salida para JSP ---------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=RelacionDetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+  		<fString dataName=CtaOrd>
+<! --   <fString dataName=SelConsulta description=Seleccion> -->
+		<fString dataName=CtaBen>
+		<fString dataName=TipoCtaOrd>
+		<fString dataName=TipoCtaBen>
+		<fString dataName=IndNva>
+		<fString dataName=NomBen>
+		<fString dataName=IdeBen>
+		<fDate   dataName=FecTra>
+		<fString dataName=FecOpe>
+		<fNumString dataName=PagosTotal>
+		<fNumString dataName=PagosReal>
+		<fString dataName=TipoTras>
+		<fNumString dataName=ValorTras>
+		<fString dataName=Observ>
+		<fString dataName=Correo>
+		<iCollVector dataName=SalidaCtasDe.ListaCuentasDe description=ListaCtasDe>
+			<record dataName=Cuentas>
+				<fNumString dataName=NumPosi>
+				<fString dataName=FechaTra>
+				<fString dataName=FechaOper>
+				<fString dataName=Estado>
+				<fNumString dataName=NumConfi>
+				<fString dataName=Descrip>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=EntradaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CtaOri>
+		<fString dataName=CtaDesti>
+		<fNumString dataName=Consecu>
+		<fNumString dataName=NumCon>
+		<fString dataName=FechaPro>
+	</fHTMLReq>
+</fmtDef>
+

@@ -1,0 +1,1 @@
+function sel_nav(){if(navigator.appName=='Netscape'){parent.centro.location.href="atencion-cliente2nets.html";}else{open("atencion-cliente2expl.html","_self","scrollbars=yes");}}

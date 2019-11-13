@@ -1,0 +1,78 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION confirmar_pagotarje_op  --------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pt.OPConfirmarPagoTarje id=confirmar_pagotarje_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaPagoTarjeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+
+	<refKColl refId=confirmar_pagotarje_op-data>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaPagoTarjeOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pt.OPConfirmarPagoTarje>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=confirmar_pagotarje_op-data>
+	<field id=TipoPago>
+	<field id=OtroValor>
+	<field id=Honorarios2>
+	<field id=Valor2>
+	<field id=Abogado>		
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaPagoTarjeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_correo_op description=correoop>
+		<fString dataName=CtaPTarje description=ctaptarje>
+		<fString dataName=NumeroTarjeta description=numtarjeta>
+		<fNumString dataName=Importe description=importe>
+		<fString dataName=TipoPago description=tipopago>
+		<fDate dataName=FechaVen description=fechaven>
+		<fString dataName=Honorarios2 description=Honorarios2 decPlaces=2 decimalsSepChar=, thousandsSepChar=. showDecimalsSep=yes showThousandsSep=no><nullCheck>
+		<fString dataName=Valor2 description=Valor2><nullCheck>
+		<fDate dataName=FechaVen description=fechaven>
+		<fString dataName=Abogado description=Abogado><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=TipoPago>
+		<fString dataName=OtroValor>
+		<fString dataName=Honorarios2>
+		<fString dataName=Valor2>
+		<fString dataName=Abogado>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

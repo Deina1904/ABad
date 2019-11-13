@@ -1,0 +1,28 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación: PRESENTACION ejemplo_om  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+
+<com.cmc.ejemplo.OMejemplo id=ejemplo_om operationContext=OperationContext>
+
+	<refKColl refId=ejemplo_om-data>
+
+</com.cmc.ejemplo.OMejemplo>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ejemplo_om-data>
+
+	<kColl id=Entrada>
+	  
+	</kColl >
+      
+	<kColl id=Salida>
+		
+  	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<! --------------------------------------------------------------------------------->
+

@@ -1,0 +1,111 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PRESENTACION env_enviarfichero_op  -------------------------------->
+<! OPERACION ------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pagos.OpEnvEnviarFichero id=env_enviarfichero_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=enviando_fichero_JspFmt>
+	<refFormat name=htmlRequestFormat refId=envio_fichero_HTMLFmt>
+	<refKColl refId=env_enviarfichero_op-data>
+	<refOM refId=env_validacion_om>
+	<refOM refId=tlcl_com_encriptacion_cv_om_multipais>
+	<refOM refId=tlcl_com_verificacion_encriptacion_om_multipais>
+	
+	
+	
+<! ----------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=lanzarValidacion metodo=lanzarValidacion requestFmt=envio_fichero_HTMLFmt>
+		<estadoOP id=1 accion=lanzarValidacion metodo=lanzarValidacion requestFmt=envio_fichero_HTMLFmt>
+		<estadoOP id=ERROR accion=lanzarValidacion metodo=lanzarValidacion requestFmt=envio_fichero_HTMLFmt>
+		<estadoOP id=errorCrd accion=lanzarValidacion metodo=lanzarValidacion requestFmt=envio_fichero_HTMLFmt>		
+	</navegacionOP>
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=0 jspFmt=enviando_fichero_JspFmt>
+		<! OGB 16-9-2008 ERE07F2006 -->
+		<salidaOP id=1 jspFmt=envio_firma_JspFmt> <! No se usa formato -->
+		<! OGB 16-9-2008 ERE07F2006 -->
+		<!-- GP-9474 CERTIFICADOS DIGITALES INICIO -->
+		<salidaOP id=errorCrd jspFmt=ErrorCrdOPJspFmt>
+		<!-- GP-9474 CERTIFICADOS DIGITALES FIN -->
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagos.OpEnvEnviarFichero>
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=env_enviarfichero_op-data>
+	<field id=codClaseOrd>
+	<field id=codIdOrden>
+	<field id=codExtensio>
+	<field id=codBancoCSB>
+	<field id=nombreCompletoFichero>
+	<field id=nombreFich>
+	<field id=filesize>
+	<field id=versionPGP>
+	<field id=s_cod_nomconta>
+
+	<field id=fechaMinima>
+	<field id=fechaMaxima>
+	<field id=descAsunbanc>
+	<field id=validaServicio>
+
+	<! OGB 27-5-2008 para ECO2007F2005 -->
+	<field id=encriptado>
+	<! OGB 27-5-2008 -->
+	<! GP-9474 CERTIFICADOS DIGITALES INICIO -->	
+	<field id=tipoCifrado>
+	<kColl id=errorCrd>
+		<field id=codError>
+		<field id=mensaje>		
+	</kColl>			
+	<! GP-9474 CERTIFICADOS DIGITALES FIN -->	
+	<field id=cuentaCargo>
+	<field id=nombreFichero>
+	<field id=fechaProceso>
+	<field id=referencia>
+	<field id=numOrdenes>		
+	<field id=importeTotal>
+	<field id=qnu_numitem>
+	<field id=modoCreacion>
+	<field id=ficheroOK>
+	
+	<field id=encriptadoPr>
+</kColl>
+
+<! FORMATOS DE SALIDA -------------------------------------------------------------------------->
+<fmtDef id=enviando_fichero_JspFmt>
+	<fJsp>
+		<fString dataName=codClaseOrd><nullCheck>
+		<fString dataName=codClaseOrd description=descClaseOrd aditionalData=s_idioma descLarga=true catalogo=CLASEORD><nullCheck>
+		<fString dataName=descAsunbanc><nullCheck>
+		<fString dataName=codBancoCSB><nullCheck> <!-- EMX07F2004 EDA -->
+		<! Novatec I 7902-->
+		<fString dataName = nombreCompletoFichero><nullCheck>
+		<fString dataName = fechaMinima><nullCheck>
+		<fString dataName = referencia><nullCheck>
+		<fString dataName = s_cod_nomconta><nullCheck>		
+		<! Novatec F 7902-->
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=formato_vacio>
+	<fJsp>
+	</fJsp>
+</fmtDef>
+<!-- GP-9474 CERTIFICADOS DIGITALES INICIO -->
+<fmtDef id=ErrorCrdOPJspFmt>
+	<fJsp aditionalData=s_idioma>	
+		<fString dataName=errorCrd.codError description=codError><nullCheck>
+		<fString dataName=errorCrd.mensaje description=mensaje><nullCheck>
+	</fJsp>
+</fmtDef>
+<!-- GP-9474 CERTIFICADOS DIGITALES FIN -->
+
+<! FORMATOS DE ENTRADA --------------------------------------------------------------->
+<fmtDef id=envio_fichero_HTMLFmt>
+	<fHTMLReq>
+		<fString dataName = tipoOrden description=codClaseOrd><nullCheck>		
+		<fString dataName = nombreCompletoFichero><nullCheck>
+		<fString dataName = filesize><nullCheck>
+	</fHTMLReq>
+</fmtDef>

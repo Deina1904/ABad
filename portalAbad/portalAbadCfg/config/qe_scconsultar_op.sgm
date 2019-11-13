@@ -1,0 +1,83 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION qe_scconsultar_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.qesc.OPConsultarChq id=qe_scconsultar_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionConsultarPTOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPTarjeOPHTMLFmt>
+	<refKColl refId=qe_scconsultar_op-data>
+	<refOM refId=qe_scretorno_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=consultarChq     requestFmt=DatosPTarjeOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=consultarChq     requestFmt=DatosPTarjeOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=consultarChq     requestFmt=DatosPTarjeOPHTMLFmt>
+		<estadoOP id=3 accion=continuar metodo=consultarChq     requestFmt=DatosPTarjeOPHTMLFmt>
+		<estadoOP id=4 accion=continuar metodo=consultarChq     requestFmt=DatosPTarjeOPHTMLFmt>
+		<estadoOP id=5 accion=continuar metodo=consultarChq     requestFmt=DatosPTarjeOPHTMLFmt>
+		<estadoOP id=5 accion=tipochq  metodo=ayuda>
+		<estadoOP id=6 accion=continuar metodo=consultarChq requestFmt=DatosPTarjeOPHTMLFmt>
+
+
+		<estadoOP id=ERROR accion=continuar metodo=consultarChq requestFmt=DatosPTarjeOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=consultarChq requestFmt=DatosPTarjeOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionConsultarPTOPJspFmt>
+		<salidaOP id=2 jspFmt=RelacionConsultarPTOPJspFmt>
+		<salidaOP id=3 jspFmt=RelacionConsultarPTOPJspFmt>
+		<salidaOP id=4 jspFmt=RelacionConsultarPTOPJspFmt>
+		<salidaOP id=5 jspFmt=RelacionConsultarPTOPJspFmt>
+		<salidaOP id=6 jspFmt=RelacionConsultarPTOPJspFmt>
+
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.qesc.OPConsultarChq>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=qe_scconsultar_op-data>
+	<field id=CuentaOrdenante>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionConsultarPTOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaPTarje description=ctaptarje>
+
+		<fString dataName=TipoCtaPTarje description=tipocta>
+
+		<record dataName=qe_scretorno_om-data.Salida description=Consultar>
+			<fString dataName=TALONPEN description=talonpen>
+			<fString dataName=TALONDIA description=talondia>
+			<fString dataName=DIRECCION description=direccion>
+		</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosPTarjeOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CuentaOrdenante>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

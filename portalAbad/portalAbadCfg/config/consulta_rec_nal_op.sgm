@@ -1,0 +1,212 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consulta_rec_nal_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.crn.OpConsultaRecNal id=consulta_rec_nal_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+    <refFormat name=jspFormat refId=InicioOPJspFmt>
+    <refFormat name=jspFormat refId=ListadoOPJspFmt>
+    <refFormat name=jspFormat refId=DetalleOPJspFmt>
+    <refFormat name=htmlRequestFormat refId=EntListadoOPHTMLFmt>
+    <refFormat name=htmlRequestFormat refId=EntDetalleOPHTMLFmt>
+	<refKColl refId=consulta_rec_nal_op-data>
+	<refOM refId=consulta_rec_nal_om>
+	<refOM refId=consulta_recnal_det_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=inicio metodo=inicioProceso>
+		<estadoOP id=INICIO accion=inicio metodo=inicioProceso>
+		<estadoOP id=INICIO accion=listado metodo=listadoPagos requestFmt=EntListadoOPHTMLFmt>
+
+		<estadoOP id=LISTADO accion=listado metodo=listadoPagos requestFmt=EntListadoOPHTMLFmt>
+		<estadoOP id=LISTADO accion=inicio metodo=inicioProceso>
+		<estadoOP id=LISTADO accion=adelante metodo=masDatos>
+		<estadoOP id=LISTADO accion=atras metodo=atrasDatos>
+		<estadoOP id=LISTADO accion=detalle metodo=detallePago requestFmt=EntDetalleOPHTMLFmt>
+
+		<estadoOP id=DETALLE accion=detalle metodo=detallePago requestFmt=EntDetalleOPHTMLFmt>
+		<estadoOP id=DETALLE accion=regreso metodo=regresar>
+
+		<estadoOP id=ERROR accion=inicio metodo=inicioProceso>
+		<estadoOP id=ERROR accion=listado metodo=listadoPagos requestFmt=EntListadoOPHTMLFmt>
+		<estadoOP id=ERROR accion=detalle metodo=detallePago requestFmt=EntDetalleOPHTMLFmt>
+
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=INICIO jspFmt=InicioOPJspFmt>
+		<salidaOP id=LISTADO jspFmt=ListadoOPJspFmt>
+		<salidaOP id=DETALLE jspFmt=DetalleOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.crn.OpConsultaRecNal>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_rec_nal_op-data>
+
+	<field id=inpAsuntoPropio>
+	<field id=inpCriterio>
+	<field id=inpFecha>
+	<field id=inpFechaDesde>
+	<field id=inpFechaHasta>
+	<field id=inpUltimosDias>
+
+	<field id=inpFechaOperacion>
+	<field id=inpHoraOperacion>
+	<field id=inpNroMovimiento>
+	<field id=inpReferencia1>
+	<field id=inpReferencia2>
+	<field id=inpOficinaPago>
+	<field id=inpVlrEfectivo>
+	<field id=inpVlrCanjeRem>
+	<field id=inpVlrDeposito>
+	<field id=inpVlrCtasOtro>
+
+	<iColl id=opPaginaPagos>
+		<kColl id=jspRegistroRecaudo>
+			<field id=jspFechaOperacion>
+			<field id=jspHoraOperacion>
+			<field id=jspNroMovimiento>
+			<field id=jspOficinaPago>
+			<field id=jspTipoDePago>
+			<field id=jspVlrDeposito>
+			<field id=jspVlrEfectivo>
+			<field id=jspVlrCanjeRem>
+			<field id=jspVlrCtasOtro>
+			<field id=jspVlrComision>
+			<field id=jspVlrIvaComis>
+			<field id=jspReferencia1>
+			<field id=jspReferencia2>
+		</kColl >
+	</iColl >
+
+	<field id=Error>
+
+</kColl>
+
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<iCollVector dataName=s_salida_cuentas.s_lista_cuentas description=ListaCuentas>
+			<record dataName=s_cuenta>
+				<fString dataName=s_banco><nullCheck>
+				<fString dataName=s_oficina><nullCheck>
+				<fString dataName=s_dcontrol><nullCheck>
+				<fString dataName=s_num_cuenta><nullCheck>
+				<fString dataName=s_permiso><nullCheck>
+				<fString dataName=s_clave_asunto><nullCheck>
+				<fString dataName=s_tipo><nullCheck>
+				<fString dataName=s_estado><nullCheck>
+				<fString dataName=s_valaso><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ListadoOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=inpAsuntoPropio description=jspAsuntoPropio>
+		<fString dataName=inpCriterio description=jspCriterio>
+		<fString dataName=inpFecha description=jspFecha>
+		<fString dataName=inpFechaDesde description=jspFechaDesde>
+		<fString dataName=inpFechaHasta description=jspFechaHasta>
+		<fNumString dataName=inpUltimosDias description=jspUltimosDias>
+
+		<fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+
+		<iCollVector dataName=opPaginaPagos description=jspPaginaPagos>
+			<record dataName=jspRegistroRecaudo>
+				<fString dataName=jspFechaOperacion><nullCheck>
+				<fString dataName=jspHoraOperacion><nullCheck>
+				<fString dataName=jspNroMovimiento><nullCheck>
+				<fString dataName=jspOficinaPago><nullCheck>
+				<fString dataName=jspTipoDePago><nullCheck>
+				<fNumString dataName=jspVlrDeposito><nullCheck>
+				<fNumString dataName=jspVlrEfectivo><nullCheck>
+				<fNumString dataName=jspVlrCanjeRem><nullCheck>
+				<fNumString dataName=jspVlrCtasOtro><nullCheck>
+				<fNumString dataName=jspVlrComision><nullCheck>
+				<fNumString dataName=jspVlrIvaComis><nullCheck>
+				<fString dataName=jspReferencia1><nullCheck>
+				<fString dataName=jspReferencia2><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=DetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=inpFechaOperacion description=jspFechaOperacion>
+		<fString dataName=inpHoraOperacion description=jspHoraOperacion>
+		<fString dataName=inpReferencia1 description=jspReferencia1>
+		<fString dataName=inpReferencia2 description=jspReferencia2>
+		<fString dataName=inpOficinaPago description=jspOficinaPago>
+		<fNumString dataName=inpVlrEfectivo description=jspVlrEfectivo>
+		<fNumString dataName=inpVlrCanjeRem description=jspVlrCanjeRem>
+		<fNumString dataName=inpVlrDeposito description=jspVlrDeposito>
+		<fNumString dataName=inpVlrCtasOtro description=jspVlrCtasOtro>
+
+		<record dataName=consulta_recnal_det_om-data.Salida description=Datos>
+              <fString dataName=NOMBRE-SUC><nullCheck>
+	          <fString dataName=NOMBRE-CIUDAD><nullCheck>
+		</record>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=EntListadoOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpAsuntoPropio>
+		<fString dataName=inpCriterio>
+		<fString dataName=inpFecha>
+		<fString dataName=inpFechaDesde>
+		<fString dataName=inpFechaHasta>
+		<fNumString dataName=inpUltimosDias>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=EntDetalleOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpFechaOperacion>
+		<fString dataName=inpHoraOperacion>
+		<fNumString dataName=inpNroMovimiento>
+		<fString dataName=inpReferencia1>
+		<fString dataName=inpReferencia2>
+		<fString dataName=inpOficinaPago>
+		<fNumString dataName=inpVlrEfectivo>
+		<fNumString dataName=inpVlrCanjeRem>
+		<fNumString dataName=inpVlrDeposito>
+		<fNumString dataName=inpVlrCtasOtro>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

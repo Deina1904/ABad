@@ -1,0 +1,40 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación: PRESENTACION capacitacion_op -------------------------------------------------------------------------------->
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.cmc.capacitacion.OPcapacitacion id=capacitacion_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=SalidaVacioOPJspFmt>
+	
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=inicio metodo=inicio>
+		<estadoOP id=1 accion=inicio metodo=inicio >
+   </navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=0 jspFmt=SalidaVacioOPJspFmt>
+		<salidaOP id=1 jspFmt=SalidaVacioOPJspFmt>
+		<salidaOP id=2 jspFmt=SalidaVacioOPJspFmt>
+	</resultadoOP>	
+</com.cmc.capacitacion.OPcapacitacion>
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+
+
+<! FORMATOS DE SALIDA PARA JSP ----------------------------------------------------------------------------------------------------------->
+<fmtDef id=SalidaVacioOPJspFmt>
+	<fJsp>
+		
+	</fJsp>
+</fmtDef>
+
+
+
+
+<! FORMATOS DE ENTRADA ----------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+	

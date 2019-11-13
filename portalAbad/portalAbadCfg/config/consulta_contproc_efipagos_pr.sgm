@@ -1,0 +1,46 @@
+<! BBVA  ------------------------------------------------------------------------------------------------------------------------------->
+<! Operación: PROCESO consulta_contproc_efipagos_pr ------------------------------------------------------------------------------------>
+
+<! OPERACION --------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.contprocefipagos.PrConsultaContProcEfipagos id=consulta_contproc_efipagos_pr operationContext=OperationContext>
+
+	<refKColl refId=consulta_contproc_efipagos_pr-data>
+
+<! ESTADOS ----------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=consulta_contproc_efipagos_ctasord_op>
+
+		<estadoPr id=1 operacion=consulta_contproc_efipagos_ctasord_op>
+		<estadoPr id=1 operacion=consulta_contproc_efipagos_tx_op>
+
+		<estadoPr id=2 operacion=consulta_contproc_efipagos_ctasord_op>
+		<estadoPr id=2 operacion=consulta_contproc_efipagos_tx_op>
+
+	</navegacionPr>
+
+	<! SALIDAS ------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=consulta_contproc_efipagos_ctasord_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=consulta_contproc_efipagos_ctasord_op estadoOP=1 jspFile=efipagos_control_procesamiento_archivos>
+		<salidaPr id=1 operacion=consulta_contproc_efipagos_tx_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=consulta_contproc_efipagos_tx_op estadoOP=1 jspFile=efipagos_control_procesamiento_archivos_salida>
+		<salidaPr id=2 operacion=consulta_contproc_efipagos_tx_op estadoOP=ERROR jspFile=gn001_error>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.contprocefipagos.PrConsultaContProcEfipagos>
+<! ------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS ------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=consulta_contproc_efipagos_pr-data>
+
+		<field id=ClaveCtaOrdPr>
+		<field id=CtaOrdPr>
+		<field id=RegistrosPaginacionPr value=25>
+		<field id=MasDatosTransmisionesWasPr value="N">
+		<field id=MasDatosTransmisionesHostPr value="N">
+		<field id=IdTransmisionesPr value=0>
+</kColl>
+<! ------------------------------------------------------------------------------------------------------------------------------------->

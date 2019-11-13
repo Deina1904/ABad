@@ -1,0 +1,85 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION sol_conf_histori_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.extractos.OPSolConfHistori id=sol_conf_histori_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaHistoriJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+	<refKColl refId=sol_conf_histori_op-data>
+	<refOM refId=consulta_comision_apoyo_om>	
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaHistoriJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.extractos.OPSolConfHistori>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=sol_conf_histori_op-data>
+	<field id=Error    					value = " ">
+	<field id=NumeroCtaOr>
+	<field id=solici>
+	<field id=periodo>
+	<field id=ano>
+	<field id=Correo>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaHistoriJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre 	description=empresa>
+		<fString dataName=s_cod_nomconta 	description=usuario>
+		<fString dataName=NumeroCtaaDebita 	description=cuenta>
+		<fString dataName=TipSolici 		description=solici>
+		<fString dataName=DesGen 			description=desgen>
+		<fString dataName=Email 			description=email>
+		<fString dataName=DesPeriodo 		description=desperiodo>
+		<fString dataName=Ano       		description=ano>
+		<fString dataName=Comision 			description=comision>
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=NumeroCtaOr>
+		<fString dataName=solici>
+		<fString dataName=periodo>
+		<fString dataName=ano>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

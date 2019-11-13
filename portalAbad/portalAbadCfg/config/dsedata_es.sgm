@@ -1,0 +1,207 @@
+<!  --- BBVA ---  >
+
+<!  CONTEXTO GLOBAL  >
+<kColl id=GlobalBbvaNetData>
+        <field id=BranchId>
+        <field id=BranchName>
+        <field id=BranchAddress>
+</kColl>
+
+<!  CONTEXTO SESION  >
+<kColl id=SesionDatosGenerales>
+	<field id=s_canal value=11>
+	<field id=s_cod_bancsb value=182>
+	<field id=s_cod_bancoint value=1>
+	<field id=s_producto value=1058>	
+	<field id=s_subproducto value=0>	
+	<field id=s_cod_bancoprcsb value=182>
+	<field id=s_cod_bancoprint value=1>
+	<field id=s_idioma value=cas>	
+	<field id=s_password>
+	<field id=s_cod_logon>
+	<field id=s_cod_password>
+	<field id=s_cod_cofici>
+	<field id=s_cod_ccontr>
+	<field id=s_cod_cfolio>
+	<field id=s_cod_nomconta>
+	<field id=UltimoPr>	
+	<field id=UltimaOP>
+	<field id=UltimoJspFile>
+	<field id=UltimaJspData>
+	<field id=UltimaJspUrl>	
+	<kColl id=CabeceraArquitecturaCICSBBVA>
+		<field id=Banco value=0179>
+		<field id=Oficina value=1000>
+		<field id=CodCanal value=0004>
+		<field id=CodMedioAcceso value=0007>
+		<field id=CodServicio value=0001>
+		<field id=TipoIdCliente value=01>
+		<field id=IdCliente value=7777777777777777>
+		<field id=NumeroOperacion value=000000000>
+	</kColl>
+</kColl>
+
+<!  DATOS COMUNES TRANSACCIONES  -------------------------  >
+<kColl id=DatosComunesTx>
+	<field id=ModoOperacion value=Consulta>
+	<field id=Timeout value=60>
+	<field id=LongitudCabeceraHost value=195>
+</kColl>
+
+<!  --- CABECERA GENERAL ---  >
+<kColl id=CabGeneral>
+	<field id=CodTransac value=" ">
+	<field id=Espacio value=" ">
+	<field id=FmtCabecera value="AA01">
+</kColl>
+
+<!  --- CABECERA AA01 ---  >
+<kColl id=CabAA01>
+	<! -- Subcabecera Aplicacion -->
+	<field id=CodTransac value=" "> 
+	<field id=CodTipOper value=0>
+	<field id=CodSubtipo value=0>
+	<field id=CodVersion value=0>
+	<field id=CodBanco    value=0179>
+	<field id=CodOficina  value=1000>
+	
+	<! -- Subcabecera Personalizacion -->
+	<field id=CodCanal    value=0004>
+	<field id=CodMedioAcceso value=0007>
+	<field id=CodServicio value=0001>
+	<field id=FecOper     value=19000101>
+	<field id=HoraOper     value=010101>
+	<field id=NumOper     value=1>
+	<field id=XtiClien  value=01>
+	<field id=CodClien     value="7777777777777777">
+
+	<! -- Subcabecera Respuesta -->
+	<field id=CodRetorno value=" ">
+	<field id=CodError   value=" ">
+	<field id=DesTexto   value=" ">
+	<field id=XtiSalida  value="00">
+</kColl>
+
+
+<kColl id=CabeceraHost>
+	<refData refId=CabGeneral>
+	<refData refId=CabAA01>
+</kColl>
+
+<!  DATOS COMUNES PROCESO -------------------------  >
+<kColl id=PrComun>
+	<field id=nombrePr>	
+	<field id=estadoPr>	
+	<field id=nombreOperacionInvocada>	
+	<field id=nombreOperacionEjecutada>
+	<field id=jsp>		
+	<field id=jspData>
+	<field id=urlData>	
+</kColl>
+
+<!  DATOS COMUNES OP -------------------------  >
+<kColl id=OPComun>
+	<field id=nombreOP>	
+	<field id=estadoOP>	
+	<field id=accion>		
+</kColl>
+
+<!  DATOS COMUNES OM -------------------------  >
+<kColl id=OMComun>
+	<field id=ModoOperacion value="">	
+	<field id=NumeroOperacion>	
+	<field id=CodigoError>		
+	<field id=DescripcionError>		
+</kColl>
+
+<! ----- DEFINICION DE ARQUITECTURAS DE COMUNICACIONES ----->
+<kColl id=ArquitecturaOtma>
+	<kColl id=CapaControl>
+		<field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.otma.CapaControlOtma>
+	</kColl>
+	<kColl id=CapaFormateo>
+		<field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.otma.CapaFormateoOtma>
+		<field id=DatosCabeceraEnvio value=CabeceraHost>
+		<field id=FormatoCabeceraEnvio value=CabeceraHost>
+		<field id=DatosCabeceraRecepcion value=CabeceraHost>
+		<field id=FormatoCabeceraRecepcion value=CabeceraHost>
+		<field id=LongitudCabeceraRecepcion value=195>
+	</kColl>
+	<kColl id=CapaComunicaciones>
+		<field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.otma.CapaComunicacionesOtma>
+		<kColl id=Consulta>
+			<field id=SufijoServicioComunicaciones value="">
+			<field id=NumeroReintentos value=1>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=60>
+		</kColl>
+		<kColl id=TxSincrono>
+			<field id=SufijoServicioComunicaciones value="">
+			<field id=NumeroReintentos value=1>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=60>
+		</kColl>
+		<kColl id=Sincrono>
+			<field id=SufijoServicioComunicaciones value="Sincrono">
+			<field id=NumeroReintentos value=0>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=60>
+		</kColl>
+		<kColl id=Asincrono>
+			<field id=SufijoServicioComunicaciones value="Sincrono">
+			<field id=NumeroReintentos value=0>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=0>
+		</kColl>
+
+	</kColl>
+</kColl>
+<kColl id=ArquitecturaCics>
+	<kColl id=CapaControl>
+		<field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.cics.CapaControlCics>
+	</kColl>
+	<kColl id=CapaFormateo>
+		<field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.cics.CapaFormateoCics>
+		<field id=DatosCabeceraEnvio value=CabeceraHost>
+		<field id=FormatoCabeceraEnvio value=CabeceraHost>
+		<field id=DatosCabeceraRecepcion value=CabeceraHost>
+		<field id=FormatoCabeceraRecepcion value=CabeceraHost>
+		<field id=LongitudCabeceraRecepcion value=179>
+	</kColl>
+	<kColl id=CapaComunicaciones>
+		<field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.cics.CapaComunicacionesCics>
+		<kColl id=Consulta>
+			<field id=SufijoServicioComunicaciones value="">
+			<field id=NumeroReintentos value=1>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=60>
+		</kColl>
+		<kColl id=TxSincrono>
+			<field id=SufijoServicioComunicaciones value="">
+			<field id=NumeroReintentos value=1>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=60>
+		</kColl>
+		<kColl id=Sincrono>
+			<field id=SufijoServicioComunicaciones value="Sincrono">
+			<field id=NumeroReintentos value=0>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=60>
+		</kColl>
+		<kColl id=Asincrono>
+			<field id=SufijoServicioComunicaciones value="Sincrono">
+			<field id=NumeroReintentos value=0>
+			<field id=TimeoutReintentos value=5>
+			<field id=Timeout value=0>
+		</kColl>
+
+	</kColl>
+</kColl>
+<! -----DATOS PARA EL SERVICIO DUMMY DE COMUNICACIONES ----->
+
+<kColl id=CodigoTXEntrada>
+	<field id=Dummy>
+	<field id=IdTx>
+</kColl>
+
+<! ------------------------------  >

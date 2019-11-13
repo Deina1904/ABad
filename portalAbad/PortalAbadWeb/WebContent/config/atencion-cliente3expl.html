@@ -1,0 +1,511 @@
+<html>
+<head>
+<META HTTP-EQUIV="EXPIRES" CONTENT="1">
+      <meta http-equiv="Content-Type"
+      content="text/html; charset=iso-8859-1">
+      <title>Contáctenos, BBVA net</title>
+      <LINK REL="STYLESHEET" TYPE="TEXT/CSS" HREF="estilos/email3.css">
+<script language="JavaScript" src="js/tiempo.js"></script>
+<SCRIPT language=JavaScript1.2>
+
+ var valores = new Object();
+ var apuntador=0;
+ var i=0;
+ var j=0;
+
+ valores[0] = " ";
+ valores[1] = " ";
+ valores[2] = " ";
+ valores[3] = " ";
+ valores[4] = " ";
+ valores[5] = " ";
+ valores[6] = " ";
+ valores[7] = " ";
+ valores[8] = " ";
+
+function lv(parm) {
+
+
+ for (apuntador=0; apuntador < 9 ; apuntador++ )
+ {
+   if(parm == apuntador)
+	{
+	if(document.forms[0].elements[parm].value==valores[parm])
+		document.forms[0].elements[parm].value="";
+	}
+   else
+	{
+  	 j=0;
+	 while (j<9)
+	  {
+	     if((document.forms[0].elements[j].value=="") && (parm!=j))
+	       document.forms[0].elements[j].value=valores[j];
+	     j++;
+	  }
+	}
+ }
+
+}
+
+function arrobas(cadena) {
+ var k=0;
+ var i=0;
+ for ( i=0; i < cadena.length; i++)
+  {
+     if(cadena.substring(i, i+1) == "@")
+       k+=1;
+  }
+  if (k==1)
+   {
+    if( ( cadena.substring(0,1) != "@") && ( cadena.substring(cadena.length-1,cadena.length) != "@") )
+      return (true);
+    else
+     return (false);
+   }
+  else
+   return (false);
+}
+
+function esvacio(cadena) {
+ for (var i=0; i < cadena.length ; i++ )
+  {
+     if(cadena.substring(i, i+1) != " ")
+       return 0;
+  return 1;
+  }
+}
+
+function numero(Cadena)
+{
+    var ContadorDecimal=0;
+    var CaracteresValidos="0123456789";
+    for (var i=0; i< Cadena.length; i++)
+    {
+    	if (CaracteresValidos.indexOf(Cadena.charAt(i)) == -1)
+		return true;
+    }
+    return false;
+}
+
+function lchk(parm) {
+
+ var l=document.forms[0].elements[parm].value;
+ var v=esvacio(l);
+ var a=arrobas(l);
+ var retorno=false;
+
+ if(parm==0)
+  {
+
+   if((v)||(l.length<5))
+	 {
+	  alert("El campo Nombre es inválido, debe tener al menos 5 caracteres alfanuméricos");
+	  document.forms[0].elements[parm].focus();
+	  return false;
+	 }
+   else
+	retorno=true;
+  }
+if(parm==1)
+  {
+  var test1=true;
+  var e1 = document.forms[0].elements[parm].options[document.forms[0].elements[parm].options.selectedIndex].value;
+  var num = document.forms[0].elements[2].value;
+   if(e1=="nulo"){
+	  alert("El campo Tipo de Identificación es inválido, debe seleccionar un tipo");
+	  document.forms[0].elements[parm].focus();
+	  test1=false;
+          return false;
+   }
+   if(numero(num)){
+      alert("El campo Numero es inválido, ingrese solo datos numericos.");
+      document.forms[0].elements[2].focus();
+      test1=false;
+      return false;
+   }
+   if(e1=="0"&&num<=0){
+      alert("El campo Numero es inválido, verifique la concordancia entre los campos Tipo de Identificación y Numero");
+      document.forms[0].elements[parm].focus();
+      test1=false;
+      return false;
+   }
+   if(e1=="1"&&(num<=0||num>99999999)){
+      alert("El campo Numero es inválido, verifique la concordancia entre los campos Tipo de Identificación y Numero");
+      document.forms[0].elements[parm].focus();
+      test1=false;
+      return false;
+   }
+   //if( e1=="2" && ( (num<599999999 || num>700000000)||(num<1 || num>10000001) ) ){
+   if( e1=="2" && num<0){
+      alert("El campo Numero es inválido, verifique la concordancia entre los campos Tipo de Identificación y Numero");
+      document.forms[0].elements[parm].focus();
+      test1=false;
+      return false;
+   }
+   if(e1=="4"&&(num < 1000000000 || num > 999999999999)){
+      alert("El campo Numero es inválido, verifique la concordancia entre los campos Tipo de Identificación y Numero");
+      document.forms[0].elements[parm].focus();
+      test1=false;
+      return false;
+   }
+   if(e1=="5"&& num < 0){
+      alert("El campo Numero es inválido, verifique la concordancia entre los campos Tipo de Identificación y Numero");
+      document.forms[0].elements[parm].focus();
+      test1=false;
+      return false;
+   }
+   if(test1){
+      retorno=true;
+   }
+}
+
+
+
+
+
+
+if(parm==3)
+  {
+
+   if((v)||(l.length<10))
+	 {
+	  alert("El campo Dirección es inválido, debe tener al menos 10 caracteres alfanuméricos");
+	  document.forms[0].elements[parm].focus();
+	  return false;
+	 }
+   else
+	retorno=true;
+  }
+
+ if(parm==6)
+  {
+   if((v)||(l.length<3)||(!a))
+	 {
+	  alert("El campo eMAil es inválido, debe tener al menos 2 caracteres alfanuméricos y sólo un símbolo @");
+	  document.forms[0].elements[parm].focus();
+	  retorno=false;
+	 }
+   else
+	retorno=true;
+  }
+
+if(parm==4)
+  {
+
+   if((v)||(l.length<7))
+	 {
+	  alert("El campo Teléfono es inválido, debe tener al menos 7 caracteres alfanuméricos");
+	  document.forms[0].elements[parm].focus();
+	  return false;
+	 }
+   else
+	retorno=true;
+  }
+
+if(parm==5)
+  {
+
+   if((v)||(l.length<4))
+	 {
+	  alert("El campo Ciudad es inválido, debe tener al menos 4 caracteres alfanuméricos");
+	  document.forms[0].elements[parm].focus();
+	  return false;
+	 }
+   else
+	retorno=true;
+  }
+
+if(parm==7)
+  {
+
+   if((v)||(l.length<4))
+	 {
+	  alert("El campo Departamento es inválido, debe tener al menos 4 caracteres alfanuméricos");
+	  document.forms[0].elements[parm].focus();
+	  return false;
+	 }
+   else
+	retorno=true;
+  }
+
+if(parm==8)
+  {
+
+   if((v)||(l.length<4))
+	 {
+	  alert("El campo País es inválido, debe tener al menos 4 caracteres alfanuméricos");
+	  document.forms[0].elements[parm].focus();
+	  return false;
+	 }
+   else
+	retorno=true;
+  }
+
+  if(parm==9)
+  {
+   var e9 = document.forms[0].elements[parm].options[document.forms[0].elements[parm].options.selectedIndex].value;
+   if(e9=="nulo")
+	 {
+	  alert("El campo Asunto es inválido, debe seleccionar un asunto");
+	  document.forms[0].elements[parm].focus();
+	  return false;
+	 }
+   else
+	retorno=true;
+  }
+
+ if(parm==10)
+  {
+   if((esvacio(l))||(l.length<10))
+	 {
+	  alert("El campo Mensaje es inválido, debe tener al menos 10 caracteres alfanuméricos");
+	  document.forms[0].elements[parm].focus();
+	  retorno=false;
+	 }
+   else
+	retorno=true;
+  }
+return retorno;
+}
+
+function check_input() {
+
+ if(lchk(0)&&lchk(1)&&lchk(3)&& lchk(4)&& lchk(5)&& lchk(6)&& lchk(7)&& lchk(8)&& lchk(9) && lchk(10))
+{
+			document.forms.protecdatos.submit()
+ }
+
+ }
+
+</SCRIPT>
+
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="document.forms[0].elements[0].focus();controlSesion()">
+
+<table cellspacing="0" cellpadding="0" border="0" width=450>
+  <tr>
+  <td colspan=4>
+   <p class="titulo" align="left"><font color="#003399"><strong>Envíenos sus inquietudes
+        o sugerencias</strong></font><br>
+    </td>
+ </tr>
+ <tr>
+  <td colspan=4 width="450" bgcolor="#FFFFFF">
+   <p class="pesos5" align="justify" bgcolor="#FFFFFF"> <font color="#003399">En
+        BBVA ponemos todos nuestros medios para dar respuesta a las <strong>INQUIETUDES
+        y SUGERENCIAS</strong>, que nos sirvan para mejorar la calidad de nuestros
+        productos y servicios, pudiendo efectuarlas a través de:</font><BR>
+      <blockquote>
+        <p class="pesos5" align="left"> <font color="#003399">- Nuestra red de
+          oficinas a nivel nacional.<BR>
+          - Formulario de Contacto,que se muestran a continuaci&oacute;n.</font></blockquote>
+  </td>
+ </tr>
+ <tr>
+    <td colspan=4 bgcolor="#FFFFFF"> <p class="titulo1"><strong><font color="#003399">Formulario
+        de Contacto</font></strong><br>
+      </p>
+  </td>
+ </tr>
+
+ <form name=protecdatos action="OperacionCBTFServlet?proceso=envio_email_pr&operacion=envio_email_op&accion=envioEmail" method="POST" >
+    <tr>
+      <td width="150" class="pesos3" bgcolor="#FFFFFF"><font color="#003399">Nombre Usuario:</font></td>
+     <td width="250" bgcolor="#FFFFFF">
+      <input type="text" size="66" name=nombre class=texto1 onfocus="lv(0)">
+     </td>
+    </tr>
+	<tr>
+      <td width="150" class="pesos3" bgcolor="#FFFFFF"><font color="#003399">Nombre Empresa:</font></td>
+     <td width="250" bgcolor="#FFFFFF">
+      <input type="text" size="66" name=nombre class=texto1 onfocus="lv(0)">
+     </td>
+    </tr>
+	<tr>
+      <td width="150" class="pesos3" bgcolor="#FFFFFF">&nbsp;</td>
+      <td width="250" class="pesos5" bgcolor="#FFFFFF"><font color="#003399">Ingrese
+        los n&uacute;meros sin incluir guiones ni espacios.</font></td>
+    </tr>
+
+    <tr>
+      <td width="150" class="pesos3" bgcolor="#FFFFFF"><font color="#003399">No. Identificaci&oacute;n</font></td>
+	  <td width="250">
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0" id="identificacion">
+          <tr>
+		    <td width="57%" class="pesos3"bgcolor="#FFFFFF"> <font color="#003399">T.I.</font>&nbsp;
+              <select name="tipoid" class="pesos7" id="tipoid" onfocus="lv(1)">
+                <option value="nulo" selected>Seleccione</option>
+                <option value="0">NIP</option>
+                <option value="1">C&Eacute;DULA DE CIUDADAN&Iacute;A</option>
+                <option value="2">C&Eacute;DULA DE EXTRANJER&Iacute;A</option>
+                <option value="4">TARJETA DE IDENTIDAD</option>
+                <option value="5">PASAPORTE</option>
+              </select>
+		  </td>
+		    <td width="43%" class="pesos3"bgcolor="#FFFFFF">&nbsp;&nbsp;<font color="#003399">&nbsp;N&uacute;mero:</font>&nbsp;&nbsp;
+              <input name="numero" type="text" id="numero" size="17" maxlength="15" onfocus="lv(2)">
+		</td>
+		</tr>
+		</table>
+
+
+	  </td>
+    </tr>
+    <tr>
+      <td width="150" class="pesos3"bgcolor="#FFFFFF"><font color="#003399">Dirección:</font></td>
+     <td width="250"bgcolor="#FFFFFF">
+      <input type="text" size="66" name=direccion class=texto1 onfocus="lv(3)" >
+     </td>
+    </tr>
+    <tr>
+      <td width="150" class="pesos3"bgcolor="#FFFFFF"><font color="#003399">Teléfono:</font></td>
+     <td width="150" bgcolor="#FFFFFF">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+	<td width="100"bgcolor="#FFFFFF">
+	 <input type="text" size="19" name=telefono class=texto1 onfocus="lv(4)" >
+	</td>
+	        <td class="pesos3" align=CENTER bgcolor="#FFFFFF"><font color="#003399">Ciudad : </font></td>
+	<td width="200" align="right"bgcolor="#FFFFFF">
+	 <input type="text" size="32" name=ciudad class=texto1 onfocus="lv(5)" >
+	</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+	<tr>
+      <td width="150" class="pesos3"bgcolor="#FFFFFF"><font color="#003399">Email:</font></td>
+     <td width="250"bgcolor="#FFFFFF">
+      <input type="text" size="66" name=email class=texto1 onfocus="lv(6)" >
+     </td>
+    </tr>
+
+    <tr>
+      <td width="150" class="pesos3" bgcolor="#FFFFFF" ><font color="#003399">Departamento:</font></td>
+     <td width="250"bgcolor="#FFFFFF">
+       <input name=depto type="text" class=texto1 onfocus="lv(7)" size="66" maxlength="50" >
+     </td>
+    </tr>
+    <tr>
+      <td width="150" class="pesos3"bgcolor="#FFFFFF"><font color="#003399">País:</font></td>
+     <td width="250"bgcolor="#FFFFFF">
+      <input name=pais type="text" class=texto1 onfocus="lv(8)" size="66" maxlength="50" >
+     </td>
+    </tr>
+    <tr>
+      <td width="150" class="pesos3"bgcolor="#FFFFFF"><font color="#003399">Asunto:</font></td>
+      <td width="250" class="pesos3"bgcolor="#FFFFFF">
+<select name=asunto class=pesos7 onfocus="lv(9)">
+          <option value="nulo" selected>Seleccione un Asunto</option>
+          <option value="CUENTAS CORRIENTES">CUENTAS CORRIENTES</option>
+          <option value="CUENTAS DE AHORROS">CUENTAS DE AHORROS</option>
+          <option value="C.D.T">C.D.T</option>
+          <option value="GIROS">GIROS</option>
+          <option value="RECAUDO NACIONAL">RECAUDO NACIONAL</option>
+          <option value="IMPUESTOS">IMPUESTOS</option>
+          <option value="REMESAS">REMESAS</option>
+          <option value="CHEQUES DE GERENCIA">CHEQUES DE GERENCIA</option>
+          <option value="PRESTAMOS">PRÉSTAMOS</option>
+          <option value="TARJETA DE CREDITO">TARJETA DE CRÉDITO</option>
+          <option value="TARJETA DEBITO">TARJETA DÉBITO</option>
+          <option value="COMERCIO EXTERIOR">COMERCIO EXTERIOR</option>
+          <option value="S.I.E.T.E">S.I.E.T.E</option>
+          <option value="CAJEROS AUTOMATICOS">CAJEROS AUTOMÁTICOS</option>
+          <option value="GANANET">BBVA net</option>
+          <option value="CALL CENTER">LINEA BBVA</option>
+          <option value="SEGUROS">SEGUROS</option>
+          <option value="FONDOS DE INVERSION">FONDOS DE INVERSIÓN</option>
+          <option value="PENSIONES Y CESANTIAS">PENSIONES Y CESANTÍAS</option>
+          <option value="nulo"></option>
+        </select>
+
+     </td>
+    </tr>
+    <tr>
+      <td valign="top" width="450" class="pesos3" bgcolor="#FFFFFF"><font color="#003399">Mensaje:</font></td>
+      <td width="450" bgcolor="#FFFFFF">
+       <textarea name=textfield rows="9" cols="68" class=texto1 onfocus="lv(10)" ></textarea>
+      </td>
+    </tr>
+    <tr>
+     <td bgcolor="#FFFFFF" >
+     </td>
+      <td bgcolor="#FFFFFF"> <div align="center">
+          <input type="button" name="cmdSubmit" class="pesos1" value="Enviar Correo" onClick="check_input()">
+          <input type="reset" name="cmdClear" class="pesos1" value="Limpiar Datos">
+        </div></td>
+    </tr>
+    <tr>
+     <td bgcolor="#FFFFFF">
+     </td>
+     <td width="450" bgcolor="#FFFFFF">
+        <P class="pesos4" >&nbsp; </P>
+     </td>
+    </tr>
+		<input type="HIDDEN" name=correo value="helpdesk@bbvaganadero.com">
+		<input type="HIDDEN" name=nombreE value="">
+
+  </form>
+</table>
+
+<table cellspacing="2" cellpadding="2" border="0" width=503>
+ <tr>
+   <td colspan="3"><font face="Arial" size="2">
+    <textarea cols=85 rows=5 name="area2"  class="pesos2">POLÍTICA DE PROTECCIÓN DE DATOS:
+La página Web de BANCO BILBAO VIZCAYA ARGENTARIA COLOMBIA S.A. "BBVA" , en adelante "EL BANCO", en www.bbva.com.co, no reconoce de modo automático ningún dato referente a la identidad de los  visitantes de sus páginas. En aquellos supuestos en que el usuario solicite información sobre servicios o productos o desee realizar tramitación de reclamaciones o incidencias, a través del envío de formularios residentes en las páginas web de EL BANCO, será en todo caso necesario recoger aquellos datos personales imprescindibles para poder informarle sobre su solicitud. Todos estos datos son tratados con absoluta confidencialidad, siendo accesibles a EL BANCO y las demás empresas de Grupo BBVA en Colombia. Los terceros no autorizados por EL BANCO o por las demás empresas de Grupo BBVA, no podrán acceder a estos datos para finalidades distintas para las que han sido solicitados.
+    </textarea></font>
+   </td>
+  </tr>
+  <tr>
+   <td width="450" bgcolor="#FFFFFF">
+    <font face="Arial" size="2" color="#C0C0C0">
+     <br>
+     </font>
+      <p class=pesos6> <font color="#003399"><strong>AVISO INFORMATIVO SOBRE EL
+        TRATAMIENTO AUTOMATIZADO DE DATOS PERSONALES.</strong></font><strong><br>
+        </strong><br>
+      <p align="justify" class=pesos5> <font color="#003399"><span class="pesos5"><font color="#003399">Los
+        datos personales del(os) interviniente/s facilitados por éste/os al Banco,
+        ahora o en el futuro e incluyendo también los resultantes de procesos
+        informáticos derivados de los registrados, serán incluídos en sus ficheros
+        automatizados con la finalidad de su utilización por el propio Banco o,
+        en su caso, por otros terceros, de conformidad con lo prevenido en esta
+        cláusula.<br>
+        El Banco utilizará dichos datos para la gestión de la relación contractual
+        Banco-cliente, en el evento de que exista, incluyendo la posibilidad de
+        remisión, por parte del Banco o de otros terceros por cuenta del Banco,
+        de cualesquiera informaciones o prospecciones, personalizadas o no, sobre
+        productos o servicios bancarios o de terceros, o para responder sus inquietudes,
+        o para atender sus sugerencias y para cualesquiera otras finalidades no
+        incompatibles con las específicas anteriores. El interviniente autoriza
+        expresamente al Banco para conservar en sus ficheros y/o base de datos
+        del Banco incluso una vez finalizada toda relación contractual con el
+        interviniente/s, exclusivamente para<br>
+        remisión de las informaciones o realización de las prospecciones anteriormente
+        previstas y, en todo caso, durante los plazos legalmente establecidos,
+        a disposición de autoridades administrativas o judiciales.<br>
+        El interviniente/s autoriza al Banco a comunicar o interconectar dichos
+        datos a terceros que formen parte del Grupo BBVA, para su utilización
+        en cualquiera de las finalidades indicadas en el párrafo anterior, considerándose
+        el interviniente/s informado de esta cesión a dichos cesionarios en virtud
+        de la presente cláusula. Este consentimiento para comunicación de datos
+        a terceros tiene carácter revocable en todo momento.<br>
+        La información recibida por parte del interviniente se canalizará a través
+        del BANCO BILBAO VIZCAYA ARGENTARIA COLOMBIA S.A. , con domicilio principal
+        en la ciudad de Bogotá (Colombia) en la Carrera 9ª. No. 72-21.<br>
+        EL BANCO no se responsabiliza por los perjuicios de cualquier naturaleza
+        que pueda sufrir el interviniente como consecuencia de una imposibilidad,
+        demora o deficiente transmisión de los datos u operaciones solicitadas
+        en su computador, a causa de fallas de comunicación, fallas en el equipo
+        del interviniente o fallas técnicas ajenas al control de EL BANCO. Tampoco
+        será responsable en los eventos de fuerza mayor, caso fortuito o causa
+        extraña que en un algún momento puedan ocasionarle perjuicios al equipo
+        o medio físico utilizado por interviniente para comunicarse con el sistema
+        de computación de EL BANCO.</font></span></font><br>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

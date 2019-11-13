@@ -1,0 +1,64 @@
+﻿<! BBVA  ---------------------------------------------------------------------------------------------------------------->
+<! Operación:  MULTICANAL inscrip_produc_operac_terceros_om  ------------------------------------------------------------>
+
+<! OPERACION ------------------------------------------------------------------------------------------------------------>
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=inscrip_produc_operac_terceros_om operationContext=OperationContext>
+	<refKColl refId=inscrip_produc_operac_terceros_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! ---------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------------------------------------------->
+<kColl id=inscrip_produc_operac_terceros_om-data>
+	<field id=IdTx value=TxFN34ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01 value=&@D06/16/2000>
+	  <field id=BFECHA02 value=&@D06/16/2000>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+    <kColl id=Salida>
+  	  <field id=BINDPAGI>
+	  <field id=AREDPAGI>
+	  <iColl id=omIcListaInscripciones>
+	    <kColl id=omKcInscripcion>
+		  <field id=omStrTipAsunaso>
+		  <field id=omStrNumAsunaso>
+		  <field id=omStrCanal>
+		  <field id=omStrBanco>
+		  <field id=omStrEstado>
+		  <field id=omStrDesEstado>
+		  <field id=omStrBancoAsoc>
+		  <field id=omStrDesBancoAsoc>
+		  <field id=omStrNomAsoc>
+		  <field id=omStrTipDocAsoc>
+		  <field id=omStrNomDocAsoc>
+	    </kColl>
+	  </iColl>
+	</kColl >
+</kColl>
+
+<! COPIADOR ------------------------------------------------------------------------------------------------------------->
+<kColl id=inscrip_produc_operac_terceros_om-copiar>
+	<kColl id=a-TxFN34ENET>
+		<field id=Entrada value=TxFN34ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN34ENET>
+		<field id=Salida value=TxFN34ENETSalida-01>
+	</kColl>
+</kColl>
+<! ---------------------------------------------------------------------------------------------------------------------->

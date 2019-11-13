@@ -1,0 +1,45 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  carga_fun_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.migracion.PrCargaFunciones id=carga_fun_pr operationContext=OperationContext>
+
+	<refKColl refId=carga_fun_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=carga_fun_op>
+
+		<estadoPr id=1 operacion=carga_fun_op>
+
+
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=carga_fun_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=carga_fun_op estadoOP=ERROR jspFile=gn001_error>
+
+
+		<salidaPr id=1 operacion=carga_fun_op estadoOP=1 jspFile=carga_funcion_01>
+		<salidaPr id=1 operacion=carga_fun_op estadoOP=fun jspFile=funcion_01>
+		<salidaPr id=1 operacion=carga_fun_op estadoOP=fun1 jspFile=funcion_02>
+		<salidaPr id=1 operacion=carga_fun_op estadoOP=2 jspFile=carga_funcion_02>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.migracion.PrCargaFunciones>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=carga_fun_pr-data>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

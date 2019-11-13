@@ -1,0 +1,57 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  personalizacionMe_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.per.PrPersonalizacionMe id=personalizacionMe_pr operationContext=OperationContext>
+	<refKColl refId=personalizacionMe_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=per_menu_op>
+
+		<estadoPr id=1 operacion=per_menu_op>
+		<estadoPr id=1 operacion=per_confirmarMe_op>
+
+		<estadoPr id=2 operacion=per_menu_op>
+		<estadoPr id=2 operacion=per_confirmarMe_op>
+		<estadoPr id=2 operacion=per_realizarMe_op>
+
+		<estadoPr id=3 operacion=per_menu_op>
+		<estadoPr id=3 operacion=per_realizarMe_op>
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=per_menu_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=per_menu_op estadoOP=1 jspFile=per001_rel_items>
+		<salidaPr id=1 operacion=per_menu_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=per_confirmarMe_op estadoOP=1 jspFile=per003_conf>
+
+		<!salidaPr id=2 operacion=per_modulo_op estadoOP=ERROR jspFile=gn001_error>
+		<!salidaPr id=2 operacion=per_modulo_op estadoOP=1 jspFile=per002_rel_mod>
+		<salidaPr id=1 operacion=per_realizarMe_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=1 operacion=per_confirmarMe_op estadoOP=1 jspFile=per003_conf>
+
+		<salidaPr id=2 operacion=per_realizarMe_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=2 operacion=per_confirmarMe_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=per_confirmarMe_op estadoOP=1 jspFile=per003_conf>
+		<salidaPr id=2 operacion=per_confirmarMe_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+
+		<salidaPr id=3 operacion=per_realizarMe_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=per_realizarMe_op estadoOP=1 jspFile=per004_realizar>
+	</resultadoPr>
+</com.grupobbva.bc.col.web.per.PrPersonalizacionMe>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=personalizacionMe_pr-data>
+	  <field id=CodAplicacionPr>
+	  <field id=CodPerfilPr>
+	  <!codigo secuencia items>
+	  <field id=ItemsUsPr>
+	  <!codigo id modulo>
+	  <field id=ModsUsPr>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

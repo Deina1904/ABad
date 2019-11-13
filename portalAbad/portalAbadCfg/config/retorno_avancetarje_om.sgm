@@ -1,0 +1,58 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL retorno_avancetarje_om  ------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=retorno_avancetarje_om operationContext=OperationContext>
+	<refKColl refId=retorno_avancetarje_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=retorno_avancetarje_om-data>
+	<field id=IdTx value=TxFN90ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=REFCARGO>
+	  <field id=REFABONO>
+	  <field id=FECHOPER>
+	  <field id=FECHAVAL>
+	  <field id=INDICAOK>
+	  <field id=NUMAUTOR>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= retorno_avancetarje_om-copiar>
+	<kColl id=a-TxFN90ENET>
+		<field id=Entrada value=TxFN90ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN90ENET>
+		<field id=Salida value=TxFN90ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

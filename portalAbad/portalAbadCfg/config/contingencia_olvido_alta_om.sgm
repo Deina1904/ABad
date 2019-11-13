@@ -1,0 +1,24 @@
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.contingencia.olvidousuario.OmContingenciaOlvidoAlta id=contingencia_olvido_alta_om  operationContext=OperationContext>
+	<refKColl refId=contingencia_olvido_alta_om-data>
+</com.grupobbva.bc.col.web.contingencia.olvidousuario.OmContingenciaOlvidoAlta>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=contingencia_olvido_alta_om-data>
+	<kColl id=Entrada>
+	  <field id=Alias>
+	  <field id=Password>
+	  <field id=OperPassword>
+	  <field id=Country>
+	  <field id=Bank>
+	</kColl >
+	
+	<kColl id=Salida>
+	  <field id=CODRESPUESTA>
+	  <field id=RESPUESTA>
+	</kColl >
+</kColl>
+
+<! ---------------------------------------------------------------------------------->
+

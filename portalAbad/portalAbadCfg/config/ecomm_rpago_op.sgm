@@ -1,0 +1,76 @@
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.dype.OPeCommRPago id=ecomm_rpago_op operationContext=OperationContext>
+   <refKColl refId=ecomm_rpago_op-data>
+   <refFormat name=htmlRequestFormat refId=CtasOPHTMLFmt>
+   <refFormat name=jspFormat refId=RelacionCtasOrdJspFmt>
+   <refFormat name=jspFormat refId=VerificacionCLavesJspFmt>
+   <refFormat name=jspFormat refId=ErrorOPJspFmt>
+   <refOM refId=obtener_usuario_interno_om>
+   <refOM refId=sign_on_om>
+   <refOM refId=asuntos_principales_om>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+   <navegacionOP>
+      <estadoOP id=0 accion=verificar metodo=inicio requestFmt=CtasOPHTMLFmt>
+      <estadoOP id=0 accion=cargarclaves metodo=cargarclaves requestFmt=CtasOPHTMLFmt>
+   </navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+   <resultadoOP>
+      <salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+      <salidaOP id=1 jspFmt=RelacionCtasOrdJspFmt>
+      <salidaOP id=0 jspFmt=RelacionCtasOrdJspFmt>
+      <salidaOP id=PGPCLAVES jspFmt=VerificacionCLavesJspFmt>
+   </resultadoOP>
+
+
+</com.grupobbva.bc.col.web.dype.OPeCommRPago>
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ecomm_rpago_op-data>
+   <field id=Error>
+</kColl>
+
+<fmtDef id=RelacionCtasOrdJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=VerificacionCLavesJspFmt>
+   <fJsp>
+      <fString dataName=desInfoPruebaSHD description=desInfoPruebaSHD><nullCheck>
+      <fString dataName=desInfoPruebaBBVA description=desInfoPruebaBBVA><nullCheck>
+      <fString dataName=desInfoRetorno description=desInfoRetorno><nullCheck>
+   </fJsp>
+</fmtDef>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=RelacionCtasOrdJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=s_cod_nomconta description=usuario>
+      <fString dataName=Error description=mensaje>
+   </fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=CtasOPHTMLFmt>
+   <fHTMLReq>
+      <fString dataName=SHDINFO>
+   </fHTMLReq>
+</fmtDef>
+<! --------------------------------------------------------------------------------->

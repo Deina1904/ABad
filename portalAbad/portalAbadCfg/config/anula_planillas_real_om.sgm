@@ -1,0 +1,55 @@
+<! BBVA ---------------------------------------------------------------------------------------------------------------->
+<! Operación: MULTICANAL anula_planillas_tx_om -------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=anula_planillas_real_om operationContext=OperationContext>
+
+	<refKColl refId=anula_planillas_real_om-data>
+
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+
+<! --------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------->
+<kColl id=anula_planillas_real_om-data>
+	<field id=IdTx value=TxFN19ENET>
+	<field id=MaxNumRegistros>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=FECHA>
+	  <field id=INDOK>
+    </kColl >
+</kColl>
+
+<! COPIADOR ------------------------------------------------------------------------------------------------------------>
+
+<kColl id=anula_planillas_real_om-copiar>
+	<kColl id=a-TxFN19ENET>
+		<field id=Entrada value=TxFN19ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN19ENET>
+		<field id=Salida value=TxFN19ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------->
+

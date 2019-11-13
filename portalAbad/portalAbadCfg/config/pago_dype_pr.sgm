@@ -1,0 +1,90 @@
+<! BBVA  --------------------------------------------------------------------------->
+<! Operación:  PROCESO  pago_dype_pr  --------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.dype.PrPagoDype id=pago_dype_pr operationContext=OperationContext>
+
+   <refKColl refId=pago_dype_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------->
+   <navegacionPr>
+
+      <estadoPr id=0 operacion=ecomm_rpago_op>
+      <estadoPr id=1 operacion=ecomm_rpago_op>
+
+      <estadoPr id=0 operacion=ecomm_ctas_ord_op>
+      <estadoPr id=1 operacion=ecomm_ctas_ord_op>
+
+      <estadoPr id=1 operacion=ecomm_cpago_op>
+      <estadoPr id=2 operacion=ecomm_cpago_op>
+      <estadoPr id=2 operacion=ecomm_ctas_ord_op>
+
+      <estadoPr id=2 operacion=ecomm_hpago_op>
+      <estadoPr id=3 operacion=ecomm_hpago_op>
+
+
+   </navegacionPr>
+
+   <! SALIDAS --------------------------------------------------------------------------->
+   <resultadoPr>
+
+      <salidaPr id=0 operacion=ecomm_rpago_op estadoOP=1 jspFile=cargar_ecomm_001>
+      <salidaPr id=0 operacion=ecomm_rpago_op estadoOP=PGPCLAVES jspFile=cargar_claves_pgp_001>
+      <salidaPr id=0 operacion=ecomm_rpago_op estadoOP=ERROR jspFile=ec002_error>
+      <salidaPr id=1 operacion=ecomm_ctas_ord_op estadoOP=VALIDAR jspFile=cargar_ecomm_001>
+
+      <salidaPr id=1 operacion=ecomm_ctas_ord_op estadoOP=1 jspFile=pd001_ctas>
+      <salidaPr id=1 operacion=ecomm_ctas_ord_op estadoOP=VALIDAR jspFile=pd001_ctas>
+      <salidaPr id=1 operacion=ecomm_ctas_ord_op estadoOP=ERROR jspFile=gn001_error>
+      <salidaPr id=1 operacion=ecomm_ctas_ord_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+      <salidaPr id=0 operacion=ecomm_ctas_ord_op estadoOP=ERROR jspFile=gn001_error>
+      <salidaPr id=0 operacion=ecomm_ctas_ord_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+
+      <salidaPr id=2 operacion=ecomm_cpago_op estadoOP=1 jspFile=pd002_ctas>
+      <salidaPr id=2 operacion=ecomm_cpago_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+      <salidaPr id=2 operacion=ecomm_cpago_op estadoOP=ERROR jspFile=gn001_error>
+      <salidaPr id=2 operacion=ecomm_cpago_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+
+      <salidaPr id=2 operacion=ecomm_hpago_op estadoOP=MENSAJE jspFile=gn002_error>
+      <salidaPr id=2 operacion=ecomm_hpago_op estadoOP=ERROR jspFile=gn002_error>
+      <salidaPr id=3 operacion=ecomm_hpago_op estadoOP=1 jspFile=pd003_confirmacion>
+      <salidaPr id=3 operacion=ecomm_hpago_op estadoOP=MENSAJE jspFile=gn002_error>
+      <salidaPr id=3 operacion=ecomm_hpago_op estadoOP=ERROR jspFile=gn002_error>
+      <salidaPr id=3 operacion=ecomm_hpago_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+
+   </resultadoPr>
+
+</com.grupobbva.bc.col.web.dype.PrPagoDype>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_dype_pr-data>
+   <field id=SHDINFO> <!-- BANK_INFO encriptada de SHD -> BBVA-->
+   <!---campos desencriptados desde SHD-->
+   <field id=desSHD> <!-- ID_SHD -->
+   <field id=desPlanillaVirtual> <!-- NUM_DOCTO -->
+   <field id=desValor> <!-- VALOR_PAGADO -->
+   <field id=desURLSHD value="http://pivote9i.shd.gov.co/bancos/servlet4"> <!-- URL_RECEPCION  Se establece el valor default en la URL para envío de Incripciones DyPE-->
+   <field id=desInfoControlSHD> <!-- INFO_CONTROL -->
+   <field id=desServicio> <!-- NOMBRE_CAMPO1 -->
+   <field id=desTipoServicio> <!-- VALOR_CAMPO1 -->
+   <field id=desInfoAdicional> <!-- NOMBRE_CAMPO2 -->
+   <field id=desInfoRedundante> <!-- VALOR_CAMPO2 -->
+   <!---campos generados en BBVA-->
+   <field id=desInfoPruebaSHD >  <!-- Info de Prueba recibida desde SHD en texto Claro -->
+   <field id=desInfoPruebaBBVA value="Información de Prueba desde BBVA"> <!-- Info de Prueba encviada por BBVA en texto Claro -->
+   <field id=desPagoEcommerce value="Impuestos Distritales">
+   <field id=ClaveCtaPr >
+   <field id=NumeroCtaOrdPr >
+   <field id=TipoCtaPr >
+   <field id=DivisaPr >
+   <field id=FechaOperaPr>
+   <field id=desValor1> <!-- VALOR_PAGADO presentado sin ceros-->
+   <field id=ID_BBVA value="13"> <!-- ID_BANCO -->
+   <field id=desInfoRetorno> <!-- BANK_INFO encriptada de BBVA -> SHD -->
+   <field id=desConfirmacion> <!-- NUM_TRANS -->
+   <field id=CipherObj> <!--Referencia a objeto de Sesion Cifrador/Descifrador utilizado en la sesion de pago DYPE-->
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

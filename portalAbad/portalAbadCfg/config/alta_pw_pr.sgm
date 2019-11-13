@@ -1,0 +1,40 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PROCESO  alta_pw_pr  ------------------------------------------------>
+
+<! OPERACION ------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.rp.PrAltaPW id=alta_pw_pr operationContext=OperationContext>
+	<refKColl refId=alta_pw_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=validar_estado_op>
+		<estadoPr id=1 operacion=validar_estado_op>
+		<estadoPr id=2 operacion=validar_estado_op>
+		<estadoPr id=0 operacion=cambio_password_op>
+		<estadoPr id=1 operacion=cambio_password_op>
+		<estadoPr id=2 operacion=cambio_password_op>
+	</navegacionPr>
+
+	<! SALIDAS ------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=validar_estado_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=validar_estado_op estadoOP=1 jspFile=contratoop>
+		<salidaPr id=1 operacion=validar_estado_op estadoOP=2 jspFile=r001_traspasos>
+		<salidaPr id=1 operacion=validar_estado_op estadoOP=3 jspFile=r001_personalizarMe>
+		<salidaPr id=1 operacion=validar_estado_op estadoOP=4 jspFile=r001_personalizarMo>
+		<salidaPr id=1 operacion=cambio_password_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=cambio_password_op estadoOP=1 jspFile=alta_clave_op>
+		<salidaPr id=2 operacion=cambio_password_op estadoOP=2 jspFile=alta_clave_op>
+		<salidaPr id=2 operacion=cambio_password_op estadoOP=3 jspFile=alta_clave_op_confirmacion>
+	</resultadoPr>
+</com.grupobbva.bc.col.web.rp.PrAltaPW>
+<! ----------------------------------------------------------------------------------->
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=alta_pw_pr-data>
+	<field id=ProcesoAnterior value="OperacionCBTFServlet?proceso=posicion_global_pr&operacion=posicion_global_op&accion=menuPosicion">
+</kColl>
+<! ----------------------------------------------------------------------------------->
+

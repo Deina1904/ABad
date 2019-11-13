@@ -1,0 +1,36 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  personalizacion_servicios_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.constructor.PrConstructor id=constructor_pr operationContext=OperationContext>
+
+	<refKColl refId=constructor_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=constructor_op>
+
+		<estadoPr id=1 operacion=constructor_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=constructor_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=constructor_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=constructor_op estadoOP=1 jspFile=cred_constructor1>
+		<salidaPr id=1 operacion=constructor_op estadoOP=2 jspFile=cred_constructor2>
+		<salidaPr id=1 operacion=constructor_op estadoOP=3 jspFile=cred_constructorexcel>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.constructor.PrConstructor>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=constructor_pr-data>
+
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

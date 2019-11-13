@@ -1,0 +1,69 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL sign_on_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=sign_on_om operationContext=OperationContext>
+	<refKColl refId=sign_on_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<!/com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<!/com.grupobbva.bc.col.servlets.OMSinTransaccion>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=sign_on_om-data>
+	<field id=IdTx value=TxF100PNET>
+	<field id=PoolMQServiceCICS value=MQServiceCICS>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BNOMBREE>
+	  <field id=BCODOCUP>
+	  <field id=BDESOCUP>
+	  <field id=BCODSEXO>
+	  <field id=BCORREOC>
+	  <field id=BCORREOP>
+	  <field id=BDESCRIPACC>
+	  <field id=BNOMBREM>
+	</kColl >
+
+
+
+</kColl>
+
+
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id= sign_on_om-copiar>
+	<kColl id=a-TxF100PNET>
+		<field id=Entrada value=TxF100PNETEntrada>
+	</kColl>
+	<kColl id=desde-TxF100PNET>
+		<field id=Salida value=TxF100PNETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

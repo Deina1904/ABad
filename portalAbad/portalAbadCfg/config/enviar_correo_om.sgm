@@ -1,0 +1,20 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL enviar_correo_om ------------------------------------------>
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.email.OMEnviarCorreo id=enviar_correo_om operationContext=OperationContext>
+	<refKColl refId=enviar_correo_om-data>
+</com.grupobbva.bc.col.email.OMEnviarCorreo>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=enviar_correo_om-data>
+	<field id=Destino>
+	<field id=Asunto>
+	<field id=Texto>
+	<field id=copia>
+</kColl>
+
+<! ---------------------------------------------------------------------------------->
+

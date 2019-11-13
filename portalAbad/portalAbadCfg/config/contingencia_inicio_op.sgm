@@ -1,0 +1,52 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION contingencia_inicio_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.contingencia.inicio.OpContingenciaInicio id=contingencia_inicio_op operationContext=OperationContext>
+	<refKColl refId=contingencia_inicio_op-data>
+	<refOM refId=contingencia_estado_canal_om>
+	<refOM refId=sign_on_om>
+	<refOM refId=contingencia_consulta_datos_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=Iniciar metodo=Iniciar>
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>		
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=ERRORCANAL jspFmt=ErrorCanalOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.contingencia.inicio.OpContingenciaInicio>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=contingencia_inicio_op-data>
+	<field id=Estado>
+	<field id=nombreUsuario>
+	<field id=codReferencia>
+</kColl>
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>		
+		<fString dataName=Estado description=Estado>
+		<fString dataName=nombreUsuario description=nombreUsuario>
+		<fString dataName=codReferencia description=codReferencia>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorCanalOPJspFmt>
+	<fJsp>		
+		<fString dataName=Estado description=Estado>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=inicioDummyOpHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=userName description=s_cod_logon>
+	</fHTMLReq>
+</fmtDef>

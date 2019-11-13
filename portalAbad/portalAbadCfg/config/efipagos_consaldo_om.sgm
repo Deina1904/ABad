@@ -1,0 +1,50 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL efipagos_consaldo_om ----------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=efipagos_consaldo_om operationContext=OperationContext>
+	<refKColl refId=efipagos_consaldo_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=efipagos_consaldo_om-data>
+	<field id=IdTx value=TxFN67ENET>
+	<kColl id=Entrada>
+	  <field id="INDICADOR PAGIN" >
+	    <field id="CAMPO LIBRE" >
+	    <iColl id="ESTRUCTURA ARCHIVO" >
+	        <kColl id="REGISTRO ARCHIVO" dynamic=false >
+	          <field id="TIPO DE REGISTR" >
+	          <field id="FILLER" >
+	        </kColl >
+        </iColl >
+	    <field id="IMPORTE TOTAL">
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id="NUMERO CONFIRMA" >
+	  <field id="FECHA OPERACION" >
+	  <field id="IMPORTE MOVIMIE" >
+  <field id="CANTIDAD REGIST" >
+    </kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=efipagos_consaldo_om-copiar>
+	<kColl id=a-TxFN67ENET>
+		<field id=Entrada value=TxFN67ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN67ENET>
+		<field id=Salida value=TxFN67ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

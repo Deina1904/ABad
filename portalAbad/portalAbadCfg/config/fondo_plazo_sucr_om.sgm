@@ -1,0 +1,56 @@
+<! BBVA  -------------------------------------------------------------------------------------------------->
+<! Operación:  MULTICANAL fondo_plazo_sucr_om  ------------------------------------------------------------>
+
+<! OPERACION ---------------------------------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=fondo_plazo_sucr_om operationContext=OperationContext>
+	<refKColl refId=fondo_plazo_sucr_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! -------------------------------------------------------------------------------------------------------->
+
+<! DATOS -------------------------------------------------------------------------------------------------->
+<kColl id=fondo_plazo_sucr_om-data>
+	<field id=IdTx value=TxFN47ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01 value=&@D06/16/2000>
+	  <field id=BFECHA02 value=&@D06/16/2000>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=NUMERO-CONFIRMACION>
+	  <field id=FECHA-VENCIMIENTO>
+	  <field id=NUMERO-AUTORIZACION>
+	  <field id=IMPORTE-1>
+	  <field id=IMPORTE-2>
+	  <field id=NUMERO-CONTRATO>
+	  <field id=INDICADOR-PENDIENTE>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR ----------------------------------------------------------------------------------------------->
+<kColl id=fondo_plazo_sucr_om-copiar>
+	<kColl id=a-TxFN47ENET>
+		<field id=Entrada value=TxFN47ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN47ENET>
+		<field id=Salida value=TxFN47ENETSalida-01>
+	</kColl>
+</kColl>
+<! -------------------------------------------------------------------------------------------------------->
+

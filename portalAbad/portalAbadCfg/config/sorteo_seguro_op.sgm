@@ -1,0 +1,118 @@
+﻿<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION sorteo_seguro_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pg.OPListadoSorteoSeguro id=sorteo_seguro_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+    <refFormat name=jspFormat refId=ListadoCuponesOPJspFmt>
+    <refFormat name=htmlRequestFormat refId=CtasOPHTMLFmt>
+	<refKColl refId=sorteo_seguro_op-data>
+	<refOM refId=sorteo_seguro_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=cupones metodo=inicio requestFmt=CtasOPHTMLFmt>
+
+		<estadoOP id=1 accion=cupones metodo=inicio requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=ERROR accion=cupones metodo=inicio requestFmt=CtasOPHTMLFmt>
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=ListadoCuponesOPJspFmt>
+		<salidaOP id=2 jspFmt=ListadoCuponesOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pg.OPListadoSorteoSeguro>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=sorteo_seguro_op-data>
+	<field id=MaxNumRegistros value=2000>
+	<field id=MaxNumRegistrosPagina value=100>
+	<field id=AsuntoPropio value=" ">
+	<field id=NumCuenta value=" ">
+	<field id=Error>
+	<field id=MasDatos>
+	<field id=MasDatosWas>
+	<field id=MasDatosHost>
+	<field id=AtrasDatos>
+	<field id=AtrasDatosWas>
+	<field id=AtrasDatosHost>
+	<field id=SiguienteCupon value="0">
+	<field id=AnteriorCupon>
+	<field id=Criterio>
+	<field id=ContadorPaginas value="1">
+	<field id=ContadorWas value ="0">
+	<field id=ContadorHost>
+	<field id=tipo value=" ">
+
+	<kColl id=Pagina>
+  	  <field id=IndicadorPaginacion>
+	  <iColl id=ListaCupones>
+	    <kColl id=Cupon>
+	      <field id=FechaConsignacion>
+	      <field id=Cuponcito>
+	    </kColl >
+	  </iColl >
+	  <field id=TimeStamp>
+	</kColl >
+
+	<kColl id=Cupones>
+	  <field id=IndicadorPaginacion>
+	  <iColl id=ListaCupones>
+	    <kColl id=Cupon>
+	      <field id=FechaConsignacion>
+	      <field id=Cuponcito>
+	    </kColl >
+	  </iColl >
+	  <field id=TimeStamp>
+	</kColl >
+</kColl>
+
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=ListadoCuponesOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=AsuntoPropio><nullCheck>
+		<fString dataName=MasDatosHost description=MasDatosHost><nullCheck>
+		<fString dataName=MasDatosWas description=MasDatosWas><nullCheck>
+		<fString dataName=AtrasDatos description=AtrasDatos><nullCheck>
+		<fString dataName=AtrasDatosHost description=AtrasDatosHost><nullCheck>
+		<fString dataName=NumCuenta description=NumCuenta><nullCheck>
+		<fString dataName=tipo description=tipo><nullCheck>
+		<iCollVector dataName=Cupones.ListaCupones description=ListaCupones>
+			<record dataName=Cupon>
+	      		<fString dataName=FechaConsignacion><nullCheck>
+				<fString dataName=Cuponcito><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=CtasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=tipo>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

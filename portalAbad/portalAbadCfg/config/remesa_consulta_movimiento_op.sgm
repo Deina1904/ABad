@@ -1,0 +1,241 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION remesa_consulta_movimiento_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.consreme.OPMovimientosRemesas id=remesa_consulta_movimiento_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=MovimientosOPJspFmt>
+	<refFormat name=jspFormat refId=MoviDetalleOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosInputOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=DetalleInputOPHTMLFmt>
+	<refKColl refId=remesa_consulta_movimiento_op-data>
+	<refOM refId=remesa_movimiento_om>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=ERROR accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=0 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=1 accion=detalle metodo=detalle requestFmt=DetalleInputOPHTMLFmt>
+		<estadoOP id=2 accion=detalle metodo=detalle requestFmt=DetalleInputOPHTMLFmt>
+		<estadoOP id=2 accion=volver metodo=volver>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=MovimientosOPJspFmt>
+		<salidaOP id=2 jspFmt=MoviDetalleOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.consreme.OPMovimientosRemesas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=remesa_consulta_movimiento_op-data>
+	<field id=asuntoPropio>
+	<field id=opcion>
+	<field id=Grupo1>
+	<field id=Dia>
+	<field id=Mes>
+	<field id=Anio>
+	<field id=DiaDesde>
+	<field id=MesDesde>
+	<field id=AnioDesde>
+	<field id=DiaHasta>
+	<field id=MesHasta>
+	<field id=AnioHasta>
+	<field id=DiasUlti>
+
+	<field id=Error>
+
+	<field id=FechaDeposito>
+	<field id=SuccodR>
+	<field id=SucursalR>
+    <field id=PlazaR>
+    <field id=BancoR>
+    <field id=BancocodR>
+    <field id=Corresponsal>
+    <field id=NumCtaCh>
+    <field id=NumCh>
+    <field id=ValorOP>
+    <field id=FechaCoD>
+    <field id=TipoRemesa>
+    <field id=CodDev>
+    <field id=CausalDev>
+    <field id=Estado>
+
+
+
+	<kColl id=Pagina>
+		<iColl id=ListaMovimientosTotalOP>
+			<kColl id=Movimiento>
+				<field id=FECHA-DEPOSITO>
+				<field id=NOMBRE-PLAZA>
+				<field id=COD-BANCO>
+				<field id=NOMBRE-BANCO>
+				<field id=COD-SUC>
+				<field id=NOM-SUC>
+				<field id=CORRESPONSAL>
+				<field id=NUM-CTA-CHEQUE>
+				<field id=NUM-CHEQUE>
+
+				<field id=FECHA-COD>
+				<field id=TIPO-REMESA>
+				<field id=COD-CAUSAL-DEV>
+				<field id=CAUSAL-DEV>
+				<field id=ESTADO>
+				<field id=IMPORTE>
+
+			</kColl >
+		</iColl >
+
+		<iColl id=ListaMovimientosPagOP>
+			<kColl id=Movimiento>
+				<field id=FECHA-DEPOSITO>
+				<field id=NOMBRE-PLAZA>
+				<field id=COD-BANCO>
+				<field id=NOMBRE-BANCO>
+				<field id=COD-SUC>
+				<field id=NOM-SUC>
+				<field id=CORRESPONSAL>
+				<field id=NUM-CTA-CHEQUE>
+				<field id=NUM-CHEQUE>
+
+				<field id=FECHA-COD>
+				<field id=TIPO-REMESA>
+				<field id=COD-CAUSAL-DEV>
+				<field id=CAUSAL-DEV>
+				<field id=ESTADO>
+				<field id=IMPORTE>
+
+			</kColl >
+		</iColl >
+	</kColl>
+
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MovimientosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+		<fString dataName=opcionconsul description=opcionc>
+		<fString dataName=opGrupo1 description=jspGrupo1>
+
+        <fString dataName=opfechadesde description=jspfechadesde>
+        <fString dataName=opfechahasta description=jspfechahasta>
+
+		<fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+		<iCollVector dataName=Pagina.ListaMovimientosPagOP description=ListaMovtos>
+			<record dataName=Movimiento>
+
+				<fString dataName=FECHA-DEPOSITO><nullCheck>
+				<fString dataName=NOMBRE-PLAZA><nullCheck>
+				<fString dataName=COD-BANCO><nullCheck>
+				<fString dataName=NOMBRE-BANCO><nullCheck>
+				<fString dataName=COD-SUC><nullCheck>
+				<fString dataName=NOM-SUC><nullCheck>
+				<fString dataName=CORRESPONSAL><nullCheck>
+				<fString dataName=NUM-CTA-CHEQUE><nullCheck>
+				<fString dataName=NUM-CHEQUE><nullCheck>
+
+				<fString dataName=FECHA-COD><nullCheck>
+				<fString dataName=TIPO-REMESA><nullCheck>
+				<fString dataName=COD-CAUSAL-DEV><nullCheck>
+				<fString dataName=CAUSAL-DEV><nullCheck>
+				<fString dataName=ESTADO><nullCheck>
+				<fNumString dataName=IMPORTE><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MoviDetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+        <fString dataName=opcionconsul description=opcionc>
+
+		<fString dataName=FechaDeposito description=fechadeposito>
+		<fString dataName=SuccodR description=succodr>
+		<fString dataName=SucursalR description=sucursalr>
+        <fString dataName=PlazaR description=plazar>
+        <fString dataName=BancoR description=bancor>
+        <fString dataName=BancocodR description=bancocodr>
+        <fString dataName=Corresponsal description=corresponsal>
+        <fString dataName=NumCtaCh description=numctacheque>
+        <fString dataName=NumCh description=numcheque>
+        <fNumString dataName=ValorOP description=valorOP>
+        <fString dataName=FechaCoD description=fechacod>
+        <fString dataName=TipoRemesa description=tiporemesa>
+        <fString dataName=CodDev description=coddev>
+        <fString dataName=CausalDev description=causaldev>
+        <fString dataName=Estado description=estado>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=asuntoPropio>
+		<fString dataName=opcion>
+        <fString dataName=Grupo1>
+        <fString dataName=Dia>
+		<fString dataName=Mes>
+		<fString dataName=Anio>
+		<fString dataName=DiaDesde>
+		<fString dataName=MesDesde>
+		<fString dataName=AnioDesde>
+		<fString dataName=DiaHasta>
+		<fString dataName=MesHasta>
+		<fString dataName=AnioHasta>
+		<fString dataName=DiasUlti>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DetalleInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=FechaDeposito>
+		<fString dataName=SuccodR>
+		<fString dataName=SucursalR>
+        <fString dataName=PlazaR>
+        <fString dataName=BancoR>
+        <fString dataName=BancocodR>
+        <fString dataName=Corresponsal>
+        <fString dataName=NumCtaCh>
+        <fString dataName=NumCh>
+        <fNumString dataName=ValorOP>
+        <fString dataName=FechaCoD>
+        <fString dataName=TipoRemesa>
+        <fString dataName=CodDev>
+        <fString dataName=CausalDev>
+        <fString dataName=Estado>
+
+	</fHTMLReq>
+</fmtDef>

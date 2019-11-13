@@ -1,0 +1,19 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL traer_modulos_om  ------------------------------->
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.multicanal.og.OMTraerModulos id=traer_modulos_om operationContext=OperationContext>
+	<refKColl refId=traer_modulos_om-data>
+</com.grupobbva.bc.col.multicanal.og.OMTraerModulos>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+
+<kColl id=traer_modulos_om-data>
+	<kColl id=Entrada>
+	  <field id=CodUsuaExt>
+	  <field id=CodAcceso>
+	</kColl >
+</kColl>
+<! ---------------------------------------------------------------------------------->

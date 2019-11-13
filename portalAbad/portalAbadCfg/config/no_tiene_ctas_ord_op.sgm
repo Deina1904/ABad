@@ -1,0 +1,79 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION no_tiene_ctas_ord_op  ----------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.tp.OPColNoTieneCtasOrd id=no_tiene_ctas_ord_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=TrasNoTieneCtasOrdOPJspFmt>	
+	<refFormat name=htmlRequestFormat refId=NoTieneOPHTMLFmt>
+	<refKColl refId=no_tiene_ctas_ord_op-data>	
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>	
+		<estadoOP id=0 accion=noTieneCtasOrd metodo=noTieneCtasOrd requestFmt=NoTieneOPHTMLFmt>	
+	</navegacionOP>		
+	
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>	
+		<salidaOP id=0 jspFmt=TrasNoTieneCtasOrdOPJspFmt>				
+	</resultadoOP>	
+</com.grupobbva.bc.col.web.tp.OPColNoTieneCtasOrd>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=no_tiene_ctas_ord_op-data>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<!******************************************************************>
+<!*********************   EN DESARROLLO   **************************>
+<!******************************************************************>
+<fmtDef id=TrasNoTieneCtasOrdOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<iCollVector dataName=asuntos_principales_om-data.Salida.ListaCUENTA description=Lista>
+			<record dataName=CUENTA>	
+				<fNumString dataName=CBANCO>
+				<fNumString dataName=COFICI>
+				<fNumString dataName=CCONTR>
+				<fNumString dataName=CFOLIO>
+				<fString dataName=CTIPOC>
+				<fString dataName=CSALDIS>
+				<fString dataName=CDIVISA>
+			</record>								
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<! Formato de entrada para posición global ---------->
+<!******************************************************************>
+<!*********************   EN DESARROLLO   **************************>
+<!******************************************************************>
+<fmtDef id=NoTieneOPHTMLFmt>
+	<fHTMLReq>
+		<!fString dataName = Banco>
+		<!fString dataName = Oficina>
+		<!fString dataName = Contrapartida>
+		<!fString dataName = Folio>
+		<fString dataName = NumCta>
+		
+		<fString dataName=rboFOpe>
+		<fString dataName=FOpDeterminada>
+		<fString dataName=FOpDesde>
+		<fString dataName=FOpHasta>
+		<fString dataName=DiasOp>
+		<fString dataName=rboFValor>
+		<fString dataName=FVaDeterminada>
+		<fString dataName=FVaDesde>
+		<fString dataName=FVaHasta>
+		<fString dataName=DiasVa>
+		<fString dataName=rboImporte>
+		<fString dataName=Valor>
+		<fString dataName=ValorDesde>
+		<fString dataName=ValorHasta>
+	</fHTMLReq>
+</fmtDef>	
+
+<! --------------------------------------------------------------------------------->
+

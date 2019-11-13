@@ -1,0 +1,464 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION opera_realiza_op  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.web.au.OPRealizarOperacion id=opera_realiza_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RealizarOperacionOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPPendientes>
+	<refFormat name=jspFormat refId=RealizaOperacionCDTOPJspFmt>
+	<refFormat name=jspFormat refId=RealizaOperacionTCTERJspFmt>
+	<refFormat name=jspFormat refId=RealizarOperacionACHOPJspFmt>
+	<refFormat name=jspFormat refId=RealizaOperacionPTOJspFmt>
+	<refFormat name=jspFormat refId=RealizaOperacionAVAJspFmt>
+	<refFormat name=jspFormat refId=RealizaOperacionAVATERJspFmt>
+	<refFormat name=jspFormat refId=OrdenarAutoriPrestJspFmt>
+	<refFormat name=jspFormat refId=RealizaPagoMasivoJspFmt>
+	<refFormat name=jspFormat refId=RealizaProgOperaJspFmt>
+	<refFormat name=jspFormat refId=RealizaDispCLJspFmt>
+	<refFormat name=jspFormat refId=RealizaFonplazoJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosTrasOPHTMLFmt>
+	<refKColl refId=opera_realiza_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=realizar_operacion_om>
+	<refOM refId=bloqueo_usuario_om>
+	<refOM refId=autoriti_terceros_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS -------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=3 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=4 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=5 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=6 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=7 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=8 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=9 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=10 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=11 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=12 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=13 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=14 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=15 accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+
+		<estadoOP id=ERROR accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=realizarOperacion requestFmt=DatosTrasOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RealizarOperacionOPJspFmt>
+		<salidaOP id=2 jspFmt=RealizarOperacionOPJspFmt>
+		<salidaOP id=3 jspFmt=RealizaOperacionCDTOPJspFmt>
+		<salidaOP id=4 jspFmt=RealizarOperacionACHOPJspFmt>
+		<salidaOP id=5 jspFmt=RealizaOperacionTCTERJspFmt>
+		<salidaOP id=6 jspFmt=RealizaOperacionCHQJspFmt>
+		<salidaOP id=7 jspFmt=RealizaOperacionPTOJspFmt>
+		<salidaOP id=8 jspFmt=RealizaOperacionAVAJspFmt>
+		<salidaOP id=9 jspFmt=RealizaOperacionAVATERJspFmt>
+		<salidaOP id=10 jspFmt=OrdenarAutoriPrestJspFmt>
+		<salidaOP id=11 jspFmt=RealizaPagoMasivoJspFmt>
+		<salidaOP id=12 jspFmt=RealizaProgOperaJspFmt>
+		<salidaOP id=13 jspFmt=OrdenarAutoriPrestJspFmt>
+		<salidaOP id=14 jspFmt=RealizaDispCLJspFmt>
+		<salidaOP id=15 jspFmt=RealizaFonplazoJspFmt>
+
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=ErrorOPPendientes>
+	</resultadoOP>
+</com.grupobbva.bc.web.au.OPRealizarOperacion>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=opera_realiza_op-data>
+	<field id=PasswordOpe printValue="*****">
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion printValue="*****">
+	<field id=Error>
+
+
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RealizarOperacionOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=TipoOperacion description=TipoOperacion>
+		<fString dataName=CtaCargo description=CtaCargo>
+		<fString dataName=Tipo description=tipo>
+		<fString dataName=Cuota description=cuota>
+		<fString dataName=CtaAbono description=CtaAbono>
+		<fNumString dataName=ImporteCargado description=ImporteCargado>
+		<fString dataName=MonedaCargado description=MonedaCargado>
+		<fString dataName=TitularAbono description=TitularAbono>
+		<record dataName=realizar_operacion_om-data.Salida description=Autorizacion>
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fNumString dataName=REFABONO description=refabono>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fDate dataName=FECHAVAL description=fechaval>
+			<fString dataName=INDICAOK description=indicaok>
+			<fNumString dataName=NUMAUTOR description=numautor>
+		</record>
+		<fString dataName=Referencia description=Referencia>
+		<fString dataName=Representante description=Representante>
+	    <fString dataName=emailTCTER>
+
+        <fString dataName=IdenB>
+        <fString dataName=NombreB>
+        <fString dataName=CodFuncion>
+        <fNumString dataName=UpsP description=UpsP>
+        <fNumString dataName=prNetAboCta>
+        <fNumString dataName=prVlrRetFte>
+
+	</fJsp>
+</fmtDef>
+
+<! FORMATO CDTS   ---------------------------------------------------------------------->
+
+<fmtDef id=RealizaOperacionCDTOPJspFmt>
+	<fJsp>
+	    <fString dataName=s_cod_nomempre description=empresa>
+	    <fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_correo_op description=correoop>
+	    <fString dataName=NroOperacion>
+	    <fString dataName=TipoOperacion>
+	    <fString dataName=CtaCargo>
+	    <fNumString dataName=ImporteCargado>
+
+	    <fString dataName=MonedaCargado>
+	    <fString dataName=CtaAbono>
+	    <fString dataName=TitularAbono>
+	    <fString dataName=Referencia>
+	    <fString dataName=Representante>
+
+		<fNumString dataName=ImporteInver description=inversion>
+		<record dataName=realizar_operacion_om-data.Salida description=Autorizacion>
+				<fNumString dataName=IMRENDBR description=renbruto>
+				<fNumString dataName=IMPRENDN description=renneto>
+				<fNumString dataName=IMRETEFU description=retfuente>
+				<fNumString dataName=IMPLIBR1 description=abonoint>
+				<fNumString dataName=TASAEFAN description=tasa>
+				<fDate dataName=FECHVENC description=fechaven>
+				<fDate dataName=FECHCONS description=fechaval>
+				<fString dataName=LILERAL1 description=NumeroCDT>
+		</record>
+
+		<fString dataName=TipPlazo description=tipplazo>
+		<fString dataName= DesPlazo description=desplazo>
+		<fNumString dataName=Plazo description=plazo>
+		<fString dataName=PerPagInter description=perpagInter>
+		<fString dataName=DesPagInter description=despagInter>
+		<fString dataName=TipProrroga description=tipprorroga>
+		<fString dataName=DesProrroga description=desprorroga>
+		<fString dataName=ClaveDeb description=clavedeb>
+		<fString dataName=ClaveAbo description=claveabo>
+
+
+	</fJsp>
+</fmtDef>
+
+<! FORMATO ACH   ---------------------------------------------------------------------->
+
+<fmtDef id=RealizarOperacionACHOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=TipoOperacion description=TipoOperacion>
+		<fString dataName=CtaCargo description=CtaCargo>
+		<fString dataName=CtaAbono description=CtaAbono>
+		<fNumString dataName=ImporteCargado description=ImporteCargado>
+		<fString dataName=MonedaCargado description=MonedaCargado>
+		<fString dataName=TitularAbono description=TitularAbono>
+		<record dataName=realizar_operacion_om-data.Salida description=Autorizacion>
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fNumString dataName=REFABONO description=refabono>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fDate dataName=FECHAVAL description=fechaval>
+			<fString dataName=INDICAOK description=indicaok>
+			<fNumString dataName=NUMAUTOR description=numautor>
+		</record>
+		<fString dataName=Referencia description=Referencia>
+		<fString dataName=Representante description=Representante>
+
+        <fString dataName=CodFuncion>
+
+        <fString dataName=CodEntidadBenfPr description=codEntidadBenfPr>
+        <fString dataName=DesEntidadBenfPr description=desEntidadBenfPr>
+        <fString dataName=TipoCtaBenefPr description=tipoCtaBenefPr>
+        <fString dataName=DesCtaBenefPr description=desCtaBenefPr>
+        <fString dataName=IdBeneficiarioPr description=idBeneficiarioPr>
+        <fString dataName=NomBeneficiarioPr description=nomBeneficiarioPr>
+
+	</fJsp>
+</fmtDef>
+
+
+
+
+<fmtDef id=RealizaOperacionTCTERJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	    <fString dataName=NroOperacion>
+	    <fString dataName=TipoOperacion>
+	    <fNumString dataName=ImporteCargado>
+	    <fString dataName=CtaCargo>
+	    <fString dataName=CtaAbono>
+	    <fString dataName=fechaj>
+	    <fString dataName=Representante>
+
+		<record dataName=realizar_operacion_om-data.Salida description=Autorizacion>
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fNumString dataName=REFABONO description=refabono>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fDate dataName=FECHOPER description=fechaval>
+			<fString dataName=INDICAOK description=indicaok>
+			<fNumString dataName=NUMAUTOR description=numautor>
+		</record>
+
+	    <fString dataName=emailTCTER>
+	    <fString dataName=observacionTCTER>
+	    <fString dataName=nombreTCTER>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=RealizaOperacionCHQJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	    <fString dataName=NroOperacion>
+	    <fString dataName=TipoOperacion>
+	    <fString dataName=fechaj>
+	    <fString dataName=CtaCargo>
+	    <fString dataName=tipochequera>
+		<fString dataName=nrochequeras>
+	    <fNumString dataName=ImporteCargado>
+	    <fString dataName=Representante>
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=RealizaOperacionPTOJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	    <fString dataName=NroOperacion>
+	    <fString dataName=TipoOperacion>
+	    <fNumString dataName=ImporteCargado>
+	    <fString dataName=CtaCargo>
+	    <fString dataName=CtaAbono>
+	    <fString dataName=fechaj>
+	    <fString dataName=Representante>
+
+		<record dataName=realizar_operacion_om-data.Salida description=Autorizacion>
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fNumString dataName=REFABONO description=refabono>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fDate dataName=FECHOPER description=fechaval>
+			<fString dataName=INDICAOK description=indicaok>
+			<fNumString dataName=NUMAUTOR description=numautor>
+		</record>
+
+	    <fString dataName=emailTCTER>
+	    <!fString dataName=observacionTCTER>
+	    <!fString dataName=nombreTCTER>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=RealizaOperacionAVAJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	    <fString dataName=NroOperacion>
+	    <fString dataName=TipoOperacion>
+	    <fNumString dataName=ImporteCargado>
+	    <fString dataName=CtaCargo>
+	    <fString dataName=CtaAbono>
+	    <fString dataName=TipCtaAbo>
+	    <fString dataName=fechaj>
+	    <fString dataName=Representante>
+		<record dataName=realizar_operacion_om-data.Salida description=Autorizacion>
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fNumString dataName=REFABONO description=refabono>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fDate dataName=FECHOPER description=fechaval>
+			<fString dataName=INDICAOK description=indicaok>
+			<fNumString dataName=NUMAUTOR description=numautor>
+		</record>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=RealizaOperacionAVATERJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	    <fString dataName=NroOperacion>
+	    <fString dataName=TipoOperacion>
+	    <fNumString dataName=ImporteCargado>
+	    <fString dataName=CtaCargo>
+	    <fString dataName=CtaAbono>
+	    <fString dataName=TipCtaAbo>
+	    <fString dataName=fechaj>
+	    <fString dataName=Representante>
+	    <fString dataName=IdenB>
+	    <fString dataName=nombreTCTER>
+		<record dataName=realizar_operacion_om-data.Salida description=Autorizacion>
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fNumString dataName=REFABONO description=refabono>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fDate dataName=FECHOPER description=fechaval>
+			<fString dataName=INDICAOK description=indicaok>
+			<fNumString dataName=NUMAUTOR description=numautor>
+		</record>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=OrdenarAutoriPrestJspFmt>
+	<fJsp>
+		<fString dataName=CodFuncion>
+
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+	    <fString dataName=NroOperacion>
+	    <fString dataName=TipoOperacion>
+	    <fString dataName=CtaCargo>
+	    <fString dataName=CtaAbono>
+		<fString dataName=fechaj description=fechaOpera>
+
+		<fNumString dataName=ValorCapitalPr description=valorCapital>
+		<fNumString dataName=InteresCorrientePr description=interesCorriente>
+		<fNumString dataName=InteresMoraPr description=InteresMora>
+		<fNumString dataName=InteresMoraPr description=interesMora>
+		<fNumString dataName=GastosSegurosPr description=gastosSeguros>
+		<fNumString dataName=ValorTotalCuotaPr description=valorTotalCuota>
+		<fNumString dataName=CuotasVencidasPr description=cuotasVencidas>
+		<fString dataName=NombreTerceroPr description=nombreTercero>
+
+		<fString dataName=Representante>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=RealizaPagoMasivoJspFmt>
+     <fJsp>
+		<fString dataName=CodFuncion>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=NroOperacion>
+		<fString dataName=TipoOperacion>
+		<fString dataName=fechaj description=fechaOpera>
+	    <fString dataName=CtaCargo>
+
+		<fNumString dataName=CodPlanillaPr description=CodPlanilla>
+		<fNumString dataName=CtasAAbonarPr description=CtasAAbonar>
+		<fDate dataName=FechaEjecucionPr description=FechaEjecucion>
+		<fNumString dataName=ImporteCargado description=ImporteCargado>
+		<fString dataName=Representante>
+     </fJsp>
+</fmtDef>
+
+<fmtDef id=RealizaProgOperaJspFmt>
+     <fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CodFuncion>
+		<fString dataName=NroOperacion>
+		<fString dataName=TipoOperacion>
+		<fString dataName=fechaj description=fechaOpera>
+	    <fString dataName=CtaCargo>
+	 	<fString dataName=CtaDestinoPr description=CtaDestino>
+		<fString dataName=NombreB>
+		<fString dataName=IdenB>
+        <fString dataName=CorreoPr description=Correo>
+        <fString dataName=PeriodicidadPr description=Periodicidad>
+        <fDate dataName=FechaTrasPr description=FechaTras>
+        <fString dataName=DiaMensualPr description=DiaMensual>
+        <fString dataName=NumMesPr description=NumMes>
+		<fNumString dataName=ImportePr description=Importe>
+		<fString dataName=Representante>
+     </fJsp>
+</fmtDef>
+
+<fmtDef id=RealizaDispCLJspFmt>
+     <fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+        <fNumString dataName=NumeroConfirmacionPrCL>
+		<fString dataName=CodFuncion>
+		<fString dataName=CtaDestinoPrCL>
+		<fString dataName=CtaOrigenPrCL>
+        <fString dataName=TipoCtaPrCL>
+	    <fString dataName=EntidadPrCL>
+		<fString dataName=TitularDestinoPrCL>
+	    <fString dataName=IdTitularDestPrCL>
+	    <fString dataName=CorreoPrCL>
+        <fNumString dataName=ImportePrCL>
+        <fString dataName=ObservacionesPrCL>
+        <fString dataName=TipoDisposicionPrCL>
+        <fDate dataName=FechaPrCL>
+		<fString dataName=Representante>
+     </fJsp>
+</fmtDef>
+
+<fmtDef id=RealizaFonplazoJspFmt>
+     <fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=NroOperacion>
+		<fString dataName=TipoOperacion>
+        <fString dataName=fechaj description=fechaOpera>
+	    <fString dataName=CtaCargoenvio>
+		<fString dataName=CtaAbono description=CtaDestino>
+		<fString dataName=ContratoFondoPr description=ContratoFondo>
+		<fNumString dataName=ImporteFondoPr description=Importe>
+        <fString dataName=ReembAutoPr description=ReembAuto>
+        <fDate dataName=FecVencimientoPr description=FecVencimiento>
+        <fString dataName=ObservacionesPr description=Observaciones>
+		<fString dataName=Representante>
+     </fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPPendientes>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+		<fString dataName=Mensaje description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosTrasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+
+	</fHTMLReq>
+</fmtDef>
+<! --------------------------------------------------------------------------------->
+

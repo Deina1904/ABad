@@ -1,0 +1,31 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PROCESO  cambio_pw_pr  ------------------------------------------------>
+
+<! OPERACION ------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.rp.PrCambioPW id=cambio_pw_pr operationContext=OperationContext>
+	<refKColl refId=cambio_pw_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=cambio_password_op>
+		<estadoPr id=1 operacion=cambio_password_op>
+	</navegacionPr>
+
+	<! SALIDAS ------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=cambio_password_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=cambio_password_op estadoOP=2 jspFile=rp002_per_password_oper>
+		<salidaPr id=1 operacion=cambio_password_op estadoOP=1 jspFile=rp001_per_password_serv>
+		<salidaPr id=1 operacion=cambio_password_op estadoOP=2 jspFile=rp002_per_password_oper>
+		<salidaPr id=1 operacion=cambio_password_op estadoOP=3 jspFile=rp001_confirmacion>
+		<salidaPr id=1 operacion=cambio_password_op estadoOP=ERROR jspFile=gn001_error>
+	</resultadoPr>
+</com.grupobbva.bc.col.web.rp.PrCambioPW>
+<! ----------------------------------------------------------------------------------->
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=cambio_pw_pr-data>
+	<field id=ProcesoAnterior value="OperacionCBTFServlet?proceso=posicion_global_pr&operacion=posicion_global_op&accion=menuPosicion">
+</kColl>
+<! ----------------------------------------------------------------------------------->
+

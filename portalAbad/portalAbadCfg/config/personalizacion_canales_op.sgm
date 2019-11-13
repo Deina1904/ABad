@@ -1,0 +1,345 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION personalizacion_canales_op --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.web.personalizacion.OpCanales id=personalizacion_canales_op operationContext=OperationContext>
+	<refKColl refId=personalizacion_canales_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=canales_om>
+	<refOM refId=retorno_pagotarjespc_om>
+
+
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=canales>
+		<estadoOP id=1 accion=continuar metodo=canales>
+		<estadoOP id=2 accion=continuar metodo=canales>
+		<estadoOP id=HABILITA accion=continuar metodo=canales>
+		<estadoOP id=CLAVEHAB accion=continuar metodo=canales>
+		<estadoOP id=IP accion=continuar metodo=canales>
+		<estadoOP id=HABILITA accion=continuar metodo=canales>
+		<estadoOP id=AYUDA1 accion=continuar metodo=realiza>
+		<estadoOP id=AYUDA accion=continuar metodo=realiza>
+		<estadoOP id=ERROR accion=continuar metodo=canales>
+		<estadoOP id=FALLA accion=continuar metodo=canales>
+		<estadoOP id=CLAVEHAB accion=ayuda1 metodo=ayuda1>
+		<estadoOP id=4 accion=ayuda metodo=ayuda>
+		<estadoOP id=4 accion=realiza metodo=realiza>
+
+		<estadoOP id=1 accion=continuar metodo=canales>
+		<estadoOP id=3 accion=realiza metodo=realiza requestFmt=CanalesunoPWOPHTMLFmt>
+		<estadoOP id=IP accion=ip metodo=ip requestFmt=IpPWOPHTMLFmt>
+	    <estadoOP id=CLAVEHAB accion=realiza metodo=hab  >
+		<estadoOP id=CLAVEHAB accion=clavehab metodo=clavehab requestFmt=CorfirmaAltasOPHTMLFmt >
+		<estadoOP id=4 accion=desabilita metodo=desabilita requestFmt=CorfirmaAltasOPHTMLFmt>
+		<estadoOP id=2 accion=preguntas metodo=preguntasPW requestFmt=PreguntasPWOPHTMLFmt>
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=2 jspFmt=CanalesipOPJspFmt>
+		<salidaOP id=3 jspFmt=PersonalizaOPJspFmt>
+		<salidaOP id=4 jspFmt=CanalesunosOPJspFmt>
+		<salidaOP id=IP jspFmt=CanalesipOPJspFmt>
+		<salidaOP id=CLAVEHAB jspFmt=CanalesunosOPJspFmt>
+		<salidaOP id=HABILITA jspFmt=FinalOPJspFmt>
+		<salidaOP id=DESABILITA jspFmt=FinalOPJspFmt>
+		<salidaOP id=5 jspFmt=VidentePWOPJspFmt>
+		<salidaOP id=6 jspFmt=InicioOPJspFmt>
+		<salidaOP id=7 jspFmt=InicioOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=InicioOPJspFmt>
+		<salidaOP id=AYUDA1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=FALLA jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.web.personalizacion.OpCanales>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=personalizacion_canales_op-data>
+
+	<field id=ClaveOperacion>
+	<field id=ClaveBM>
+
+		<field id=Resultado>
+		<field id=Mensaje>
+		<field id=PDGroup>
+		<field id=Country>
+		<field id=Bank>
+	<field id=MaxErrors>
+
+
+
+
+	<field id=Num>
+		<field id=preg>
+		<field id=resp>
+		<field id=ordenpreg>
+		<field id=tramaResp>
+
+		<kColl id=Preguntas>
+				  <iColl id=ListaPreguntas>
+				    <kColl id=Pregunta>
+					    <field id=Oredenpreg>
+					   	<field id=Idpregunta>
+					   	<field id=Opcionok>
+					   	<field id=Pesopreg>
+					   	<field id=Textopreg>
+					   	<field id=Idrta1>
+					   	<field id=Texrta1 value="">
+					   	<field id=Idrta2>
+					   	<field id=Texrta2 value="">
+					   	<field id=Idrta3>
+					   	<field id=Texrta3 value="">
+					   	<field id=Idrta4>
+					   	<field id=Texrta4 value="">
+					   	<field id=Idrta5>
+					   	<field id=Texrta5 value="">
+					   	<field id=Idrta6>
+					   	<field id=Texrta6 value="">
+					   	<field id=Idrta7>
+					   	<field id=Texrta7 value="">
+					   	<field id=Idrta8>
+					   	<field id=Texrta8 value="">
+		   	    	</kColl >
+				  </iColl >
+		</kColl >
+		<kColl id=Pagina>
+						  <iColl id=ListaPreguntas>
+						    <kColl id=Pregunta>
+							    <field id=Oredenpreg>
+							   	<field id=Idpregunta>
+							   	<field id=Opcionok>
+							   	<field id=Pesopreg>
+							   	<field id=Textopreg>
+							   	<field id=Idrta1>
+							   	<field id=Texrta1 value="">
+							   	<field id=Idrta2>
+							   	<field id=Texrta2 value="">
+							   	<field id=Idrta3>
+							   	<field id=Texrta3 value="">
+							   	<field id=Idrta4>
+							   	<field id=Texrta4 value="">
+							   	<field id=Idrta5>
+							   	<field id=Texrta5 value="">
+							   	<field id=Idrta6>
+							   	<field id=Texrta6 value="">
+							   	<field id=Idrta7>
+							   	<field id=Texrta7 value="">
+							   	<field id=Idrta8>
+							   	<field id=Texrta8 value="">
+				   	    	</kColl >
+						  </iColl >
+			</kColl >
+			<field id=numeropreg>
+	<field id=intentos>
+	<field id=Error>
+    <field id=NumeroP>
+    <field id=Celular>
+    <field id=Estado>
+    <field id=DESCANAL>
+    <field id=NUMCNL>
+    <field id=ESTADO>
+    <field id=Canal>
+    <field id=Num>
+    <field id=etd>
+    <field id=ip>
+    <field id=nombrecnl>
+
+    <field id=ipactiva1>
+    <field id=ipactiva2>
+    <field id=ip11>
+    <field id=ip12>
+    <field id=ip13>
+    <field id=ip14>
+    <field id=ip21>
+    <field id=ip22>
+    <field id=ip23>
+    <field id=ip24>
+
+    <field id=numtel>
+    <field id=numte2>
+    <field id=indtel>
+    <field id=indte2>
+
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+
+<! -------------------------------------------------------------------------------->
+<fmtDef id=VidentePWOPJspFmt>
+	<fJsp>
+		<fNumString dataName=Num description=Num>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<iCollVector dataName=Preguntas.ListaPreguntas description=ListaPreguntas>
+			<record dataName=Pregunta>
+				<fString dataName=Oredenpreg>
+				<fString dataName=Idpregunta>
+				<fString dataName=Opcionok>
+				<fString dataName=Pesopreg>
+				<fString dataName=Textopreg>
+				<fString dataName=Idrta1>
+				<fString dataName=Texrta1>
+				<fString dataName=Idrta2>
+				<fString dataName=Texrta2>
+				<fString dataName=Idrta3>
+				<fString dataName=Texrta3>
+				<fString dataName=Idrta4>
+				<fString dataName=Texrta4>
+				<fString dataName=Idrta5>
+				<fString dataName=Texrta5>
+				<fString dataName=Idrta6>
+				<fString dataName=Texrta6>
+				<fString dataName=Idrta7>
+				<fString dataName=Texrta7>
+				<fString dataName=Idrta8>
+				<fString dataName=Texrta8>
+				</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=FinalOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=nombrecnl description=canal><nullCheck>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=CanalesOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<iCollVector dataName=canales_om-data.Salida.ListaCanales description=ListaCanales>
+					  		  <record dataName=CANALES>
+					  		          <fString dataName=DESCANAL><nullCheck>
+					  		          <fString dataName=NUMCNL><nullCheck>
+					  		  	      <fString dataName=ESTADO><nullCheck>
+					  	  	  </record>
+	      </iCollVector>
+
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=CanalesunosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		  <fString dataName=nombrecnl><nullCheck>
+		  <fString dataName=ipactiva1><nullCheck>
+		  <fString dataName=ipactiva2><nullCheck>
+		  <fString dataName=ip11><nullCheck>
+		  <fString dataName=ip12><nullCheck>
+		  <fString dataName=ip13><nullCheck>
+		  <fString dataName=ip14><nullCheck>
+		  <fString dataName=ip21><nullCheck>
+		  <fString dataName=ip22><nullCheck>
+		  <fString dataName=ip23><nullCheck>
+		  <fString dataName=ip24><nullCheck>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=CanalesipOPJspFmt>
+	<fJsp>
+	      <fString dataName=s_cod_nomempre description=empresa>
+		  <fString dataName=s_cod_nomconta description=usuario>
+		  <fString dataName=nombrecnl><nullCheck>
+		  <fString dataName=ipactiva1><nullCheck>
+		  <fString dataName=ipactiva2><nullCheck>
+		  <fString dataName=ip11><nullCheck>
+		  <fString dataName=ip12><nullCheck>
+		  <fString dataName=ip13><nullCheck>
+		  <fString dataName=ip14><nullCheck>
+		  <fString dataName=ip21><nullCheck>
+		  <fString dataName=ip22><nullCheck>
+		  <fString dataName=ip23><nullCheck>
+		  <fString dataName=ip24><nullCheck>
+
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=PersonalizaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		  <fString dataName=Num><nullCheck>
+		  <fString dataName=etd><nullCheck>
+		  <fString dataName=nombrecnl><nullCheck>
+	</fJsp>
+</fmtDef>
+
+
+
+
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+
+
+<fmtDef id=CorfirmaAltasOPHTMLFmt>
+	<fHTMLReq>
+	     <fString dataName=ClaveOperacion>
+
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=CanalesPWOPHTMLFmt>
+	<fHTMLReq>
+	     <fString dataName=Canal>
+
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=CanalesunoPWOPHTMLFmt>
+	<fHTMLReq>
+	     <fString dataName=Canal>
+	     <fString dataName=ip>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=IpPWOPHTMLFmt>
+	<fHTMLReq>
+	     <fString dataName=ipactiva1>
+	     <fString dataName=ipactiva2>
+	     <fString dataName=ip11>
+	     <fString dataName=ip12>
+	     <fString dataName=ip13>
+	     <fString dataName=ip14>
+	     <fString dataName=ip21>
+	     <fString dataName=ip22>
+	     <fString dataName=ip23>
+	     <fString dataName=ip24>
+	</fHTMLReq>
+</fmtDef>
+
+
+
+
+

@@ -1,0 +1,43 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION validar_estado_op  ----------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.rp.OPValidarEstado id=validar_estado_op operationContext=OperationContext>
+	<refKColl refId=validar_estado_op-data>
+	<refOM refId=obtener_usuario_interno_om>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>	
+		<estadoOP id=0 accion=validar metodo=validar>	
+		<estadoOP id=1 accion=validar metodo=validar>	
+	</navegacionOP>		
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>	
+		<salidaOP id=ERROR jspFmt=MensajeOPJspFmt>												
+		<salidaOP id=1 jspFmt=MensajeOPJspFmt>												
+		<salidaOP id=2 jspFmt=MensajeOPJspFmt>												
+	</resultadoOP>	
+
+</com.grupobbva.bc.col.web.rp.OPValidarEstado>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=validar_estado_op-data>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>	
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+<! --------------------------------------------------------------------------------->
+
+
+

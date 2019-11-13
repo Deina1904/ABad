@@ -1,0 +1,146 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ce_posicion_comex_op  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.ce.op.ce.OPPosicionCE id=ce_posicion_comex_op operationContext=OperationContext>
+	<refFormat name=htmlRequestFormat refId=PosicionCEOPHTMLFmt>
+	<refFormat name=jspFormat refId=PosicionCEOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=ce_posicion_comex_op-data>
+	<refOM refId=ce_posicion_comex_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=posicion metodo=mostrarComex requestFmt=PosicionCEOPHTMLFmt>
+		<estadoOP id=1 accion=posicion metodo=mostrarComex requestFmt=PosicionCEOPHTMLFmt>
+		<estadoOP id=ERROR accion=posicion metodo=mostrarComex requestFmt=PosicionCEOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1     jspFmt=PosicionCEOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.ce.op.ce.OPPosicionCE>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ce_posicion_comex_op-data>
+	<field id=Error>
+        <field id=AsuntoPropio>
+        <field id=s_fecha_host>
+	<field id=s_hora_host>
+
+	<kColl id=ImpConRiesgo>
+	  <iColl id=ListaOperComex>
+	    <kColl id=GruposComex>
+      		<field id="clase" >
+      		<field id="descripcion" >
+      		<field id="num_doc" >
+      		<field id="importe" >
+	   </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=ImpSinRiesgo>
+	  <iColl id=ListaOperComex>
+	    <kColl id=GruposComex>
+      		<field id="clase" >
+      		<field id="descripcion" >
+      		<field id="num_doc" >
+      		<field id="importe" >
+	   </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=ExpConRiesgo>
+	  <iColl id=ListaOperComex>
+	    <kColl id=GruposComex>
+      		<field id="clase" >
+      		<field id="descripcion" >
+      		<field id="num_doc" >
+      		<field id="importe" >
+	   </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=ExpSinRiesgo>
+	  <iColl id=ListaOperComex>
+	    <kColl id=GruposComex>
+      		<field id="clase" >
+      		<field id="descripcion" >
+      		<field id="num_doc" >
+      		<field id="importe" >
+	   </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=ErrorOPJspFmt>
+  <fJsp>
+    <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+    <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+    <fString dataName=s_fecha_host description=fecha_host><nullCheck>
+    <fString dataName=s_hora_host description=hora_host><nullCheck>
+    <fString dataName=Error description=mensaje><nullCheck>
+  </fJsp>
+</fmtDef>
+
+<fmtDef id=PosicionCEOPJspFmt>
+	<fJsp>
+           <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+           <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+           <fString dataName=s_fecha_host description=fecha_host><nullCheck>
+           <fString dataName=s_hora_host description=hora_host><nullCheck>
+
+	   <iCollVector dataName=ImpConRiesgo.ListaOperComex description=ListaImpConRiesgo>
+		<record dataName=GruposComex>
+			<fString dataName=clase description=clase><nullCheck>
+			<fString dataName=descripcion description=descripcion><nullCheck>
+			<fString dataName=num_doc description=num_doc><nullCheck>
+			<fNumString dataName=importe description=importe decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		</record>
+	    </iCollVector>
+
+	   <iCollVector dataName=ImpSinRiesgo.ListaOperComex description=ListaImpSinRiesgo>
+		<record dataName=GruposComex>
+			<fString dataName=clase description=clase><nullCheck>
+			<fString dataName=descripcion description=descripcion><nullCheck>
+			<fString dataName=num_doc description=num_doc><nullCheck>
+			<fNumString dataName=importe description=importe decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		</record>
+	    </iCollVector>
+
+	   <iCollVector dataName=ExpConRiesgo.ListaOperComex description=ListaExpConRiesgo>
+		<record dataName=GruposComex>
+			<fString dataName=clase description=clase><nullCheck>
+			<fString dataName=descripcion description=descripcion><nullCheck>
+			<fString dataName=num_doc description=num_doc><nullCheck>
+			<fNumString dataName=importe description=importe decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		</record>
+	    </iCollVector>
+
+	   <iCollVector dataName=ExpSinRiesgo.ListaOperComex description=ListaExpSinRiesgo>
+		<record dataName=GruposComex>
+			<fString dataName=clase description=clase><nullCheck>
+			<fString dataName=descripcion description=descripcion><nullCheck>
+			<fString dataName=num_doc description=num_doc><nullCheck>
+			<fNumString dataName=importe description=importe decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		</record>
+	    </iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=PosicionCEOPHTMLFmt>
+	<fHTMLReq>
+	        <fString dataName=AsuntoPropio>
+	</fHTMLReq>
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->
+

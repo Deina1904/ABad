@@ -1,0 +1,33 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL registro_usuario_ldap_om ----------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.contingencia.registro.OmRegistroUsuarioLdap id=registro_usuario_ldap_om operationContext=OperationContext>
+	<refKColl refId=registro_usuario_ldap_om-data>
+</com.grupobbva.bc.col.web.contingencia.registro.OmRegistroUsuarioLdap>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=registro_usuario_ldap_om-data>
+	<kColl id=Entrada>
+	  <field id=Alias>
+	  <field id=Password>
+	  <field id=OperPassword>
+	  <field id=Country>
+	  <field id=Bank>
+	  <field id=PDGroup>
+	</kColl >
+	
+	<kColl id=Salida>
+	  <field id=CODRESPUESTA>
+	  <field id=RESPUESTA>
+	</kColl >
+
+</kColl>
+
+
+

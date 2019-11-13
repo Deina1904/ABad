@@ -1,0 +1,97 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION funciones1_op --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.migracion.OpFunciones id=funciones1_op operationContext=OperationContext>
+	<refKColl refId=funciones1_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=funciones_om>
+	<refOM refId=retorno_pagotarjespc_om>
+
+
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=param metodo=param>
+		<estadoOP id=1 accion=param metodo=param>
+		<estadoOP id=2 accion=param metodo=param>
+
+
+		<estadoOP id=ERROR accion=param metodo=param>
+		<estadoOP id=1 accion=continuar metodo=funciones>
+
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=2 jspFmt=FuncionesOPJspFmt>
+
+
+	</resultadoOP>
+</com.grupobbva.bc.col.migracion.OpFunciones>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=funciones1_op-data>
+
+
+
+		<field id=Resultado>
+		<field id=Mensaje>
+		<field id=PDGroup>
+		<field id=Country>
+		<field id=Bank>
+	<field id=MaxErrors>
+
+	<field id=Error>
+
+
+
+
+
+
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+
+<! -------------------------------------------------------------------------------->
+
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+	</fJsp>
+</fmtDef>
+
+
+
+<fmtDef id=FuncionesOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<iCollVector dataName=funciones_om-data.Salida.ListaFunciones description=ListaFunciones>
+					  		  <record dataName=FUNCIONES>
+					  		          <fString dataName=FUNCION><nullCheck>
+					  		          <fString dataName=SERVICIO><nullCheck>
+
+					  	  	  </record>
+	      </iCollVector>
+
+
+	</fJsp>
+</fmtDef>
+
+<
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+

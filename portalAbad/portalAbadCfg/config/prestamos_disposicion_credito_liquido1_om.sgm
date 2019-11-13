@@ -1,0 +1,77 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL prestamos_disposicion_credito_liquido1_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<! LANZA EN HOST TRANSACCION DISPOSICION A CUENTAS DE TERCEROS ->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=prestamos_disposicion_credito_liquido1_om operationContext=OperationContext>
+	<refKColl refId=prestamos_disposicion_credito_liquido1_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=prestamos_disposicion_credito_liquido1_om-data>
+	<field id=IdTx value=TxFN44ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01 value=&@D06/16/2000>
+	  <field id=BFECHA02 value=&@D06/16/2000>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=omDatFechaContable>
+	  <field id=omNumConfirmacion>
+	  <field id=omStrDesmon>
+	  <field id=omStrSubpro>
+	  <field id=omStrDesSubpro>
+	  <field id=omStrIdTitular>
+	  <field id=omStrNombreTitular>
+	  <field id=omStrIdDestino>
+	  <field id=omStrNombreDestino>
+	  <field id=omNumTasaNominal>
+	  <field id=omNumTasaEfectiva>
+	  <field id=omNumLimite>
+	  <field id=omNumDisponible>
+	  <field id=omNumRetenido>
+	  <field id=omStrCtaVinculada>
+	  <field id=omNumCapital>
+	  <field id=omNumComision>
+	  <field id=omNumIva>
+	  <field id=omNumGmf>
+	  <field id=omNumTotal>
+	  <field id=omNumMovtoMir>
+	  <field id=omStrCampoLibre1>
+	  <field id=omStrTipoCuenta>
+	  <field id=omStrEntidad>
+	  <field id=omNumPendiente>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id=prestamos_disposicion_credito_liquido1_om-copiar>
+	<kColl id=a-TxFN44ENET>
+		<field id=Entrada value=TxFN44ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN44ENET>
+		<field id=Salida value=TxFN44ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

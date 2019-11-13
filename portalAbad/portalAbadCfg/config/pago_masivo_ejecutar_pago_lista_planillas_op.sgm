@@ -1,0 +1,96 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pago_masivo_ejecutar_pago_lista_planillas_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoEjecutarPagoListaPlanillas id=pago_masivo_ejecutar_pago_lista_planillas_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionPlanillasOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=pago_masivo_ejecutar_pago_lista_planillas_op-data>
+ 	<refOM refId=pago_masivo_mantenimiento_listaplanillas_om>
+ 	<refOM refId=anula_planillas_real_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=consultarplanillas metodo=consultarplanillas>
+		<estadoOP id=1 accion=consultarplanillas metodo=consultarplanillas>
+		<estadoOP id=VALIDAR accion=consultarplanillas metodo=consultarplanillas>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionPlanillasOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoEjecutarPagoListaPlanillas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_masivo_ejecutar_pago_lista_planillas_op-data>
+	<field id=Error>
+
+
+	<iColl id=ListaPlanillas>
+		<kColl id=Planilla>
+	 		<field id=CODIGO-PLANILLA>
+	        <field id=NOMBRE-PLANILLA>
+	        <field id=TIPO-CUENTA>
+	        <field id=NUMERO-CUENTA>
+	        <field id=TIPO-SERVICIO>
+	        <field id=ESTADO>
+	        <field id=FECHA-EJECUCION>
+	        <field id=FECHA-UILT-EJECUCION>
+	        <field id=IMPORTE>
+	       <field id=NUMERO-DE-CUENTAS>
+	     </kColl>
+  	</iColl>
+
+
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionPlanillasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+ 		<iCollVector dataName=ListaPlanillas description=ListaPlanillas>
+ 			<record dataName=Planilla>
+ 				<fNumString dataName=CODIGO-PLANILLA>
+ 				<fString dataName=NOMBRE-PLANILLA>
+ 				<fString dataName=TIPO-CUENTA>
+ 				<fString dataName=NUMERO-CUENTA>
+ 				<fString dataName=TIPO-SERVICIO>
+ 				<fString dataName=ESTADO>
+ 				<fDate dataName=FECHA-EJECUCION>
+ 				<fDate dataName=FECHA-UILT-EJECUCION>
+ 				<fNumString dataName=IMPORTE>
+ 				<fNumString dataName=NUMERO-DE-CUENTAS>
+ 			</record>
+ 		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+	</fJsp>
+</fmtDef>
+
+
+<! -------------------------------------------------------------------------------->
+

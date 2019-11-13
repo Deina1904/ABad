@@ -1,0 +1,76 @@
+
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL prog_consultar_detalle_om  -------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.po.OMProg_Consultar_Detalle id=prog_consultar_detalle_om operationContext=OperationContext>
+	<refKColl refId=prog_consultar_detalle_om-data>
+</com.grupobbva.bc.col.multicanal.po.OMProg_Consultar_Detalle>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=prog_consultar_detalle_om-data>
+	<field id=IdTx value=TxFN95ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2 >
+	  <field id=BASUNPRO >
+	  <field id=BASUNASO >
+	  <field id=BFECHA01 >
+	  <field id=BFECHA02 >
+	  <field id=BIMPORTE >
+	  <field id=BIMPOAUX >
+	  <field id=BINDPAGI >
+	  <field id=BINDAUX1 >
+	  <field id=BINDAUX2 >
+	  <field id=BCODAUX1 >
+	  <field id=BCODAUX2 >
+	  <field id=BNUMAUX1 >
+	  <field id=BNUMAUX2 >
+	  <field id=BPAGINAC >
+	</kColl >
+
+	<kColl id=Salida>
+	  <iColl id=ListasCuentas>
+	    <kColl id=Registros>
+	      <field id=BNUMPOSI>
+	      <field id=BFECHTRA>
+	      <field id=BFECHOPE>
+	      <field id=BESTADOP>
+	      <field id=BNUMCONF>
+	      <field id=BDESCRIP>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SalidaCtas>
+	  <iColl id=ListaCuentas>
+	    <kColl id=Cuentas>
+	    	<field id=NumPosi>
+		<field id=FechaTra>
+		<field id=FechaOper>
+		<field id=Estado>
+		<field id=NumConfi>
+		<field id=Descrip>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= prog_consultar_detalle_om-copiar>
+	<kColl id=a-TxFN95ENET>
+		<field id=Entrada value=TxFN95ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN95ENET>
+		<field id=Salida value=TxFN95ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

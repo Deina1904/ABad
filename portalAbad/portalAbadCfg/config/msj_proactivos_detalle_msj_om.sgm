@@ -1,0 +1,56 @@
+
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL msj_proactivos_detalle_msj_om  -------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=msj_proactivos_detalle_msj_om operationContext=OperationContext>
+	<refKColl refId=msj_proactivos_detalle_msj_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=msj_proactivos_detalle_msj_om-data>
+	<field id=IdTx value=TxFN17ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BTITULOM>
+	  <field id=DETALLE>
+	  <field id=FECHA>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= msj_proactivos_detalle_msj_om-copiar>
+	<kColl id=a-TxFN17ENET>
+		<field id=Entrada value=TxFN17ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN17ENET>
+		<field id=Salida value=TxFN17ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

@@ -1,0 +1,65 @@
+<! BBVA  ------------------------------------------------------------------------------------------------------------------------------->
+<! Operación: PROCESO anula_planillas_pr ------------------------------------------------------------------------------------>
+
+<! OPERACION --------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.anulaplanillas.PrAnulaPlanillas id=anula_planillas_pr operationContext=OperationContext>
+
+	<refKColl refId=anula_planillas_pr-data>
+
+<! ESTADOS ----------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=anula_planillas_tx_op>
+
+		<estadoPr id=1 operacion=anula_planillas_tx_op>
+		<estadoPr id=1 operacion=anula_planillas_conf_op>
+
+		<estadoPr id=2 operacion=anula_planillas_tx_op>
+		<estadoPr id=2 operacion=anula_planillas_conf_op>
+		<estadoPr id=2 operacion=anula_planillas_real_op>
+
+	</navegacionPr>
+
+	<! SALIDAS ------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=anula_planillas_tx_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=anula_planillas_tx_op estadoOP=1 jspFile=anula_planillas>
+		<salidaPr id=1 operacion=anula_planillas_tx_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=anula_planillas_conf_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=anula_planillas_conf_op estadoOP=1 jspFile=anula_planillas_conf>
+		<salidaPr id=2 operacion=anula_planillas_conf_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=anula_planillas_conf_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=anula_planillas_real_op estadoOP=1 jspFile=anula_planillas_real>
+		<salidaPr id=2 operacion=anula_planillas_real_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=anula_planillas_real_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=anula_planillas_real_op estadoOP=1 jspFile=anula_planillas_real>
+		<salidaPr id=0 operacion=anula_planillas_real_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=anula_planillas_real_op estadoOP=MENSAJE jspFile=gn002_error>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.anulaplanillas.PrAnulaPlanillas>
+<! ------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS ------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=anula_planillas_pr-data>
+		<field id=ClaveCtaOrdPr>
+		<field id=RegistrosPaginacionPr value=25>
+		<field id=MasDatosTransmisionesWasPr value="N">
+		<field id=MasDatosTransmisionesHostPr value="N">
+		<field id=IdTransmisionesPr value=0>
+	    <field id=Nro-Orden>
+        <field id=Numero-Lote>
+        <field id=Servicio>
+	    <field id=Importe>
+        <field id=Cuenta-Origen>
+	    <field id=Emisora-Salida>
+        <field id=Planilla>
+        <field id=Fecha-Ejecucion>
+	    <field id=Registros>
+</kColl>
+<! ------------------------------------------------------------------------------------------------------------------------------------->

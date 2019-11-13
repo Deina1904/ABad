@@ -1,0 +1,69 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PROCESO  posicion_global_pr  ------------------------------------------>
+
+<! OPERACION ------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pg.PrPosicionGlobal id=posicion_global_pr operationContext=OperationContext>
+	<refKColl refId=posicion_global_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=posicion_global_op>
+		<estadoPr id=0 operacion=movimientos_ctas_op>
+		<estadoPr id=0 operacion=movimientos_tarjs_op>
+		<estadoPr id=0 operacion=movimientos_presta_op>
+		<estadoPr id=0 operacion=movimientos_presta_cl_op>
+		<estadoPr id=0 operacion=qe_ccmovimientos_op>
+		<estadoPr id=0 operacion=sorteo_seguro_op>		
+
+	</navegacionPr>
+
+	<! SALIDAS ------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=posicion_global_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=posicion_global_op estadoOP=0 jspFile=pg002_posicion_global>
+
+		<salidaPr id=0 operacion=movimientos_ctas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=movimientos_ctas_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=0 operacion=movimientos_ctas_op estadoOP=1 jspFile=pg003_mvtos_saldos_ctas>
+		<salidaPr id=0 operacion=movimientos_ctas_op estadoOP=2 jspFile=pg004_saldos_ctas>
+		<salidaPr id=0 operacion=movimientos_ctas_op estadoOP=3 jspFile=pg005_mvtos_ctas>
+
+
+		<salidaPr id=0 operacion=movimientos_tarjs_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=movimientos_tarjs_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=0 operacion=movimientos_tarjs_op estadoOP=1 jspFile=pg003_mvtos_saldos_tarjs>
+		<salidaPr id=0 operacion=movimientos_tarjs_op estadoOP=2 jspFile=pg004_saldos_tarjs>
+		<salidaPr id=0 operacion=movimientos_tarjs_op estadoOP=3 jspFile=pg005_mvtos_tarjs>
+
+		<salidaPr id=0 operacion=movimientos_presta_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=movimientos_presta_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=0 operacion=movimientos_presta_op estadoOP=1 jspFile=pr003_mvtos_saldos_presta>
+		<salidaPr id=0 operacion=movimientos_presta_op estadoOP=2 jspFile=pr004_saldos_presta>
+		<salidaPr id=0 operacion=movimientos_presta_op estadoOP=3 jspFile=pr005_mvtos_presta>
+
+		<salidaPr id=0 operacion=movimientos_presta_cl_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=movimientos_presta_cl_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=0 operacion=movimientos_presta_cl_op estadoOP=1 jspFile=cl003_mvtos_saldos_presta>
+		<salidaPr id=0 operacion=movimientos_presta_cl_op estadoOP=2 jspFile=cl004_saldos_presta>
+		<salidaPr id=0 operacion=movimientos_presta_cl_op estadoOP=3 jspFile=cl005_mvtos_presta>
+
+		<salidaPr id=0 operacion=qe_ccmovimientos_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=qe_ccmovimientos_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=0 operacion=qe_ccmovimientos_op estadoOP=1 jspFile=qe001_ccmvtossaldos>
+		<salidaPr id=0 operacion=qe_ccmovimientos_op estadoOP=2 jspFile=qe001_ccsaldos>
+		<salidaPr id=0 operacion=qe_ccmovimientos_op estadoOP=3 jspFile=qe001_ccmvtos>
+
+		<salidaPr id=0 operacion=sorteo_seguro_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=sorteo_seguro_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=0 operacion=sorteo_seguro_op estadoOP=1 jspFile=ss001_lista_cupones>	
+
+	</resultadoPr>
+</com.grupobbva.bc.col.web.pg.PrPosicionGlobal>
+<! ----------------------------------------------------------------------------------->
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=posicion_global_pr-data>
+	<field id=prtipo>
+</kColl>
+<! ----------------------------------------------------------------------------------->
+

@@ -1,0 +1,53 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  personalizacionMo_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.per.PrPersonalizacionMo id=personalizacionMo_pr operationContext=OperationContext>
+	<refKColl refId=personalizacionMo_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=per_modulo_op>
+
+		<estadoPr id=1 operacion=per_modulo_op>
+		<estadoPr id=1 operacion=per_confirmarMo_op>
+
+		<estadoPr id=2 operacion=per_modulo_op>
+		<estadoPr id=2 operacion=per_confirmarMo_op>
+		<estadoPr id=2 operacion=per_realizarMo_op>
+
+		<estadoPr id=3 operacion=per_modulo_op>
+		<estadoPr id=3 operacion=per_realizarMo_op>
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=per_modulo_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=per_modulo_op estadoOP=1 jspFile=per002_rel_mod>
+		<salidaPr id=1 operacion=per_modulo_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=per_confirmarMo_op estadoOP=1 jspFile=per003_conf>
+
+		<salidaPr id=1 operacion=per_realizarMo_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=1 operacion=per_confirmarMo_op estadoOP=1 jspFile=per003_conf>
+
+		<salidaPr id=2 operacion=per_realizarMo_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=2 operacion=per_confirmarMo_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=per_confirmarMo_op estadoOP=1 jspFile=per003_conf>
+		<salidaPr id=2 operacion=per_confirmarMo_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+
+		<salidaPr id=3 operacion=per_realizarMo_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=per_realizarMo_op estadoOP=1 jspFile=per005_realizar>
+	</resultadoPr>
+</com.grupobbva.bc.col.web.per.PrPersonalizacionMo>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=personalizacionMo_pr-data>
+	  <field id=CodAplicacionPr>
+	  <field id=CodPerfilPr>
+	  <!codigo id modulo>
+	  <field id=ModsUsPr>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

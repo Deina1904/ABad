@@ -1,0 +1,109 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION modifica_prorroga_op  ----------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cdts.OPModificaProrroga id=modifica_prorroga_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ModificaProrrogaOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosProOPHTMLFmt>
+	<refKColl refId=modifica_prorroga_op-data>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=modifica metodo=modifica requestFmt=DatosProOPHTMLFmt>
+		<estadoOP id=1 accion=modifica metodo=modifica requestFmt=DatosProOPHTMLFmt>
+		<estadoOP id=ERROR accion=modifica metodo=modifica requestFmt=DatosProOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=modifica metodo=modifica requestFmt=DatosProOPHTMLFmt>
+
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ModificaProrrogaOPJspFmt>
+		<salidaOP id=ERROR jspFmt=MensajeOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+
+</com.grupobbva.bc.col.web.cdts.OPModificaProrroga>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=modifica_prorroga_op-data>
+	<field id=valorinver>
+	<field id=fecven>
+	<field id=plazo>
+	<field id=tasa>
+	<field id=perintereses>
+	<field id=prorroga>
+	<field id=desprorroga>
+	<field id=cdt>
+	<field id=abonocdt>
+	<field id=titulo>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=ModificaProrrogaOPJspFmt>
+	<fJsp>
+			<fString dataName=s_cod_nomempre description=empresa>
+			<fString dataName=s_cod_nomconta description=usuario>
+			<fString dataName=ImporteInver description=inversion>
+			<fString dataName=Fecven description=fecven>
+			<fString dataName=DesPlazo description=plazo>
+			<fString dataName=Tasa description=tasa>
+			<fString dataName=DesPagInter description=pagointer>
+			<fString dataName=DesProrroga description=prorroga>
+			<fString dataName=Titulo description=titulo>
+			<fString dataName=ClaveCdt description=nrocdt>
+			<fString dataName=ClaveAbo description=ctaabono>
+
+	    </fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosProOPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=valorinver>
+		<fString dataName=fecven>
+		<fString dataName=tasa>
+		<fString dataName=plazo>
+		<fString dataName=perintereses>
+		<fString dataName=prorroga>
+		<fString dataName=desprorroga>
+		<fString dataName=titulo>
+		<fString dataName=cdt>
+		<fString dataName=abonocdt>
+
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

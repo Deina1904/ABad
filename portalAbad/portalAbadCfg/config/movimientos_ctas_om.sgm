@@ -1,0 +1,83 @@
+﻿<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL movimientos_ctas_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.pg.OMMovimientosCtas id=movimientos_ctas_om operationContext=OperationContext>
+	<refKColl refId=movimientos_ctas_om-data>
+</com.grupobbva.bc.col.multicanal.pg.OMMovimientosCtas>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=movimientos_ctas_om-data>
+	<field id=IdTx value=TxFN30ENET>
+	<field id=MaxNumRegistros>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=INDICADOR-PAGINACION>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimientos>
+	      <field id=FECHA-OPER>
+	      <field id=FECHA-VALOR>
+	      <field id=CONCEPTO>
+	      <field id=REFERENCIA>
+	      <field id=OBSERVACIONES>
+	      <field id=IMPORTE>
+	      <field id=SALDO-INICIO>
+	      <field id=NUMERO-MOVTO>
+	      <field id=ESTADO>
+	    </kColl >
+	  </iColl >
+	  <field id=SUBPRODUCTOFN>
+	</kColl >
+
+	<kColl id=Movimientos>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+	      <field id=FechaValor>
+	      <field id=Concepto>
+	      <field id=Referencia>
+	      <field id=Observaciones>
+	      <field id=Importe>
+	      <field id=SaldoInicio>
+	      <field id=NumeroMovimiento>
+	      <field id=Estado>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=movimientos_ctas_om-copiar>
+	<kColl id=a-TxFN30ENET>
+		<field id=Entrada value=TxFN30ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN30ENET>
+		<field id=Salida value=TxFN30ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

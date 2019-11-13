@@ -1,0 +1,19 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL bloqueo_usuario_om ------------------------------------------>
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.multicanal.tp.OMBloqueoUsuario id=identificacion_operativa_om operationContext=OperationContext>
+	<refKColl refId=bloqueo_usuario_om-data>
+</com.grupobbva.bc.col.multicanal.tp.OMBloqueoUsuario>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=bloqueo_usuario_om-data>
+	<field id=Alias>
+	<field id=Country>
+	<field id=Bank>	
+</kColl>
+
+<! ---------------------------------------------------------------------------------->
+

@@ -1,0 +1,115 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION contingencia_registro_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.contingencia.registro.OpContingenciaRegistro id=contingencia_registro_op operationContext=OperationContext>
+	<refKColl refId=contingencia_registro_op-data>
+	<refOM refId=contingencia_consulta_datos_usuario_om>
+	<refOM refId=contingencia_registro_host2_om>
+	<refOM refId=registro_usuario_ldap_om>
+	<refOM refId=sign_on_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=inicio 			metodo=inicio 			requestFmt=DatosEntradaOPHTMLFmt>
+		<! Ini cmc 17-04-2018 --------------------------------------------------------------->
+		<estadoOP id=1 accion=inicio 			metodo=inicio 			requestFmt=DatosEntradaOPHTMLFmt>
+		<estadoOP id=2 accion=inicio 			metodo=inicio 			requestFmt=DatosEntradaOPHTMLFmt>
+		<! Fin cmc 17-04-2018 --------------------------------------------------------------->
+		
+		<estadoOP id=0 accion=validarRegistro 	metodo=validarRegistro 	requestFmt=DatosRegistroOPHTMLFmt>
+		<estadoOP id=1 accion=validarRegistro 	metodo=validarRegistro 	requestFmt=DatosRegistroOPHTMLFmt>
+		<! Ini cmc 17-04-2018 --------------------------------------------------------------->
+		<estadoOP id=2 accion=validarRegistro 	metodo=validarRegistro 	requestFmt=DatosRegistroOPHTMLFmt>		
+		<! Fin cmc 17-04-2018 --------------------------------------------------------------->
+
+		<! Ini cmc 17-04-2018 --------------------------------------------------------------->		
+		<estadoOP id=0 accion=registrarUsuario 	metodo=registrarUsuario requestFmt=DatosFirmaOPHTMLFmt>
+		<estadoOP id=1 accion=registrarUsuario 	metodo=registrarUsuario requestFmt=DatosFirmaOPHTMLFmt>
+		<! Fin cmc 17-04-2018 --------------------------------------------------------------->
+		<estadoOP id=2 accion=registrarUsuario 	metodo=registrarUsuario requestFmt=DatosFirmaOPHTMLFmt>
+		
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>		
+		<salidaOP id=0 jspFmt=InicioOPJspFmt>
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=2 jspFmt=ContingenciaFinalizaOpJspFmt>
+		<salidaOP id=3 jspFmt=ContingenciaFinalizaOpJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.contingencia.registro.OpContingenciaRegistro>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=contingencia_registro_op-data>
+	<field id=codReferencia>
+	<field id=codReferenciaExt>
+	<field id=codUsuario>
+	<field id=emailUsuario>
+	<field id=password>
+	<field id=confPassword>
+	<field id=tipoUsuario>
+	<field id=nombreUsuario>
+	<field id=estadoUsuario>
+	<field id=Estado>
+	<field id=RegistroDesdeCanal>
+	<field id=Error>
+	
+	<!--DATOS PARA LDAP-->
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=NumSerieToken>
+	<field id=pdToken>
+	<field id=pdClaveOperaciones>
+	
+</kColl>
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>		
+		<fString dataName=codReferencia description=codReferencia>
+		<fString dataName=codUsuario 	description=codUsuario>
+		<fString dataName=Estado 	description=Estado>
+		<fString dataName=RegistroDesdeCanal description=RegistroDesdeCanal>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ContingenciaFinalizaOpJspFmt>
+	<fJsp>
+		<fString dataName=codReferencia description=codReferencia>
+		<fString dataName=codUsuario description=codUsuario>
+		<fString dataName=emailUsuario description=emailUsuario>
+		<fString dataName=nombreUsuario description=nombreUsuario>
+		<fString dataName=tipoUsuario description=tipoUsuario>
+		<fString dataName=estadoUsuario description=estadoUsuario>
+		<fString dataName=Estado description=Estado>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS DE ENTRADA --------------------------------------------------------------->
+<fmtDef id=DatosEntradaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=codReferencia>
+		<fString dataName=codUsuario>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=DatosRegistroOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=codReferencia>
+		<fString dataName=codUsuario>
+		<fString dataName=emailUsuario>
+		<fString dataName=password>
+		<fString dataName=confPassword>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=DatosFirmaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=pdToken>
+		<fString dataName=pdClaveOperaciones>		
+	</fHTMLReq>
+</fmtDef>

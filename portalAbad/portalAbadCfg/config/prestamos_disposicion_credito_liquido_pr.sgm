@@ -1,0 +1,45 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  prestamos_disposicion_credito_liquido_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.disposicion.credliquido.PrPrestamosDisposicionCreditoLiquido id=prestamos_disposicion_credito_liquido_pr operationContext=OperationContext>
+
+	<refKColl refId=prestamos_disposicion_credito_liquido_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=prestamos_disposicion_credito_liquido_op>
+		<estadoPr id=1 operacion=prestamos_disposicion_credito_liquido_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=prestamos_disposicion_credito_liquido_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=prestamos_disposicion_credito_liquido_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=0 operacion=prestamos_disposicion_credito_liquido_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=prestamos_disposicion_credito_liquido_op estadoOP=INICIO jspFile=prestamos_disposicion_credito_liquido1>
+		<salidaPr id=1 operacion=prestamos_disposicion_credito_liquido_op estadoOP=PETDATOS jspFile=prestamos_disposicion_credito_liquido2>
+		<salidaPr id=1 operacion=prestamos_disposicion_credito_liquido_op estadoOP=CONFIRMAR jspFile=prestamos_disposicion_credito_liquido3>
+		<salidaPr id=1 operacion=prestamos_disposicion_credito_liquido_op estadoOP=REALIZAR jspFile=prestamos_disposicion_credito_liquido4>
+		<salidaPr id=1 operacion=prestamos_disposicion_credito_liquido_op estadoOP=PENDIENTE jspFile=prestamos_disposicion_credito_liquido5>
+		<salidaPr id=1 operacion=prestamos_disposicion_credito_liquido_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.disposicion.credliquido.PrPrestamosDisposicionCreditoLiquido>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=prestamos_disposicion_credito_liquido_pr-data>
+
+	<field id=prStrTipoDisposicion value="">
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

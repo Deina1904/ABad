@@ -1,0 +1,118 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pago_masivo_ejecutar_pago_realizar_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoEjecutarPagoRealizar id=pago_masivo_ejecutar_pago_realizar_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionRealizarOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosCuentasRealizarOPHTMLFmt>
+	<refKColl refId=pago_masivo_ejecutar_pago_realizar_op-data>
+	<refOM refId=identificacion_operativa_om>
+ 	<refOM refId=pago_masivo_ejecutar_pago_realizar_om>
+ 	<refOM refId=pago_masivo_ejecutar_pago_realizar_fin_om>
+ 	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=realizar metodo=realizar requestFmt=DatosCuentasRealizarOPHTMLFmt>
+		<estadoOP id=1 accion=realizar metodo=realizar requestFmt=DatosCuentasRealizarOPHTMLFmt>
+		<estadoOP id=2 accion=realizar metodo=realizar requestFmt=DatosCuentasRealizarOPHTMLFmt>
+		<estadoOP id=ERROR accion=realizar metodo=realizar requestFmt=DatosCuentasRealizarOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=realizar metodo=realizar requestFmt=DatosCuentasRealizarOPHTMLFmt>
+
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionRealizarOPJspFmt>
+		<salidaOP id=2 jspFmt=RelacionRealizarOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoEjecutarPagoRealizar>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_masivo_ejecutar_pago_realizar_op-data>
+	<field id=NumeroConfirmacion>
+
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<field id=FechaOperacion>
+	<field id=CuentasAEliminarOP>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+
+	<field id=ClaveOperacion>
+	<field id=Error>
+
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+
+<fmtDef id=RelacionRealizarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_ip description=ip>
+ 		<fString dataName=NumeroCtaOrdPr description=numeroCtaOrd>
+ 		<fString dataName=TipoServicioPr description=tipoServicio>
+ 		<fString dataName=DesTipoServicioPr description=desTipoServicio>
+ 		<fString dataName=NombrePlantillaPr description=nombrePlantilla>
+ 		<fNumString dataName=CodigoPlantillaPr description=codigoPlantilla>
+
+ 		<fString dataName=TipoFechaPagoPr description=tipoFechaPago>
+ 		<fDate dataName=FechaEjecucionPr description=fechaEjecucion>
+ 		<fDate dataName=FechaOperacion description=fechaOperacion>
+ 		<fNumString dataName=ValorTotalPlanillaPr description=valorTotalPlanilla>
+ 		<fNumString dataName=NumeroCtasAbonarPr description=numeroCtasAbonar>
+
+ 		<fNumString dataName=NumeroConfirmacion description=numeroConfirmacion>
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosCuentasRealizarOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

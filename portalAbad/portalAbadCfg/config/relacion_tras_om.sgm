@@ -1,0 +1,32 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL relacion_tras_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.tp.OMRelacionTras  id=relacion_tras_om operationContext=OperationContext>
+	<refKColl refId=relacion_tras_om-data>
+</com.grupobbva.bc.col.multicanal.tp.OMRelacionTras>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=relacion_tras_om-data>
+	<field id=UsuarioInterno>
+	<iColl id=ListaOrdenes>
+		<kColl id=Orden>
+			<field id=CodigoUsuario>
+			<field id=CuentaOrdenante>
+			<field id=CuentaBeneficiaria>
+			<field id=TimTransfer>
+			<field id=Importe>
+			<field id=Divisa>
+			<field id=ReferenciaCargo>
+			<field id=ReferenciaAbono>
+			<field id=FechaOperacion>
+			<field id=FechaValor>
+			<field id=Observaciones>
+		</kColl>
+	</iColl>
+</kColl>
+
+<! --------------------------------------------------------------------------------->
+

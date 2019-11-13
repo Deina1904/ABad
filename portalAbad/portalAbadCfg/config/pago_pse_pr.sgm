@@ -1,0 +1,99 @@
+<! BBVA  --------------------------------------------------------------------------->
+<! Operación:  PROCESO  pago_pse_pr  --------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pse.PrPagoPse id=pago_pse_pr operationContext=OperationContext>
+
+   <refKColl refId=pago_pse_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------->
+   <navegacionPr>
+
+      <estadoPr id=0 operacion=ecomm_rpago_pse_op>
+      <estadoPr id=1 operacion=ecomm_rpago_pse_op>
+      <estadoPr id=2 operacion=ecomm_rpago_pse_op>
+      <estadoPr id=3 operacion=ecomm_rpago_pse_op>
+
+      <estadoPr id=0 operacion=ecomm_ctas_ord_pse_op>
+      <estadoPr id=1 operacion=ecomm_ctas_ord_pse_op>
+
+      <estadoPr id=1 operacion=ecomm_cpago_pse_op>
+      <estadoPr id=2 operacion=ecomm_cpago_pse_op>
+      <estadoPr id=2 operacion=ecomm_ctas_ord_pse_op>
+
+      <estadoPr id=2 operacion=ecomm_hpago_pse_op>
+      <estadoPr id=3 operacion=ecomm_hpago_pse_op>
+
+
+   </navegacionPr>
+
+   <! SALIDAS --------------------------------------------------------------------------->
+   <resultadoPr>
+
+
+      <salidaPr id=0 operacion=ecomm_rpago_pse_op estadoOP=1 jspFile=cargar_ecomm_pse>
+      <salidaPr id=0 operacion=ecomm_rpago_pse_op estadoOP=ERROR jspFile=gn003_error_pse>
+      <salidaPr id=0 operacion=ecomm_rpago_pse_op estadoOP=SALIDA jspFile=gn004_error_pse>
+      <salidaPr id=0 operacion=ecomm_rpago_pse_op estadoOP=CANCELAR jspFile=gn004_error_pse>
+      <salidaPr id=1 operacion=ecomm_rpago_pse_op estadoOP=SALIDA jspFile=gn004_error_pse>
+      <salidaPr id=1 operacion=ecomm_ctas_ord_pse_op estadoOP=VALIDAR jspFile=cargar_ecomm_pse>
+      <salidaPr id=1 operacion=ecomm_rpago_pse_op estadoOP=CANCELAR jspFile=gn004_error_pse>
+      
+      <salidaPr id=1 operacion=ecomm_ctas_ord_pse_op estadoOP=1 jspFile=ppse_ctas>
+      <salidaPr id=1 operacion=ecomm_ctas_ord_pse_op estadoOP=2 jspFile=ppse_confirmacion_reint>
+      <salidaPr id=1 operacion=ecomm_ctas_ord_pse_op estadoOP=VALIDAR jspFile=ppse_ctas>
+      <salidaPr id=1 operacion=ecomm_ctas_ord_pse_op estadoOP=ERROR jspFile=gn002_error_pse>
+      <salidaPr id=1 operacion=ecomm_ctas_ord_pse_op estadoOP=TRANSGRESION jspFile=gn002_error_pse>
+      <salidaPr id=0 operacion=ecomm_ctas_ord_pse_op estadoOP=ERROR jspFile=gn002_error_pse>
+      <salidaPr id=0 operacion=ecomm_ctas_ord_pse_op estadoOP=TRANSGRESION jspFile=gn002_error_pse>
+
+
+      <salidaPr id=2 operacion=ecomm_rpago_pse_op estadoOP=SALIDA jspFile=gn004_error_pse>
+      <salidaPr id=2 operacion=ecomm_cpago_pse_op estadoOP=1 jspFile=ppse_clave>
+      <salidaPr id=2 operacion=ecomm_cpago_pse_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+      <salidaPr id=2 operacion=ecomm_cpago_pse_op estadoOP=ERROR jspFile=gn002_error_pse>
+      <salidaPr id=2 operacion=ecomm_cpago_pse_op estadoOP=TRANSGRESION jspFile=gn002_error_pse>
+
+      <salidaPr id=2 operacion=ecomm_hpago_pse_op estadoOP=MENSAJE jspFile=gn002_error_pse>
+      <salidaPr id=2 operacion=ecomm_hpago_pse_op estadoOP=ERROR jspFile=gn002_error_pse>
+      <salidaPr id=3 operacion=ecomm_hpago_pse_op estadoOP=1 jspFile=ppse_confirmacion>
+      <salidaPr id=3 operacion=ecomm_hpago_pse_op estadoOP=MENSAJE jspFile=gn002_error_pse>
+      <salidaPr id=3 operacion=ecomm_hpago_pse_op estadoOP=ERROR jspFile=gn002_error_pse>
+      <salidaPr id=3 operacion=ecomm_hpago_pse_op estadoOP=TRANSGRESION jspFile=gn002_error_pse>
+      <salidaPr id=3 operacion=ecomm_rpago_pse_op estadoOP=SALIDA jspFile=gn004_error_pse>
+
+   </resultadoPr>
+
+</com.grupobbva.bc.col.web.pse.PrPagoPse>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_pse_pr-data>
+   <field id=codigoPsePr>
+   <field id=codigodianPr value=8888001972684>
+   <field id=codigoHaciendaPr value=899999061>
+   <field id=empresaPr>
+   <field id=descripcionPr>
+   <field id=referenciaPr>
+   <field id=referencia2Pr>
+   <field id=referencia3Pr>
+   <field id=valorivaPr>
+   <field id=fechasolPr>
+   <field id=ticketidPr>
+   <field id=servicecodPr>
+   <field id=codcomerPr>
+   <field id=valorPr>
+   <field id=NumeroCtaOrdPr>
+   <field id=urlComercioPr >
+   <field id=fechaOperaPr>
+   <field id=confirmacionPr>
+   <field id=ClaveCtaPr >
+   <field id=TipoCtaPr >
+   <field id=DivisaPr >
+   <field id=codcomerPr >
+   <field id=auxPr >
+   <field id=codmirPr >
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

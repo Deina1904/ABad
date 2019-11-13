@@ -1,0 +1,63 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL listadoplazo_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=listadoplazo_om operationContext=OperationContext>
+	<refKColl refId=listadoplazo_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=listadoplazo_om-data>
+	<field id=IdTx value=TxF266ENET>
+	<kColl id=Entrada>
+		  <field id=BCODACCC>
+		  <field id=BCODCTAA>
+		  <field id=BPALACCE>
+		  <field id=BPACACC2>
+		  <field id=BASUNPRO>
+		  <field id=BASUNASO>
+		  <field id=BFECHA01>
+		  <field id=BFECHA02>
+		  <field id=BIMPORTE>
+		  <field id=BIMPOAUX>
+		  <field id=BINDPAGE>
+		  <field id=BINDAUX1>
+		  <field id=BINDAUX2>
+		  <field id=BCODAUX1>
+		  <field id=BCODAUX2>
+		  <field id=BNUMAUX1>
+		  <field id=BNUMAUX2>
+		  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	      <field id=nombre>
+	      <field id=priape>
+	      <field id=segape>
+	      <field id=cncclipu>
+	      <field id=correo>
+	      <field id=direccion>
+	      <field id=oficina>
+	      <field id=indtelefono>
+	      <field id=telefono>
+
+
+	</kColl >
+</kColl>
+
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= listadoplazo_om-copiar>
+	<kColl id=a-TxF266ENET>
+		<field id=Entrada value=TxF266ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF266ENET>
+		<field id=Salida value=TxF266ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

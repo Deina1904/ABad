@@ -1,0 +1,232 @@
+<! BBVA  ----------------------------------------------------------------------------->
+
+<! Operación:  PRESENTACION posicion_global_op  -------------------------------------->
+
+
+
+<! OPERACION ------------------------------------------------------------------------->
+
+<com.grupobbva.bc.col.web.pg.OPPosicionGlobal id=posicion_global_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=PosicionGlobalOPJspFmt>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+
+	<refKColl refId=posicion_global_op-data>
+
+	<refOM refId=posicion_global_om>
+
+	<refOM refId=msj_consulta_om>
+<! ----------------------------------------------------------------------------------->
+
+
+
+<! ESTADOS --------------------------------------------------------------------------->
+
+	<navegacionOP>
+
+		<estadoOP id=0 accion=inicioConexion metodo=posicionGlobal>
+
+		<estadoOP id=0 accion=menuPosicion metodo=posicionGlobal>
+
+		<estadoOP id=0 accion=masDatos metodo=masDatos requestFmt=bloqueAsuntosOPHTMLFmt>
+		<estadoOP id=0 accion=atrasDatos metodo=atrasDatos requestFmt=bloqueAsuntosOPHTMLFmt>
+		<estadoOP id=ERROR accion=menuPosicion metodo=posicionGlobal>
+	</navegacionOP>
+
+
+
+<! SALIDAS --------------------------------------------------------------------------->
+
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=0 jspFmt=PosicionGlobalOPJspFmt>
+	</resultadoOP>
+
+</com.grupobbva.bc.col.web.pg.OPPosicionGlobal>
+
+
+
+<! DATOS ----------------------------------------------------------------------------->
+
+<kColl id=posicion_global_op-data>
+
+	<field id=Error>
+	<field id=tipoper>
+	<field id=Resultado>
+	<field id=bloqueAsuntos>
+	<field id=varCuentas>
+	<field id=cuenta>
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Error>
+
+</kColl>
+
+
+
+<! FORMATOS -------------------------------------------------------------------------->
+
+<fmtDef id=PosicionGlobalOPJspFmt>
+
+	<fJsp>
+		<fString dataName=s_pg_MasDatosCuentas description=masDatosCuentas>
+		<fString dataName=s_pg_MasDatosTarjetas description=masDatosTarjetas>
+		<fString dataName=s_pg_MasDatosPrestamos description=masDatosPrestamos>
+		<fString dataName=s_pg_MasDatosFondos description=masDatosFondos>
+		<fString dataName=s_pg_MasDatosCupo description=masDatosCupo>
+		<fString dataName=s_pg_MasDatosPensiones description=masDatosPensiones>
+
+
+		<fString dataName=s_pg_IdMovimientoCuentas description=idMovimientoCuentas>
+		<fString dataName=s_pg_IdMovimientoTarjetas description=idMovimientoTarjetas>
+		<fString dataName=s_pg_IdMovimientoPrestamos description=idMovimientoPrestamos>
+		<fString dataName=s_pg_IdMovimientoFondos description=idMovimientoFondos>
+		<fString dataName=s_pg_IdMovimientoCupo description=idMovimientoCupo>
+		<fString dataName=s_pg_IdMovimientoPensiones description=idMovimientoPensiones>
+
+
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_desocup description=titulo>
+		<fString dataName=s_ult_acceso description=ultacceso>
+		<fString dataName=s_mensajes description=mensajes>
+
+		<iCollVector dataName=s_pg_lista_posicion_global_cuentas description=ListaCuentas>
+			<record dataName=s_cuenta>
+				<fString dataName=s_banco><nullCheck>
+				<fString dataName=s_oficina><nullCheck>
+				<fString dataName=s_dcontrol><nullCheck>
+				<fString dataName=s_num_cuenta><nullCheck>
+				<fString dataName=s_tipo><nullCheck>
+				<fString dataName=s_estado><nullCheck>
+				<fString dataName=s_valaso><nullCheck>
+				<fString dataName=s_permiso><nullCheck>
+				<fNumString dataName=s_saldo_puntual decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fNumString dataName=s_saldo_disponible decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fString dataName=s_divisa><nullCheck>
+				<fString dataName=s_clave_asunto><nullCheck>
+				<fString dataName=s_indicador><nullCheck>
+				<fString dataName=s_alias><nullCheck>
+			</record>
+		</iCollVector>
+
+		<iCollVector dataName=s_pg_lista_posicion_global_tarjetas description=ListaTarjetas>
+			<record dataName=s_tarjeta>
+				<fString dataName=s_pan1><nullCheck>
+				<fString dataName=s_pan2><nullCheck>
+				<fString dataName=s_pan3><nullCheck>
+				<fString dataName=s_pan4><nullCheck>
+				<fString dataName=s_tipo><nullCheck>
+				<fString dataName=s_estado><nullCheck>
+				<fString dataName=s_valaso><nullCheck>
+				<fString dataName=s_permiso><nullCheck>
+				<fNumString dataName=s_saldo_puntual decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fNumString dataName=s_saldo_disponible decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fString dataName=s_divisa><nullCheck>
+				<fString dataName=s_clave_asunto><nullCheck>
+				<fString dataName=s_indicador><nullCheck>
+				<fString dataName=s_alias><nullCheck>
+			</record>
+		</iCollVector>
+
+		<iCollVector dataName=s_pg_lista_posicion_global_prestamos description=ListaPrestamos>
+			<record dataName=s_prestamos>
+				<fString dataName=s_bancop><nullCheck>
+				<fString dataName=s_oficinap><nullCheck>
+				<fString dataName=s_dcontrolp><nullCheck>
+				<fString dataName=s_num_cuentap><nullCheck>
+				<fString dataName=s_tipop><nullCheck>
+				<fString dataName=s_estadop><nullCheck>
+				<fString dataName=s_valasop><nullCheck>
+				<fString dataName=s_permisop><nullCheck>
+				<fNumString dataName=s_saldo_puntualp decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fNumString dataName=s_saldo_disponiblep decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fString dataName=s_divisap><nullCheck>
+				<fString dataName=s_clave_asunto><nullCheck>
+				<fString dataName=s_indicador><nullCheck>
+				<fString dataName=s_alias><nullCheck>
+			</record>
+		</iCollVector>
+
+		<iCollVector dataName=s_pg_lista_posicion_global_fondos description=ListaFondos>
+			<record dataName=s_cuenta>
+				<fString dataName=s_banco><nullCheck>
+				<fString dataName=s_oficina><nullCheck>
+				<fString dataName=s_dcontrol><nullCheck>
+				<fString dataName=s_num_cuenta><nullCheck>
+				<fString dataName=s_tipo><nullCheck>
+				<fString dataName=s_estado><nullCheck>
+				<fString dataName=s_valaso><nullCheck>
+				<fString dataName=s_permiso><nullCheck>
+				<fNumString dataName=s_saldo_puntual decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fNumString dataName=s_saldo_disponible decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fString dataName=s_divisa><nullCheck>
+				<fString dataName=s_clave_asunto><nullCheck>
+				<fString dataName=s_indicador><nullCheck>
+				<fString dataName=s_alias><nullCheck>
+			</record>
+		</iCollVector>
+
+		<iCollVector dataName=s_pg_lista_posicion_global_cupo description=ListaCupo>
+			<record dataName=s_tarjeta>
+				<fString dataName=s_pan1><nullCheck>
+				<fString dataName=s_pan2><nullCheck>
+				<fString dataName=s_pan3><nullCheck>
+				<fString dataName=s_pan4><nullCheck>
+				<fString dataName=s_tipo><nullCheck>
+				<fString dataName=s_estado><nullCheck>
+				<fString dataName=s_valaso><nullCheck>
+				<fString dataName=s_permiso><nullCheck>
+				<fNumString dataName=s_saldo_puntual decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fNumString dataName=s_saldo_disponible decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fString dataName=s_divisa><nullCheck>
+				<fString dataName=s_clave_asunto><nullCheck>
+				<fString dataName=s_indicador><nullCheck>
+				<fString dataName=s_alias><nullCheck>
+			</record>
+		</iCollVector>
+
+		<!iCollVector dataName=s_salida_posicion_global_pensiones.s_lista_posicion_global_pensiones description=ListaPensiones>
+		<iCollVector dataName=s_pg_lista_posicion_global_pensiones description=ListaPensiones>
+			<record dataName=s_pension>
+				<fString dataName=s_bancop><nullCheck>
+				<fString dataName=s_oficinap><nullCheck>
+				<fString dataName=s_dcontrolp><nullCheck>
+				<fString dataName=s_num_cuentap><nullCheck>
+				<fString dataName=s_tipop><nullCheck>
+				<fString dataName=s_estadop><nullCheck>
+				<fString dataName=s_valasop><nullCheck>
+				<fString dataName=s_permisop><nullCheck>
+				<fNumString dataName=s_saldo_puntualp decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fNumString dataName=s_saldo_disponiblep decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fString dataName=s_divisap><nullCheck>
+				<fString dataName=s_clave_asuntop><nullCheck>
+				<fString dataName=s_indicador><nullCheck>
+				<fString dataName=s_alias><nullCheck>
+			</record>
+		</iCollVector>
+
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_desocup description=titulo>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=bloqueAsuntosOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=bloqueAsuntos>
+	</fHTMLReq>
+</fmtDef>
+
+<! ----------------------------------------------------------------------------------->

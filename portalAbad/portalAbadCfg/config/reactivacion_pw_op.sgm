@@ -1,0 +1,117 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION reactivacion_pw_op  ------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<CircuitoUsuariosCol.OPReactivacionPW id=reactivacion_pw_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=MensajePWOPJspFmt>
+	<refFormat name=jspFormat refId=ReactivacionPWOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=InicioPWOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=ConfirmarPWOPHTMLFmt>
+
+	<refKColl refId=reactivacion_pw_op-data>
+	<refOM refId=validacion_fuerte_om>
+	<refOM refId=cambio_pw_ent_om>
+	<refOM refId=cambio_pw_ope_om>
+	<refOM refId=reactivacion_usuario_om>
+	<refOM refId=alta_pw_om>
+	<refOM refId=obtener_usuario_interno_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=alta metodo=alta>
+		<estadoOP id=0 accion=altage metodo=altage>
+		<estadoOP id=0 accion=olvido metodo=olvido>
+		<estadoOP id=1 accion=confirmar metodo=confirmarPW requestFmt=ConfirmarPWOPHTMLFmt>
+		<estadoOP id=3 accion=confirmar metodo=confirmarPW requestFmt=ConfirmarPWOPHTMLFmt>
+		<estadoOP id=ERROR accion=alta metodo=alta>
+		<estadoOP id=ERROR accion=altage metodo=altage>
+		<estadoOP id=ERROR accion=olvido metodo=olvido>
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=MensajePWOPJspFmt>
+		<salidaOP id=1 jspFmt=ReactivacionPWOPJspFmt>
+		<salidaOP id=2 jspFmt=BienvenidoPWOPJspFmt>
+		<salidaOP id=3 jspFmt=ReactivacionPWOPJspFmt>
+	</resultadoOP>
+</CircuitoUsuariosCol.OPReactivacionPW>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=reactivacion_pw_op-data>
+	<field id=Opcion>
+	<field id=NumeroTarjeta>
+	<field id=Nip>
+	<field id=NumeroCuenta>
+	<field id=PasswordSistema>
+	<field id=ConfSistema>
+	<field id=PasswordOperacion>
+	<field id=ConfOperacion>
+	<field id=Correo>
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=Error>
+	<field id=intentos>
+	<field id=TipoId>
+	<field id=NumeroId>
+	<field id=IdRec>
+	<field id=AsuntoP>
+	<field id=Error>
+	<field id=usuario>
+	<field id=Num>
+
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MensajePWOPJspFmt>
+	<fJsp>
+		<fString dataName=Error description=mensaje>
+		<fString dataName=s_IdCliente description=idcliente>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=BienvenidoPWOPJspFmt>
+	<fJsp>
+		<fString dataName=Error description=mensaje><nullCheck>
+		<fString dataName=s_IdCliente description=idcliente><nullCheck>
+		<record dataName=validacion_fuerte_om-data.Salida description=nombrec>
+			<fString dataName=NOMBRE-CLIENTE description=nombrecliente><nullCheck>
+			<fString dataName=INDTARJ-COORDENADAS description=indTjCoordenadas><nullCheck>
+		</record>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ReactivacionPWOPJspFmt>
+	<fJsp>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=InicioPWOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=Opcion>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=ConfirmarPWOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=NumeroTarjeta>
+		<fString dataName=Nip>
+		<fString dataName=NumeroCuenta>
+		<fString dataName=PasswordSistema>
+		<fString dataName=ConfSistema>
+		<fString dataName=PasswordOperacion>
+		<fString dataName=ConfOperacion>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

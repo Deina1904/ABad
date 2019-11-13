@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="com.ibm.ws.st.ui.internal.config.addConfigElementDialog.history">
+		<item value="classloader"/>
+		<item value="library"/>
+		<item value="variable"/>
+		<item value="file"/>
+		<item value="folder"/>
+		<item value="dataSource"/>
+		<item value="basicRegistry"/>
+		<item value="quickStartSecurity"/>
+	</list>
+</section>

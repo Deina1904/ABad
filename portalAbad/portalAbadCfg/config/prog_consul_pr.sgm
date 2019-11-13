@@ -1,0 +1,97 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  prog_consul_pr ----------------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.po.PrProgConsul id=prog_consul_pr operationContext=OperationContext>
+	<refKColl refId=prog_consul_pr-data>
+
+<!------------------------------------------------------------------------------------>
+<! ESTADOS DEL PROCESO --------------------------------------------------------------->
+<!------------------------------------------------------------------------------------>
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=prog_consul_tipotras_op>
+		<estadoPr id=0 operacion=prog_consultar_ctas_op>
+
+		<estadoPr id=1 operacion=prog_consul_tipotras_op>
+		<estadoPr id=1 operacion=prog_consultar_ctas_op>
+
+		<estadoPr id=2 operacion=prog_consul_tipotras_op>
+		<estadoPr id=2 operacion=prog_consultar_ctas_op>
+		<estadoPr id=2 operacion=prog_consultar_detalle_op>
+
+
+	</navegacionPr>
+<!------------------------------------------------------------------------------------>
+<! SALIDAS DEL JSPs POR CADA ESTADO DEL PROCESO Y DE LA OP --------------------------->
+<!------------------------------------------------------------------------------------>
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=prog_consul_tipotras_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=prog_consul_tipotras_op estadoOP=VALIDAR jspFile=po001_alta_clave>
+
+		<salidaPr id=1 operacion=prog_consul_tipotras_op estadoOP=1 jspFile=po001_prog_opera>
+		<salidaPr id=1 operacion=prog_consul_tipotras_op estadoOP=2 jspFile=po001_prog_opera2>
+		<salidaPr id=1 operacion=prog_consul_tipotras_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=prog_consultar_ctas_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=prog_consultar_ctas_op estadoOP=1 jspFile=po002_consul_ctas>
+		<salidaPr id=2 operacion=prog_consultar_ctas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=prog_consultar_detalle_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=prog_consultar_detalle_op estadoOP=1 jspFile=po002_consul_detalle>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.po.PrProgConsul>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------->
+<kColl id=prog_consul_pr-data>
+	<field id=CtaOrd>
+	<field id=CtaOrdClave>
+	<field id=TipoCtaOrd>
+	<field id=CtaBen>
+	<field id=CtaBenClave>
+	<field id=TipoCtaBen>
+	<field id=IdeBen>
+	<field id=NomBen>
+	<field id=TipoTras>
+	<field id=FecTra>
+	<field id=DiaTra>
+	<field id=NumMeses>
+	<field id=ValorTras>
+	<field id=Observ>
+	<field id=IndNva>
+	<field id=FecOpe>
+	<field id=ProcesoAnterior>
+	<field id=SelConsulta>
+	<field id=PagosTotal>
+	<field id=PagosReal>
+
+	<kColl id=SalidaCtas>
+	  <iColl id=ListaCuentas>
+	    <kColl id=Cuentas>
+	    	<field id=BancoO>
+		<field id=OficinaO>
+		<field id=DControlO>
+		<field id=NumCuentaO>
+		<field id=ClaveAsuntoO>
+		<field id=BancoB>
+		<field id=OficinaB>
+		<field id=DControlB>
+		<field id=NumCuentaB>
+		<field id=ClaveAsuntoB>
+		<field id=FechaProg>
+		<field id=Estado>
+		<field id=PagosTotal>
+		<field id=PagosReal>
+		<field id=NombreBene>
+		<field id=CedulaBene>
+		<field id=Periodicidad>
+		<field id=Importe>
+		<field id=Observaciones>
+		<field id=Link>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>

@@ -1,0 +1,234 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<remesa>
+<cabecera>
+<referenciafichero>NOM 30/04/2019</referenciafichero>
+<codigoregistro>2110</codigoregistro>
+<tipodocemisor>03</tipodocemisor>
+<numdocidentemisor>0000008600030201</numdocidentemisor>
+<sufijo>01</sufijo>
+<fechafichero>20160723</fechafichero>
+<fechaproceso>20160723</fechaproceso>
+<asuntoemisor>00130401000100604855</asuntoemisor>
+<coddivisaasunto>COP</coddivisaasunto>
+<inddevolucion>0</inddevolucion>
+<nombrefichero>USABILID.NOM</nombrefichero>
+<claveemisor>00126931       </claveemisor>
+<desFichero>                  </desFichero>
+<codigoregistroregcab2>2120</codigoregistroregcab2>
+<tipodocemisorregcab2>03</tipodocemisorregcab2>
+<numdocidentemisorregcab2>0000008600030201</numdocidentemisorregcab2>
+<sufijoregcab2>01</sufijoregcab2>
+<nombreemisor>BBVA COLOMBIA SA                    </nombreemisor>
+<domicilioemisor1>CALLE 72                            </domicilioemisor1>
+<domicilioemisor2>                                    </domicilioemisor2>
+<codigoregistroregcab3>2130</codigoregistroregcab3>
+<tipodocemisorregcab3>03</tipodocemisorregcab3>
+<numdocidentemisorregcab3>0000008600030201</numdocidentemisorregcab3>
+<sufijoregcab3>01</sufijoregcab3>
+<localidademisor>BOGOTA                              </localidademisor>
+<codigopostalemisor2>  </codigopostalemisor2>
+<codigopostalemisor>     </codigopostalemisor>
+</cabecera>
+<ordenes>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008600030201</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0401000200001888</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000000000.10</importe>
+<fechavencimiento>        </fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BBVA COLOMBIA                       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>carloseduardo.diaz@bbva.com                     </email>
+<concepto>
+<cptotextoconcepto>PRUEBA IDENTIFICADORES                  </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008600030201</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0401000200001888</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000000000.10</importe>
+<fechavencimiento>        </fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BBVA COLOMBIA                       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>carloseduardo.diaz@bbva.com                     </email>
+<concepto>
+<cptotextoconcepto>PRUEBA IDENTIFICADORES                  </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008600030201</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0401000200001888</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000000000.10</importe>
+<fechavencimiento>        </fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BBVA COLOMBIA                       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>carloseduardo.diaz@bbva.com                     </email>
+<concepto>
+<cptotextoconcepto>PRUEBA IDENTIFICADORES                  </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008600030201</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0401000200001888</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000000000.10</importe>
+<fechavencimiento>        </fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BBVA COLOMBIA                       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>carloseduardo.diaz@bbva.com                     </email>
+<concepto>
+<cptotextoconcepto>PRUEBA IDENTIFICADORES                  </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008600030201</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0401000200001888</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000000000.10</importe>
+<fechavencimiento>        </fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BBVA COLOMBIA                       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>carloseduardo.diaz@bbva.com                     </email>
+<concepto>
+<cptotextoconcepto>PRUEBA IDENTIFICADORES                  </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008600030201</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0401000200001888</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000000000.10</importe>
+<fechavencimiento>        </fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BBVA COLOMBIA                       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>carloseduardo.diaz@bbva.com                     </email>
+<concepto>
+<cptotextoconcepto>PRUEBA IDENTIFICADORES                  </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008600030201</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0401000200001888</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000000000.10</importe>
+<fechavencimiento>        </fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BBVA COLOMBIA                       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>carloseduardo.diaz@bbva.com                     </email>
+<concepto>
+<cptotextoconcepto>PRUEBA IDENTIFICADORES                  </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008600030201</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0401000200001888</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000000000.10</importe>
+<fechavencimiento>        </fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BBVA COLOMBIA                       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>carloseduardo.diaz@bbva.com                     </email>
+<concepto>
+<cptotextoconcepto>PRUEBA IDENTIFICADORES                  </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008600030201</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0401000200001888</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000000000.10</importe>
+<fechavencimiento>        </fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BBVA COLOMBIA                       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>carloseduardo.diaz@bbva.com                     </email>
+<concepto>
+<cptotextoconcepto>PRUEBA IDENTIFICADORES                  </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>03</tipodocdocdestino>
+<clavebeneficiario>0000008600030201</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0401000200001888</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000000000.10</importe>
+<fechavencimiento>        </fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BBVA COLOMBIA                       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>carloseduardo.diaz@bbva.com                     </email>
+<concepto>
+<cptotextoconcepto>PRUEBA IDENTIFICADORES                  </cptotextoconcepto>
+</concepto>
+</orden>
+</ordenes>
+<totales>
+<codigoregistro>2910</codigoregistro>
+<tipodocemisorregpie>03</tipodocemisorregpie>
+<numdocidentemisorregpie>0000008600030201</numdocidentemisorregpie>
+<sufijoregpie>01</sufijoregpie>
+<importetotal>0000000000001.00</importetotal>
+<totaloperaciones>00000010</totaloperaciones>
+<totalregistros>00000044</totalregistros>
+<filler>                                                                                                                   </filler>
+</totales>
+</remesa>

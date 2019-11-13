@@ -1,0 +1,26 @@
+
+<! Services definition sample file for the server>
+
+<! Client-server server service>
+<!CSServer id=realCSServer>
+
+
+<!         CONEXION CON MQ DE COLOMBIA            >
+
+<!Modificacion Arquitecura LATAM>
+<BbvaMQConnection id=MQServiceCICS QMgrName=QMCDPIB1 sendToQ="QRD.PIBSL.ENVIO.MQD4"
+		remoteQMgrName=MQD4 remoteReplyToQ="QRD.PIBSL.RESP.QMCDPIB1.CO"
+		automaticConnectionEstablishment=enabled
+		replyToQ="QLD.PIBSL.RESP" serverOrClient=client
+                synchronousMode=enabled hostName="172.17.85.245"
+		channel="SYSTEM.DEF.SVRCONN" port=1414 sendToQOpenOptions=1040
+		putMessageOptions=1088>
+		<! 1040 = com.ibm.mq.MQC.MQOO_OUTPUT | com.ibm.mq.MQC.MQOO_SET_IDENTITY_CONTEXT >
+		<! 1088 = com.ibm.mq.MQC.MQPMO_SET_IDENTITY_CONTEXT | com.ibm.mq.MQC.MQPMO_NEW_MSG_ID >		
+</BbvaMQConnection>
+<MQPoolService id=PoolMQServiceCICS mqService=MQServiceCICS minSize=0 maxSize=50 maxIdleTime=3600 maxUsageTime=3600>
+</MQPoolService>
+
+<ThreadPoolService id=PoolThreadsSSTT minSize=0 maxSize=10 maxIdleTime=3600 maxUsageTime=900>
+</ThreadPoolService>
+<WebServiceService id=WebServiceEngineService ruta="/pr/enet/wsdls/"></WebServiceService>

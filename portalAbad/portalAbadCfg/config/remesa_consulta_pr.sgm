@@ -1,0 +1,50 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  remesa_consulta_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.consreme.PrRemesasConsulta id=remesa_consulta_pr operationContext=OperationContext>
+	<refKColl refId=remesa_consulta_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=remesa_consulta_opciones_op>
+		<estadoPr id=1 operacion=remesa_consulta_opciones_op>
+		<estadoPr id=2 operacion=remesa_consulta_opciones_op>
+
+		<estadoPr id=1 operacion=remesa_consulta_movimiento_op>
+		<estadoPr id=2 operacion=remesa_consulta_movimiento_op>
+
+
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=remesa_consulta_opciones_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=remesa_consulta_opciones_op estadoOP=1 jspFile=remesa_consulta>
+		<salidaPr id=1 operacion=remesa_consulta_opciones_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=remesa_consulta_movimiento_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=remesa_consulta_movimiento_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=remesa_consulta_movimiento_op estadoOP=1 jspFile=remesa_movimiento>
+		<salidaPr id=2 operacion=remesa_consulta_movimiento_op estadoOP=2 jspFile=remesa_detalle>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.consreme.PrRemesasConsulta>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=remesa_consulta_pr-data>
+		<field id=ClaveCtaOrdPr>
+		<field id=CtaOrdPr>
+		<field id=opcionconsul>
+		<field id=opGrupo1>
+		<field id=opfechadesde>
+		<field id=opfechahasta>
+		<field id=opfecha>
+		<field id=opdiasult>
+		<field id=RegistrosPaginacionPr value=15>
+		<field id=MasDatosMovimientosWasPr value="N">
+		<field id=MasDatosMovimientosHostPr value="N">
+		<field id=IdMovimientosPr value=0>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

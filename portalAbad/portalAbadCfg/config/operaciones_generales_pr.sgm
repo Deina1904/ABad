@@ -1,0 +1,68 @@
+   <! BBVA  ---------------------------------------------------------------------------->
+<! Operacion:  PROCESO  operaciones_generales_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.og.PrOperacionesGenerales id=operaciones_generales_pr operationContext=OperationContext>
+   <refKColl refId=operaciones_generales_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+   <navegacionPr>
+      <estadoPr id=0 operacion=reactivacion_pw_op>
+      <estadoPr id=0 operacion=reactivacion_bm_op>
+      <estadoPr id=0 operacion=inicio_op>
+      <estadoPr id=0 operacion=cadas_op>
+      <estadoPr id=0 operacion=fechas_op>
+      <estadoPr id=0 operacion=posicion_global_op>
+   </navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+   <resultadoPr>
+      <salidaPr id=0 operacion=posicion_global_op estadoOP=ERROR jspFile=gn001_error>
+      <salidaPr id=0 operacion=posicion_global_op estadoOP=0 jspFile=pg002_posicion_global>
+      <salidaPr id=0 operacion=cadas_op estadoOP=ERROR jspFile=gn001_error>
+      <salidaPr id=0 operacion=cadas_op estadoOP=1 jspFile=cadas_1>
+      <salidaPr id=0 operacion=cadas_op estadoOP=2 jspFile=cadas_2>
+      <salidaPr id=0 operacion=fechas_op estadoOP=1 jspFile=fechas_1>
+      <salidaPr id=0 operacion=fechas_op estadoOP=2 jspFile=fechas_2>
+      <salidaPr id=0 operacion=inicio_op estadoOP=99 jspFile=parametria>
+	  <salidaPr id=0 operacion=inicio_op estadoOP=98 jspFile=migracion>
+      <salidaPr id=0 operacion=reactivacion_pw_op estadoOP=ERROR jspFile=og002_mensaje>
+      <salidaPr id=0 operacion=reactivacion_bm_op estadoOP=1 jspFile=prueba>
+      <salidaPr id=0 operacion=reactivacion_pw_op estadoOP=1 jspFile=og001_reactivacion_pw_ge>
+      <salidaPr id=0 operacion=reactivacion_pw_op estadoOP=2 jspFile=bienvenido>
+      <salidaPr id=0 operacion=reactivacion_pw_op estadoOP=3 jspFile=og001_reactivacion_pw_ge>
+      <salidaPr id=0 operacion=reactivacion_pw_op estadoOP=4 jspFile=okvidente>
+      <salidaPr id=0 operacion=reactivacion_pw_op estadoOP=5 jspFile=bienvenido>
+      <salidaPr id=0 operacion=inicio_op estadoOP=ERROR jspFile=gn001_errorOP>
+   </resultadoPr>
+
+</com.grupobbva.bc.col.web.og.PrOperacionesGenerales>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=operaciones_generales_pr-data>
+   <field id=NipPr>
+   <field id=IdcuestionarioPr>
+   <field id=NumeropregPr>
+   <field id=NumregisPr>
+   <field id=NumpPr>
+</kColl>
+
+<! COPIADOR PR--------------------------------------------------------------------------->
+<kColl id=operaciones_generales_pr-copiar>
+   <kColl id=a-posicion_global_op>
+   </kColl>
+   <kColl id=desde-posicion_global_op>
+   </kColl>
+   <kColl id=a-reactivacion_pw_op>
+   </kColl>
+   <kColl id=desde-reactivacion_pw_op>
+   </kColl>
+   <kColl id=a-inicio_op>
+   </kColl>
+   <kColl id=desde-inicio_op>
+   </kColl>
+   <kColl id=a-cadas_op>
+   </kColl>
+   <kColl id=desde-cadas_op>
+   </kColl>
+</kColl>

@@ -1,0 +1,113 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pago_masivo_mantenimiento_planilla_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoMantenimientoPlanilla id=pago_masivo_mantenimiento_planilla_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionPlanillaOPJspFmt>
+	<refFormat name=jspFormat refId=RelacionPlanillaRealizarOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosPlanillaGeneralOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPlanillaRealizarOPHTMLFmt>
+
+	<refKColl refId=pago_masivo_mantenimiento_planilla_op-data>
+ 	<refOM refId=pago_masivo_mantenimiento_ctasben_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=renombrarPlanilla metodo=renombrarPlanilla requestFmt=DatosPlanillaGeneralOPHTMLFmt>
+		<estadoOP id=1 accion=renombrarPlanilla metodo=renombrarPlanilla requestFmt=DatosPlanillaGeneralOPHTMLFmt>
+		<estadoOP id=2 accion=renombrarPlanilla metodo=renombrarPlanilla requestFmt=DatosPlanillaGeneralOPHTMLFmt>
+
+		<estadoOP id=1 accion=realizarCrearPlanilla metodo=realizarCrearPlanilla requestFmt=DatosPlanillaRealizarOPHTMLFmt>
+		<estadoOP id=2 accion=realizarCrearPlanilla metodo=realizarCrearPlanilla requestFmt=DatosPlanillaRealizarOPHTMLFmt>
+
+
+		<estadoOP id=ERROR accion=renombrarPlanilla metodo=renombrarPlanilla requestFmt=DatosPlanillaGeneralOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=renombrarPlanilla metodo=renombrarPlanilla requestFmt=DatosPlanillaGeneralOPHTMLFmt>
+
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionPlanillaOPJspFmt>
+		<salidaOP id=2 jspFmt=RelacionPlanillaRealizarOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoMantenimientoPlanilla>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_masivo_mantenimiento_planilla_op-data>
+	<field id=datosPlanilla>
+	<field id=NombrePlantillaNueva>
+	<field id=CodigoPlantillaNueva>
+	<field id=ConCopia>
+	<field id=FechaOper>
+
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionPlanillaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+ 		<fString dataName=NumeroCtaOrdPr description=numeroCtaOrd>
+ 		<fString dataName=TipoServicioPr description=tipoServicio>
+ 		<fString dataName=DesTipoServicioPr description=desTipoServicio>
+ 		<fString dataName=NombrePlantillaPr description=nombrePlantilla>
+ 		<fNumString dataName=CodigoPlantillaPr description=codigoPlantilla>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=RelacionPlanillaRealizarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+ 		<fString dataName=NumeroCtaOrdPr description=numeroCtaOrd>
+ 		<fString dataName=TipoServicioPr description=tipoServicio>
+ 		<fString dataName=DesTipoServicioPr description=desTipoServicio>
+ 		<fString dataName=NombrePlantillaPr description=nombrePlantilla>
+ 		<fNumString dataName=CodigoPlantillaPr description=codigoPlantilla>
+
+		<fString dataName=NombrePlantillaNueva description=nombrePlantillaNueva>
+ 		<fNumString dataName=CodigoPlantillaNueva description=codigoPlantillaNueva>
+
+		<fString dataName=FechaOper description=fechaOper>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosPlanillaGeneralOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=datosPlanilla>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=DatosPlanillaRealizarOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=NombrePlantillaNueva>
+		<fString dataName=ConCopia>
+
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

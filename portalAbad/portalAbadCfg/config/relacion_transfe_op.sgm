@@ -1,0 +1,118 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION relacion_trasfe_op -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.tpefectivo.OPRelacionTrasEfectivo id=relacion_trasfe_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=RelacionOPJspFmt>
+	<refFormat name=jspFormat refId=DetalleOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DetTrasOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=ElimTrasOPHTMLFmt>
+
+	<refKColl refId=relacion_trasfe_op-data>
+	<refOM refId=relacion_trasfe_om>
+	<refOM refId=eliminar_trasfe_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=relacionTras metodo=relacionTras>
+		<estadoOP id=1 accion=relacionTras metodo=relacionTras>
+		<estadoOP id=1 accion=detalleTras metodo=detalleTras requestFmt=DetTrasOPHTMLFmt>
+		<estadoOP id=2 accion=detalleTras metodo=detalleTras requestFmt=DetTrasOPHTMLFmt>
+		<estadoOP id=2 accion=relacionTras metodo=relacionTras>
+		<estadoOP id=1 accion=eliminarTras metodo=eliminarTras requestFmt=ElimTrasOPHTMLFmt>
+		<estadoOP id=0 accion=eliminarTras metodo=eliminarTras requestFmt=ElimTrasOPHTMLFmt>
+		<estadoOP id=ERROR accion=relacionTras metodo=relacionTras>
+
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=RelacionOPJspFmt>
+		<salidaOP id=2 jspFmt=DetalleOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.tpefectivo.OPRelacionTrasEfectivo>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=relacion_trasfe_op-data>
+	<field id=Error>
+	<field id=Cuenta>
+	<field id=Marca>
+	<refData refId=Orden>
+</kColl>
+
+<kColl id=Orden>
+	<field id=CuentaOrdenante>
+	<field id=CuentaBeneficiaria>
+	<field id=Importe>
+	<field id=Divisa>
+	<field id=ReferenciaCargo>
+	<field id=FechaOperacion>
+	<field id=Observaciones>
+</kColl>
+
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=RelacionOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<iCollVector dataName=relacion_trasfe_om-data.ListaOrdenes description=ListaOrdenes>
+			<record dataName=Orden>
+				<fNumString dataName=ReferenciaCargo>
+				<fString dataName=FechaOperacion>
+				<fString dataName=CuentaOrdenante>
+				<fString dataName=Observaciones>
+				<fNumString dataName=Importe>
+				<fString dataName=Divisa>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=DetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+			<record dataName=Orden>
+				<fString dataName=CuentaOrdenante><nullCheck>
+				<fString dataName=CuentaBeneficiaria><nullCheck>
+				<fNumString dataName=Importe><nullCheck>
+				<fString dataName=Divisa><nullCheck>
+				<fNumString dataName=ReferenciaCargo><nullCheck>
+				<fString    dataName=FechaOperacion><nullCheck>
+				<fString    dataName=Observaciones><nullCheck>
+			</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+
+<fmtDef id=DetTrasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName = Cuenta>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=ElimTrasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName = Marca>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

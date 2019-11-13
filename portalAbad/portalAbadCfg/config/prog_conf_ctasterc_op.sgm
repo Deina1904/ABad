@@ -1,0 +1,100 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operaci¢n:  PRESENTACION prog_conf_ctasterc_op -------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.po.OPConfirmarCtasTerc id=prog_conf_ctasterc_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=DatosTtOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=entradaOPHTMLFmt>
+	<refKColl refId=prog_conf_ctasterc_op-data>
+	<refOM refId=trans_petdatos_om>
+<! -------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=procesoInicial>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+	</navegacionOP>
+<! -------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=DatosTtOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.po.OPConfirmarCtasTerc>
+<! -------------------------------------------------------------------------------->
+<! DATOS -------------------------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<kColl id=prog_conf_ctasterc_op-data>
+	<field id=Error>
+	<field id=CtaOrdenante>
+	<field id=CtaBeneficiaria>
+	<field id=IdenBeneficiario>
+	<field id=Periodo>
+	<field id=Dia>
+	<field id=Mes>
+	<field id=Anio>
+	<field id=DiaMensual>
+	<field id=NumMes>
+	<field id=Valor>
+	<field id=Observaciones>
+</kColl>
+<! -------------------------------------------------------------------------------->
+<! formatos de salida para JSP ---------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=DatosTtOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_correo_op description=correoop>
+		<fString dataName=CtaOrd description=ctaord>
+		<fString dataName=CtaBen description=ctaben>
+		<fString dataName=IdeBen description=ideben>
+		<fString dataName=NomBen description=nomben>
+		<fString dataName=TipoTras description=periodo>
+		<fString dataName=FecTra description=fechapuntual>
+		<fString dataName=DiaTra description=diamensual>
+		<fString dataName=NumMeses description=nummes>
+		<fNumString dataName=ValorTras description=valor>
+		<fString dataName=Observ description=observaciones>
+
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+<! formatos de entrada ------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+<fmtDef id=entradaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CtaOrdenante>
+		<fString dataName=CtaBeneficiaria>
+		<fString dataName=IdenBeneficiario>
+		<fString dataName=Periodo>
+		<fString dataName=Dia>
+		<fString dataName=Mes>
+		<fString dataName=Anio>
+		<fString dataName=DiaMensual>
+		<fString dataName=NumMes>
+		<fString dataName=Valor>
+		<fString dataName=Observaciones>
+	</fHTMLReq>
+</fmtDef>

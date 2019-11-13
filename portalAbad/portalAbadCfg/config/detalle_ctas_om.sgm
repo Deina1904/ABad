@@ -1,0 +1,68 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL detalle_ctas_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=detalle_ctas_om operationContext=OperationContext>
+	<refKColl refId=detalle_ctas_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=detalle_ctas_om-data>
+	<field id=IdTx value=TxFN58ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=NUMCTA >
+	  <field id=NROMOV >
+	  <field id=FECOPER >
+	  <field id=FECVAL >
+	  <field id=HORA >
+	  <field id=VALOR >
+	  <field id=SALDO >
+	  <field id=CHEQUE >
+	  <field id=CODIGO >
+	  <field id=DESCRIP >
+	  <field id=OBSERV >
+	  <field id=CEORI >
+	  <field id=PLAZA >
+  	  <field id=CTATRAS >
+  	  <field id=TIPO >
+	</kColl >
+
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= detalle_ctas_om-copiar>
+	<kColl id=a-TxFN58ENET>
+		<field id=Entrada value=TxFN58ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN58ENET>
+		<field id=Salida value=TxFN58ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

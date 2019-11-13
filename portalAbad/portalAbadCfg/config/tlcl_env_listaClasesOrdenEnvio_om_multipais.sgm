@@ -1,0 +1,39 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  MULTICANAL tlcl_env_listaClasesOrdenEnvio_om_multipais   ----------------------------------->
+<! OPERACION ------------------------------------------------------------------------->
+<tlcl.multipais.multicanal.env.enviodirecto.TLCLOmListaClasesOrdenEnvio id=tlcl_env_listaClasesOrdenEnvio_om_multipais operationContext=OperationContext>
+        <refKColl refId=tlcl_env_listaClasesOrdenEnvio_om_multipais-data>
+</tlcl.multipais.multicanal.env.enviodirecto.TLCLOmListaClasesOrdenEnvio>
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=tlcl_env_listaClasesOrdenEnvio_om_multipais-data>
+        <kColl id=entrada>
+                <field id=Canal >
+                <field id=Banco >
+                <field id=Logon >
+                <field id=BancoProducto >
+                <field id=Producto >
+                <field id=Subproducto >
+                <field id=Usuario >
+        </kColl>
+
+        <kColl id=salida>
+			  <iColl id=listaClasesOrdenIncorp>
+			    <kColl id=detalleClaseOrden>
+			      <field id=codClaseOrd>
+			      <field id=codExtensio>
+			      <field id=codAsunbanc>
+			      <field id=descAsunbanc>
+			    </kColl>
+			  </iColl>
+			  <iColl id=listaClasesOrdenAdapt>
+			    <kColl id=detalleClaseOrden>
+			      <field id=codClaseOrd>
+			      <field id=codExtensio>
+			      <field id=codAsunbanc>
+			      <field id=descAsunbanc>
+			    </kColl>
+			  </iColl>
+		</kColl>
+
+</kColl>

@@ -1,0 +1,50 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL envio_conti_om  ------------------------------------>
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=envio_conti_om operationContext=OperationContext>
+	<refKColl refId=envio_conti_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=envio_conti_om-data>
+	<field id=IdTx value=TxFCONENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+
+
+	</kColl>
+</kColl>
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id=envio_conti_om-copiar>
+	<kColl id=a-TxFCONENET>
+		<field id=Entrada value=TxFCONENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFCONENET>
+		<field id=Salida value=TxFCONENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

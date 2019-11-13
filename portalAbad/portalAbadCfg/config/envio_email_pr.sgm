@@ -1,0 +1,26 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  envio_email_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.email.PrEnvioEmail id=envio_email_pr operationContext=OperationContext>
+	<refKColl refId=envio_email_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>		
+		<estadoPr id=0 operacion=envio_email_op>		
+		<estadoPr id=1 operacion=envio_email_op>
+	</navegacionPr>		
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>	
+		<salidaPr id=0 operacion=envio_email_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=envio_email_op estadoOP=1 jspFile=confirmacion_email>		
+		<salidaPr id=1 operacion=envio_email_op estadoOP=1 jspFile=confirmacion_email>
+		<salidaPr id=1 operacion=envio_email_op estadoOP=ERROR jspFile=gn001_error>
+	</resultadoPr>	
+
+</com.grupobbva.bc.col.email.PrEnvioEmail>
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=envio_email_pr-data>
+</kColl>
+<! ----------------------------------------------------------------------------------->

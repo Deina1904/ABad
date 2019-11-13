@@ -1,0 +1,90 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pago_prestamos_propios_consulta_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.prest.OPPagoPrestamosPropiosConsulta id=pago_prestamos_propios_consulta_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionConsultarPagoPrestOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPagoPrestOPHTMLFmt>
+	<refKColl refId=pago_prestamos_propios_consulta_op-data>
+	<refOM refId=pago_prestamos_propios_consulta_om>
+	<refOM refId=pago_prestamos_propios_realizar_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=consultar metodo=consultarPagoPrestamos     requestFmt=DatosPagoPrestOPHTMLFmt>
+		<estadoOP id=0 accion=cancelar metodo=cancelar>
+
+		<estadoOP id=1 accion=consultar metodo=consultarPagoPrestamos     requestFmt=DatosPagoPrestOPHTMLFmt>
+		<estadoOP id=1 accion=cancelar metodo=cancelar>
+
+		<estadoOP id=2 accion=consultar metodo=consultarPagoPrestamos     requestFmt=DatosPagoPrestOPHTMLFmt>
+		<estadoOP id=2 accion=cancelar metodo=cancelar>
+
+		<estadoOP id=ERROR accion=consultar metodo=consultarPagoPrestamos requestFmt=DatosPagoPrestOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=consultar metodo=consultarPagoPrestamos requestFmt=DatosPagoPrestOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionConsultarPagoPrestOPJspFmt>
+		<salidaOP id=2 jspFmt=RelacionConsultarPagoPrestOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.prest.OPPagoPrestamosPropiosConsulta>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_prestamos_propios_consulta_op-data>
+	<field id=AsuntoPropio>
+	<field id=AsuntoAsociado>
+	<field id=ModalidadPago>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionConsultarPagoPrestOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=NumeroCtaOrdPr description=numeroCtaOrd>
+		<fString dataName=NumeroPrestPr description=numeroPrest>
+
+		<fString dataName=ModalidadPagoPr description=modalidadPago>
+
+		<fDate dataName=FechaOperaPr description=fechaOpera>
+		<fNumString dataName=ValorCapitalPr description=valorCapital>
+		<fNumString dataName=InteresCorrientePr description=interesCorriente>
+		<fNumString dataName=InteresMoraPr description=InteresMora>
+		<fNumString dataName=InteresMoraPr description=interesMora>
+		<fNumString dataName=GastosSegurosPr description=gastosSeguros>
+		<fNumString dataName=ValorTotalCuotaPr description=valorTotalCuota>
+		<fNumString dataName=CuotasVencidasPr description=cuotasVencidas>
+		<fNumString dataName=HonorariosPr description=honorarios>
+		<fNumString dataName=RelPr description=reliquidacion>
+
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosPagoPrestOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=AsuntoAsociado>
+		<fString dataName=ModalidadPago>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

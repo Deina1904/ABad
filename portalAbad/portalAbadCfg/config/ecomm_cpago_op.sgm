@@ -1,0 +1,86 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ecomm_cpago_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.dype.OPeCommCPago id=ecomm_cpago_op operationContext=OperationContext>
+   <refFormat name=jspFormat refId=EcommConfirmPagoJspFmt>
+   <refFormat name=jspFormat refId=ErrorOPJspFmt>
+   <refFormat name=jspFormat refId=MensajeOPJspFmt>
+   <refFormat name=htmlRequestFormat refId=DatosPagoOPHTMLFmt>
+   <refKColl refId=ecomm_cpago_op-data>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+   <navegacionOP>
+      <estadoOP id=0       accion=confirmar metodo=confirmar requestFmt=DatosPagoOPHTMLFmt>
+      <estadoOP id=1       accion=confirmar metodo=confirmar requestFmt=DatosPagoOPHTMLFmt>
+      <estadoOP id=1       accion=ayuda     metodo=ayudaClaveOper>
+      <estadoOP id=1       accion=continuar metodo=volverConfClave>
+      <estadoOP id=AYUDA   accion=ayuda     metodo=ayudaClaveOper>
+      <estadoOP id=AYUDA   accion=continuar metodo=volverConfClave>
+      <estadoOP id=ERROR   accion=confirmar metodo=volverConfClave>
+      <estadoOP id=MENSAJE accion=continuar metodo=volverConfClave>
+   </navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+   <resultadoOP>
+      <salidaOP id=1 jspFmt=EcommConfirmPagoJspFmt>
+      <salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+      <salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+      <salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+   </resultadoOP>
+</com.grupobbva.bc.col.web.dype.OPeCommCPago>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ecomm_cpago_op-data>
+   <field id=AsuntoPropio>
+   <field id=Error>
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=EcommConfirmPagoJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+      <fString dataName=FechaOperaPr description=desFechaPago><nullCheck>
+      <fString dataName=NumeroCtaOrdPr description=desCtaPeComm><nullCheck>
+      <fString dataName=desTipoServicio description=desTipoServicio><nullCheck>
+      <fString dataName=desPlanillaVirtual description=desPlanillaVirtual><nullCheck>
+      <fNumString dataName=desValor1 description=desValor1 decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+      <fString dataName=Error description=mensaje>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario>
+   </fJsp>
+</fmtDef>
+<fmtDef id=MensajeOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=s_cod_nomconta description=usuario>
+      <fString dataName=Mensaje description=mensaje>
+   </fJsp>
+</fmtDef>
+
+
+<! -------------------------------------------------------------------------------->
+
+! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosPagoOPHTMLFmt>
+   <fHTMLReq>
+      <fString dataName=AsuntoPropio>
+   </fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

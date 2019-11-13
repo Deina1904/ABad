@@ -1,0 +1,38 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  consulta_tarjs_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.tj.PrConsultaTarjs id=consulta_tarjs_pr operationContext=OperationContext>
+
+	<refKColl refId=consulta_tarjs_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+	
+		<estadoPr id=0 operacion=relacion_tarjs_op>
+		<estadoPr id=1 operacion=relacion_tarjs_op>
+		<estadoPr id=1 operacion=movimientos_tarjs_op>
+		
+	</navegacionPr>		
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>	
+	
+		<salidaPr id=0 operacion=relacion_tarjs_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=relacion_tarjs_op estadoOP=1 jspFile=tj002_relacion_tarjs>	
+		
+		<salidaPr id=1 operacion=movimientos_tarjs_op estadoOP=1 jspFile=pg003_mvtos_saldos_tarjs>	
+		<salidaPr id=1 operacion=movimientos_tarjs_op estadoOP=2 jspFile=pg004_saldos_tarjs>
+		<salidaPr id=1 operacion=movimientos_tarjs_op estadoOP=3 jspFile=pg005_mvtos_tarjs>
+		<salidaPr id=1 operacion=movimientos_tarjs_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=movimientos_tarjs_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+	</resultadoPr>	
+
+</com.grupobbva.bc.col.web.tj.PrConsultaTarjs>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_tarjs_pr-data>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

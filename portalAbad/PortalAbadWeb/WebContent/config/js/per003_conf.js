@@ -1,0 +1,1 @@
+function Validar(form){var ClaveOperacion=form.ClaveOperacion.value;if(ClaveOperacion==""){alert("Debe llenar el campo Clave de Operación");form.ClaveOperacion.focus();form.ClaveOperacion.select();return false;}form.submit();}

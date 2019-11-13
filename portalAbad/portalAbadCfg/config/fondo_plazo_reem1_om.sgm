@@ -1,0 +1,66 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL fondo_plazo_reem1_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<! LANZA EN HOST TRANSACCION DISPOSICION A CUENTAS DE TERCEROS ->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=fondo_plazo_reem1_om operationContext=OperationContext>
+	<refKColl refId=fondo_plazo_reem1_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=fondo_plazo_reem1_om-data>
+	<field id=IdTx value=TxFN48ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01 value=&@D06/16/2000>
+	  <field id=BFECHA02 value=&@D06/16/2000>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=omNumConfirmacion>
+	  <field id=omNumImporteTotal>
+	  <field id=omNumMontoReembolsar>
+	  <field id=omNumRetenciones>
+	  <field id=omNumPenalizacion>
+	  <field id=omNumImpuestos>
+	  <field id=omNumReserva>
+	  <field id=omNumExcedente>
+	  <field id=omNumSubTotal>
+	  <field id=omNumImporteLibre1>
+	  <field id=omNumNumeroLibre1>
+	  <field id=omNumNumeroLibre2>
+	  <field id=omStrCampoLibre1>
+	  <field id=omStrCampoLibre2>
+	  <field id=omStrIndPendiente>
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id=fondo_plazo_reem1_om-copiar>
+	<kColl id=a-TxFN48ENET>
+		<field id=Entrada value=TxFN48ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN48ENET>
+		<field id=Salida value=TxFN48ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

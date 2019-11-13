@@ -1,0 +1,74 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION solicitar_avantarjeter_op -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.atter.OPSolicitarAvanceTarjetater id=solicitar_avantarjeter_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionConsultarPTOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPTarjeOPOPHTMLFmt>
+	<refKColl refId=solicitar_avantarjeter_op-data>
+	<refOM refId=retorno_avancetarjeter_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=solicitarAvanceTarjeter     requestFmt=DatosPTarjeOPOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=solicitarAvanceTarjeter     requestFmt=DatosPTarjeOPOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=solicitarAvanceTarjeter requestFmt=DatosPTarjeOPOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=solicitarAvanceTarjeter requestFmt=DatosPTarjeOPOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionConsultarPTOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.atter.OPSolicitarAvanceTarjetater>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=solicitar_avantarjeter_op-data>
+	<field id=NumTarjeta>
+	<field id=CuentaBeneficiaria>
+	<field id=Correo>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionConsultarPTOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=CtaPTarje description=ctaptarje>
+		<fString dataName=TipoCtaPTarje description=tipoctaptarje>
+		<fString dataName=NumeroTarjeta description=numtarjeta>
+		<fString dataName=Email description=email>
+		<record dataName=retorno_avancetarjeter_om-data.Salida description=Consultar>
+			<fNumString dataName=VALOR description=valor>
+			<fString dataName=NOMBRE description=nombre>
+			<fString dataName=CEDULA description=cedula>
+		</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosPTarjeOPOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=NumTarjeta>
+		<fString dataName=CuentaBeneficiaria>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

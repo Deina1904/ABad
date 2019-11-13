@@ -1,0 +1,345 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION log_consulta_movimientos_op  -------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.logconsulta.OPLogmovimientos id=log_consulta_movimientos_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=InicioOPJspFmt>
+	<refFormat name=jspFormat refId=ListadoOPJspFmt>
+	<refFormat name=jspFormat refId=ExcelOPJspFmt>
+	<refFormat name=jspFormat refId=DetalleOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=EntListadoOPHTMLFmt>
+    <refFormat name=htmlRequestFormat refId=EntDetalleOPHTMLFmt>
+	<refKColl refId=log_consulta_movimientos_op-data>
+	<refOM refId=log_consulta_om>
+	<refOM refId=log_movimiento_om>
+
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=inicio metodo=inicioProceso>
+		<estadoOP id=INICIO accion=inicio metodo=inicioProceso>
+		<estadoOP id=INICIO accion=listado metodo=cargarDatosListado requestFmt=EntListadoOPHTMLFmt>
+
+		<estadoOP id=LISTADO accion=listado metodo=cargarDatosListado requestFmt=EntListadoOPHTMLFmt>
+		<estadoOP id=LISTADO accion=inicio metodo=inicioProceso>
+		<estadoOP id=LISTADO accion=adelante metodo=masDatos>
+		<estadoOP id=LISTADO accion=atras metodo=atrasDatos>
+		<estadoOP id=LISTADO accion=detalle metodo=detallePago requestFmt=EntDetalleOPHTMLFmt>
+		<estadoOP id=LISTADO accion=excel metodo=generarExcel >
+
+		<estadoOP id=EXCEL accion=excel metodo=generarExcel>
+
+		<estadoOP id=DETALLE accion=detalle metodo=detallePago requestFmt=EntDetalleOPHTMLFmt>
+		<estadoOP id=DETALLE accion=regreso metodo=regresar>
+		<estadoOP id=DETALLE accion=inicio metodo=inicioProceso>
+
+		<estadoOP id=ERROR accion=inicio metodo=inicioProceso>
+		<estadoOP id=ERROR accion=listado metodo=cargarDatosListado requestFmt=EntListadoOPHTMLFmt>
+		<estadoOP id=ERROR accion=detalle metodo=detallePago requestFmt=EntDetalleOPHTMLFmt>
+
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=INICIO jspFmt=InicioOPJspFmt>
+		<salidaOP id=LISTADO jspFmt=ListadoOPJspFmt>
+		<salidaOP id=DETALLE jspFmt=DetalleOPJspFmt>
+		<salidaOP id=EXCEL jspFmt=ExcelOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.logconsulta.OPLogmovimientos>
+
+<! DATOS --------------------------------------------------------------------------->
+<! ******* AJUSTES ****** ->
+<! 5. cambiar el id de kColl de la -data con el nombre del sgml ->
+<kColl id=log_consulta_movimientos_op-data>
+
+	<! ******* AJUSTES ****** ->
+	<! 6. definir todos los field que se reciben en los formatos de entrada y que se envian ->
+	<!    en los formatos de salida a las jsps es decir los datos de contexto de la OP ->
+    <field id=operacionesEfectuadas>
+    <field id=Grupo1>
+    <field id=opcion>
+    <field id=Dia>
+	<field id=Mes>
+	<field id=Anio>
+	<field id=DiaDesde>
+	<field id=MesDesde>
+	<field id=AnioDesde>
+	<field id=DiaHasta>
+	<field id=MesHasta>
+	<field id=AnioHasta>
+    <field id=Nom_Funcion>
+	<field id=criterio>
+	<field id=fechadesde>
+	<field id=fechahasta>
+	<field id=indicador_historico>
+	<iColl id=opListaLog>
+		<kColl id=jspRegistroLog>
+		      <field id=jspCodigoProductoContratoPropio>
+		      <field id=jspContratoCuentaPropia>
+		      <field id=jspCodigoProductoContratoAsociado>
+		      <field id=jspContratoAsociado>
+		      <field id=jspCNNSESIO>
+		      <field id=jspCNNOPERA>
+		      <field id=jspCNIOPERA>
+		      <field id=jspFechaOperacion>
+			  <field id=jspHoraDeTransaccion>
+			  <field id=jspFechaValor>
+			  <field id=jspCNCNLLLA>
+			  <field id=jspCNREFINT>
+			  <field id=jspCNREFEX1>
+			  <field id=jspCNREFEX2>
+			  <field id=jspCNYLIB01>
+			  <field id=jspCNYLIB02>
+			  <field id=jspCNYLIB03>
+			  <field id=jspCNYLIB04>
+			  <field id=jspCNYLIB05>
+			  <field id=jspCNYLIB06>
+			  <field id=jspCNYLIB07>
+			  <field id=jspCNYLIB08>
+			  <field id=jspCNYLIB09>
+			  <field id=jspCNYLIB10>
+			  <field id=jspCNTIMEST>
+		</kColl>
+	</iColl>
+
+	<! ---------------------Formato de Entrada para detalle jsp ------------------>
+	<field id=inpCNTIMEST>
+
+	<! ---------------------Formato de Salida para detalle jsp ------------------>
+
+	<field id=opCodigoProductoContratoPropio>
+	<field id=opContratoCuentaPropia>
+	<field id=opCodigoProductoContratoAsociado>
+	<field id=opContratoAsociado>
+	<field id=opCNNSESIO>
+	<field id=opCNNOPERA>
+	<field id=opCNIOPERA>
+	<field id=opFechaOperacion>
+	<field id=opHoraDeTransaccion>
+	<field id=opFechaValor>
+	<field id=opCNCNLLLA>
+	<field id=opCNREFINT>
+	<field id=opCNREFEX1>
+	<field id=opCNREFEX2>
+	<field id=opCNYLIB01>
+	<field id=opCNYLIB02>
+	<field id=opCNYLIB03>
+	<field id=opCNYLIB04>
+	<field id=opCNYLIB05>
+	<field id=opCNYLIB06>
+	<field id=opCNYLIB07>
+	<field id=opCNYLIB08>
+	<field id=opCNYLIB09>
+	<field id=opCNYLIB10>
+	<field id=opCNTIMEST>
+
+	<! -------------------------------------------------------------------------->
+
+	<iColl id=opListaFunciones>
+		<kColl id=opFUNCIONES>
+			<field id=opFUNCION>
+			<field id=opDESCRIPCION-CORTA>
+			<field id=opDESCRIPCION-LARGA>
+		</kColl>
+	</iColl>
+
+
+	<field id=Error>
+
+</kColl>
+
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+
+		<! ******* AJUSTES ****** ->
+		<! 7. definir todos los campos que se deben enviar en los formatos de salida hacia ->
+		<!    la JSP  ->
+
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+        <iCollVector dataName=opListaFunciones description=opListaFunciones>
+			<record dataName=opFUNCIONES>
+				<fString dataName=opFUNCION>
+				<fString dataName=opDESCRIPCION-CORTA>
+				<fString dataName=opDESCRIPCION-LARGA>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ListadoOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+		<fString dataName=operacionesEfectuadas description=jspoperacionesEfectuadas>
+		<fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+		<fString dataName=NombreFuncionPr description=NombreFuncionPr>
+
+		<iCollVector dataName=opListaLog description=opListaLog>
+			<record dataName=jspRegistroLog>
+				<fString dataName=jspCodigoProductoContratoPropio><nullCheck>
+				<fString dataName=jspContratoCuentaPropia><nullCheck>
+				<fString dataName=jspCodigoProductoContratoAsociado><nullCheck>
+				<fString dataName=jspContratoAsociado><nullCheck>
+				<fNumString dataName=jspCNNSESIO><nullCheck>
+				<fNumString dataName=jspCNNOPERA><nullCheck>
+				<fNumString dataName=jspCNIOPERA><nullCheck>
+				<fString dataName=jspFechaOperacion><nullCheck>
+				<fNumString dataName=jspHoraDeTransaccion><nullCheck>
+				<fString dataName=jspFechaValor><nullCheck>
+				<fString dataName=jspCNCNLLLA><nullCheck>
+				<fString dataName=jspCNREFINT><nullCheck>
+				<fString dataName=jspCNREFEX1><nullCheck>
+				<fString dataName=jspCNREFEX2><nullCheck>
+				<fString dataName=jspCNYLIB01><nullCheck>
+				<fString dataName=jspCNYLIB02><nullCheck>
+				<fString dataName=jspCNYLIB03><nullCheck>
+				<fString dataName=jspCNYLIB04><nullCheck>
+				<fString dataName=jspCNYLIB05><nullCheck>
+				<fString dataName=jspCNYLIB06><nullCheck>
+				<fString dataName=jspCNYLIB07><nullCheck>
+				<fString dataName=jspCNYLIB08><nullCheck>
+				<fString dataName=jspCNYLIB09><nullCheck>
+				<fString dataName=jspCNYLIB10><nullCheck>
+				<fString dataName=jspCNTIMEST><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=DetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=NombreFuncionPr description=NombreFuncionPr>
+		<fString dataName=opCodigoProductoContratoPropio>
+		<fString dataName=opContratoCuentaPropia>
+		<fString dataName=opCodigoProductoContratoAsociado>
+		<fString dataName=opContratoAsociado>
+		<fNumString dataName=opCNNSESIO>
+		<fNumString dataName=opCNNOPERA>
+		<fNumString dataName=opCNIOPERA>
+		<fString dataName=opFechaOperacion>
+		<fNumString dataName=opHoraDeTransaccion>
+		<fString dataName=opFechaValor>
+		<fString dataName=opCNCNLLLA>
+		<fString dataName=opCNREFINT>
+		<fString dataName=opCNREFEX1>
+		<fString dataName=opCNREFEX2>
+		<fString dataName=opCNYLIB01>
+		<fString dataName=opCNYLIB02>
+		<fString dataName=opCNYLIB03>
+		<fString dataName=opCNYLIB04>
+		<fString dataName=opCNYLIB05>
+		<fString dataName=opCNYLIB06>
+		<fString dataName=opCNYLIB07>
+		<fString dataName=opCNYLIB08>
+		<fString dataName=opCNYLIB09>
+		<fString dataName=opCNYLIB10>
+		<fString dataName=opCNTIMEST>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ExcelOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+		<fString dataName=NombreFuncionPr description=NombreFuncionPr>
+		<iCollVector dataName=prListaLog description=prListaLog>
+			<record dataName=prRegistroLog>
+			    <fString dataName=prCodigoProductoContratoPropio><nullCheck>
+				<fString dataName=prContratoCuentaPropia><nullCheck>
+				<fString dataName=prCodigoProductoContratoAsociado><nullCheck>
+				<fString dataName=prContratoAsociado><nullCheck>
+				<fNumString dataName=prCNNSESIO><nullCheck>
+				<fNumString dataName=prCNNOPERA><nullCheck>
+				<fNumString dataName=prCNIOPERA><nullCheck>
+				<fString dataName=prFechaOperacion><nullCheck>
+				<fNumString dataName=prHoraDeTransaccion><nullCheck>
+				<fString dataName=prFechaValor><nullCheck>
+				<fString dataName=prCNCNLLLA><nullCheck>
+				<fString dataName=prCNREFINT><nullCheck>
+				<fString dataName=prCNREFEX1><nullCheck>
+				<fString dataName=prCNREFEX2><nullCheck>
+				<fString dataName=prCNYLIB01><nullCheck>
+				<fString dataName=prCNYLIB02><nullCheck>
+				<fString dataName=prCNYLIB03><nullCheck>
+				<fString dataName=prCNYLIB04><nullCheck>
+				<fString dataName=prCNYLIB05><nullCheck>
+				<fString dataName=prCNYLIB06><nullCheck>
+				<fString dataName=prCNYLIB07><nullCheck>
+				<fString dataName=prCNYLIB08><nullCheck>
+				<fString dataName=prCNYLIB09><nullCheck>
+				<fString dataName=prCNYLIB10><nullCheck>
+				<fString dataName=prCNTIMEST><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<!fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=EntListadoOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=operacionesEfectuadas>
+		<fString dataName=Grupo1>
+		<fString dataName=opcion>
+        <fString dataName=Dia>
+		<fString dataName=Mes>
+		<fString dataName=Anio>
+		<fString dataName=DiaDesde>
+		<fString dataName=MesDesde>
+		<fString dataName=AnioDesde>
+		<fString dataName=DiaHasta>
+		<fString dataName=MesHasta>
+		<fString dataName=AnioHasta>
+		<fString dataName=Nom_Funcion>
+		<fString dataName=criterio>
+		<fString dataName=fechadesde>
+		<fString dataName=fechahasta>
+		<fString dataName=indicador_historico>
+</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=EntDetalleOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpCNTIMEST>
+	</fHTMLReq>
+
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->
+
+

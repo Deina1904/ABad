@@ -1,0 +1,71 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consulta_prestamos_movfiltro_ctasord_cl_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.prest.OPConsultaPrestamosMovfiltroCtasordCL id=consulta_prestamos_movfiltro_ctasord_cl_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionCtasOrdJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=consulta_prestamos_movfiltro_ctasord_cl_op-data>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=ctasord metodo=ctasord>
+		<estadoOP id=1 accion=ctasord metodo=ctasord>
+		<estadoOP id=ERROR accion=ctasord metodo=ctasord>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionCtasOrdJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.prest.OPConsultaPrestamosMovfiltroCtasordCL>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_prestamos_movfiltro_ctasord_cl_op-data>
+	<field id=Error>
+
+	<iColl id=listaPrestamos>
+		<kColl id=prestamo>
+			<field id=banco>
+			<field id=oficina>
+			<field id=dControl>
+			<field id=numCuenta>
+			<field id=claveAsunto>
+			<field id=tipo>
+		</kColl>
+	</iColl>
+
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionCtasOrdJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+
+		<iCollVector dataName=listaPrestamos description=listaPrestamos>
+			<record dataName=prestamo>
+				<fString dataName=banco><nullCheck>
+				<fString dataName=oficina><nullCheck>
+				<fString dataName=dControl><nullCheck>
+				<fString dataName=numCuenta><nullCheck>
+				<fString dataName=claveAsunto><nullCheck>
+				<fString dataName=tipo><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+

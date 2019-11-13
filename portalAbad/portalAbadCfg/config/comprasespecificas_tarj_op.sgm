@@ -1,0 +1,237 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION movimientos_ctas_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pte.OPComprasEspTarje id=comprasespecificas_tarj_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+        <refFormat name=jspFormat refId=SaldosMvtosOPJspFmt>
+
+        <refFormat name=htmlRequestFormat refId=CtasOPHTMLFmt>
+        <refFormat name=htmlRequestFormat refId=CtasFiltroOPHTMLFmt>
+
+	<refKColl refId=comprasespecificas_tarj_op-data>
+	<refOM refId=comprasespecificas_tarj_om>
+	<refOM refId=chequeras_movimiento_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=movimientosFiltro metodo=movimientosFiltro requestFmt=CtasFiltroOPHTMLFmt>
+
+		<estadoOP id=1 accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=1 accion=movimientosFiltro metodo=movimientosFiltro requestFmt=CtasFiltroOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=2 accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=2 accion=movimientosFiltro metodo=movimientosFiltro requestFmt=CtasFiltroOPHTMLFmt>
+		<estadoOP id=2 accion=masDatos metodo=masDatos>
+		<estadoOP id=2 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=3 accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=3 accion=movimientosFiltro metodo=movimientosFiltro requestFmt=CtasFiltroOPHTMLFmt>
+		<estadoOP id=3 accion=masDatos metodo=masDatos>
+		<estadoOP id=3 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=4 accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=4 accion=movimientosFiltro metodo=movimientosFiltro requestFmt=CtasFiltroOPHTMLFmt>
+		<estadoOP id=4 accion=masDatos metodo=masDatos>
+		<estadoOP id=4 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=5 accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=5 accion=movimientosFiltro metodo=movimientosFiltro requestFmt=CtasFiltroOPHTMLFmt>
+		<estadoOP id=5 accion=masDatos metodo=masDatosFiltro>
+		<estadoOP id=5 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=ERROR accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=ERROR accion=movimientosFiltro metodo=movimientosFiltro requestFmt=CtasFiltroOPHTMLFmt>
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=2 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=3 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=4 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=5 jspFmt=SaldosMvtosOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pte.OPComprasEspTarje>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=comprasespecificas_tarj_op-data>
+	<field id=MaxNumRegistros value=25>
+	<field id=MaxNumRegistrosFiltro value=600>
+	<field id=AsuntoPropio value=" ">
+	<field id=CuentaOrdenante value=" ">
+	<field id=Grupo1 value=" ">
+	<field id=Dia value=" ">
+	<field id=Mes value=" ">
+	<field id=Anio value=" ">
+	<field id=DiaDesde value=" ">
+	<field id=MesDesde value=" ">
+	<field id=AnioDesde value=" ">
+	<field id=DiaHasta value=" ">
+	<field id=MesHasta value=" ">
+	<field id=AnioHasta value=" ">
+	<field id=DiasUlti value=" ">
+	<field id=Grupo2 value=" ">
+	<field id=ImportDeter value=" ">
+	<field id=ImportDesde value=" ">
+	<field id=ImportHasta value=" ">
+	<field id=NumCuenta value=" ">
+	<field id=DescCriterio>
+	<field id=Error>
+	<field id=MasDatos>
+	<field id=AtrasDatos>
+	<field id=SiguienteMovimiento>
+	<field id=tipo value=" ">
+	<field id=opAsuntoPropio value=" ">
+	<field id=opGrupo1 value=" ">
+	<field id=opDia value=" ">
+	<field id=opMes value=" ">
+	<field id=opAnio value=" ">
+	<field id=opDiaDesde value=" ">
+	<field id=opMesDesde value=" ">
+	<field id=opAnioDesde value=" ">
+	<field id=opDiaHasta value=" ">
+	<field id=opMesHasta value=" ">
+	<field id=opAnioHasta value=" ">
+	<field id=opDiasUlti value=" ">
+	<field id=opGrupo2 value=" ">
+	<field id=opImportDeter value=" ">
+	<field id=opImportDesde value=" ">
+	<field id=opImportHasta value=" ">
+
+
+	<kColl id=Pagina>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+	      <field id=Descripcion>
+	      <field id=Comprobante>
+	      <field id=Tasa>
+	      <field id=Importe>
+	      <field id=Saldo>
+	      <field id=Cudif>
+	      <field id=Extrc>
+	      <field id=Movic>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Movimientos>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+		  <field id=Descripcion>
+		  <field id=Comprobante>
+		  <field id=Tasa>
+		  <field id=Importe>
+		  <field id=Saldo>
+		   <field id=Cudif>
+		  <field id=Extrc>
+	      <field id=Movic>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>
+
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=SaldosMvtosOPJspFmt>
+	<fJsp>
+
+	  	<fString dataName=opAsuntoPropio description=jspAsuntoPropio>
+		<fString dataName=opGrupo1 description=jspGrupo1>
+		<fString dataName=opDia description=jspDia>
+		<fString dataName=opMes description=jspMes>
+		<fString dataName=opAnio description=jspAnio>
+		<fString dataName=opDiaDesde description=jspDiaDesde>
+		<fString dataName=opMesDesde description=jspMesDesde>
+		<fString dataName=opAnioDesde description=jspAnioDesde>
+		<fString dataName=opDiaHasta description=jspDiaHasta>
+		<fString dataName=opMesHasta description=jspMesHasta>
+		<fString dataName=opAnioHasta description=jspAnioHasta>
+		<fString dataName=opDiasUlti description=jspDiasUlti>
+		<fString dataName=opGrupo2 description=jspGrupo2>
+		<fString dataName=opImportDeter description=jspImportDeter>
+		<fString dataName=opImportDesde description=jspImportDesde>
+		<fString dataName=opImportHasta description=jspImportHasta>
+
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=NumCuenta><nullCheck>
+		<fString dataName=DescCriterio><nullCheck>
+		<fString dataName=MasDatos description=MasDatos><nullCheck>
+		<fString dataName=AtrasDatos description=AtrasDatos><nullCheck>
+		<fString dataName=SiguienteMovimiento description=SiguienteMovimiento><nullCheck>
+
+
+
+
+		<iCollVector dataName=Pagina.ListaMovimientos description=ListaMovimientos>
+			<record dataName=Movimiento>
+      			<fDate dataName=FechaOperacion><nullCheck>
+				<fString dataName=Descripcion><nullCheck>
+	      		<fNumString dataName=Comprobante><nullCheck>
+				<fNumString dataName=Tasa><nullCheck>
+	      		<fNumString dataName=Importe><nullCheck>
+				<fNumString dataName=Saldo><nullCheck>
+      			<fNumString dataName=Cudif><nullCheck>
+				<fNumString dataName=Extrc><nullCheck>
+				<fNumString dataName=Movic><nullCheck>
+			</record>
+		</iCollVector>
+		<record dataName=comprasespecificas_tarj_om-data.Salida description=movim>
+
+		</record>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=CtasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=tipo>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=CtasFiltroOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=CuentaOrdenante>
+		<fString dataName=Grupo1>
+		<fString dataName=Dia>
+		<fString dataName=Mes>
+		<fString dataName=Anio>
+		<fString dataName=DiaDesde>
+		<fString dataName=MesDesde>
+		<fString dataName=AnioDesde>
+		<fString dataName=DiaHasta>
+		<fString dataName=MesHasta>
+		<fString dataName=AnioHasta>
+		<fString dataName=DiasUlti>
+		<fString dataName=Grupo2>
+		<fString dataName=ImportDeter>
+		<fString dataName=ImportDesde>
+		<fString dataName=ImportHasta>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

@@ -1,0 +1,20 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL desbloqueo_usuario_om ----------------------------------->
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<CircuitoUsuariosCol.OMDesbloqueoPW id=desbloqueo_usuario_om operationContext=OperationContext>
+	<refKColl refId=desbloqueo_usuario_om-data>
+</CircuitoUsuariosCol.OMDesbloqueoPW>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=desbloqueo_usuario_om-data>
+	<field id=Alias>
+	<field id=OperPassword>
+	<field id=Bank>
+	<field id=Password>
+</kColl>
+
+<! ---------------------------------------------------------------------------------->
+

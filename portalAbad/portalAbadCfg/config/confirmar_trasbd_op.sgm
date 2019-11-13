@@ -1,0 +1,81 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION confirmar_trasbd_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.tpbdolar.OPConfirmarTrasBDolar id=confirmar_trasbd_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaTrasOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>			
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+	<refKColl refId=confirmar_trasbd_op-data>	
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>	
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>	
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>	
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>	
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>	
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>	
+	</navegacionOP>		
+	
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>	
+		<salidaOP id=1 jspFmt=ConfirmaTrasOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>								
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>	
+</com.grupobbva.bc.col.web.tpbdolar.OPConfirmarTrasBDolar>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=confirmar_trasbd_op-data>
+	<field id=AsuntoPropio>
+	<field id=Importe>
+	<field id=Observaciones>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaTrasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_correo_op description=correoop>				
+		<fString dataName=Divisa description=divisa>
+		<fString dataName=CtaOrd description=ctaord>
+		<fString dataName=NumContrato description=numcontrato>
+		<fNumString dataName=ImporteTras description=importe>
+		<fNumString dataName=Ups description=ups>
+		<fString dataName=ObservTras description=observaciones>
+		<fString dataName=NumeroCtaBenef description=cuenta>			
+		<fString dataName=FechaOpe description=fechaope>			
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=Importe>
+		<fString dataName=Observaciones>
+	</fHTMLReq>
+</fmtDef>	
+
+<! --------------------------------------------------------------------------------->

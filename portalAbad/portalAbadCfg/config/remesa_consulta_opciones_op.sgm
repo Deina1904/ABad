@@ -1,0 +1,72 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION remesa_consulta_opciones_op  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.consreme.OPConsultaRemesas id=remesa_consulta_opciones_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionOrdOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=remesa_consulta_opciones_op-data>
+
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=menuOrdTras metodo=ordTras>
+		<estadoOP id=1 accion=menuOrdTras metodo=ordTras>
+		<estadoOP id=ERROR accion=menuOrdTras metodo=ordTras>
+
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionOrdOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.consreme.OPConsultaRemesas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=remesa_consulta_opciones_op-data>
+	<field id=Error>
+	<iColl id=ListaCtasOrd>
+		<kColl id=CuentaOrdenante>
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionOrdOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<iCollVector dataName=ListaCtasOrd description=ListaCtasOrd>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>

@@ -1,0 +1,25 @@
+<! BBVA  --------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consulta_bienes_hpbd_om    ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.col.web.homepage.OMConsultaBienes id=consulta_bienes_hpbd_om operationContext=OperationContext>
+	<refKColl refId=consulta_bienes_hpbd_om-data>
+</com.grupobbva.col.web.homepage.OMConsultaBienes>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_bienes_hpbd_om-data>
+    <kColl id=omLstBienes>
+	  <iColl id=omListaBienes>
+	    <kColl id=omDatosBien>
+	        <field id="OM_DEPTO" >
+            <field id="OM_CIUDAD" >
+            <field id="OM_TIPOBIEN" >
+            <field id="OM_CONSECUTIVO" >
+            <field id="OM_DESCRIPCION" >
+	        <field id="OM_AREA" >
+            <field id="OM_DIRECCION" >
+            <field id="OM_PRECIO" >
+            <field id="OM_INFORMES" >
+	    </kColl >
+	  </iColl >
+    </kColl >
+</kColl>

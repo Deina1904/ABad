@@ -1,0 +1,43 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL log_consulta_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=log_consulta_om operationContext=OperationContext>
+	<refKColl refId=log_consulta_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=log_consulta_om-data>
+	<field id=IdTx value=TxFN21ENET>
+	<kColl id=Entrada>
+	  <field id=BPAGINAC>
+	</kColl>
+
+    <kColl id=Salida>
+		  <iColl id=ListaFunciones>
+		    <kColl id=FUNCIONES>
+		      <field id=FUNCION>
+			  <field id=DESCRIPCION-CORTA>
+		      <field id=DESCRIPCION-LARGA>
+		    </kColl>
+		  </iColl>
+	</kColl>
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=log_consulta_om-copiar>
+	<kColl id=a-TxFN21ENET>
+		<field id=Entrada value=TxFN21ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN21ENET>
+		<field id=Salida value=TxFN21ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

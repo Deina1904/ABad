@@ -1,0 +1,28 @@
+﻿<! Contexts definition file for the server>
+
+<! CONTEXTO GLOBAL>
+
+<context id = GlobalBbvaNetContext type=branch parent = nil>
+        <refKColl refId=GlobalBbvaNetData>
+        </refKColl>
+        <refService refId=PoolMQServiceCICS type=mqPool>
+	<!refService refId=CacheBBVACICS type="cache">
+        <!refService refId=MQServiceIMS3 type=mq>
+        <!refService refId=Diario1 type=id>
+</context>
+
+<! CONTEXTO DE SESION--------------------------------------------------------------------------------->
+
+<!context id=SesionContext type=sesion parent=GlobalBbvaNetContext>
+<context id=SesionContext type=sesion parent=nil>
+	<refKColl refId=SesionDatosGenerales>
+	</refKColl>
+</context>
+
+
+<! PROCESOS Y OPERACIONES DE PRESENTACION Y  OPERACIONES MULTICANAL ---------------------------------------------------------------------->
+
+<context id=OperationContext type=op parent=nil>
+</context>
+
+

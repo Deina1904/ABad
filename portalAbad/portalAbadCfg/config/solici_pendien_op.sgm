@@ -1,0 +1,71 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION solici_pendien_op  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.web.au.OPSoliciPendien id=solici_pendien_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=SoliciPendienOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refKColl refId=solici_pendien_op-data>
+	<refOM refId=solici_pendien_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=menuSoliciPendien metodo=pendiente>
+		<estadoOP id=1 accion=menuSoliciPendien metodo=pendiente>
+		<estadoOP id=ERROR accion=menuSoliciPendien metodo=pendiente>
+		<estadoOP id=VALIDAR accion=menuSoliciPendien metodo=pendiente>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=SoliciPendienOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.web.au.OPSoliciPendien>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=solici_pendien_op-data>
+	<field id=Error>
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=SoliciPendienOPJspFmt>
+	<fJsp>
+        <fString dataName=s_cod_nomconta description=usuario>
+	    <fString dataName=s_cod_nomempre description=empresa>
+   		<iCollVector dataName=s_salida_pendientes.s_lista_pendientes description=ListaPendientes>
+	  	<record dataName=s_pendientes>
+		     <fString dataName=s_funcion><nullCheck>
+		     <fString dataName=s_secuencia><nullCheck>
+		     <fString dataName=s_descripcion_funcion><nullCheck>
+		     <fString dataName=s_nombre_usuario><nullCheck>
+		     <fNumString dataName=s_importe decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=no showThousandsSep=yes ><nullCheck>
+		     <fString dataName=s_divisa><nullCheck>
+<!--		     <fString dataName=s_fecha_alta><nullCheck> -->
+		     <fString dataName=s_fecha_alta><nullCheck>
+        	</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->
+

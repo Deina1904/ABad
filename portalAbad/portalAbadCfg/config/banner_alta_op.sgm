@@ -1,0 +1,75 @@
+<!-- BBVA ---------------------------------------------------------------------------->
+<!-- Operación:  carga parametría banner  ----------------------------------------->
+<!-- OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.emp.banner.alta.OpAlta id=banner_alta_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+    <refFormat name=jspFormat refId=DatosOPJspFmt>
+    <refFormat name=htmlRequestFormat refId=DatosEntradaOPHTMLFmt>
+	<refKColl refId=banner_alta_op-data>
+<!-- --------------------------------------------------------------------------------->
+
+<!-- ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=iniciar metodo=iniciarBanner>
+		<estadoOP id=1 accion=iniciar metodo=iniciarBanner>
+		<estadoOP id=2 accion=iniciar metodo=iniciarBanner>
+		<estadoOP id=1 accion=cargar metodo=cargarBanner requestFmt=DatosEntradaOPHTMLFmt>
+		<estadoOP id=2 accion=cargar metodo=cargarBanner requestFmt=DatosEntradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=filtro metodo=cargaDatos>
+		<estadoOP id=ERROR accion=nuevo metodo=nuevo>
+	</navegacionOP>
+<!-- SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=DatosOPJspFmt>
+		<salidaOP id=2 jspFmt=DatosOPJspFmt1>
+	</resultadoOP>
+</com.grupobbva.emp.banner.alta.OpAlta>
+
+<!-- DATOS --------------------------------------------------------------------------->
+<kColl id=banner_alta_op-data>
+	<field id=user>
+	<field id=codigo>
+	<field id=datos>
+	<field id=Error>
+	<iColl id=ListaBanner>
+		    <kColl id=banner>
+			  <field id=id_banner>
+			  <field id=cod_usuaint>
+		    </kColl>
+	</iColl>
+</kColl>
+<!-- FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=DatosOPJspFmt>
+	<fJsp>
+	</fJsp>
+</fmtDef>
+<fmtDef id=DatosOPJspFmt1>
+	<fJsp>
+		<iCollVector dataName=ListaBanner description=ListaBanner>
+				<record dataName=banner>
+					<fString dataName=id_banner>
+					<fString dataName=cod_usuaint>
+				</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<!-- FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosEntradaOPHTMLFmt>
+	<fHTMLReq>
+			<fString dataName=datos>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=DatosEntradaOPHTMLFmt1>
+	<fHTMLReq>
+			<fString dataName=fechaini>
+	</fHTMLReq>
+</fmtDef>
+<!-- --------------------------------------------------------------------------------->

@@ -1,0 +1,206 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PROCESO  auto_solici_pr  CONTINET EMPRESAS------------------------------->
+<! OPERACION ------------------------------------------------------------------------->
+<com.grupobbva.bc.web.au.PrAutorizacion id=auto_solici_pr operationContext=OperationContext>
+	<refKColl refId=auto_solici_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=solici_pendien_op>
+
+		<estadoPr id=1 operacion=solici_pendien_op>
+		<estadoPr id=1 operacion=ordenar_autori_op>
+
+		<estadoPr id=2 operacion=solici_pendien_op>
+		<estadoPr id=2 operacion=opera_realiza_op>
+		<estadoPr id=2 operacion=ordenar_autori_op>
+
+		<estadoPr id=3 operacion=solici_pendien_op>
+
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=solici_pendien_op estadoOP=VALIDAR jspFile=r002_traspasos>
+		<salidaPr id=0 operacion=solici_pendien_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=solici_pendien_op estadoOP=1 jspFile=au001_solici_pendien>
+
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=1 jspFile=au002_ordenar_autori>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=3 jspFile=au002_ordenar_autori2>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=4 jspFile=au002_ordenar_autoricdt>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=5 jspFile=au002_ordenar_autoriach>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=6 jspFile=au002_ordenar_autoritcter>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=7 jspFile=au002_ordenar_autorichq>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=8 jspFile=au002_ordenar_autoripto>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=9 jspFile=au002_ordenar_autoriava>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=10 jspFile=au002_ordenar_autoriavater>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=11 jspFile=au002_ordenar_autoriprest>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=12 jspFile=au002_ordenar_autoripagomvo>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=13 jspFile=au002_ordenar_progoper>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=14 jspFile=au002_ordenar_autoriprest_pagoCL>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=15 jspFile=au002_ordenar_autoriprest_dispCL>
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=16 jspFile=au002_ordenar_fondoplazo>
+
+<! inicio mch ->
+		<salidaPr id=2 operacion=ordenar_autori_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=opera_realiza_op estadoOP=ERROR jspFile=gn001_error>
+<! fin mch ->
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=MENSAJE jspFile=gn001_error>
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=1 jspFile=au003_opera_realiza>
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=2 jspFile=au003_opera_realiza1>
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=3 jspFile=au003_opera_realizacdt>
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=4 jspFile=au003_opera_realizaach>
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=5 jspFile=au003_opera_realizatcter>
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=6 jspFile=au003_opera_realizatchq>
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=7 jspFile=au003_opera_realizapto>
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=8 jspFile=au003_opera_realizaava>
+		<salidaPr id=3 operacion=opera_realiza_op estadoOP=9 jspFile=au003_opera_realizaavater>
+	    <salidaPr id=3 operacion=opera_realiza_op estadoOP=10 jspFile=au003_opera_realizaprest>
+	    <salidaPr id=3 operacion=opera_realiza_op estadoOP=11 jspFile=au003_ordenar_autoripagomvo>
+	    <salidaPr id=3 operacion=opera_realiza_op estadoOP=12 jspFile=au003_ordenar_autoriprogopera>
+	    <salidaPr id=3 operacion=opera_realiza_op estadoOP=13 jspFile=au003_opera_realizaprest_pagoCL>
+	    <salidaPr id=3 operacion=opera_realiza_op estadoOP=14 jspFile=au003_opera_realizaprest_dispCL>
+	    <salidaPr id=3 operacion=opera_realiza_op estadoOP=15 jspFile=au003_opera_realiza_fondoplazo>
+
+	</resultadoPr>
+</com.grupobbva.bc.web.au.PrAutorizacion>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=auto_solici_pr-data>
+
+	<field id=EstadoOpAnt = "0">
+
+	<field id=NroOperacion>
+	<field id=RefCargo>
+	<field id=RefAbono>
+	<field id=TipoOperacion>
+	<field id=CtaCargo>
+	<field id=ImporteCargado>
+	<field id=MonedaCargado>
+	<field id=CtaAbono>
+  	<field id=TitularAbono>
+  	<field id=ImporteTransferido>
+  	<field id=MonedaTransferido>
+  	<field id=Referencia = "">
+  	<field id=Representante>
+  	<field id=CodFuncion>
+  	<field id=TipoCambio>
+	<field id=CtaCargoenvio>
+    <!field id=UpsP value = 0.00>
+    <field id=UpsP value = 0>
+    <field id=UpsP value = 0>
+    <field id=fechaj value = "0001-01-01">
+    <field id=IdenB value = " ">
+    <field id=NombreB value = " ">
+    <field id=prNetAboCta value = 0.00>
+    <field id=prVlrRetFte value = 0.00>
+	<field id=Tipo value = " ">
+	<field id==Cuota value = " ">
+
+
+<! DATOS  PARA CDTS   --------------------------------------------------------------------->
+
+ 	<field id=ImporteInver value = 0>
+ 	<field id=RBruto value = 0>
+ 	<field id=RNeto value = 0>
+ 	<field id=RteFte value = 0>
+ 	<field id=Abono value = 0>
+ 	<field id=Fecven value = "2000-01-01">
+ 	<field id=Fecval value = "2000-01-01">
+ 	<field id=Tasa value = 0>
+ 	<field id=TipPlazo value = " ">
+ 	<field id=DesPlazo value = " ">
+ 	<field id=Plazo value = 0>
+ 	<field id=PerPagInter value = " ">
+ 	<field id=DesPagInter value = " ">
+ 	<field id=TipProrroga value = " ">
+ 	<field id=DesProrroga value = " ">
+ 	<field id=TipCtaDeb value = " ">
+ 	<field id=NumeroCtaaDebita value = " ">
+ 	<field id=TipCtaAbo value = " ">
+ 	<field id=NumeroCtaaAbonar value = " ">
+ 	<field id=ClaveDeb value = " ">
+ 	<field id=ClaveAbo value = " ">
+ 	<field id=NumeroCDT value = " ">
+
+<! DATOS  PARA TRANSFERECIAS INTERBANCARIAS ACH   --------------------------------------------------------------------->
+
+	<field id=CodEntidadBenfPr value = " ">
+	<field id=DesEntidadBenfPr value = " ">
+	<field id=TipoCtaBenefPr value = " ">
+	<field id=DesCtaBenefPr value = " ">
+	<field id=IdBeneficiarioPr value = " ">
+	<field id=NomBeneficiarioPr value = " ">
+
+<! DATOS  PARA PAGO TC TERCEROS  --------------------------------------------------------------------->
+
+	<field id=emailTCTER value = " ">
+	<field id=observacionTCTER value = " ">
+	<field id=nombreTCTER value = " ">
+
+<! DATOS  PARA PAGO SOLICITUD CHEQUERAS--------------------------------------------------------------------->
+
+	<field id=tipochequera value = " ">
+	<field id=nrochequeras value = " ">
+
+<! DATOS  PARA PAGO PRESTAMOS--------------------------------------------------------------------->
+
+	<field id=NumeroCtaOrdPr value = " ">
+	<field id=NumeroPrestPr value = " ">
+	<field id=FechaOperaPr value = "0001-01-01">
+
+	<field id=ValorCapitalPr>
+	<field id=InteresCorrientePr>
+	<field id=InteresMoraPr>
+	<field id=InteresMoraPr>
+	<field id=GastosSegurosPr>
+	<field id=ValorTotalCuotaPr>
+	<field id=CuotasVencidasPr>
+	<field id=NombreTerceroPr  value = " ">
+
+<! DATOS  PAGOS MASIVOS--------------------------------------------------------------------->
+
+	<field id=CodPlanillaPr>
+	<field id=CtasAAbonarPr>
+	<field id=FechaEjecucionPr>
+
+<! DATOS  PROGRAMACION DE OPERACIONES ENET-------------------------------------------------->
+
+    <field id=CtaDestinoPr>
+    <field id=CorreoPr>
+	<field id=PeriodicidadPr>
+	<field id=FechaTrasPr>
+	<field id=DiaMensualPr>
+	<field id=NumMesPr>
+    <field id=ImportePr>
+
+<! DATOS  CREDITO LIQUIDO -------------------------------------------------->
+
+    <field id=CtaDestinoPrCL>
+    <field id=CtaOrigenPrCL>
+    <field id=TipoCtaPrCL>
+    <field id=EntidadPrCL>
+    <field id=TitularDestinoPrCL>
+    <field id=IdTitularDestPrCL>
+    <field id=CorreoPrCL>
+    <field id=ImportePrCL>
+    <field id=ObservacionesPrCL>
+    <field id=TipoDisposicionPrCL>
+    <field id=FechaPrCL>
+    <field id=NumeroConfirmacionPrCL>
+
+<! DATOS  SUSCRIPCION FONPLAZO ENET-------------------------------------------------->
+
+    <field id=ContratoFondoPr>
+    <field id=ImporteFondoPr>
+    <field id=ReembAutoPr>
+	<field id=FecVencimientoPr>
+	<field id=ObservacionesPr>
+
+</kColl>
+<! --------------------------------------------------------------------------------->

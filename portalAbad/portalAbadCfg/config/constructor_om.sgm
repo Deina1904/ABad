@@ -1,0 +1,94 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL constructor_om  ------------------------------->
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.constructor.OmConstructor id=constructor_om operationContext=OperationContext>
+	<refKColl refId=constructor_om-data>
+</com.grupobbva.bc.col.constructor.OmConstructor>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+
+<kColl id=constructor_om-data>
+	<field id=Cuenta>
+	<field id=FechaProceso>
+	<field id=contrato>
+	<field id=entidad>
+	<field id=oficina>
+	<field id=numercontr>
+	<field id=calidadperticipe>
+	<field id=numorden>
+	<field id=aplicacion>
+	<field id=idencli>
+	<field id=nroform>
+	<field id=sociedad>
+	<field id=oficinaoper>
+	<field id=oficinagestora>
+	<field id=tipoincidencia>
+	<field id=afagirdoc>
+	<field id=inddirec>
+	<field id=formato>
+	<field id=interfaz>
+	<field id=integracion>
+	<field id=longdatos>
+	<field id=fechacierre>
+	<field id=numcta>
+	<field id=desdiv>
+	<field id=hojaanual>
+	<field id=desproduc>
+	<field id=despet>
+	<field id=tiular1>
+	<field id=tiular2>
+	<field id=tiular3>
+	<field id=tiular4>
+	<field id=tiular5>
+	<field id=tiular6>
+	<field id=nomofic>
+	<field id=fechaproc>
+	<field id=hoja>
+	<field id=extracto>
+	<field id=nomclien>
+	<field id=proyecto>
+	<field id=nomproyecto>
+	<field id=credito>
+	<field id=gestora>
+	<field id=imp-concedido>
+	<field id=reforma>
+	<field id=tasa>
+	<field id=plazo>
+	<field id=fechavenci>
+	<field id=fechaliq>
+	<field id=periodo>
+	<iColl id=Listareg3>
+	        <kColl id=reg3>
+	          <field id=recorte>
+	          <field id=saldospesos>
+	          <field id=saldosuvr>
+	          <field id=intctes>
+	          <field id=intmora>
+	          <field id=correcion>
+	          <field id=uvr>
+	        </kColl >
+	 </iColl >
+	 <iColl id=Listareg4>
+	 	        <kColl id=reg4>
+	 	          <field id=fechamov>
+	 	          <field id=concepto>
+	 	          <field id=intctes>
+	 	          <field id=capital>
+	 	          <field id=vruvrmov>
+	 	          <field id=saldouvr>
+	 	          <field id=saldopesos>
+	 	          <field id=valoruvr>
+	 	          <field id=saldofec>
+	 	         </kColl >
+	 </iColl >
+	 <field id=saldocorte>
+	 	<field id=intcorte>
+	 	<field id=moracorte>
+	<field id=saldoantcorte>
+
+</kColl>
+
+<! ---------------------------------------------------------------------------------->

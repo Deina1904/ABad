@@ -1,0 +1,16 @@
+<com.grupobbva.bc.col.web.contingencia.olvidousuario.PrContingenciaOlvido id=contingencia_olvido_pr operationContext=OperationContext>
+	<refKColl refId=contingencia_olvido_pr-data>
+<! ESTADOS --------------------------------------------------------------------------->
+		<navegacionPr>
+			<estadoPr id=0 operacion=contingencia_olvido_op>
+		</navegacionPr>
+<! SALIDAS --------------------------------------------------------------------------->
+		<resultadoPr>
+			<salidaPr id=0 operacion=contingencia_olvido_op estadoOP=1 jspFile=contingencia_olvido_formulario>
+			<salidaPr id=0 operacion=contingencia_olvido_op estadoOP=2 jspFile=contingencia_olvido_firma>
+			<salidaPr id=0 operacion=contingencia_olvido_op estadoOP=3 jspFile=contingencia_olvido_confirma>
+		</resultadoPr>
+</com.grupobbva.bc.col.web.contingencia.olvidousuario.PrContingenciaOlvido>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=contingencia_olvido_pr-data>
+</kColl>

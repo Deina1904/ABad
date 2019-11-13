@@ -1,0 +1,188 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PRESENTACION adt_enviarfichero_op  -------------------------------->
+<! OPERACION ------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pagos.adaptacion.OpAdtEnviarFichero id=adt_enviarfichero_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=enviando_fichero_JspFmt>
+	<refFormat name=htmlRequestFormat refId=envio_fichero_HTMLFmt>
+	<refKColl refId=adt_enviarfichero_op-data>
+	<refOM refId=tlcl_com_ordenantes_om>
+	<refOM refId=tlcl_com_cuentas_ordenante_om>
+	<refOM refId=tlcl_adt_lectura_fichero_om_multipais>
+	<refOM refId=tlcl_com_encriptacion_cv_om_multipais>
+	<refOM refId=tlcl_com_verificacion_encriptacion_om_multipais>
+	
+	
+	
+<! ----------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>		
+		<estadoOP id=0 accion=consultarEmisoresTipoPago metodo=consultarEmisoresTipoPago requestFmt=tipo_pago_seleccionado_HTMLFmt>
+		<estadoOP id=1 accion=consultarEmisoresTipoPago metodo=consultarEmisoresTipoPago requestFmt=tipo_pago_seleccionado_HTMLFmt>
+		<estadoOP id=2 accion=consultarEmisoresTipoPago metodo=consultarEmisoresTipoPago requestFmt=tipo_pago_seleccionado_HTMLFmt>
+		<estadoOP id=3 accion=consultarEmisoresTipoPago metodo=consultarEmisoresTipoPago requestFmt=tipo_pago_seleccionado_HTMLFmt>
+		<estadoOP id=errorCrd accion=consultarEmisoresTipoPago metodo=consultarEmisoresTipoPago requestFmt=tipo_pago_seleccionado_HTMLFmt>
+		<estadoOP id=ERROR accion=consultarEmisoresTipoPago metodo=consultarEmisoresTipoPago requestFmt=tipo_pago_seleccionado_HTMLFmt>
+		
+		<estadoOP id=1 accion=consultarCuentasEmisor metodo=consultarCuentasEmisor requestFmt=emisor_seleccionado_HTMLFmt>
+		<estadoOP id=2 accion=consultarCuentasEmisor metodo=consultarCuentasEmisor requestFmt=emisor_seleccionado_HTMLFmt>
+		
+		<estadoOP id=2 accion=lanzarValidacion metodo=lanzarValidacion requestFmt=envio_fichero_HTMLFmt>
+		
+		<!--estadoOP id=0 accion=lanzarValidacion metodo=lanzarValidacion requestFmt=envio_fichero_HTMLFmt-->		
+	</navegacionOP>
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=0 jspFmt=enviando_fichero_JspFmt>
+		
+		<salidaOP id=1 jspFmt=datos_emisores_JspFmt>
+		<salidaOP id=2 jspFmt=cuentas_emisor_JspFmt>
+		
+		<!-- GP-9474 CERTIFICADOS DIGITALES INICIO -->
+		<salidaOP id=errorCrd jspFmt=ErrorCrdOPJspFmt>
+		<!-- GP-9474 CERTIFICADOS DIGITALES FIN -->
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagos.adaptacion.OpAdtEnviarFichero>
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=adt_enviarfichero_op-data>
+	<field id=codClaseOrd>
+	<field id=codIdOrden>
+	<field id=codExtensio>
+	<field id=codBancoCSB>
+	<field id=nombreCompletoFichero>
+	<field id=filesize>
+	<field id=versionPGP>
+	<field id=s_cod_nomconta>
+	<field id=referencia>
+	<field id=fechaproceso>
+	<field id=nombreFichero>
+	<field id=numOrdenes>
+	<field id=importeTotal>
+	<field id=qnu_numitem>
+	<field id=modoCreacion>
+	<field id=fechaProceso>
+	<field id=ficheroOK>
+	
+	<field id=fechaMinima>
+	<field id=fechaMaxima>
+	<field id=descAsunbanc>
+	<field id=validaServicio>
+
+	<iColl id=listaEmisores>
+		<kColl id=emisor>
+			<field id=codigoOrigen>
+			<field id=descripcionOrigen>
+			<field id=numeroDocIdentificacion>
+			<field id=paisOrdenante>
+		</kColl>
+	</iColl>	
+	<field id=indexEmisor>
+	<field id=codigoOrigen>
+
+	<iColl id=listaCuentas>
+		<kColl id=cuenta>
+			<field id=cuentaCargo>
+			<field id=codigoDivisa>			
+			<field id=codigoSwift>
+		</kColl>
+	</iColl>	
+	<field id=indexCuenta>
+	<field id=cuentaCargo>
+	<field id=codigoDivisa>
+	
+	<! GP-9474 CERTIFICADOS DIGITALES INICIO -->	
+	<field id=tipoCifrado>
+	<kColl id=errorCrd>
+		<field id=codError>
+		<field id=mensaje>		
+	</kColl>			
+	<! GP-9474 CERTIFICADOS DIGITALES FIN -->	
+</kColl>
+
+<! FORMATOS DE SALIDA -------------------------------------------------------------------------->
+
+<fmtDef id=datos_emisores_JspFmt>
+	<fJsp>
+		<iCollVector dataName=listaEmisores description=listaEmisores>
+			<record dataName=emisor>
+				<fString dataName=codigoOrigen description=codigoOrigen><nullCheck>
+				<fString dataName=descripcionOrigen description=descripcionOrigen><nullCheck>				
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=cuentas_emisor_JspFmt>
+	<fJsp>
+		<iCollVector dataName=listaCuentas description=listaCuentas>
+			<record dataName=cuenta>
+				<fString dataName=cuentaCargo description=cuentaCargo><nullCheck>
+				<fString dataName=codigoDivisa description=codigoDivisa><nullCheck>
+				<fString dataName=codigoSwift description=codigoSwift><nullCheck>				
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=enviando_fichero_JspFmt>
+	<fJsp>
+		<fString dataName=codClaseOrd><nullCheck>
+		<fString dataName=codClaseOrd description=descClaseOrd aditionalData=s_idioma descLarga=true catalogo=CLASEORD><nullCheck>
+		<fString dataName=descAsunbanc><nullCheck>
+		<fString dataName=codBancoCSB><nullCheck> <!-- EMX07F2004 EDA -->
+		<! Novatec I 7902-->
+		<fString dataName = nombreCompletoFichero><nullCheck>
+		<fString dataName = fechaMinima><nullCheck>
+		<fString dataName = referencia><nullCheck>
+		<fString dataName = s_cod_nomconta><nullCheck>		
+		<! Novatec F 7902-->
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=formato_vacio>
+	<fJsp>
+	</fJsp>
+</fmtDef>
+<!-- GP-9474 CERTIFICADOS DIGITALES INICIO -->
+<fmtDef id=ErrorCrdOPJspFmt>
+	<fJsp aditionalData=s_idioma>	
+		<fString dataName=errorCrd.codError description=codError><nullCheck>
+		<fString dataName=errorCrd.mensaje description=mensaje><nullCheck>
+	</fJsp>
+</fmtDef>
+<!-- GP-9474 CERTIFICADOS DIGITALES FIN -->
+
+<! FORMATOS DE ENTRADA --------------------------------------------------------------->
+
+<fmtDef id=envio_fichero_HTMLFmt>
+	<fHTMLReq>
+		<fString dataName = tipoOrden description=codClaseOrd><nullCheck>		
+		<fString dataName = nombreCompletoFichero><nullCheck>
+		<fString dataName = filesize><nullCheck>
+		<fDate dataName	=fechaproceso description=fechaproceso ordering=ymd useSep=yes sep=- fourDigYear=yes><nullCheck>
+		<fString dataName = indexCuenta><nullCheck>		
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=tipo_pago_seleccionado_HTMLFmt>
+	<fHTMLReq>
+		<fString dataName=tipoOrden description=codClaseOrd><nullCheck>		
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=emisor_seleccionado_HTMLFmt>
+	<fHTMLReq>
+		<fString dataName=indexEmisor description=indexEmisor><nullCheck>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=datos_cabecera_HTMLFmt>
+	<fHTMLReq>
+		<fString dataName=indexEmisor description=indexEmisor><nullCheck>
+		<fString dataName=indexCuenta description=indexCuenta><nullCheck>
+		<fDate dataName=fechaproceso description=fechaproceso ordering=ymd useSep=yes sep=- fourDigYear=yes><nullCheck>
+	</fHTMLReq>
+</fmtDef>
+

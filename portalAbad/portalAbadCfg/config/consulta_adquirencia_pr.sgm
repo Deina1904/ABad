@@ -1,0 +1,164 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  consulta_adquirencia_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.adquirencia.PrConsultaAdquirencia id=consulta_adquirencia_pr operationContext=OperationContext>
+	<refKColl refId=consulta_adquirencia_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=consulta_adquirencia_ctas_ord_op>
+		<estadoPr id=1 operacion=consulta_adquirencia_ctas_ord_op>
+		<estadoPr id=2 operacion=consulta_adquirencia_ctas_ord_op>
+		<estadoPr id=3 operacion=consulta_adquirencia_ctas_ord_op>
+		<estadoPr id=4 operacion=consulta_adquirencia_ctas_ord_op>
+
+		<estadoPr id=1 operacion=consulta_adquirencia_movimientos_ctas_op>
+		<estadoPr id=2 operacion=consulta_adquirencia_movimientos_ctas_op>
+		<estadoPr id=3 operacion=consulta_adquirencia_movimientos_ctas_op>
+
+		<estadoPr id=2 operacion=consulta_adquirencia_depositos_op>
+		<estadoPr id=3 operacion=consulta_adquirencia_depositos_op>
+		<estadoPr id=4 operacion=consulta_adquirencia_depositos_op>
+
+
+		<estadoPr id=3 operacion=consulta_adquirencia_facturas_op>
+		<estadoPr id=4 operacion=consulta_adquirencia_facturas_op>
+
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=consulta_adquirencia_ctas_ord_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=consulta_adquirencia_ctas_ord_op estadoOP=1 jspFile=consulta_adquirencia_001>
+		<salidaPr id=1 operacion=consulta_adquirencia_ctas_ord_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=consulta_adquirencia_movimientos_ctas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=consulta_adquirencia_movimientos_ctas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=consulta_adquirencia_movimientos_ctas_op estadoOP=1 jspFile=consulta_adquirencia_002>
+		<salidaPr id=2 operacion=consulta_adquirencia_movimientos_ctas_op estadoOP=2 jspFile=consulta_adquirencia_003>
+
+		<salidaPr id=2 operacion=consulta_adquirencia_depositos_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=consulta_adquirencia_depositos_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=consulta_adquirencia_depositos_op estadoOP=1 jspFile=consulta_adquirencia_004>
+		<salidaPr id=3 operacion=consulta_adquirencia_depositos_op estadoOP=2 jspFile=consulta_adquirencia_006>
+		<salidaPr id=3 operacion=consulta_adquirencia_depositos_op estadoOP=3 jspFile=consulta_adquirencia_004_excel>
+
+		<salidaPr id=3 operacion=consulta_adquirencia_facturas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=4 operacion=consulta_adquirencia_facturas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=4 operacion=consulta_adquirencia_facturas_op estadoOP=1 jspFile=consulta_adquirencia_005>
+		<salidaPr id=4 operacion=consulta_adquirencia_facturas_op estadoOP=2 jspFile=consulta_adquirencia_005_excel>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.adquirencia.PrConsultaAdquirencia>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_adquirencia_pr-data>
+
+		<field id=ClaveCtaOrdPr>
+		<field id=CtaOrdPr>
+
+		<field id=CodigoComercioPr>
+		<field id=RedComercioPr>
+		<field id=NombreComercioPr>
+		<field id=DireccionComercioPr>
+		<field id=CiudadComercioPr>
+
+
+		<field id=Grupo1>
+
+		<field id=Dia>
+		<field id=Mes>
+		<field id=Anio>
+
+		<field id=DiaDesde>
+		<field id=MesDesde>
+		<field id=AnioDesde>
+
+		<field id=DiaHasta>
+		<field id=MesHasta>
+		<field id=AnioHasta>
+
+		<field id=DiasUlti>
+
+		<field id=FechaDesde>
+		<field id=FechaHasta>
+
+
+		<field id=RegistrosPaginacionPr value=25>
+
+		<field id=MasDatosMovimientosDepositosWasPr value="N">
+		<field id=MasDatosMovimientosDepositosHostPr value="N">
+		<field id=IdMovimientosDepositosPr value=0>
+
+		<kColl id=Pagina>
+
+			<iColl id=ListaMovimientosTotalOP>
+				<kColl id=Movimiento>
+				  <field id=TIPO-RED>
+				  <field id=COD-COMERCIO>
+				  <field id=NOM-COMERCIO>
+				  <field id=DIR-COMERCIO>
+				  <field id=CIU-COMERCIO>
+				</kColl >
+			</iColl >
+
+
+			<iColl id=ListaMovimientosDepTotalOP>
+				<kColl id=Movimiento>
+				  <field id=FECHA-REMESA>
+				  <field id=NUMERO-DE-REMESA>
+				  <field id=TIPO-DE-MOVIMIENTO>
+				  <field id=SITUACION-REMESA>
+				  <field id=NUMERO-DE-FACTURAS>
+				  <field id=VENTA-TOTAL-BRUTA>
+				  <field id=VALOR-TOTAL-IVA>
+				  <field id=VALOR-TOTAL-PROPINA>
+				  <field id=VALOR-TOTAL-COMISION>
+				  <field id=VALOR-TOTAL-DEPOSITA>
+				  <field id=CARGO-DE-LA-RETEFUEN>
+				  <field id=CARGO-DE-LA-RETEIVA>
+				  <field id=CARGO-DE-LA-RETEICA>
+				  <field id=VALOR-DEL-AJUSTE-MAN>
+				  <field id=MCNDOCAB>
+				  <field id=VALOR-REAL-CONSIGNAD>
+				  <field id=VALOR-IVA-ABONADO>
+				  <field id=VALOR-PROPINA-ABONAD>
+				  <field id=VALOR-COMISION-ABONA>
+				  <field id=VALOR-REAL-DEPOSITO>
+				</kColl >
+			</iColl >
+
+			<iColl id=ListaMovimientosDepPagOP>
+				<kColl id=Movimiento>
+				  <field id=FECHA-REMESA>
+				  <field id=NUMERO-DE-REMESA>
+				  <field id=TIPO-DE-MOVIMIENTO>
+				  <field id=SITUACION-REMESA>
+				  <field id=NUMERO-DE-FACTURAS>
+				  <field id=VENTA-TOTAL-BRUTA>
+				  <field id=VALOR-TOTAL-IVA>
+				  <field id=VALOR-TOTAL-PROPINA>
+				  <field id=VALOR-TOTAL-COMISION>
+				  <field id=VALOR-TOTAL-DEPOSITA>
+				  <field id=CARGO-DE-LA-RETEFUEN>
+				  <field id=CARGO-DE-LA-RETEIVA>
+				  <field id=CARGO-DE-LA-RETEICA>
+				  <field id=VALOR-DEL-AJUSTE-MAN>
+				  <field id=MCNDOCAB>
+				  <field id=VALOR-REAL-CONSIGNAD>
+				  <field id=VALOR-IVA-ABONADO>
+				  <field id=VALOR-PROPINA-ABONAD>
+				  <field id=VALOR-COMISION-ABONA>
+				  <field id=VALOR-REAL-DEPOSITO>
+				</kColl >
+			</iColl >
+
+		</kColl>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

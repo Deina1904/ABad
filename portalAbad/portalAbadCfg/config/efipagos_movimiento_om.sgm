@@ -1,0 +1,74 @@
+! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL efipagos_movimiento_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=efipagos_movimiento_om operationContext=OperationContext>
+	<refKColl refId=efipagos_movimiento_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=efipagos_movimiento_om-data>
+	<field id=IdTx value=TxFN78ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=omIndPaginacion>
+	  <field id=omAreaPaginacion>
+	  <iColl id=omListaOrdenes>
+	    <kColl id=omOrden>
+	      <field id=omNroOrden>
+	      <field id=omFechaTx>
+	      <field id=omFechaApl>
+	      <field id=omImporte>
+		  <field id=omNroRegistros>
+		  <field id=omEstadoTx>
+		  <field id=omSucursal>
+		  <field id=omEmisora>
+		  <field id=omEstadoAnu>
+		  <field id=omAplEspecial>
+		  <field id=omUsuarioTx>
+	    </kColl >
+	  </iColl >
+	  <field id=omClienteSal>
+	  <field id=omFechaSal>
+	  <field id=omNroOrdenSal>
+	  <field id=omCentroSal>
+	  <field id=omIndMasDatosHost>
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=efipagos_movimiento_om-copiar>
+	<kColl id=a-TxFN78ENET>
+		<field id=Entrada value=TxFN78ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN78ENET>
+		<field id=Salida value=TxFN78ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

@@ -1,0 +1,90 @@
+<! BBVA  ---------------------------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PRESENTACION tarjetas_credito_traspasos_consul_puntos_op  ------------------------------------------------------------------------------------>
+
+<! OPERACION ------------------------------------------------------------------------------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.tctraspasos.OPTarjetasCreditoTraspasosConsulPuntos id=tarjetas_credito_traspasos_consul_puntos_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionConsultarOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosTarjePuntosOPHTMLFmt>
+	<refKColl refId=tarjetas_credito_traspasos_consul_puntos_op-data>
+	<refOM refId=tarjetas_credito_traspasos_consul_puntos_om>
+	<refOM refId=trans_petdatos_om>
+<! ---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<! ESTADOS -------------------------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=consultar metodo=consultarPuntos     requestFmt=DatosTarjePuntosOPHTMLFmt>
+		<estadoOP id=0 accion=cancelar metodo=cancelar>
+
+		<estadoOP id=1 accion=consultar metodo=consultarPuntos     requestFmt=DatosTarjePuntosOPHTMLFmt>
+		<estadoOP id=1 accion=cancelar metodo=cancelar>
+
+		<estadoOP id=ERROR accion=consultar metodo=consultarPuntos requestFmt=DatosTarjePuntosOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=consultar metodo=consultarPuntos requestFmt=DatosTarjePuntosOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS -------------------------------------------------------------------------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionConsultarOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.tctraspasos.OPTarjetasCreditoTraspasosConsulPuntos>
+
+<! DATOS ---------------------------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=tarjetas_credito_traspasos_consul_puntos_op-data>
+	<field id=AsuntoPropio>
+	<field id=AsuntoAsociado>
+	<field id=Error>
+	<iColl id=ListaTarjetas>
+		<kColl id=NumTarjeta>
+			<field id=NumeroBin1>
+			<field id=NumeroBin2>
+			<field id=NumTarjeta1>
+			<field id=NumTarjeta2>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<fmtDef id=RelacionConsultarOPJspFmt>
+	<fJsp>
+        <fString dataName=s_cod_nomempre description=empresa>
+ 	    <fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=NumeroTarjetaPr description=numeroTarjeta>
+		<fString dataName=NumeroContratoTarjetaPr description=numeroContratoTarjeta>
+		<fNumString dataName=PuntosAcumuladosPr decPlaces=0 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=no showThousandsSep=yes description=puntosAcumulados>
+        <fDate dataName=FechaOperaPr description=fechaOpera>
+
+		<iCollVector dataName=ListaTarjetas description=listaTarjetas>
+			<record dataName=NumTarjeta>
+				<fString dataName=NumeroBin1>
+				<fString dataName=NumeroBin2>
+				<fString dataName=NumTarjeta1>
+				<fString dataName=NumTarjeta2>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+        <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+ 	    <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! ---------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------------------------------------------------------------------------------->
+<fmtDef id=DatosTarjePuntosOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+	</fHTMLReq>
+</fmtDef>
+<! ---------------------------------------------------------------------------------------------------------------------------------------------------------->

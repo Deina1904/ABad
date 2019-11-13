@@ -1,0 +1,55 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL ecomm_hpago_soi_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=ecomm_hpago_soi_om operationContext=OperationContext>
+   <refKColl refId=ecomm_hpago_soi_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=ecomm_hpago_soi_om-data>
+   <field id=IdTx value=TxF062ENET>
+   <kColl id=Entrada>
+     <field id=BCODACCC>
+     <field id=BCODCTAA>
+     <field id=BPALACCE>
+     <field id=BPACACC2>
+     <field id=BASUNPRO>
+     <field id=BASUNASO>
+     <field id=BFECHA01>
+     <field id=BFECHA02>
+     <field id=BIMPORTE>
+     <field id=BIMPOAUX>
+     <field id=BINDPAGE>
+     <field id=BINDAUX1>
+     <field id=BINDAUX2>
+     <field id=BCODAUX1>
+     <field id=BCODAUX2>
+     <field id=BNUMAUX1>
+     <field id=BNUMAUX2>
+     <field id=BPAGINAC>
+   </kColl >
+
+   <kColl id=Salida>
+     <field id=FECHOPER>
+     <field id=REFPAGO>
+   </kColl >
+
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= ecomm_hpago_soi_om-copiar>
+   <kColl id=a-TxF062ENET>
+      <field id=Entrada value=TxF062ENETEntrada>
+   </kColl>
+   <kColl id=desde-TxF062ENET>
+      <field id=Salida value=TxF062ENETSalida-01>
+   </kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

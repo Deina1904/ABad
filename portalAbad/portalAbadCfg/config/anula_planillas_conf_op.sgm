@@ -1,0 +1,82 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION anula_planillas_conf_op  ----------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.anulaplanillas.OPConfirmarAnulaPlanillas id=anula_planillas_conf_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaOperaOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+	<refKColl refId=anula_planillas_conf_op-data>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaOperaOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.anulaplanillas.OPConfirmarAnulaPlanillas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=anula_planillas_conf_op-data>
+	<field id=Error>
+   	<field id=detalleprog>
+	<field id=ListaSecuencia>
+	<field id=MovAnul>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaOperaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+	    <fString dataName=Nro-Orden description=Nro-Orden>
+        <fString dataName=Numero-Lote description=Numero-Lote>
+        <fString dataName=Servicio description=Servicio>
+	    <fString dataName=Importe description=Importe>
+        <fString dataName=Cuenta-Origen description=Cuenta-Origen>
+	    <fString dataName=Emisora-Salida description=Emisora-Salida>
+        <fString dataName=Planilla description=Planilla>
+        <fString dataName=Fecha-Ejecucion description=Fecha-Ejecucion>
+	    <fString dataName=Registros description=Registros>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+        <fString dataName=detalleprog>
+		<fString dataName=ListaSecuencia>
+		<fString dataName=MovAnul>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

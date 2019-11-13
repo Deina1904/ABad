@@ -1,0 +1,107 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION sol_realiza_envio_op      ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.extractos.OPSolRealizaEnvio id=sol_realiza_envio_op operationContext=OperationContext>
+
+		<refFormat name=jspFormat refId=ErrorOPJspFmt>
+        <refFormat name=jspFormat refId=EnvioOPJspFmt>
+        <refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+        <refFormat name=htmlRequestFormat refId=CtasOPHTMLFmt>
+
+        <refKColl refId=sol_realiza_envio_op-data>
+        <refOM refId=identificacion_operativa_om>
+      	<refOM refId=sol_envio_om>
+      	<refOM refId=email_envio_om>
+      	<refOM refId=actualizar_relac_om>
+		<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=realEnvio requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=realEnvio requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=realEnvio requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=realEnvio requestFmt=CtasOPHTMLFmt>
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=EnvioOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.bc.col.web.extractos.OPSolRealizaEnvio>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=sol_realiza_envio_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=EnvioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=NumeroCtaaDebita description=cuenta>
+		<fString dataName=TipSolici description=solici>
+		<fString dataName=DesSolici description=dessoli>
+		<fString dataName=Email description=email>
+		<record dataName=sol_envio_om-data.Salida description=movimiento>
+				<fString dataName=NUMCTA description=cta>
+				<fNumString dataName=NROMOV description=nummov>
+				<fDate dataName=FECOPER description=fechaoper>
+				<fString dataName=CEORI description=centro>
+		</record>
+     </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+
+! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=CtasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+
+
+<! --------------------------------------------------------------------------------->
+

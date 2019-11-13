@@ -1,0 +1,63 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  consulta_rec_nal_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.crn.PrConsultaRecNal id=consulta_rec_nal_pr operationContext=OperationContext>
+
+	<refKColl refId=consulta_rec_nal_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=consulta_rec_nal_op>
+
+		<estadoPr id=1 operacion=consulta_rec_nal_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=consulta_rec_nal_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=consulta_rec_nal_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=consulta_rec_nal_op estadoOP=INICIO jspFile=crn01_pet_datos>
+		<salidaPr id=1 operacion=consulta_rec_nal_op estadoOP=LISTADO jspFile=crn02_lst_recaudos>
+		<salidaPr id=1 operacion=consulta_rec_nal_op estadoOP=DETALLE jspFile=crn03_det_recaudo>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.crn.PrConsultaRecNal>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_rec_nal_pr-data>
+
+	<field id=CtaOrdPr value="">
+	<field id=RegistrosPaginacionPr value=25>
+	<field id=MasDatosMovimientosWasPr value="N">
+	<field id=MasDatosMovimientosHostPr value="N">
+	<field id=IdMovimientosPr value=0>
+	<field id=UltMovRecaudoPr value="0">
+
+    <iColl id=prListaPagosRecaudo>
+      <kColl id=prRegistroRecaudo>
+        <field id=prFechaOperacion value="">
+        <field id=prHoraOperacion value="">
+        <field id=prNroMovimiento value="">
+        <field id=prOficinaPago value="">
+        <field id=prTipoDePago value="">
+        <field id=prVlrDeposito value=0>
+        <field id=prVlrEfectivo value=0>
+        <field id=prVlrCanjeRem value=0>
+        <field id=prVlrCtasOtro value=0>
+        <field id=prVlrComision value=0>
+        <field id=prVlrIvaComis value=0>
+        <field id=prReferencia1 value="">
+        <field id=prReferencia2 value="">
+      </kColl >
+    </iColl >
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

@@ -1,0 +1,69 @@
+<! BBVA  --------------------------------------------------------------------------->
+<! Operación:  PROCESO  hpbienesdacion_pr    --------------------------------------->
+<! --------------------------------------------------------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+<com.grupobbva.col.web.homepage.PrBienesDacion id=hpbienesdacion_pr operationContext=OperationContext>
+
+	<refKColl refId=hpbienesdacion_pr-data>
+<! --------------------------------------------------------------------------------->
+<! ESTADOS DE NAVEGACION   --------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+<navegacionPr>
+
+	<estadoPr id=0 operacion=solicitud_datos_hpbd_op>
+
+	<estadoPr id=1 operacion=solicitud_datos_hpbd_op>
+	<estadoPr id=1 operacion=consulta_bienes_hpbd_op>
+
+	<estadoPr id=2 operacion=solicitud_datos_hpbd_op>
+	<estadoPr id=2 operacion=consulta_bienes_hpbd_op>
+
+</navegacionPr>
+<! --------------------------------------------------------------------------------->
+<! SALIDAS DEL PROCESO     --------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+<resultadoPr>
+
+	<salidaPr id=0 operacion=solicitud_datos_hpbd_op estadoOP=ERROR jspFile=gn001_error>
+
+	<salidaPr id=1 operacion=solicitud_datos_hpbd_op estadoOP=1 jspFile=bd000_pet_datos>
+	<salidaPr id=1 operacion=solicitud_datos_hpbd_op estadoOP=ERROR jspFile=gn001_error>
+	<salidaPr id=1 operacion=consulta_bienes_hpbd_op estadoOP=ERROR jspFile=gn001_error>
+
+	<salidaPr id=2 operacion=consulta_bienes_hpbd_op estadoOP=1 jspFile=bd001_lst_bienes>
+	<salidaPr id=2 operacion=consulta_bienes_hpbd_op estadoOP=DETALLE jspFile=bd002_det_bienes>
+	<salidaPr id=2 operacion=consulta_bienes_hpbd_op estadoOP=ERROR jspFile=gn001_error>
+
+</resultadoPr>
+
+</com.grupobbva.col.web.homepage.PrBienesDacion>
+<! --------------------------------------------------------------------------------->
+<! DATOS   ------------------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+<kColl id=hpbienesdacion_pr-data>
+
+	<field id=Error>
+	<field id=prDeptoSel>
+	<field id=prCiudadSel>
+	<field id=prTipoBienSel>
+	<field id=prRango1Sel>
+	<field id=prRango2Sel>
+
+	<iColl id=prListaBienes>
+		<kColl id=prDatosBien>
+			<field id=prDepto>
+			<field id=prCiudad>
+			<field id=prTipoBien>
+			<field id=prConsecutivo>
+			<field id=prDescripcion>
+			<field id=prArea>
+			<field id=prDireccion>
+			<field id=prPrecio>
+			<field id=prInformes>
+		</kColl>
+	</iColl>
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

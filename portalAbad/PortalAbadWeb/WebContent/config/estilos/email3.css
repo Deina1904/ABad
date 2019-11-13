@@ -1,0 +1,26 @@
+<!--
+/*clases de email3*/
+ /*existentes*/
+p.euros {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000080; text-decoration: none; text-align: right}
+p.euros1 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000080; text-decoration: none; text-align: left}
+p.euros2 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000080; text-decoration: none; text-align: center}
+p.euros3 {font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #000080; text-decoration: none; text-align: center}
+
+ /*nuevas*/
+.titulo {COLOR: rgb(48,65,146); FONT-FAMILY: arial; FONT-SIZE: 16px; FONT-WEIGHT: 700}
+.titulo1 {COLOR: rgb(48,65,146); FONT-FAMILY: arial; FONT-SIZE: 14px; FONT-WEIGHT: 700}
+.texto {COLOR: rgb(127,135,127); FONT-FAMILY: Arial; FONT-SIZE: 11px; FONT-WEIGHT: 500}
+.texto1 {COLOR: rgb(0,0,0); FONT-FAMILY: Arial; FONT-SIZE: 11px; FONT-WEIGHT: 500}
+.pesos1 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #404040; text-decoration: none; text-align: right}
+.pesos1c {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #404040; text-decoration: none; text-align: center}
+.pesos2 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #404040; text-decoration: none; text-align: justify}
+.pesos3 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #808080; text-decoration: none; text-align: justify}
+.pesos4 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: regular; color: rgb(127,135,127); text-decoration: none; text-align: right}
+.pesos5 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: regular; color: #808080; text-decoration: none; text-align: justify}
+.pesos6 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: regular; color: #000000; text-decoration: none; text-align: center}
+.pesos7 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: regular; color: #003399; text-decoration: none; text-align: justify}
+/*fin de clases de email3*/
+
+body.pag-contenido {background-color: #EBEFF8}
+table.tabladatos {background-color: #FFFFCC, align:center}
+

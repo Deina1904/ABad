@@ -1,0 +1,144 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consulta_prestamos_movfiltro_movtos_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.prest.OPConsultaPrestamosMovfiltroMovtos id=consulta_prestamos_movfiltro_movtos_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=MovimientosOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosInputOPHTMLFmt>
+	<refKColl refId=consulta_prestamos_movfiltro_movtos_op-data>
+	<refOM refId=consulta_prestamos_movfiltro_movtos_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=ERROR accion=movimientos metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=0 accion=movimientos metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=movimientos metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=MovimientosOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.prest.OPConsultaPrestamosMovfiltroMovtos>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_prestamos_movfiltro_movtos_op-data>
+	<field id=AsuntoPropio>
+	<field id=Error>
+
+    <field id=Grupo1>
+
+    <field id=Dia>
+	<field id=Mes>
+	<field id=Anio>
+
+	<field id=FechaDesde>
+	<field id=DiaDesde>
+	<field id=MesDesde>
+	<field id=AnioDesde>
+
+
+	<field id=FechaHasta>
+	<field id=DiaHasta>
+	<field id=MesHasta>
+	<field id=AnioHasta>
+
+	<kColl id=Pagina>
+		<iColl id=ListaMovimientosTotalOP>
+			<kColl id=Movimiento>
+			  <field id=FECHA-OPER>
+			  <field id=VALOR-CAPITAL>
+			  <field id=VALOR-INT-CTES>
+			  <field id=VALOR-INT-MORA>
+			  <field id=VALOR-GASTOS>
+			  <field id=VALOR-PAGADO>
+			  <field id=VALOR-SALDO>
+			</kColl >
+		</iColl >
+
+		<iColl id=ListaMovimientosPagOP>
+			<kColl id=Movimiento>
+			  <field id=FECHA-OPER>
+			  <field id=VALOR-CAPITAL>
+			  <field id=VALOR-INT-CTES>
+			  <field id=VALOR-INT-MORA>
+			  <field id=VALOR-GASTOS>
+			  <field id=VALOR-PAGADO>
+			  <field id=VALOR-SALDO>
+			  <field id=VALOR-RELQ>
+			</kColl >
+		</iColl >
+	</kColl>
+
+
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MovimientosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=ClaveCtaOrdPr description=ctaOrdPr>
+
+        <fDate dataName=FechaDesde description=fechadesde>
+        <fDate dataName=FechaHasta description=fechahasta>
+
+		<fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+
+		<iCollVector dataName=Pagina.ListaMovimientosPagOP description=ListaMovtos>
+			<record dataName=Movimiento>
+      			<fDate dataName=FECHA-OPER><nullCheck>
+				<fNumString dataName=VALOR-CAPITAL><nullCheck>
+				<fNumString dataName=VALOR-INT-CTES><nullCheck>
+				<fNumString dataName=VALOR-INT-MORA><nullCheck>
+				<fNumString dataName=VALOR-GASTOS><nullCheck>
+				<fNumString dataName=VALOR-PAGADO><nullCheck>
+				<fNumString dataName=VALOR-SALDO><nullCheck>
+				<fNumString dataName=VALOR-RELQ><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosInputOPHTMLFmt>
+	<fHTMLReq>
+        <fString dataName=AsuntoPropio>
+
+        <fString dataName=Grupo1>
+
+        <fString dataName=Dia>
+		<fString dataName=Mes>
+		<fString dataName=Anio>
+
+		<fString dataName=DiaDesde>
+		<fString dataName=MesDesde>
+		<fString dataName=AnioDesde>
+
+		<fString dataName=DiaHasta>
+		<fString dataName=MesHasta>
+		<fString dataName=AnioHasta>
+
+	</fHTMLReq>
+</fmtDef>
+
+

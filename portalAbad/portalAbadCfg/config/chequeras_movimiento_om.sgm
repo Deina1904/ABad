@@ -1,0 +1,66 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL chequeras_movimiento_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=chequeras_movimiento_om operationContext=OperationContext>
+	<refKColl refId=chequeras_movimiento_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=chequeras_movimiento_om-data>
+	<field id=IdTx value=TxFN37ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <field id=AREAPAGI>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=PRIMER-CHEQUE>
+	      <field id=ULTIMO-CHEQUE>
+	      <field id=NUM-TALONARIO>
+		  <field id=CH-SIN-UTILIZAR>
+		  <field id=FECHA-PETICION>
+		  <field id=FECHA-ENTREGA>
+		  <field id=ESTADO>
+	    </kColl >
+	  </iColl >
+
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=chequeras_movimiento_om-copiar>
+	<kColl id=a-TxFN37ENET>
+		<field id=Entrada value=TxFN37ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN37ENET>
+		<field id=Salida value=TxFN37ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

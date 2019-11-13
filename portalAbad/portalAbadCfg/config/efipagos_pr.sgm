@@ -1,0 +1,66 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  efipagos_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.efipagos.PrEfipagos id=efipagos_pr operationContext=OperationContext>
+	<refKColl refId=efipagos_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=efipagos_confirmar_op>
+		<estadoPr id=1 operacion=efipagos_confirmar_op>
+		<estadoPr id=2 operacion=efipagos_confirmar_op>
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=efipagos_confirmar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=efipagos_confirmar_op estadoOP=VALIDAR jspFile=r002_traspasos>
+		<salidaPr id=1 operacion=efipagos_confirmar_op estadoOP=ERROR jspFile=gn001_error>
+
+
+		<salidaPr id=1 operacion=efipagos_confirmar_op estadoOP=1 jspFile=efipagos_seleccion>
+
+		<salidaPr id=2 operacion=efipagos_confirmar_op estadoOP=2 jspFile=efipagos_confirmar>
+
+		<salidaPr id=2 operacion=efipagos_confirmar_op estadoOP=3 jspFile=efipagos_realizar>
+		<salidaPr id=2 operacion=efipagos_confirmar_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=efipagos_confirmar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=efipagos_confirmar_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=efipagos_confirmar_op estadoOP=3 jspFile=efipagos_realizar>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.efipagos.PrEfipagos>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=efipagos_pr-data>
+		<field id=prSaldoDisp>
+
+		<field id=prPathArchivo>
+		<field id=prFechaTx>
+		<field id=prImporteTotal value=0>
+		<field id=prNumeroRegistros>
+		<field id=prObservaciones>
+		<field id=prArchivoLeido value="N">
+
+
+		<!field id=ClaveCtaOrdPr>
+		<!field id=CtaOrdPr>
+		<!field id=opcionconsul>
+		<!field id=Importetot>
+		<!field id=Nombrearchivo>
+		<!field id=Cantidadreg>
+		<!field id=Observacionespr>
+		<!field id=Fechapr>
+		<!field id=RegistrosPaginacionPr value=15>
+		<!field id=MasDatosMovimientosWasPr value="N">
+		<!field id=MasDatosMovimientosHostPr value="N">
+		<!field id=IdMovimientosPr value=0>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

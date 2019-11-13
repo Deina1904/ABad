@@ -1,0 +1,88 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  log_consulta_pr  ------------------------------------------>
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.logconsulta.PrLogconsulta id=log_consulta_pr operationContext=OperationContext>
+	<refKColl refId=log_consulta_pr-data>
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=log_consulta_movimientos_op>
+
+		<estadoPr id=1 operacion=log_consulta_movimientos_op>
+
+	</navegacionPr>
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=log_consulta_movimientos_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=log_consulta_movimientos_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=log_consulta_movimientos_op estadoOP=INICIO jspFile=log_consulta_operaciones_opciones>
+		<salidaPr id=1 operacion=log_consulta_movimientos_op estadoOP=LISTADO jspFile=log_movimientos>
+		<salidaPr id=1 operacion=log_consulta_movimientos_op estadoOP=DETALLE jspFile=log_detalle>
+		<salidaPr id=1 operacion=log_consulta_movimientos_op estadoOP=EXCEL jspFile=log_movimientos_excel>
+
+	</resultadoPr>
+</com.grupobbva.bc.col.web.logconsulta.PrLogconsulta>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=log_consulta_pr-data>
+	  <! DATOS OBLIGATORIOS DEL PROCESO DE PAGINACION NO QUITARLOS -->
+	  <field id=RegistrosPaginacionPr value=25>
+	  <field id=AreaMasDatosHostPr >
+	  <field id=MasDatosMovimientosWasPr >
+	  <field id=MasDatosMovimientosHostPr >
+	  <field id=IdMovimientosPr >
+
+	  <! AQUI SE DEBEN DEFINIR LOS CRITERIOS DE PAGINACION DEL PROCESO -->
+	  <field id=IdTimestPr value="">
+
+	  <! AQUI SE DEBE DEFINIR LA ICOLL DONDE SE GUARDA EL TOTAL DE LOS -->
+	  <! REGISTROS TRAIDOS DE HOST -->
+      <iColl id=prListaLog>
+	    <kColl id=prRegistroLog>
+	        <field id=prCodigoProductoContratoPropio value="">
+	        <field id=prContratoCuentaPropia value="">
+		    <field id=prCodigoProductoContratoAsociado value="">
+		    <field id=prContratoAsociado value="">
+		    <field id=prCNNSESIO>
+		    <field id=prCNNOPERA>
+	        <field id=prCNIOPERA>
+	        <field id=prFechaOperacion value="">
+	        <field id=prHoraDeTransaccion>
+	        <field id=prFechaValor value="">
+	        <field id=prCNCNLLLA value="">
+	        <field id=prCNREFINT value="">
+	        <field id=prCNREFEX1 value="">
+	        <field id=prCNREFEX2 value="">
+	        <field id=prCNYLIB01 value="">
+	        <field id=prCNYLIB02 value="">
+	        <field id=prCNYLIB03 value="">
+	  	    <field id=prCNYLIB04 value="">
+	        <field id=prCNYLIB05 value="">
+	        <field id=prCNYLIB06 value="">
+	        <field id=prCNYLIB07 value="">
+	        <field id=prCNYLIB08 value="">
+	        <field id=prCNYLIB09 value="">
+	        <field id=prCNYLIB10 value="">
+	        <field id=prCNTIMEST value="">
+	    </kColl>
+	   </iColl>
+
+    <field id=NombreFuncionPr value="">
+
+
+
+	  <! ESTA ES LA LISTA DE FUNCIONES CARGADAS EN LA CARGA DE DATOS INICIAL DE LA OP  -->
+      <iColl id=prListaFunciones>
+		<kColl id=prFUNCIONES>
+		  <field id=prFUNCION>
+		  <field id=prDESCRIPCION-CORTA>
+		  <field id=prDESCRIPCION-LARGA>
+		</kColl>
+	  </iColl>
+
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

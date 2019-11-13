@@ -1,0 +1,79 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION bloq_chq_confirmar_op  --------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.blqcheques.OPConfirmarChq id=bloq_chq_confirmar_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaChqOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+
+	<refKColl refId=bloq_chq_confirmar_op-data>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=2 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=2 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaChqOPJspFmt>
+		<salidaOP id=2 jspFmt=ConfirmaChqOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.blqcheques.OPConfirmarChq>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=bloq_chq_confirmar_op-data>
+       <field id=CuentaOrdenante>
+       <field id=opcion>
+       <field id=Error>
+       <field id=NroCheq>
+       <field id=Observ>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaChqOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_correo_op    description=correoop>
+		<fString dataName=CtaPTarje      description=ctaptarje>
+		<fString dataName=opFecha        description=fechaoper>
+		<fString dataName=opnombre       description=motivo>
+
+		<fString dataName=opNroch        description=numchq>
+		<fString dataName=opObserv       description=observ>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+	    <fString dataName=CuentaOrdenante>
+	    <fString dataName=opcion>
+	    <fString dataName=NroCheq >
+        <fString dataName=Observ >
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

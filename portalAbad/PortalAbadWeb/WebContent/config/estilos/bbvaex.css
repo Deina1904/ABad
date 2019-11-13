@@ -1,0 +1,27 @@
+.txng13b {
+	COLOR: #004080; FONT-FAMILY: Arial, Helvetica; FONT-SIZE: 8pt; FONT-WEIGHT: bold; TEXT-DECORATION: none
+; text-align: left
+}
+.sel {
+	BACKGROUND-COLOR: #000000; layer-background-color: #00ff00
+}
+.azul2 {
+	COLOR: #2f4090; FONT-FAMILY: Arial, Helvetica; FONT-SIZE: 13px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.combo {
+	FONT-FAMILY: Arial,Helvetica; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.tktiker {
+	COLOR: #004080; FONT-FAMILY: Arial, Helvetica; FONT-SIZE: 8pt; FONT-WEIGHT: bold; TEXT-DECORATION: none
+; line-height: 20px
+}
+.atexto { COLOR: #999999; FONT-FAMILY: Arial; FONT-SIZE: 11px; background-position: center center; letter-spacing: normal; text-align: justify; word-spacing: normal ; font-weight: 700; text-indent: 0pt ; overflow: visible; position: absolute; visibility: inherit; z-index: auto; height: 15px; width: 340px; left: 45px; top: 45px; clip: rect( ) ; font-style: normal; text-decoration: none}
+.atitulo { COLOR: #2f4090; FONT-FAMILY: Arial; FONT-SIZE: 13px; FONT-WEIGHT: bold; TEXT-DECORATION: none ; overflow: visible; position: absolute; visibility: inherit; z-index: auto; height: 19px; width: 260px; left: 25px; top: 25px; clip:  rect(   )}
+.aident1 { COLOR: #999999; FONT-FAMILY: Arial; FONT-SIZE: 12px; background-position: center center; letter-spacing: normal; text-align: justify; word-spacing: normal ; font-weight: 100; line-height: normal ; overflow: visible; position: absolute; visibility: inherit; z-index: auto; height: 15px; width: 285px; left: 100px; top: auto; clip:  rect(   ); font-style: normal; text-decoration: none}
+.aident2 { COLOR: #999999; FONT-FAMILY: Arial; FONT-SIZE: 11px ; background-position: center center; letter-spacing: normal; text-align: justify; word-spacing: normal ; font-weight: 700; text-indent: 0pt ; line-height: normal ; overflow: visible; position: absolute; visibility: inherit; z-index: auto; height: 15px; width: 265px; left: 120px; top: auto; clip:  rect(   )}
+.frameLeft { COLOR: #004080; FONT-FAMILY: Arial, Helvetica; FONT-SIZE: 8pt; FONT-WEIGHT: bold; TEXT-DECORATION: none ; line-height: 15px}
+.blancos { COLOR: #004080; FONT-FAMILY: Arial, Helvetica; FONT-SIZE: 8pt; FONT-WEIGHT: bold; TEXT-DECORATION: none ; line-height: 20px }
+.frameLeftTitulo { COLOR: #004080; FONT-FAMILY: Arial, Helvetica; FONT-SIZE: 12pt; FONT-WEIGHT: bold; TEXT-DECORATION: none ; line-height: 20px }
+.frameLeftSubItem { COLOR: #004080; FONT-FAMILY: Arial, Helvetica; FONT-SIZE: 8pt; FONT-WEIGHT: normal; TEXT-DECORATION: none ; line-height: 12px}
+.frameLeftOn { COLOR: #408080; FONT-FAMILY: Arial, Helvetica; FONT-SIZE: 8pt; FONT-WEIGHT: bold; TEXT-DECORATION: none ; line-height: 15px }
+.frameLeftSubItemOn { COLOR: #408080; FONT-FAMILY: Arial, Helvetica; FONT-SIZE: 8pt; FONT-WEIGHT: normal; TEXT-DECORATION: none ; line-height: 12px}

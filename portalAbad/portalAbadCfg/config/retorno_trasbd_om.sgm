@@ -1,0 +1,60 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL retorno_trasbd_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=retorno_trasbd_om operationContext=OperationContext>
+	<refKColl refId=retorno_trasbd_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=retorno_trasbd_om-data>
+	<field id=IdTx value=TxFN75ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=REFCARGO>
+	  <field id=REFABONO>
+	  <field id=FECHOPER>
+	  <field id=FECHAVAL>
+	  <field id=INDICAOK>
+	  <field id=NUMAUTOR>
+	  <field id=VLRRETEFUENTE>
+	  <field id=VLRNETOABOCTA>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= retorno_trasbd_om-copiar>
+	<kColl id=a-TxFN75ENET>
+		<field id=Entrada value=TxFN75ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN75ENET>
+		<field id=Salida value=TxFN75ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

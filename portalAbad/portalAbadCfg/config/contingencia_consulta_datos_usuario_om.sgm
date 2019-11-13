@@ -1,0 +1,73 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL contingencia_consulta_datos_usuario_om ----------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=contingencia_consulta_datos_usuario_om operationContext=OperationContext>
+	<refKColl refId=contingencia_consulta_datos_usuario_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=contingencia_consulta_datos_usuario_om-data>
+	<field id=IdTx value=TxFCT3PNET>
+	<kColl id=Entrada>
+	   <field id="CODIGO ACCESO" >
+       <field id="CUENTA VALIDACION" >
+       <field id="PALABRA ACCESO 1" >
+       <field id="PALABRA ACCESO 2" >
+       <field id="ASUNTO PROPIO" >
+       <field id="ASUNTO ASOCIADO" >
+       <field id="FECHA 1" >
+       <field id="FECHA 2" >
+       <field id="IMPORTE PRINCIPAL" >
+       <field id="IMPORTE AUXILIAR" >
+       <field id="INDICADOR PAGINACION" >
+       <field id="INDICADOR 1" >
+       <field id="INDICADOR 2" >
+       <field id="CODIGO AUXILIAR 1" >
+       <field id="CODIGO AUXILIAR 2" >
+       <field id="NUMERO AUXILIAR 1" >
+       <field id="NUMERO AUXILIAR 2" >
+       <field id="AREA PAGINACION" >
+	</kColl >
+
+	<kColl id=Salida>
+	   <field id="FT3S-TOKENID" >
+	   <field id="FT3S-CORREO" >
+	   <field id="FT3S-TOLENV" >
+	   <field id="FT3S-INDPAG" >
+	   <field id="FT3S-NUMPAG" >   
+	   <iColl id="FT3S-DATOS-SERV" >
+	     <kColl id="FT3S-SERVICIOS" dynamic=false >
+	     	<field id="FT3S-SERV">
+	     	<field id="FT3S-IND-FIR">
+	     </kColl >
+	   </iColl >
+	   
+	   <iColl id="FT3S-DATOS-BASICOS" >
+	     <kColl id="FT3S-CUENTASERV" dynamic=false >
+	     	<field id="FT3S-SERV1">
+	     	<field id="FT3S-ASUNT">
+	     </kColl >
+	   </iColl >
+	   <field id="FT3S-NOMBRE" >	  	  
+	</kColl>
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=contingencia_consulta_datos_usuario_om-copiar>
+	<kColl id=a-TxFCT3PNET>
+		<field id=Entrada value=TxFCT3PNETEntrada>
+	</kColl>
+	<kColl id=desde-TxFCT3PNET>
+		<field id=Salida value=TxFCT3PNETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

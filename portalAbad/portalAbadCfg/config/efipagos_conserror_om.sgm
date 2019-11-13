@@ -1,0 +1,64 @@
+! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL efipagos_conserror_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=efipagos_conserror_om operationContext=OperationContext>
+	<refKColl refId=efipagos_conserror_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=efipagos_conserror_om-data>
+	<field id=IdTx value=TxFN79ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+
+	<kColl id=Salida>
+	  <field id=omIndPaginacion>
+	  <field id=omAreaPaginacion>
+	  <iColl id=omListaErrores>
+	    <kColl id=omError>
+	      <field id=omTipoRegistro>
+	      <field id=omClaveRegistro>
+	      <field id=omDescripcionError>
+	    </kColl >
+	  </iColl >
+	  <field id=omTimestSal>
+	  <field id=omIndMasDatosHost>
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=efipagos_conserror_om-copiar>
+	<kColl id=a-TxFN79ENET>
+		<field id=Entrada value=TxFN79ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN79ENET>
+		<field id=Salida value=TxFN79ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

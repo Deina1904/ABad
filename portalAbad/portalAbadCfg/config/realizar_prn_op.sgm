@@ -1,0 +1,120 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION realizar_prn_op  ---------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.rn.OPRealizarPRN id=realizar_prn_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=PRNRealizadoOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPRNOPHTMLFmt>
+	<refKColl refId=realizar_prn_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=retorno_pserv_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=realizarPRN requestFmt=DatosPRNOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=realizarPRN requestFmt=DatosPRNOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=realizarPRN requestFmt=DatosPRNOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=realizarPRN requestFmt=DatosPRNOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=realizarPRN requestFmt=DatosPRNOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=PRNRealizadoOPJspFmt>
+		<salidaOP id=2 jspFmt=PRNRealizadoOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.rn.OPRealizarPRN>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=realizar_prn_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=DescripR>
+	<field id=Factur>
+	<field id=Factur2>
+	<field id=AdicP>
+	<field id=Validaf>
+	<field id=CtaDelRecaud>
+	<field id=CtaPR>
+	<field id=DatosServicio>
+	<field id=DatosCtaPagadora>
+	<field id=Error>
+	<field id=prindrec value="N">
+	<field id=REFCARGO>
+	<field id=REFPAGO>
+	<field id=FECHOPER>
+	<field id=IMPORTE>
+
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=PRNRealizadoOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_ip description=ip>
+		<fString dataName=DescripR description=descriprn>
+		<fString dataName=Factur description=factura>
+		<fString dataName=Factur2 description=factura2>
+ 	    <fString dataName=AdicP description=adicional>
+		<fString dataName=Validaf description=validaf>
+		<fString dataName=Cuotas description=cuotas>
+		<fString dataName=CtaPR description=ctaprn>
+		<fString dataName=TipoCtaPRN description=tipoctaprn>
+
+		<record dataName=retorno_pserv_om-data.Salida description=PagoServ>
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fNumString dataName=REFPAGO description=refpago>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fNumString dataName=IMPORTE description=importe>
+       	</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosPRNOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=Correo>
+		<fString dataName=DatosServicio>
+		<fString dataName=DatosCtaPagadora>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

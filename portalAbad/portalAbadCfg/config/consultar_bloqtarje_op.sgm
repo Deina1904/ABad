@@ -1,0 +1,65 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consultar_bloqtarje_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.bt.OPConsultarBloqTarje id=consultar_bloqtarje_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionConsultarBTOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosBTarjeOPHTMLFmt>
+	<refKColl refId=consultar_bloqtarje_op-data>
+	<refOM refId=consultar_bloqtarje_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=consultarBloqTarje     requestFmt=DatosBTarjeOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=consultarBloqTarje     requestFmt=DatosBTarjeOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=consultarBloqTarje requestFmt=DatosBTarjeOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=consultarBloqTarje requestFmt=DatosBTarjeOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionConsultarBTOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.bt.OPConsultarBloqTarje>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consultar_bloqtarje_op-data>
+	<field id=NumTarjeta>
+	<field id=CuentaOrdenante>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionConsultarBTOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=IndBatchMP description=indBatch>
+		<fString dataName=NumeroTarjeta description=numtarjeta>
+		<fString dataName=FechaOpe description=fechaOpe>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosBTarjeOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=NumTarjeta>
+		<fString dataName=CuentaOrdenante>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

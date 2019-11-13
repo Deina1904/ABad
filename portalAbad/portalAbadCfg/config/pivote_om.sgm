@@ -1,0 +1,26 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL pivote_om  ------------------------------->
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.constructor.OmPivote id=pivote_om operationContext=OperationContext>
+	<refKColl refId=pivote_om-data>
+</com.grupobbva.bc.col.constructor.OmPivote>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+
+<kColl id=pivote_om-data>
+	<field id=Opcion>
+	<field id=NumMes>
+	<field id=Reg1>
+	<field id=Reg2>
+	<field id=Reg3>
+	<field id=Reg0>
+	<field id=Reg4>
+	<field id=Reg5>
+	<field id=Cuenta>
+	<field id=NumAnio>
+</kColl>
+
+<! ---------------------------------------------------------------------------------->

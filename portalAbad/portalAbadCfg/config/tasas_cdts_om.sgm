@@ -1,0 +1,68 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL tasas_cdts_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=tasas_cdts_om operationContext=OperationContext>
+	<refKColl refId=tasas_cdts_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=tasas_cdts_om-data>
+	<field id=IdTx value=TxF030ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2 >
+	  <field id=BASUNPRO >
+	  <field id=BASUNASO >
+	  <field id=BFECHA01 >
+	  <field id=BFECHA02 >
+	  <field id=BIMPORTE >
+	  <field id=BIMPOAUX >
+	  <field id=BINDPAGI >
+	  <field id=BINDAUX1 >
+	  <field id=BINDAUX2 >
+	  <field id=BCODAUX1 >
+	  <field id=BCODAUX2 >
+	  <field id=BNUMAUX1 >
+	  <field id=BNUMAUX2 >
+	  <field id=BPAGINAC >
+	</kColl >
+
+	<kColl id=Salida>
+
+	  <iColl id=ListaTasas>
+	    <kColl id=TasaCdt>
+	      <field id=PLAZO  >
+	      <field id=UNIDAD >
+	      <field id=PERLIQUI >
+	      <field id=RANA >
+	      <field id=RANB >
+	      <field id=RANC >
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id= tasas_cdts_om-copiar>
+	<kColl id=a-TxF030ENET>
+		<field id=Entrada value=TxF030ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF030ENET>
+		<field id=Salida value=TxF030ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

@@ -1,0 +1,293 @@
+<html>
+<head>
+<META HTTP-EQUIV="EXPIRES" CONTENT="1">
+<title>BBVA net COLOMBIA</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" src="js/utilidades.js"></script>
+<script language="JavaScript" src="js/principal2.js"></script>
+<script language="JavaScript">
+<!--
+
+
+function validarpoli(){
+   var vector=window.location.href.split('?');
+   var error1="Authentication%20mechanism%20is%20not%20available.";
+   var error2="Login%20failed.%20You%20have%20used%20an%20invalid%20username,%20password%20or%20client%20certificate.";
+   var error3="Authentication mechanism is not available.";
+   var error4="Login failed. You have used an invalid username, password or client certificate.";
+   var plpassword1="password1";
+   var plusername2="username2";
+   var temp1=vector[1];
+
+   if(temp1){
+   if((temp1==error1)||(temp1==error3))
+    alert("Sistema No Disponible, Intentelo más Tarde");
+   else if((temp1==error2)||(temp1==error4))
+    alert("\tNúmero de códigos o clave Incorrecta.\n\n Si su empresa ya solicitó el servicio y usted no se ha inscrito, \n favor utilice  la opción \"Si aún no se ha registrado\".");
+   else if((temp1.substring(0,9)==plpassword1)||(temp1.substring(0,9)==plusername2))
+    alert("Haga click en el botón Entrar, por favor");
+   else
+    alert("Servicio no Disponible. \n\nFavor contactar al administrador del sistema \ny haga referencia al siguiente mensaje: \n\n"+temp1);
+   }
+}
+
+
+function netscapeKeyPress(e){
+   if (e.which == 13)
+      Validar(document.entrada)
+}
+
+function netscapePress(){
+      Validar(document.entrada)
+}
+
+function microsoftKeyPress() {
+   if (window.event.keyCode == 13)
+      Validar(document.entrada)
+}
+
+
+if (navigator.appName == 'Netscape'){
+   validarpoli();
+   window.captureEvents(Event.KEYPRESS);
+   window.onKeyPress = netscapeKeyPress;
+}
+
+var scrtxt="En este sitio Usted podrá realizar consultas y transacciones con sus cuentas "+
+           "y su tarjeta de crédito";
+var lentxt=scrtxt.length;
+var width=100;
+var pos=1-width;
+
+function scroll() {
+  pos++;
+  var scroller="";
+  if (pos==lentxt) {
+    pos=1-width;
+  }
+  if (pos<0) {
+    for (var i=1; i<=Math.abs(pos); i++) {
+      scroller=scroller+" ";}
+    scroller=scroller+scrtxt.substring(0,width-i+1);
+  }
+  else {
+    scroller=scroller+scrtxt.substring(pos,width+pos);
+  }
+  window.status = scroller;
+  setTimeout("scroll()",100);
+  }
+
+function MM_findObj(n, d) { //v3.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x;
+}
+//-->
+
+</script>
+<style type="text/css">
+<!--
+.estilo1 {   font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #FFFFFF; font-weight: bold}
+.estilo11 {  font-family: Arial, Helvetica, sans-serif; font-size: 13px}
+.estilo12 {  font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-style: normal; font-weight: bold; color: #003366; text-align: center;}
+.oculto { font-family: Arial, Helvetica, sans-serif; FONT-SIZE: 12px;  COLOR: white; TEXT-DECORATION: underline}
+.oculto1 { font-family: Arial, Helvetica, sans-serif; FONT-SIZE: 22px;  COLOR: white; TEXT-DECORATION: underline}
+.txtadlntorange { font-family: Arial, Helvetica, sans-serif; font-size: 12px;  color: #FF9933 }
+//-->
+</style>
+</head>
+
+<body bgcolor="#FFFFFF" onLoad="tiempofuera();scroll();">
+   <table width="652" height="342" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr height="200">
+     <td>
+      <table width="652" border="0" height="220" cellpadding="0" cellspacing="0">
+       <tr height="80">
+        <td>
+         <table height="80" width="652" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+           <td height="80" width="400" align="center"><img src="images/bbvaemplogin.gif" height="68"></td>
+           <td height="80" align="center" valign="middle"><p class="estilo12">Bienvenido a la Banca a Distancia de BBVA</p></td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+       <tr height="30" bgcolor="#dfe7ef">
+        <td height="30"></td>
+       </tr>
+       <tr height="100" bgcolor="#dfe7ef">
+        <td height="100">
+         <table width="652" height="100" border="0" cellpadding="0" cellspacing="0" >
+          <tr>
+           <td width="20"></td>
+           <td>
+            <table width="632" height="120" border="0" cellpadding="0" cellspacing="10" >
+             <form action="http://localhost:9080/colombiaemp/LogonOperacionServlet?action=index" onSubmit='return Validar(document.entrada)' method="post" AUTOCOMPLETE="OFF" name="entrada">
+              <input type="hidden" name="username" size="16" maxlength="16" style="visibility: hidden">
+              <input type="hidden" name="password" size="16" maxlength="16" style="visibility: hidden">
+              <tr>
+               <td width="440" height="20"align="left" valign="top">
+                <table width="440" height="20" border="0" cellpadding="0" cellspacing="0" >
+                 <tr class="txtadlnt1">
+                              <td><b><font color="#000088" size="2" face="Arial, Helvetica, sans-serif">C&oacute;digo
+                                de Empresa</font></b></td>
+                 </tr>
+                </table>
+               </td>
+               <td align="right" valign="top" height="20">
+                <table width="152" height="20" border="0" cellspacing="0" cellpadding="0" >
+                 <tr>
+                  <td valign="top" align="right">
+                   <input type="text" name="username2" size="20" maxlength="12" class="estilo11" align="right">
+                  </td>
+                 </tr>
+                </table>
+               </td>
+              </tr>
+              <tr>
+               <td width="440" height="20"align="left" valign="top">
+                <table width="440" height="20" border="0" cellpadding="0" cellspacing="0" >
+                 <tr class="txtadlnt1">
+                              <td><b><font color="#000088" size="2" face="Arial, Helvetica, sans-serif">C&oacute;digo
+                                de Usuario</font></b></td>
+                 </tr>
+                </table>
+               </td>
+               <td align="right" valign="top" height="20">
+                <table width="152" height="20" border="0" cellspacing="0" cellpadding="0" >
+                 <tr>
+                  <td valign="top" align="right">
+                   <input type="text" name="username3" size="20" maxlength="12" class="estilo11" align="right">
+                  </td>
+                 </tr>
+                </table>
+               </td>
+              </tr>
+              <tr height="50">
+               <td height="50" align="left" width="440" valign="top" class="txtadlnt1">
+                <table width="440" height="50" border="0" cellpadding="0" cellspacing="0">
+                 <tr class="txtadlnt1">
+                              <td> <b><font color="#000088" size="2" face="Arial, Helvetica, sans-serif">Clave de Acceso</font></b>
+                              </td>
+                 </tr>
+                 <tr class="txtadlnt2">
+                              <td valign="top"> <font color="#000088" size="2" face="Arial, Helvetica, sans-serif">El
+                                sistema verifica si su clave está compuesta por
+                                mayúsculas o minúsculas</font><font color="#000088" size="2">.</font></td>
+                 </tr>
+                </table>
+               </td>
+               <td align="right" valign="top" height="50"> <input type="password" name="password2" align="right" size="20" maxlength="8" class="estilo11"></td>
+              </tr>
+             </form>
+            </table>
+           </td>
+           <td width="20"></td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+       <tr height="10" bgcolor="#dfe7ef">
+        <td height="10"></td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+    <tr height="100" bgcolor="#dfe7ef">
+     <td>
+      <table height="100" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+        <td height="100">
+         <table width="652" border="0" cellpadding="0" cellspacing="0">
+          <tr height="100" bgcolor="#dfe7ef">
+           <td width="460" align="center" height="74">
+            <table width="460" border="0" cellpadding="1" cellspacing="0" >
+             <tr><td><img src="images/lineaBBVA.gif" width="100%" height="3" border="0"></td></tr>
+             <tr>
+              <TD>
+               <TABLE cellSpacing="2" cellPadding="2" width="100%" height="64"  border="0" vAlign="bottom">
+                <TBODY>
+                 <TR>
+              <TD><img src="images/seguridad.gif" width="64" height="64" border="0"></TD>
+                  <TD><div align="justify"><font color="#000088" size="2" face="Arial, Helvetica, sans-serif">Por 
+                                  su seguridad, le recomendamos abstenerse de 
+                                  realizar sus operaciones bancarias desde computadores 
+                                  de sitios p&uacute;blicos de Internet. Realice 
+                                  sus transacciones desde un equipo de su confianza.</font></div></TD>
+                 </TR>
+                </TBODY>
+               </TABLE>
+              </TD>
+             </tr>
+             <tr><td> <img src="images/lineaBBVA.gif" width="100%" height="3" border="0"></td></tr>
+            </table>
+           </td>
+           <td width="192">
+            <table width="192" border="0" cellpadding="0" cellspacing="4">
+             <tr>
+              <td height="30" align="center" bgcolor="70a0d0" class="oculto1">
+               <span class="oculto"><a href="javascript:netscapePress();" class="oculto1" title="Entrar a BBVA net"><strong>Entrar</strong></a></span>
+              </td>
+             </tr>
+             <tr>
+              <td align="center" bgcolor="70a0d0" height="14">
+               <a class="oculto" href="acontratovip.html" title="Sí aún no se ha registrado"><Strong>Sí aún no se ha registrado</Strong></a>
+              </td>
+             </tr>
+             <tr>
+              <td align="center" bgcolor="70a0d0" height="14">
+               <a class="oculto" href="LogonAnonimoServlet?proceso=operaciones_generales_pr&amp;operacion=reactivacion_pw_op&amp;accion=olvido" title="Si ha olvidado su clave" ><strong>Si ha olvidado su clave</strong></a>
+              </td>
+             </tr>
+            </table>
+           </td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+    <tr height="42" bgcolor="#dfe7ef">
+     <td>
+      <table height="42" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+        <td height="42">
+         <table width="652" border="0" height="42" cellpadding="0" cellspacing="0">
+          <tr height="42" bgcolor="#dfe7ef">
+           <td width="560" valign="center" height="42">
+            <table width="560" border="0" cellpadding="1" cellspacing="0" >
+             <tr>
+              <TD>
+               <TABLE cellSpacing="2" cellPadding="2" width="100%" height="38"  border="0" Align="bottom">
+                <TBODY>
+                 <TR>
+                  <TD><p align="justify" class=txtadlntorange><strong>SI RECIBE UN CORREO</strong> en el que le piden informaci&oacute;n confidencial, <strong>NO SUMINISTRE SUS CLAVES,</strong> ni sus n&uacute;meros de cuenta o tarjetas, BBVA <strong>NUNCA</strong> env&iacute;a mensajes solicitando esta informaci&oacute;n.</p></TD>
+                 </TR>
+                </TBODY>
+               </TABLE>
+              </TD>
+             </tr>
+            </table>
+           </td>
+           <td width="92" height="42" align="center">
+            <img src="images/alertaphising.gif" width="28" height="27" border="0">
+           </td>
+          </tr>
+         </table>
+        </td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+</body>
+</html>
+<script>
+ <!--
+  if (navigator.appName != 'Netscape'){
+   validarpoli();
+  }
+ //-->
+</script>

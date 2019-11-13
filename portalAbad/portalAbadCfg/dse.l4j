@@ -1,0 +1,36 @@
+#Configuración Base
+
+	log4j.rootCategory=FATAL,AppenderNulo
+	log4j.category.ABAD_LOG4J=DEBUG,DSE_APPENDER
+
+#Categorías activas
+
+	#Categorías de Arquitectura
+
+	log4j.category.BD.LEGACY=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.LEGACY=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.AOS=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.BASE=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.COMUNICACIONES=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.DOCWEB=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.LISTENERHTTP=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.LISTENERMQ=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.MODELO=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.OPERACION=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.SEGURIDAD=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.SERVICIO=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.ABADSERVLET=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.UTILIDAD=DEBUG,DSE_APPENDER
+	log4j.category.ABAD.BTF=DEBUG,DSE_APPENDER
+
+#DSE_APPENDER
+
+	log4j.appender.DSE_APPENDER=org.apache.log4j.DailyRollingFileAppender
+	log4j.appender.DSE_APPENDER.DatePattern='.'yyyy-MM-dd
+	log4j.appender.DSE_APPENDER.layout=org.apache.log4j.PatternLayout
+	log4j.appender.DSE_APPENDER.layout.ConversionPattern=[%d{ISO8601}][%x] [%m]%n
+	log4j.appender.DSE_APPENDER.file=/log/pnet/tmp
+
+#AppenderNulo
+
+	log4j.appender.AppenderNulo = org.apache.log4j.varia.NullAppender

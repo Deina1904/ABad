@@ -1,0 +1,49 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL funciones_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=funciones_om operationContext=OperationContext>
+	<refKColl refId=funciones_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=funciones_om-data>
+	<field id=IdTx value=TxMIG1ENET>
+	<kColl id=Entrada>
+
+	  <iColl id=ListaFunciones>
+	  	        <kColl id=FUNCIONES>
+	  	          <field id=FUNCION>
+	  	          <field id=SERVICIO>
+	  	       </kColl >
+	      </iColl >
+	  <field id=OPCION>
+	</kColl >
+
+	<kColl id=Salida>
+	      <iColl id=ListaFunciones>
+	        <kColl id=FUNCIONES>
+	          <field id=FUNCION>
+	          <field id=SERVICIO>
+	        </kColl >
+	      </iColl >
+
+	</kColl >
+</kColl>
+
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= funciones_om-copiar>
+	<kColl id=a-TxMIG1ENET>
+		<field id=Entrada value=TxMIG1ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxMIG1ENET>
+		<field id=Salida value=TxMIG1ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

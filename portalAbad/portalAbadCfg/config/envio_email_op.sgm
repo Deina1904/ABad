@@ -1,0 +1,83 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION envio_email_op  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.email.OPEnvioEmail id=envio_email_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=EnvioEmailOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=EnvioEmailOPHTMLFmt>
+	<refKColl refId=envio_email_op-data>
+	<refOM refId=enviar_usuario_om>
+	<refOM refId=enviar_correo_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=envioEmail metodo=envioEmail requestFmt=EnvioEmailOPHTMLFmt>
+		<estadoOP id=1 accion=envioEmail metodo=envioEmail>
+		<estadoOP id=ERROR accion=envioEmail metodo=envioEmail requestFmt=EnvioEmailOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS -------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=EnvioEmailOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.email.OPEnvioEmail>
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=envio_email_op-data>
+	<field id=nombre>
+	<field id=tipoid>
+	<field id=numero>
+	<field id=nombreE>
+	<field id=direccion>
+	<field id=email>
+	<field id=telefono>
+	<field id=ciudad>
+	<field id=depto>
+	<field id=pais>
+	<field id=asunto>
+	<field id=textfield>
+	<field id=correo>
+	<field id=correodes value="contacto@bbva.com.co">
+</kColl>
+
+
+
+<! FORMATOS DE SALIDA --------------------------------------------------------------->
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<fmtDef id=EnvioEmailOPJspFmt>
+	<fJsp>
+	</fJsp>
+</fmtDef>
+
+<! ---------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=EnvioEmailOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=nombre>
+		<fString dataName=tipoid>
+		<fString dataName=numero>
+		<fString dataName=nombreE>
+		<fString dataName=direccion>
+		<fString dataName=email>
+		<fString dataName=telefono>
+		<fString dataName=ciudad>
+		<fString dataName=depto>
+		<fString dataName=pais>
+		<fString dataName=asunto>
+		<fString dataName=textfield>
+		<fString dataName=correo>
+	</fHTMLReq>
+</fmtDef>
+<! ----------------------------------------------------------------------------------->

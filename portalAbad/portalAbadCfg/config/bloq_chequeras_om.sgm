@@ -1,0 +1,56 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL bloq_chequeras_om  -------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=bloq_chequeras_om operationContext=OperationContext>
+	<refKColl refId=bloq_chequeras_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=bloq_chequeras_om-data>
+	<field id=IdTx value=TxFN39ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2 >
+	  <field id=BASUNPRO >
+	  <field id=BASUNASO >
+	  <field id=BFECHA01 >
+	  <field id=BFECHA02 >
+	  <field id=BIMPORTE >
+	  <field id=BIMPOAUX >
+	  <field id=BINDPAGI >
+	  <field id=BINDAUX1 >
+	  <field id=BINDAUX2 >
+	  <field id=BCODAUX1 >
+	  <field id=BCODAUX2 >
+	  <field id=BNUMAUX1 >
+	  <field id=BNUMAUX2 >
+	  <field id=BPAGINAC >
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=FECHA>
+	  <field id=NROPER>
+    </kColl >
+
+
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= bloq_chequeras_om-copiar>
+	<kColl id=a-TxFN39ENET>
+		<field id=Entrada value=TxFN39ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN39ENET>
+		<field id=Salida value=TxFN39ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

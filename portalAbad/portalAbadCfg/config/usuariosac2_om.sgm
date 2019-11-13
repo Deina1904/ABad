@@ -1,0 +1,46 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL usuariosac2_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=usuariosac2_om operationContext=OperationContext>
+	<refKColl refId=usuariosac2_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=usuariosac2_om-data>
+	<field id=IdTx value=TxMAC2ENET>
+	<kColl id=Entrada>
+
+	  <iColl id=ListaUsuarios>
+	  	       <kColl id=USUARIOS>
+	  	          <field id=CLIENTE>
+       	       </kColl >
+	   </iColl >
+	  <field id=NUMUSER>
+	  <field id=OPCION>
+
+
+
+	</kColl >
+
+	<kColl id=Salida>
+		<field id=OPCION>
+	</kColl >
+</kColl>
+
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= usuariosac2_om-copiar>
+	<kColl id=a-TxMAC2ENET>
+		<field id=Entrada value=TxMAC2ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxMAC2ENET>
+		<field id=Salida value=TxMAC2ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

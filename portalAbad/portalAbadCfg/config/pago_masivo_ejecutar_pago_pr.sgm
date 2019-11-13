@@ -1,0 +1,79 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  pago_masivo_ejecutar_pago_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pagomasivo.PrPagoMasivoEjecutarPago id=pago_masivo_ejecutar_pago_pr operationContext=OperationContext>
+
+	<refKColl refId=pago_masivo_ejecutar_pago_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=pago_masivo_ejecutar_pago_lista_planillas_op>
+		<estadoPr id=1 operacion=pago_masivo_ejecutar_pago_lista_planillas_op>
+		<estadoPr id=2 operacion=pago_masivo_ejecutar_pago_lista_planillas_op>
+		<estadoPr id=3 operacion=pago_masivo_ejecutar_pago_lista_planillas_op>
+		<estadoPr id=4 operacion=pago_masivo_ejecutar_pago_lista_planillas_op>
+
+		<estadoPr id=1 operacion=pago_masivo_ejecutar_pago_cuentas_benef_op>
+		<estadoPr id=2 operacion=pago_masivo_ejecutar_pago_cuentas_benef_op>
+
+		<estadoPr id=2 operacion=pago_masivo_ejecutar_pago_confirmacion_op>
+		<estadoPr id=3 operacion=pago_masivo_ejecutar_pago_confirmacion_op>
+
+		<estadoPr id=3 operacion=pago_masivo_ejecutar_pago_realizar_op>
+		<estadoPr id=4 operacion=pago_masivo_ejecutar_pago_realizar_op>
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=pago_masivo_ejecutar_pago_lista_planillas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=pago_masivo_ejecutar_pago_lista_planillas_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=pago_masivo_ejecutar_pago_lista_planillas_op estadoOP=1 jspFile=pago_masivo_ejecutar_pago_001>
+		<salidaPr id=1 operacion=pago_masivo_ejecutar_pago_cuentas_benef_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=pago_masivo_ejecutar_pago_cuentas_benef_op estadoOP=1 jspFile=pago_masivo_ejecutar_pago_002>
+		<salidaPr id=1 operacion=pago_masivo_ejecutar_pago_cuentas_benef_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=pago_masivo_ejecutar_pago_cuentas_benef_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=pago_masivo_ejecutar_pago_confirmacion_op estadoOP=1 jspFile=pago_masivo_ejecutar_pago_003>
+		<salidaPr id=3 operacion=pago_masivo_ejecutar_pago_confirmacion_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=pago_masivo_ejecutar_pago_confirmacion_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=2 operacion=pago_masivo_ejecutar_pago_confirmacion_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=pago_masivo_ejecutar_pago_confirmacion_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=pago_masivo_ejecutar_pago_realizar_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=3 operacion=pago_masivo_ejecutar_pago_realizar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=4 operacion=pago_masivo_ejecutar_pago_realizar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=4 operacion=pago_masivo_ejecutar_pago_realizar_op estadoOP=1 jspFile=pago_masivo_ejecutar_pago_004>
+		<salidaPr id=4 operacion=pago_masivo_ejecutar_pago_realizar_op estadoOP=2 jspFile=pago_masivo_ejecutar_pago_pend_004>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.pagomasivo.PrPagoMasivoEjecutarPago>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_masivo_ejecutar_pago_pr-data>
+	<field id=ClaveCtaPr>
+	<field id=NumeroCtaOrdPr>
+	<field id=TipoCtaPr>
+
+	<field id=TipoServicioPr>
+	<field id=DesTipoServicioPr>
+	<field id=NombrePlantillaPr>
+	<field id=CodigoPlantillaPr>
+
+	<field id=TipoFechaPagoPr>
+	<field id=FechaEjecucionPr>
+	<field id=DatosCuentasPr>
+	<field id=ValorTotalPlanillaPr>
+	<field id=NumeroCtasAbonarPr>
+	<field id=FindeSemana value=N>
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

@@ -1,0 +1,55 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  consulta_usuarios_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.migracion.PrConsultaUsuarios id=consulta_usuarios_pr operationContext=OperationContext>
+
+	<refKColl refId=consulta_usuarios_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=consulta_usuarios_op>
+
+		<estadoPr id=1 operacion=consulta_usuarios_op>
+
+
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=consulta_usuarios_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=ERROR jspFile=gn001_error>
+
+
+
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=1 jspFile=consulta_usuarios_01>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=89 jspFile=consulta_usuarios_89>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=cash jspFile=consulta_usuarios_cash_01>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=2 jspFile=consulta_usuarios_02>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=cash1 jspFile=consulta_usuarios_cash_02>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=usu jspFile=consulta_usuarios_usu_02>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=ctc jspFile=consulta_usuarios_ctc_02>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=lic jspFile=consulta_usuarios_lic_02>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=apr jspFile=consulta_usuarios_apr_02>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=cef jspFile=consulta_usuarios_cef_02>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=exe jspFile=consulta_usuarios_exe_02>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=lia jspFile=consulta_usuarios_lia_02>
+		<salidaPr id=1 operacion=consulta_usuarios_op estadoOP=rob jspFile=consulta_usuarios_rob_02>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.migracion.PrConsultaUsuarios>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=consulta_usuarios_pr-data>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

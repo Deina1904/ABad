@@ -1,0 +1,294 @@
+<!-------------------------------- LOG DE MODIFICACIONES - TS - ENET ----------------------------->
+<!-- COL001. CE03317. CONSULTA CHEQUES.                     2005-10-19. 0001-01-01. 0001-01-01. -->
+<!------------------------------------------------------------------------------------------------>
+<! BBVA  ----------------------------------------------------------------------------------------->
+<! Operación:  PRESENTACION chequeras_consulta_movimiento_op  ------------------------------------>
+<! OPERACION ------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.conschequera.OPMovimientosChequeras id=chequeras_consulta_movimiento_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=MovimientosOPJspFmt>
+	<refFormat name=jspFormat refId=MoviDetalleOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosInputOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=DetalleInputOPHTMLFmt>
+	<refKColl refId=chequeras_consulta_movimiento_op-data>
+	<refOM refId=chequeras_movimiento_om>
+
+	<!-- COL001-I. -->
+	<refFormat name=jspFormat refId=ListaChequesOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DetalleChequeInputOPHTMLFmt>
+	<refOM refId=cheques_detalle_om>
+	<!-- COL001-F. -->
+<!------------------------------------------------------------------------------------------------>
+<! ESTADOS --------------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=ERROR accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=0 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=1 accion=detalle metodo=detalle requestFmt=DetalleInputOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=2 accion=detalle metodo=detalle requestFmt=DetalleInputOPHTMLFmt>
+		<estadoOP id=2 accion=volver metodo=volver>
+		<estadoOP id=2 accion=masCheques metodo=masCheques>
+		<estadoOP id=2 accion=atrasCheques metodo=atrasCheques>
+		<!-- COL001-I. -->
+		<estadoOP id=3 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=3 accion=masCheques metodo=masCheques>
+		<estadoOP id=3 accion=atrasCheques metodo=atrasCheques>
+
+		<estadoOP id=3 accion=detalleCheque metodo=detalleCheque requestFmt=DetalleChequeInputOPHTMLFmt>
+		<estadoOP id=2 accion=detalleCheque metodo=detalleCheque requestFmt=DetalleChequeInputOPHTMLFmt>
+		<!-- COL001-F. -->
+	</navegacionOP>
+<!------------------------------------------------------------------------------------------------>
+<! SALIDAS --------------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=MovimientosOPJspFmt>
+		<!-- COL001-I. -->
+		<!salidaOP id=2 jspFmt=MoviDetalleOPJspFmt>
+		<salidaOP id=2 jspFmt=ListaChequesOPJspFmt>
+		<salidaOP id=3 jspFmt=ListaChequesOPJspFmt>
+		<!-- COL001-F. -->
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.conschequera.OPMovimientosChequeras>
+<!------------------------------------------------------------------------------------------------>
+<! DATOS ----------------------------------------------------------------------------------------->
+<kColl id=chequeras_consulta_movimiento_op-data>
+	<field id=asuntoPropio>
+	<field id=asuntoPropio1>
+	<field id=opcion>
+	<field id=Grupo1>
+	<field id=DiaDesde>
+	<field id=MesDesde>
+	<field id=AnioDesde>
+	<field id=NroCheq>
+
+	<!-- COL001-I. -->
+	<field id=DiaDesdeCh>
+	<field id=MesDesdeCh>
+	<field id=AnioDesdeCh>
+	<field id=NroPriCheq>
+	<field id=NumCheq>
+	<field id=estadoCheque>
+	<!-- COL001-F. -->
+
+	<field id=Error>
+
+	<field id=PrimerCheque>
+	<field id=UltimoCheque>
+	<field id=Numtalonario>
+	<field id=Chinutilizado>
+	<field id=Fechapeticion>
+	<field id=Fechaentrega>
+	<field id=Estado>
+
+	<!-- COL001-I. -->
+	<field id=NumeroCheque>
+	<field id=FecEmisionCheque>
+	<field id=ValorCheque>
+	<field id=EstActCheque>
+	<field id=FecModCheque>
+	<!-- COL001-F. -->
+
+	<kColl id=Pagina>
+		<iColl id=ListaMovimientosTotalOP>
+			<kColl id=Movimiento>
+				<field id=PRIMER-CHEQUE>
+				<field id=ULTIMO-CHEQUE>
+				<field id=NUM-TALONARIO>
+				<field id=CH-SIN-UTILIZAR>
+				<field id=FECHA-PETICION>
+				<field id=FECHA-ENTREGA>
+				<field id=ESTADO>
+			</kColl >
+		</iColl >
+
+		<iColl id=ListaMovimientosPagOP>
+			<kColl id=Movimiento>
+				<field id=PRIMER-CHEQUE>
+				<field id=ULTIMO-CHEQUE>
+				<field id=NUM-TALONARIO>
+				<field id=CH-SIN-UTILIZAR>
+				<field id=FECHA-PETICION>
+				<field id=FECHA-ENTREGA>
+				<field id=ESTADO>
+			</kColl >
+		</iColl >
+
+		<!-- COL001-I. -->
+		<iColl id=ListaChequesTot>
+			<kColl id=Cheque>
+				<field id=NUM-CHEQUE>
+				<field id=FEC-EMISION-CHEQUE>
+				<field id=VALOR-CHEQUE>
+				<field id=ESTACT-CHEQUE>
+				<field id=FEC-MOD-CHEQUE>
+			</kColl >
+		</iColl >
+		<iColl id=ListaChequesPag>
+			<kColl id=Cheque>
+				<field id=NUM-CHEQUE>
+				<field id=FEC-EMISION-CHEQUE>
+				<field id=VALOR-CHEQUE>
+				<field id=ESTACT-CHEQUE>
+				<field id=FEC-MOD-CHEQUE>
+			</kColl >
+		</iColl >
+		<!-- COL001-F. -->
+	</kColl>
+</kColl>
+<!------------------------------------------------------------------------------------------------>
+<! FORMATOS -------------------------------------------------------------------------------------->
+<fmtDef id=MovimientosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+		<!fString dataName=opcionconsul description=opcionc>
+		<fString dataName=opGrupo1 description=jspGrupo1>
+
+        <fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+		<iCollVector dataName=Pagina.ListaMovimientosPagOP description=ListaMovtos>
+			<record dataName=Movimiento>
+				<fString dataName=PRIMER-CHEQUE><nullCheck>
+				<fString dataName=ULTIMO-CHEQUE><nullCheck>
+				<fString dataName=NUM-TALONARIO><nullCheck>
+				<fString dataName=CH-SIN-UTILIZAR><nullCheck>
+				<fString dataName=FECHA-PETICION><nullCheck>
+				<fString dataName=FECHA-ENTREGA><nullCheck>
+				<fString dataName=ESTADO><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<!-- COL001-I. -->
+<fmtDef id=ListaChequesOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+		<!fString dataName=opcionconsul description=opcionc>
+		<fString dataName=opGrupo1 description=jspGrupo1>
+		<!fString dataName=opEstadoCheq description=jspEstadoCheq>
+		<fString dataName=asuntoPropio description=asuntoPropio1>
+		<fString dataName=opEstadoCheq description=estadoCheque>
+		<fString dataName=opNroch description=NroPriCheq>
+		<fString dataName=opDiaDesdeCh description=DiaDesdeCh>
+		<fString dataName=opAnioDesdeCh description=AnioDesdeCh>
+		<fString dataName=opMesDesdeCh description=MesDesdeCh>
+        <fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+		<iCollVector dataName=Pagina.ListaChequesPag description=ListCheques>
+			<record dataName=Cheque>
+				<fString dataName=NUM-CHEQUE><nullCheck>
+				<fString dataName=FEC-EMISION-CHEQUE><nullCheck>
+				<fString dataName=VALOR-CHEQUE><nullCheck>
+				<fString dataName=ESTACT-CHEQUE><nullCheck>
+				<fString dataName=FEC-MOD-CHEQUE><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+<!-- COL001-F. -->
+<!------------------------------------------------------------------------------------------------>
+<! FORMATOS -------------------------------------------------------------------------------------->
+<fmtDef id=MoviDetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+		<!fString dataName=opGrupo1 description=opcionc>
+
+		<fString dataName=PrimerCheque description=primercheq>
+		<fString dataName=UltimoCheque description=ultimocheq>
+		<fString dataName=Numtalonario description=numtalonario>
+	 	<fString dataName=Chinutilizado description=cheqsin>
+		<fString dataName=Fechapeticion description=fechapeticion>
+		<fString dataName=Fechaentrega description=fechaentrega>
+		<fString dataName=Estado description=estado>
+	</fJsp>
+</fmtDef>
+
+<!-- COL001-I. -->
+<fmtDef id=ChequeDetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+		<!fString dataName=opGrupo1 description=opcionc>
+
+		<fString dataName=NumeroCheque description=numerocheq>
+		<fString dataName=FecEmisionCheque description=fecemisioncheq>
+		<fString dataName=ValorCheque description=valorcheq>
+	 	<fString dataName=EstActCheque description=estactcheque>
+		<fString dataName=FecModCheque description=fecmodcheque>
+	</fJsp>
+</fmtDef>
+<!-- COL001-F. -->
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<!------------------------------------------------------------------------------------------------>
+<! FORMATOS  DE ENTRADA -------------------------------------------------------------------------->
+<fmtDef id=DatosInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=asuntoPropio>
+		<fString dataName=opcion>
+        	<fString dataName=Grupo1>
+        	<fString dataName=DiaDesde>
+		<fString dataName=MesDesde>
+		<fString dataName=AnioDesde>
+		<fString dataName=NroCheq>
+		<fString dataName=DiaDesdeCh>
+		<fString dataName=MesDesdeCh>
+		<fString dataName=AnioDesdeCh>
+		<fString dataName=NroPriCheq>
+		<fString dataName=NumCheq>
+		<fString dataName=estadoCheque>
+	</fHTMLReq>
+</fmtDef>
+<!------------------------------------------------------------------------------------------------>
+<! FORMATOS  DE ENTRADA -------------------------------------------------------------------------->
+<fmtDef id=DetalleInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=PrimerCheque>
+
+		<!fString dataName=UltimoCheque>
+		<!fString dataName=Numtalonario>
+        	<!fString dataName=Chinutilizado>
+        	<!fString dataName=Fechapeticion>
+        	<!fString dataName=Fechaentrega>
+        	<!fString dataName=Estado>
+	</fHTMLReq>
+</fmtDef>
+<!-- COL001-I. -->
+<!------------------------------------------------------------------------------------------------>
+<! FORMATOS  DE ENTRADA -------------------------------------------------------------------------->
+<fmtDef id=DetalleChequeInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=NumeroCheque>
+		<fString dataName=FecEmisionCheque>
+		<fString dataName=ValorCheque>
+        	<fString dataName=EstActCheque>
+        	<fString dataName=FecModCheque>
+	</fHTMLReq>
+</fmtDef>
+<!-- COL001-F. -->

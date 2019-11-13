@@ -1,0 +1,87 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL saldos_ctas_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=saldos_ctas_om operationContext=OperationContext>
+	<refKColl refId=saldos_ctas_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=saldos_ctas_om-data>
+	<field id=IdTx value=TxFN20ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<<kColl id=Salida>
+	      <field id=SALDO-PUNTUAL>
+	      <field id=SALDO-DISPONIBLE>
+	      <field id=DIVISA>
+	      <field id=LINEA-CREDITO>
+	      <field id=SBC-CI>
+	      <field id=SBC-VC>
+	      <field id=SBC-RE>
+	      <field id=SBC-EX>
+	      <field id=ADE>
+	      <field id=OF-GESTORA>
+	      <field id=ESTADO>
+	      <field id=PRODUCTO>
+	      <field id=PERJUR>
+	      <field id=TITULARIDAD>
+	      <field id=SALDO-PROM-LIB>
+	      <field id=CUPONES-LIBRETON>
+	      <field id=CONTRATO-FN>
+	      <field id=SALDO-UPS-FN>
+	      <field id=COTIZACION-UPS-FN>
+	      <field id=CONTRATO-ABONO>
+		  <field id=FECHA-CONSTITUCION>
+		  <field id=FECHA-VENCIMIENTO>
+		  <field id=PLAZO>
+		  <field id=PERIODO-PAGO-INTERESES>
+		  <field id=TIPO-CDT>
+  		  <field id=TASA-EA>
+  		  <field id=PRORROGA>
+  		  <iColl id=ListaPREMIOS-LIB>
+	        <kColl id=PREMIOS-LIB>
+	          <field id=DESCRIPCION-PREM>
+	          <field id=FECHA-SORTEO>
+	        </kColl >
+	      </iColl >
+	      <field id=SUBPRODUCTO>
+	      <field id=SALDO-FONDO>
+	      <field id=COTIZACION-FONDO>
+	</kColl >
+</kColl>
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= saldos_ctas_om-copiar>
+	<kColl id=a-TxFN20ENET>
+		<field id=Entrada value=TxFN20ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN20ENET>
+		<field id=Salida value=TxFN20ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

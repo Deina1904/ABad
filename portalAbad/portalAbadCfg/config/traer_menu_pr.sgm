@@ -1,0 +1,25 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  traer_menu_pr  ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.per.PrTraerMenu id=traer_menu_pr operationContext=OperationContext>
+	<refKColl refId=traer_menu_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=traer_menu_op>
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=traer_menu_op estadoOP=ERROR jspFile=gn001_error_menu>
+		<salidaPr id=0 operacion=traer_menu_op estadoOP=1 jspFile=menu_1>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.per.PrTraerMenu>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=traer_menu_pr-data>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

@@ -1,0 +1,92 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  ce_posicion_comex_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ce.op.ce.PrPosicionComex id=ce_posicion_comex_pr operationContext=OperationContext>
+
+	<refKColl refId=ce_posicion_comex_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+	
+		<estadoPr id=0 operacion=ce_posicion_comex_op>
+		<estadoPr id=1 operacion=ce_posicion_comex_op>
+		<estadoPr id=0 operacion=ce_operaciones_comex_op>
+		<estadoPr id=1 operacion=ce_operaciones_comex_op>
+		<estadoPr id=0 operacion=ce_detoper_comex_op>
+		<estadoPr id=1 operacion=ce_detoper_comex_op>
+		<estadoPr id=0 operacion=ce_lista_avimensa_comex_op>
+		<estadoPr id=1 operacion=ce_lista_avimensa_comex_op>
+		<estadoPr id=0 operacion=ce_deta_avimensa_comex_op>
+		<estadoPr id=1 operacion=ce_deta_avimensa_comex_op>
+		
+	</navegacionPr>		
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>	
+	
+		<salidaPr id=0 operacion=ce_posicion_comex_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=ce_posicion_comex_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=ce_posicion_comex_op estadoOP=1 jspFile=ce001_posicion_comex>	
+		
+		<salidaPr id=0 operacion=ce_operaciones_comex_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=ce_operaciones_comex_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=ce_operaciones_comex_op estadoOP=1 jspFile=ce002_relac_oper>	
+
+		<salidaPr id=0 operacion=ce_detoper_comex_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=ce_detoper_comex_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=ce_detoper_comex_op estadoOP=1 jspFile=ce003_detalle_oper>	
+
+		<salidaPr id=0 operacion=ce_lista_avimensa_comex_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=ce_lista_avimensa_comex_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=ce_lista_avimensa_comex_op estadoOP=1 jspFile=ce004_relac_avimen>	
+		
+		<salidaPr id=0 operacion=ce_deta_avimensa_comex_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=ce_deta_avimensa_comex_op estadoOP=ERROR jspFile=gn001_error>	
+		<salidaPr id=1 operacion=ce_deta_avimensa_comex_op estadoOP=1 jspFile=ce005_deta_avimen>	
+		
+	</resultadoPr>	
+
+</com.grupobbva.ce.op.ce.PrPosicionComex>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ce_posicion_comex_pr-data>
+       <field id=accionf>
+	<field id=retorno>
+	<field id=clase>
+	<field id=descripcion>
+	<field id=secOpe>
+	<field id=nrOpe>
+	<field id=nrOpeForm>
+	<kColl id=pr_Movimientos>
+	  <iColl id=pr_ListaOperaciones>
+	    <kColl id=Operaciones>
+	      <field id=Num_Operacion_Form>
+	      <field id=Num_Operacion>
+	      <field id=Importe_Saldo>
+	      <field id=Moneda>
+	      <field id=Ben_Ord_Gir>
+	      <field id=Importe_Inicial>
+	      <field id=FechaProxVenc>
+	      <field id=TipoEmbarque>
+	      <field id=Status>
+	    </kColl >
+	  </iColl >
+	</kColl >	
+	    <kColl id=pr_OperacionSeleccionada>
+	      <field id=Num_Operacion_Form>
+	      <field id=Num_Operacion>
+	      <field id=Importe_Saldo>
+	      <field id=Moneda>
+	      <field id=Ben_Ord_Gir>
+	      <field id=Importe_Inicial>
+	      <field id=FechaProxVenc>
+	      <field id=TipoEmbarque>
+	      <field id=Status>
+       </kColl >
+
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

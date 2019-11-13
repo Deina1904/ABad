@@ -1,0 +1,50 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION per_modulo_op  -------------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.per.OPPerModulo id=per_modulo_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionOrdOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=per_modulo_op-data>
+	<refOM refId=per_modulo_om>
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=ordModulos metodo=ordModulos>
+		<estadoOP id=1 accion=ordModulos metodo=ordModulos>
+		<!estadoOP id=ERROR accion=ordModulos metodo=ordModulos>
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionOrdOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.per.OPPerModulo>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=per_modulo_op-data>
+	<field id=Error>
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=RelacionOrdOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	        <iCollVector dataName=per_modulo_om-data.Salida.Modulos.ListaMods description=ListaMods>
+			<record dataName=Modulo>
+				<fString dataName=CodMod><nullCheck>
+				<fString dataName=TituloMod><nullCheck>
+				<fString dataName=DescripMod><nullCheck>
+			</record>
+	        </iCollVector>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_desocup description=titulo>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+

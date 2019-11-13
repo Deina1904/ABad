@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<cfgincorporacion>
+    <initparams>
+        <!-- Limites, expresados en Kbytes a partir de los cuales no se genera el informe breve cuando tipoenvio=1 (directo)-->
+        <param nombre="LimInformesPorDefecto" valor="5000"/>
+		<!-- pongo este como ejemplo de personalizacion,Transferencias,BBVA Banco Chile -->
+        <param nombre="TRA0117LimInformes" valor="5000"/>
+    </initparams>
+    <funcionalidades>
+        <!-- Funcionalidad por defecto. Si no se define se asumirá la configuración de esta. -->
+		<!-- Para contruir una funcionalidad sería IDORDEN-CODBANCO. Ejemplo Transferencias,BBVA Banco Chile TRA0117 -->
+        <funcionalidad id="VALORPORDEFECTO">
+            <!-- tipo = 0 (texto);=1 (binario)-->
+            <lector tipo="0" clase="tlcl.incorporacion.lectores.TLCLSvLectorFichTxt">
+                <modosincorporacion>
+                    <!-- modo =0 (adaptacion por lineas); =1 (adaptacion por identificadores);= 2 (incorporacion);=3 (devoluciones);=4 (incorporacion asistente)-->
+                    <modo tipo="0">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserAdapLineas" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorAdaptacion" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgBD">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFiletoXMLAdapLin</handler>
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="1">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserAdapIdent" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorAdaptacion" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgBD">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFiletoXMLAdapIden</handler>
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="2">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserFichText" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorSintacticoBasico" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoBasico"	   lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgXML">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXML</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="3">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserFichText" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorSintacticoIncorpAsis" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoIncorpAsis" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgXML">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+								<tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXMLDevol</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXMLDevol</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+					<modo tipo="4">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserFichText" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorSintacticoIncorpAsis" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoIncorpAsis"	   lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgXML">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+								<tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToFicheroLogico</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXML</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                </modosincorporacion>
+            </lector>
+        </funcionalidad>
+        <funcionalidad id="PAP0117">
+            <!-- tipo = 0 (texto);=1 (binario)-->
+            <lector tipo="0" clase="tlcl.incorporacion.lectores.TLCLSvLectorFichTxt">
+                <modosincorporacion>
+                    <!-- modo =0 (adaptacion por lineas); =1 (adaptacion por identificadores);= 2 (incorporacion);= 3 (devoluciones)-->
+                    <modo tipo="0">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserAdapLineasDet" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorAdaptacion" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgBD">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileDetToBBVA</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFiletoXMLAdapLinDetalle</handler>
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileDetToBBVA</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="1">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserAdapIdent" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorAdaptacion" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgBD">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFiletoXMLAdapIden</handler>
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="2">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserFichText" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorSintacticoBasico" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoBasico"	   lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgXML">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXMLDet</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="3">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserFichText" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorSintacticoIncorpAsis" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoIncorpAsis" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgXML">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+				<tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXMLDevol</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXMLDevol</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                </modosincorporacion>
+            </lector>
+        </funcionalidad>
+		<funcionalidad id="PAP0081">
+            <!-- tipo = 0 (texto);=1 (binario)-->
+            <lector tipo="0" clase="tlcl.incorporacion.lectores.TLCLSvLectorFichTxt">
+                <modosincorporacion>
+                    <!-- modo =0 (adaptacion por lineas); =1 (adaptacion por identificadores);= 2 (incorporacion);= 3 (devoluciones)-->
+                    <modo tipo="0">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserAdapLineasDet" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorAdaptacion" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoBasico" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgBD">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileDetToBBVA</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFiletoXMLAdapLinDetalle</handler>
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileDetToBBVA</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="1">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserAdapIdent" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorAdaptacion" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoBasico" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgBD">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFiletoXMLAdapIden</handler>
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="2">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserFichText" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorSintacticoBasico" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoBasico"	   lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgXML">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXMLDetPeru</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="3">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserFichText" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorSintacticoIncorpAsis" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoIncorpAsis" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgXML">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+				<tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXMLDevol</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXMLDevol</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                </modosincorporacion>
+            </lector>
+        </funcionalidad>    
+        <funcionalidad id="TRA0081">
+            <!-- tipo = 0 (texto);=1 (binario)-->
+            <lector tipo="0" clase="tlcl.incorporacion.lectores.TLCLSvLectorFichTxt">
+                <modosincorporacion>
+                    <!-- modo =0 (adaptacion por lineas); =1 (adaptacion por identificadores);= 2 (incorporacion);=3 (devoluciones)-->
+                    <modo tipo="0">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserAdapLineas" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorAdaptacion" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoBasico" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgBD">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFiletoXMLAdapLin</handler>
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="1">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserAdapIdent" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorAdaptacion" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoBasico" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgBD">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFiletoXMLAdapIden</handler>
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToBBVA</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="2">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserFichText" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorSintacticoBasico" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoBasico"	   lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgXML">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXML</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                    <modo tipo="3">
+                        <listeners>
+                            <listener clase="tlcl.incorporacion.listeners.TLCLSvParserFichText" validadorsintactico="tlcl.incorporacion.validadores.sintacticos.TLCLSvValidadorSintacticoIncorpAsis" validadorsemantico="tlcl.incorporacion.validadores.semanticos.TLCLSvValidadorSemanticoIncorpAsis" lectorCfg="tlcl.incorporacion.lectorescfg.TLCLSvLectorCfgXML">
+                                <!-- tipo ="0" (envio normal); =1 (enviodirecto) -->
+				<tipoenvio id="0">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXMLDevol</handler>
+                                </tipoenvio>
+                                <tipoenvio id="1">
+                                    <handler>tlcl.incorporacion.handlers.textfile.TLCLSvTextFileToXMLDevol</handler>
+                                </tipoenvio>
+                            </listener>
+                        </listeners>
+                    </modo>
+                </modosincorporacion>
+            </lector>
+        </funcionalidad>        
+    </funcionalidades>
+</cfgincorporacion>

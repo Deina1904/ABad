@@ -1,0 +1,60 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  bloqueodeb_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.tp.PrBloqueodeb id=bloqueodeb_pr operationContext=OperationContext>
+	<refKColl refId=bloqueodeb_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=bldebito_ord_op>
+
+		<estadoPr id=1 operacion=bldebito_ord_op>
+		<estadoPr id=1 operacion=bldebito_motivo_op>
+
+		<estadoPr id=2 operacion=bldebito_conf_op>
+		<estadoPr id=2 operacion=bldebito_ord_op>
+
+		<estadoPr id=3 operacion=bldebito_conf_op>
+		<estadoPr id=3 operacion=bldebito_real_op>
+		<estadoPr id=3 operacion=bldebito_ord_op>
+
+		<estadoPr id=4 operacion=bldebito_ord_op>
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=bldebito_ord_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=bldebito_ord_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=bldebito_ord_op estadoOP=1 jspFile=bl001_ctas_ordenantes>
+		<salidaPr id=1 operacion=bldebito_motivo_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=bldebito_motivo_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=1 operacion=bldebito_real_op estadoOP=1 jspFile=bl004_ctas_realizado>
+		<salidaPr id=1 operacion=bldebito_real_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=bldebito_motivo_op estadoOP=1 jspFile=bl002_ctas_motivo>
+		<salidaPr id=2 operacion=bldebito_real_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=3 operacion=bldebito_conf_op estadoOP=1 jspFile=bl003_ctas_confirmar>
+		<salidaPr id=3 operacion=bldebito_conf_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=bldebito_conf_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=3 operacion=bldebito_real_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=bldebito_real_op estadoOP=MENSAJE jspFile=gn001_error>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.tp.PrTraspasos>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=bloqueodeb_pr-data>
+	<field id=CtaBlPr>
+	<field id=TarjetaBlPr>
+	<field id=TipoBlPr>
+	<field id=ClaveCtaBlPr>
+	<field id=MotivoBlPr>
+	<field id=DescripcionBlPr>
+	<field id=FechaOpeBlPr>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

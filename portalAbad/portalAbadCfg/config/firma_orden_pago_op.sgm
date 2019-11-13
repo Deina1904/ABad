@@ -1,0 +1,120 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PRESENTACION firma_orden_pago_op  -------------------------------->
+<! OPERACION ------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pagos.OpFirmaOrdenPago id=firma_orden_pago_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=enviando_fichero_JspFmt>
+	<refFormat name=htmlRequestFormat refId=datos_orden_HTMLFmt>
+	<refKColl refId=firma_orden_pago_op-data>
+	<refOM refId=obtener_datos_cabecera_om>
+	<refOM refId=exportar_fichero_om>
+	<refOM refId=contingencia_estado_canal_om>
+	
+	
+<! ----------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=inicioFirmaOrden metodo=inicioFirmaOrden requestFmt=datos_orden_HTMLFmt>
+		<estadoOP id=1 accion=inicioFirmaOrden metodo=inicioFirmaOrden requestFmt=datos_orden_HTMLFmt>
+		<estadoOP id=2 accion=inicioFirmaOrden metodo=inicioFirmaOrden requestFmt=datos_orden_HTMLFmt>
+		<estadoOP id=1 accion=firmarOrden metodo=firmarOrden requestFmt=datos_firma_HTMLFmt>
+	</navegacionOP>
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=resumen_orden_pago_JspFmt>
+		<salidaOP id=2 jspFmt=resumen_orden_pago_JspFmt>
+		<salidaOP id=ERRORCANAL jspFmt=ErrorCanalOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagos.OpFirmaOrdenPago>
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=firma_orden_pago_op-data>
+	<field id=codClaseOrd>
+	<field id=codIdOrden>
+	<field id=desClaseOrd>
+	<field id=nombreCompletoFichero>
+	<field id=cuentaCargo>
+	<field id=nombreFichero>
+	<field id=fechaProceso>
+	<field id=referencia>
+	<field id=numOrdenes>
+	<field id=importeTotal>
+	<field id=qnu_numitem>
+	<field id=modoCreacion>
+	<field id=desModoCreacion>
+	<field id=existeDetalle value="S">
+	
+	<field id = ficheroHTML>
+    	<field id = pathHTML>
+	<field id=Estado>
+	
+	<!-- DATOS FIRMA -->
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=pdToken>
+	<field id=pdClaveOperaciones>
+	<field id=codResPau value="OK">	
+</kColl>
+
+<! FORMATOS DE SALIDA -------------------------------------------------------------------------->
+<fmtDef id=enviando_fichero_JspFmt>
+	<fJsp>
+		<fString dataName=codClaseOrd><nullCheck>
+		<fString dataName=codClaseOrd description=descClaseOrd aditionalData=s_idioma descLarga=true catalogo=CLASEORD><nullCheck>
+		<fString dataName=descAsunbanc><nullCheck>
+		<fString dataName=codBancoCSB><nullCheck> <!-- EMX07F2004 EDA -->
+		<! Novatec I 7902-->
+		<fString dataName = nombreCompletoFichero><nullCheck>
+		<fString dataName = fechaMinima><nullCheck>
+		<fString dataName = referencia><nullCheck>
+		<fString dataName = s_cod_nomconta><nullCheck>
+		<! Novatec F 7902-->
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=resumen_orden_pago_JspFmt>
+	<fJsp>
+		<fString dataName=cuentaCargo><nullCheck>
+		<fString dataName=nombreFichero><nullCheck>
+		<fString dataName=fechaProceso><nullCheck>
+		<fString dataName=referencia><nullCheck>
+		<fString dataName=desModoCreacion><nullCheck>		
+		<fNumString dataName=numOrdenes> 
+		<fNumString dataName=importeTotal decPlaces=2 showDecimalsSep=yes showThousandsSep=yes>
+		<fString dataName=codResPau><nullCheck>
+		<fString dataName=desClaseOrd><nullCheck>
+		<fString dataName=existeDetalle><nullCheck>	
+		
+		<fString dataName=ficheroHTML><nullCheck>
+		<fString dataName=pathHTML><nullCheck>			
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorCanalOPJspFmt>
+	<fJsp>		
+		<fString dataName=Estado description=Estado>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS DE ENTRADA --------------------------------------------------------------->
+<fmtDef id=datos_orden_HTMLFmt>
+	<fHTMLReq>
+		<fString dataName = codClaseOrd description=codClaseOrd><nullCheck>		
+		<fString dataName = nombreFichero><nullCheck>
+		<fString dataName = cuentaCargo><nullCheck>
+		<fString dataName = fechaProceso><nullCheck>
+		<fString dataName = referencia><nullCheck>
+		<fString dataName = numOrdenes><nullCheck>
+		<fString dataName = importeTotal><nullCheck>
+		<fString dataName = qnu_numitem><nullCheck>
+		desClaseOrd
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=datos_firma_HTMLFmt>
+	<fHTMLReq>
+		<fString dataName = pdToken description=pdToken><nullCheck>		
+		<fString dataName = pdClaveOperaciones description=pdClaveOperaciones><nullCheck>	
+	</fHTMLReq>
+</fmtDef>

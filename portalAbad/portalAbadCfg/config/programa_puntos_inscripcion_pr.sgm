@@ -1,0 +1,44 @@
+<! BBVA ---------------------------------------------------------------------------------------------------------------------------------->
+<! Operación: PROCESO programa_puntos_inscripcion_pr ------------------------------------------------------------------------------------->
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.tcprogramapuntos.PrProgramaPuntosInscripcion id=programa_puntos_inscripcion_pr operationContext=OperationContext>
+	<refKColl refId=programa_puntos_inscripcion_pr-data>
+
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+<! ESTADOS DEL PROCESO ------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=programa_puntos_inscripcion_op>
+		<estadoPr id=1 operacion=programa_puntos_inscripcion_op>
+
+    </navegacionPr>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+<! SALIDAS DEL JSPs POR CADA ESTADO DEL PROCESO Y DE LA OP ------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=programa_puntos_inscripcion_op estadoOP=ERROR   jspFile=gn001_error>
+		<salidaPr id=0 operacion=programa_puntos_inscripcion_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=programa_puntos_inscripcion_op estadoOP=ERROR jspFile=gn001_error>
+	    <salidaPr id=1 operacion=programa_puntos_inscripcion_op estadoOP=1 jspFile=programa_puntos_pet_datos>
+	    <salidaPr id=1 operacion=programa_puntos_inscripcion_op estadoOP=2 jspFile=programa_puntos_confirma>
+		<salidaPr id=1 operacion=programa_puntos_inscripcion_op estadoOP=3 jspFile=programa_puntos_realizado>
+		<salidaPr id=1 operacion=programa_puntos_inscripcion_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=1 operacion=programa_puntos_inscripcion_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+
+	</resultadoPr>
+</com.grupobbva.bc.col.web.tcprogramapuntos.PrProgramaPuntosInscripcion>
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=programa_puntos_inscripcion_pr-data>
+	<field id=prCtaOrd>
+	<field id=prCtaOrdClave>
+	<field id=prTipoCtaOrd>
+	<field id=prCtaDest>
+	<field id=prFechaOper>
+    <field id=prImporte>
+</kColl>
+<!---------------------------------------------------------------------------------------------------------------------------------------->

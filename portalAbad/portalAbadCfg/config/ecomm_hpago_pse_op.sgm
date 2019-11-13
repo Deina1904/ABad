@@ -1,0 +1,108 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ecomm_hpago_pse_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pse.OPeCommHPagoPse id=ecomm_hpago_pse_op operationContext=OperationContext>
+   <refFormat name=jspFormat refId=EcommHacerPagoJspFmt>
+   <refFormat name=jspFormat refId=ErrorOPJspFmt>
+   <refFormat name=jspFormat refId=MensajeOPJspFmt>
+   <refFormat name=htmlRequestFormat refId=DatosPagoOPHTMLFmt>
+   <refKColl refId=ecomm_hpago_pse_op-data>
+
+   <refOM refId=identificacion_operativa_om>
+   <refOM refId=ecomm_hpago_pse_om>
+   <refOM refId=ecomm_hpago_dian_pse_om>
+   <refOM refId=actualizar_relac_om>
+   <refOM refId=bloqueo_usuario_om>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+   <navegacionOP>
+      <estadoOP id=0 accion=pagar metodo=pagar requestFmt=DatosPagoOPHTMLFmt>
+      <estadoOP id=1 accion=pagar metodo=pagar requestFmt=DatosPagoOPHTMLFmt>
+      <estadoOP id=MENSAJE accion=pagar metodo=pagar requestFmt=DatosPagoOPHTMLFmt>
+      <estadoOP id=ERROR accion=pagar metodo=pagar requestFmt=DatosPagoOPHTMLFmt>
+   </navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+   <resultadoOP>
+      <salidaOP id=1 jspFmt=EcommHacerPagoJspFmt>
+      <salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+      <salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+
+   </resultadoOP>
+</com.grupobbva.bc.col.web.pse.OPeCommHPagoPse>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ecomm_hpago_pse_op-data>
+   <field id=AsuntoPropio>
+   <field id=Error>
+   <field id=PasswordOpe>
+   <field id=Resultado>
+   <field id=Mensaje>
+   <field id=PDGroup>
+   <field id=Country>
+   <field id=Bank>
+   <field id=MaxErrors>
+   <field id=ClaveOperacion>
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=EcommHacerPagoJspFmt>
+   <fJsp>
+	  <fString dataName=s_cod_nomconta description=usuario><nullCheck> 
+      <fString dataName=s_cod_nomempre description=empresa> 
+      <fString dataName=s_ip description=ip> 
+      <fString dataName=empresaPr description=jspEmpresa><nullCheck> 
+      <fString dataName=codigodianPr description=codigodianPr><nullCheck> 
+      <fString dataName=codigoHaciendaPr description=codigoHaciendaPr><nullCheck> 
+      <fString dataName=descripcionPr description=jspDescripcion><nullCheck> 
+      <fString dataName=referenciaPr description=jspReferencia><nullCheck> 
+      <fNumString dataName=valorPr description=jspValor decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck> ->
+      <fString dataName=NumeroCtaOrdPr description=jspCuenta><nullCheck> 
+      <fString dataName=urlComercioPr description=jspUrlComercio><nullCheck> 
+  	  <fString dataName=confirmacionPr description=jspConfirmacion><nullCheck> 
+      <fString dataName=fechaOperaPr description=jspFechaOperacion><nullCheck> 
+      <fString dataName=referencia2Pr description=jspReferencia2><nullCheck> 
+      <fString dataName=referencia3Pr description=jspReferencia3><nullCheck> 
+      <fString dataName=codcomerPr description=jspCodcomer><nullCheck> 
+      <fNumString dataName=valorivaPr description=jspValoriva decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck> ->
+  	  <fString dataName=ticketidPr description=jspTicketid><nullCheck> 
+  	  <fString dataName=servicecodPr description=jspServicecod><nullCheck> 
+      <fString dataName=codigoPsePr description=jspCus><nullCheck> 
+      <fDate dataName=fechasolPr description=jspFechasol><nullCheck> 
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=Error description=mensaje>
+      <fString dataName=s_IdEstCliente description=estado_usuario>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=Mensaje description=mensaje>
+      <fString dataName=s_IdEstCliente description=estado_usuario>
+   </fJsp>
+</fmtDef>
+
+
+<! -------------------------------------------------------------------------------->
+
+! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosPagoOPHTMLFmt>
+   <fHTMLReq>
+      <fString dataName=ClaveOperacion>
+   </fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

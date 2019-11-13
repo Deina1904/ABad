@@ -1,0 +1,99 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION confirmar_cdts_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cdts.OPConfirmarCdts id=confirmar_cdts_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaCdtsPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+	<refKColl refId=confirmar_cdts_op-data>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaCdtsPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.cdts.OPConfirmarCdts>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=confirmar_cdts_op-data>
+	<field id=NumeroCtaOr>
+	<field id=NumeroCtaAb>
+	<field id=ClaveDebito>
+	<field id=ClaveAbono>
+	<field id=prorroga>
+
+
+
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaCdtsPJspFmt>
+	<fJsp>
+
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+		<fString dataName=s_correo_op description=correoop>
+		<fNumString dataName=ImporteInver description=inversion>
+		<fNumString dataName=RBruto description=renbruto>
+		<fNumString dataName=RNeto description=renneto>
+		<fNumString dataName=RteFte description=retfuente>
+		<fNumString dataName=Abono description=abonoint>
+		<fDate dataName=Fecven description=fecven>
+		<fNumString dataName=Tasa description=tasa>
+		<fString dataName=DesPlazo description=tipoplazo>
+		<fNumString dataName=Plazo description=plazo>
+		<fString dataName=DesPagInter description=pagointer>
+		<fString dataName=ClaveDebito description=ctadebito>
+		<fString dataName=ClaveAbono description=ctaabono>
+		<fString dataName=prorroga description=prorroga>
+		<fString dataName=DesProrroga description=despro>
+
+    </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=NumeroCtaOr>
+		<fString dataName=NumeroCtaAb>
+		<fString dataName=ClaveDebito>
+		<fString dataName=ClaveAbono>
+		<fString dataName=prorroga>
+
+
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

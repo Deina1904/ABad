@@ -1,0 +1,27 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  listadoplazo_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.migracion.PrPlazo id=listadoplazo_pr operationContext=OperationContext>
+	<refKColl refId=listadoplazo_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=listadoplazo_op>
+		<estadoPr id=1 operacion=listadoplazo_op>
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=1 operacion=listadoplazo_op estadoOP=1 jspFile=f001_listado_plazo>
+		<salidaPr id=1 operacion=listadoplazo_op estadoOP=excel jspFile=f001_listado_plazo_excel>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.migracion.PrPlazo>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=listadoplazo_pr-data>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

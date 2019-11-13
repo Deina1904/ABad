@@ -1,0 +1,55 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL act_correo_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.ad.OmActCorreo id=act_correo_om operationContext=OperationContext>
+	<refKColl refId=act_correo_om-data>
+</com.grupobbva.bc.col.multicanal.ad.OmActCorreo>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=act_correo_om-data>
+	<field id=IdTx value=TxF050ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=CORREO-OPERACIONES>
+	  <field id=CORREO-CONTACTO>
+	  <field id=DATO-ADICIONAL-UNO>
+	  <field id=DATO-ADICIONAL-DOS>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=act_correo_om-copiar>
+	<kColl id=a-TxF050ENET>
+		<field id=Entrada value=TxF050ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF050ENET>
+		<field id=Salida value=TxF050ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

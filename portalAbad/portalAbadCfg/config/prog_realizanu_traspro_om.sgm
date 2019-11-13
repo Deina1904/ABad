@@ -1,0 +1,46 @@
+<! BBVA ------------------------------------------------------------------------------------------------------------------->
+<! Operación: MULTICANAL prog_realizanu_traspro_om ------------------------------------------------------------------------>
+
+<! OPERACION -------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.po.OMRealizaranuTrasPropias id=prog_realizanu_traspro_om operationContext=OperationContext>
+	<refKColl refId=prog_realizanu_traspro_om-data>
+</com.grupobbva.bc.col.multicanal.po.OMRealizaranuTrasPropias>
+<! ------------------------------------------------------------------------------------------------------------------------>
+
+<! DATOS ------------------------------------------------------------------------------------------------------------------>
+
+<kColl id=prog_realizanu_traspro_om-data>
+	<field id=IdTx value=TxFN95ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2 >
+	  <field id=BASUNPRO >
+	  <field id=BASUNASO >
+	  <field id=BFECHA01 >
+	  <field id=BFECHA02 >
+	  <field id=BIMPORTE >
+	  <field id=BIMPOAUX >
+	  <field id=BINDPAGI >
+	  <field id=BINDAUX1 >
+	  <field id=BINDAUX2 >
+	  <field id=BCODAUX1 >
+	  <field id=BCODAUX2 >
+	  <field id=BNUMAUX1 >
+	  <field id=BNUMAUX2 >
+	  <field id=BPAGINAC >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------------------------------------------->
+<kColl id= prog_realizanu_traspro_om-copiar>
+	<kColl id=a-TxFN95ENET>
+		<field id=Entrada value=TxFN95ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN95ENET>
+		<field id=Salida value=TxFN95ENETSalida-01>
+	</kColl>
+</kColl>
+<! ------------------------------------------------------------------------------------------------------------------------>

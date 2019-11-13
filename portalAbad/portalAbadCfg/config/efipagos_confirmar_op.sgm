@@ -1,0 +1,169 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION efipagos_confirmar_op  --------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.efipagos.OPConfirmarEfipagos id=efipagos_confirmar_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=EfiCtasFileOPJspFmt>
+	<refFormat name=jspFormat refId=ConfirmaEnvioFileOPJspFmt>
+	<refFormat name=jspFormat refId=TransmisionOkFileOPJspFmt>
+	<refFormat name=jspFormat refId=AyudaOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+	<refKColl refId=efipagos_confirmar_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=envio_fichero_om>
+	<refOM refId=efipagos_consaldo_om>
+	<refOM refId=retorno_pagotarje_otros_om>
+	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=menuPagTarje metodo=ordPTarje>
+		<estadoOP id=ERROR accion=menuPagTarje metodo=ordPTarje>
+		<estadoOP id=VALIDAR accion=menuPagTarje metodo=ordPTarje>
+
+		<estadoOP id=1 accion=uploadFile metodo=confClave>
+		<estadoOP id=1 accion=menuPagTarje metodo=ordPTarje>
+
+		<estadoOP id=2 accion=realizarUpload metodo=envioHost requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=2 accion=uploadFile metodo=confClave>
+		<estadoOP id=2 accion=menuPagTarje metodo=ordPTarje>
+		<estadoOP id=2 accion=ayudaOlvido metodo=cambiarEstado requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=AYUDA accion=ayudaOlvido metodo=cambiarEstado requestFmt=ClaveOPHTMLFmt>
+
+		<estadoOP id=3 accion=realizarUpload metodo=envioHost requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=3 accion=uploadFile metodo=confClave>
+		<estadoOP id=3 accion=menuPagTarje metodo=ordPTarje>
+		<estadoOP id=3 accion=ayudaOlvido metodo=cambiarEstado requestFmt=ClaveOPHTMLFmt>
+
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=EfiCtasFileOPJspFmt>
+		<salidaOP id=2 jspFmt=ConfirmaEnvioFileOPJspFmt>
+		<salidaOP id=3 jspFmt=TransmisionOkFileOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.efipagos.OPConfirmarEfipagos>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=efipagos_confirmar_op-data>
+	<field id=Error>
+	<field id=ClaveOperacion>
+	<field id=Resultado>
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=opRequest>
+	<field id=opNroConfirmacion>
+	<kColl id=ARCHIVO>
+	  <iColl id=REGISTROS>
+	        <kColl id=REGISTRO>
+	          <field id=TIPREGIST>
+	          <field id=LINEADATOS>
+	        </kColl >
+      </iColl >
+	</kColl >
+
+<! CUENTAS PROPIAS DEL CLIENTE --------------------------------------------------------->
+	<iColl id=ListaCtasPTarje>
+		<kColl id=CuentaOrdenante>
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=EfiCtasFileOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_ip description=ip>
+		<iCollVector dataName=ListaCtasPTarje description=ListaCtasPTarje>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+		<fNumString dataName=prSaldoDisp description=saldodis>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ConfirmaEnvioFileOPJspFmt>
+	<fJsp>
+	    <fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_ip description=ip>
+		<fNumString dataName=prImporteTotal description=importe>
+		<fString dataName=prFechaTx description=fecha>
+		<fString dataName=prPathArchivo description=nomarchivo>
+		<fString dataName=prNumeroRegistros description=registros>
+		<fString dataName=prObservaciones description=observaciones>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=TransmisionOkFileOPJspFmt>
+	<fJsp>
+	    <fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_ip description=ip>
+		<fNumString dataName=opNroConfirmacion description=nroConfirmacion>
+		<fString dataName=prFechaTx description=fecha>
+		<fString dataName=prPathArchivo description=nomarchivo>
+		<fNumString dataName=prImporteTotal description=importe>
+		<fString dataName=prNumeroRegistros description=registros>
+		<fString dataName=prObservaciones description=observaciones>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+	    <fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+	    <fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=opRequest>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

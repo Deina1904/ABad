@@ -1,0 +1,743 @@
+743/80000: Next line/Maximum number of lines -  do not modify this line -                                                       
+1      D 12/11 17:19:02:616 0    TID=???? Settings:: initialize Data ok                                                         
+2      D 12/11 17:19:02:655 0    TID=???? Settings:: initialize Format ok                                                       
+3      D 12/11 17:19:02:655 0    TID=???? Settings:: initialize Context ok                                                      
+4      D 12/11 17:19:02:662 0    TID=???? Settings:: initialize Service ok                                                      
+5      D 12/11 17:19:02:663 0    TID=???? Settings:: initialize Operations ok                                                   
+6      D 12/11 17:19:02:715 0    TID=???? Settings:: initialize TxData ok                                                       
+7      D 12/11 17:19:02:938 0    TID=???? Settings:: initialize TxFmt ok                                                        
+8      I 12/11 17:19:02:959 0             FormatExternalizer.isUsarCache():: La caché de formatos está ACTIVA                   
+9      D 12/11 17:19:03:018 0    MQD      Nombre Pool: MQServiceCICS                                                            
+10     D 12/11 17:19:03:027 0             Diario inicializado...                                                                
+11     D 12/11 17:19:03:301 0             Aplicación inicializada...                                                            
+12     D 12/11 17:20:59:919 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'capacitacion_pr' :: Operación: 'capacitac
+                                          ion_op' :: Acción: 'inicio'.                                                          
+13     I 12/11 17:20:59:919 0             Informando BufferErrores.                                                             
+14     D 12/11 17:20:59:948 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'capacitacion_pr' :: Operación: 'capac
+                                          itacion_op'.                                                                          
+15     D 12/11 17:20:59:949 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'capacitacion_pr' :: Ope
+                                          ración: 'capacitacion_op'.                                                            
+16     D 12/11 17:20:59:949 0             Comienzo 'com.cmc.capacitacion.PRcapacitacion.executeMainOperation(capacitacion_op, in
+                                          icio)'. Proceso: 'capacitacion_pr'.                                                   
+17     V 12/11 17:20:59:949 0             com.cmc.capacitacion.PRcapacitacion.copiarAOP(). Error: java.io.IOException: Tag named
+                                           'capacitacion_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\capacita
+                                          cion_pr.sgm                                                                           
+18     D 12/11 17:20:59:949 0             Comienzo 'ejecutarAccion(inicio)' de la OP: capacitacion_op                           
+19     D 12/11 17:20:59:949 0             Comienzo 'com.cmc.capacitacion.OPcapacitacion.ejecutarMetodo(true, inicio)' de la Oper
+                                          ación de Presentación: 'capacitacion_op'.                                             
+20     D 12/11 17:20:59:949 0             Fin 'ejecutarAccion(inicio)' de la OP: capacitacion_op                                
+21     V 12/11 17:20:59:949 0             com.cmc.capacitacion.PRcapacitacion.copiarDesdeOP(). Error: java.io.IOException: Tag n
+                                          amed 'capacitacion_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\capa
+                                          citacion_pr.sgm                                                                       
+22     D 12/11 17:20:59:949 0             Ejecutada la OP en el proceso.                                                        
+23     D 12/11 17:20:59:949 0             com.cmc.capacitacion.PRcapacitacion.formatJspData() :: Formateando los datos de la jsp
+                                          : null                                                                                
+24     D 12/11 17:20:59:949 0             Formateados los datos de la jsp.                                                      
+25     D 12/11 17:20:59:949 0             Fin 'com.cmc.capacitacion.PRcapacitacion.executeMainOperation(capacitacion_op, inicio)
+                                          '. Proceso: 'capacitacion_pr'.                                                        
+26     D 12/11 17:20:59:949 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'capacitacion_pr' :: Operación: 'capacit
+                                          acion_op' :: Acción: 'inicio'.                                                        
+27     D 12/11 17:20:59:949 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'capacitacion_pr' :: Operació
+                                          n: 'capacitacion_op' :: Acción: 'inicio' :: JSP: 'capasitacionSalida'.                
+28     D 12/11 17:20:59:949 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'capacitacion_pr' ::
+                                           Operación: 'capacitacion_op'.                                                        
+29     D 12/11 17:20:59:950 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'capacitacion_pr' :: Operación: 'capacitacion_op'
+                                           :: Acción: 'inicio'. Han pasado 0.032 segundos.                                      
+30     D 12/11 17:20:59:950 0             Forwarding page: '/capasitacionSalida.jsp'.                                           
+31     D 12/11 17:21:00:870 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'practica1_pr' :: Operación: 'practica1_op
+                                          ' :: Acción: 'inicio'.                                                                
+32     I 12/11 17:21:00:870 0             Informando BufferErrores.                                                             
+33     D 12/11 17:21:00:883 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'practica1_pr' :: Operación: 'practica
+                                          1_op'.                                                                                
+34     D 12/11 17:21:00:883 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'practica1_pr' :: Operac
+                                          ión: 'practica1_op'.                                                                  
+35     D 12/11 17:21:00:883 0             Comienzo 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, inicio)'. P
+                                          roceso: 'practica1_pr'.                                                               
+36     V 12/11 17:21:00:883 0             com.cmc.practica1.PRpractica1.copiarAOP(). Error: java.io.IOException: Tag named 'prac
+                                          tica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.sgm 
+37     D 12/11 17:21:00:883 0             Comienzo 'ejecutarAccion(inicio)' de la OP: practica1_op                              
+38     D 12/11 17:21:00:884 0             Comienzo 'com.cmc.practica1.OPpractica1.ejecutarMetodo(true, inicio)' de la Operación 
+                                          de Presentación: 'practica1_op'.                                                      
+39     D 12/11 17:21:00:884 0             Fin 'ejecutarAccion(inicio)' de la OP: practica1_op                                   
+40     V 12/11 17:21:00:884 0             com.cmc.practica1.PRpractica1.copiarDesdeOP(). Error: java.io.IOException: Tag named '
+                                          practica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.
+                                          sgm                                                                                   
+41     D 12/11 17:21:00:884 0             Ejecutada la OP en el proceso.                                                        
+42     D 12/11 17:21:00:884 0             com.cmc.practica1.PRpractica1.formatJspData() :: Formateando los datos de la jsp: null
+43     D 12/11 17:21:00:884 0             Formateados los datos de la jsp.                                                      
+44     D 12/11 17:21:00:884 0             Fin 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, inicio)'. Proces
+                                          o: 'practica1_pr'.                                                                    
+45     D 12/11 17:21:00:884 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'practica1_pr' :: Operación: 'practica1_
+                                          op' :: Acción: 'inicio'.                                                              
+46     D 12/11 17:21:00:884 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'practica1_pr' :: Operación: 
+                                          'practica1_op' :: Acción: 'inicio' :: JSP: 'practica1'.                               
+47     D 12/11 17:21:00:884 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'practica1_pr' :: Op
+                                          eración: 'practica1_op'.                                                              
+48     D 12/11 17:21:00:884 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'practica1_pr' :: Operación: 'practica1_op' :: Ac
+                                          ción: 'inicio'. Han pasado 0.014 segundos.                                            
+49     D 12/11 17:21:00:884 0             Forwarding page: '/practica1.jsp'.                                                    
+50     D 12/11 17:21:02:826 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'pmensaje_pr' :: Operación: 'pmensaje_op' 
+                                          :: Acción: 'inicio'.                                                                  
+51     I 12/11 17:21:02:826 0             Informando BufferErrores.                                                             
+52     D 12/11 17:21:02:874 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'pmensaje_pr' :: Operación: 'pmensaje_
+                                          op'.                                                                                  
+53     D 12/11 17:21:02:874 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'pmensaje_pr' :: Operaci
+                                          ón: 'pmensaje_op'.                                                                    
+54     D 12/11 17:21:02:874 0             Comienzo 'com.cmc.mensaje.PRpmensaje.executeMainOperation(pmensaje_op, inicio)'. Proce
+                                          so: 'pmensaje_pr'.                                                                    
+55     V 12/11 17:21:02:874 0             com.cmc.mensaje.PRpmensaje.copiarAOP(). Error: java.io.IOException: Tag named 'pmensaj
+                                          e_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\pmensaje_pr.sgm      
+56     D 12/11 17:21:02:874 0             Comienzo 'ejecutarAccion(inicio)' de la OP: pmensaje_op                               
+57     D 12/11 17:21:02:874 0             Comienzo 'com.cmc.mensaje.OPpmensaje.ejecutarMetodo(true, inicio)' de la Operación de 
+                                          Presentación: 'pmensaje_op'.                                                          
+58     D 12/11 17:21:02:874 0             Fin 'ejecutarAccion(inicio)' de la OP: pmensaje_op                                    
+59     V 12/11 17:21:02:874 0             com.cmc.mensaje.PRpmensaje.copiarDesdeOP(). Error: java.io.IOException: Tag named 'pme
+                                          nsaje_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\pmensaje_pr.sgm  
+60     D 12/11 17:21:02:874 0             Ejecutada la OP en el proceso.                                                        
+61     D 12/11 17:21:02:874 0             com.cmc.mensaje.PRpmensaje.formatJspData() :: Formateando los datos de la jsp: null   
+62     D 12/11 17:21:02:874 0             Formateados los datos de la jsp.                                                      
+63     D 12/11 17:21:02:874 0             Fin 'com.cmc.mensaje.PRpmensaje.executeMainOperation(pmensaje_op, inicio)'. Proceso: '
+                                          pmensaje_pr'.                                                                         
+64     D 12/11 17:21:02:874 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'pmensaje_pr' :: Operación: 'pmensaje_op
+                                          ' :: Acción: 'inicio'.                                                                
+65     D 12/11 17:21:02:874 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'pmensaje_pr' :: Operación: '
+                                          pmensaje_op' :: Acción: 'inicio' :: JSP: 'pmensaje'.                                  
+66     D 12/11 17:21:02:874 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'pmensaje_pr' :: Ope
+                                          ración: 'pmensaje_op'.                                                                
+67     D 12/11 17:21:02:875 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'pmensaje_pr' :: Operación: 'pmensaje_op' :: Acci
+                                          ón: 'inicio'. Han pasado 0.05 segundos.                                               
+68     D 12/11 17:21:02:875 0             Forwarding page: '/pmensaje.jsp'.                                                     
+69     D 12/11 17:21:03:948 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'inicio'.                                                                    
+70     I 12/11 17:21:03:948 0             Informando BufferErrores.                                                             
+71     D 12/11 17:21:03:975 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+72     D 12/11 17:21:03:975 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+73     D 12/11 17:21:03:975 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, inicio)'. Proceso
+                                          : 'ejemplo_pr'.                                                                       
+74     V 12/11 17:21:03:975 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+75     D 12/11 17:21:03:975 0             Comienzo 'ejecutarAccion(inicio)' de la OP: ejemplo_op                                
+76     D 12/11 17:21:03:975 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, inicio)' de la Operación de P
+                                          resentación: 'ejemplo_op'.                                                            
+77     D 12/11 17:21:03:975 0             Fin 'ejecutarAccion(inicio)' de la OP: ejemplo_op                                     
+78     V 12/11 17:21:03:975 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+79     D 12/11 17:21:03:975 0             Ejecutada la OP en el proceso.                                                        
+80     D 12/11 17:21:03:975 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: null    
+81     D 12/11 17:21:03:975 0             Formateados los datos de la jsp.                                                      
+82     D 12/11 17:21:03:975 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, inicio)'. Proceso: 'ej
+                                          emplo_pr'.                                                                            
+83     D 12/11 17:21:03:975 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'inicio'.                                                                  
+84     D 12/11 17:21:03:975 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'inicio' :: JSP: 'pSesion_1'.                                   
+85     D 12/11 17:21:03:975 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+86     D 12/11 17:21:03:976 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'inicio'. Han pasado 0.029 segundos.                                                
+87     D 12/11 17:21:03:976 0             Forwarding page: '/pSesion_1.jsp'.                                                    
+88     D 12/11 17:22:01:755 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'inicio'.                                                                    
+89     I 12/11 17:22:01:755 0             Informando BufferErrores.                                                             
+90     D 12/11 17:22:01:756 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+91     D 12/11 17:22:01:756 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+92     D 12/11 17:22:01:757 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, inicio)'. Proceso
+                                          : 'ejemplo_pr'.                                                                       
+93     V 12/11 17:22:01:757 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+94     D 12/11 17:22:01:757 0             Comienzo 'ejecutarAccion(inicio)' de la OP: ejemplo_op                                
+95     D 12/11 17:22:01:757 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, inicio)' de la Operación de P
+                                          resentación: 'ejemplo_op'.                                                            
+96     D 12/11 17:22:01:757 0             Fin 'ejecutarAccion(inicio)' de la OP: ejemplo_op                                     
+97     V 12/11 17:22:01:757 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+98     D 12/11 17:22:01:757 0             Ejecutada la OP en el proceso.                                                        
+99     D 12/11 17:22:01:757 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: pSesion_
+                                          1                                                                                     
+100    D 12/11 17:22:01:757 0             Formateados los datos de la jsp.                                                      
+101    D 12/11 17:22:01:757 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, inicio)'. Proceso: 'ej
+                                          emplo_pr'.                                                                            
+102    D 12/11 17:22:01:757 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'inicio'.                                                                  
+103    D 12/11 17:22:01:757 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'inicio' :: JSP: 'pSesion_1'.                                   
+104    D 12/11 17:22:01:757 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+105    D 12/11 17:22:01:757 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'inicio'. Han pasado 0.002 segundos.                                                
+106    D 12/11 17:22:01:757 0             Forwarding page: '/pSesion_1.jsp'.                                                    
+107    D 12/11 17:22:05:909 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'registro'.                                                                  
+108    I 12/11 17:22:05:909 0             Informando BufferErrores.                                                             
+109    D 12/11 17:22:05:911 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+110    D 12/11 17:22:05:911 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+111    D 12/11 17:22:05:911 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, registro)'. Proce
+                                          so: 'ejemplo_pr'.                                                                     
+112    V 12/11 17:22:05:911 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+113    D 12/11 17:22:05:911 0             Comienzo 'ejecutarAccion(registro)' de la OP: ejemplo_op                              
+114    D 12/11 17:22:05:911 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, registro)' de la Operación de
+                                           Presentación: 'ejemplo_op'.                                                          
+115    D 12/11 17:22:05:911 0             Fin 'ejecutarAccion(registro)' de la OP: ejemplo_op                                   
+116    V 12/11 17:22:05:911 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+117    D 12/11 17:22:05:912 0             Ejecutada la OP en el proceso.                                                        
+118    D 12/11 17:22:05:912 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: pSesion_
+                                          1                                                                                     
+119    D 12/11 17:22:05:912 0             Formateados los datos de la jsp.                                                      
+120    D 12/11 17:22:05:912 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, registro)'. Proceso: '
+                                          ejemplo_pr'.                                                                          
+121    D 12/11 17:22:05:912 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'registro'.                                                                
+122    D 12/11 17:22:05:912 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'registro' :: JSP: 'pRegistro_2'.                               
+123    D 12/11 17:22:05:912 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+124    D 12/11 17:22:05:912 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'registro'. Han pasado 0.003 segundos.                                              
+125    D 12/11 17:22:05:912 0             Forwarding page: '/pRegistro_2.jsp'.                                                  
+126    D 12/11 17:22:11:909 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'continuar'.                                                                 
+127    I 12/11 17:22:11:909 0             Informando BufferErrores.                                                             
+128    D 12/11 17:22:11:911 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+129    D 12/11 17:22:11:911 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+130    D 12/11 17:22:11:911 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, continuar)'. Proc
+                                          eso: 'ejemplo_pr'.                                                                    
+131    V 12/11 17:22:11:912 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+132    D 12/11 17:22:11:912 0             Comienzo 'ejecutarAccion(continuar)' de la OP: ejemplo_op                             
+133    D 12/11 17:22:11:912 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, segundoPaso)' de la Operación
+                                           de Presentación: 'ejemplo_op'.                                                       
+134    D 12/11 17:22:11:912 0             Fin 'ejecutarAccion(continuar)' de la OP: ejemplo_op                                  
+135    V 12/11 17:22:11:912 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+136    D 12/11 17:22:11:912 0             Ejecutada la OP en el proceso.                                                        
+137    D 12/11 17:22:11:912 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: pRegistr
+                                          o_2                                                                                   
+138    D 12/11 17:22:11:912 0             Formateados los datos de la jsp.                                                      
+139    D 12/11 17:22:11:912 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, continuar)'. Proceso: 
+                                          'ejemplo_pr'.                                                                         
+140    D 12/11 17:22:11:912 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'continuar'.                                                               
+141    D 12/11 17:22:11:912 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'continuar' :: JSP: 'pFormuOne_3'.                              
+142    D 12/11 17:22:11:912 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+143    D 12/11 17:22:11:913 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'continuar'. Han pasado 0.005 segundos.                                             
+144    D 12/11 17:22:11:913 0             Forwarding page: '/pFormuOne_3.jsp'.                                                  
+145    D 12/11 17:22:21:523 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'siguientePaso'.                                                             
+146    I 12/11 17:22:21:523 0             Informando BufferErrores.                                                             
+147    D 12/11 17:22:21:525 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+148    D 12/11 17:22:21:525 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+149    D 12/11 17:22:21:525 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, siguientePaso)'. 
+                                          Proceso: 'ejemplo_pr'.                                                                
+150    V 12/11 17:22:21:525 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+151    D 12/11 17:22:21:525 0             Comienzo 'ejecutarAccion(siguientePaso)' de la OP: ejemplo_op                         
+152    D 12/11 17:22:21:525 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, tercerPaso)' de la Operación 
+                                          de Presentación: 'ejemplo_op'.                                                        
+153    D 12/11 17:22:21:525 0             Fin 'ejecutarAccion(siguientePaso)' de la OP: ejemplo_op                              
+154    V 12/11 17:22:21:525 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+155    D 12/11 17:22:21:525 0             Ejecutada la OP en el proceso.                                                        
+156    D 12/11 17:22:21:525 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: pFormuOn
+                                          e_3                                                                                   
+157    D 12/11 17:22:21:525 0             Formateados los datos de la jsp.                                                      
+158    D 12/11 17:22:21:525 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, siguientePaso)'. Proce
+                                          so: 'ejemplo_pr'.                                                                     
+159    D 12/11 17:22:21:525 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'siguientePaso'.                                                           
+160    D 12/11 17:22:21:525 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'siguientePaso' :: JSP: 'pFormuTwo_4'.                          
+161    D 12/11 17:22:21:526 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+162    D 12/11 17:22:21:526 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'siguientePaso'. Han pasado 0.003 segundos.                                         
+163    D 12/11 17:22:21:526 0             Forwarding page: '/pFormuTwo_4.jsp'.                                                  
+164    D 12/11 17:22:41:891 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'sigFormulario'.                                                             
+165    I 12/11 17:22:41:891 0             Informando BufferErrores.                                                             
+166    D 12/11 17:22:41:894 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+167    D 12/11 17:22:41:894 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+168    D 12/11 17:22:41:894 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, sigFormulario)'. 
+                                          Proceso: 'ejemplo_pr'.                                                                
+169    V 12/11 17:22:41:894 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+170    D 12/11 17:22:41:894 0             Comienzo 'ejecutarAccion(sigFormulario)' de la OP: ejemplo_op                         
+171    D 12/11 17:22:41:894 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, cuartoPaso)' de la Operación 
+                                          de Presentación: 'ejemplo_op'.                                                        
+172    D 12/11 17:22:41:898 0             Fin 'ejecutarAccion(sigFormulario)' de la OP: ejemplo_op                              
+173    V 12/11 17:22:41:898 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+174    D 12/11 17:22:41:898 0             Ejecutada la OP en el proceso.                                                        
+175    D 12/11 17:22:41:898 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: pFormuTw
+                                          o_4                                                                                   
+176    D 12/11 17:22:41:898 0             Formateados los datos de la jsp.                                                      
+177    D 12/11 17:22:41:898 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, sigFormulario)'. Proce
+                                          so: 'ejemplo_pr'.                                                                     
+178    D 12/11 17:22:41:898 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'sigFormulario'.                                                           
+179    D 12/11 17:22:41:898 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'sigFormulario' :: JSP: 'pFormuFour_5'.                         
+180    D 12/11 17:22:41:898 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+181    D 12/11 17:22:41:898 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'sigFormulario'. Han pasado 0.007 segundos.                                         
+182    D 12/11 17:22:41:898 0             Forwarding page: '/pFormuFour_5.jsp'.                                                 
+183    D 12/11 17:23:18:137 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'formularioSig'.                                                             
+184    I 12/11 17:23:18:137 0             Informando BufferErrores.                                                             
+185    D 12/11 17:23:18:138 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+186    D 12/11 17:23:18:138 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+187    D 12/11 17:23:18:138 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, formularioSig)'. 
+                                          Proceso: 'ejemplo_pr'.                                                                
+188    V 12/11 17:23:18:138 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+189    D 12/11 17:23:18:138 0             Comienzo 'ejecutarAccion(formularioSig)' de la OP: ejemplo_op                         
+190    D 12/11 17:23:18:138 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, quintoPaso)' de la Operación 
+                                          de Presentación: 'ejemplo_op'.                                                        
+191    D 12/11 17:23:18:139 0             Fin 'ejecutarAccion(formularioSig)' de la OP: ejemplo_op                              
+192    V 12/11 17:23:18:139 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+193    D 12/11 17:23:18:139 0             Ejecutada la OP en el proceso.                                                        
+194    D 12/11 17:23:18:139 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: pFormuFo
+                                          ur_5                                                                                  
+195    D 12/11 17:23:18:139 0             Formateados los datos de la jsp.                                                      
+196    D 12/11 17:23:18:139 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, formularioSig)'. Proce
+                                          so: 'ejemplo_pr'.                                                                     
+197    D 12/11 17:23:18:139 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'formularioSig'.                                                           
+198    D 12/11 17:23:18:139 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'formularioSig' :: JSP: 'pFormuExitoso_6'.                      
+199    D 12/11 17:23:18:140 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+200    D 12/11 17:23:18:140 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'formularioSig'. Han pasado 0.003 segundos.                                         
+201    D 12/11 17:23:18:140 0             Forwarding page: '/pFormuExitoso_6.jsp'.                                              
+202    D 12/11 17:23:27:029 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'pasoCuarto'.                                                                
+203    I 12/11 17:23:27:029 0             Informando BufferErrores.                                                             
+204    D 12/11 17:23:27:030 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+205    D 12/11 17:23:27:030 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+206    D 12/11 17:23:27:030 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, pasoCuarto)'. Pro
+                                          ceso: 'ejemplo_pr'.                                                                   
+207    V 12/11 17:23:27:030 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+208    D 12/11 17:23:27:030 0             Comienzo 'ejecutarAccion(pasoCuarto)' de la OP: ejemplo_op                            
+209    D 12/11 17:23:27:030 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, cuartoPaso)' de la Operación 
+                                          de Presentación: 'ejemplo_op'.                                                        
+210    D 12/11 17:23:27:032 0             Fin 'ejecutarAccion(pasoCuarto)' de la OP: ejemplo_op                                 
+211    V 12/11 17:23:27:032 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+212    D 12/11 17:23:27:032 0             Ejecutada la OP en el proceso.                                                        
+213    D 12/11 17:23:27:032 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: pFormuEx
+                                          itoso_6                                                                               
+214    D 12/11 17:23:27:032 0             Formateados los datos de la jsp.                                                      
+215    D 12/11 17:23:27:032 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, pasoCuarto)'. Proceso:
+                                           'ejemplo_pr'.                                                                        
+216    D 12/11 17:23:27:032 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'pasoCuarto'.                                                              
+217    D 12/11 17:23:27:032 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'pasoCuarto' :: JSP: 'pFormuFour_5'.                            
+218    D 12/11 17:23:27:032 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+219    D 12/11 17:23:27:034 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'pasoCuarto'. Han pasado 0.005 segundos.                                            
+220    D 12/11 17:23:27:034 0             Forwarding page: '/pFormuFour_5.jsp'.                                                 
+221    D 12/11 17:23:54:225 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'formularioSig'.                                                             
+222    I 12/11 17:23:54:225 0             Informando BufferErrores.                                                             
+223    D 12/11 17:23:54:227 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+224    D 12/11 17:23:54:227 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+225    D 12/11 17:23:54:227 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, formularioSig)'. 
+                                          Proceso: 'ejemplo_pr'.                                                                
+226    V 12/11 17:23:54:227 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+227    D 12/11 17:23:54:227 0             Comienzo 'ejecutarAccion(formularioSig)' de la OP: ejemplo_op                         
+228    D 12/11 17:23:54:227 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, quintoPaso)' de la Operación 
+                                          de Presentación: 'ejemplo_op'.                                                        
+229    D 12/11 17:23:54:228 0             Fin 'ejecutarAccion(formularioSig)' de la OP: ejemplo_op                              
+230    V 12/11 17:23:54:228 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+231    D 12/11 17:23:54:228 0             Ejecutada la OP en el proceso.                                                        
+232    D 12/11 17:23:54:228 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: pFormuFo
+                                          ur_5                                                                                  
+233    D 12/11 17:23:54:228 0             Formateados los datos de la jsp.                                                      
+234    D 12/11 17:23:54:228 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, formularioSig)'. Proce
+                                          so: 'ejemplo_pr'.                                                                     
+235    D 12/11 17:23:54:228 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'formularioSig'.                                                           
+236    D 12/11 17:23:54:228 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'formularioSig' :: JSP: 'pFormuExitoso_6'.                      
+237    D 12/11 17:23:54:228 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+238    D 12/11 17:23:54:228 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'formularioSig'. Han pasado 0.004 segundos.                                         
+239    D 12/11 17:23:54:228 0             Forwarding page: '/pFormuExitoso_6.jsp'.                                              
+240    D 12/11 17:23:59:870 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'finalizar'.                                                                 
+241    I 12/11 17:23:59:871 0             Informando BufferErrores.                                                             
+242    D 12/11 17:23:59:872 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+243    D 12/11 17:23:59:872 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+244    D 12/11 17:23:59:872 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, finalizar)'. Proc
+                                          eso: 'ejemplo_pr'.                                                                    
+245    V 12/11 17:23:59:873 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+246    D 12/11 17:23:59:873 0             Comienzo 'ejecutarAccion(finalizar)' de la OP: ejemplo_op                             
+247    D 12/11 17:23:59:873 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, inicio)' de la Operación de P
+                                          resentación: 'ejemplo_op'.                                                            
+248    D 12/11 17:23:59:873 0             Fin 'ejecutarAccion(finalizar)' de la OP: ejemplo_op                                  
+249    V 12/11 17:23:59:873 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+250    D 12/11 17:23:59:873 0             Ejecutada la OP en el proceso.                                                        
+251    D 12/11 17:23:59:873 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: pFormuEx
+                                          itoso_6                                                                               
+252    D 12/11 17:23:59:873 0             Formateados los datos de la jsp.                                                      
+253    D 12/11 17:23:59:873 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, finalizar)'. Proceso: 
+                                          'ejemplo_pr'.                                                                         
+254    D 12/11 17:23:59:873 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'finalizar'.                                                               
+255    D 12/11 17:23:59:873 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'finalizar' :: JSP: 'pSesion_1'.                                
+256    D 12/11 17:23:59:873 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+257    D 12/11 17:23:59:873 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'finalizar'. Han pasado 0.003 segundos.                                             
+258    D 12/11 17:23:59:873 0             Forwarding page: '/pSesion_1.jsp'.                                                    
+259    D 12/11 17:24:04:045 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'practica1_pr' :: Operación: 'practica1_op
+                                          ' :: Acción: 'inicio'.                                                                
+260    I 12/11 17:24:04:045 0             Informando BufferErrores.                                                             
+261    D 12/11 17:24:04:046 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'practica1_pr' :: Operación: 'practica
+                                          1_op'.                                                                                
+262    D 12/11 17:24:04:046 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'practica1_pr' :: Operac
+                                          ión: 'practica1_op'.                                                                  
+263    D 12/11 17:24:04:046 0             Comienzo 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, inicio)'. P
+                                          roceso: 'practica1_pr'.                                                               
+264    V 12/11 17:24:04:046 0             com.cmc.practica1.PRpractica1.copiarAOP(). Error: java.io.IOException: Tag named 'prac
+                                          tica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.sgm 
+265    D 12/11 17:24:04:046 0             Comienzo 'ejecutarAccion(inicio)' de la OP: practica1_op                              
+266    D 12/11 17:24:04:046 0             Comienzo 'com.cmc.practica1.OPpractica1.ejecutarMetodo(true, inicio)' de la Operación 
+                                          de Presentación: 'practica1_op'.                                                      
+267    D 12/11 17:24:04:046 0             Fin 'ejecutarAccion(inicio)' de la OP: practica1_op                                   
+268    V 12/11 17:24:04:046 0             com.cmc.practica1.PRpractica1.copiarDesdeOP(). Error: java.io.IOException: Tag named '
+                                          practica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.
+                                          sgm                                                                                   
+269    D 12/11 17:24:04:046 0             Ejecutada la OP en el proceso.                                                        
+270    D 12/11 17:24:04:046 0             com.cmc.practica1.PRpractica1.formatJspData() :: Formateando los datos de la jsp: null
+271    D 12/11 17:24:04:046 0             Formateados los datos de la jsp.                                                      
+272    D 12/11 17:24:04:046 0             Fin 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, inicio)'. Proces
+                                          o: 'practica1_pr'.                                                                    
+273    D 12/11 17:24:04:046 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'practica1_pr' :: Operación: 'practica1_
+                                          op' :: Acción: 'inicio'.                                                              
+274    D 12/11 17:24:04:046 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'practica1_pr' :: Operación: 
+                                          'practica1_op' :: Acción: 'inicio' :: JSP: 'practica1'.                               
+275    D 12/11 17:24:04:046 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'practica1_pr' :: Op
+                                          eración: 'practica1_op'.                                                              
+276    D 12/11 17:24:04:047 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'practica1_pr' :: Operación: 'practica1_op' :: Ac
+                                          ción: 'inicio'. Han pasado 0.002 segundos.                                            
+277    D 12/11 17:24:04:047 0             Forwarding page: '/practica1.jsp'.                                                    
+278    D 12/11 17:24:06:521 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'practica1_pr' :: Operación: 'practica1_op
+                                          ' :: Acción: 'cargarDatos'.                                                           
+279    I 12/11 17:24:06:521 0             Informando BufferErrores.                                                             
+280    D 12/11 17:24:06:522 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'practica1_pr' :: Operación: 'practica
+                                          1_op'.                                                                                
+281    D 12/11 17:24:06:522 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'practica1_pr' :: Operac
+                                          ión: 'practica1_op'.                                                                  
+282    D 12/11 17:24:06:522 0             Comienzo 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, cargarDatos
+                                          )'. Proceso: 'practica1_pr'.                                                          
+283    V 12/11 17:24:06:522 0             com.cmc.practica1.PRpractica1.copiarAOP(). Error: java.io.IOException: Tag named 'prac
+                                          tica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.sgm 
+284    D 12/11 17:24:06:522 0             Comienzo 'ejecutarAccion(cargarDatos)' de la OP: practica1_op                         
+285    D 12/11 17:24:06:522 0             Comienzo 'com.cmc.practica1.OPpractica1.ejecutarMetodo(true, null)' de la Operación de
+                                           Presentación: 'practica1_op'.                                                        
+286    E 12/11 17:24:06:522 0             com.cmc.practica1.OPpractica1.ejecutarAccion() :: Excepción NO controlada: java.lang.N
+                                          ullPointerException. Operación Presentación: 'practica1_op'. Acción: 'cargarDatos'    
+287    E 12/11 17:24:06:528 0             Excepción controlada en: 'com.cmc.practica1.PRpractica1.executeOP()'. Operacion Presen
+                                          tacion: 'practica1_pr'. Acción: 'cargarDatos'. Error: com.grupobbva.ii.sf.base.BbvaARQ
+                                          Exception                                                                             
+288    E 12/11 17:24:06:528 0             Excepción controlada: com.grupobbva.ii.sf.base.BbvaARQException'. Clase: 'com.cmc.prac
+                                          tica1.PRpractica1.executeMainOperation()'. Operación Presentación: 'practica1_op'. Acc
+                                          ión: 'cargarDatos'                                                                    
+289    E 12/11 17:24:06:531 0             Error producido al escribir en el diario de: 'Errores', en 'com.grupobbva.ii.sf.servle
+                                          ts.OperacionCBTFServlet.escribirDiario(HttpServletRequest, Exception, BufferError)'. E
+                                          rror: com.ibm.dse.base.DSEObjectNotFoundException: Keyed collection DiarioDataExcepcio
+                                          n does not have an element named proceso at first level.                              
+290    D 12/11 17:24:06:535 0    NGE      Obteniendo de la caché: CAS, ARQ1300000                                               
+291    D 12/11 17:24:06:535 0    NGE      Creada nueva caché multiidioma.                                                       
+292    V 12/11 17:24:06:536 0    NGE      Asignando número máximo de entradas en la caché, por defecto: 15                      
+293    E 12/11 17:24:07:218 0    NGE      Error en acceso a base de datos de Multiidioma. Error: com.ibm.db2.jcc.am.SqlSyntaxErr
+                                          orException: "TLNE.TTLNEAER" is an undefined name.. SQLCODE=-204, SQLSTATE=42704, DRIV
+                                          ER=4.9.78                                                                             
+294    E 12/11 17:24:07:218 0    NGE      Error al obtener la etiqueta de información para el código: 'ARQ1300000', con el idiom
+                                          a: 'CAS'                                                                              
+295    D 12/11 17:24:07:218 0    NGE      Obteniendo de la caché: CAS, ARQ1300000                                               
+296    V 12/11 17:24:07:218 0    NGE      Asignando número máximo de entradas en la caché, por defecto: 15                      
+297    E 12/11 17:24:07:228 0    NGE      Error en acceso a base de datos de Multiidioma. Error: com.ibm.db2.jcc.am.SqlSyntaxErr
+                                          orException: "TLNE.TTLNEAER" is an undefined name.. SQLCODE=-204, SQLSTATE=42704, DRIV
+                                          ER=4.9.78                                                                             
+298    E 12/11 17:24:07:229 0    NGE      Error al obtener la etiqueta de información para el código: 'ARQ1300000', con el idiom
+                                          a: 'CAS'                                                                              
+299    D 12/11 17:24:07:229 0    NGE      No está definido el código de error: 'ARQ1300000' para ningún idioma.                 
+300    D 12/11 17:24:07:229 0    NGE      Evaluando severidad del código de mensaje para el tratamiento de la siguiente informac
+                                          ión:  Severidad: 2 Descripción Multiidioma: El código 'ARQ1300000' para el idioma 'CAS
+                                          ' no se encuentra definido en la base de datos multiidioma. Descripción Programador: n
+                                          ull CodeError: ARQ1300000 Code:                                                       
+301    D 12/11 17:24:17:670 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'practica1_pr' :: Operación: 'practica1_op
+                                          ' :: Acción: 'inicio'.                                                                
+302    I 12/11 17:24:17:670 0             Informando BufferErrores.                                                             
+303    D 12/11 17:24:17:671 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'practica1_pr' :: Operación: 'practica
+                                          1_op'.                                                                                
+304    D 12/11 17:24:17:671 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'practica1_pr' :: Operac
+                                          ión: 'practica1_op'.                                                                  
+305    D 12/11 17:24:17:671 0             Comienzo 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, inicio)'. P
+                                          roceso: 'practica1_pr'.                                                               
+306    V 12/11 17:24:17:671 0             com.cmc.practica1.PRpractica1.copiarAOP(). Error: java.io.IOException: Tag named 'prac
+                                          tica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.sgm 
+307    D 12/11 17:24:17:671 0             Comienzo 'ejecutarAccion(inicio)' de la OP: practica1_op                              
+308    D 12/11 17:24:17:671 0             Comienzo 'com.cmc.practica1.OPpractica1.ejecutarMetodo(true, inicio)' de la Operación 
+                                          de Presentación: 'practica1_op'.                                                      
+309    D 12/11 17:24:17:671 0             Fin 'ejecutarAccion(inicio)' de la OP: practica1_op                                   
+310    V 12/11 17:24:17:671 0             com.cmc.practica1.PRpractica1.copiarDesdeOP(). Error: java.io.IOException: Tag named '
+                                          practica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.
+                                          sgm                                                                                   
+311    D 12/11 17:24:17:671 0             Ejecutada la OP en el proceso.                                                        
+312    D 12/11 17:24:17:671 0             com.cmc.practica1.PRpractica1.formatJspData() :: Formateando los datos de la jsp: null
+313    D 12/11 17:24:17:677 0             Formateados los datos de la jsp.                                                      
+314    D 12/11 17:24:17:677 0             Fin 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, inicio)'. Proces
+                                          o: 'practica1_pr'.                                                                    
+315    D 12/11 17:24:17:677 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'practica1_pr' :: Operación: 'practica1_
+                                          op' :: Acción: 'inicio'.                                                              
+316    D 12/11 17:24:17:677 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'practica1_pr' :: Operación: 
+                                          'practica1_op' :: Acción: 'inicio' :: JSP: 'practica1'.                               
+317    D 12/11 17:24:17:677 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'practica1_pr' :: Op
+                                          eración: 'practica1_op'.                                                              
+318    D 12/11 17:24:17:679 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'practica1_pr' :: Operación: 'practica1_op' :: Ac
+                                          ción: 'inicio'. Han pasado 0.009 segundos.                                            
+319    D 12/11 17:24:17:679 0             Forwarding page: '/practica1.jsp'.                                                    
+320    D 12/11 17:24:19:237 0             0-ZXP61Iyb_ZreeV0KNmUCN Inicio del Proceso: 'practica1_pr' :: Operación: 'practica1_op
+                                          ' :: Acción: 'formulario'.                                                            
+321    I 12/11 17:24:19:237 0             Informando BufferErrores.                                                             
+322    D 12/11 17:24:19:238 0             0-ZXP61Iyb_ZreeV0KNmUCN Instanciado el Proceso: 'practica1_pr' :: Operación: 'practica
+                                          1_op'.                                                                                
+323    D 12/11 17:24:19:238 0             0-ZXP61Iyb_ZreeV0KNmUCN Procesada la request para el Proceso: 'practica1_pr' :: Operac
+                                          ión: 'practica1_op'.                                                                  
+324    D 12/11 17:24:19:238 0             Comienzo 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, formulario)
+                                          '. Proceso: 'practica1_pr'.                                                           
+325    V 12/11 17:24:19:238 0             com.cmc.practica1.PRpractica1.copiarAOP(). Error: java.io.IOException: Tag named 'prac
+                                          tica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.sgm 
+326    D 12/11 17:24:19:238 0             Comienzo 'ejecutarAccion(formulario)' de la OP: practica1_op                          
+327    D 12/11 17:24:19:238 0             Comienzo 'com.cmc.practica1.OPpractica1.ejecutarMetodo(true, formulario)' de la Operac
+                                          ión de Presentación: 'practica1_op'.                                                  
+328    D 12/11 17:24:19:238 0             Fin 'ejecutarAccion(formulario)' de la OP: practica1_op                               
+329    V 12/11 17:24:19:238 0             com.cmc.practica1.PRpractica1.copiarDesdeOP(). Error: java.io.IOException: Tag named '
+                                          practica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.
+                                          sgm                                                                                   
+330    D 12/11 17:24:19:238 0             Ejecutada la OP en el proceso.                                                        
+331    D 12/11 17:24:19:238 0             com.cmc.practica1.PRpractica1.formatJspData() :: Formateando los datos de la jsp: prac
+                                          tica1                                                                                 
+332    D 12/11 17:24:19:238 0             Formateados los datos de la jsp.                                                      
+333    D 12/11 17:24:19:238 0             Fin 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, formulario)'. Pr
+                                          oceso: 'practica1_pr'.                                                                
+334    D 12/11 17:24:19:238 0             0-ZXP61Iyb_ZreeV0KNmUCN Ejecutado el Proceso: 'practica1_pr' :: Operación: 'practica1_
+                                          op' :: Acción: 'formulario'.                                                          
+335    D 12/11 17:24:19:238 0             0-ZXP61Iyb_ZreeV0KNmUCN Obtenida la JSP para el Proceso: 'practica1_pr' :: Operación: 
+                                          'practica1_op' :: Acción: 'formulario' :: JSP: 'formulario'.                          
+336    D 12/11 17:24:19:238 0             0-ZXP61Iyb_ZreeV0KNmUCN Actualizados datos y url para el Proceso: 'practica1_pr' :: Op
+                                          eración: 'practica1_op'.                                                              
+337    D 12/11 17:24:19:238 0             0-ZXP61Iyb_ZreeV0KNmUCN Fin Proceso: 'practica1_pr' :: Operación: 'practica1_op' :: Ac
+                                          ción: 'formulario'. Han pasado 0.002 segundos.                                        
+338    D 12/11 17:24:19:239 0             Forwarding page: '/formulario.jsp'.                                                   
+339    D 12/11 17:24:22:264 0             Establecido Valor default ("0000") para campo: s_eai_iv-tipoaut                       
+340    D 12/11 17:24:22:264 0             Establecido Valor default ("0000000000000000") para campo: s_eai_num_disp             
+341    D 12/11 17:24:22:264 0             Establecido Valor default ("00000000") para campo: s_eai_codigo_cliente               
+342    D 12/11 17:24:22:264 0             Establecido Valor default ("SINTJC") para campo: s_eai_tjc_estado                     
+343    D 12/11 17:24:22:264 0             Establecido Valor default ("nada") para campo: s_eai_accion_origen                    
+344    E 12/11 17:24:22:264 0             Error obteniendo el parámetro 'numOPRequest' de la QueryString en: 'com.grupobbva.ii.s
+                                          f.servlets.OperacionCBTFServlet.getQueryStringParameter()'. Error: java.lang.NullPoint
+                                          erException                                                                           
+345    D 12/11 17:24:22:264 0             N_MEwtN3WzyeaF9sINqZ6dH Inicio del Proceso: 'practica1_pr' :: Operación: 'practica1_op
+                                          ' :: Acción: 'datosReg'.                                                              
+346    I 12/11 17:24:22:264 0             Informando BufferErrores.                                                             
+347    D 12/11 17:24:22:265 0             N_MEwtN3WzyeaF9sINqZ6dH Instanciado el Proceso: 'practica1_pr' :: Operación: 'practica
+                                          1_op'.                                                                                
+348    D 12/11 17:24:22:265 0             N_MEwtN3WzyeaF9sINqZ6dH Procesada la request para el Proceso: 'practica1_pr' :: Operac
+                                          ión: 'practica1_op'.                                                                  
+349    D 12/11 17:24:22:265 0             Comienzo 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, datosReg)'.
+                                           Proceso: 'practica1_pr'.                                                             
+350    V 12/11 17:24:22:265 0             com.cmc.practica1.PRpractica1.copiarAOP(). Error: java.io.IOException: Tag named 'prac
+                                          tica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.sgm 
+351    D 12/11 17:24:22:265 0             Comienzo 'ejecutarAccion(datosReg)' de la OP: practica1_op                            
+352    D 12/11 17:24:22:265 0             Comienzo 'com.cmc.practica1.OPpractica1.ejecutarMetodo(true, datosReg)' de la Operació
+                                          n de Presentación: 'practica1_op'.                                                    
+353    V 12/11 17:24:22:272 0             Creada la Operación Multicanal: 'practica1_om'.                                       
+354    D 12/11 17:24:22:272 0             Ejecutando la Operación Multicanal 'practica1_om'.                                    
+355    D 12/11 17:24:22:272 0    NGE      Ejecutada la Operación Multicanal 'practica1_om'. Código: com.cmc.practica1.OPpractica
+                                          1.ejecutarOM(practica1_om)                                                            
+356    D 12/11 17:24:22:272 0             Fin 'ejecutarAccion(datosReg)' de la OP: practica1_op                                 
+357    V 12/11 17:24:22:272 0             com.cmc.practica1.PRpractica1.copiarDesdeOP(). Error: java.io.IOException: Tag named '
+                                          practica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.
+                                          sgm                                                                                   
+358    D 12/11 17:24:22:272 0             Ejecutada la OP en el proceso.                                                        
+359    D 12/11 17:24:22:272 0             com.cmc.practica1.PRpractica1.formatJspData() :: Formateando los datos de la jsp: null
+360    V 12/11 17:24:22:273 0    TID=???? com.cmc.practica1.OPpractica1. Error al formatear la JSP para com.cmc.practica1.OPprac
+                                          tica1. java.lang.ClassCastException: com.ibm.dse.base.ObjectFormat incompatible with c
+                                          om.ibm.dse.base.ElementoReutilizable                                                  
+361    E 12/11 17:24:22:273 0             Excepción controlada: com.grupobbva.ii.sf.base.BbvaARQException'. Clase: 'com.cmc.prac
+                                          tica1.PRpractica1.executeMainOperation()'. Operación Presentación: 'practica1_op'. Acc
+                                          ión: 'datosReg'                                                                       
+362    E 12/11 17:24:22:274 0             Error producido al escribir en el diario de: 'Errores', en 'com.grupobbva.ii.sf.servle
+                                          ts.OperacionCBTFServlet.escribirDiario(HttpServletRequest, Exception, BufferError)'. E
+                                          rror: com.ibm.dse.base.DSEObjectNotFoundException: Keyed collection DiarioDataExcepcio
+                                          n does not have an element named proceso at first level.                              
+363    D 12/11 17:24:22:277 0    NGE      Obteniendo de la caché: CAS, ARQ1500500                                               
+364    V 12/11 17:24:22:277 0    NGE      Asignando número máximo de entradas en la caché, por defecto: 15                      
+365    E 12/11 17:24:22:291 0    NGE      Error en acceso a base de datos de Multiidioma. Error: com.ibm.db2.jcc.am.SqlSyntaxErr
+                                          orException: "TLNE.TTLNEAER" is an undefined name.. SQLCODE=-204, SQLSTATE=42704, DRIV
+                                          ER=4.9.78                                                                             
+366    E 12/11 17:24:22:291 0    NGE      Error al obtener la etiqueta de información para el código: 'ARQ1500500', con el idiom
+                                          a: 'CAS'                                                                              
+367    D 12/11 17:24:22:291 0    NGE      Obteniendo de la caché: CAS, ARQ1500500                                               
+368    V 12/11 17:24:22:291 0    NGE      Asignando número máximo de entradas en la caché, por defecto: 15                      
+369    E 12/11 17:24:22:301 0    NGE      Error en acceso a base de datos de Multiidioma. Error: com.ibm.db2.jcc.am.SqlSyntaxErr
+                                          orException: "TLNE.TTLNEAER" is an undefined name.. SQLCODE=-204, SQLSTATE=42704, DRIV
+                                          ER=4.9.78                                                                             
+370    E 12/11 17:24:22:301 0    NGE      Error al obtener la etiqueta de información para el código: 'ARQ1500500', con el idiom
+                                          a: 'CAS'                                                                              
+371    D 12/11 17:24:22:301 0    NGE      No está definido el código de error: 'ARQ1500500' para ningún idioma.                 
+372    D 12/11 17:24:22:301 0    NGE      Evaluando severidad del código de mensaje para el tratamiento de la siguiente informac
+                                          ión:  Severidad: 2 Descripción Multiidioma: El código 'ARQ1500500' para el idioma 'CAS
+                                          ' no se encuentra definido en la base de datos multiidioma. Descripción Programador: n
+                                          ull CodeError: ARQ1500500 Code: 0102                                                  
+373    E 12/11 17:24:22:301 0             Error obteniendo el parámetro 'numOPRequest' de la QueryString en: 'com.grupobbva.ii.s
+                                          f.servlets.OperacionCBTFServlet.getQueryStringParameter()'. Error: java.lang.NullPoint
+                                          erException                                                                           
+374    D 12/11 17:24:24:123 0             N_MEwtN3WzyeaF9sINqZ6dH Inicio del Proceso: 'practica1_pr' :: Operación: 'practica1_op
+                                          ' :: Acción: 'inicio'.                                                                
+375    I 12/11 17:24:24:123 0             Informando BufferErrores.                                                             
+376    D 12/11 17:24:24:124 0             N_MEwtN3WzyeaF9sINqZ6dH Instanciado el Proceso: 'practica1_pr' :: Operación: 'practica
+                                          1_op'.                                                                                
+377    D 12/11 17:24:24:124 0             N_MEwtN3WzyeaF9sINqZ6dH Procesada la request para el Proceso: 'practica1_pr' :: Operac
+                                          ión: 'practica1_op'.                                                                  
+378    D 12/11 17:24:24:124 0             Comienzo 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, inicio)'. P
+                                          roceso: 'practica1_pr'.                                                               
+379    V 12/11 17:24:24:124 0             com.cmc.practica1.PRpractica1.copiarAOP(). Error: java.io.IOException: Tag named 'prac
+                                          tica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.sgm 
+380    D 12/11 17:24:24:124 0             Comienzo 'ejecutarAccion(inicio)' de la OP: practica1_op                              
+381    D 12/11 17:24:24:124 0             Comienzo 'com.cmc.practica1.OPpractica1.ejecutarMetodo(true, inicio)' de la Operación 
+                                          de Presentación: 'practica1_op'.                                                      
+382    D 12/11 17:24:24:125 0             Fin 'ejecutarAccion(inicio)' de la OP: practica1_op                                   
+383    V 12/11 17:24:24:125 0             com.cmc.practica1.PRpractica1.copiarDesdeOP(). Error: java.io.IOException: Tag named '
+                                          practica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.
+                                          sgm                                                                                   
+384    D 12/11 17:24:24:125 0             Ejecutada la OP en el proceso.                                                        
+385    D 12/11 17:24:24:125 0             com.cmc.practica1.PRpractica1.formatJspData() :: Formateando los datos de la jsp: null
+386    D 12/11 17:24:24:125 0             Formateados los datos de la jsp.                                                      
+387    D 12/11 17:24:24:125 0             Fin 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, inicio)'. Proces
+                                          o: 'practica1_pr'.                                                                    
+388    D 12/11 17:24:24:125 0             N_MEwtN3WzyeaF9sINqZ6dH Ejecutado el Proceso: 'practica1_pr' :: Operación: 'practica1_
+                                          op' :: Acción: 'inicio'.                                                              
+389    D 12/11 17:24:24:125 0             N_MEwtN3WzyeaF9sINqZ6dH Obtenida la JSP para el Proceso: 'practica1_pr' :: Operación: 
+                                          'practica1_op' :: Acción: 'inicio' :: JSP: 'practica1'.                               
+390    D 12/11 17:24:24:125 0             N_MEwtN3WzyeaF9sINqZ6dH Actualizados datos y url para el Proceso: 'practica1_pr' :: Op
+                                          eración: 'practica1_op'.                                                              
+391    D 12/11 17:24:24:125 0             N_MEwtN3WzyeaF9sINqZ6dH Fin Proceso: 'practica1_pr' :: Operación: 'practica1_op' :: Ac
+                                          ción: 'inicio'. Han pasado 0.002 segundos.                                            
+392    D 12/11 17:24:24:125 0             Forwarding page: '/practica1.jsp'.                                                    
+393    D 12/11 17:24:25:786 0             N_MEwtN3WzyeaF9sINqZ6dH Inicio del Proceso: 'practica1_pr' :: Operación: 'practica1_op
+                                          ' :: Acción: 'formulario'.                                                            
+394    I 12/11 17:24:25:786 0             Informando BufferErrores.                                                             
+395    D 12/11 17:24:25:787 0             N_MEwtN3WzyeaF9sINqZ6dH Instanciado el Proceso: 'practica1_pr' :: Operación: 'practica
+                                          1_op'.                                                                                
+396    D 12/11 17:24:25:787 0             N_MEwtN3WzyeaF9sINqZ6dH Procesada la request para el Proceso: 'practica1_pr' :: Operac
+                                          ión: 'practica1_op'.                                                                  
+397    D 12/11 17:24:25:787 0             Comienzo 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, formulario)
+                                          '. Proceso: 'practica1_pr'.                                                           
+398    V 12/11 17:24:25:787 0             com.cmc.practica1.PRpractica1.copiarAOP(). Error: java.io.IOException: Tag named 'prac
+                                          tica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.sgm 
+399    D 12/11 17:24:25:787 0             Comienzo 'ejecutarAccion(formulario)' de la OP: practica1_op                          
+400    D 12/11 17:24:25:787 0             Comienzo 'com.cmc.practica1.OPpractica1.ejecutarMetodo(true, formulario)' de la Operac
+                                          ión de Presentación: 'practica1_op'.                                                  
+401    D 12/11 17:24:25:787 0             Fin 'ejecutarAccion(formulario)' de la OP: practica1_op                               
+402    V 12/11 17:24:25:787 0             com.cmc.practica1.PRpractica1.copiarDesdeOP(). Error: java.io.IOException: Tag named '
+                                          practica1_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\practica1_pr.
+                                          sgm                                                                                   
+403    D 12/11 17:24:25:787 0             Ejecutada la OP en el proceso.                                                        
+404    D 12/11 17:24:25:787 0             com.cmc.practica1.PRpractica1.formatJspData() :: Formateando los datos de la jsp: prac
+                                          tica1                                                                                 
+405    D 12/11 17:24:25:787 0             Formateados los datos de la jsp.                                                      
+406    D 12/11 17:24:25:787 0             Fin 'com.cmc.practica1.PRpractica1.executeMainOperation(practica1_op, formulario)'. Pr
+                                          oceso: 'practica1_pr'.                                                                
+407    D 12/11 17:24:25:787 0             N_MEwtN3WzyeaF9sINqZ6dH Ejecutado el Proceso: 'practica1_pr' :: Operación: 'practica1_
+                                          op' :: Acción: 'formulario'.                                                          
+408    D 12/11 17:24:25:787 0             N_MEwtN3WzyeaF9sINqZ6dH Obtenida la JSP para el Proceso: 'practica1_pr' :: Operación: 
+                                          'practica1_op' :: Acción: 'formulario' :: JSP: 'formulario'.                          
+409    D 12/11 17:24:25:787 0             N_MEwtN3WzyeaF9sINqZ6dH Actualizados datos y url para el Proceso: 'practica1_pr' :: Op
+                                          eración: 'practica1_op'.                                                              
+410    D 12/11 17:24:25:788 0             N_MEwtN3WzyeaF9sINqZ6dH Fin Proceso: 'practica1_pr' :: Operación: 'practica1_op' :: Ac
+                                          ción: 'formulario'. Han pasado 0.002 segundos.                                        
+411    D 12/11 17:24:25:788 0             Forwarding page: '/formulario.jsp'.                                                   
+412    D 12/11 17:24:40:956 0             N_MEwtN3WzyeaF9sINqZ6dH Inicio del Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' ::
+                                           Acción: 'inicio'.                                                                    
+413    I 12/11 17:24:40:956 0             Informando BufferErrores.                                                             
+414    D 12/11 17:24:40:956 0             N_MEwtN3WzyeaF9sINqZ6dH Instanciado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op
+                                          '.                                                                                    
+415    D 12/11 17:24:40:956 0             N_MEwtN3WzyeaF9sINqZ6dH Procesada la request para el Proceso: 'ejemplo_pr' :: Operació
+                                          n: 'ejemplo_op'.                                                                      
+416    D 12/11 17:24:40:956 0             Comienzo 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, inicio)'. Proceso
+                                          : 'ejemplo_pr'.                                                                       
+417    V 12/11 17:24:40:957 0             com.cmc.ejemplo.PRejemplo.copiarAOP(). Error: java.io.IOException: Tag named 'ejemplo_
+                                          pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm         
+418    D 12/11 17:24:40:957 0             Comienzo 'ejecutarAccion(inicio)' de la OP: ejemplo_op                                
+419    D 12/11 17:24:40:957 0             Comienzo 'com.cmc.ejemplo.OPejemplo.ejecutarMetodo(true, inicio)' de la Operación de P
+                                          resentación: 'ejemplo_op'.                                                            
+420    D 12/11 17:24:40:957 0             Fin 'ejecutarAccion(inicio)' de la OP: ejemplo_op                                     
+421    V 12/11 17:24:40:957 0             com.cmc.ejemplo.PRejemplo.copiarDesdeOP(). Error: java.io.IOException: Tag named 'ejem
+                                          plo_pr-copiar' not found in file \pr\abad\portalAbad\portalAbadCfg\ejemplo_pr.sgm     
+422    D 12/11 17:24:40:957 0             Ejecutada la OP en el proceso.                                                        
+423    D 12/11 17:24:40:957 0             com.cmc.ejemplo.PRejemplo.formatJspData() :: Formateando los datos de la jsp: null    
+424    D 12/11 17:24:40:957 0             Formateados los datos de la jsp.                                                      
+425    D 12/11 17:24:40:957 0             Fin 'com.cmc.ejemplo.PRejemplo.executeMainOperation(ejemplo_op, inicio)'. Proceso: 'ej
+                                          emplo_pr'.                                                                            
+426    D 12/11 17:24:40:957 0             N_MEwtN3WzyeaF9sINqZ6dH Ejecutado el Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' 
+                                          :: Acción: 'inicio'.                                                                  
+427    D 12/11 17:24:40:957 0             N_MEwtN3WzyeaF9sINqZ6dH Obtenida la JSP para el Proceso: 'ejemplo_pr' :: Operación: 'e
+                                          jemplo_op' :: Acción: 'inicio' :: JSP: 'pSesion_1'.                                   
+428    D 12/11 17:24:40:957 0             N_MEwtN3WzyeaF9sINqZ6dH Actualizados datos y url para el Proceso: 'ejemplo_pr' :: Oper
+                                          ación: 'ejemplo_op'.                                                                  
+429    D 12/11 17:24:40:957 0             N_MEwtN3WzyeaF9sINqZ6dH Fin Proceso: 'ejemplo_pr' :: Operación: 'ejemplo_op' :: Acción
+                                          : 'inicio'. Han pasado 0.002 segundos.                                                
+430    D 12/11 17:24:40:957 0             Forwarding page: '/pSesion_1.jsp'.                                                    
+431    I 13/11 09:07:46:646 0    TID=???? MQPoolService.terminate()<MQPoolService id=PoolMQServiceCICS mqService=MQServiceCICS m
+                                          inSize=0 maxSize=50 maxIdleTime=3600000 maxUsageTime=3600000 >                        
+432    I 13/11 09:07:46:647 0    TID=???? número total de conexiones: 0                                                         
+433    I 13/11 09:07:46:647 0    TID=???? número de recursos han esperado: 0                                                    
+434    I 13/11 09:07:46:647 0    TID=???? número de rellenos por inferior a minSize: 0                                          
+435    I 13/11 09:07:46:647 0    TID=???? número de recursos eliminados por fin de tiempo de uso: 0                             
+436    I 13/11 09:07:46:647 0    TID=???? número de recursos eliminados por fin de tiempo inactivos: 0                          
+437    I 13/11 09:07:46:647 0    TID=???? número de recursos sin crear: 0                                                       
+438    I 13/11 09:07:46:647 0    TID=???? tiempo medio de espera: 0                                                             
+439    I 13/11 09:07:46:647 0    TID=???? tiempo medio de espera real: 0                                                        
+440    I 13/11 09:07:46:647 0    TID=???? tiempo medio de uso: 0                                                                
+441    I 13/11 09:07:46:647 0    TID=???? tiempo medio de inactividad: 0                                                        

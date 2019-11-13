@@ -1,0 +1,86 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operaci¢n:  PRESENTACION trans_confirm2_op --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.ttenet.OPConf2TTenet id=trans_confirm2_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=DatosTtOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=AyudaOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=entradaOPHTMLFmt>
+	<refKColl refId=trans_confirm2_op-data>
+	<refOM refId=trans_petdatos_om>
+<! -------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ponerAyuda requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=AYUDA accion=ayuda metodo=ponerAyuda requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=AYUDA accion=regresar metodo=volverInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=1 accion=volverAtras metodo=volverInicial requestFmt=entradaOPHTMLFmt>
+	</navegacionOP>
+<! -------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=DatosTtOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.ttenet.OPConf2TTenet>
+<! -------------------------------------------------------------------------------->
+<! DATOS -------------------------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<kColl id=trans_confirm2_op-data>
+	<field id=Error>
+	<field id=CtaBeneficiaria>
+	<field id=ValorTrans>
+	<field id=Observacion>
+	<field id=CorreoBenef>
+
+
+</kColl>
+<! -------------------------------------------------------------------------------->
+<! formatos de salida para JSP ---------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=DatosTtOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_correo_op description=correoop>
+		<fString dataName=CtaOrd description=CtaOrd>
+		<fString dataName=CtaBen description=CtaBen>
+		<fString dataName=IdeBen description=IdeBen>
+		<fString dataName=NomBen description=NomBen>
+		<fString dataName=CorrBen description=CorrBen>
+		<fNumString dataName=ValTra description=ValTra>
+		<fString dataName=FecOpe description=FecOpe>
+		<fString dataName=Observ description=Observacion>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+<! formatos de entrada ------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+<fmtDef id=entradaOPHTMLFmt>
+	<fHTMLReq>
+	    <fString dataName=CtaBeneficiaria>
+		<fString dataName=ValorTrans>
+		<fString dataName=Observacion>
+		<fString dataName=CorreoBenef>
+	</fHTMLReq>
+</fmtDef>

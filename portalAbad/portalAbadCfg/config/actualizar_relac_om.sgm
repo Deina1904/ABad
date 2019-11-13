@@ -1,0 +1,32 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL actualizar_relac_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.tp.OMActualizarRelac  id=actualizar_relac_om operationContext=OperationContext>
+
+	<refKColl refId=actualizar_relac_om-data>
+	
+</com.grupobbva.bc.col.multicanal.tp.OMActualizarRelac>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS ---------------------------------------------------------------------------->
+
+<kColl id=actualizar_relac_om-data>
+	<field id=CodUsuaInt>
+	<field id=CtaOrd>
+	<field id=CtaBenef>
+	<field id=TimTransfer>
+	<field id=Importe>
+	<field id=CodDivisa>
+	
+	<field id=RefCargo>
+	<field id=RefAbono>
+	<field id=FechaOpe>
+	<field id=FechaValor>
+	
+	<field id=Observaciones>
+</kColl>
+
+<! ---------------------------------------------------------------------------------->

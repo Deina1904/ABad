@@ -1,0 +1,80 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  traspasosbbvafam_pr  --------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.tpfn.PrTraspasosBBVAFAM id=traspasosbbvafam_pr operationContext=OperationContext>
+	<refKColl refId=traspasosbbvafam_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=ctas_ordfn_op>
+
+		<estadoPr id=1 operacion=ctas_ordfn_op>
+		<estadoPr id=1 operacion=relacion_trasfn_op>
+		<estadoPr id=1 operacion=ctas_beneficiariasfn_op>
+
+		<estadoPr id=2 operacion=confirmar_trasfn_op>
+		<estadoPr id=2 operacion=ctas_ordfn_op>
+		<estadoPr id=2 operacion=relacion_trasfn_op>
+
+		<estadoPr id=3 operacion=confirmar_trasfn_op>
+		<estadoPr id=3 operacion=realizar_trasfn_op>
+		<estadoPr id=3 operacion=ctas_ordfn_op>
+		<estadoPr id=3 operacion=relacion_trasfn_op>
+
+		<estadoPr id=4 operacion=relacion_trasfn_op>
+		<estadoPr id=4 operacion=ctas_ordfn_op>
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=ctas_ordfn_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=ctas_ordfn_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=ctas_ordfn_op estadoOP=1 jspFile=tp001_rel_ordenantesfn>
+		<salidaPr id=1 operacion=ctas_beneficiariasfn_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=ctas_beneficiariasfn_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=1 operacion=realizar_trasfn_op estadoOP=1 jspFile=tp004_realizado_trasfn>
+		<salidaPr id=1 operacion=realizar_trasfn_op estadoOP=2 jspFile=tp004_transfn_por_autorizar>
+		<salidaPr id=1 operacion=realizar_trasfn_op estadoOP=ERROR jspFile=gn001fn_error>
+		<salidaPr id=1 operacion=relacion_trasfn_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=ctas_beneficiariasfn_op estadoOP=1 jspFile=tp002_rel_beneficiariasfn>
+		<salidaPr id=2 operacion=ctas_beneficiariasfn_op estadoOP=ERROR jspFile=gn002_error>
+		<salidaPr id=2 operacion=realizar_trasfn_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=2 operacion=confirmar_trasfn_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=confirmar_trasfn_op estadoOP=1 jspFile=tp003_conf_trasfn>
+		<salidaPr id=3 operacion=confirmar_trasfn_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=confirmar_trasfn_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=3 operacion=confirmar_trasfn_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=realizar_trasfn_op estadoOP=ERROR jspFile=gn001fn_error>
+
+		<salidaPr id=4 operacion=relacion_trasfn_op estadoOP=1 jspFile=tp005_rel_trasfn>
+		<salidaPr id=4 operacion=relacion_trasfn_op estadoOP=2 jspFile=tp006_detalle_trasfn>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.tpfn.PrTraspasosBBVAFAM>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=traspasosbbvafam_pr-data>
+	<field id=TipoDeFondo>
+	<field id=ClaveCtaOrd>
+	<field id=TipoOrd>
+	<field id=CtaOrd>
+	<!field id=AsuntoBenef>
+	<field id=ClaveCtaBenef>
+	<field id=NumContrato>
+	<field id=TipoBenef>
+	<field id=FechaOpe>
+	<field id=Divisa>
+	<field id=Ups>
+	<field id=ImporteTras>
+	<field id=ObservTras>
+	<field id=NumeroCtaBenef>
+	<!field id=INDICAOK>
+	<!field id=NUMAUTOR>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

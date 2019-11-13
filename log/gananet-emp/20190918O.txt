@@ -1,0 +1,146 @@
+O#0#2019-09-18 14:39:50.408#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-18 14:39:50.428#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-18 14:39:52.501#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-18 14:39:52.502#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-18 15:06:28.925#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-18 15:06:28.953#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-18 15:07:11.852#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:07:11.873#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:07:15.191#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:07:15.193#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:08:45.688#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-18 15:08:45.707#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-18 15:08:46.975#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:08:46.981#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:09:07.186#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:09:07.187#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:16:26.347#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:16:26.364#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:18:10.61#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:18:10.628#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:19:33.749#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:19:33.797#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:19:50.4#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:19:50.408#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:26:16.531#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-18 15:26:22.303#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-18 15:26:29.655#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:26:29.679#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:29:22.497#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:29:22.514#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:32:32.745#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:32:32.747#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:32:37.673#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:32:37.674#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:32:53.207#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:32:53.209#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:50:54.696#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:50:54.718#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:51:22.262#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:51:22.281#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:52:45.011#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:52:45.015#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:53:56.317#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:53:56.321#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:53:58.228#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:53:58.231#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:54:35.222#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:54:35.224#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 15:55:43.262#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:55:43.28#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 15:55:43.693#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:55:43.695#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 15:55:55.441#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 15:55:55.442#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:17:50.794#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:17:50.796#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:19:12.705#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:19:12.706#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:31:12.978#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:31:12.979#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:33:38.791#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:33:38.792#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:39:16.129#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:39:16.13#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:39:16.769#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:39:16.77#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:39:17.413#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:39:17.414#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:40:57.915#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:40:57.916#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:40:58.166#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:40:58.167#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:41:00.686#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:41:00.687#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:41:23.652#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:41:23.653#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:41:24.033#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:41:24.035#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:41:59.995#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:41:59.997#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:42:21.637#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:42:21.638#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:42:25.251#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:42:25.252#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:42:42.623#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:42:42.624#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:42:43.743#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:42:43.745#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:43:07.949#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:43:07.951#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:43:18.35#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:43:18.352#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 16:43:18.703#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 16:43:18.704#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 17:39:37.77#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:39:37.828#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:39:39.629#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:39:39.631#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:39:49.364#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:39:49.366#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:41:51.41#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:41:51.431#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:42:10.402#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:42:10.405#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:42:17.989#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:42:17.992#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:44:34.869#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:44:34.872#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:51:07.851#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:51:07.871#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:51:21.281#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:51:21.284#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:52:26.567#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:52:26.569#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:52:27.307#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:52:27.309#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:52:38.195#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:52:38.197#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:54:58.874#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:54:58.876#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 17:55:00.015#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 17:55:00.017#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 18:00:36.97#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 18:00:36.996#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 18:04:24.688#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 18:04:24.931#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 18:05:31.772#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#0#2019-09-18 18:05:33.579#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#0#2019-09-18 18:05:36.501#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 18:05:54.132#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#1#2019-09-18 18:05:55.021#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#1#2019-09-18 18:05:55.693#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 18:06:57.789#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 18:06:57.817#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#Error: com.grupobbva.ii.sf.base.BbvaARQException. null#
+O#0#2019-09-18 18:07:58.643#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 18:07:58.659#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 18:08:38.613#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 18:08:38.614#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 18:08:40.459#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 18:08:40.46#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 18:08:41.221#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 18:08:41.222#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 18:08:42.122#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 18:08:42.124#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#
+O#0#2019-09-18 18:08:42.965#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#
+O#1#2019-09-18 18:08:42.966#Colombianet#null#false# #11#1#1058#0#1#practica1_pr#practica1_op#inicio#0#1#

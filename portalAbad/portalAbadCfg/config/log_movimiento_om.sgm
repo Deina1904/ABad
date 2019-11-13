@@ -1,0 +1,85 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL log_movimiento_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=log_movimiento_om operationContext=OperationContext>
+	<refKColl refId=log_movimiento_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=log_movimiento_om-data>
+	<field id=IdTx value=TxF022ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=ENUMAUX1>
+	  <field id=ENUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl>
+
+	<kColl id=Salida>
+		  <field id=omIndMasDatosHost>
+		  <field id=omAreaMasDatosHost>
+		  <field id=omIndMovDatosHost>
+		  <iColl id=omListaLog>
+		    <kColl id=omRegistroLog>
+		      <field id=omCodigoProductoContratoPropio>
+		      <field id=omContratoCuentaPropia>
+		      <field id=omCodigoProductoContratoAsociado>
+		      <field id=omContratoAsociado>
+		      <field id=omCNNSESIO>
+		      <field id=omCNNOPERA>
+		      <field id=omCNIOPERA>
+		      <field id=omFechaOperacion>
+			  <field id=omHoraDeTransaccion>
+			  <field id=omFechaValor>
+			  <field id=omCNCNLLLA>
+			  <field id=omCNREFINT>
+			  <field id=omCNREFEX1>
+			  <field id=omCNREFEX2>
+			  <field id=omCNYLIB01>
+			  <field id=omCNYLIB02>
+			  <field id=omCNYLIB03>
+			  <field id=omCNYLIB04>
+			  <field id=omCNYLIB05>
+			  <field id=omCNYLIB06>
+			  <field id=omCNYLIB07>
+			  <field id=omCNYLIB08>
+			  <field id=omCNYLIB09>
+			  <field id=omCNYLIB10>
+			  <field id=omCNTIMEST>
+		    </kColl>
+		  </iColl>
+	</kColl>
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=log_movimiento_om-copiar>
+	<kColl id=a-TxF022ENET>
+		<field id=Entrada value=TxF022ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF022ENET>
+		<field id=Salida value=TxF022ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

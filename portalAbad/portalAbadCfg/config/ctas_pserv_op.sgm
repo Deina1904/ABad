@@ -1,0 +1,167 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ctas_pserv_op  -------------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.rn.OPCtasRN id=ctas_pserv_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionCtaPServOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ayudaOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=recaudoOPHTMLFmt>
+	<refKColl refId=ctas_pserv_op-data>
+	<refOM refId=ctas_pserv_om>
+	<refOM refId=consultar_pago_om>
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=menuPagServ metodo=ordPServ requestFmt=recaudoOPHTMLFmt>
+		<estadoOP id=1 accion=menuPagServ metodo=ordPServ requestFmt=recaudoOPHTMLFmt>
+		<estadoOP id=1 accion=regresar metodo=ordPServ requestFmt=recaudoOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ponerAyuda requestFmt=ayudaOPHTMLFmt>
+		<estadoOP id=AYUDA accion=ayuda metodo=ponerAyuda requestFmt=ayudaOPHTMLFmt>
+		<estadoOP id=AYUDA accion=regresar metodo=volverOrdPserv>
+		<estadoOP id=ERROR accion=menuPagServ metodo=ordPServ requestFmt=recaudoOPHTMLFmt>
+		<estadoOP id=VALIDAR accion=menuOrdTras metodo=ordTras>
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionCtaPServOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=RelacionCtaPServOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.rn.OPCtasRN>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ctas_pserv_op-data>
+	<field id=Error>
+	<field id=Seleccionado>
+	<field id=recSeleccion>
+	<field id=recSeleccionado value=" ">
+	<field id=desRecaudo>
+	<field id=descripRecaudo>
+	<field id=validBD>
+	<field id=exten>
+	<field id=Refer1>
+	<field id=Alinea1>
+	<field id=Rellena1>
+	<field id=Tipo1>
+	<field id=Refer2>
+	<field id=Alinea2>
+	<field id=Rellena2>
+	<field id=Tipo2>
+	<field id=indtc>
+	<field id=Refer3>
+	<field id=Refer4>
+	<iColl id=ListaCtasPServ>
+		<kColl id=CuentaOrdenante>
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+<! TARJETAS DE CREDITO PROPIAS DEL CLIENTE -------------------------------------------->
+	<iColl id=ListaTarjePTarje>
+		<kColl id=NumTarjeta>
+			<field id=NumeroBin1>
+			<field id=NumeroBin2>
+			<field id=NumTarjeta1>
+			<field id=NumTarjeta2>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=RelacionCtaPServOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CodServicio description=CodServicio>
+
+		<!fString dataName=rcSeleccionado description=recSeleccionado>
+		<fString dataName=desRecaudo description=desRecaudo>
+		<fString dataName=descripRecaudo description=descripRecaudo>
+		<fString dataName=Refer1 description=Refer1>
+		<fString dataName=Refer2 description=Refer2>
+        <fString dataName=Refer3 description=Refer3>
+
+		<fString dataName=validBD description=validBD>
+		<fString dataName=Tipo1 description=Tipo1>
+		<fString dataName=Tipo2 description=Tipo2>
+        <fString dataName=exten description=exten>
+
+		<!fString dataName=ctaRecaudo description=cuentaRecaudo>
+		<!fString dataName=imagen description=nombreImagen>
+		<!fString dataName=validBD description=validBD>
+		<!fString dataName=desRefRecaudo description=desRefReca>
+		<fString dataName=Seleccionado description=recSelecc>
+		<iCollVector dataName=ListaCtasPServ description=ListaCtasPServ>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+		<iCollVector dataName=ListaTarjePTarje description=ListaTarjePTarje>
+			<record dataName=NumTarjeta>
+				<fString dataName=NumeroBin1>
+				<fString dataName=NumeroBin2>
+				<fString dataName=NumTarjeta1>
+				<fString dataName=NumTarjeta2>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef><! -------------------------------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<! formatos de entrada  ----------------------------------------------------------->
+<! la variables de aqui edeben estar definidas en la data de la op -->
+<fmtDef id=recaudoOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=Seleccionado>
+		<fString dataName=desRecaudo>
+		<fString dataName=descripRecaudo>
+		<fString dataName=validBD>
+		<fString dataName=exten>
+		<fString dataName=Refer1>
+		<fString dataName=Alinea1>
+		<fString dataName=Rellena1>
+		<fString dataName=Tipo1>
+		<fString dataName=Refer2>
+		<fString dataName=Alinea2>
+		<fString dataName=Rellena2>
+		<fString dataName=Tipo2>
+		<fString dataName=Refer3>
+		<fString dataName=Refer4>
+
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=ayudaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=recSeleccion>
+
+	</fHTMLReq>
+</fmtDef>

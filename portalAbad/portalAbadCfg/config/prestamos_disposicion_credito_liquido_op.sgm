@@ -1,0 +1,325 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION prestamos_disposicion_credito_liquido_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+
+<com.grupobbva.bc.col.web.disposicion.credliquido.OpPrestamosDisposicionCreditoLiquido id=prestamos_disposicion_credito_liquido_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+    <refFormat name=jspFormat refId=InicioOPJspFmt>
+    <refFormat name=jspFormat refId=PeticionDatosOPJspFmt>
+    <refFormat name=jspFormat refId=ConfirmacionOPJspFmt>
+    <refFormat name=jspFormat refId=RealizarOPJspFmt>
+    <refFormat name=jspFormat refId=AyudaOPJspFmt>
+    <refFormat name=jspFormat refId=ValidarOPJspFmt>
+
+    <refFormat name=htmlRequestFormat refId=EntInicioOPHTMLFmt>
+    <refFormat name=htmlRequestFormat refId=EntPeticionDatosOPHTMLFmt>
+    <refFormat name=htmlRequestFormat refId=EntConfirmacionOPHTMLFmt>
+    <refFormat name=htmlRequestFormat refId=EntRealizarOPHTMLFmt>
+
+	<refKColl refId=prestamos_disposicion_credito_liquido_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+	<refOM refId=prestamos_disposicion_credito_liquido_om>
+	<refOM refId=prestamos_disposicion_credito_liquido1_om>
+	<refOM refId=prestamos_disposicion_credito_liquido2_om>
+	<refOM refId=trans_petdatos_om>
+	<refOM refId=saldos_presta_cl_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=inicio metodo=inicioProceso requestFmt=EntInicioOPHTMLFmt>
+		<estadoOP id=INICIO accion=inicio metodo=inicioProceso requestFmt=EntInicioOPHTMLFmt>
+		<estadoOP id=INICIO accion=capturaDatos metodo=procesarDatos requestFmt=EntPeticionDatosOPHTMLFmt>
+		<estadoOP id=INICIO accion=traerAsociados metodo=procesarDatos requestFmt=EntPeticionDatos1OPHTMLFmt>
+		<estadoOP id=INICIO accion=confirmar metodo=confirmarOperacion requestFmt=EntConfirmacionOPHTMLFmt>
+		<estadoOP id=INICIO accion=realizar metodo=realizarOperacion requestFmt=EntRealizarOPHTMLFmt>
+
+		<estadoOP id=PETDATOS accion=inicio metodo=inicioProceso requestFmt=EntInicioOPHTMLFmt>
+		<estadoOP id=PETDATOS accion=capturaDatos metodo=procesarDatos requestFmt=EntPeticionDatosOPHTMLFmt>
+		<estadoOP id=PETDATOS accion=traerAsociados metodo=procesarDatos requestFmt=EntPeticionDatos1OPHTMLFmt>
+		<estadoOP id=PETDATOS accion=confirmar metodo=confirmarOperacion requestFmt=EntConfirmacionOPHTMLFmt>
+		<estadoOP id=PETDATOS accion=realizar metodo=realizarOperacion requestFmt=EntRealizarOPHTMLFmt>
+
+		<estadoOP id=CONFIRMAR accion=inicio metodo=inicioProceso requestFmt=EntInicioOPHTMLFmt>
+		<estadoOP id=CONFIRMAR accion=capturaDatos metodo=procesarDatos requestFmt=EntPeticionDatosOPHTMLFmt>
+		<estadoOP id=CONFIRMAR accion=traerAsociados metodo=procesarDatos requestFmt=EntPeticionDatos1OPHTMLFmt>
+		<estadoOP id=CONFIRMAR accion=confirmar metodo=confirmarOperacion requestFmt=EntConfirmacionOPHTMLFmt>
+		<estadoOP id=CONFIRMAR accion=realizar metodo=realizarOperacion requestFmt=EntRealizarOPHTMLFmt>
+		<estadoOP id=CONFIRMAR accion=ayuda metodo=ponerAyuda>
+
+		<estadoOP id=AYUDA accion=volverDeAyuda metodo=volverDeAyuda>
+
+		<estadoOP id=REALIZAR accion=inicio metodo=inicioProceso requestFmt=EntInicioOPHTMLFmt>
+		<estadoOP id=REALIZAR accion=capturaDatos metodo=procesarDatos requestFmt=EntPeticionDatosOPHTMLFmt>
+		<estadoOP id=REALIZAR accion=traerAsociados metodo=procesarDatos requestFmt=EntPeticionDatos1OPHTMLFmt>
+		<estadoOP id=REALIZAR accion=confirmar metodo=confirmarOperacion requestFmt=EntConfirmacionOPHTMLFmt>
+		<estadoOP id=REALIZAR accion=realizar metodo=realizarOperacion requestFmt=EntRealizarOPHTMLFmt>
+
+		<estadoOP id=PENDIENTE accion=inicio metodo=inicioProceso requestFmt=EntInicioOPHTMLFmt>
+		<estadoOP id=PENDIENTE accion=capturaDatos metodo=procesarDatos requestFmt=EntPeticionDatosOPHTMLFmt>
+		<estadoOP id=PENDIENTE accion=traerAsociados metodo=procesarDatos requestFmt=EntPeticionDatos1OPHTMLFmt>
+		<estadoOP id=PENDIENTE accion=confirmar metodo=confirmarOperacion requestFmt=EntConfirmacionOPHTMLFmt>
+		<estadoOP id=PENDIENTE accion=realizar metodo=realizarOperacion requestFmt=EntRealizarOPHTMLFmt>
+
+		<estadoOP id=ERROR accion=inicio metodo=inicioProceso requestFmt=EntInicioOPHTMLFmt>
+		<estadoOP id=ERROR accion=capturaDatos metodo=procesarDatos requestFmt=EntPeticionDatosOPHTMLFmt>
+		<estadoOP id=ERROR accion=traerAsociados metodo=procesarDatos requestFmt=EntPeticionDatos1OPHTMLFmt>
+		<estadoOP id=ERROR accion=confirmar metodo=confirmarOperacion requestFmt=EntConfirmacionOPHTMLFmt>
+		<estadoOP id=ERROR accion=realizar metodo=realizarOperacion requestFmt=EntRealizarOPHTMLFmt>
+
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=INICIO jspFmt=InicioOPJspFmt>
+		<salidaOP id=PETDATOS jspFmt=PeticionDatosOPJspFmt>
+		<salidaOP id=CONFIRMAR jspFmt=ConfirmacionOPJspFmt>
+		<salidaOP id=REALIZAR jspFmt=RealizarOPJspFmt>
+		<salidaOP id=PENDIENTE jspFmt=RealizarOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.disposicion.credliquido.OpPrestamosDisposicionCreditoLiquido>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=prestamos_disposicion_credito_liquido_op-data>
+
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+
+	<field id=Error>
+
+	<field id=inpStrTipoDisposicion>
+	<field id=inpStrAsuntoPropio>
+	<field id=inpStrAsuntoAsociado>
+	<field id=inpNumImporte  value=0>
+	<field id=inpStrIdEmailDestino value="">
+	<field id=inpStrObservaciones value="">
+	<field id=inpStrClaveOperacion>
+
+	<iColl id=opIcAsuntosPropios>
+		<kColl id=opKcAsuntoPropio>
+			<field id=opStrBanco>
+			<field id=opStrOficina>
+			<field id=opStrDcontrol>
+			<field id=opStrNumCuenta>
+			<field id=opStrPermiso>
+			<field id=opStrClaveAsunto>
+			<field id=opStrTipo>
+			<field id=opStrEstado>
+		</kColl >
+	</iColl >
+
+	<iColl id=opIcAsuntosAsociados>
+		<kColl id=opKcAsuntoAsociado>
+			<field id=opStrBanco>
+			<field id=opStrOficina>
+			<field id=opStrDcontrol>
+			<field id=opStrNumCuenta>
+			<field id=opStrPermiso>
+			<field id=opStrClaveAsunto>
+			<field id=opStrTipo>
+			<field id=opStrEstado>
+		</kColl >
+	</iColl >
+
+	<field id=opNumMaximoAutorizado>
+	<field id=opDatFechaOperacion>
+	<field id=opStrTipoCuenta>
+	<field id=opStrEntidad>
+	<field id=opStrNombreDestino>
+	<field id=opStrIdDestino>
+	<field id=opStrIdEmailDestino>
+	<field id=opNumConfirmacion>
+
+</kColl>
+
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+		<fDate dataName=opDatFechaOperacion description=opDatFechaOperacion>
+		<fNumString dataName=opNumMaximoAutorizado description=opNumMaximoAutorizado>
+
+		<fString dataName=inpStrTipoDisposicion description=inpStrTipoDisposicion>
+		<iCollVector dataName=opIcAsuntosPropios description=opIcAsuntosPropios>
+			<record dataName=opKcAsuntoPropio>
+				<fString dataName=opStrBanco><nullCheck>
+				<fString dataName=opStrOficina><nullCheck>
+				<fString dataName=opStrDcontrol><nullCheck>
+				<fString dataName=opStrNumCuenta><nullCheck>
+				<fString dataName=opStrPermiso><nullCheck>
+				<fString dataName=opStrClaveAsunto><nullCheck>
+				<fString dataName=opStrTipo><nullCheck>
+				<fString dataName=opStrEstado><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=PeticionDatosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=inpStrTipoDisposicion description=inpStrTipoDisposicion>
+		<fString dataName=inpStrAsuntoPropio description=inpStrAsuntoPropio>
+		<fString dataName=inpStrIdEmailDestino description=inpStrIdEmailDestino>
+		<fString dataName=inpStrObservaciones description=inpStrObservaciones>
+		<fNumString dataName=inpNumImporte description=inpNumImporte>
+		<fNumString dataName=opNumMaximoAutorizado description=opNumMaximoAutorizado>
+		<fDate dataName=opDatFechaOperacion description=opDatFechaOperacion>
+
+
+		<iCollVector dataName=opIcAsuntosPropios description=opIcAsuntosPropios>
+			<record dataName=opKcAsuntoPropio>
+				<fString dataName=opStrBanco><nullCheck>
+				<fString dataName=opStrOficina><nullCheck>
+				<fString dataName=opStrDcontrol><nullCheck>
+				<fString dataName=opStrNumCuenta><nullCheck>
+				<fString dataName=opStrPermiso><nullCheck>
+				<fString dataName=opStrClaveAsunto><nullCheck>
+				<fString dataName=opStrTipo><nullCheck>
+				<fString dataName=opStrEstado><nullCheck>
+			</record>
+		</iCollVector>
+
+		<iCollVector dataName=opIcAsuntosAsociados description=opIcAsuntosAsociados>
+			<record dataName=opKcAsuntoAsociado>
+				<fString dataName=opStrBanco><nullCheck>
+				<fString dataName=opStrOficina><nullCheck>
+				<fString dataName=opStrDcontrol><nullCheck>
+				<fString dataName=opStrNumCuenta><nullCheck>
+				<fString dataName=opStrPermiso><nullCheck>
+				<fString dataName=opStrClaveAsunto><nullCheck>
+				<fString dataName=opStrTipo><nullCheck>
+				<fString dataName=opStrEstado><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ConfirmacionOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_ip description=ip>
+		<fString dataName=inpStrTipoDisposicion description=inpStrTipoDisposicion>
+		<fDate dataName=opDatFechaOperacion description=opDatFechaOperacion>
+		<fString dataName=inpStrAsuntoPropio description=inpStrAsuntoPropio>
+		<fString dataName=inpStrAsuntoAsociado description=inpStrAsuntoAsociado>
+		<fNumString dataName=inpNumImporte description=inpNumImporte>
+		<fString dataName=inpStrObservaciones description=inpStrObservaciones>
+		<fString dataName=inpStrIdEmailDestino description=inpStrIdEmailDestino>
+
+		<fString dataName=opStrTipoCuenta description=opStrTipoCuenta>
+		<fString dataName=opStrEntidad description=opStrEntidad>
+		<fString dataName=opStrNombreDestino description=opStrNombreDestino>
+		<fString dataName=opStrIdDestino description=opStrIdDestino>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=RealizarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_ip description=ip>
+
+		<fString dataName=inpStrTipoDisposicion description=inpStrTipoDisposicion>
+		<fNumString dataName=opNumConfirmacion description=opNumConfirmacion>
+		<fDate dataName=opDatFechaOperacion description=opDatFechaOperacion>
+		<fString dataName=inpStrAsuntoPropio description=inpStrAsuntoPropio>
+		<fString dataName=inpStrAsuntoAsociado description=inpStrAsuntoAsociado>
+		<fString dataName=inpStrIdEmailDestino description=inpStrIdEmailDestino>
+
+		<fString dataName=opStrTipoCuenta description=opStrTipoCuenta>
+		<fString dataName=opStrEntidad description=opStrEntidad>
+		<fString dataName=opStrNombreDestino description=opStrNombreDestino>
+		<fString dataName=opStrIdDestino description=opStrIdDestino>
+		<fString dataName=inpStrObservaciones description=inpStrObservaciones>
+		<fNumString dataName=inpNumImporte description=inpNumImporte>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=EntInicioOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpStrTipoDisposicion>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=EntPeticionDatosOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpStrAsuntoPropio>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=EntPeticionDatos1OPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpStrAsuntoPropio>
+		<fString dataName=inpStrAsuntoAsociado>
+		<fNumString dataName=inpNumImporte>
+		<fString dataName=inpStrObservaciones>
+		<fString dataName=inpStrIdEmailDestino>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=EntConfirmacionOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpStrAsuntoPropio>
+		<fString dataName=inpStrAsuntoAsociado>
+		<fNumString dataName=inpNumImporte>
+		<fString dataName=inpStrObservaciones>
+		<fString dataName=inpStrIdEmailDestino>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=EntRealizarOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpStrClaveOperacion>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

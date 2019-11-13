@@ -1,0 +1,100 @@
+<! BBVA  ------------------------------------------------------------------------------------------------------------------------------------------>
+<! Operación:  PRESENTACION detalle_divisas_op  ------------------------------------------------------------------------------->
+
+<! OPERACION -------------------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.gp.OpTraeDetalleDiv id=detalle_divisas_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=DetalleDivisasOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DetalleDivisasOPHTMLFmt>
+
+	<refKColl refId=detalle_divisas_op-data>
+
+<! ------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<! ESTADOS ---------------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=detalle metodo=traeDetalleDivisas requestFmt=DetalleDivisasOPHTMLFmt>
+		<estadoOP id=1 accion=detalle metodo=traeDetalleDivisas requestFmt=DetalleDivisasOPHTMLFmt>
+		<estadoOP id=ERROR accion=consulta metodo=traeDetalleDivisas requestFmt=DetalleDivisasOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=consulta metodo=traeDetalleDivisas requestFmt=DetalleDivisasOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ---------------------------------------------------------------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=DetalleDivisasOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.gp.OpTraeDetalleDiv>
+
+<! DATOS ------------------------------------------------------------------------------------------------------------------------------------------>
+<kColl id=detalle_divisas_op-data>
+
+	<!-- DEFINICION DE DATOS DE FORMATOS DE ENTRADA -->
+
+		<field id=OpStrReferencia>
+		<field id=OpStrNumIden>
+		<field id=OpStrTipOper>
+		<field id=OpStrDesTOper>
+		<field id=OpStrComOVen>
+		<field id=OpStrDivisas>
+		<field id=OpStrImporte>
+		<field id=OpStrImpAUSD>
+		<field id=OpStrImpACOP>
+		<field id=OpStrTCDivUS>
+		<field id=OpStrTCDivCO>
+		<field id=OpStrEstado>
+	 	<field id=OpStrDesOper>
+	 	<field id=OpStrFecha>
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------------------------------------------------------------------->
+
+<fmtDef id=DetalleDivisasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+ 		<fNumString dataName=OpStrReferencia showDecimalsSep=no showThousandsSep=no ><nullCheck>
+		<fString dataName=OpStrNumIden>
+        <fString dataName=OpStrTipOper>
+		<fString dataName=OpStrDesTOper>
+        <fString dataName=OpStrComOVen>
+		<fString dataName=OpStrDivisas>
+		<fNumString dataName=OpStrImporte decPlaces=2>
+		<fNumString dataName=OpStrImpAUSD decPlaces=2>
+		<fNumString dataName=OpStrImpACOP decPlaces=2>
+		<fNumString dataName=OpStrTCDivUS decPlaces=4>
+		<fNumString dataName=OpStrTCDivCO decPlaces=2>
+		<fString dataName=OpStrEstado>
+		<fString dataName=OpStrDesOper>
+		<fString dataName=OpStrFecha>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA!>
+
+<fmtDef id=DetalleDivisasOPHTMLFmt>
+	<fHTMLReq>
+ 		<fNumString dataName=OpStrReferencia>
+	</fHTMLReq>
+</fmtDef>
+
+<! ------------------------------------------------------------------------------------------------------------------------------------------------>

@@ -1,0 +1,2 @@
+
+function cuentaMarcas(form,Marca){var cadena="";for(var i=0;i<form.elements.length;i++){if(form.elements[i].type=="checkbox"){if(form.elements[i].checked==true){cadena+="1";}else{cadena+="0";}}}Marca.value=cadena;}

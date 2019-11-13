@@ -1,0 +1,230 @@
+﻿
+<!Formats definition >
+
+<!SESION >
+<fmtDef id=SessionJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_logon>
+	</fJsp>
+</fmtDef>
+
+
+<!FORMATOS COMUNES TRANSACCIONES >
+
+<! Cabecera General Arquitectura >
+<fmtDef id=CabGeneral>
+	<record dataName=CabGeneral>
+		<fString dataName=CodTransac><fixedLength length=8 justify=left>
+		<fString dataName=Espacio><fixedLength length=1>
+		<fString dataName=FmtCabecera><fixedLength length=4 justify=left>
+	</record>
+</fmtDef>
+
+<! Cabecera AA01>
+<fmtDef id=CabAA01>
+	<record dataName=CabAA01>
+		<! -- Subcabecera Aplicacion -->
+		<fString dataName=CodTransac><fixedLength length=8 justify=left>
+		<fString dataName=CodTipOper><fixedLength length=2 justify=right padChar=0>
+		<fString dataName=CodSubtipo><fixedLength length=2 justify=right padChar=0>
+		<fString dataName=CodVersion><fixedLength length=2 justify=right padChar=0>
+		<fString dataName=CodBanco><fixedLength length=4 justify=right padChar=0>
+		<fString dataName=CodOficina><fixedLength length=4 justify=right padChar=0>
+
+		<! -- Subcabecera Personalizacion -->
+		<fString dataName=CodCanal><fixedLength length=4 justify=right padChar=0>
+		<fString dataName=CodMedioAcceso><fixedLength length=4 justify=right padChar=0>
+		<fString dataName=CodServicio><fixedLength length=4 justify=right padChar=0>
+		<fDate dataName=FecOper ordering=ymd fourDigYear=yes useSep=no>
+		<fTime dataName=HoraOper hours=24 showSeconds=yes useSep=no>
+		<fString dataName=NumOper><fixedLength length=9 justify=right padChar=0>
+		<fString dataName=XtiClien><fixedLength length=2 justify=right padChar=0>
+		<fString dataName=CodClien><fixedLength length=30 justify=left>
+
+		<! -- Subcabecera Respuesta -->
+		<fString dataName=CodRetorno><fixedLength length=1>
+		<fString dataName=CodError><fixedLength length=10>
+		<fString dataName=DesTexto><fixedLength length=80>
+		<fString dataName=XtiSalida><fixedLength length=2>
+	</record>
+</fmtDef>
+
+
+
+<fmtDef id=CabeceraHost>
+	<record dataName=CabeceraHost>
+		<refFmt refId=CabGeneral>
+		<refFmt refId=CabAA01>
+	</record>
+</fmtDef>
+
+
+<! OPERACIONES DE PRESENTACION -------------------------------------------------------------------------------->
+
+
+<! OPERACIONES MULTICANAL -------------------------------------------------------------------------------->
+
+
+<! -----FORMATOS PARA EL SERVICIO DUMMY DE COMUNICACIONES ----->
+
+<fmtDef id=fmtCodigoTXEntrada>
+	<record>
+		<fString dataName=Dummy><fixedLength length=88>
+		<fString dataName=IdTx><fixedLength length=8>
+	</record>
+</fmtDef>
+
+<! ------------------------------  >
+
+<! -----FORMATOS PARA EL SERVICIO DE LOG ----->
+
+<fmtDef id = DiarioDataSesionFmt>
+	<record dataName=DiarioDataSesion>
+
+		<fString dataName= info_capa><delim delimChar= #><nullCheck>
+		<fString dataName= tipo_log><delim delimChar= #><nullCheck>
+		<fString dataName= timestamp><delim delimChar= #><nullCheck>
+		<fString dataName= aplicacion><delim delimChar= #><nullCheck>
+		<fString dataName= id_sesion><delim delimChar= #><nullCheck>
+		<fString dataName= cod_logon><delim delimChar= #><nullCheck>
+		<fString dataName= canal><delim delimChar= #><nullCheck>
+		<fString dataName= cod_bancoint><delim delimChar= #><nullCheck>
+		<fString dataName= cod_producto><delim delimChar= #><nullCheck>
+		<fString dataName= cod_subproducto><delim delimChar= #><nullCheck>
+		<fString dataName= cod_bancoprint><delim delimChar= #><nullCheck>
+		<fString dataName= msg_error><delim delimChar= #><nullCheck>
+	</record>
+</fmtDef>
+
+<fmtDef id = DiarioDataOperacionFmt>
+	<record dataName=DiarioDataOperacion>
+
+		<fString dataName=info_capa><delim delimChar= #> <nullCheck>
+		<fString dataName= tipo_log><delim delimChar= #> <nullCheck>
+		<fString dataName= timestamp><delim delimChar= #> <nullCheck>
+		<fString dataName= aplicacion><delim delimChar= #><nullCheck>
+		<fString dataName= id_sesion><delim delimChar= #> <nullCheck>
+		<fString dataName= cod_logon><delim delimChar= #><nullCheck>
+		<fString dataName= canal><delim delimChar= #><nullCheck>
+		<fString dataName= cod_bancoint><delim delimChar= #><nullCheck>
+		<fString dataName= cod_producto><delim delimChar= #><nullCheck>
+		<fString dataName= cod_subproducto><delim delimChar= #><nullCheck>
+		<fString dataName= cod_bancoprint><delim delimChar= #><nullCheck>
+		<fString dataName= proceso><delim delimChar= #> <nullCheck>
+		<fString dataName= operacion><delim delimChar= #> <nullCheck>
+		<fString dataName= accion><delim delimChar= #><nullCheck>
+		<fString dataName= estado_pr><delim delimChar= #> <nullCheck>
+		<fString dataName= estado_op><delim delimChar= #><nullCheck>
+		<fString dataName= msg_error><delim delimChar= #><nullCheck>
+	</record>
+</fmtDef>
+
+<fmtDef id= DiarioDataMulticanalFmt>
+	<record dataName=DiarioDataMulticanal>
+
+		<fString dataName=info_capa><delim delimChar= #> <nullCheck>
+		<fString dataName= tipo_log><delim delimChar= #> <nullCheck>
+		<fString dataName= timestamp><delim delimChar= #><nullCheck>
+		<fString dataName= aplicacion><delim delimChar= #> <nullCheck>
+		<fString dataName= id_sesion><delim delimChar= #><nullCheck>
+		<fString dataName= cod_logon><delim delimChar= #><nullCheck>
+		<fString dataName= canal><delim delimChar= #><nullCheck>
+		<fString dataName= cod_bancoint><delim delimChar= #><nullCheck>
+		<fString dataName= cod_producto><delim delimChar= #><nullCheck>
+		<fString dataName= cod_subproducto><delim delimChar= #><nullCheck>
+		<fString dataName= cod_bancoprint><delim delimChar= #><nullCheck>
+		<fString dataName= operacion><delim delimChar= #><nullCheck>
+		<fOMData dataName= contexto><delim delimChar= #><nullCheck>
+		<fString dataName= msg_error><delim delimChar= #><nullCheck>
+	</record>
+</fmtDef>
+
+<fmtDef id=DiarioDataTransaccionFmt>
+	<record dataName = DiarioDataTransaccion>
+
+		<fString dataName=info_capa><delim delimChar= #><nullCheck>
+		<fString dataName= tipo_log><delim delimChar= #><nullCheck>
+		<fString dataName= timestamp><delim delimChar= #><nullCheck>
+		<fString dataName= aplicacion><delim delimChar= #><nullCheck>
+		<fString dataName= id_sesion><delim delimChar= #><nullCheck>
+		<fString dataName= cod_logon><delim delimChar= #><nullCheck>
+		<fString dataName= canal><delim delimChar= #><nullCheck>
+		<fString dataName= cod_bancoint><delim delimChar= #><nullCheck>
+		<fString dataName= cod_producto><delim delimChar= #><nullCheck>
+		<fString dataName= cod_subproducto><delim delimChar= #><nullCheck>
+		<fString dataName= cod_bancoprint><delim delimChar= #><nullCheck>
+		<fString dataName= id_transaccion><delim delimChar= #><nullCheck>
+		<fString dataName= mensaje><nullCheck>
+		<fString dataName= msg_error><delim delimChar= #><nullCheck>
+	</record>
+</fmtDef>
+
+<fmtDef id=DiarioDataBBDDFmt>
+	<record dataName = DiarioDataBBDD>
+
+		<fString dataName=info_capa><delim delimChar= #><nullCheck>
+		<fString dataName= tipo_log><delim delimChar= #><nullCheck>
+		<fString dataName= timestamp><delim delimChar= #><nullCheck>
+		<fString dataName= aplicacion><delim delimChar= #><nullCheck>
+		<fString dataName= id_sesion><delim delimChar= #><nullCheck>
+		<fString dataName= cod_logon><delim delimChar= #><nullCheck>
+		<fString dataName= canal><delim delimChar= #><nullCheck>
+		<fString dataName= cod_bancoint><delim delimChar= #><nullCheck>
+		<fString dataName= cod_producto><delim delimChar= #><nullCheck>
+		<fString dataName= cod_subproducto><delim delimChar= #><nullCheck>
+		<fString dataName= cod_bancoprint><delim delimChar= #><nullCheck>
+		<fString dataName= sql><delim delimChar= #><nullCheck>
+		<fString dataName= msg_error><delim delimChar= #><nullCheck>
+
+	</record>
+</fmtDef>
+<fmtDef id = DiarioDataExcepcionFmt>
+<record dataName= DiarioDataExcepcion>
+
+	<fString dataName= info_capa><delim delimChar= #><nullCheck>
+	<fString dataName= tipo_log><delim delimChar= #><nullCheck>
+	<fString dataName= timestamp><delim delimChar= #><nullCheck>
+	<fString dataName= aplicacion><delim delimChar= #><nullCheck>
+	<fString dataName= id_sesion><delim delimChar= #><nullCheck>
+	<fString dataName= cod_logon><delim delimChar= #><nullCheck>
+	<fString dataName= canal><delim delimChar= #><nullCheck>
+	<fString dataName= cod_bancoint><delim delimChar= #><nullCheck>
+	<fString dataName= cod_producto><delim delimChar= #><nullCheck>
+	<fString dataName= cod_subproducto><delim delimChar= #><nullCheck>
+	<fString dataName= cod_bancoprint><delim delimChar= #><nullCheck>
+	<fString dataName= clase><delim delimChar= #><nullCheck>
+	<fString dataName= codigoError><delim delimChar= #><nullCheck>
+	</record>
+</fmtDef>
+<fmtDef id = DiarioDataNGExcepcionFmt>
+<record dataName= DiarioDataNGExcepcion>
+	<fString dataName= info_capa><delim delimChar= #><nullCheck>
+	<fString dataName= tipo_log><delim delimChar= #><nullCheck>
+	<fString dataName= timestamp><delim delimChar= #><nullCheck>
+	<fString dataName= aplicacion><delim delimChar= #><nullCheck>
+	<fString dataName= id_sesion><delim delimChar= #><nullCheck>
+	<fString dataName= emulada><delim delimChar= #><nullCheck>
+	<fString dataName= usu_emulador><delim delimChar= #><nullCheck>
+	<fString dataName= cod_logon><delim delimChar= #><nullCheck>
+	<fString dataName= canal><delim delimChar= #><nullCheck>
+	<fString dataName= cod_bancoint><delim delimChar= #><nullCheck>
+	<fString dataName= cod_producto><delim delimChar= #><nullCheck>
+	<fString dataName= cod_subproducto><delim delimChar= #><nullCheck>
+	<fString dataName= cod_bancoprint><delim delimChar= #><nullCheck>
+	<fString dataName= funcionalidad><delim delimChar= /><nullCheck>
+	<fString dataName= capa><delim delimChar= /><nullCheck>
+	<fString dataName= tipo_error><delim delimChar= /><nullCheck>
+	<fString dataName= subtipo_error><delim delimChar= /><nullCheck>
+	<fString dataName= severidad><delim delimChar= #><nullCheck>
+	<fString dataName= proceso><delim delimChar= #><nullCheck>
+	<fString dataName= operacion_presentacion><delim delimChar= #><nullCheck>
+	<fString dataName= operacion_multicanal><delim delimChar= #><nullCheck>
+	<fString dataName= servicio><delim delimChar= #><nullCheck>
+	<fString dataName= clase><delim delimChar= #><nullCheck>
+	<fString dataName= mensaje_programador><delim delimChar= #><nullCheck>
+	<fString dataName= codigoError><delim delimChar= #><nullCheck>
+	<fString dataName= fuente_error><delim delimChar= #><nullCheck>
+	<fString dataName= code_error><delim delimChar= #><nullCheck>
+	<fString dataName= descripcion_bd><delim delimChar= #><nullCheck>
+	</record>
+</fmtDef>

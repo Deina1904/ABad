@@ -1,0 +1,79 @@
+<! BBVA  ------------------------------------------------------------------------------------------------------------------------------->
+<! Operación: PROCESO consulta_contproc_planillas_pr ------------------------------------------------------------------------------------>
+
+<! OPERACION --------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.contprocplanillas.PrConsultaContProcPlanillas id=consulta_contproc_planillas_pr operationContext=OperationContext>
+	<refKColl refId=consulta_contproc_planillas_pr-data>
+
+<! ESTADOS ----------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=consulta_contproc_planillas_tx_op>
+		<estadoPr id=1 operacion=consulta_contproc_planillas_tx_op>
+
+	</navegacionPr>
+
+	<! SALIDAS ------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=consulta_contproc_planillas_tx_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=consulta_contproc_planillas_tx_op estadoOP=1 jspFile=planillas_consulta>
+		<salidaPr id=1 operacion=consulta_contproc_planillas_tx_op estadoOP=DETALLE jspFile=planillas_detallep>
+		<salidaPr id=1 operacion=consulta_contproc_planillas_tx_op estadoOP=ERROR jspFile=gn001_error>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.contprocplanillas.PrConsultaContProcPlanillas>
+<! ------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS ------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=consulta_contproc_planillas_pr-data>
+
+	<field id=ClaveCtaOrdPr>
+	<field id=CtaOrdPr>
+	<field id=RegistrosPaginacionPr value=25>
+	<field id=MasDatosTransmisionesWasPr value="N">
+	<field id=MasDatosTransmisionesHostPr value="N">
+	<field id=IdTransmisionesPr value=0>
+	<! LLAVE DE PAGINACION DE ORDENES>
+	<field id=UltMovRecaudoPr value="0">
+	<field id=UltNroOrdenPr value="0">
+	<field id=UltFechaTxPr value="0">
+	<field id=UltEmisoraPr value="0">
+	<field id=UltSucursalPr value="0">
+
+	<iColl id=prListaOrdenes>
+		<kColl id=prOrden>
+			<field id=prNroOrden value="">
+			<field id=prFechaTx value="">
+			<field id=opFechaApl value="">
+			<field id=prValorTx value=0>
+			<field id=prRegistrosTx value=0>
+			<field id=prEstadoTx value="">
+			<field id=prSucursal value="">
+			<field id=prEmisora value="">
+			<field id=prEstadoAnu value="">
+			<field id=prAplEspecial value="">
+			<field id=prUsuarioTx value="">
+			<field id=prCuentaTx value="">
+			<field id=prTipoTx value="">
+			<field id=prNombreTx value="">
+		</kColl>
+	</iColl>
+
+	<iColl id=prListaErrores>
+		<kColl id=prError>
+	      <field id=prNumeroOper>
+	      <field id=prCuenta>
+	      <field id=prBanco>
+	      <field id=prTitular>
+	      <field id=prIdentificacion>
+	      <field id=prValor>
+	      <field id=prEstado>
+	      <field id=prDescripcionEst>
+	      <field id=prMotivo>
+	      <field id=prObservacion>
+		</kColl>
+	</iColl>
+    <field id=prTimestSal>
+    <field id=prIndMasDatosHost>
+</kColl>
+<! --------------------------------------------------------------------------------->

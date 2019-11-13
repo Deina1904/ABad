@@ -1,0 +1,1 @@
+if(document.all){document.write('<link rel="stylesheet" href="scripts/bbvaex.css">');}else{document.write('<link rel="stylesheet" href="scripts/bbvanets.css">');}

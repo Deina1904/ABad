@@ -1,0 +1,61 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL ecomm_rdatos_pse_om  ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=ecomm_rdatos_pse_om operationContext=OperationContext>
+   <refKColl refId=ecomm_rdatos_pse_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ecomm_rdatos_pse_om-data>
+   <field id=IdTx value=TxF073ENET>
+   <kColl id=Entrada>
+     <field id=BCODACCC>
+     <field id=BCODCTAA>
+     <field id=BPALACCE>
+     <field id=BPACACC2>
+     <field id=BASUNPRO>
+     <field id=BASUNASO>
+     <field id=BFECHA01>
+     <field id=BFECHA02>
+     <field id=BIMPORTE>
+     <field id=BIMPOAUX>
+     <field id=BINDPAGE>
+     <field id=BINDAUX1>
+     <field id=BINDAUX2>
+     <field id=BCODAUX1>
+     <field id=BCODAUX2>
+     <field id=BNUMAUX1>
+     <field id=BNUMAUX2>
+     <field id=BPAGINAC>
+   </kColl >
+
+   <kColl id=Salida>
+   	 <field id=CODPSE>
+     <field id=COMERCIO>
+     <field id=DESCRIPCION>
+     <field id=REFERENCIA>
+     <field id=IMPORTE>
+     <field id=URLCOMERCIO>
+     <field id=REFERENCIA2>
+     <field id=REFERENCIA3>
+     <field id=CODCOMER>
+     <field id=VALORIVA>
+     <field id=FECHASOL>
+     <field id=TICKETID>
+     <field id=SERVICECOD>
+     <field id=AUX>
+     <field id=CODMIR>
+    </kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= ecomm_rdatos_pse_om-copiar>
+   <kColl id=a-TxF073ENET>
+      <field id=Entrada value=TxF073ENETEntrada>
+   </kColl>
+   <kColl id=desde-TxF073ENET>
+      <field id=Salida value=TxF073ENETSalida-01>
+   </kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

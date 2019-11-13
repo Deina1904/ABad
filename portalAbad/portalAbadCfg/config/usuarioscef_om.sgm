@@ -1,0 +1,45 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL usuarioscef_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=usuarioscef_om operationContext=OperationContext>
+	<refKColl refId=usuarioscef_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=usuarioscef_om-data>
+	<field id=IdTx value=TxMCE1ENET>
+	<kColl id=Entrada>
+
+	  <iColl id=ListaUsuarios>
+	  	       <kColl id=USUARIOS>
+	  	          <field id=CLIENTE>
+       	       </kColl >
+	   </iColl >
+	  <field id=NUMUSER>
+	  <field id=OPCION>
+
+
+	</kColl >
+
+	<kColl id=Salida>
+		<field id=OPCION>
+	</kColl >
+</kColl>
+
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= usuarioscef_om-copiar>
+	<kColl id=a-TxMCE1ENET>
+		<field id=Entrada value=TxMCE1ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxMCE1ENET>
+		<field id=Salida value=TxMCE1ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

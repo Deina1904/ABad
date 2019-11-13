@@ -1,0 +1,56 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  fondo_plazo180_sucr_reem_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.fplazo180.PrFondoPlazo180SucrReem id=fondo_plazo180_sucr_reem_pr operationContext=OperationContext>
+
+	<refKColl refId=fondo_plazo180_sucr_reem_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=fondo_plazo180_sucr_reem_op>
+		<estadoPr id=1 operacion=fondo_plazo180_sucr_reem_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=fondo_plazo180_sucr_reem_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=0 operacion=fondo_plazo180_sucr_reem_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=fondo_plazo180_sucr_reem_op estadoOP=VALIDAR jspFile=r002_traspasos>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=VALIDAR jspFile=r002_traspasos>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=INICIO jspFile=fondo_plazo180_sucr1>
+
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=PETDATOS-S jspFile=fondo_plazo180_sucr2>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=CONFIRMAR-S jspFile=fondo_plazo180_sucr3>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=REALIZAR-S jspFile=fondo_plazo180_sucr4>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=PENDIENTE-S jspFile=fondo_plazo180_sucr5>
+
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=PETDATOS-R jspFile=fondo_plazo180_reem2>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=CONFIRMAR-R jspFile=fondo_plazo180_reem3>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=REALIZAR-R jspFile=fondo_plazo180_reem4>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=PENDIENTE-R jspFile=fondo_plazo180_reem5>
+
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=AYUDA-S jspFile=ayuda_clave_oper>
+		<salidaPr id=1 operacion=fondo_plazo180_sucr_reem_op estadoOP=AYUDA-R jspFile=ayuda_clave_oper>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.fplazo180.PrFondoPlazo180SucrReem>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=fondo_plazo180_sucr_reem_pr-data>
+
+	<field id=prTipoDisposicion value="">
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

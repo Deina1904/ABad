@@ -1,0 +1,251 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION planillas_consulta_tx_op  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.consplanillas.OPConsultaPlanillas id=planillas_consulta_tx_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionOrdOPJspFmt>
+	<refFormat name=jspFormat refId=ListadoTransmisionesOPJspFmt>
+	<refFormat name=jspFormat refId=DetalleTransmisionOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=CriteriosDeBusquedaOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=DetalleSeleccionadoOPHTMLFmt>
+	<refKColl refId=planillas_consulta_tx_op-data>
+	<refOM refId=planillas_movimiento_om>
+	<refOM refId=planillas_conserror_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+
+
+		<estadoOP id=0 accion=inicio metodo=inicioProceso>
+		<estadoOP id=INICIO accion=inicio metodo=inicioProceso>
+		<estadoOP id=INICIO accion=listado metodo=listadoOrdenes requestFmt=CriteriosDeBusquedaOPHTMLFmt>
+
+		<estadoOP id=LISTADO accion=listado metodo=listadoOrdenes requestFmt=CriteriosDeBusquedaOPHTMLFmt>
+		<estadoOP id=LISTADO accion=inicio metodo=inicioProceso>
+		<estadoOP id=LISTADO accion=adelante metodo=masDatos>
+		<estadoOP id=LISTADO accion=atras metodo=atrasDatos>
+		<estadoOP id=LISTADO accion=detalle metodo=detalleOrden requestFmt=DetalleSeleccionadoOPHTMLFmt>
+
+		<estadoOP id=DETALLE accion=detalle metodo=detalleOrden requestFmt=DetalleSeleccionadoOPHTMLFmt>
+		<estadoOP id=DETALLE accion=regreso metodo=regresar>
+		<estadoOP id=DETALLE accion=inicio metodo=inicioProceso>
+
+		<estadoOP id=ERROR accion=inicio metodo=inicioProceso>
+		<estadoOP id=ERROR accion=listado metodo=listadoOrdenes requestFmt=CriteriosDeBusquedaOPHTMLFmt>
+		<estadoOP id=ERROR accion=detalle metodo=detalleOrden requestFmt=DetalleSeleccionadoOPHTMLFmt>
+
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=INICIO jspFmt=RelacionOrdOPJspFmt>
+		<salidaOP id=LISTADO jspFmt=ListadoTransmisionesOPJspFmt>
+		<salidaOP id=DETALLE jspFmt=DetalleTransmisionOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.bc.col.web.consplanillas.OPConsultaPlanillas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=planillas_consulta_tx_op-data>
+	<field id=Error>
+	<! CAMPOS FORMATO DE ENTRADA PARA EL LISTADO DE ORDENES>
+	<field id=inpCriterio>
+	<field id=inpFecha>
+	<field id=inpFechaDesde>
+	<field id=inpFechaHasta>
+	<field id=inpCanal>
+	<field id=inpAsuntoPropio>
+	<field id=inpValor>
+	<! CAMPOS FORMATO DE ENTRADA PARA EL DETALLE DE UNA ORDEN>
+	<field id=inpNroOrden>
+	<field id=inpNroEmisora>
+	<field id=inpFechaTx>
+	<field id=inpNroRegistros>
+	<field id=inpValorOrden>
+	<field id=inpCtaOrigen>
+	<field id=inpFechaEfec>
+	<field id=inpUsuario>
+	<field id=inpEstadoOrden>
+	<field id=inpIndEspecial>
+	<field id=inpCuenta>
+	<field id=inpTipo>
+	<field id=inpNombre>
+	<field id=inpResultado>
+
+	<iColl id=ListaCtasOrd>
+		<kColl id=CuentaOrdenante>
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+
+	<iColl id=opPaginaOrdenes>
+		<kColl id=opOrden>
+			<field id=opNroOrden>
+			<field id=opFechaTx>
+			<field id=opFechaApl>
+			<field id=opImporte>
+			<field id=opNroRegistros>
+			<field id=opEstadoTx>
+			<field id=opSucursal>
+			<field id=opEmisora>
+			<field id=opEstadoAnu>
+			<field id=opAplEspecial>
+			<field id=opUsuarioTx>
+			<field id=opCuentaTx>
+			<field id=opTipoTx>
+			<field id=opNombreTx>
+		</kColl>
+	</iColl>
+	<field id=opClienteSal>
+	<field id=opFechaSal>
+	<field id=opNroOrdenSal>
+	<field id=opCentroSal>
+	<field id=opCuentaSal>
+	<field id=opServicioSal>
+	<field id=opNombreSal>
+
+	<iColl id=opListaErrores>
+		<kColl id=opError>
+			<field id=opTipoRegistro>
+			<field id=opClaveRegistro>
+			<field id=opDescripcionError>
+		</kColl>
+	</iColl>
+
+</kColl>
+
+<! FORMATOS DE SALIDA ENVIADOS A LAS JSP>
+
+<fmtDef id=RelacionOrdOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<iCollVector dataName=ListaCtasOrd description=ListaCtasOrd>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ListadoTransmisionesOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+
+		<fString dataName=inpAsuntoPropio description=jspAsuntoPropio>
+
+		<iCollVector dataName=opPaginaOrdenes description=opPaginaOrdenes>
+			<record dataName=opOrden>
+				<fNumString dataName=opNroOrden>
+				<fString dataName=opFechaTx>
+				<fString dataName=opFechaApl>
+				<fNumString dataName=opImporte>
+				<fNumString dataName=opNroRegistros>
+				<fString dataName=opEstadoTx>
+				<fString dataName=opSucursal>
+				<fString dataName=opEmisora>
+				<fString dataName=opEstadoAnu>
+				<fString dataName=opAplEspecial>
+				<fString dataName=opUsuarioTx>
+				<fString dataName=opCuentaTx>
+				<fString dataName=opTipoTx>
+				<fString dataName=opNombreTx>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=DetalleTransmisionOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=inpNroEmisora description=opNroEmisora>
+		<fString dataName=inpNroOrden description=opNroOrden>
+		<fNumString dataName=inpNroRegistros description=opNroRegistros>
+		<fNumString dataName=inpValorOrden description=opValorOrden>
+		<fString dataName=inpFechaTx description=opFechaTrans>
+		<fString dataName=inpFechaEfec description=opFechaEfec>
+		<fString dataName=inpUsuario description=opUsuario>
+		<fString dataName=inpEstadoOrden description=opEstadoOrden>
+		<fString dataName=inpIndEspecial description=opIndEspecial>
+		<fString dataName=inpResultado description=opResultado>
+		<fString dataName=inpCuenta description=opCuenta>
+		<fString dataName=inpTipo description=opTipo>
+		<fString dataName=inpNombre description=opNombre>
+
+   	    <iCollVector dataName=planillas_conserror_om-data.Salida.omListaErrores description=omListaErrores>
+	   		<record dataName=omError>
+				<fString dataName=omTipoRegistro>
+				<fString dataName=omClaveRegistro>
+				<fString dataName=omDescripcionError>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA >
+
+<! FORMATO ENVIADO DESDE LA PAGINA DE PETICION DE DATOS CON LOS CRITERIOS DE CONSULTA>
+<fmtDef id=CriteriosDeBusquedaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpCriterio>
+		<fString dataName=inpFecha>
+		<fString dataName=inpFechaDesde>
+		<fString dataName=inpFechaHasta>
+		<fString dataName=inpCanal>
+		<fString dataName=inpAsuntoPropio>
+		<fNumString dataName=inpValor>
+	</fHTMLReq>
+</fmtDef>
+
+<! FORMATO ENVIADO DESDE LA PAGINA DE LISTADO DE TRANSMISIONES CON LA TX SELECCIONADA>
+<fmtDef id=DetalleSeleccionadoOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpNroOrden>
+		<fString dataName=inpNroEmisora>
+		<fString dataName=inpFechaTx>
+		<fNumString dataName=inpNroRegistros>
+		<fNumString dataName=inpValorOrden>
+		<fString dataName=inpCtaOrigen>
+		<fString dataName=inpFechaEfec>
+		<fString dataName=inpUsuario>
+		<fString dataName=inpEstadoOrden>
+		<fString dataName=inpIndEspecial>
+		<fString dataName=inpTipo>
+		<fString dataName=inpNombre>
+		<fString dataName=inpResultado>
+		<fString dataName=inpCuenta>
+	</fHTMLReq>
+</fmtDef>
+
+

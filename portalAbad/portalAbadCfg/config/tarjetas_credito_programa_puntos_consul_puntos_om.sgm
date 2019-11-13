@@ -1,0 +1,65 @@
+﻿<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL tarjetas_credito_programa_puntos_consul_puntos_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=tarjetas_credito_programa_puntos_consul_puntos_om operationContext=OperationContext>
+	<refKColl refId=tarjetas_credito_programa_puntos_consul_puntos_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=tarjetas_credito_programa_puntos_consul_puntos_om-data>
+	<field id=IdTx value=TxF035ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+		<field id=CONTRATO>
+		<field id=SALPUNTOS>
+		<field id=MINPUNTOS>
+		<field id=INDICAOK>
+		<field id=SANDOANT>
+		<field id=PUNTOSMES>
+		<field id=BONOSPUNT>
+		<field id=AJUSTPUNT>
+		<field id=REDENCIONES>
+		<field id=PUNTOSEXP>
+		<field id=SALDOAFECHA>
+		<field id=PROXIVENCER>
+
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= tarjetas_credito_programa_puntos_consul_puntos_om-copiar>
+	<kColl id=a-TxF035ENET>
+		<field id=Entrada value=TxF035ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF035ENET>
+		<field id=Salida value=TxF035ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

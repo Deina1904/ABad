@@ -1,0 +1,29 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL per_menu_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.per.OMPerMenu id=per_menu_om operationContext=OperationContext>
+	<refKColl refId=per_menu_om-data>
+</com.grupobbva.bc.col.multicanal.per.OMPerMenu>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=per_menu_om-data>
+	<kColl id=Entrada>
+	  <field id=CodUsuaExt>
+	  <field id=CodAcceso>
+	</kColl>
+	<kColl id=Salida>
+	  <kColl id=Items>
+		  <iColl id=ListaItems>
+		    <kColl id=Item>
+	  	  		<field id=CodItem>
+	  	  		<field id=CodSecuencia>
+	  	  		<field id=CodNivel>
+	  	  		<field id=TituloItem>
+		    </kColl >
+		  </iColl >
+	  </kColl >
+	</kColl>
+</kColl>
+<! ---------------------------------------------------------------------------------->

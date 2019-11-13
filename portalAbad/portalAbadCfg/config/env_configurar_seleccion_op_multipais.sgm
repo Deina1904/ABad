@@ -1,0 +1,49 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PRESENTACION env_configurar_seleccion_op_multipais  -------------------------------->
+<! OPERACION ------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pagos.OpEnvConfigurarSeleccion id=env_configurar_seleccion_op_multipais operationContext=OperationContext>        
+        <refFormat name=htmlRequestFormat refId=Id_HTMLFmt>
+        <refKColl refId=env_configurar_seleccion_op_multipais-data>     
+        <refOM refId=contingencia_consulta_datos_usuario_om>
+        <refOM refId=sign_on_om>   
+<! ----------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+        <navegacionOP>
+                <estadoOP id=0 accion=execute metodo=execute requestFmt=Id_HTMLFmt>
+        </navegacionOP>
+<! SALIDAS --------------------------------------------------------------------------->
+        <resultadoOP>
+                <salidaOP id=0 jspFmt=configurar_seleccion_JspFmt>               
+        </resultadoOP>
+</com.grupobbva.bc.col.web.pagos.OpEnvConfigurarSeleccion>
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=env_configurar_seleccion_op_multipais-data>
+	<field id=pais>
+	<field id=codError value="">
+	<field id=mensajeError value="">
+	<field id=opcionSeleccionada value="">
+	<field id=esPrimeraVez value="S">
+</kColl>
+
+<! FORMATOS DE SALIDA -------------------------------------------------------------------------->
+<fmtDef id=configurar_seleccion_JspFmt>
+        <fJsp>
+        	<iCollVector dataName=s_salida_servicios.s_lista_servicios description=listaServicios>
+				<record dataName=s_servicio>
+					<fString dataName=s_codClaseOrd description=codClaseOrd><nullCheck>
+					<fString dataName=s_desServicio description=desServicio><nullCheck>				
+				</record>
+			</iCollVector>
+			<fString dataName=codError description=codError><nullCheck>
+			<fString dataName=mensajeError description=mensajeError><nullCheck>
+			<fString dataName=opcionSeleccionada description=opcionSeleccionada><nullCheck>
+        </fJsp>        
+</fmtDef>
+
+<fmtDef id=Id_HTMLFmt>
+        <fHTMLReq>
+			<fString dataName=esPrimeraVez description=esPrimeraVez><nullCheck>
+        </fHTMLReq>
+</fmtDef>

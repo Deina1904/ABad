@@ -1,0 +1,411 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consulta_usuarios_op --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.migracion.OpConsultaUsuarios id=consulta_usuarios_op operationContext=OperationContext>
+	<refKColl refId=consulta_usuarios_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=consultausu_om>
+	<refOM refId=consultausu2_om>
+	<refOM refId=consultausu3_om>
+	<refOM refId=consultausu4_om>
+	<refOM refId=consultausu5_om>
+	<refOM refId=consultausu6_om>
+
+	<refOM refId=retorno_pagotarjespc_om>
+
+
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=param metodo=param requestFmt=OpcionPHTMLFmt>
+		<estadoOP id=89 accion=param metodo=param requestFmt=OpcionPHTMLFmt>
+		<estadoOP id=1 accion=uploadFile1 metodo=uploadFile1 requestFmt=IdOPHTMLFmt>
+		<estadoOP id=2 accion=param metodo=param>
+		<estadoOP id=0 accion=cash metodo=cash>
+		<estadoOP id=1 accion=cash metodo=cash>
+		<estadoOP id=2 accion=cash metodo=cash>
+		<estadoOP id=cash accion=cash metodo=cash>
+		<estadoOP id=cash accion=cash1 metodo=cash1>
+		<estadoOP id=cash accion=uploadFile metodo=uploadFile>
+		<estadoOP id=cash1 accion=cash metodo=cash>
+		<estadoOP id=cash accion=param metodo=param>
+		<estadoOP id=cash1 accion=param metodo=param>
+		<estadoOP id=1 accion=param metodo=param>
+		<estadoOP id=usu accion=param metodo=param>
+		<estadoOP id=usu accion=volver metodo=volver>
+		<estadoOP id=ctc accion=param metodo=param>
+		<estadoOP id=exe accion=param metodo=param>
+		<estadoOP id=exe accion=volver metodo=volver2>
+		<estadoOP id=exe accion=cash metodo=cash>
+		<estadoOP id=lia accion=param metodo=param>
+		<estadoOP id=lia accion=volver metodo=volver2>
+		<estadoOP id=lia accion=cash metodo=cash>
+		<estadoOP id=rob accion=param metodo=param>
+		<estadoOP id=rob accion=volver metodo=volver2>
+		<estadoOP id=rob accion=cash metodo=cash>
+		<estadoOP id=ctc accion=volver metodo=volver>
+		<estadoOP id=lic accion=param metodo=param>
+		<estadoOP id=lic accion=volver metodo=volver>
+		<estadoOP id=apr accion=volver metodo=volverusu requestFmt=ConsOPHTMLFmt>
+		<estadoOP id=apr accion=param metodo=param>
+		<estadoOP id=cef accion=volver metodo=volverusu requestFmt=ConsOPHTMLFmt>
+		<estadoOP id=cef accion=param metodo=param>
+		<estadoOP id=cef accion=consultaexe metodo=consultaexe requestFmt=ExeOPHTMLFmt>>
+		<estadoOP id=2 accion=consultausu metodo=consultausu requestFmt=ConsOPHTMLFmt>
+		<estadoOP id=cash1 accion=consultausu metodo=consultausu requestFmt=ConsOPHTMLFmt>
+		<estadoOP id=usu accion=consultausu metodo=consultausu requestFmt=Cons1OPHTMLFmt>
+		<estadoOP id=ERROR accion=param metodo=param>
+		<estadoOP id=ERROR accion=cash metodo=cash>
+		<estadoOP id=1 accion=continuar metodo=funciones>
+
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=cash jspFmt=InicioCashOPJspFmt>
+		<salidaOP id=2 jspFmt=FinalOPJspFmt>
+		<salidaOP id=89 jspFmt=usuOPJspFmt>
+		<salidaOP id=cash1 jspFmt=FinalOPJspFmt>
+		<salidaOP id=usu jspFmt=usuOPJspFmt>
+		<salidaOP id=ctc jspFmt=usuOPJspFmt>
+		<salidaOP id=cef jspFmt=cefOPJspFmt>
+		<salidaOP id=lic jspFmt=licOPJspFmt>
+		<salidaOP id=apr jspFmt=aprOPJspFmt>
+		<salidaOP id=exe jspFmt=exeOPJspFmt>
+		<salidaOP id=lia jspFmt=exeOPJspFmt>
+		<salidaOP id=rob jspFmt=exeOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+
+
+	</resultadoOP>
+</com.grupobbva.bc.col.migracion.OpConsultaUsuarios>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_usuarios_op-data>
+	<field id=Resultado>
+	<field id=Mensaje>
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=Cash value="N">
+	<field id=MaxErrors>
+	<field id=Error>
+	<field id=opRequest>
+	<field id=referencia>
+	<field id=cliente>
+	<field id=tipo>
+	<field id=tipo1>
+	<field id=id>
+	<field id=usuario>
+	<field id=servicio>
+	<iColl id=listaArchivos>
+			<kColl id=consulta>
+				<field id=id>
+				<field id=descripcion>
+				<field id=fecha>
+				<field id=hora>
+			</kColl>
+	</iColl>
+	<iColl id=acc>
+				<kColl id=consulta>
+					<field id=num-acc>
+				</kColl>
+	</iColl>
+	<iColl id=usu>
+					<kColl id=consulta>
+						<field id=num-usu>
+						<field id=otp>
+						<field id=numclien>
+					</kColl>
+	</iColl>
+	<iColl id=ctc>
+					<kColl id=consulta>
+						<field id=num-ctc>
+					</kColl>
+	</iColl>
+	<iColl id=exe>
+					<kColl id=consulta>
+						<field id=num-exe>
+					</kColl>
+	</iColl>
+	<iColl id=lic>
+					<kColl id=consulta>
+						<field id=num-lic>
+					</kColl>
+	</iColl>
+	<iColl id=cef>
+					<kColl id=consulta>
+						<field id=num-cef>
+					</kColl>
+	</iColl>
+	<iColl id=rob>
+					<kColl id=consulta>
+						<field id=num-rob>
+					</kColl>
+	</iColl>
+	<iColl id=lia>
+					<kColl id=consulta>
+						<field id=num-lia>
+					</kColl>
+	</iColl>
+	<iColl id=syn>
+					<kColl id=consulta>
+						<field id=num-syn>
+					</kColl>
+	</iColl>
+	<iColl id=apr>
+					<kColl id=consulta>
+						<field id=num-apr>
+					</kColl>
+	</iColl>
+	<iColl id=usu-a>
+					<kColl id=consulta>
+						<field id=num-usu-a>
+					</kColl>
+	</iColl>
+	<iColl id=ListaUsuarios>
+				    <kColl id=consulta>
+				      <field id=num-usu>
+				      <field id=num-acc>
+				      <field id=num-ctc>
+				      <field id=num-exe>
+				      <field id=num-lic>
+				      <field id=num-cef>
+				      <field id=num-rob>
+				      <field id=num-lia>
+				      <field id=num-syn>
+				      <field id=num-apr>
+				      <field id=otp>
+				      <field id=numclien>
+				      <field id=num-usu-a>
+	 		    </kColl >
+		</iColl >
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+
+<! -------------------------------------------------------------------------------->
+
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<iCollVector dataName=listaArchivos description=listaArchivos>
+							<record dataName=consulta>
+							          <fString dataName=id><nullCheck>
+								      <fString dataName=descripcion><nullCheck>
+								      <fString dataName=fecha><nullCheck>
+								      <fString dataName=hora><nullCheck>
+							</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=usuOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=referencia description=referencia><nullCheck>
+		<fString dataName=cliente description=cliente><nullCheck>
+		<iCollVector dataName=consultausu2_om-data.Salida.ListaConsulta description=ListaConsulta>
+					<record dataName=consulta>
+					          <fString dataName=nom-usu><nullCheck>
+						      <fString dataName=est-usu><nullCheck>
+						      <fString dataName=pef-usu><nullCheck>
+						      <fString dataName=adm-usu><nullCheck>
+						      <fString dataName=coi-usu><nullCheck>
+						      <fString dataName=fal-usu><nullCheck>
+						      <fString dataName=tkn-usu><nullCheck>
+						      <fString dataName=usr-usu><nullCheck>
+						      <fNumString dataName=numaux1><nullCheck>
+						      <fNumString dataName=numaux2><nullCheck>
+						      <fNumString dataName=numaux3><nullCheck>
+
+					</record>
+		</iCollVector>
+
+
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=licOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=referencia description=referencia><nullCheck>
+		<fString dataName=cliente description=cliente><nullCheck>
+		<iCollVector dataName=consultausu3_om-data.Salida.ListaConsulta description=ListaConsulta>
+					<record dataName=consulta>
+					          <fString dataName=pef-usu><nullCheck>
+						      <fNumString dataName=numaux1><nullCheck>
+						      <fNumString dataName=numaux2><nullCheck>
+						      <fNumString dataName=numaux3><nullCheck>
+
+					</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=aprOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=referencia description=referencia><nullCheck>
+		<fString dataName=cliente description=cliente><nullCheck>
+		<iCollVector dataName=consultausu5_om-data.Salida.ListaConsulta description=ListaConsulta>
+					<record dataName=consulta>
+					          <fString dataName=adm-usu><nullCheck>
+					          <fString dataName=tkn-usu><nullCheck>
+					          <fString dataName=ali-usu><nullCheck>
+
+					</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=cefOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=referencia description=referencia><nullCheck>
+		<fString dataName=cliente description=cliente><nullCheck>
+		<iCollVector dataName=consultausu4_om-data.Salida.ListaConsulta description=ListaConsulta>
+					<record dataName=consulta>
+					          <fString dataName=pef-usu><nullCheck>
+					          <fString dataName=fal-usu><nullCheck>
+
+
+					</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=exeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=referencia description=referencia><nullCheck>
+		<fString dataName=cliente description=cliente><nullCheck>
+		<iCollVector dataName=consultausu6_om-data.Salida.ListaConsulta description=ListaConsulta>
+					<record dataName=consulta>
+					          <fString dataName=fmt-usu><nullCheck>
+					          <fString dataName=cta-usu><nullCheck>
+					          <fString dataName=fm2-usu><nullCheck>
+					          <fString dataName=ct2-usu><nullCheck>
+					          <fNumString dataName=lim-usu><nullCheck>
+						      <fNumString dataName=lif-usu><nullCheck>
+
+
+					</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+
+
+<fmtDef id=FinalOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+
+		<iCollVector dataName=ListaUsuarios description=ListaConsulta>
+			<record dataName=consulta>
+			          <fNumString dataName=num-usu><nullCheck>
+				      <fNumString dataName=num-acc><nullCheck>
+				      <fNumString dataName=num-ctc><nullCheck>
+				      <fNumString dataName=num-exe><nullCheck>
+				      <fNumString dataName=num-lic><nullCheck>
+				      <fNumString dataName=num-cef><nullCheck>
+				      <fNumString dataName=num-rob><nullCheck>
+				      <fNumString dataName=num-lia><nullCheck>
+				      <fNumString dataName=num-syn><nullCheck>
+				      <fNumString dataName=num-apr><nullCheck>
+				      <fString dataName=otp><nullCheck>
+				      <fString dataName=numclien><nullCheck>
+				      <fNumString dataName=num-usu-a><nullCheck>
+
+			</record>
+		</iCollVector>
+
+
+
+
+	</fJsp>
+</fmtDef>
+
+
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=InicioCashOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=opRequest>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=OpcionPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=tipo1>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=IdOPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=id>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=ConsOPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=referencia>
+		<fString dataName=cliente>
+		<fString dataName=tipo>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=ExeOPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=referencia>
+		<fString dataName=cliente>
+		<fString dataName=tipo>
+		<fString dataName=servicio>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=Cons1OPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=referencia>
+		<fString dataName=cliente>
+		<fString dataName=tipo>
+		<fString dataName=usuario>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=opRequest>
+	</fHTMLReq>
+</fmtDef>
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL tlcl_env_validacion_om_multipais ------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pagos.adaptacion.TLCLOmExpertoLecturaFicheros id=tlcl_adt_lectura_fichero_om_multipais  operationContext=OperationContext trazaCopiador>
+
+
+	<refKColl refId=tlcl_adt_lectura_fichero_om_multipais-data>
+</com.grupobbva.bc.col.web.pagos.adaptacion.TLCLOmExpertoLecturaFicheros>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=tlcl_adt_lectura_fichero_om_multipais-data>
+	<kColl id=entrada>
+		<field id=nombreCompletoFichero>
+		<field id=cod_cliecash>
+		<field id=cod_claseord>
+		<field id=codBancoCSB>
+		<field id=paisIso>
+		<field id=filesize>
+		<field id=codExtensio>
+		
+		
+		<field id=claveOrdenante>
+		<field id=nombreOrdenante>
+		<field id=fecha>
+		<field id=codigoServicio>
+		<field id=referencia>
+		<field id=cuentaCargo>
+		<field id=divisa>
+		<field id=numDocIdent>
+		<field id=fechaMinima>
+		<field id=fechaMaxima>
+		<field id=tTipoServicio>
+		<field id=tipoEmisor>
+		
+		<field id=tipoDocIdentificacion>
+		<field id=pertenencia>
+		<field id=nomPeCabServicio>
+
+		<field id=numOrdenPago>
+		<field id=importeFinanciar>
+		<field id=numeroRemesa>
+
+		<field id=modalidad>
+	
+		<field id=tipoPago>
+		<field id=domicilio1>
+		<field id=domicilio2>
+		<field id=domicilio3>
+		<field id=localidad>
+		<field id=codigoPostal>
+		<field id=codigoPostal2>
+		<field id=nominasCiegas>
+	</kColl>	
+
+
+	<kColl id=salida>
+		<field id=numOrdenes>
+		<field id=importeTotal>
+		<field id=qnu_numitem>
+		<field id=nombreFicheroCompleto>
+		<field id=codIdOrden>
+		<field id=ficheroOK>		
+	</kColl>
+</kColl>

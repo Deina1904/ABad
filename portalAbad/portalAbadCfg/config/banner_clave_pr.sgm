@@ -1,0 +1,23 @@
+<!-- BBVA  ---------------------------------------------------------------------------->
+<!-- Operación:  CLAVE----------------------------->
+<!-- OPERACION  ----------------------------------------------------------------------->
+<com.grupobbva.emp.banner.clave.PrClave id=banner_clave_pr operationContext=OperationContext>
+	<refKColl refId=banner_clave_pr-data>
+<!-- ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=banner_clave_op>
+
+	</navegacionPr>
+<!-- SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=banner_clave_op estadoOP=ERROR jspFile=sass_error_01>
+		<salidaPr id=0 operacion=banner_clave_op estadoOP=1 jspFile=sass_clave_menu>
+		<salidaPr id=0 operacion=banner_clave_op estadoOP=2 jspFile=banner_clave_modificar>
+		<salidaPr id=0 operacion=banner_clave_op estadoOP=3 jspFile=sass_clave_modificado>
+	</resultadoPr>
+</com.grupobbva.emp.banner.clave.PrClave>
+<!--  --------------------------------------------------------------------------------->
+<!-- DATOS  --------------------------------------------------------------------------->
+<kColl id=banner_clave_pr-data>
+</kColl>
+<!--  --------------------------------------------------------------------------------->

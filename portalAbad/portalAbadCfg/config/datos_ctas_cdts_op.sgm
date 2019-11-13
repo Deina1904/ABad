@@ -1,0 +1,120 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION datos_ctas_cdts_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.cdts.OPDatosCtasCdts id=datos_ctas_cdts_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=RelacionCtasCdtsOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+
+	<refFormat name=htmlRequestFormat refId=DatosCdtsOPHTMLFmt>
+	<refKColl refId=datos_ctas_cdts_op-data>
+	<!refOM refId=datos_ctas_cdts_om>
+	<refOM refId=retorno_cdts_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=consultaCtasCdts     requestFmt=DatosCdtsOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=consultaCtasCdts     requestFmt=DatosCdtsOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=consultaCtasCdts requestFmt=DatosCdtsOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=consultaCtasCdts requestFmt=DatosCdtsOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionCtasCdtsOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.cdts.OPDatosCtasCdts>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=datos_ctas_cdts_op-data>
+
+	<field id=valorinver>
+	<field id=tipo>
+	<field id=plazo>
+	<field id=perintereses>
+	<field id=Error>
+
+<! VARIABLES DE LISTA DE CUENTAS >
+
+	<iColl id=ListaCtasOrd>
+		<kColl id=CuentaOrdenante>
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionCtasCdtsOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fNumString dataName=ImporteInver description=inversion>
+		<record dataName=retorno_cdts_om-data.Salida description=consultar>
+			<fNumString dataName=RENBRUTO description=renbruto>
+			<fNumString dataName=RENNETO description=renneto>
+			<fNumString dataName=RETFUENTE description=retfuente>
+			<fNumString dataName=ABONOINT description=abonoint>
+			<fNumString dataName=TASAEA description=tasa>
+			<fDate dataName=FECVEN description=fechaven>
+		</record>
+		<fString dataName=DesPlazo description=tipoplazo>
+		<fNumString dataName=Plazo description=plazo>
+		<fString dataName=DesPagInter description=pagointer>
+		<iCollVector dataName=ListaCtasOrd description=ListaCtasOrd>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosCdtsOPHTMLFmt>
+	<fHTMLReq>
+
+		<fNumString dataName=valorinver>
+		<fString dataName=tipo>
+		<fNumString dataName=plazo>
+		<fString dataName=perintereses>
+
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

@@ -1,0 +1,18 @@
+<com.grupobbva.emp.contingencia.PrAgrupar id=agrupar_pr operationContext=OperationContext>
+	<refKColl refId=agrupar_pr-data>
+<!-- ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=agrupar_op>
+	</navegacionPr>
+<!-- SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=agrupar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=agrupar_op estadoOP=1 jspFile=agrupar_ok>
+
+
+	</resultadoPr>
+</com.grupobbva.emp.contingencia.PrAgrupar>
+<!-- DATOS  --------------------------------------------------------------------------->
+<kColl id=agrupar_pr-data>
+</kColl>
+<!--  ------------------------------------------------------------------------------->

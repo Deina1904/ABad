@@ -1,0 +1,38 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  consulta_cdts_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cdts.PrConsultaCdts id=consulta_cdts_pr operationContext=OperationContext>
+
+	<refKColl refId=consulta_cdts_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=relacion_cdts_op>
+
+		<estadoPr id=1 operacion=relacion_cdts_op>
+		<estadoPr id=1 operacion=movimientos_ctas_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=relacion_cdts_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=relacion_cdts_op estadoOP=1 jspFile=cp002_relacion_cdts>
+
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=1 jspFile=pg003_mvtos_saldos_ctas>
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.cdts.PrConsultaCdts>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_cdts_pr-data>
+	<field id=prtipo>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

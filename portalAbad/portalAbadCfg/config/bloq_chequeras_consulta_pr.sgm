@@ -1,0 +1,63 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  bloq_chequeras_consulta_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.blqchequeras.PrChequerasConsulta id=bloq_chequeras_consulta_pr operationContext=OperationContext>
+	<refKColl refId=bloq_chequeras_consulta_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=bloq_chequeras_consulta_opciones_op>
+		<estadoPr id=1 operacion=bloq_chequeras_consulta_opciones_op>
+		<estadoPr id=1 operacion=bloq_chequeras_consulta_movimiento_op>
+
+		<estadoPr id=2 operacion=bloq_chequeras_consulta_opciones_op>
+		<estadoPr id=2 operacion=bloq_chequeras_consulta_movimiento_op>
+		<estadoPr id=2 operacion=bloq_chequeras_realizar_op>
+
+
+
+
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=bloq_chequeras_consulta_opciones_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=bloq_chequeras_consulta_opciones_op estadoOP=VALIDAR jspFile=qe001_traspasos>
+		<salidaPr id=1 operacion=bloq_chequeras_consulta_opciones_op  estadoOP=1 jspFile=bloq_chequeras_solicitud>
+		<salidaPr id=1 operacion=bloq_chequeras_consulta_opciones_op  estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=bloq_chequeras_consulta_movimiento_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=bloq_chequeras_consulta_movimiento_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=bloq_chequeras_consulta_movimiento_op estadoOP=1 jspFile=bloq_chequeras_movimientos>
+		<salidaPr id=2 operacion=bloq_chequeras_consulta_movimiento_op estadoOP=2 jspFile=bloq_chequeras_detalle>
+
+		<salidaPr id=2 operacion=bloq_chequeras_consulta_movimiento_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=bloq_chequeras_realizar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=bloq_chequeras_realizar_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=0 operacion=bloq_chequeras_realizar_op estadoOP=1 jspFile=bloq_chequeras_realizado>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.blqchequeras.PrChequerasConsulta>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=bloq_chequeras_consulta_pr-data>
+		<field id=ClaveCtaOrdPr>
+		<field id=CtaOrdPr>
+		<field id=opPrimerochq>
+		<field id=opUltimochq>
+		<field id=opDisponiblechq>
+		<field id=opcionconsul>
+		<field id=opGrupo1>
+        <field id=opFecha>
+        <field id=opNroch>
+        <field id=opnombre>
+		<field id=RegistrosPaginacionPr value=20>
+		<field id=MasDatosMovimientosWasPr value="N">
+		<field id=MasDatosMovimientosHostPr value="N">
+		<field id=IdMovimientosPr value=0>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

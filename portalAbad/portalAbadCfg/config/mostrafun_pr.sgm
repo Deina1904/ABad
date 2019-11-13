@@ -1,0 +1,42 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  mostrafun_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.migracion.PrFunciones1 id=mostrafun_pr operationContext=OperationContext>
+
+	<refKColl refId=mostrafun_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=mostrafun_op>
+
+		<estadoPr id=1 operacion=mostrafun_op>
+
+
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=mostrafun_op estadoOP=ERROR jspFile=gn001_error>
+
+
+		<salidaPr id=1 operacion=mostrafun_op estadoOP=1 jspFile=funcion_01>
+		<salidaPr id=1 operacion=mostrafun_op estadoOP=2 jspFile=funcion_02>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.migracion.PrFunciones1>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=mostrafun_pr-data>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

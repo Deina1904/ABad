@@ -1,0 +1,76 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<remesa>
+<cabecera>
+<nombreemisor>VICTOR RAMOS</nombreemisor>
+<claveemisor>PAGO 2</claveemisor>
+<codservicio>8600</codservicio>
+<fechaproceso>20170927</fechaproceso>
+<codigopostalemisor2></codigopostalemisor2>
+<tiposervicio></tiposervicio>
+<localidademisor></localidademisor>
+<coddivisaasunto>COP</coddivisaasunto>
+<horafichero>1429</horafichero>
+<tipodocemisor>01</tipodocemisor>
+<tipoemisor></tipoemisor>
+<importefinanciar></importefinanciar>
+<asuntoemisor>00130034000100001347</asuntoemisor>
+<nombrefichero>Continge.NOM</nombrefichero>
+<domicilioemisor2></domicilioemisor2>
+<fechafichero>20170927</fechafichero>
+<ordenpago></ordenpago>
+<domicilioemisor1>BOGOTA</domicilioemisor1>
+<codigoempresa>0026008200142494</codigoempresa>
+<referenciafichero>NOMWed Sep 27 00:00:00 COT 2017</referenciafichero>
+<indmodalidad>A</indmodalidad>
+<numremesa></numremesa>
+<validacionpertenencia></validacionpertenencia>
+<numdocidentemisor>0000000799802260</numdocidentemisor>
+<codigopostalemisor>0</codigopostalemisor>
+</cabecera>
+<ordenes>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010538113890</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0777000200135344</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>                 </cuentanacham>
+<importe>0000000001000.00</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>Juan Daniel Lopez                   </nombrebeneficiario>
+<direccionbeneficiario>bogota                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Pago                                    </cptotextoconcepto>
+<cptotextoconcepto2>                                        </cptotextoconcepto2>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000795673240</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0037000200519212</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>                 </cuentanacham>
+<importe>0000000001000.00</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>Holger Eduardo Plazas Paez          </nombrebeneficiario>
+<direccionbeneficiario>bogota                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Pago                                    </cptotextoconcepto>
+<cptotextoconcepto2>                                        </cptotextoconcepto2>
+</concepto>
+</orden>
+</ordenes>
+<totales>
+<totaloperaciones>2</totaloperaciones>
+<importetotal>2000.00</importetotal>
+</totales>
+</remesa>

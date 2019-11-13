@@ -1,0 +1,134 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION prog_trasterc_op  --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.po.OPTrasTerc id=prog_trasterc_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionCtasOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ctaBenefOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=ayudaOPHTMLFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refKColl refId=prog_trasterc_op-data>
+	<refOM refId=trans_petdatos_om>
+<! -------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=continuar metodo=ctasOrden>
+		<estadoOP id=1 accion=continuar metodo=ctasOrden>
+		<estadoOP id=ERROR accion=continuar metodo=ctasOrden>
+		<estadoOP id=1 accion=ayuda metodo=ponerAyuda requestFmt=ayudaOPHTMLFmt>
+		<estadoOP id=AYUDA accion=ayuda metodo=ponerAyuda requestFmt=ayudaOPHTMLFmt>
+		<estadoOP id=AYUDA accion=continuar metodo=volverCtasPropias requestFmt=ctaBenefOPHTMLFmt>
+		<estadoOP id=VALIDAR accion=menuOrdTras metodo=ordTras>
+
+	</navegacionOP>
+<! -------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=1 jspFmt=RelacionCtasOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=RelacionCtasBenOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.bc.col.web.po.OPTrasTerc>
+<! -------------------------------------------------------------------------------->
+<! DATOS -------------------------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<kColl id=prog_trasterc_op-data>
+	<field id=Error>
+	<field id=CtaOrdenante>
+		<iColl id=ListaCtasPro>
+			<kColl id=CuentaOrdenante>
+				<field id=Banco>
+				<field id=Oficina>
+				<field id=DControl>
+				<field id=NumCuenta>
+				<field id=ClaveAsunto>
+				<field id=Tipo>
+			</kColl>
+		</iColl>
+	<field id=CtaBeneficiaria>
+		<iColl id=ListaCtasBen>
+			<kColl id=CuentaBeneficiaria>
+				<field id=Banco>
+				<field id=Oficina>
+				<field id=DControl>
+				<field id=NumCuenta>
+				<field id=ClaveAsunto>
+				<field id=Tipo>
+				<field id=NombreBen>
+				<field id=Identificacion>
+			</kColl>
+		</iColl>
+</kColl>
+<! -------------------------------------------------------------------------------->
+<! formatos de salida para JSP ---------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=RelacionCtasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrd description=ctaord>
+		<fString dataName=CtaBen description=ctaben>
+		<fString dataName=IdeBen description=ideben>
+		<iCollVector dataName=ListaCtasPro description=ListaCtasPro>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+<fmtDef id=RelacionCtasBenOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrd description=ctaord>
+		<iCollVector dataName=ListaCtasBen description=ListaCtasBen>
+			<record dataName=CuentaBeneficiaria>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+				<fString dataName=NombreBen>
+				<fString dataName=Identificacion>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+<! formatos de entrada ------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+<fmtDef id=ctaBenefOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CtaBeneficiaria>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=ayudaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CtaOrdenante>
+	</fHTMLReq>
+</fmtDef>

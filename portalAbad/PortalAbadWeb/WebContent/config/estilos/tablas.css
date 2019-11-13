@@ -1,0 +1,90 @@
+body.pag-contenido {background-color: #EBEFF8}
+table.tabladatos {background-color: #FFFFCC, align:center}
+
+/*para los datos del titular*/
+td.fondotitular {background-color: #335EB4; text-align: center;}
+.texttitular {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #ffffff; text-decoration: none }
+
+td.fondotitulari {background-color: #335EB4; text-align: left;}
+.texttitulari {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #ffffff; 00080; text-decoration: none;  text-align: left}
+
+/*para los titulos de las tablas*/
+td.cabeceratitulo {background-color: #000080; text-align: left; vertical-align: middle ; height: 15px}
+td.cabeceratitulo-1 {background-color: #000080; text-align: center; vertical-align: middle ; height: 25px;  color: #ffffff;}
+p.titulotabla { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #ffffff; text-decoration: none}
+p.titulotablag { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000080; text-decoration: none; text-align: justify}
+
+/*para las cabeceras de las tablas*/
+td.cabecera {background-color: #335EB4; text-align: center; vertical-align: middle}
+td.cabecera2 {background-color: #335EB4; text-align: left; vertical-align: middle}
+p.textablacabecera {font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; color: #ffffff; text-decoration: none}
+p.textablacabecera1 {font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; color: #ffffff; text-decoration: none; text-align: center}
+p.textablacabecera2 {font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #ffffff; text-decoration: none; text-align: center}
+
+
+/*para las subcabeceras de las tablas*/
+td.subcabecera {background-color: #9b9b9b; text-align: left; vertical-align: middle}
+p.textsubcabecera {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #ffffff; text-align: center; text-decoration: none}
+
+/*para los datos de las filas*/
+p.dato {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000080; text-decoration: none}
+p.home {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000000; text-decoration: none}
+p.dato1 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000080; text-align: right; text-decoration: none }
+p.titulofila { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #000000; text-decoration: none; text-align: center}
+p.cabeceraa {background-color: #dddddd;  text-align: justify; vertical-align: justify}
+
+
+p.dato2 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000080; text-decoration: none;  text-align: center}
+p.dato2iz {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000080; text-decoration: none;  text-align: left}
+p.dato3 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000080; text-decoration: none;  text-align: left}
+p.dato {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000080; text-decoration: none; text-align: justify}
+p.dator {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000080; text-decoration: none; text-align: right}
+p.datonumerico {font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000080; text-decoration: none;  text-align: right}
+td.fila {background-color: #dddddd; vertical-align: middle }
+td.fila2 {background-color: #eeeeee; vertical-align: middle }
+
+/*para las filas de totales*/
+td.total {background-color: #335EB4; vertical-align: middle }
+p.textotal {font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; color: #ffffff; text-decoration: none; text-align: right}
+
+/*para textos*/
+p.texto {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: regular; color: #000080; text-decoration: none; text-align: left}
+p.nota {font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; color: #000080; text-decoration: none}
+
+/*para las monedas*/
+p.monedapositiva {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #335EB4; text-decoration: none; text-align: right}
+p.monedapositiva1 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #335EB4; text-decoration: none; text-align: left}
+p.monedapositiva2 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #335EB4; text-decoration: none; text-align: center}
+
+p.monedanegativa {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: regular; color: #ff0033; text-decoration: none; text-align: right}
+p.monedanegativa1 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: regular; color: #ff0033; text-decoration: none; text-align: left}
+p.monedanegativa2 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: regular; color: #ff0033; text-decoration: none; text-align: center}
+
+
+p.pesetas {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #335EB4; text-decoration: none; text-align: right}
+p.pesetas-c {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #335EB4; text-decoration: none; text-align: center}
+p.pesetas-i {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #335EB4; text-decoration: none; text-align: left}
+
+p.pesetas1 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #335EB4; text-decoration: none; text-align: left}
+p.pesetasnegativas {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: regular; color: #ff0033; text-decoration: none; text-align: right}
+p.pesetas3 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #335EB4; text-decoration: none; text-align: justify}
+p.pesetas4 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: regular; color: #335EB4; text-decoration: none; text-align: justify}
+p.pesetas5 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: regular; color: #335EB4; text-decoration: none; text-align: justify}
+
+p.euros {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000080; text-decoration: none; text-align: right}
+p.euros1 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000080; text-decoration: none; text-align: left}
+p.euros2 {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000080; text-decoration: none; text-align: center}
+p.euros3 {font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #000080; text-decoration: none; text-align: center}
+
+p.eurosnegativos {font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: regular; color: #ff0033; text-decoration: none; text-align: right}
+.titulo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	color: #2f4080;
+	text-decoration: none;
+	background-position: center;
+	text-align: center;
+
+
+}

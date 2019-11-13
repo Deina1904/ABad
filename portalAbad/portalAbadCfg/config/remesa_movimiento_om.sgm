@@ -1,0 +1,75 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL remesa_movimiento_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=remesa_movimiento_om operationContext=OperationContext>
+	<refKColl refId=remesa_movimiento_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=remesa_movimiento_om-data>
+	<field id=IdTx value=TxFN36ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <field id=AREAPAGI>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FECHA-DEPOSITO>
+	      <field id=NOMBRE-PLAZA>
+	      <field id=COD-BANCO>
+		  <field id=NOMBRE-BANCO>
+		  <field id=COD-SUC>
+		  <field id=NOM-SUC>
+		  <field id=CORRESPONSAL>
+	      <field id=NUM-CTA-CHEQUE>
+	      <field id=NUM-CHEQUE>
+	      <field id=FECHA-COD>
+	      <field id=TIPO-REMESA>
+	      <field id=COD-CAUSAL-DEV>
+	      <field id=CAUSAL-DEV>
+	      <field id=ESTADO>
+	      <field id=IMPORTE>
+	    </kColl >
+	  </iColl >
+	  <field id=FECHADESDE>
+	  <field id=FECHAHASTA>
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=remesa_movimiento_om-copiar>
+	<kColl id=a-TxFN36ENET>
+		<field id=Entrada value=TxFN36ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN36ENET>
+		<field id=Salida value=TxFN36ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

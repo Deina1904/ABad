@@ -1,0 +1,33 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  act_correo_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.ad.PrActCorreo id=act_correo_pr operationContext=OperationContext>
+	<refKColl refId=act_correo_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=act_correo_op>
+		<estadoPr id=1 operacion=act_correo_op>
+		<estadoPr id=2 operacion=act_correo_op>
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=act_correo_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=act_correo_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=act_correo_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=act_correo_op estadoOP=1 jspFile=ad001_act_correo>
+		<salidaPr id=1 operacion=act_correo_op estadoOP=2 jspFile=ad001_act_correo>
+		<salidaPr id=2 operacion=act_correo_op estadoOP=2 jspFile=ad001_act_correo>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.ad.PrActCorreo>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=act_correo_pr-data>
+	<field id=prTipoCorreo>
+</kColl>
+<! --------------------------------------------------------------------------------->

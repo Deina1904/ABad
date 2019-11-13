@@ -1,0 +1,100 @@
+BODY {
+   COLOR: #072898; BACKGROUND-COLOR: white; TEXT-ALIGN: right
+}
+A.oculto:hover { 
+                FONT-SIZE: 10px; FONT-FAMILY: Verdana,sans-serif; COLOR: white; TEXT-DECORATION: underline 
+}
+A.oculto { 
+                FONT-SIZE: 10px; FONT-FAMILY: Verdana,sans-serif; COLOR: white; TEXT-DECORATION: none 
+}
+A {
+   COLOR: black; TEXT-DECORATION: underline
+}
+.txt {
+   FONT-SIZE: 10px; COLOR: #072898; FONT-FAMILY: Verdana,sans-serif; TEXT-ALIGN: justify
+}
+.txtd {
+   FONT-SIZE: 10px; COLOR: #072898; FONT-FAMILY: Verdana,sans-serif
+}
+.txtb {
+   FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #072898; FONT-FAMILY: Verdana,sans-serif
+}
+.txtbc {
+   FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #072898; FONT-FAMILY: Verdana,sans-serif; TEXT-ALIGN: center
+}
+.txtc {
+   FONT-SIZE: 10px; COLOR: #072898; FONT-FAMILY: Verdana,sans-serif; TEXT-ALIGN: center;
+}
+.txtu {
+   FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: #072898; FONT-FAMILY: Verdana,sans-serif; TEXT-DECORATION: underline
+}
+.txtuc {
+   FONT-SIZE: 10px; COLOR: #072898; FONT-FAMILY: Verdana,sans-serif; TEXT-ALIGN: center; TEXT-DECORATION: underline
+}
+.txtud {
+   FONT-SIZE: 10px; COLOR: #072898; FONT-FAMILY: Verdana,sans-serif; TEXT-ALIGN: right; TEXT-DECORATION: underline
+}
+.txtnormal {
+   FONT-SIZE: 11px; FONT-FAMILY: Verdana,sans-serif; TEXT-ALIGN: left
+}
+.txtnormalb {
+   FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: Verdana,sans-serif
+}
+.txtgrande {
+   FONT-SIZE: 13px; FONT-FAMILY: Verdana,sans-serif
+}
+.cab1 {
+   BACKGROUND-COLOR: #74a2d3
+}
+.tcab1 {
+   FONT-WEIGHT: bold; FONT-SIZE: 11px; MARGIN-BOTTOM: 0px; COLOR: white; FONT-FAMILY: Verdana,sans-serif; TEXT-ALIGN: center
+}
+.cab2 {
+   BACKGROUND-COLOR: #31659c
+}
+.tcab2 {
+   FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: white; FONT-FAMILY: Verdana,sans-serif; TEXT-ALIGN: center
+}
+.prin {
+   FONT-SIZE: 10px; COLOR: black; FONT-FAMILY: Verdana; BACKGROUND-COLOR: #dde8f4; TEXT-ALIGN: center
+}
+TD.marco {
+   BACKGROUND-COLOR: #b5c7e7
+}
+.btn {
+   BORDER-RIGHT: #74a2d3; BORDER-TOP: #74a2d3; FONT-WEIGHT: bold; FONT-SIZE: 10px; BORDER-LEFT: #74a2d3; COLOR: white; LINE-HEIGHT: 10px; BORDER-BOTTOM: #74a2d3; FONT-FAMILY: Verdana,sans-serif; BACKGROUND-COLOR: #74a2d3
+}
+.imagen {
+   MARGIN-TOP: 2px; MARGIN-LEFT: 2px; MARGIN-RIGHT: 2px
+}
+.input {
+   FONT-SIZE: 10px; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+IMG {
+   MARGIN: 0px
+}
+.txtadlntg {
+   FONT-SIZE: 14px; FONT-FAMILY: Arial,sans-serif
+}
+.txtadlnt {
+   FONT-SIZE: 12px; COLOR: #003399; FONT-FAMILY: Arial,sans-serif
+}
+LI.limg {
+   LIST-STYLE-IMAGE: url(nl2_vingeta3.gif); LINE-HEIGHT: 15px
+}
+.ad {
+   FONT-WEIGHT: bold; FONT-SIZE: 24px; COLOR: #003399; LINE-HEIGHT: 24px; FONT-FAMILY: "Times New Roman",serif; LETTER-SPACING: 0px; text-shadow: #003399 0px 0px 3px
+}
+.adtxt {
+   FONT-WEIGHT: 500; FONT-SIZE: 18px; COLOR: #003399; FONT-FAMILY: "Times New Roman",serif; text-shadow: #003399 0px 0px 2px
+}
+.bb {
+   FONT-WEIGHT: bold; FONT-SIZE: 24px; COLOR: #003399; FONT-FAMILY: Arial,sans-serif; text-shadow: #003399 0px 0px 3px
+}
+.net {
+   FONT-WEIGHT: bold; FONT-SIZE: 20px; COLOR: #003399; FONT-FAMILY: Arial,sans-serif; text-shadow: #003399 0px 0px 3px
+}
+.tcab3 {
+
+   FONT-WEIGHT: bold; FONT-SIZE: 11px; MARGIN-BOTTOM: 0px; COLOR: white; FONT-FAMILY: Verdana,sans-serif; TEXT-ALIGN: center
+}

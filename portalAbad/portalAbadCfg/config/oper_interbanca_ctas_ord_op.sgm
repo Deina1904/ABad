@@ -1,0 +1,157 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION oper_interbanca_ctas_ord_op  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.operinter.OPOperInterbancaCtasOrd id=oper_interbanca_ctas_ord_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionOrdOPJspFmt>
+	<refFormat name=jspFormat refId=RelacionOrdOPJspFmt2>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refFormat name=jspFormat refId=AyudaOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=AyudaOPHTMLFmt>
+	<refKColl refId=oper_interbanca_ctas_ord_op-data>
+	<refOM refId=oper_interbanca_ctas_ord_om>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=menuOrdTras metodo=ordTras>
+		<estadoOP id=1 accion=menuOrdTras metodo=ordTras>
+		<estadoOP id=2 accion=menuOrdTras metodo=ordTras>
+		<estadoOP id=AYUDA accion=menuOrdTras metodo=ordTras >
+		<estadoOP id=1 accion=ayuda metodo=ayuda  requestFmt=AyudaOPHTMLFmt>
+		<estadoOP id=ERROR accion=menuOrdTras metodo=ordTras>
+		<estadoOP id=VALIDAR accion=menuOrdTras metodo=ordTras>
+		<estadoOP id=AYUDA accion=volverDeAyuda metodo=volverDeAyuda>
+		<estadoOP id=1 accion=volverDeAyuda metodo=volverDeAyuda>
+
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionOrdOPJspFmt>
+		<salidaOP id=2  jspFmt=RelacionOrdOPJspFmt2>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.operinter.OPOperInterbancaCtasOrd>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=oper_interbanca_ctas_ord_op-data>
+
+	<field id=Ayuda>
+	<field id=Ayuda_1 value="Seleccione la entidad financiera en donde se encuentra radicada la cuenta destino." >
+	<field id=Ayuda_2 value="Seleccione el tipo de cuenta." >
+	<field id=Ayuda_3 value="Digite el n&uacute;mero de cuenta." >
+	<field id=Ayuda_4 value="Digite el n&uacute;mero de la identificaci&oacute;n del beneficiario sin d&iacute;gitos de chequeo para el caso de NIT. " >
+	<field id=Ayuda_5 value="Digite el nombre del beneficiario, sin incluir caracteres especiales como (&ntilde;, tildes, puntos, comas, rayas, guiones, /, par&eacute;ntesis)." >
+	<field id=Ayuda_6 value="Solo se permiten valores enteros." >
+
+
+	<field id=Error>
+	<iColl id=ListaCtasOrd>
+		<kColl id=CuentaOrdenante>
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionOrdOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<iCollVector dataName=ListaCtasOrd description=ListaCtasOrd>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+
+		<iCollVector dataName=oper_interbanca_ctas_ord_om-data.Salida.ListaBancos description=ListaBancos>
+			<record dataName=Banco>
+				<fString dataName=CODBANCO>
+				<fString dataName=DESBANCO>
+			</record>
+		</iCollVector>
+
+		<record dataName=oper_interbanca_ctas_ord_om-data.Salida description=Saldo>
+			<fNumString dataName=SALDODIS description=saldodis>
+		</record>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=RelacionOrdOPJspFmt2>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<iCollVector dataName=ListaCtasOrd description=ListaCtasOrd>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Ayuda description=Ayuda><nullCheck>
+
+		<fString dataName=Ayuda_1 description=Ayuda_1><nullCheck>
+		<fString dataName=Ayuda_2 description=Ayuda_2><nullCheck>
+		<fString dataName=Ayuda_3 description=Ayuda_3><nullCheck>
+		<fString dataName=Ayuda_4 description=Ayuda_4><nullCheck>
+		<fString dataName=Ayuda_5 description=Ayuda_5><nullCheck>
+		<fString dataName=Ayuda_6 description=Ayuda_6><nullCheck>
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=AyudaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=Ayuda>
+	</fHTMLReq>
+</fmtDef>
+
+

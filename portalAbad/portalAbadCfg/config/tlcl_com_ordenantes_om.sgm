@@ -1,0 +1,55 @@
+<! BBVA CASH LATAM ----------------------------------------------------------------->
+<! Operación:  MULTICANAL tlcl_com_ordenantes_om   ------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<tlcl.multipais.multicanal.comdfo.TLCLOmComOrdenantes id=tlcl_com_ordenantes_om operationContext=OperationContext>
+	<refKColl refId=tlcl_com_ordenantes_om-data>
+</tlcl.multipais.multicanal.comdfo.TLCLOmComOrdenantes>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=tlcl_com_ordenantes_om-data>
+	<kColl id=entrada>
+		<field id=codigoCliente>
+		<field id=tipoOrden>
+		<field id=codigoOrigen value="">
+		<field id=codigoBanco value="">
+		<field id=usuario>
+	</kColl>
+
+	<kColl id=salida>
+		<iColl id=listadoOrdenantes>
+			<kColl id=registro>
+				<field id=codigoCliente>
+				<field id=claseOrden>
+				<field id=codigoPresentador>
+				<field id=sufijoPresentador>
+				<field id=codigoOrigen>
+				<field id=tipoDocIdentificacion>
+				<field id=numeroDocIdentificacion>
+				<field id=personaContacto>
+				<field id=telefonoContacto>
+				<field id=codigoProvincia>
+				<field id=descripcionOrigen>
+				<field id=domiOrigen1>
+				<field id=domiOrigen2>
+				<field id=domiOrigen3>
+				<field id=localidad>
+				<field id=sufijoPostal>
+				<field id=numeroReferencia>
+				<field id=tipoReferencia>
+				<field id=referenciaAutorMt101>
+				<field id=tipoConcepto>
+				<field id=alfaNumero>
+				<field id=codigoReferenciaMt101>
+				<field id=codigoSwift>
+				<field id=codigoBanco>
+				<field id=paisOrdenante>
+				<field id=tipoEmisor>
+				<field id=desONombre>
+				<field id=desODirecc>
+				<field id=codOCp2>
+				<field id=codSociedad>
+			</kColl>
+		</iColl>
+	</kColl>
+</kColl>

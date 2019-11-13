@@ -1,0 +1,145 @@
+<! BBVA  --------------------------------------------------------------------------->
+<! Operación:  PROCESO  recaudo_nacional_pr  --------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.rn.PrRecaudoNal id=recaudo_nacional_pr operationContext=OperationContext>
+
+	<refKColl refId=recaudo_nacional_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=categorias_op>
+
+		<estadoPr id=1 operacion=categorias_op>
+		<estadoPr id=1 operacion=traer_recaudo_op>
+
+
+		<estadoPr id=2 operacion=categorias_op>
+		<estadoPr id=2 operacion=traer_recaudo_op>
+		<estadoPr id=2 operacion=ctas_pserv_op>
+
+
+		<estadoPr id=3 operacion=categorias_op>
+		<estadoPr id=3 operacion=traer_recaudo_op>
+		<estadoPr id=3 operacion=ctas_pserv_op>
+		<estadoPr id=3 operacion=confirmar_pagorn_op>
+
+
+		<estadoPr id=4 operacion=categorias_op>
+		<estadoPr id=4 operacion=traer_recaudo_op>
+		<estadoPr id=4 operacion=ctas_pserv_op>
+		<estadoPr id=4 operacion=confirmar_pagorn_op>
+		<estadoPr id=4 operacion=realizar_prn_op>
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+        <salidaPr id=0 operacion=categorias_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=categorias_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=categorias_op estadoOP=1 jspFile=rccategorias_recaudos>
+
+		<salidaPr id=2 operacion=traer_recaudo_op estadoOP=1 jspFile=rclista_recaudo>
+		<salidaPr id=2 operacion=traer_recaudo_op estadoOP=AYUDA jspFile=rcayuda_recaudo>
+		<salidaPr id=2 operacion=ctas_pserv_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=ctas_pserv_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=3 operacion=ctas_pserv_op estadoOP=1 jspFile=rcpago_recaudo>
+		<salidaPr id=3 operacion=ctas_pserv_op estadoOP=AYUDA jspFile=rcayuda1_recaudo>
+		<salidaPr id=3 operacion=confirmar_pagorn_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=confirmar_pagorn_op estadoOP=ERRORFAC jspFile=rn002_conf_pagorn>
+
+		<salidaPr id=4 operacion=confirmar_pagorn_op estadoOP=1 jspFile=rn002_conf_pagorn>
+		<salidaPr id=4 operacion=confirmar_pagorn_op estadoOP=2 jspFile=rn002_conf_pagorn1>
+		<salidaPr id=4 operacion=confirmar_pagorn_op estadoOP=3 jspFile=rn002_conf_pagorn2>
+		<salidaPr id=4 operacion=confirmar_pagorn_op estadoOP=AYUDA jspFile=rn002_ayuda_clave>
+		<salidaPr id=4 operacion=realizar_prn_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=4 operacion=realizar_prn_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=realizar_prn_op estadoOP=1 jspFile=rn003_realizado_prn>
+		<salidaPr id=0 operacion=realizar_prn_op estadoOP=2 jspFile=rn004_pagorc_por_autorizar>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.rn.PrRecaudoNal>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=recaudo_nacional_pr-data>
+	<field id=ClaveCtaPRN>
+	<field id=TipoCtaPRN>
+	<field id=CtaPRN>
+	<field id=TipoRecaudo>
+	<field id=Factura>
+	<field id=Factura2>
+	<field id=AdicionalP>
+	<field id=FechaOpe>
+	<field id=Divisa>
+	<field id=ImportePago>
+	<field id=DescripRN>
+	<!field id=CtaDelRecaudo>
+	<field id=ValidaBDatos>
+	<field id=ImporteString>
+	<field id=Cuotas>
+	<field id=Cuota>
+
+
+<! jcv------------------------------------------------------------------------------->
+	<field id=CodServicio>
+	<field id=desRecaudopr>
+	<field id=descrippr>
+	<field id=validBDpr>
+	<field id=extenpr>
+	<field id=Refer1pr>
+	<field id=alinearef1pr>
+	<field id=rellenoref1pr>
+	<field id=tiporef1pr>
+	<field id=Refer2pr>
+	<field id=alinearef2pr>
+	<field id=rellenoref2pr>
+	<field id=tiporef2pr>
+	<field id=Refer3pr>
+	<field id=Refer4pr>
+	<!field id=ctaRecaudo>
+	<!field id=imagen>
+	<!field id=desRefRecaudo>
+	<!field id=longRefer>
+
+	<field id=OtroValor>
+	<field id=TipoPago>
+	<field id=Importe>
+
+
+	<iColl id=ListaRecaudosPfac>
+		<kColl id=Funcion>
+			<field id=CODIGOCATEGORIA>
+			<field id=CODIGOSUBCATEGORIA>
+			<field id=CODIGOCONVENIO>
+			<field id=NOMBRECONVENIO>
+			<field id=DESCRIPCIONCONVENIO>
+			<field id=FORMATO>
+			<field id=EXTENSION>
+			<field id=REFER1>
+			<field id=ALINEAREF1>
+			<field id=RELLENOREF1>
+			<field id=TIPOREF1>
+			<field id=REFER2>
+			<field id=ALINEAREF2>
+			<field id=RELLENOREF2>
+			<field id=TIPOREF2>
+			<field id=REFER3>
+			<field id=REFER4>
+		</kColl>
+	</iColl>
+	<field id=Factura>
+	<field id=Factura2>
+	<field id=AdicionalP>
+    <field id=prImporteAdi>
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

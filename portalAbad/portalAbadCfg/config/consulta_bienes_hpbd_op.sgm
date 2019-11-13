@@ -1,0 +1,96 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consulta_bienes_hpbd_op --------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.col.web.homepage.OPConsultaBienes id=consulta_bienes_hpbd_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionBienesOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=entradaOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=entrada1OPHTMLFmt>
+	<refKColl refId=consulta_bienes_hpbd_op-data>
+	<refOM refId=consulta_bienes_hpbd_om>
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=consulta metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=1 accion=consulta metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=consulta metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=1 accion=detalle metodo=ponerDetalle requestFmt=entrada1OPHTMLFmt>
+		<estadoOP id=ERROR accion=detalle metodo=ponerDetalle requestFmt=entrada1OPHTMLFmt>
+		<estadoOP id=DETALLE accion=volver metodo=volverInicio>
+		<estadoOP id=ERROR accion=volver metodo=volverInicio>
+
+	</navegacionOP>
+<! --------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=1 jspFmt=RelacionBienesOPJspFmt>
+		<salidaOP id=DETALLE jspFmt=RelacionBienesOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.col.web.homepage.OPConsultaBienes>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+<kColl id=consulta_bienes_hpbd_op-data>
+	<field id=inpDepto>
+	<field id=inpCiudad>
+	<field id=inpTipoBien>
+	<field id=inpRango1>
+	<field id=inpRango2>
+	<field id=opSeleccion>
+</kColl>
+<! --------------------------------------------------------------------------------->
+<! FORMATOS SALIDA    -------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+<fmtDef id=RelacionBienesOPJspFmt>
+
+	<fJsp>
+		<fString dataName=prTipoBienSel description=opTipoBienSel>
+		<fString dataName=opSeleccion description=opSeleccion>
+		<iCollVector dataName=prListaBienes description=prListaBienes>
+			<record dataName=prDatosBien>
+				<fString dataName=prDepto>
+				<fString dataName=prCiudad>
+				<fString dataName=prConsecutivo>
+				<fString dataName=prDescripcion>
+				<fString dataName=prArea>
+				<fString dataName=prDireccion>
+				<fString dataName=prPrecio>
+				<fString dataName=prInformes>
+			</record>
+		</iCollVector>
+	</fJsp>
+
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+
+	<fJsp>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+<! FORMATO DE ENTRADA   ----------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=entradaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpDepto>
+		<fString dataName=inpCiudad>
+		<fString dataName=inpTipoBien>
+		<fString dataName=inpRango1>
+		<fString dataName=inpRango2>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=entrada1OPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=opSeleccion>
+	</fHTMLReq>
+</fmtDef>
+

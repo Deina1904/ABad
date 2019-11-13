@@ -1,0 +1,58 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL ce_deta_avimensa_comex_om  ---------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ce.om.ce.OMDetAviMensaComex id=ce_deta_avimensa_comex_om operationContext=OperationContext>
+	<refKColl refId=ce_deta_avimensa_comex_om-data>
+</com.grupobbva.ce.om.ce.OMDetAviMensaComex>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ce_deta_avimensa_comex_om-data>
+	<field id=IdTx value=TxF139ENET>
+	<kColl id=Entrada>
+ 	  <field id=BNUMTARJ>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BARGBUSQ>
+	</kColl>
+
+	<kColl id=Salida>
+	  <field id="INDICADOR_PAGINACION" >
+	  <field id="ARGUMENTO_BUSQUEDA" >
+	  <iColl id="ListaDetAviMensa" >
+    		<kColl id="DetAvisoMensajes" dynamic=false >
+      		      <field id="LINEA" >
+		</kColl >
+  	  </iColl >
+	</kColl>
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=ce_deta_avimensa_comex_om-copiar>
+	<kColl id=a-TxF139ENET>
+		<field id=Entrada value=TxF139ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF139ENET>
+		<field id=Salida value=TxF139ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

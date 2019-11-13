@@ -1,0 +1,72 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL fondo_plazo180_reem_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<! LANZA EN HOST TRANSACCION DISPOSICION A CUENTAS PROPIAS ->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=fondo_plazo180_reem_om operationContext=OperationContext>
+	<refKColl refId=fondo_plazo180_reem_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=fondo_plazo180_reem_om-data>
+	<field id=IdTx value=TxF048BNET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01 value=&@D06/16/2000>
+	  <field id=BFECHA02 value=&@D06/16/2000>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=omStrCuentaAsociada>
+	  <field id=omStrContratoFondo>
+	  <iColl id=omIcListaSuscripciones>
+	    <kColl id=omKcSuscripcion>
+		  <field id=omDatFechaSuscripcion>
+		  <field id=omDatFechaVencimiento>
+		  <field id=omDatFechaGracia>
+		  <field id=omNumDisponiblePesos>
+		  <field id=omStrCodigoOperacion>
+		  <field id=omStrCodigoSubproducto>
+		  <field id=omNumSecuencia>
+		  <field id=omDatFechaLibre1>
+		  <field id=omDatFechaLibre2>
+		  <field id=omNumImporteLibre1>
+		  <field id=omNumImporteLibre2>
+		  <field id=omStrCampoLibre1>
+		  <field id=omStrCampoLibre2>
+		  <field id=omStrCampoLibre3>
+		  <field id=omNumNumeroOperacion>
+	    </kColl>
+	  </iColl>
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id=fondo_plazo180_reem_om-copiar>
+	<kColl id=a-TxF048BNET>
+		<field id=Entrada value=TxF048BNETEntrada>
+	</kColl>
+	<kColl id=desde-TxF048BNET>
+		<field id=Salida value=TxF048BNETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

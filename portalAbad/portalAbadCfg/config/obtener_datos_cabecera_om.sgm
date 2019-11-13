@@ -1,0 +1,18 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL obtener_datos_cabecera_om  --------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pagos.OmObtenerDatosCabecera id=obtener_datos_cabecera_om operationContext=OperationContext>
+        <refKColl refId=obtener_datos_cabecera_om-data>
+</com.grupobbva.bc.col.web.pagos.OmObtenerDatosCabecera>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=obtener_datos_cabecera_om-data>
+        <kColl id = entrada>
+                <field id = claseOrden>
+                <field id = codIdOrden>
+        </kColl>
+
+        <kColl id = salida>
+                <field id = infCabeceraOrden>
+        </kColl>
+</kColl>

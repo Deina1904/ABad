@@ -1,0 +1,40 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL traer_recaudo_om  ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.rn.OMTraerRecaudo id=traer_recaudo_om operationContext=OperationContext>
+	<refKColl refId=traer_recaudo_om-data>
+</com.grupobbva.bc.col.multicanal.rn.OMTraerRecaudo>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=traer_recaudo_om-data>
+	<kColl id=Recaudos>
+		<kColl id=Entrada>
+			  <field id="CodCategoria">
+			  <field id="CodSubCategoria">
+		</kColl >
+
+		<kColl id=Salida>
+		  <iColl id=ListaRecaudosPfac>
+		    <kColl id=Funcion>
+		          <field id="CODIGOCATEGORIA" >
+	              <field id="CODIGOSUBCATEGORIA" >
+	              <field id="CODIGOCONVENIO" >
+		          <field id="NOMBRECONVENIO" >
+	              <field id="DESCRIPCIONCONVENIO" >
+	              <field id="FORMATO" >
+	              <field id="EXTENSION">
+	              <field id="REFER1" >
+	              <field id="ALINEAREF1">
+				  <field id="RELLENOREF1">
+			      <field id="TIPOREF1">
+	              <field id="REFER2" >
+	              <field id="ALINEAREF2">
+				  <field id="RELLENOREF2">
+			      <field id="TIPOREF2">
+	              <field id="REFER3" >
+	              <field id="REFER4" >
+		    </kColl >
+		  </iColl >
+		</kColl >
+	</kColl >
+</kColl>

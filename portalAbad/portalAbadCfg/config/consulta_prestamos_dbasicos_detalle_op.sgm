@@ -1,0 +1,86 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consulta_prestamos_dbasicos_detalle_op  ---------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.prest.OPConsultaPrestamosDbasicosDetalle id=consulta_prestamos_dbasicos_detalle_op operationContext=OperationContext>
+   <refFormat name=jspFormat refId=ErrorOPJspFmt>
+      <refFormat name=jspFormat refId=SaldosMvtosOPJspFmt>
+      <refFormat name=htmlRequestFormat refId=PrestaOPHTMLFmt>
+     <refKColl refId=consulta_prestamos_dbasicos_detalle_op-data>
+     <refOM refId=consulta_prestamos_dbasicos_detalle_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+   <navegacionOP>
+      <estadoOP id=0 accion=detalle metodo=detalle requestFmt=PrestaOPHTMLFmt>
+      <estadoOP id=1 accion=detalle metodo=detalle requestFmt=PrestaOPHTMLFmt>
+      <estadoOP id=ERROR accion=detalle metodo=detalle requestFmt=PrestaOPHTMLFmt>
+   </navegacionOP>
+
+   <! SALIDAS --------------------------------------------------------------------------->
+   <resultadoOP>
+      <salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+      <salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+      <salidaOP id=1 jspFmt=SaldosMvtosOPJspFmt>
+   </resultadoOP>
+</com.grupobbva.bc.col.web.prest.OPConsultaPrestamosDbasicosDetalle>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_prestamos_dbasicos_detalle_op-data>
+   <field id=NumCuenta>
+   <field id=AsuntoPropio>
+   <field id=Error>
+</kColl>
+
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=SaldosMvtosOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+      <fString dataName=s_cod_nomconta description=usuario>
+      <fString dataName=NumCuenta><nullCheck>
+      <record dataName=consulta_prestamos_dbasicos_detalle_om-data.Salida description=consultar>
+         <fString dataName=DESCRIPCION-PRESTAMO><nullCheck>
+         <fString dataName=OFICINA><nullCheck>
+         <fDate dataName=FECHA-DESEMBOLSO><nullCheck>
+         <fNumString dataName=VALOR-DESEMBOLSADO decPlaces=2 decimalsSepChar=, thousandsSepChar=. showDecimalsSep=true showThousandsSep=true><nullCheck>
+         <fString dataName=CTA-DOMICILIACION><nullCheck>
+         <fString dataName=MODALIDAD-PAGO><nullCheck>
+         <fString dataName=PLAZO-LITERAL><nullCheck>
+         <fString dataName=PLAZO-NUMERICO><nullCheck>
+         <fString dataName=DIA-PAGO><nullCheck>
+         <fString dataName=PERIODICIDAD-CAPITAL><nullCheck>
+         <fString dataName=PERIODICIDAD-INTERES><nullCheck>
+         <fString dataName=TIPO-AMORTIZACION><nullCheck>
+         <fNumString dataName=TOTAL-ADEUDADO decPlaces=2 decimalsSepChar=, thousandsSepChar=. showDecimalsSep=true showThousandsSep=true><nullCheck>
+         <fNumString dataName=TOTAL-VENCIDO decPlaces=2 decimalsSepChar=, thousandsSepChar=. showDecimalsSep=true showThousandsSep=true><nullCheck>
+         <fString dataName=CUOTAS-PAGADAS><nullCheck>
+         <fString dataName=CUOTAS-VENCIDAS><nullCheck>
+         <fString dataName=CUOTAS-PENDIENTES><nullCheck>
+         <fNumString dataName=TASA-INTERES-NOMINAL decPlaces=2 decimalsSepChar=, thousandsSepChar=. showDecimalsSep=true showThousandsSep=true><nullCheck>
+         <fNumString dataName=TASA-INTERES-ANUAL decPlaces=2 decimalsSepChar=, thousandsSepChar=. showDecimalsSep=true showThousandsSep=true><nullCheck>
+         <fDate dataName=FECHA-PROXIMA-LIQUDA><nullCheck>
+         <fNumString dataName=SALDO-A-FAVOR-CLIENTE decPlaces=2 decimalsSepChar=, thousandsSepChar=. showDecimalsSep=true showThousandsSep=true ><nullCheck>
+      </record>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+      <fString dataName=s_cod_nomconta description=usuario>
+      <fString dataName=Error description=mensaje>
+   </fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=PrestaOPHTMLFmt>
+   <fHTMLReq>
+      <fString dataName=AsuntoPropio>
+   </fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

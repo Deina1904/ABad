@@ -1,0 +1,118 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION realiza_cdts_op  ---------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.cdts.OPRealizaCdts id=realiza_cdts_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=CdtRealizadoOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosCdtsOPHTMLFmt>
+
+	<refKColl refId=realiza_cdts_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=retorno_cdts_om>
+	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=realizaCdts requestFmt=DatosCdtsOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=realizaCdts requestFmt=DatosCdtsOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=realizaCdts requestFmt=DatosCdtsOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=realizaCdts requestFmt=DatosCdtsOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=realizaCdts requestFmt=DatosCdtsOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=CdtRealizadoOPJspFmt>
+		<salidaOP id=2 jspFmt=CdtRealizadoOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.cdts.OPRealizaCdts>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=realiza_cdts_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<!field id=RefCargo>
+	<!field id=RefExtra>
+	<!field id=RefMovim>
+	<!field id=FechaOPe>
+	<!field id=FechaValor>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=CdtRealizadoOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_ip description=ip>
+		<fNumString dataName=ImporteInver description=inversion>
+		<record dataName=retorno_cdts_om-data.Salida description=consultar>
+				<fNumString dataName=RENBRUTO description=renbruto>
+				<fNumString dataName=RENNETO description=renneto>
+				<fNumString dataName=RETFUENTE description=retfuente>
+				<fNumString dataName=ABONOINT description=abonoint>
+				<fNumString dataName=TASAEA description=tasa>
+				<fNumString dataName=NROCONF description=nroconf>
+				<fDate dataName=FECVEN description=fechaven>
+				<fDate dataName=FECVAL description=fechavalor>
+				<fString dataName=NROCDT description=nrocdt>
+		</record>
+		<fString dataName=DesPlazo description=tipoplazo>
+		<fNumString dataName=Plazo description=plazo>
+		<fString dataName=DesPagInter description=pagointer>
+		<fString dataName=DesProrroga description=desprorro>
+		<!fString dataName=periodo description=pagointer>
+		<fString dataName=ClaveDeb description=ctadebito>
+		<fString dataName=ClaveAbo description=ctaabono>
+
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosCdtsOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

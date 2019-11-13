@@ -1,0 +1,71 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  sol_historico_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.extractos.PrSolHistorico id=sol_historico_pr operationContext=OperationContext>
+	<refKColl refId=sol_historico_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=sol_datos_histori_op>
+
+		<estadoPr id=1 operacion=sol_datos_histori_op>
+		<estadoPr id=1 operacion=sol_conf_histori_op>
+
+		<estadoPr id=2 operacion=sol_datos_histori_op>
+		<estadoPr id=2 operacion=sol_conf_histori_op>
+		<estadoPr id=2 operacion=sol_realiza_histori_op>
+
+		<estadoPr id=3 operacion=sol_datos_histori_op>
+
+
+
+</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=sol_datos_histori_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=sol_datos_histori_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=sol_datos_histori_op estadoOP=1 jspFile=eh001_extracto_histori>
+		<salidaPr id=1 operacion=sol_datos_histori_op estadoOP=ERROR jspFile=gn001_error>
+
+<! JASA01----->
+		<salidaPr id=1 operacion=sol_datos_histori_op estadoOP=ESTRUCTURA jspFile=ex005_estructura_archivo>
+		<salidaPr id=1 operacion=sol_datos_histori_op estadoOP=ERROR jspFile=gn001_error>
+<! JASA01----->
+
+		<salidaPr id=2 operacion=sol_conf_histori_op estadoOP=1 jspFile=eh002_soli_historico>
+
+		<salidaPr id=2 operacion=sol_conf_histori_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=sol_conf_histori_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=sol_realiza_histori_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=sol_realiza_histori_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=3 operacion=sol_realiza_histori_op estadoOP=1 jspFile=eh004_conf_histori>
+
+		<salidaPr id=0 operacion=sol_realiza_histori_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=sol_realiza_histori_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=0 operacion=sol_realiza_histori_op estadoOP=1 jspFile=eh004_conf_histori>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.extractos.PrSolHistorico>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=sol_historico_pr-data>
+	<field id=TipSolici>
+	<field id=DesGen>
+	<field id=TipCtaDeb>
+	<field id=NumeroCtaaDebita>
+	<field id=Email>
+	<field id=Mes>
+	<field id=Ano>
+	<field id=DesPeriodo>
+	<field id=ClaveDeb>
+	<field id=Comision>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

@@ -1,0 +1,39 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  personalizacion_canales_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.web.personalizacion.PrCanales id=personalizacion_canales_pr operationContext=OperationContext>
+
+	<refKColl refId=personalizacion_canales_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=personalizacion_canales_op>
+		<estadoPr id=1 operacion=personalizacion_canales_op>
+		 
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=personalizacion_canales_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=personalizacion_canales_op estadoOP=CLAVEHAB jspFile=per_canales_clavehab>
+		<salidaPr id=1 operacion=personalizacion_canales_op estadoOP=HABILITA jspFile=per_canales_habilita>
+		<salidaPr id=1 operacion=personalizacion_canales_op estadoOP=FALLA jspFile=gn001BM_error>
+		<salidaPr id=1 operacion=personalizacion_canales_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=personalizacion_canales_op estadoOP=2 jspFile=per_canales_ip>
+		<salidaPr id=1 operacion=personalizacion_canales_op estadoOP=IP jspFile=per_canales_ip>
+		<salidaPr id=1 operacion=personalizacion_canales_op estadoOP=AYUDA jspFile=per_canales_ayuda>
+		<salidaPr id=1 operacion=personalizacion_canales_op estadoOP=AYUDA1 jspFile=per_canales_ayuda1>
+	</resultadoPr>
+
+</com.grupobbva.bc.web.personalizacion.PrCanales>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=personalizacion_canales_pr-data>
+
+<field id=prTipoDisposicion value="">
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

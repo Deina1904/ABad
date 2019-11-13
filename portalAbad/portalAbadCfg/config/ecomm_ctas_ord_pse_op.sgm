@@ -1,0 +1,141 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ecomm_ctas_ord_pse_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pse.OPeCommCtasOrdPse id=ecomm_ctas_ord_pse_op operationContext=OperationContext>
+   <refFormat name=jspFormat refId=RelacionCtasOrdJspFmt>
+   <refFormat name=jspFormat refId=ErrorOPJspFmt>
+   <refFormat name=jspFormat refId=ValidarOPJspFmt>
+   <refKColl refId=ecomm_ctas_ord_pse_op-data>
+   <refOM refId=ecomm_hpago_dian_pse_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+   <navegacionOP>
+      <estadoOP id=0        accion=ctasord   metodo=ctasord>
+      <estadoOP id=1        accion=ctasord   metodo=ctasord>
+      <estadoOP id=2        accion=ctasord   metodo=ctasord>
+      <estadoOP id=ERROR    accion=ctasord   metodo=ctasord>
+      <estadoOP id=VALIDAR  accion=ctasord   metodo=ctasord>
+      <estadoOP id=1        accion=cancelar  metodo=cancelar>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+   <resultadoOP>
+      <salidaOP id=1 jspFmt=RelacionCtasOrdJspFmt>
+      <salidaOP id=2 jspFmt=EcommHacerPagoJspFmt>
+      <salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+      <salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+   </resultadoOP>
+</com.grupobbva.bc.col.web.pse.OPeCommCtasOrdPse>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ecomm_ctas_ord_pse_op-data>
+   <field id=AsuntoPropio>
+   <field id=Error>
+
+   <iColl id=listaCuentas>
+      <kColl id=prestamo>
+         <field id=banco>
+         <field id=oficina>
+         <field id=dControl>
+         <field id=numCuenta>
+         <field id=claveAsunto>
+         <field id=tipo>
+      </kColl>
+   </iColl>
+
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionCtasOrdJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=empresaPr description=jspEmpresa><nullCheck>
+      <fString dataName=descripcionPr description=jspDescripcion><nullCheck>
+      <fString dataName=referenciaPr description=jspReferencia><nullCheck>
+      <fString dataName=codigodianPr description=codigodianPr><nullCheck>
+      <fString dataName=codigoHaciendaPr description=codigoHaciendaPr><nullCheck>
+      <fString dataName=referencia2Pr description=jspReferencia2><nullCheck>
+	  <fString dataName=referencia3Pr description=jspReferencia3><nullCheck>
+      <fString dataName=codcomerPr description=jspCodcomer><nullCheck>
+      <fNumString dataName=valorPr description=jspValor decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+      <fNumString dataName=valorivaPr description=jspValoriva decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+	  <fString dataName=ticketidPr description=jspTicketid><nullCheck>
+	  <fString dataName=servicecodPr description=jspServicecod><nullCheck>
+	   <fString dataName=codigoPsePr description=jspCus><nullCheck>
+      <fDate dataName=fechasolPr description=jspFechasol><nullCheck>
+      <fString dataName=urlComercioPr description=jspUrlComercio><nullCheck>
+      <iCollVector dataName=listaCuentas description=listaCtasPeComm>
+         <record dataName=prestamo>
+            <fString dataName=banco><nullCheck>
+            <fString dataName=oficina><nullCheck>
+            <fString dataName=dControl><nullCheck>
+            <fString dataName=numCuenta><nullCheck>
+            <fString dataName=claveAsunto><nullCheck>
+            <fString dataName=tipo><nullCheck>
+         </record>
+      </iCollVector>
+
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=EcommHacerPagoJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=empresaPr description=jspEmpresa><nullCheck>
+      <fString dataName=codigodianPr description=codigodianPr><nullCheck>
+      <fString dataName=descripcionPr description=jspDescripcion><nullCheck>
+      <fString dataName=referenciaPr description=jspReferencia><nullCheck>
+      <fNumString dataName=valorPr description=jspValor decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+      <fString dataName=urlComercioPr description=jspUrlComercio><nullCheck>
+	  <fString dataName=referencia2Pr description=jspReferencia2><nullCheck>
+      <fString dataName=referencia3Pr description=jspReferencia3><nullCheck>
+      <fString dataName=codcomerPr description=jspCodcomer><nullCheck>
+      <fNumString dataName=valorivaPr description=jspValoriva decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+	  <fString dataName=ticketidPr description=jspTicketid><nullCheck>
+	  <fString dataName=servicecodPr description=jspServicecod><nullCheck>
+	   <fString dataName=codigoPsePr description=jspCus><nullCheck>
+
+   </fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+      <fString dataName=s_cod_nomempre description=empresa>
+      <fString dataName=Error description=mensaje>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=empresaPr description=jspEmpresa><nullCheck>
+		<fString dataName=descripcionPr description=jspDescripcion><nullCheck>
+		<fString dataName=referenciaPr description=jspReferencia><nullCheck>
+		<fString dataName=referencia2Pr description=jspReferencia2><nullCheck>
+		<fString dataName=referencia3Pr description=jspReferencia3><nullCheck>
+        <fString dataName=codcomerPr description=jspCodcomer><nullCheck>
+		<fNumString dataName=valorPr description=jspValor decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		<fString dataName=urlComercioPr description=jspUrlComercio><nullCheck>
+		<iCollVector dataName=listaCuentas description=listaCtasPeComm>
+		   <record dataName=prestamo>
+			  <fString dataName=banco><nullCheck>
+			  <fString dataName=oficina><nullCheck>
+			  <fString dataName=dControl><nullCheck>
+			  <fString dataName=numCuenta><nullCheck>
+			  <fString dataName=claveAsunto><nullCheck>
+			  <fString dataName=tipo><nullCheck>
+		   </record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->

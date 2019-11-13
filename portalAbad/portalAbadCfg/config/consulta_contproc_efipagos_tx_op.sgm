@@ -1,0 +1,149 @@
+<! BBVA  ------------------------------------------------------------------------------------------------------------------------------------>
+<! Operación: PRESENTACION consulta_contproc_efipagos_tx_op --------------------------------------------------------------------------------->
+
+<! OPERACION -------------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.contprocefipagos.OPConsultaContProcEfipagosTx id=consulta_contproc_efipagos_tx_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=TransmisionesOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosInputOPHTMLFmt>
+	<refKColl refId=consulta_contproc_efipagos_tx_op-data>
+	<refOM refId=consulta_contproc_efipagos_tx_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=ERROR accion=movimientos metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=0 accion=movimientos metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=movimientos metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+	</navegacionOP>
+
+<! SALIDAS ---------------------------------------------------------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=TransmisionesOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.contprocefipagos.OPConsultaContProcEfipagosTx>
+
+<! DATOS ------------------------------------------------------------------------------------------------------------------------------------>
+<kColl id=consulta_contproc_efipagos_tx_op-data>
+    <field id=Grupo1>
+
+    <field id=Dia>
+	<field id=Mes>
+	<field id=Anio>
+
+	<field id=DiaDesde>
+	<field id=MesDesde>
+	<field id=AnioDesde>
+
+	<field id=FechaDesde>
+
+	<field id=DiaHasta>
+	<field id=MesHasta>
+	<field id=AnioHasta>
+
+	<field id=FechaHasta>
+
+	<field id=AsuntoPropio>
+
+    <field id=Valor>
+
+	<field id=Error>
+
+	<field id=INDICADOR-PAGINACION>
+	<field id=BPAGINACION>
+	<field id=FECHA-SALIDA>
+	<field id=NRO-ORDEN-SALIDA>
+	<field id=NRO-LOTE-SALIDA>
+	<field id=INDICADOR-MOVIMIENTOS>
+
+	<kColl id=Pagina>
+		<iColl id=ListaTransmisionesTotalOP>
+			<kColl id=Transmisiones>
+			  <field id=NRO-ORDEN>
+			  <field id=FECHA-APLICACION>
+			  <field id=IMPORTE>
+			  <field id=REGISTROS>
+			  <field id=EMISORA-SALIDA>
+	          <field id=ESTADO-LOTE>
+			</kColl >
+		</iColl >
+		<iColl id=ListaTransmisionesPagOP>
+			<kColl id=Transmisiones>
+			  <field id=NRO-ORDEN>
+			  <field id=FECHA-APLICACION>
+			  <field id=IMPORTE>
+			  <field id=REGISTROS>
+			  <field id=EMISORA-SALIDA>
+	          <field id=ESTADO-LOTE>
+			</kColl >
+		</iColl >
+	</kColl>
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------------------------------------------------------------->
+<fmtDef id=TransmisionesOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=ClaveCtaOrdPr description=ctaOrdPr>
+		<fString dataName=Grupo1 description=grupo1>
+        <!fDate dataName=FechaDesde description=fechadesde>
+        <!fDate dataName=FechaHasta description=fechahasta>
+
+        <fString dataName=MasDatosTransmisionesWasPr description=masDatosTransmisionesWasPr>
+		<fString dataName=MasDatosTransmisionesHostPr description=masDatosTransmisionesHostPr>
+		<fString dataName=IdTransmisionesPr description=idTransmisionesPr>
+		<fString dataName=INDICADOR-PAGINACION><nullCheck>
+		<fString dataName=BPAGINACION><nullCheck>
+		<fString dataName=FECHA-SALIDA>
+		<fNumString dataName=NRO-ORDEN-SALIDA>
+	    <fNumString dataName=NRO-LOTE-SALIDA>
+		<fString dataName=INDICADOR-MOVIMIENTOS>
+        <iCollVector dataName=Pagina.ListaTransmisionesPagOP description=ListaMovtos>
+			<record dataName=Transmisiones>
+      			<fNumString dataName=NRO-ORDEN><nullCheck>
+      			<fString dataName=FECHA-APLICACION><nullCheck>
+                <fNumString dataName=IMPORTE><nullCheck>
+				<fNumString dataName=REGISTROS><nullCheck>
+				<fString dataName=EMISORA-SALIDA><nullCheck>
+				<fString dataName=ESTADO-LOTE><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA---------------------------------------------------------------------------------------------------------------------->
+<fmtDef id=DatosInputOPHTMLFmt>
+	<fHTMLReq>
+        <fString dataName=Grupo1>
+
+        <fString dataName=Dia>
+		<fString dataName=Mes>
+		<fString dataName=Anio>
+
+		<fString dataName=DiaDesde>
+		<fString dataName=MesDesde>
+		<fString dataName=AnioDesde>
+
+		<fString dataName=DiaHasta>
+		<fString dataName=MesHasta>
+		<fString dataName=AnioHasta>
+
+        <fString dataName=AsuntoPropio>
+
+		<fString dataName=Valor>
+	</fHTMLReq>
+</fmtDef>

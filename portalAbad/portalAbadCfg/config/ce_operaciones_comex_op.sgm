@@ -1,0 +1,134 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ce_operaciones_comex_op  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.ce.op.ce.OPOperacionesComex id=ce_operaciones_comex_op operationContext=OperationContext>
+	<refFormat name=htmlRequestFormat refId=OperacionesComexOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=SiguienteMovimientoOPHTMLFmt>
+	<refFormat name=jspFormat refId=OperacionesComexOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=ce_operaciones_comex_op-data>
+	<refOM refId=ce_operaciones_comex_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=mostrarOper requestFmt=OperacionesComexOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=mostrarOper requestFmt=OperacionesComexOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=mostrarOper requestFmt=OperacionesComexOPHTMLFmt>
+
+		<estadoOP id=1 accion=masDatos metodo=hayMasDatos requestFmt=SiguienteMovimientoOPHTMLFmt>
+		<estadoOP id=ERROR accion=masDatos metodo=hayMasDatos requestFmt=SiguienteMovimientoOPHTMLFmt>
+		<estadoOP id=1 accion=menosDatos metodo=hayMenosDatos requestFmt=AnteriorMovimientoOPHTMLFmt>
+		<estadoOP id=ERROR accion=menosDatos metodo=hayMenosDatos requestFmt=AnteriorMovimientoOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1     jspFmt=OperacionesComexOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.ce.op.ce.OPOperacionesComex>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ce_operaciones_comex_op-data>
+	<field id=Error>
+       <field id=Clase>
+       <field id=desTipo>
+	<field id=MaxNumRegistrosPag value=25>
+	<field id=siguientePag>
+	<field id=anteriorPag >
+	<field id=s_fecha_host>
+	<field id=s_hora_host>
+
+	<field id=hayMasDatos>
+	<field id=hayMenosDatos>
+
+	<kColl id=Pagina>
+	  <iColl id=ListaOperaciones>
+	    <kColl id=Operaciones>
+	      <field id=Num_Operacion_Form>
+	      <field id=Num_Operacion>
+	      <field id=Importe_Saldo>
+	      <field id=Moneda>
+	      <field id=Ben_Ord_Gir>
+	      <field id=Importe_Inicial>
+	      <field id=FechaProxVenc>
+	      <field id=TipoEmbarque>
+	      <field id=Status>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+    <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+    <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+    <fString dataName=s_fecha_host description=fecha_host><nullCheck>
+    <fString dataName=s_hora_host description=hora_host><nullCheck>
+    <fString dataName=Error description=mensaje><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=OperacionesComexOPJspFmt>
+	<fJsp>
+             <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+
+             <! COL01-I>
+             <fString dataName=Nroreg description=Nroreg><nullCheck>
+             <! COL01-F>
+
+             <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+             <fString dataName=s_fecha_host description=fecha_host><nullCheck>
+             <fString dataName=s_hora_host description=hora_host><nullCheck>
+
+             <fString dataName=clase description=clase><nullCheck>
+             <fString dataName=descripcion description=descripcion><nullCheck>
+
+   	     <fString dataName=hayMasDatos description=hayMasDatos><nullCheck>
+   	     <fString dataName=hayMenosDatos description=hayMenosDatos><nullCheck>
+
+   	     <fNumString dataName=siguientePag description=siguientePag decPlaces=0 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=no showThousandsSep=no><nullCheck>
+   	     <fNumString dataName=anteriorPag  description=anteriorPag decPlaces=0 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=no showThousandsSep=no><nullCheck>
+
+	     <iCollVector dataName=Pagina.ListaOperaciones description=ListaOperaciones>
+		<record dataName=Operaciones>
+		     <fString dataName=Num_Operacion_Form description=Num_Operacion_Form><nullCheck>
+		     <fString dataName=Num_Operacion description=Num_Operacion><nullCheck>
+		     <fNumString dataName=Importe_Saldo description=Importe_Saldo decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+		     <fString dataName=Moneda description=Moneda><nullCheck>
+		     <fString dataName=Ben_Ord_Gir description=Ben_Ord_Gir><nullCheck>
+		     <fNumString dataName=Importe_Inicial description=Importe_Inicial decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+		     <fDate dataName=FechaProxVenc description=FechaProxVenc><nullCheck>
+		     <fString dataName=TipoEmbarque description=TipoEmbarque><nullCheck>
+		     <fString dataName=Status description=Status><nullCheck>
+		</record>
+	     </iCollVector>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=OperacionesComexOPHTMLFmt>
+	<fHTMLReq>
+	        <fString dataName=Clase>
+	        <fString dataName=desTipo>
+
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=SiguienteMovimientoOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=siguientePag>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=AnteriorMovimientoOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=anteriorPag>
+	</fHTMLReq>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+

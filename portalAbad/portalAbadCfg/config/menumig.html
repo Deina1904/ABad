@@ -1,0 +1,90 @@
+<!-------------------------------- LOG DE MODIFICACIONES - TS - BNET ----------------------------->
+<!-- COL001. CE03317. COMEXTCORP.                           2005-09-07. 2005-09-15. 0001-01-01. -->
+<!-- COL002. CE02678. FONDO NOMINA                          2005-09-29. 2005-10-11. 2005-10-18. -->
+<!-- COL003. CE08849. LIBERA PILOTO                         2005-11-08. 2005-11-10. 2005-11-10. -->
+<!-- COL004. CE02678. FONDO PLAZO 180                       2007-03-01. 2007-03-01. 2007-03-01. -->
+<!-- COL005. CE11702. EXTRACTOS POR MOVIMIENTOS             2008-04-08. 2008-04-08. 2008-04-08. -->
+<!------------------------------------------------------------------------------------------------>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0054)https://w3.grupobbva.com/local_bdnt/mapa_menudemo.html -->
+<HTML><HEAD><TITLE>Menu</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK
+href="estilos/menu1.css" type=text/css rel=STYLESHEET>
+<SCRIPT language=Javascript src="js/menu.js"></SCRIPT>
+<SCRIPT language=JavaScript>
+//
+function cargaOpciones(){
+   mimenu.annade_opcion("Nivel_1",true,"Funciones / Servicios","OperacionCBTFServlet?proceso=mostrafun_pr&operacion=mostrafun_op&accion=param");
+   mimenu.annade_opcion("Nivel_2",true,"Mostrar Funciones/Servicios ","OperacionCBTFServlet?proceso=migracion_pr&operacion=funciones_op&accion=param");
+   mimenu.annade_opcion("Nivel_2",true,"Cargar Funciones/Servicios","OperacionCBTFServlet?proceso=carga_fun_pr&operacion=carga_fun_op&accion=param");
+   mimenu.annade_opcion("Nivel_1",true,"Usuarios / Referencia","OperacionCBTFServlet?proceso=consulta_usuarios_pr&operacion=consulta_usuarios_op&accion=param");
+   mimenu.annade_opcion("Nivel_2",true,"Consultar Migracion ","OperacionCBTFServlet?proceso=consulta_usuarios_pr&operacion=consulta_usuarios_op&accion=param");
+   mimenu.annade_opcion("Nivel_2",true,"Migracion usuarios","OperacionCBTFServlet?proceso=carga_usuarios_pr&operacion=carga_usuarios_op&accion=param&tipo=todos");
+   mimenu.annade_opcion("Nivel_1",true,"Migrar tablas especificas","OperacionCBTFServlet?proceso=carga_usuarios_pr&operacion=carga_usuarios_op&accion=param&tipo=usu");
+   mimenu.annade_opcion("Nivel_2",true,"Migracion usu/otp/syn","OperacionCBTFServlet?proceso=carga_usuarios_pr&operacion=carga_usuarios_op&accion=param&tipo=usu");
+   mimenu.annade_opcion("Nivel_2",true,"Migracion exe/rob/lia","OperacionCBTFServlet?proceso=carga_usuarios_pr&operacion=carga_usuarios_op&accion=param&tipo=exe");
+   mimenu.annade_opcion("Nivel_2",true,"Migracion cef","OperacionCBTFServlet?proceso=carga_usuarios_pr&operacion=carga_usuarios_op&accion=param&tipo=cef");
+   mimenu.annade_opcion("Nivel_2",true,"Migracion ctc","OperacionCBTFServlet?proceso=carga_usuarios_pr&operacion=carga_usuarios_op&accion=param&tipo=ctc");
+   mimenu.annade_opcion("Nivel_2",true,"Migracion acc","OperacionCBTFServlet?proceso=carga_usuarios_pr&operacion=carga_usuarios_op&accion=param&tipo=acc");
+   mimenu.annade_opcion("Nivel_2",true,"Migracion lic","OperacionCBTFServlet?proceso=carga_usuarios_pr&operacion=carga_usuarios_op&accion=param&tipo=lic");
+   mimenu.annade_opcion("Nivel_2",true,"Migracion apr","OperacionCBTFServlet?proceso=carga_usuarios_pr&operacion=carga_usuarios_op&accion=param&tipo=apr");
+   mimenu.annade_opcion("Nivel_1",true,"Cambio de Clave","OperacionCBTFServlet?proceso=cambio_pw_pr&operacion=cambio_password_op&accion=cambioServicio");
+   mimenu.annade_opcion("Nivel_2",true,"Acceso al Servicio Parametria","OperacionCBTFServlet?proceso=cambio_pw_pr&operacion=cambio_password_op&accion=cambioServicio");
+   mimenu.annade_opcion("Nivel_1",true,"Salir de Modulo Migracion","javascript:parent.cabecera.salidanormal()");
+}
+//Discrimina con que navegador accedemos.
+var dom = (document.getElementById)? true:false
+var ns4 = (document.layers)? true:false
+var ie4 = (document.all)? true:false
+var linea;
+//var  x  = (dom)? 3:1
+// Se ejecuta al cargarse la pagina
+function init() {
+//estas lineas nos crean la referencia con la que
+//  a partir de ahora nos referiremos a las capas.
+		if (ns4){
+	 	 bloque = document.capamenu;
+	 	 linea = document.lineaazul;
+	 	 }
+		if (ie4){
+		bloque = capamenu.style;
+		linea = lineaazul.style;
+		}
+		if (dom){
+		linea = document.getElementById("lineaazul").style
+		bloque = document.getElementById("capamenu").style
+		}
+		cargaOpciones();
+		var arrayinicio= new Array();
+		var antiguo=new Array();
+		carga_arbol(arrayinicio,antiguo);}
+		//bgcolor="#e8e8e8" color del fondo del menu
+</SCRIPT>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY onload=init(); text=#ffffff vLink=#ffffff aLink=#ff3366 link=#ffffff background="images/menu2.jpg">
+<DIV id=capamenu></DIV>
+<DIV id=lineaazul></DIV>
+<SCRIPT>//para usar scroll comentar
+if (ns4)
+document.write("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>");
+</SCRIPT>
+<DIV id=scroll><A onmouseup=javascript:continuar=false
+onmousedown=javascript:continuar=true;moverTop(bloque,3)
+onmouseover=javascript:continuar=true;moverTop(bloque,1)
+onmouseout=javascript:continuar=false>
+  </A> <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <BR>
+  <A onmouseup=javascript:continuar=false
+onmousedown=javascript:continuar=true;moverTop(bloque,-3)
+onmouseover=javascript:continuar=true;moverTop(bloque,-1)
+onmouseout=javascript:continuar=false>
+</A> </DIV>
+</BODY></HTML>

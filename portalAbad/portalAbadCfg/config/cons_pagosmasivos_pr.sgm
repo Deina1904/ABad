@@ -1,0 +1,91 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  cons_pagosmasivos_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pagosmasivos.PrConsPagosMasivos id=cons_pagosmasivos_pr operationContext=OperationContext>
+	<refKColl refId=cons_pagosmasivos_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=relacion_pagos_op>
+		<estadoPr id=1 operacion=relacion_pagos_op>
+		<estadoPr id=2 operacion=relacion_pagos_op>
+		<estadoPr id=3 operacion=relacion_pagos_op>
+
+		<estadoPr id=0 operacion=movimientos_soportes_op>
+		<estadoPr id=1 operacion=movimientos_soportes_op>
+		<estadoPr id=2 operacion=movimientos_soportes_op>
+		<estadoPr id=3 operacion=movimientos_soportes_op>
+
+		<estadoPr id=0 operacion=movimientos_pagos_op>
+		<estadoPr id=1 operacion=movimientos_pagos_op>
+		<estadoPr id=2 operacion=movimientos_pagos_op>
+		<estadoPr id=3 operacion=movimientos_pagos_op>
+
+		<estadoPr id=0 operacion=detalle_cargos_op>
+		<estadoPr id=1 operacion=detalle_cargos_op>
+		<estadoPr id=2 operacion=detalle_cargos_op>
+		<estadoPr id=3 operacion=detalle_cargos_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+			<salidaPr id=0 operacion=relacion_pagos_op estadoOP=ERROR jspFile=gn001_error>
+			<salidaPr id=1 operacion=relacion_pagos_op estadoOP=1 jspFile=pm001_consulta_ctas>
+
+			<salidaPr id=2 operacion=movimientos_soportes_op estadoOP=ERROR jspFile=gn001_error>
+			<salidaPr id=2 operacion=movimientos_soportes_op estadoOP=ERROR jspFile=gn001_error>
+			<salidaPr id=2 operacion=movimientos_soportes_op estadoOP=1 jspFile=pm002_consulta_soportes>
+			<salidaPr id=2 operacion=movimientos_pagos_op estadoOP=1 jspFile=pm003_lista_opera>
+			<salidaPr id=2 operacion=detalle_cargos_op estadoOP=1 jspFile=pm004_detalle_pago>
+
+			<salidaPr id=3 operacion=movimientos_pagos_op estadoOP=ERROR jspFile=gn001_error>
+			<salidaPr id=3 operacion=movimientos_pagos_op estadoOP=ERROR jspFile=gn001_error>
+			<salidaPr id=3 operacion=movimientos_pagos_op estadoOP=1 jspFile=pm003_lista_opera>
+
+			<salidaPr id=3 operacion=detalle_cargos_op estadoOP=1 jspFile=pm004_detalle_pago>
+			<salidaPr id=3 operacion=detalle_cargos_op estadoOP=ERROR jspFile=gn001_error>
+			<salidaPr id=3 operacion=detalle_cargos_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.pagosmasivos.PrConsPagosMasivos>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=cons_pagosmasivos_pr-data>
+			<field id=ClaveCtaOrdPr>
+			<field id=CtaOrdPr>
+			<field id=opcionconsul>
+			<field id=desopcion>
+			<field id=opGrupo1>
+			<field id=opfechadesde>
+			<field id=opfechahasta>
+			<field id=opfecha>
+			<field id=opdiasult>
+			<field id=RegistrosPaginacionPr value= 30>
+			<field id=MasDatosMovimientosWasPr value="N">
+			<field id=MasDatosMovimientosHostPr value="N">
+			<field id=IdMovimientosPr value=31>
+			<field id=IdMovimientosPr1 value=0>
+			<field id=IdMovimientosPr2 value=0>
+			<field id=IdMovimientosPr3 value=0>
+			<field id=fechaalta>
+			<field id=fechaini2>
+			<field id=fechaante>
+			<field id=fechaante2>
+			<field id=orden>
+			<field id=tiporden>
+			<field id=status>
+			<field id=regs>
+			<field id=importe>
+			<field id=canal>
+			<field id=cliente>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

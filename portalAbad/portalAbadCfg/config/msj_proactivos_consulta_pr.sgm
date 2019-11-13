@@ -1,0 +1,32 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  msj_proactivos_consulta_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.msjproactivos.PrMsjProactivosConsulta id=msj_proactivos_consulta_pr operationContext=OperationContext>
+	<refKColl refId=msj_proactivos_consulta_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=msj_proactivos_lista_msj_op>
+		<estadoPr id=1 operacion=msj_proactivos_lista_msj_op>
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=msj_proactivos_lista_msj_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=msj_proactivos_lista_msj_op estadoOP=1 jspFile=msj_proactivos_lista_msj>
+		<salidaPr id=1 operacion=msj_proactivos_lista_msj_op estadoOP=2 jspFile=msj_proactivos_detalle_msj>
+		<salidaPr id=1 operacion=msj_proactivos_lista_msj_op estadoOP=ERROR jspFile=gn001_error>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.msjproactivos.PrMsjProactivosConsulta>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=msj_proactivos_consulta_pr-data>
+		<field id=RegistrosPaginacionPr value=25>
+		<field id=MasDatosMsjProactivosWasPr value="N">
+		<field id=MasDatosMsjProactivosHostPr value="N">
+		<field id=IdMsjProactivosPr value=0>
+</kColl>
+<! --------------------------------------------------------------------------------->

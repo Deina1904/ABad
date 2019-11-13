@@ -1,0 +1,58 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL tarjetas_credito_programa_puntos_realizar_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=tarjetas_credito_programa_puntos_realizar_om operationContext=OperationContext>
+	<refKColl refId=tarjetas_credito_programa_puntos_realizar_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=tarjetas_credito_programa_puntos_realizar_om-data>
+	<field id=IdTx value=TxFN84ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=REFCARGO>
+	  <field id=REFABONO>
+	  <field id=FECHOPER>
+	  <field id=FECHAVAL>
+	  <field id=INDICAOK>
+	  <field id=NUMAUTOR>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= tarjetas_credito_programa_puntos_realizar_om-copiar>
+	<kColl id=a-TxFN84ENET>
+		<field id=Entrada value=TxFN84ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN84ENET>
+		<field id=Salida value=TxFN84ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

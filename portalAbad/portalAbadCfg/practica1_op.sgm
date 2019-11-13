@@ -1,0 +1,97 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación: PRESENTACION practica1_op -------------------------------------------------------------------------------->
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.cmc.practica1.OPpractica1 id=practica1_op operationContext=OperationContext>
+	<!-- DEFINICION DE DATOS -->
+		<refKColl refId=practica1_op-data>
+	<!-- FORMATOS DE SALIDA -->	
+		<refFormat name=jspFormat refId=VacioOPJspFmt>
+		<refFormat name=jspFormat refId=VOPJspFmt>
+		<refFormat name=jspFormat refId=Salidaobj>
+		
+	<!-- FORMATOS DE ENTRADA -->
+    	<refFormat name=htmlRequestFormat refId=DatosOPHTMLFmt>
+    	<refOM refId=practica1_om>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=inicio metodo=inicio >
+		<estadoOP id=1 accion=formulario metodo=formulario >
+		<estadoOP id=0 accion=cargarDatos metodo=cargarDatos requestFmt=DatosOPHTMLFmt>
+		<estadoOP id=0 accion=datosReg metodo=datosReg  requestFmt=DatosOPHTMLFmt >
+   </navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=0 jspFmt=VacioOPJspFmt>
+		<salidaOP id=1 jspFmt=VacioOPJspFmt>
+		<salidaOP id=2 jspFmt=VacioOPJspFmt>
+		<salidaOP id=3 jspFmt=VOPJspFmt>
+		<salidaOP id=4 jspFmt=Salidaobj>
+	</resultadoOP>
+
+</com.cmc.practica1.OPpractica1>
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+
+<kColl id=practica1_op-data>
+    <field id=nombre>
+    <field id=apellido>
+    <field id=numero>
+    <field id=correo>
+    
+    <field id=objetoU>
+    
+    <field id=size>
+     
+    <iColl id=listaDatos>
+	    <kColl id=pruebaRecord>
+	       <field id=nombre>
+	       <field id=apellido>
+	       <field id=edad>
+	       <field id=fechaN>
+	    </kColl>
+	</iColl>
+</kColl>
+
+<! FORMATOS DE SALIDA PARA JSP ----------------------------------------------------------------------------------------------------------->
+<fmtDef id=VacioOPJspFmt>
+	<fJsp>
+		
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=VOPJspFmt>
+	<fJsp>
+		<iCollVector dataName=listaDatos description=listaDatos>
+			<record dataName=pruebaRecord>
+	                <fString dataName=nombre><nullCheck>
+	                <fString dataName=apellido><nullCheck>
+	                <fString dataName=edad><nullCheck>
+	                <fString dataName=fechaN><nullCheck>
+	        </record>
+        </iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=Salidaobj>
+	<fJsp>
+		<fObject dataName=objetoU><nullCheck>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS DE ENTRADA ----------------------------------------------------------------------------------------------------------------------->
+
+<fmtDef id=DatosOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=size>
+		
+		<fString dataName=nombre>
+		<fString dataName=apellido>
+		<fString dataName=numero>
+		<fString dataName=correo>
+		
+	</fHTMLReq>
+</fmtDef>
+

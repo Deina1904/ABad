@@ -1,0 +1,38 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL env_validacion_om ------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pagos.incorporacion.TLCLOmValidacionFichero id=env_validacion_om  operationContext=OperationContext trazaCopiador=true>
+	<refKColl refId=env_validacion_om-data>
+</com.grupobbva.bc.col.web.pagos.incorporacion.TLCLOmValidacionFichero>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=env_validacion_om-data>
+	<kColl id=entrada>
+		<field id=cod_claseord>
+		<field id=codExtensio>
+		<field id=codBancoCSB>
+		<field id=nombreCompletoFichero>
+		<field id=filesize>
+		<!ERE07F2006-VRH>
+		<field id=encriptado>
+		<field id=fechaMinima>
+		<field id=fechaMaxima>
+		<field id=accesoNominasCiegas>
+		<field id=opcion_efectivo> 
+	</kColl>
+	
+	<kColl id=salida>
+		<field id=codIdOrden>
+		<field id=cuentaCargo>
+		<field id=nombreFichero>
+		<field id=fechaProceso>
+		<field id=referencia>
+		<field id=numOrdenes>		
+		<field id=importeTotal>
+		<field id=qnu_numitem>
+		<field id=ficheroOK>						
+	</kColl>
+	
+</kColl>

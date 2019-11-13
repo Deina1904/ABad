@@ -1,0 +1,56 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  cdts_prorroga_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cdts.PrCdtsConsulta id=cdts_consulta_pr operationContext=OperationContext>
+
+	<refKColl refId=cdts_consulta_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=cdt_consultacta_op>
+
+		<estadoPr id=1 operacion=cdt_consultacta_op>
+
+
+		<estadoPr id=1 operacion=consulta_cdt_op>
+		<estadoPr id=2 operacion=consulta_cdt_op>
+		<estadoPr id=2 operacion=cdt_consultacta_op>
+
+
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=cdt_consultacta_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=cdt_consultacta_op estadoOP=1 jspFile=cd001_relacion_cdt>
+		<salidaPr id=1 operacion=cdt_consultacta_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=consulta_cdt_op estadoOP=ERROR jspFile=gn001_error>
+
+
+		<salidaPr id=2 operacion=consulta_cdt_op estadoOP=1 jspFile=cd0002_consulta_cdt>
+		<salidaPr id=2 operacion=consulta_cdt_op estadoOP=2 jspFile=cd002_con_cdt_xls>
+		<salidaPr id=2 operacion=consulta_cdt_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=consulta_cdt_op estadoOP=MENSAJE jspFile=gn002_error>
+
+
+
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.cdts.PrCdtsConsulta>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=cdts_consulta_pr-data>
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

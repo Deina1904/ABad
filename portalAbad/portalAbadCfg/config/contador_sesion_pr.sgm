@@ -1,0 +1,27 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  contador_sesion_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.contadorsesion.PrContadorSesion id=contador_sesion_pr operationContext=OperationContext>
+	<refKColl refId=contador_sesion_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>		
+		<estadoPr id=0 operacion=contador_sesion_op>		
+		<estadoPr id=1 operacion=contador_sesion_op>
+	</navegacionPr>		
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>	
+		<salidaPr id=0 operacion=contador_sesion_op estadoOP=ERROR jspFile=nada_arriba>
+		<salidaPr id=0 operacion=contador_sesion_op estadoOP=1 jspFile=nada_arriba>		
+		<salidaPr id=1 operacion=contador_sesion_op estadoOP=1 jspFile=nada_arriba>
+		<salidaPr id=1 operacion=contador_sesion_op estadoOP=ERROR jspFile=nada_arriba>
+	</resultadoPr>	
+
+</com.grupobbva.bc.col.contadorsesion.PrContadorSesion>
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=contador_sesion_pr-data>
+</kColl>
+<! ----------------------------------------------------------------------------------->

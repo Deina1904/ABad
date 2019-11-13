@@ -1,0 +1,101 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ce_deta_avimensa_comex_op  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.ce.op.ce.OPDetAviMensaComex id=ce_deta_avimensa_comex_op operationContext=OperationContext>
+	<refFormat name=htmlRequestFormat refId=DetAviMenComexOPHTMLFmt>
+	<refFormat name=jspFormat refId=DetAviMenComexOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=ce_deta_avimensa_comex_op-data>
+	<refOM refId=ce_deta_avimensa_comex_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=mensaje metodo=mostrarDetAviMen requestFmt=DetAviMenComexOPHTMLFmt>
+		<estadoOP id=1 accion=mensaje metodo=mostrarDetAviMen requestFmt=DetAviMenComexOPHTMLFmt>
+		<estadoOP id=ERROR accion=mensaje metodo=mostrarDetAviMen requestFmt=DetAviMenComexOPHTMLFmt>
+
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1     jspFmt=DetAviMenComexOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.ce.op.ce.OPDetAviMensaComex>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ce_deta_avimensa_comex_op-data>
+	<field id=Error>
+
+       <field id=secOpe>
+       <field id=secuencia>
+       <field id=tipo>
+       <field id=desTipo>
+       <field id=fecPro>
+       <field id=s_fecha_host>
+       <field id=s_hora_host>
+
+
+	<kColl id=AvisoMensajes>
+	  <iColl id=ListaDetAviMen>
+	    <kColl id=AvisoMensajes>
+	      <field id=lineaMen>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+    <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+    <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+    <fString dataName=s_fecha_host description=fecha_host><nullCheck>
+    <fString dataName=s_hora_host description=hora_host><nullCheck>
+    <fString dataName=Error description=mensaje><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=DetAviMenComexOPJspFmt>
+	<fJsp>
+             <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+             <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+             <fString dataName=s_fecha_host description=fecha_host><nullCheck>
+             <fString dataName=s_hora_host description=hora_host><nullCheck>
+
+             <fString dataName=clase description=clase><nullCheck>
+             <fString dataName=descripcion description=descripcion><nullCheck>
+	     <fString dataName=secOpe description=secOpe><nullCheck>
+            <fString dataName=nrOpeForm description=nroOpera><nullCheck>
+            <fString dataName=accionf description=accionf><nullCheck>
+            <fString dataName=fecPro description=fechapro><nullCheck>
+             <fString dataName=secuencia description=secuencia><nullCheck>
+             <fString dataName=tipo description=tipo><nullCheck>
+             <fString dataName=desTipo description=detipo><nullCheck>
+
+	     <iCollVector dataName=AvisoMensajes.ListaDetAviMen description=ListaDetAvisoMensaje>
+		<record dataName=AvisoMensajes>
+		     <fString dataName=lineaMen description=lineaMen><nullCheck>
+		</record>
+	     </iCollVector>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DetAviMenComexOPHTMLFmt>
+	<fHTMLReq>
+          <fString dataName=secOpe>
+          <fString dataName=secuencia>
+          <fString dataName=tipo>
+          <fString dataName=desTipo>
+          <fString dataName=fecPro>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! -------------------------------------------------------------------------------->
+

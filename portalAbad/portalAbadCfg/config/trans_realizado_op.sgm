@@ -1,0 +1,103 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operaci¢n:  PRESENTACION trans_realizado_op -------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.ttenet.OPRealizarTTenet id=trans_realizado_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=TrasRealizadaOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosTrasOPHTMLFmt>
+
+	<refKColl refId=realizar_tras_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=retorno_traster_om>
+	<refOM refId=bloqueo_usuario_om>
+<! -------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=procesoInicial requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=procesoInicial requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=procesoInicial requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=procesoInicial requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=procesoInicial requestFmt=DatosTrasOPHTMLFmt>
+	</navegacionOP>
+<! -------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=TrasRealizadaOPJspFmt>
+		<salidaOP id=2 jspFmt=TrasRealizadaOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.ttenet.OPRealizarTTenet>
+<! -------------------------------------------------------------------------------->
+<! DATOS -------------------------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<kColl id=realizar_tras_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+</kColl>
+<! -------------------------------------------------------------------------------->
+<! formatos de salida para JSP ---------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=TrasRealizadaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrd description=CtaOrd>
+		<fString dataName=CtaBen description=CtaBen>
+		<fString dataName=NomBen description=NomBen>
+		<fString dataName=IdeBen description=IdeBen>
+		<fString dataName=Observ description=Observacion>
+		<fString dataName=CorrBen description=CorrBen>
+		<fString dataName=s_ip 	description=ip>
+		<fNumString dataName=ValTra description=ValTra>
+		<record dataName=retorno_traster_om-data.Salida description=Transferencia>
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fNumString dataName=REFABONO description=refabono>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fDate dataName=FECHAVAL description=fechaval>
+			<fString dataName=INDICAOK description=indicaok>
+			<fNumString dataName=NUMAUTOR description=numautor>
+		</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+<! formatos de entrada ------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+<fmtDef id=DatosTrasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>

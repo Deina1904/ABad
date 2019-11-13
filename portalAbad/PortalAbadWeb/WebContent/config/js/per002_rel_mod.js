@@ -1,0 +1,1 @@
+function Tratar(form1){var cadena="";var v1=form1.checkbox1;for(var i=0;i<v1.length;i++){if(v1[i].checked==true){cadena+=v1[i].value+"$";}}document.form1.modulosUsuario.value=cadena;form1.submit();}

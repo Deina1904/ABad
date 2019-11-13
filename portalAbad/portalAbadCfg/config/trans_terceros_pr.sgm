@@ -1,0 +1,73 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operaci¢n:  PROCESO  trans_terceros_pr ------------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.ttenet.PrTransTercerosenet id=trans_terceros_pr operationContext=OperationContext>
+	<refKColl refId=trans_terceros_pr-data>
+<!------------------------------------------------------------------------------------>
+<! ESTADOS --------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------>
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=trans_petdatos_op>
+
+		<estadoPr id=1 operacion=trans_petdatos_op>
+		<estadoPr id=1 operacion=trans_confirm1_op>
+
+		<estadoPr id=2 operacion=trans_confirm1_op>
+		<estadoPr id=2 operacion=trans_confirm2_op>
+		<estadoPr id=2 operacion=trans_petdatos_op>
+
+		<estadoPr id=3 operacion=trans_confirm2_op>
+		<estadoPr id=3 operacion=trans_realizado_op>
+		<estadoPr id=3 operacion=trans_petdatos_op>
+
+	</navegacionPr>
+<!------------------------------------------------------------------------------------>
+<! SALIDAS --------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------>
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=trans_petdatos_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=trans_petdatos_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=trans_petdatos_op estadoOP=1 jspFile=tt001_pet_datostt>
+		<salidaPr id=1 operacion=trans_petdatos_op estadoOP=AYUDA jspFile=tt002_lst_benef>
+		<salidaPr id=1 operacion=trans_petdatos_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=trans_confirm1_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=trans_confirm1_op estadoOP=1 jspFile=tt003_conf1_trans>
+		<salidaPr id=2 operacion=trans_confirm1_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=trans_confirm2_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=trans_confirm2_op estadoOP=1 jspFile=tt004_conf2_trans>
+		<salidaPr id=3 operacion=trans_confirm2_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=trans_confirm2_op estadoOP=ERROR jspFile=gn002_error>
+		<salidaPr id=3 operacion=trans_confirm2_op estadoOP=MENSAJE jspFile=gn001_error>
+		<salidaPr id=3 operacion=trans_realizado_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=trans_realizado_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=trans_realizado_op estadoOP=1 jspFile=tt005_realizada_trans>
+		<salidaPr id=0 operacion=trans_realizado_op estadoOP=2 jspFile=tt005_transter_por_autorizar>
+		<salidaPr id=0 operacion=trans_realizado_op estadoOP=ERROR jspFile=gn001_error>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.ttenet.PrTransTercerosenet>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------->
+<kColl id=trans_terceros_pr-data>
+	<field id=CtaOrd>
+	<field id=CtaOrdClave>
+	<field id=CtaBen>
+	<field id=CtaBenClave>
+	<field id=IdeBen>
+	<field id=CorrBen>
+	<field id=NomBen>
+	<field id=ValTra>
+	<field id=Observ>
+	<field id=IndNva>
+	<field id=FecOpe>
+	<field id=NumCli>
+	<field id=CodAcc>
+</kColl>

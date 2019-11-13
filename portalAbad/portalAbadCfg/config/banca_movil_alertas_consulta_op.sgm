@@ -1,0 +1,90 @@
+<! BBVA  ---------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PRESENTACION banca_movil_alertas_consulta_op  ------------------------------------------------------------------------>
+
+<! OPERACION ------------------------------------------------------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.bancamovil.OpConsultaBancaMovilAlertas id=banca_movil_alertas_consulta_op operationContext=OperationContext>
+
+	<!-- FORMATOS DE SALIDA GENERALES -->
+	<refFormat name=jspFormat refId=BancaMovilJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+
+	<!-- DEFINICION DE LA OPERACIONES MULTICANAL A USAR -->
+	<refKColl refId=banca_movil_alertas_consulta_op-data>
+	<refOM refId=banca_movil_alertas_consulta_om>
+<! ---------------------------------------------------------------------------------------------------------------------------------->
+
+<! ESTADOS -------------------------------------------------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=bancaMovil metodo=bancaMovil>
+		<estadoOP id=1 accion=bancaMovil metodo=bancaMovil>
+		<estadoOP id=ERROR accion=bancaMovil metodo=bancaMovil>
+		<estadoOP id=VALIDAR accion=cambiaEstado metodo=cambiaEstado>
+		<estadoOP id=VALIDAR accion=bancaMovil metodo=bancaMovil>
+	</navegacionOP>
+
+<! SALIDAS -------------------------------------------------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=BancaMovilJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.bancamovil.OpConsultaBancaMovilAlertas>
+
+<! DATOS ---------------------------------------------------------------------------------------------------------------------------->
+<kColl id=banca_movil_alertas_consulta_op-data>
+
+	<!-- DEFINICION DE DATOS DE FORMATOS DE ERROR -->
+	<field id=Error>
+
+	<!-- DEFINICION DE DATOS DE FORMATOS DE ENTRADA -->
+	<field id=OpStrRadioSeleccion>
+	<field id=OpStrIndicadorDatos>
+	<field id=OpStrTipoTelefono1>
+	<field id=OpStrPrefijoTelefono1>
+	<field id=OpStrNumeroTelefono1>
+	<field id=OpStrNumeroExtension1>
+	<field id=OpStrTipoTelefono2>
+	<field id=OpStrPrefijoTelefono2>
+	<field id=OpStrNumeroTelefono2>
+	<field id=OpStrNumeroExtension2>
+	<field id=OpStrTipoTelefono3>
+	<field id=OpStrPrefijoTelefono3>
+	<field id=OpStrNumeroTelefono3>
+	<field id=OpStrNumeroExtension3>
+	<field id=OpStrPrefijoTelefonoM>
+	<field id=OpStrNumeroTelefonoM>
+	<field id=OpStrIndicadorPe001>
+
+</kColl>
+
+<! FORMATOS  DE SALIDA -------------------------------------------------------------------------------------------------------------->
+<!-- FORMATO DE SALIDA PARA CONSULTA Y ACTUALIZACION DE DATOS BASICOS -->
+<fmtDef id=BancaMovilJspFmt>
+	<fJsp>
+	  <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+	  <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+	  <fString dataName=OpStrIndicadorDatos description=OpStrIndicadorDatos >
+	  <fString dataName=OpStrPrefijoTelefono3 description=OpStrPrefijoTelefono3 >
+	  <fString dataName=OpStrNumeroTelefono3 description=OpStrNumeroTelefono3 >
+	  <fString dataName=OpStrPrefijoTelefonoM description=OpStrPrefijoTelefonoM >
+	  <fString dataName=OpStrNumeroTelefonoM description=OpStrNumeroTelefonoM >
+	  <fString dataName=PrStrIndicadorTelefonico description=PrStrIndicadorTelefonico >
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+	</fJsp>
+</fmtDef>
+<! ---------------------------------------------------------------------------------------------------------------------------------->

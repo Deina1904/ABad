@@ -1,0 +1,19 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL per_realizarMo_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.per.OMPerRealizarMo id=per_realizarMo_om operationContext=OperationContext>
+	<refKColl refId=per_realizarMo_om-data>
+</com.grupobbva.bc.col.multicanal.per.OMPerRealizarMo>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=per_realizarMo_om-data>
+	<kColl id=Entrada>
+	  <field id=CodAplic>
+	  <field id=CodPerf>
+	  <field id=CodUsuaExt>
+	  <field id=ModsUs>
+	</kColl>
+</kColl>
+<! ---------------------------------------------------------------------------------->

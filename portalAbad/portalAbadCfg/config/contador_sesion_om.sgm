@@ -1,0 +1,16 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL contador_sesion_om ------------------------------------------>
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.contadorsesion.OMContadorSesion id=contador_sesion_om  operationContext=OperationContext>
+	<refKColl refId=contador_sesion_om-data>
+</com.grupobbva.bc.col.contadorsesion.OMContadorSesion>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=contador_sesion_om-data>
+</kColl>
+
+<! ---------------------------------------------------------------------------------->
+

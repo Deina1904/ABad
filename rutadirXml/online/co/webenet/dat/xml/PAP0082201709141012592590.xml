@@ -1,0 +1,606 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<remesa>
+<cabecera>
+<nombreemisor>CAJA MENOR VIATICOS</nombreemisor>
+<claveemisor>CAJA MENOR</claveemisor>
+<codservicio>8606</codservicio>
+<fechaproceso>20170914</fechaproceso>
+<codigopostalemisor2></codigopostalemisor2>
+<tiposervicio></tiposervicio>
+<localidademisor></localidademisor>
+<coddivisaasunto>COP</coddivisaasunto>
+<horafichero>1012</horafichero>
+<tipodocemisor>03</tipodocemisor>
+<tipoemisor></tipoemisor>
+<importefinanciar></importefinanciar>
+<asuntoemisor>00130310000100001862</asuntoemisor>
+<nombrefichero>PAGO 14 .PAP</nombrefichero>
+<domicilioemisor2></domicilioemisor2>
+<fechafichero>20170914</fechafichero>
+<ordenpago></ordenpago>
+<domicilioemisor1>BOGOTA</domicilioemisor1>
+<codigoempresa>0026008200003636</codigoempresa>
+<referenciafichero>PAPThu Sep 14 00:00:00 COT 2017</referenciafichero>
+<indmodalidad>A</indmodalidad>
+<numremesa></numremesa>
+<validacionpertenencia></validacionpertenencia>
+<numdocidentemisor>0000008999990031</numdocidentemisor>
+<codigopostalemisor>0</codigopostalemisor>
+</cabecera>
+<ordenes>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000792083000</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0007</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>69012697783      </cuentanacham>
+<importe>0000000282937.44</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>JOSE WILLIAM DURAN BURITICA         </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6421 del 31 agosto 2017            </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000807333070</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0052</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>074767059        </cuentanacham>
+<importe>0000000282937.44</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>JOHN ALEXANDER RODRIGUEZ CRISTANCHO </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6421 del 31 agosto 2017            </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000731882070</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0514000200088095</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000129581.10</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>MARCO ANTONIO SANCHEZ RODRIGUEZ     </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6491 del 01 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000417906080</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0142000200075605</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000206526.64</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>MARTHA LUCIA MIRANDA QUI&#209;ONES       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6548 del 06 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000378297090</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0051</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>006301000607     </cuentanacham>
+<importe>0000000771319.92</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>SONIA CLEMENCIA URIBE RODRIGUEZ     </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6606 del 08 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000355290310</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0051</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>455000002309     </cuentanacham>
+<importe>0000000398124.50</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>SANDRA MILENA RUBIO ZULUAGA         </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6635 del 08 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000127515820</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0514000200177807</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000434199.60</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>MARCO ESTEBAN BENAVIDES ESTRADA     </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6658 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000400404130</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0914000200145388</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000080072.60</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>NIDIA FABIOLA RODRIGUEZ MONTEJO     </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6659 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000417906080</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0142000200075605</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000309789.96</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>MARTHA LUCIA MIRANDA QUI&#209;ONES       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6660 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010184482590</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0014</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>008093589        </cuentanacham>
+<importe>0000000353671.80</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>NICOLAS NAVAS MU&#209;OZ                 </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6668 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000797857610</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0130000200233018</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000465758.50</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>JAMER ALEXANDER BELTRAN LADINO      </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6670 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000808729570</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0051</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>450870034995     </cuentanacham>
+<importe>0000000513340.35</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>JAIME ENRIQUE SOLORZANO PESCADOR    </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6669 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000807486930</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0142000200446095</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000528893.40</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>LUIS EDUARDO VALLEJO CANTOR         </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6671 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000793513670</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0051</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>009800096084     </cuentanacham>
+<importe>0000000610263.22</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>JOSE EDILBERTO HERRERA CA&#209;ON        </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6673 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000288929340</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0007</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>20620002986      </cuentanacham>
+<importe>0000000488474.55</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>CLARA INES RODRIGUEZ ARROYO         </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6674 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000524665980</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0002</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>210110062197     </cuentanacham>
+<importe>0000000034581.13</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>ADRIANA MARIA RODRIGUEZ ZARATE      </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6675 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000523631680</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0037000200079357</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000260519.76</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>NORMA XIMENA VELASCO GONZALEZ       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6676 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000047093800</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0051</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>01970065064      </cuentanacham>
+<importe>0000000346568.02</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>HUGO CHACON MORENO                  </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6677 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000799493710</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0007</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>20050841666      </cuentanacham>
+<importe>0000000369672.56</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>FERNANDO RESTREPO PUERTA            </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6678 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010305276240</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0178000200365227</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000240217.80</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>HECTOR ANDRES BARRETO VARGAS        </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6679 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000807612190</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0142000200525435</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001081060.50</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>OSCAR LEONARDO RINCON RAMOS         </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6680 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000801534870</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0142000200501287</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000216212.10</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>JAIR YESID DUARTE LAVERDE           </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6681 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000550605740</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0007</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>41366009882      </cuentanacham>
+<importe>0000000816360.93</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>JUANA ISABEL PEREZ CABRERA          </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6682 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000421207800</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0032</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>24523689041      </cuentanacham>
+<importe>0000000476004.06</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BERTHA LILIANA QUICENO VALENCIA     </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6682 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000519666310</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0007</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>18898208105      </cuentanacham>
+<importe>0000000123047.70</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>BLANCA JEANETH GARZON VANEGAS       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6683 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010811531290</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0938000200239464</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000131709.50</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>JUAN CARLOS BARRERA BOCANEGRA       </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6683 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000795435090</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0007</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>69064055950      </cuentanacham>
+<importe>0000000149549.40</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>ALVARO ORTIZ VELASQUEZ              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6684 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000375417590</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0007</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>20205710986      </cuentanacham>
+<importe>0000000186738.12</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>MARIA ISABEL MOSQUERA AYALA         </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6686 del 11 septiembre 2017        </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000520341880</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0051</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>000055592638     </cuentanacham>
+<importe>0000000165989.44</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>SANDRA JANETH VELASQUEZ             </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6614 del 30 agosto 2017            </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010184569070</clavebeneficiario>
+<formapagodestino>1</formapagodestino>
+<codbancobeneficiario>0032</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>02</tipocuentanacham>
+<cuentanacham>24048405759      </cuentanacham>
+<importe>0000000079552.10</importe>
+<fechavencimiento>00000000</fechavencimiento>
+<plazapagodestino>0000</plazapagodestino>
+<nombrebeneficiario>GONZALO GUARIN PE&#209;ALOSA             </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>                                                </email>
+<concepto>
+<cptotextoconcepto>Res. 6407 del 30 agosto 2017            </cptotextoconcepto>
+</concepto>
+</orden>
+</ordenes>
+<totales>
+<totaloperaciones>30</totaloperaciones>
+<importetotal>10533674.14</importetotal>
+</totales>
+</remesa>

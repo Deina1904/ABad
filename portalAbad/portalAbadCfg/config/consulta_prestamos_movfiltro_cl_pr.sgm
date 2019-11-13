@@ -1,0 +1,49 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  consulta_prestamos_movfiltro_cl_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.prest.PrConsultaPrestamosMovfiltroCL id=consulta_prestamos_movfiltro_cl_pr operationContext=OperationContext>
+
+	<refKColl refId=consulta_prestamos_movfiltro_cl_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=consulta_prestamos_movfiltro_ctasord_cl_op>
+
+		<estadoPr id=1 operacion=consulta_prestamos_movfiltro_ctasord_cl_op>
+		<estadoPr id=1 operacion=consulta_prestamos_movfiltro_movtos_cl_op>
+
+		<estadoPr id=2 operacion=consulta_prestamos_movfiltro_ctasord_cl_op>
+		<estadoPr id=2 operacion=consulta_prestamos_movfiltro_movtos_cl_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=consulta_prestamos_movfiltro_ctasord_cl_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=consulta_prestamos_movfiltro_ctasord_cl_op estadoOP=1 jspFile=consulta_prestamos_movfiltro_cl_001>
+		<salidaPr id=1 operacion=consulta_prestamos_movfiltro_movtos_cl_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=consulta_prestamos_movfiltro_movtos_cl_op estadoOP=1 jspFile=consulta_prestamos_movfiltro_cl_002>
+		<salidaPr id=2 operacion=consulta_prestamos_movfiltro_movtos_cl_op estadoOP=EXCEL jspFile=consulta_prestamos_movexcel_cl_003>
+		<salidaPr id=2 operacion=consulta_prestamos_movfiltro_movtos_cl_op estadoOP=ERROR jspFile=gn001_error>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.prest.PrConsultaPrestamosMovfiltroCL>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_prestamos_movfiltro_cl_pr-data>
+
+		<field id=ClaveCtaOrdPr>
+		<field id=CtaOrdPr>
+		<field id=RegistrosPaginaExcelPr value=600>
+		<field id=RegistrosPaginacionPr value=25>
+		<field id=MasDatosMovimientosWasPr value="N">
+		<field id=MasDatosMovimientosHostPr value="N">
+		<field id=IdMovimientosPr value=0>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

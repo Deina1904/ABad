@@ -1,0 +1,102 @@
+<! BBVA --------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ce_detoper_comex_op  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.ce.op.ce.OPDetOperComex id=ce_detoper_comex_op operationContext=OperationContext>
+	<refFormat name=htmlRequestFormat refId=DetOperComexOPHTMLFmt>
+	<refFormat name=jspFormat refId=DetOperComexOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=ce_detoper_comex_op-data>
+	<refOM refId=ce_detoper_comex_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=detalleOper requestFmt=DetOperComexOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=detalleOper requestFmt=DetOperComexOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=detalleOper requestFmt=DetOperComexOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1     jspFmt=DetOperComexOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.ce.op.ce.OPDetOperComex>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ce_detoper_comex_op-data>
+  <field id=Error>
+  <field id=operSeleccionada>
+  <field id=fechaPV>
+  <field id=fechaPA>
+  <field id=fechaEN>
+  <field id=fechaVA>
+  <field id=fechaDE>
+  <field id=fechaVF>
+  <field id=fechaAR>
+  <field id=fechaAC>
+  <field id=s_fecha_host>
+  <field id=s_hora_host>
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+    <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+    <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+    <fString dataName=s_fecha_host description=fecha_host><nullCheck>
+    <fString dataName=s_hora_host description=hora_host><nullCheck>
+    <fString dataName=Error description=mensaje><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=DetOperComexOPJspFmt>
+	<fJsp>
+             <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+             <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+             <fString dataName=s_fecha_host description=fecha_host><nullCheck>
+             <fString dataName=s_hora_host description=hora_host><nullCheck>
+
+             <fString dataName=clase description=clase><nullCheck>
+
+            <fString dataName=descripcion description=descripcion><nullCheck>
+            <fString dataName=pr_OperacionSeleccionada.Moneda description=moneda><nullCheck>
+            <fString dataName=pr_OperacionSeleccionada.Num_Operacion_Form description=nroOpera><nullCheck>
+            <fNumString dataName=ce_detoper_comex_om-data.Salida.IMPORTE_SALDO description=impSaldo decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+            <fString dataName=fechaPV description=feProxVto><nullCheck>
+            <fString dataName=fechaPA description=fePago><nullCheck>
+            <fNumString dataName=ce_detoper_comex_om-data.Salida.IMPORTE_NEGOCIADO description=impNeg decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+            <fString dataName=ce_detoper_comex_om-data.Salida.BEN_ORD_GIR description=benOrdGir ><nullCheck>
+            <fString dataName=fechaEN description=FeEnvReg><nullCheck>
+            <fString dataName=ce_detoper_comex_om-data.Salida.STATUS description=status ><nullCheck>
+            <fString dataName=fechaVA description=feValidez ><nullCheck>
+            <fString dataName=ce_detoper_comex_om-data.Salida.REF_GIRADA description=refGirada ><nullCheck>
+            <fString dataName=ce_detoper_comex_om-data.Salida.STATUS_PROTESTO description=statusProt ><nullCheck>
+            <fString dataName=fechaDE description=feDesemb ><nullCheck>
+            <fString dataName=fechaVF description=feVencFin ><nullCheck>
+            <fNumString dataName=ce_detoper_comex_om-data.Salida.IMPORTE_PROX_CUOTA description=impProxCuota decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+            <fNumString dataName=ce_detoper_comex_om-data.Salida.SALDO_POS_PROX description=saldoPosProx decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+            <fString dataName=ce_detoper_comex_om-data.Salida.TIPO_EMBARQUE description=tipEmb ><nullCheck>
+            <fString dataName=ce_detoper_comex_om-data.Salida.NOMBRE_COURIER description=nombCourrier ><nullCheck>
+            <fString dataName=ce_detoper_comex_om-data.Salida.NUMERO_GUIA description=numGuia ><nullCheck>
+            <fString dataName=fechaAR description=feAcuseRec ><nullCheck>
+            <fString dataName=fechaAC description=feAcepta ><nullCheck>
+            <fNumString dataName=ce_detoper_comex_om-data.Salida.IMPORTE_INICIAL description=impInic decPlaces=2 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=yes showThousandsSep=yes ><nullCheck>
+            <fString dataName=ce_detoper_comex_om-data.Salida.STATUS_ACEPTACI description=StatusAcepta ><nullCheck>
+            <fString dataName=ce_detoper_comex_om-data.Salida.DESCRIPCION_FAC description=factura ><nullCheck>
+
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DetOperComexOPHTMLFmt>
+	<fHTMLReq>
+	        <fString dataName=operSeleccionada>
+	</fHTMLReq>
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->
+

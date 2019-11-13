@@ -1,0 +1,16 @@
+O#0#2019-09-17 10:17:46.706#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-17 10:17:46.726#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-17 10:20:59.268#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-17 10:20:59.27#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-17 10:21:00.278#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-17 10:21:00.279#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-17 10:21:01.01#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-17 10:21:01.012#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-17 16:36:32.273#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-17 16:36:32.293#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-17 16:39:28.049#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-17 16:39:28.05#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-17 16:39:28.517#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-17 16:39:28.518#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#
+O#0#2019-09-17 16:39:29.428#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#
+O#1#2019-09-17 16:39:29.429#Colombianet#null#false# #11#1#1058#0#1#capacitacion_pr#capacitacion_op#inicio#0#1#

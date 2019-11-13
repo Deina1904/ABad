@@ -1,0 +1,72 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL canales_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=canales_om operationContext=OperationContext>
+	<refKColl refId=canales_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=canales_om-data>
+	<field id=IdTx value=TxF186ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	      <iColl id=ListaCanales>
+	        <kColl id=CANALES>
+	          <field id=DESCANAL>
+	          <field id=ESTADO>
+	          <field id=NUMCNL>
+	          <field id=AUXILIAR1>
+	          <field id=AUXILIAR2>
+	        </kColl >
+	      </iColl >
+	      <field id=AUX1>
+	      <field id=AUX2>
+	      <field id=AUX3>
+	      <field id=IP1>
+	      <field id=IP2>
+	      <field id=INDIP1>
+	      <field id=INDIP2>
+	       <field id=INDTEL>
+		  	      <field id=INDTE2>
+		  	      <field id=NUMTEL>
+	      <field id=NUMTE2>
+	</kColl >
+</kColl>
+
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= canales_om-copiar>
+	<kColl id=a-TxF186ENET>
+		<field id=Entrada value=TxF186ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF186ENET>
+		<field id=Salida value=TxF186ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

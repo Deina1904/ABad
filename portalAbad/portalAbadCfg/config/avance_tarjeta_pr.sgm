@@ -1,0 +1,84 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  avance_tarjeta_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.at.PrAvanceTarjeta id=avance_tarjeta_pr operationContext=OperationContext>
+	<refKColl refId=avance_tarjeta_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=ctas_avantarje_op>
+
+		<estadoPr id=1 operacion=ctas_avantarje_op>
+		<estadoPr id=1 operacion=solicitar_avantarje_op>
+
+		<estadoPr id=2 operacion=ctas_avantarje_op>
+		<estadoPr id=2 operacion=solicitar_avantarje_op>
+		<estadoPr id=2 operacion=confirmar_avancetarje_op>
+
+		<estadoPr id=3 operacion=ctas_avantarje_op>
+		<estadoPr id=3 operacion=solicitar_avantarje_op>
+		<estadoPr id=3 operacion=confirmar_avancetarje_op>
+		<estadoPr id=3 operacion=realizar_avancetarje_op>
+
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=ctas_avantarje_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=ctas_avantarje_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=ctas_avantarje_op estadoOP=1 jspFile=at001_petctas_avantarje>
+		<salidaPr id=1 operacion=ctas_avantarje_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=solicitar_avantarje_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=solicitar_avantarje_op estadoOP=1 jspFile=at002_valor_avantarje>
+		<salidaPr id=2 operacion=solicitar_avantarje_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=confirmar_avancetarje_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=confirmar_avancetarje_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=confirmar_avancetarje_op estadoOP=1 jspFile=at003_conf_avantarje>
+		<salidaPr id=3 operacion=confirmar_avancetarje_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=confirmar_avancetarje_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=realizar_avancetarje_op estadoOP=1 jspFile=at004_realizado_avantarje>
+		<salidaPr id=3 operacion=realizar_avancetarje_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=realizar_avancetarje_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=3 operacion=realizar_avancetarje_op estadoOP=2 jspFile=at005_realizado_por_autorizar>
+
+		<salidaPr id=0 operacion=realizar_avancetarje_op estadoOP=1 jspFile=at004_realizado_avantarje>
+		<salidaPr id=0 operacion=realizar_avancetarje_op estadoOP=2 jspFile=at005_realizado_por_autorizar>
+		<salidaPr id=0 operacion=realizar_avancetarje_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=realizar_avancetarje_op estadoOP=MENSAJE jspFile=gn002_error>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.at.PrAvanceTarjeta>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=avance_tarjeta_pr-data>
+	<field id=ClaveCtaOrd>
+	<field id=TipoOrd>
+	<field id=CtaOrd>
+	<!field id=AsuntoBenef>
+	<field id=ClaveCtaBenef>
+	<field id=TipoBenef>
+	<field id=FechaOpe>
+	<field id=Divisa>
+	<field id=ImporteTras>
+	<field id=ObservTras>
+	<field id=NumeroCtaBenef>
+	<field id=ClaveCtaPTarje>
+	<field id=TipoCtaPTarje>
+	<field id=CtaPTarje>
+	<field id=ClaveTarjePTarje>
+	<field id=NumeroTarjeta>
+	<field id=Importe>
+	<field id=DescripTarje>
+	<field id=ObservPago>
+	<field id=NumeOper>
+	<field id=ComisionPr>
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

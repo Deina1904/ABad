@@ -1,0 +1,67 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION confirmar_bloqtarje_op  --------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.bt.OPConfirmarBloqTarje id=confirmar_bloqtarje_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaBloqTarjeOPJspFmt>
+		<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+	<refKColl refId=confirmar_bloqtarje_op-data>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaBloqTarjeOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.bt.OPConfirmarBloqTarje>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=confirmar_bloqtarje_op-data>
+		<field id=motivobl>
+		<field id=descripbl>
+		<field id=MotivoBloqDes>
+
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaBloqTarjeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_correo_op description=correoop>
+		<fString dataName=NumeroTarjeta description=numtarjeta>
+		<fString dataName=FechaOpe description=fechaOpe>
+		<!fDate dataName=FechaOpe description=fechaOpe>
+		<fString dataName=MotivoBloqDes  description=motivobl>
+		<fString dataName=DescripBloq description=descripbl>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=motivobl>
+		<fString dataName=descripbl>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

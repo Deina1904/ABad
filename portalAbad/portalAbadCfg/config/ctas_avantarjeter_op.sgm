@@ -1,0 +1,154 @@
+<! BBVA  ---------------------------------------------------------------------------->
+
+<! Operación:  PRESENTACION ctas_avantarjeter_op ------------------------------------------>
+<! ---------------------------------------------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.atter.OPCtasAvanTarjeter id=ctas_avantarjeter_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionCtaPTarjeOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+    <refFormat name=htmlRequestFormat refId=DatosEntradaOPHTMLFmt>
+	<refKColl refId=ctas_avantarjeter_op-data>
+	<refOM refId=trans_petdatos_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+
+	<navegacionOP>
+		<estadoOP id=0 accion=menuAvanTarjeter metodo=ordAvanTarjeter>
+
+		<estadoOP id=1 accion=menuAvanTarjeter metodo=ordAvanTarjeter>
+		<estadoOP id=1 accion=cargarCtas metodo=ordCtasAvanceEmp requestFmt=DatosEntradaOPHTMLFmt>
+
+		<estadoOP id=ERROR accion=menuAvanTarjeter metodo=ordAvanTarjeter>
+
+		<estadoOP id=VALIDAR accion=menuOrdTras metodo=ordTras>
+
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+
+	<resultadoOP>
+
+		<salidaOP id=1 jspFmt=RelacionCtaPTarjeOPJspFmt>
+
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+
+	</resultadoOP>
+
+</com.grupobbva.bc.col.web.atter.OPCtasAvanTarjeter>
+
+
+<! DATOS VARIABLES LOCALES DE LA OP ---------------------------------------------------->
+
+<kColl id=ctas_avantarjeter_op-data>
+
+	<field id=Error>
+	<field id=NumTarjeta>
+
+<! CUENTAS PROPIAS DEL CLIENTE --------------------------------------------------------->
+
+	<iColl id=ListaCtasPTarje>
+
+		<kColl id=CuentaOrdenante>
+
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+
+		</kColl>
+
+	</iColl>
+
+<! TARJETAS DE CREDITO PROPIAS DEL CLIENTE -------------------------------------------->
+	<iColl id=ListaTarjePTarje>
+		<kColl id=NumTarjetaKc>
+			<field id=NumeroBin1>
+			<field id=NumeroBin2>
+			<field id=NumTarjeta1>
+			<field id=NumTarjeta2>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionCtaPTarjeOPJspFmt>
+
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+        <fString dataName=NumTarjeta description=numtarjeta><nullCheck>
+		<iCollVector dataName=ListaCtasPTarje description=ListaCtasPTarje>
+
+			<record dataName=CuentaOrdenante>
+
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+
+			</record>
+
+		</iCollVector>
+		<iCollVector dataName=ListaTarjePTarje description=ListaTarjePTarje>
+
+			<record dataName=NumTarjetaKc>
+
+				<fString dataName=NumeroBin1>
+				<fString dataName=NumeroBin2>
+				<fString dataName=NumTarjeta1>
+				<fString dataName=NumTarjeta2>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+
+			</record>
+
+		</iCollVector>
+
+	</fJsp>
+
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+
+	</fJsp>
+
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+
+	</fJsp>
+
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosEntradaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=NumTarjeta><nullCheck>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! -------------------------------------------------------------------------------->

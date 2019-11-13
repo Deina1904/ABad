@@ -1,0 +1,106 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION realizar_trasfam_op  ---------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.tpfam.OPRealizarTrasFam id=realizar_trasfam_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=TrasRealizadaOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosTrasOPHTMLFmt>
+
+	<refKColl refId=realizar_trasfam_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=retorno_tras_om>
+	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=realizarTras requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=realizarTras requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=realizarTras requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=realizarTras requestFmt=DatosTrasOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=TrasRealizadaOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.tpfam.OPRealizarTrasFam>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=realizar_trasfam_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<!field id=RefCargo>
+	<!field id=RefAbono>
+	<!field id=FechaOPe>
+	<!field id=FechaValor>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=TrasRealizadaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_ip description=ip>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrd description=ctaord>
+		<fString dataName=NumeroCtaBenef description=cuenta>
+		<fString dataName=ImporteTras description=importe>
+		<fString dataName=ObservTras description=observaciones>
+		<record dataName=retorno_tras_om-data.Salida description=Traspaso>
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fNumString dataName=REFABONO description=refabono>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fDate dataName=FECHAVAL description=fechaval>
+		</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosTrasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

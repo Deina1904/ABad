@@ -1,0 +1,109 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION traer_recaudo_op  --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.rn.OPTraerRecaudo id=traer_recaudo_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionRecaudosOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ayudaOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=filtroOPHTMLFmt>
+	<refKColl refId=traer_recaudo_op-data>
+	<refOM refId=traer_recaudo_om>
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=ordLTraer requestFmt=filtroOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=ordLTraer requestFmt=filtroOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ponerAyuda requestFmt=ayudaOPHTMLFmt>
+		<estadoOP id=1 accion=regresar metodo=volverOrdLrecaudos>
+		<estadoOP id=AYUDA accion=ayuda metodo=ponerAyuda requestFmt=ayudaOPHTMLFmt>
+		<estadoOP id=AYUDA accion=regresar metodo=volverOrdLrecaudos>
+		<estadoOP id=ERROR accion=continuar metodo=ordLTraer>
+		<estadoOP id=VALIDAR accion=menuOrdTras metodo=ordTras>
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionRecaudosOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=RelacionRecaudosOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.rn.OPTraerRecaudo>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=traer_recaudo_op-data>
+	<field id=Error>
+	<field id=recSeleccion>
+	<field id=recSeleccionado value=" ">
+	<field id=categoria>
+	<field id=subcategoria>
+	<field id=desCategoria>
+	<field id=desSubCategoria>
+
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=RelacionRecaudosOPJspFmt>
+	<fJsp>
+
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=recSeleccionado description=recSeleccionado>
+		<fString dataName=desCategoria description=desCategoria>
+		<fString dataName=desSubCategoria description=desSubCategoria>
+
+		<iCollVector dataName=traer_recaudo_om-data.Recaudos.Salida.ListaRecaudosPfac description=ListaRecaudosPfac>
+		<!iCollVector dataName=ListaRecaudosPfac description=ListaRecaudosPfac>
+			<record dataName=Funcion>
+				<fString dataName=CODIGOCATEGORIA>
+				<fString dataName=CODIGOSUBCATEGORIA>
+				<fString dataName=CODIGOCONVENIO>
+				<fString dataName=NOMBRECONVENIO>
+				<fString dataName=DESCRIPCIONCONVENIO>
+				<fString dataName=FORMATO>
+				<fString dataName=EXTENSION>
+				<fString dataName=REFER1>
+				<fString dataName=ALINEAREF1>
+				<fString dataName=RELLENOREF1>
+				<fString dataName=TIPOREF1>
+				<fString dataName=REFER2>
+				<fString dataName=ALINEAREF2>
+				<fString dataName=RELLENOREF2>
+				<fString dataName=TIPOREF2>
+				<fString dataName=REFER3>
+				<fString dataName=REFER4>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->
+<! formatos de entrada  ----------------------------------------------------------->
+<! la variables de aqui edeben estar definidas en la data de la op -->
+<fmtDef id=filtroOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=categoria>
+		<fString dataName=subcategoria>
+
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=ayudaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=recSeleccion>
+	</fHTMLReq>
+</fmtDef>
+

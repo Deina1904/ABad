@@ -1,0 +1,281 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consulta_adquirencia_depositos_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.adquirencia.OPConsultaAdquirenciaDepositos id=consulta_adquirencia_depositos_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=MovimientosOPJspFmt>
+	<refFormat name=jspFormat refId=MovimientosExcelOPJspFmt>
+	<refFormat name=jspFormat refId=MoviDetalleOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosInputOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=DetalleInputOPHTMLFmt>
+	<refKColl refId=consulta_adquirencia_depositos_op-data>
+	<refOM refId=consulta_adquirencia_depositos_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=ERROR accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=0 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=3 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=1 accion=detalle metodo=detalle requestFmt=DetalleInputOPHTMLFmt>
+		<estadoOP id=2 accion=detalle metodo=detalle requestFmt=DetalleInputOPHTMLFmt>
+		<estadoOP id=0 accion=volver metodo=volver>
+		<estadoOP id=1 accion=volver metodo=volver>
+		<estadoOP id=2 accion=volver metodo=volver>
+
+		<estadoOP id=1 accion=traerMovimientosExcel metodo=traerMovimientosExcel>
+		<estadoOP id=3 accion=traerMovimientosExcel metodo=traerMovimientosExcel>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=MovimientosOPJspFmt>
+		<salidaOP id=2 jspFmt=MoviDetalleOPJspFmt>
+		<salidaOP id=3 jspFmt=MovimientosExcelOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.adquirencia.OPConsultaAdquirenciaDepositos>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_adquirencia_depositos_op-data>
+	<field id=asuntoPropio>
+	<field id=Error>
+
+	<field id=FechaRemesa>
+	<field id=NumRemesa>
+
+	<kColl id=Pagina>
+
+		<kColl id=MovimientoDetalle>
+		  <field id=FECHA-REMESA>
+		  <field id=NUMERO-DE-REMESA>
+		  <field id=TIPO-DE-MOVIMIENTO>
+		  <field id=SITUACION-REMESA>
+		  <field id=NUMERO-DE-FACTURAS>
+		  <field id=VENTA-TOTAL-BRUTA>
+		  <field id=VALOR-TOTAL-IVA>
+		  <field id=VALOR-TOTAL-PROPINA>
+		  <field id=VALOR-TOTAL-COMISION>
+		  <field id=VALOR-TOTAL-DEPOSITA>
+		  <field id=CARGO-DE-LA-RETEFUEN>
+		  <field id=CARGO-DE-LA-RETEIVA>
+		  <field id=CARGO-DE-LA-RETEICA>
+		  <field id=VALOR-DEL-AJUSTE-MAN>
+		  <field id=MCNDOCAB>
+		  <field id=VALOR-REAL-CONSIGNAD>
+		  <field id=VALOR-IVA-ABONADO>
+		  <field id=VALOR-PROPINA-ABONAD>
+		  <field id=VALOR-COMISION-ABONA>
+		  <field id=VALOR-REAL-DEPOSITO >
+		</kColl >
+
+		<iColl id=ListaMovimientosDepTotalOPExcel>
+			<kColl id=Movimiento>
+			  <field id=FECHA-REMESA>
+			  <field id=NUMERO-DE-REMESA>
+			  <field id=TIPO-DE-MOVIMIENTO>
+			  <field id=SITUACION-REMESA>
+			  <field id=NUMERO-DE-FACTURAS>
+			  <field id=VENTA-TOTAL-BRUTA>
+			  <field id=VALOR-TOTAL-IVA>
+			  <field id=VALOR-TOTAL-PROPINA>
+			  <field id=VALOR-TOTAL-COMISION>
+			  <field id=VALOR-TOTAL-DEPOSITA>
+			  <field id=CARGO-DE-LA-RETEFUEN>
+			  <field id=CARGO-DE-LA-RETEIVA>
+			  <field id=CARGO-DE-LA-RETEICA>
+			  <field id=VALOR-DEL-AJUSTE-MAN>
+			  <field id=MCNDOCAB>
+			  <field id=VALOR-REAL-CONSIGNAD>
+			  <field id=VALOR-IVA-ABONADO>
+			  <field id=VALOR-PROPINA-ABONAD>
+			  <field id=VALOR-COMISION-ABONA>
+			  <field id=VALOR-REAL-DEPOSITO>
+			</kColl >
+		</iColl >
+
+	</kColl>
+
+
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MovimientosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+
+		<fString dataName=CodigoComercioPr		description=codigoComercio>
+		<fString dataName=RedComercioPr   		description=redComercio>
+		<fString dataName=NombreComercioPr 		description=nombreComercio>
+		<fString dataName=DireccionComercioPr	description=direccionComercio>
+		<fString dataName=CiudadComercioPr		description=ciudadComercio>
+
+        <fDate dataName=FechaDesde description=fechadesde>
+        <fDate dataName=FechaHasta description=fechahasta>
+		<fString dataName=DiasUlti		description=diasUlti>
+
+
+		<fString dataName=MasDatosMovimientosDepositosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosDepositosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosDepositosPr description=idMovimientosPr>
+		<iCollVector dataName=Pagina.ListaMovimientosDepPagOP description=ListaMovtos>
+			<record dataName=Movimiento>
+				<fDate   dataName=FECHA-REMESA><nullCheck>
+				<fString dataName=NUMERO-DE-REMESA><nullCheck>
+				<fString dataName=TIPO-DE-MOVIMIENTO><nullCheck>
+				<fString dataName=SITUACION-REMESA><nullCheck>
+				<fNumString dataName=NUMERO-DE-FACTURAS><nullCheck>
+				<fNumString dataName=VENTA-TOTAL-BRUTA><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-IVA><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-PROPINA><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-COMISION><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-DEPOSITA><nullCheck>
+				<fNumString dataName=CARGO-DE-LA-RETEFUEN><nullCheck>
+				<fNumString dataName=CARGO-DE-LA-RETEIVA><nullCheck>
+				<fNumString dataName=CARGO-DE-LA-RETEICA><nullCheck>
+				<fNumString dataName=VALOR-DEL-AJUSTE-MAN><nullCheck>
+				<fNumString dataName=MCNDOCAB><nullCheck>
+				<fNumString dataName=VALOR-REAL-CONSIGNAD><nullCheck>
+				<fNumString dataName=VALOR-IVA-ABONADO><nullCheck>
+				<fNumString dataName=VALOR-PROPINA-ABONAD><nullCheck>
+				<fNumString dataName=VALOR-COMISION-ABONA><nullCheck>
+				<fNumString dataName=VALOR-REAL-DEPOSITO><nullCheck>
+
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+
+
+<fmtDef id=MoviDetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+			<record dataName=Pagina.MovimientoDetalle description=MovimientoDetalle>
+				<fDate   dataName=FECHA-REMESA><nullCheck>
+				<fString dataName=NUMERO-DE-REMESA><nullCheck>
+				<fString dataName=TIPO-DE-MOVIMIENTO><nullCheck>
+				<fString dataName=SITUACION-REMESA><nullCheck>
+				<fNumString dataName=NUMERO-DE-FACTURAS><nullCheck>
+				<fNumString dataName=VENTA-TOTAL-BRUTA><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-IVA><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-PROPINA><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-COMISION><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-DEPOSITA><nullCheck>
+				<fNumString dataName=CARGO-DE-LA-RETEFUEN><nullCheck>
+				<fNumString dataName=CARGO-DE-LA-RETEIVA><nullCheck>
+				<fNumString dataName=CARGO-DE-LA-RETEICA><nullCheck>
+				<fNumString dataName=VALOR-DEL-AJUSTE-MAN><nullCheck>
+				<fNumString dataName=MCNDOCAB><nullCheck>
+				<fNumString dataName=VALOR-REAL-CONSIGNAD><nullCheck>
+				<fNumString dataName=VALOR-IVA-ABONADO><nullCheck>
+				<fNumString dataName=VALOR-PROPINA-ABONAD><nullCheck>
+				<fNumString dataName=VALOR-COMISION-ABONA><nullCheck>
+				<fNumString dataName=VALOR-REAL-DEPOSITO><nullCheck>
+
+			</record>
+
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=MovimientosExcelOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+
+		<fString dataName=CodigoComercioPr		description=codigoComercio>
+		<fString dataName=RedComercioPr   		description=redComercio>
+		<fString dataName=NombreComercioPr 		description=nombreComercio>
+		<fString dataName=DireccionComercioPr	description=direccionComercio>
+		<fString dataName=CiudadComercioPr		description=ciudadComercio>
+
+        <fDate dataName=FechaDesde description=fechadesde>
+        <fDate dataName=FechaHasta description=fechahasta>
+
+		<fString dataName=DiasUlti		description=diasUlti>
+
+		<fString dataName=MasDatosMovimientosDepositosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosDepositosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosDepositosPr description=idMovimientosPr>
+		<iCollVector dataName=Pagina.ListaMovimientosDepTotalOPExcel description=ListaMovtos>
+			<record dataName=Movimiento>
+				<fDate   dataName=FECHA-REMESA><nullCheck>
+				<fString dataName=NUMERO-DE-REMESA><nullCheck>
+				<fString dataName=TIPO-DE-MOVIMIENTO><nullCheck>
+				<fString dataName=SITUACION-REMESA><nullCheck>
+				<fNumString dataName=NUMERO-DE-FACTURAS><nullCheck>
+				<fNumString dataName=VENTA-TOTAL-BRUTA><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-IVA><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-PROPINA><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-COMISION><nullCheck>
+				<fNumString dataName=VALOR-TOTAL-DEPOSITA><nullCheck>
+				<fNumString dataName=CARGO-DE-LA-RETEFUEN><nullCheck>
+				<fNumString dataName=CARGO-DE-LA-RETEIVA><nullCheck>
+				<fNumString dataName=CARGO-DE-LA-RETEICA><nullCheck>
+				<fNumString dataName=VALOR-DEL-AJUSTE-MAN><nullCheck>
+				<fNumString dataName=MCNDOCAB><nullCheck>
+				<fNumString dataName=VALOR-REAL-CONSIGNAD><nullCheck>
+				<fNumString dataName=VALOR-IVA-ABONADO><nullCheck>
+				<fNumString dataName=VALOR-PROPINA-ABONAD><nullCheck>
+				<fNumString dataName=VALOR-COMISION-ABONA><nullCheck>
+				<fNumString dataName=VALOR-REAL-DEPOSITO><nullCheck>
+
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+
+
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosInputOPHTMLFmt>
+	<fHTMLReq>
+        <fString dataName=Grupo1>
+        <fString dataName=Dia>
+		<fString dataName=Mes>
+		<fString dataName=Anio>
+		<fString dataName=DiaDesde>
+		<fString dataName=MesDesde>
+		<fString dataName=AnioDesde>
+		<fString dataName=DiaHasta>
+		<fString dataName=MesHasta>
+		<fString dataName=AnioHasta>
+		<fString dataName=DiasUlti>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DetalleInputOPHTMLFmt>
+	<fHTMLReq>
+	    <fDate dataName=FechaRemesa>
+	    <fString dataName=NumRemesa>
+	</fHTMLReq>
+</fmtDef>
+

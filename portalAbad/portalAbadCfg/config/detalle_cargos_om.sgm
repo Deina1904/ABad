@@ -1,0 +1,63 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL detalle_cargos_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=detalle_cargos_om operationContext=OperationContext>
+	<refKColl refId=detalle_cargos_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=detalle_cargos_om-data>
+	<field id=IdTx value=TxFN24ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=NOMBRE >
+	  <field id=IDENTIF >
+	  <field id=TIPO >
+	  <field id=ESTADO >
+	  <field id=FECLIM >
+	  <field id=FECPAG >
+	  <field id=HORA >
+	  <field id=SUCUR >
+	  <field id=VALOR >
+	  <field id=CPTO >
+	</kColl >
+
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= detalle_cargos_om-copiar>
+	<kColl id=a-TxFN24ENET>
+		<field id=Entrada value=TxFN24ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN24ENET>
+		<field id=Salida value=TxFN24ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

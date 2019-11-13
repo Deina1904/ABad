@@ -1,0 +1,99 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION realizado_pagotarjespc_op  ---------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pte.OPRealizadoPagoTarje id=realizado_pagotarjespc_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=PagoRealizadoOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosPagoOPHTMLFmt>
+
+	<refKColl refId=realizado_pagotarjespc_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=retorno_pagotarjespc_om>
+	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=realizarPagoTarje requestFmt=DatosPagoOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=realizarPagoTarje requestFmt=DatosPagoOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=realizarPagoTarje requestFmt=DatosPagoOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=realizarPagoTarje requestFmt=DatosPagoOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=PagoRealizadoOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pte.OPRealizadoPagoTarje>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=realizado_pagotarjespc_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+	<field id=PDGroup>
+	<field id=refcargo>
+	<field id=FechaOpe>
+	<field id=fechaval>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=PagoRealizadoOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_ip description=ip>		
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=ctaptarjepr description=ctaptarjepr>
+		<fString dataName=NumCuentaPr description=NumCuentaPr>
+		<fNumString dataName=ImporteAuxPr description=ImportePr>
+		<fNumString dataName=refcargo description=refcargo>
+		<fDate dataName=FechaOpe description=FechaOpe>
+		<fDate dataName=fechaval description=fechaval>
+
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosPagoOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

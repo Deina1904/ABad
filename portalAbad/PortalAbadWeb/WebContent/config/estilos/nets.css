@@ -1,0 +1,18 @@
+.textoneg {
+	COLOR: rgb(45,68,146); FONT-FAMILY: Arial; FONT-SIZE: 11px; FONT-WEIGHT: 700; TEXT-DECORATION: underline
+}
+A {
+	COLOR: rgb(48,65,146); TEXT-DECORATION: none
+}
+.cmenu {
+	COLOR: rgb(48,65,146); FONT-FAMILY: Arial; FONT-SIZE: 17px; FONT-WEIGHT: 700; LINE-HEIGHT: 0.9
+}
+.entazul {
+	COLOR: rgb(102,119,175); FONT-FAMILY: Arial; FONT-SIZE: 12px; FONT-WEIGHT: bold; LINE-HEIGHT: 0.9
+}
+.copy {
+	COLOR: rgb(127,127,127); FONT-FAMILY: Arial; FONT-SIZE: 11px
+}
+.copyb {
+	COLOR: rgb(100,100,100); FONT-FAMILY: Arial; FONT-SIZE: 11px; FONT-WEIGHT: 900
+}

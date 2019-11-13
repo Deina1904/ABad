@@ -1,0 +1,64 @@
+<!-------------------------------- LOG DE MODIFICACIONES - TS - ENET ----------------------------->
+<!-- COL001. CE03317. CONSULTA CHEQUES.                     2005-10-19. 0001-01-01. 0001-01-01. -->
+<!------------------------------------------------------------------------------------------------>
+<! BBVA  ----------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  chequeras_consulta_pr  --------------------------------------------------->
+<!------------------------------------------------------------------------------------------------>
+<! OPERACION ------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.conschequera.PrChequerasConsulta id=chequeras_consulta_pr operationContext=OperationContext>
+	<refKColl refId=chequeras_consulta_pr-data>
+<!------------------------------------------------------------------------------------------------>
+<! ESTADOS --------------------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=chequeras_consulta_opciones_op>
+		<estadoPr id=1 operacion=chequeras_consulta_opciones_op>
+		<estadoPr id=2 operacion=chequeras_consulta_opciones_op>
+
+		<estadoPr id=1 operacion=chequeras_consulta_movimiento_op>
+		<estadoPr id=2 operacion=chequeras_consulta_movimiento_op>
+	</navegacionPr>
+<!------------------------------------------------------------------------------------------------>
+<! SALIDAS --------------------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=chequeras_consulta_opciones_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=chequeras_consulta_opciones_op  estadoOP=1 jspFile=consulta_chequera>
+		<salidaPr id=1 operacion=chequeras_consulta_opciones_op  estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=chequeras_consulta_movimiento_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=chequeras_consulta_movimiento_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=chequeras_consulta_movimiento_op estadoOP=1 jspFile=consulta_chequera_movimientos>
+		<!-- COL001-I. -->
+		<salidaPr id=1 operacion=chequeras_consulta_movimiento_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=chequeras_consulta_movimiento_op estadoOP=3 jspFile=consulta_cheques_list>
+		<salidaPr id=2 operacion=chequeras_consulta_movimiento_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=chequeras_consulta_movimiento_op estadoOP=2 jspFile=consulta_cheques_list>
+		<salidaPr id=2 operacion=chequeras_consulta_movimiento_op estadoOP=3 jspFile=consulta_cheques_list>
+		<!-- COL001-F. -->
+	</resultadoPr>
+</com.grupobbva.bc.col.web.conschequera.PrChequerasConsulta>
+<!------------------------------------------------------------------------------------------------>
+<! DATOS ----------------------------------------------------------------------------------------->
+<kColl id=chequeras_consulta_pr-data>
+	<field id=ClaveCtaOrdPr>
+	<field id=CtaOrdPr>
+	<field id=opcionconsul>
+	<field id=primerCh>
+	<field id=ultimoCh>
+	<field id=opGrupo1>
+        <field id=opFecha>
+        <field id=opNroch>
+        <!-- COL001-I. -->
+        <field id=UltimoChequePr>
+        <!-- COL001-F. -->
+	<field id=RegistrosPaginacionPr value=25>
+	<field id=MasDatosMovimientosWasPr value="N">
+	<field id=MasDatosMovimientosHostPr value="N">
+	<field id=IdMovimientosPr value=0>
+	<!-- COL001-I. -->
+	<field id=opEstadoCheq>
+	<field id=opPrimTal>
+	<field id=opDiaDesdeCh>
+	<field id=opMesDesdeCh>
+	<field id=opAnioDesdeCh>
+	<!-- COL001-F. -->
+</kColl>
+<!------------------------------------------------------------------------------------------------>

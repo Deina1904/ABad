@@ -1,0 +1,46 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL usuariosli2_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=usuariosli2_om operationContext=OperationContext>
+	<refKColl refId=usuariosli2_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=usuariosli2_om-data>
+	<field id=IdTx value=TxMLI2ENET>
+	<kColl id=Entrada>
+
+	  <iColl id=ListaUsuarios>
+	  	       <kColl id=USUARIOS>
+	  	          <field id=CLIENTE>
+       	       </kColl >
+	   </iColl >
+	  <field id=NUMUSER>
+	  <field id=OPCION>
+
+
+
+	</kColl >
+
+	<kColl id=Salida>
+		<field id=OPCION>
+	</kColl >
+</kColl>
+
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= usuariosli2_om-copiar>
+	<kColl id=a-TxMLI2ENET>
+		<field id=Entrada value=TxMLI2ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxMLI2ENET>
+		<field id=Salida value=TxMLI2ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

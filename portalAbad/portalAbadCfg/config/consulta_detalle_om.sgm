@@ -1,0 +1,89 @@
+! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consulta_detalle_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=consulta_detalle_om operationContext=OperationContext>
+	<refKColl refId=consulta_detalle_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=consulta_detalle_om-data>
+	<field id=IdTx value=TxFN18ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+
+	<kColl id=Salida>
+	  <field id=omIndPaginacion>
+	  <field id=omAreaPaginacion>
+	  <iColl id=omListaErrores>
+	    <kColl id=omError>
+	      <field id=omNumeroOper>
+	      <field id=omCuenta>
+	      <field id=omBanco>
+	      <field id=omTitular>
+	      <field id=omIdentificacion>
+	      <field id=omValor>
+	      <field id=omEstado>
+	      <field id=omDescripcionEst>
+	      <field id=omMotivo>
+	      <field id=omObservacion>
+	    </kColl >
+	  </iColl >
+	  <field id=omTimestSal>
+	  <field id=omIndMasDatosHost>
+	</kColl >
+
+	<kColl id=SalidaTotal>
+	  <iColl id=omListaErroresTotal>
+	    <kColl id=omError>
+	      <field id=omNumeroOper>
+	      <field id=omCuenta>
+	      <field id=omBanco>
+	      <field id=omTitular>
+	      <field id=omIdentificacion>
+	      <field id=omValor>
+	      <field id=omEstado>
+	      <field id=omDescripcionEst>
+	      <field id=omMotivo>
+	      <field id=omObservacion>
+	    </kColl >
+	  </iColl >
+    </kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=consulta_detalle_om-copiar>
+	<kColl id=a-TxFN18ENET>
+		<field id=Entrada value=TxFN18ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN18ENET>
+		<field id=Salida value=TxFN18ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

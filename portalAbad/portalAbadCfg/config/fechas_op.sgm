@@ -1,0 +1,65 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operacion:  PRESENTACION fechas_op --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.fechas.OpFechas id=fechas_op operationContext=OperationContext>
+   <refKColl refId=fechas_op-data>
+   <refOM refId=identificacion_operativa_om>
+
+    <refFormat name=htmlRequestFormat refId=SerialPWOPHTMLFmt>
+   <refFormat name=jspFormat refId=InicioOPJspFmt>
+   <refFormat name=jspFormat refId=ActivaOPJspFmt>
+   <refFormat name=jspFormat refId=ErrorOPJspFmt>
+
+<! ESTADOS ------------------------------------------------------------------------->
+   <navegacionOP>
+      <estadoOP id=0 accion=activa metodo=consulta>
+      <estadoOP id=1 accion=activa metodo=consulta>
+      <estadoOP id=ERROR accion=activa metodo=consulta>
+      <estadoOP id=ERROR accion=continuar metodo=activar>
+      <estadoOP id=0 accion=continuar metodo=activar>
+      <estadoOP id=1 accion=continuar metodo=activar>
+   </navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+   <resultadoOP>
+      <salidaOP id=1 jspFmt=InicioOPJspFmt>
+      <salidaOP id=2 jspFmt=ActivaOPJspFmt>
+      <salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+   </resultadoOP>
+</com.grupobbva.bc.col.fechas.OpFechas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=fechas_op-data>
+   <field id=fecha>
+   <field id=Estado>
+   <field id=Usuario>
+   <field id=Error>
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=InicioOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario>
+      <fString dataName=fecha description=fecha>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=ActivaOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+      <fString dataName=Error description=mensaje><nullCheck>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=SerialPWOPHTMLFmt>
+   <fHTMLReq>
+      <fString dataName=Serial>
+   </fHTMLReq>
+</fmtDef>

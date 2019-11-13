@@ -1,0 +1,79 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION confirmar_pagotarjespc_op -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pte.OPPagoTcEspConfirmar id=confirmar_pagotarjespc_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaTrasOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+	<refKColl refId=confirmar_pagotarjespc_op-data>
+
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=consultarPagoTarje requestFmt=ClaveOPHTMLFmt>
+        <estadoOP id=ERROR accion=continuar metodo=consultarPagoTarje requestFmt=ClaveOPHTMLFmt>
+        <estadoOP id=1 accion=continuar metodo=consultarPagoTarje requestFmt=ClaveOPHTMLFmt>
+
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaTrasOPJspFmt>
+	    <salidaOP id=ERROR        jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pte.OPPagoTcEspConfirmar>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=confirmar_pagotarjespc_op-data>
+	<field id=Comprobante>
+	<field id=Tasa>
+	<field id=Importe>
+	<field id=Descripcion>
+	<field id=Extracto>
+	<field id=Movic>
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaTrasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+        <fString dataName=ctaptarjepr description=ctaptarjepr>
+		<fString dataName=NumCuentaPr description=NumCuentaPr>
+		<fNumString dataName=Comprobante description=Comprobante>
+		<fNumString dataName=Tasa description=Tasa>
+		<fNumString dataName=Importe description=Importe>
+		<fString dataName=FechaOpe description=fechaOpe>
+		<fString dataName=Descripcion description=Descripcion>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fNumString dataName=Comprobante>
+		<fNumString dataName=Tasa>
+		<fString dataName=Descripcion>
+		<fNumString dataName=Importe>
+		<fNumString dataName=Extracto>
+		<fNumString dataName=Movic>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

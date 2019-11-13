@@ -1,0 +1,58 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL sol_envio_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=sol_envio_om operationContext=OperationContext>
+	<refKColl refId=sol_envio_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=sol_envio_om-data>
+	<field id=IdTx value=TxFN57ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=NUMCTA >
+	  <field id=NROMOV >
+	  <field id=FECOPER >
+	  <field id=CEORI >
+
+	</kColl >
+
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= sol_envio_om-copiar>
+	<kColl id=a-TxFN57ENET>
+		<field id=Entrada value=TxFN57ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN57ENET>
+		<field id=Salida value=TxFN57ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

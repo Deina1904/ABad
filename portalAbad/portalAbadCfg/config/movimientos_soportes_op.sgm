@@ -1,0 +1,142 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION movimientos_soportes_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pagosmasivos.OPMovimientosSoportes id=movimientos_soportes_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=MovimientosOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosInputOPHTMLFmt>
+	<refKColl refId=movimientos_soportes_op-data>
+	<refOM refId=movimientos_soportes_om>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=ERROR accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=0 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=MovimientosOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagosmasivos.OPMovimientosSoportes>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=movimientos_soportes_op-data>
+	<field id=asuntoPropio>
+	<field id=opcion>
+	<field id=Grupo1>
+	<field id=Dia>
+	<field id=Mes>
+	<field id=Anio>
+	<field id=DiaDesde>
+	<field id=MesDesde>
+	<field id=AnioDesde>
+	<field id=DiaHasta>
+	<field id=MesHasta>
+	<field id=AnioHasta>
+	<field id=DiasUlti>
+
+	<field id=Error>
+
+
+
+
+	<kColl id=Pagina>
+		<iColl id=ListaMovimientosTotalOP>
+			<kColl id=Movimiento>
+				<field id=FECHA-ALTA>
+				<field id=ORDEN>
+				<field id=REGISTROS>
+				<field id=CANAL>
+				<field id=TIPO-ORDEN>
+		  		<field id=IMPORTE>
+		  		<field id=CLIENTE>
+			</kColl >
+		</iColl >
+
+		<iColl id=ListaMovimientosPagOP>
+			<kColl id=Movimiento>
+				<field id=FECHA-ALTA>
+				<field id=ORDEN>
+				<field id=REGISTROS>
+				<field id=CANAL>
+				<field id=TIPO-ORDEN>
+		  		<field id=IMPORTE>
+		  		<field id=CLIENTE>
+			</kColl >
+		</iColl >
+	</kColl>
+
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MovimientosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+		<fString dataName=opcionconsul description=opcionc>
+		<fString dataName=desopcion description=desopcion>
+		<fString dataName=opGrupo1 description=jspGrupo1>
+
+        <fString dataName=opfechadesde description=jspfechadesde>
+        <fString dataName=opfechahasta description=jspfechahasta>
+
+		<fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+		<iCollVector dataName=Pagina.ListaMovimientosPagOP description=ListaMovtos>
+			<record dataName=Movimiento>
+				<fDate dataName=FECHA-ALTA><nullCheck>
+				<fNumString dataName=ORDEN><nullCheck>
+				<fNumString dataName=REGISTROS><nullCheck>
+				<fString dataName=CANAL><nullCheck>
+				<fString dataName=TIPO-ORDEN><nullCheck>
+				<fNumString dataName=IMPORTE><nullCheck>
+				<fString dataName=CLIENTE><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=asuntoPropio>
+		<fString dataName=opcion>
+        <fString dataName=Grupo1>
+        <fString dataName=Dia>
+		<fString dataName=Mes>
+		<fString dataName=Anio>
+		<fString dataName=DiaDesde>
+		<fString dataName=MesDesde>
+		<fString dataName=AnioDesde>
+		<fString dataName=DiaHasta>
+		<fString dataName=MesHasta>
+		<fString dataName=AnioHasta>
+		<fString dataName=DiasUlti>
+	</fHTMLReq>
+</fmtDef>
+

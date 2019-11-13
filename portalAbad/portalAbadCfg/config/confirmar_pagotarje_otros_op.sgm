@@ -1,0 +1,67 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION confirmar_pagotarje_otros_op  --------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pto.OPConfirmarPagoTarje id=confirmar_pagotarje_otros_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaPagoTarjeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+
+	<refKColl refId=confirmar_pagotarje_otros_op-data>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaPagoTarjeOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pto.OPConfirmarPagoTarje>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=confirmar_pagotarje_otros_op-data>
+	<!field id=Nrotarjeta>
+	<!field id=correotitular>
+	<field id=OtroValor>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaPagoTarjeOPJspFmt>
+	<fJsp>
+	    <fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=NumeroTarjeta description=numtarjeta>
+		<fString dataName=Correo description=email>
+		<fNumString dataName=Importe description=importe>
+        <fString dataName=CtaPTarje description=ctaptarje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<!fString dataName=Nrotarjeta>
+		<!fString dataName=correotitular>
+		<fString dataName=OtroValor>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

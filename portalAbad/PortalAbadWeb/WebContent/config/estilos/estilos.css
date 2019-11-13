@@ -1,0 +1,54 @@
+@CHARSET "ISO-8859-1";
+.oculto {
+	display : none;
+}
+
+.loading
+{
+	display: none;
+}
+.imagenLoading
+{
+	width: 50px;
+}
+
+.efectoLoading
+{
+	border: none; 
+   	padding: 15px;
+    -webkit-border-radius: 10px; 
+    -moz-border-radius: 10p;
+    opacity: 1.5;
+    color: '#000';
+}
+
+.container-fluid
+{
+		
+    -moz-transform: scale(1);
+    
+}
+
+input[readonly] {
+     cursor: default !important;
+}
+
+#fechaProceso {
+    float: left;
+    margin-right: 4px;
+    width: 240px;
+}
+
+.ui-datepicker-trigger, #ImgeCalendar {
+    background-image: linear-gradient(to bottom, #0079c1 0%, #00559d 100%) !important;
+    border-radius: 4px !important;
+    height: 35px !important;
+    margin-left: 4.6px !important;
+    padding-left: 7px;
+    width: 35px !important;
+}
+
+.ui-datepicker-trigger > img{
+	width: 21px !important;
+}
+

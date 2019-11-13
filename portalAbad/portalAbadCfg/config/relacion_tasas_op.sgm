@@ -1,0 +1,61 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION relacion_tasas_op  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cdts.OPRelacionTasas id=relacion_tasas_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=relacionTasasOPJspFmt>
+	<refKColl refId=relacion_tasas_op-data>
+	<refOM refId=tasas_cdts_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=relacionTasas metodo=relacionTasas>
+		<estadoOP id=1 accion=relacionTasas metodo=relacionTasas>
+		<estadoOP id=ERROR accion=relacionTasas metodo=relacionTasas>
+
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=relacionTasasOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.cdts.OPRelacionTasas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=relacion_tasas_op-data>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=relacionTasasOPJspFmt>
+	<fJsp>
+			<fString dataName=s_cod_nomconta description=usuario>
+			<iCollVector dataName=tasas_cdts_om-data.Salida.ListaTasas description=tasas>
+				<record dataName=TasaCdt>
+					<fString dataName=PLAZO>
+					<fString dataName=UNIDAD>
+					<fString dataName=PERLIQUI>
+					<fString dataName=RANA>
+					<fString dataName=RANB>
+					<fString dataName=RANC>
+				</record>
+			</iCollVector>
+	</fJsp>
+
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

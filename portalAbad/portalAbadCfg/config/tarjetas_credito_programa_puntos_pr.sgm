@@ -1,0 +1,78 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  tarjetas_credito_programa_puntos_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.tcprogramapuntos.PrTarjetasCreditoProgramaPuntos id=tarjetas_credito_programa_puntos_pr operationContext=OperationContext>
+
+	<refKColl refId=tarjetas_credito_programa_puntos_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=tarjetas_credito_programa_puntos_ctas_ord_op>
+
+		<estadoPr id=1 operacion=tarjetas_credito_programa_puntos_consul_puntos_op>
+		<estadoPr id=1 operacion=tarjetas_credito_programa_puntos_ctas_ord_op>
+
+		<estadoPr id=2 operacion=tarjetas_credito_programa_puntos_ctas_ord_op>
+		<estadoPr id=2 operacion=tarjetas_credito_programa_puntos_confirmar_op>
+		<estadoPr id=2 operacion=tarjetas_credito_programa_puntos_consul_puntos_op>
+
+		<estadoPr id=3 operacion=tarjetas_credito_programa_puntos_consul_puntos_op>
+		<estadoPr id=3 operacion=tarjetas_credito_programa_puntos_ctas_ord_op>
+		<estadoPr id=3 operacion=tarjetas_credito_programa_puntos_realizar_op>
+		<estadoPr id=3 operacion=tarjetas_credito_programa_puntos_confirmar_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=tarjetas_credito_programa_puntos_ctas_ord_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=tarjetas_credito_programa_puntos_ctas_ord_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=tarjetas_credito_programa_puntos_ctas_ord_op estadoOP=1 jspFile=tarjetas_credito_programa_puntos_001>
+		<salidaPr id=1 operacion=tarjetas_credito_programa_puntos_consul_puntos_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=tarjetas_credito_programa_puntos_consul_puntos_op estadoOP=1 jspFile=tarjetas_credito_programa_puntos_002>
+		<salidaPr id=2 operacion=tarjetas_credito_programa_puntos_confirmar_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=tarjetas_credito_programa_puntos_confirmar_op estadoOP=1 jspFile=tarjetas_credito_programa_puntos_003>
+		<salidaPr id=3 operacion=tarjetas_credito_programa_puntos_confirmar_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+
+		<salidaPr id=3 operacion=tarjetas_credito_programa_puntos_realizar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=tarjetas_credito_programa_puntos_realizar_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=tarjetas_credito_programa_puntos_realizar_op estadoOP=1 jspFile=tarjetas_credito_programa_puntos_004>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.tcprogramapuntos.PrTarjetasCreditoProgramaPuntos>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=tarjetas_credito_programa_puntos_pr-data>
+
+	<field id=ClaveTarjetaPr>
+	<field id=NumeroTarjetaPr>
+	<field id=TipoTarjetaPr>
+
+
+	<field id=FechaOperaPr>
+	<field id=NumeroMovimientoPr>
+
+	<field id=NumeroContratoTarjetaPr>
+	<field id=PuntosAcumuladosPr>
+	<field id=PuntosARedimirPr>
+	<field id=CuentaPrivilegiosPr>
+	<field id=MinimoDePuntosARedimirPr>
+
+	<field id=TipoIdentificacionPr>
+	<field id=NumeroIdentificacionPr>
+	<field id=NombreTitularPr>
+
+	<field id=NumeroMovimientoPr>
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

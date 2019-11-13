@@ -1,0 +1,40 @@
+
+<! BBVA CASH LATAM ----------------------------------------------------------------->
+<! Operación:  MULTICANAL tlcl_com_cuentas_ordenante_om   ------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<tlcl.multipais.multicanal.comdfo.TLCLOmComCuentasOrdenante id=tlcl_com_cuentas_ordenante_om operationContext=OperationContext>
+	<refKColl refId=tlcl_com_cuentas_ordenante_om-data>
+</tlcl.multipais.multicanal.comdfo.TLCLOmComCuentasOrdenante>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=tlcl_com_cuentas_ordenante_om-data>
+
+	<kColl id=entrada>
+		<field id=codigoCliente>
+		<field id=tipoOrden>
+		<field id=codigoOrigen>
+		<field id=descCuenta value="">
+		<field id=usuario>
+	</kColl>
+
+	<kColl id=salida>
+		<iColl id=listadoCuentas>
+			<kColl id=registro>
+				<field id=codigoCliente>
+				<field id=tipoOrden>
+				<field id=codigoOrigen>
+				<field id=descCuenta>
+				<field id=codigoBancoInt>
+				<field id=codigoBanco>
+				<field id=codigoBancoCSB>
+				<field id=codigoSwift>
+				<field id=codigoBanAba>
+				<field id=codigoDivisa>
+				<field id=fmtoAsuntoEntrada>
+				<field id=claseAsunto>
+				<field id=aliasCuenta>
+			</kColl>
+		</iColl>
+	</kColl>
+</kColl>

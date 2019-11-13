@@ -1,0 +1,8 @@
+S#0#2019-10-25 11:04:14.444#Colombianet#FP_-st0Re3yHe5wv4T47pus#false# #PC0026008240003203ADMIN001#11#1#1058#0#1#
+S#1#2019-10-25 16:06:29.271#Colombianet#3daoewnCymCdepx9MUVqDHR#false# #11#1#1058#0#1#
+S#1#2019-10-25 16:06:42.12#Colombianet#jd2-0zJIKnl0h__Umb-Jn6A#false# #11#1#1058#0#1#
+S#1#2019-10-25 16:06:53.751#Colombianet#IuUzd0trSE_RXvNdergoWv9#false# #11#1#1058#0#1#
+S#1#2019-10-25 16:11:35.485#Colombianet#JSUO0Ms7yCm959iLK2vfX3N#false# #11#1#1058#0#1#
+S#1#2019-10-25 16:12:19.792#Colombianet#v-i_mPKa6Land_oSOCj-tS4#false# #11#1#1058#0#1#
+S#1#2019-10-25 16:14:21.731#Colombianet#OG0FfXNdLDeWyiYzRypQfuB#false# #11#1#1058#0#1#
+S#1#2019-10-25 17:00:55.876#Colombianet#zMMuhBIssRXjR0OKGLVFEWl#false# #11#1#1058#0#1#

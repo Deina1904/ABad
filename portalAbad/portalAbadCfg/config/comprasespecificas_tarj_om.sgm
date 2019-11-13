@@ -1,0 +1,82 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL comprasespecificas_tarj_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pte.OMMovTcesp id=comprasespecificas_tarj_om operationContext=OperationContext>
+	<refKColl refId=comprasespecificas_tarj_om-data>
+</com.grupobbva.bc.col.web.pte.OMMovTcesp>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=comprasespecificas_tarj_om-data>
+	<field id=IdTx value=TxFN08ENET>
+	<field id=MaxNumRegistros>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=INDICADOR-PAGINACION>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimientos>
+	      <field id=FECHA-OPER>
+	      <field id=DESCRIPCION>
+	      <field id=NUM-COMPROBANTE>
+	      <field id=TASA-INTER>
+	      <field id=IMPORTE>
+	      <field id=SALDO>
+	      <field id=CUDIF>
+	      <field id=EXTRC>
+	      <field id=MOVIC>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Movimientos>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+	      <field id=Descripcion>
+	      <field id=Comprobante>
+	      <field id=Tasa>
+	      <field id=Importe>
+	      <field id=Saldo>
+	      <field id=Cudif>
+	      <field id=Extrc>
+	      <field id=Movic>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=comprasespecificas_tarj_om-copiar>
+	<kColl id=a-TxFN08ENET>
+		<field id=Entrada value=TxFN08ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN08ENET>
+		<field id=Salida value=TxFN08ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

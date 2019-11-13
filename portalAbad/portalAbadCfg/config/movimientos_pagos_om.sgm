@@ -1,0 +1,65 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL movimientos_pagos_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=movimientos_pagos_om operationContext=OperationContext>
+	<refKColl refId=movimientos_pagos_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=movimientos_pagos_om-data>
+	<field id=IdTx value=TxFN23ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <field id=AREAPAGI>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=OPERACION>
+		  <field id=NOMBRE>
+		  <field id=IDENTIFICACION>
+		  <field id=VALOR>
+		  <field id=FECHAHORA>
+		  <field id=SUCUR>
+		</kColl >
+	  </iColl >
+	  <field id=NUMMOVI>
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=movimientos_pagos_om-copiar>
+	<kColl id=a-TxFN23ENET>
+		<field id=Entrada value=TxFN23ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN23ENET>
+		<field id=Salida value=TxFN23ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

@@ -1,0 +1,19 @@
+<!-- BBVA  ---------------------------------------------------------------------------->
+<!-- Operación:  Marcacion de Usuarios para permitirles de nuevo el alta en BBVANET---->
+<!-- OPERACION  ----------------------------------------------------------------------->
+<com.grupobbva.emp.banner.alta.PrAlta id=banner_alta_pr operationContext=OperationContext>
+	<refKColl refId=banner_alta_pr-data>
+<!-- ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=banner_alta_op>
+	</navegacionPr>
+<!-- SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=banner_alta_op estadoOP=ERROR jspFile=sass_error_01>
+		<salidaPr id=0 operacion=banner_alta_op estadoOP=1 jspFile=banner_alta_nuevo>
+	</resultadoPr>
+</com.grupobbva.emp.banner.alta.PrAlta >
+<!-- DATOS  --------------------------------------------------------------------------->
+<kColl id=banner_alta_pr-data>
+</kColl>
+<!--  ------------------------------------------------------------------------------->

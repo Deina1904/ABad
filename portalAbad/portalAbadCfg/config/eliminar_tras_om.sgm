@@ -1,0 +1,18 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL eliminar_tras_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.tp.OMEliminarTras  id=eliminar_tras_om operationContext=OperationContext>
+	<refKColl refId=eliminar_tras_om-data>
+</com.grupobbva.bc.col.multicanal.tp.OMEliminarTras>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=eliminar_tras_om-data>
+	<field id=Marca>
+	<field id=UsuarioInterno>	
+</kColl>
+
+<! --------------------------------------------------------------------------------->
+

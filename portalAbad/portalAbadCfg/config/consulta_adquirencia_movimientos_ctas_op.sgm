@@ -1,0 +1,113 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consulta_adquirencia_movimientos_ctas_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.adquirencia.OPConsultaAdquirenciaMovimientosCtas id=consulta_adquirencia_movimientos_ctas_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=MovimientosOPJspFmt>
+	<refFormat name=jspFormat refId=ConsultaPorFechasOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosInputOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=ConsultaInputPorFechasOPHTMLFmt>
+	<refKColl refId=consulta_adquirencia_movimientos_ctas_op-data>
+	<refOM refId=consulta_adquirencia_movimientos_ctas_om>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=ERROR accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=0 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+
+		<estadoOP id=1 accion=consultaPorFechas metodo=consultaPorFechas requestFmt=ConsultaInputPorFechasOPHTMLFmt>
+		<estadoOP id=2 accion=consultaPorFechas metodo=consultaPorFechas requestFmt=ConsultaInputPorFechasOPHTMLFmt>
+		<estadoOP id=2 accion=volver metodo=volver>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=MovimientosOPJspFmt>
+		<salidaOP id=2 jspFmt=ConsultaPorFechasOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.adquirencia.OPConsultaAdquirenciaMovimientosCtas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_adquirencia_movimientos_ctas_op-data>
+
+	<field id=Error>
+	<field id=asuntoPropio>
+
+	<field id=CodigoComercio>
+	<field id=RedComercio>
+	<field id=NombreComercio>
+	<field id=DireccionComercio>
+	<field id=CiudadComercio>
+
+
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MovimientosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+		<iCollVector dataName=Pagina.ListaMovimientosTotalOP description=ListaMovtos>
+			<record dataName=Movimiento>
+				<fString dataName=TIPO-RED><nullCheck>
+				<fString dataName=COD-COMERCIO><nullCheck>
+				<fString dataName=NOM-COMERCIO><nullCheck>
+				<fString dataName=DIR-COMERCIO><nullCheck>
+				<fString dataName=CIU-COMERCIO><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConsultaPorFechasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+
+		<fString dataName=CodigoComercioPr		description=codigoComercio>
+		<fString dataName=RedComercioPr   		description=redComercio>
+		<fString dataName=NombreComercioPr 		description=nombreComercio>
+		<fString dataName=DireccionComercioPr	description=direccionComercio>
+		<fString dataName=CiudadComercioPr		description=ciudadComercio>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=asuntoPropio>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ConsultaInputPorFechasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CodigoComercio>
+		<fString dataName=RedComercio>
+		<fString dataName=NombreComercio>
+		<fString dataName=DireccionComercio>
+		<fString dataName=CiudadComercio>
+	</fHTMLReq>
+</fmtDef>

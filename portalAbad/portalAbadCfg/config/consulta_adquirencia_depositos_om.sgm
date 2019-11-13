@@ -1,0 +1,82 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consulta_adquirencia_depositos_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=consulta_adquirencia_depositos_om operationContext=OperationContext>
+	<refKColl refId=consulta_adquirencia_depositos_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=consulta_adquirencia_depositos_om-data>
+	<field id=IdTx value=TxFN42ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <field id=AREAPAGI>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+			  <field id="FECHA-REMESA" >
+			  <field id="NUMERO-DE-REMESA" >
+			  <field id="TIPO-DE-MOVIMIENTO" >
+			  <field id="SITUACION-REMESA" >
+			  <field id="NUMERO-DE-FACTURAS" >
+			  <field id="VENTA-TOTAL-BRUTA" >
+			  <field id="VALOR-TOTAL-IVA" >
+			  <field id="VALOR-TOTAL-PROPINA" >
+			  <field id="VALOR-TOTAL-COMISION" >
+			  <field id="VALOR-TOTAL-DEPOSITA" >
+			  <field id="CARGO-DE-LA-RETEFUEN" >
+			  <field id="CARGO-DE-LA-RETEIVA" >
+			  <field id="CARGO-DE-LA-RETEICA" >
+			  <field id="VALOR-DEL-AJUSTE-MAN" >
+			  <field id="MCNDOCAB" >
+			  <field id="VALOR-REAL-CONSIGNAD" >
+			  <field id="VALOR-IVA-ABONADO" >
+			  <field id="VALOR-PROPINA-ABONAD" >
+			  <field id="VALOR-COMISION-ABONA" >
+			  <field id="VALOR-REAL-DEPOSITO" >
+
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=consulta_adquirencia_depositos_om-copiar>
+	<kColl id=a-TxFN42ENET>
+		<field id=Entrada value=TxFN42ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN42ENET>
+		<field id=Salida value=TxFN42ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

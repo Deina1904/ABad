@@ -1,0 +1,17 @@
+<com.grupobbva.emp.contingencia.PrAdminM id=conti_modifica_pr operationContext=OperationContext>
+	<refKColl refId=conti_modifica_pr-data>
+<!-- ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=conti_modifica_op>
+	</navegacionPr>
+<!-- SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=conti_modifica_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=conti_modifica_op estadoOP=1 jspFile=contim_ok>
+		<salidaPr id=0 operacion=conti_modifica_op estadoOP=2 jspFile=contim_datos>
+	</resultadoPr>
+</com.grupobbva.emp.contingencia.PrAdminM>
+<!-- DATOS  --------------------------------------------------------------------------->
+<kColl id=conti_modifica_pr-data>
+</kColl>
+<!--  ------------------------------------------------------------------------------->

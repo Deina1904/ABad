@@ -1,0 +1,60 @@
+<! BBVA  ----------------------------------------------------------------------------------------->
+<! Operación:  MULTICANAL cheques_detalle_om  ---------------------------------------------------->
+<!------------------------------------------------------------------------------------------------>
+<! OPERACION ------------------------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=cheques_detalle_om operationContext=OperationContext>
+	<refKColl refId=cheques_detalle_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<!------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------>
+<! DATOS ----------------------------------------------------------------------------------------->
+<kColl id=cheques_detalle_om-data>
+	<field id=IdTx value=TxF037ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <field id=AREAPAGI>
+	  <iColl id=ListaCheques>
+	    <kColl id=Cheque>
+	      <field id=NUM-CHEQUE>
+	      <field id=FEC-EMISION-CHEQUE>
+	      <field id=VALOR-CHEQUE>
+	      <field id=ESTACT-CHEQUE>
+	      <field id=FEC-MOD-CHEQUE>
+	    </kColl >
+	  </iColl >
+
+	</kColl >
+</kColl>
+<!------------------------------------------------------------------------------------------------>
+<! COPIADOR -------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------>
+<kColl id=cheques_detalle_om-copiar>
+	<kColl id=a-TxF037ENET>
+		<field id=Entrada value=TxF037ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF037ENET>
+		<field id=Salida value=TxF037ENETSalida-01>
+	</kColl>
+</kColl>
+<!------------------------------------------------------------------------------------------------>

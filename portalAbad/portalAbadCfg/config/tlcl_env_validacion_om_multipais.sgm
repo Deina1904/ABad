@@ -1,0 +1,26 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL tlcl_env_validacion_om_multipais ------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<tlcl.multipais.multicanal.env.enviodirecto.TLCLOmValidacionFichero id=tlcl_env_validacion_om_multipais  operationContext=OperationContext trazaCopiador=true>
+	<refKColl refId=tlcl_env_validacion_om_multipais-data>
+</tlcl.multipais.multicanal.env.enviodirecto.TLCLOmValidacionFichero>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=tlcl_env_validacion_om_multipais-data>
+	<kColl id=entrada>
+		<field id=cod_claseord>
+		<field id=codExtensio>
+		<field id=codBancoCSB>
+		<field id=nombreCompletoFichero>
+		<field id=filesize>
+		<!ERE07F2006-VRH>
+		<field id=encriptado>
+
+		<field id=fechaMinima>
+		<field id=fechaMaxima>
+
+		<field id=accesoNominasCiegas>
+	</kColl>
+</kColl>

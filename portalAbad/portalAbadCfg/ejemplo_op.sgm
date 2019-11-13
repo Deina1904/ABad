@@ -1,0 +1,143 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación: PRESENTACION ejemplo_op -------------------------------------------------------------------------------->
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.cmc.ejemplo.OPejemplo id=ejemplo_op operationContext=OperationContext>
+	<!-- DEFINICION DE DATOS -->
+		<refKColl refId=ejemplo_op-data>
+	<!-- FORMATOS DE SALIDA -->	
+		<refFormat name=jspFormat refId=VacioFmt>
+		<refFormat name=jspFormat refId=salidaRegistro>
+	<!-- FORMATOS DE ENTRADA -->
+	    <refFormat name=htmlRequestFormat refId=dataRegistro>
+		
+	
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=inicio metodo=inicio>
+		<estadoOP id=1 accion=inicio metodo=inicio>
+		<estadoOP id=2 accion=inicio metodo=inicio>
+		<estadoOP id=6 accion=finalizar metodo=inicio>
+		
+		<estadoOP id=1 accion=registro metodo=registro>
+		<estadoOP id=2 accion=registro metodo=registro>
+		<estadoOP id=3 accion=pasoAnterior metodo=registro>
+		
+		<estadoOP id=2 accion=continuar metodo=segundoPaso requestFmt=dataRegistro >
+		<estadoOP id=3 accion=segundoPaso metodo=segundoPaso >
+		<estadoOP id=4 accion=antFormulario metodo=segundoPaso>
+		
+		<estadoOP id=3 accion=siguientePaso metodo=tercerPaso requestFmt=dataRegistro>
+		<estadoOP id=4 accion=tercerPaso metodo=tercerPaso>
+		<estadoOP id=5 accion=formularioAnt metodo=tercerPaso>
+		
+		<estadoOP id=4 accion=sigFormulario metodo=cuartoPaso requestFmt=dataRegistro>
+		<estadoOP id=5 accion=cuartoPaso metodo=cuartoPaso requestFmt=dataRegistro>>
+		<estadoOP id=6 accion=pasoCuarto metodo=cuartoPaso>
+		
+		
+		<estadoOP id=5 accion=formularioSig metodo=quintoPaso requestFmt=dataRegistro>
+		<estadoOP id=6 accion=formularioSig metodo=quintoPaso >
+		
+
+		
+   </navegacionOP>
+   
+<! SALIDAS ------------------------------------------------------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=0 jspFmt=VacioFmt>
+		<salidaOP id=1 jspFmt=VacioFmt>
+		<salidaOP id=2 jspFmt=VacioFmt>
+		<salidaOP id=3 jspFmt=VacioFmt>
+		<salidaOP id=4 jspFmt=salidaRegistro>
+		<salidaOP id=5 jspFmt=salidaRegistro>
+		<salidaOP id=6 jspFmt=salidaRegistro>
+		<salidaOP id=7 jspFmt=salidaRegistro>
+	</resultadoOP> 
+	
+</com.cmc.ejemplo.OPejemplo>
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=ejemplo_op-data>
+	<field id=nombres>
+	<field id=apellidos>
+	<field id=usuario>
+	<field id=s_nombres>
+	<field id=s_apellidos>
+	<field id=s_usuario>
+	
+	<field id=correo>
+	<field id=direccion>
+	<field id=telefono>
+	<field id=s_correo>
+	<field id=s_direccion>
+	<field id=s_telefono>
+	
+	<field id=estCivil>
+	<field id=noCuenta>
+	<field id=tipoCuenta>
+	<field id=sexo>
+	<field id=s_estCivil>
+	<field id=s_noCuenta>
+	<field id=s_tipoCuenta>
+	<field id=s_sexo>	
+	
+	<field id=imagen>	
+	<field id=s_imagen>
+	
+	<field id=text>	
+	<field id=s_text>	
+</kColl>
+
+<! FORMATOS DE SALIDA PARA JSP ----------------------------------------------------------------------------------------------------------->
+<fmtDef id=VacioFmt>
+	<fJsp>
+		
+	</fJsp>
+</fmtDef>	
+
+<fmtDef id=salidaRegistro>
+	<fJsp>
+	 <fString dataName=s_nombres><nullCheck>
+	 <fString dataName=s_apellidos><nullCheck>
+	 <fString dataName=s_usuario><nullCheck>
+	 
+	 <fString dataName=s_correo><nullCheck>
+	 <fString dataName=s_direccion><nullCheck>
+	 <fString dataName=s_telefono><nullCheck>
+	 
+	 <fString dataName=s_estCivil><nullCheck>
+	 <fString dataName=s_noCuenta><nullCheck>
+	 <fString dataName=s_tipoCuenta><nullCheck>
+	 <fString dataName=s_sexo><nullCheck>
+	 
+	 <fString dataName=s_imagen><nullCheck>
+	 <fString dataName=s_text><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS DE ENTRADA ----------------------------------------------------------------------------------------------------------------------->
+
+<fmtDef id=dataRegistro>
+	<fHTMLReq>
+		<fString dataName=nombres>
+		<fString dataName=apellidos>
+		<fString dataName=usuario>
+			
+		<fString dataName=correo>
+		<fString dataName=direccion>
+		<fString dataName=telefono>
+		
+		<fString dataName=estCivil>
+		<fString dataName=noCuenta>
+		<fString dataName=tipoCuenta>
+		<fString dataName=sexo>	
+		
+		<fString dataName=imagen>	
+		<fString dataName=text>	
+	</fHTMLReq>
+</fmtDef>
+
+
+
+
+

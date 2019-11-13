@@ -1,0 +1,58 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:   PRESENTACION inicio_op  ----------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.og.OPInicio id=inicio_op operationContext=OperationContext>
+   <refKColl refId=inicio_op-data>
+   <refOM refId=obtener_usuario_interno_om>
+   <refOM refId=sign_on_om>
+   <refOM refId=listado_funciones_om>
+   <refOM refId=asuntos_principales_om>
+   <refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+   <navegacionOP>
+      <estadoOP id=0 accion=inicio metodo=inicio>
+   </navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+   <resultadoOP>
+      <salidaOP id=ERROR jspFmt=MensajeOPJspFmt>
+      <salidaOP id=99 jspFmt=ParametriaOPJspFmt>
+      <salidaOP id=98 jspFmt=ParametriaOPJspFmt1>
+      <salidaOP id=1 jspFmt=ParametriaOPJspFmt>
+   </resultadoOP>
+
+</com.grupobbva.bc.col.web.og.OPInicio>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=inicio_op-data>
+   <field id=Error>
+
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=MensajeOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+      <fString dataName=s_cod_desocup description=titulo><nullCheck>
+      <fString dataName=Error description=mensaje><nullCheck>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=ParametriaOPJspFmt>
+   <fJsp>
+      <fString dataName=s_cod_nomconta description=usuario>
+   </fJsp>
+</fmtDef>
+<fmtDef id=ParametriaOPJspFmt1>
+   <fJsp>
+      <fString dataName=s_IdEstCliente description=idusuario><nullCheck>
+   </fJsp>
+</fmtDef>
+<! --------------------------------------------------------------------------------->
+
+

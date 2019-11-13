@@ -1,0 +1,88 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION act_correo_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.ad.OpActCorreo id=act_correo_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+    <refFormat name=jspFormat refId=DatosOPJspFmt>
+    <refFormat name=htmlRequestFormat refId=DatosEntradaOPHTMLFmt>
+	<refKColl refId=act_correo_op-data>
+	<refOM refId=act_correo_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=consulta metodo=consultaDatos requestFmt=DatosEntradaOPHTMLFmt>
+		<estadoOP id=0 accion=actualizar metodo=actualizaDatos requestFmt=DatosEntradaOPHTMLFmt>
+
+		<estadoOP id=1 accion=consulta metodo=consultaDatos requestFmt=DatosEntradaOPHTMLFmt>
+		<estadoOP id=1 accion=actualizar metodo=actualizaDatos requestFmt=DatosEntradaOPHTMLFmt>
+
+		<estadoOP id=2 accion=consulta metodo=consultaDatos requestFmt=DatosEntradaOPHTMLFmt>
+		<estadoOP id=2 accion=actualizar metodo=actualizaDatos requestFmt=DatosEntradaOPHTMLFmt>
+
+		<estadoOP id=ERROR accion=consulta metodo=consultaDatos requestFmt=DatosEntradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=actualizar metodo=actualizaDatos requestFmt=DatosEntradaOPHTMLFmt>
+
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=DatosOPJspFmt>
+		<salidaOP id=2 jspFmt=DatosOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.ad.OpActCorreo>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=act_correo_op-data>
+
+	<field id=opTipoCorreo>
+	<field id=opNvoCorreo>
+	<field id=opTipoAccion>
+	<field id=Error>
+
+</kColl>
+
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=DatosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_correo_op description=jspCorreoOp>
+		<fString dataName=s_correo_con description=jspCorreoCon>
+		<fString dataName=opTipoCorreo description=jspTipoCorreo>
+		<fString dataName=opTipoAccion description=jspTipoAccion>
+
+		<record dataName=act_correo_om-data.Salida description=Datos>
+              <fString dataName=CORREO-OPERACIONES><nullCheck>
+	          <fString dataName=CORREO-CONTACTO><nullCheck>
+		      <fString dataName=DATO-ADICIONAL-UNO><nullCheck>
+		      <fString dataName=DATO-ADICIONAL-DOS><nullCheck>
+		</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosEntradaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=opTipoCorreo>
+		<fString dataName=opNvoCorreo>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

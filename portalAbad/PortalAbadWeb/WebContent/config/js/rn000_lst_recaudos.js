@@ -1,0 +1,1 @@
+function Enviar(item){document.alta.submit();}

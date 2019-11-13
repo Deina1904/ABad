@@ -1,0 +1,77 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  qe_scpeticion_pr -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.qesc.PrPeticionChq id=qe_scpeticion_pr operationContext=OperationContext>
+
+	<refKColl refId=qe_scpeticion_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=qe_scctas_op>
+
+		<estadoPr id=1 operacion=qe_scctas_op>
+		<estadoPr id=1 operacion=qe_scconsultar_op>
+
+		<estadoPr id=2 operacion=qe_scctas_op>
+		<estadoPr id=2 operacion=qe_scconsultar_op>
+		<estadoPr id=2 operacion=qe_scconfirmar_op>
+
+		<estadoPr id=3 operacion=qe_scconsultar_op>
+		<estadoPr id=3 operacion=qe_scctas_op>
+		<estadoPr id=3 operacion=qe_scconfirmar_op>
+		<estadoPr id=3 operacion=qe_screalizar_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=qe_scctas_op estadoOP=ERROR jspFile=gn001_error>
+		<!salidaPr id=0 operacion=qe_scctas_op estadoOP=VALIDAR jspFile=qe001_traspasos>
+
+		<salidaPr id=1 operacion=qe_scctas_op estadoOP=1 jspFile=qe001_scpet>
+		<salidaPr id=1 operacion=qe_scconsultar_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=qe_scconsultar_op estadoOP=1 jspFile=qe001_scdatospet1>
+		<salidaPr id=2 operacion=qe_scconsultar_op estadoOP=2 jspFile=qe001_scdatospet2>
+		<salidaPr id=2 operacion=qe_scconsultar_op estadoOP=3 jspFile=qe001_scdatospet3>
+		<salidaPr id=2 operacion=qe_scconsultar_op estadoOP=4 jspFile=qe001_scdatospet4>
+		<salidaPr id=2 operacion=qe_scconsultar_op estadoOP=5 jspFile=qe001_scdatospet5>
+		<salidaPr id=2 operacion=qe_scconsultar_op estadoOP=6 jspFile=qe001_scdatospet4>
+		<salidaPr id=2 operacion=qe_scconfirmar_op estadoOP=ERROR jspFile=gn001_error>
+
+
+		<salidaPr id=3 operacion=qe_scconfirmar_op estadoOP=1 jspFile=qe001_scconfirmar>
+		<salidaPr id=3 operacion=qe_scconfirmar_op estadoOP=2 jspFile=qe002_scconfirmar>
+		<salidaPr id=3 operacion=qe_scconfirmar_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=qe_screalizar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=qe_screalizar_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=qe_screalizar_op estadoOP=1 jspFile=qe001_screalizado>
+		<salidaPr id=0 operacion=qe_screalizar_op estadoOP=2 jspFile=qe001_screalizado_por_autorizar>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.qesc.PrPeticionChq>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=qe_scpeticion_pr-data>
+	<field id=ClaveCtaPTarje  value = " ">
+	<field id=TipoCtaPTarje value = " ">
+	<field id=CtaPTarje value = " ">
+	<field id=Direccion value = " ">
+	<field id=TalonPen value = " ">
+	<field id=TalonDia value = " ">
+	<field id=FechaOper value = " ">
+	<field id=NumeOper value = 0>
+	<field id=opGrupo1 value = " ">
+	<field id=Importe  value = 0>
+    <field id=Numchequeras value = " ">
+    <field id=Numaut value = " ">
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

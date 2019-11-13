@@ -1,0 +1,101 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION realizar_bloqtarje_op  ---------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.bt.OPRealizarBloqTarje id=realizar_bloqtarje_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=BloqRealizadoOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosBloqOPHTMLFmt>
+	<refKColl refId=realizar_bloqtarje_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=retorno_bloqtarje_om>
+	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=realizarBloqTarje requestFmt=DatosBloqOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=realizarBloqTarje requestFmt=DatosBloqOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=realizarBloqTarje requestFmt=DatosBloqOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=realizarBloqTarje requestFmt=DatosBloqOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=BloqRealizadoOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.bt.OPRealizarBloqTarje>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=realizar_bloqtarje_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<!field id=RefExtra>
+	<!field id=RefMovim>
+	<!field id=FechaOPe>
+	<!field id=FechaValor>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+	<field id=MotivoBloqDes>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=BloqRealizadoOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=NumeroTarjeta description=numtarjeta>
+		<!fString dataName=FechaOpe description=FechaOpe>
+		<fString dataName=MotivoBloqDes  description=motivobl>
+		<fString dataName=DescripBloq description=descripbl>
+		<record dataName=retorno_bloqtarje_om-data.Salida description=BloqTarje>
+			<fString dataName=FECHAOPER description=fechaoper>
+			<fString dataName=HORAOPER description=horaoper>
+		</record>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosBloqOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

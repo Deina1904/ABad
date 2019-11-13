@@ -1,0 +1,21 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL identificacion_operativa_om ------------------------------------------>
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.multicanal.tp.OMIdentificacionOperativa id=identificacion_operativa_om operationContext=OperationContext>
+	<refKColl refId=identificacion_operativa_om-data>
+</com.grupobbva.bc.col.multicanal.tp.OMIdentificacionOperativa>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=identificacion_operativa_om-data>
+	<field id=Alias>
+	<field id=PasswordOper>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+</kColl>
+
+<! ---------------------------------------------------------------------------------->
+

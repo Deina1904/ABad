@@ -1,0 +1,87 @@
+<!-- BBVA ---------------------------------------------------------------------------->
+<!-- Operación:  Consulta parametría banner cargados---------------------------------->
+<!-- OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.emp.banner.cargado.OpCargado id=banner_cargados_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+    <refFormat name=jspFormat refId=DatosOPJspFmt1>
+    <refFormat name=htmlRequestFormat refId=DatosEntradaOPHTMLFmt>
+	<refKColl refId=banner_cargados_op-data>
+	<refOM refId=log_par_om>
+<!-- --------------------------------------------------------------------------------->
+
+<!-- ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=iniciar metodo=iniciarBanner>
+		<estadoOP id=1 accion=iniciar metodo=iniciarBanner>
+		<estadoOP id=1 accion=listar metodo=buscarBanner>
+		<estadoOP id=1 accion=descarga metodo=descargarBanner>
+		<estadoOP id=2 accion=descarga metodo=descargarBanner>
+		<estadoOP id=3 accion=descarga metodo=descargarBanner>
+		<estadoOP id=ERROR accion=filtro metodo=cargaDatos>
+		<estadoOP id=ERROR accion=nuevo metodo=nuevo>
+	</navegacionOP>
+<!-- SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=DatosOPJspFmt1>
+		<salidaOP id=2 jspFmt=DatosOPJspFmt1>
+		<salidaOP id=3 jspFmt=DatosOPJspFmt1>
+	</resultadoOP>
+</com.grupobbva.emp.banner.cargado.OpCargado>
+
+<!-- DATOS --------------------------------------------------------------------------->
+<kColl id=banner_cargados_op-data>
+	<field id=user>
+	<field id=codigo>
+	<field id=datos>
+	<field id=Error>
+	<iColl id=CargadasBanner>
+		    <kColl id=banner>
+		      <field id=id_archivo>
+			  <field id=nom_archivo>
+			  <field id=fecha>
+			  <field id=id_banner>
+			  <field id=cod_usuaint>
+			 <!-- <field id=car_modificado>-->
+		    </kColl>
+	</iColl>
+</kColl>
+<!-- FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=DatosOPJspFmt>
+	<fJsp>
+	</fJsp>
+</fmtDef>
+<fmtDef id=DatosOPJspFmt1>
+	<fJsp>
+
+		<iCollVector dataName=CargadasBanner description=CargadasBanner>
+				<record dataName=banner>
+					<fString dataName=id_archivo>
+					<fString dataName=nom_archivo>
+					<fString dataName=fecha>
+					<fString dataName=id_banner>
+					<fString dataName=cod_usuaint>
+					<!-- <fString dataName=car_modificado>-->
+				</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<!-- FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosEntradaOPHTMLFmt>
+	<fHTMLReq>
+			<fString dataName=datos>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=DatosEntradaOPHTMLFmt1>
+	<fHTMLReq>
+			<fString dataName=fechaini>
+	</fHTMLReq>
+</fmtDef>
+<!-- --------------------------------------------------------------------------------->

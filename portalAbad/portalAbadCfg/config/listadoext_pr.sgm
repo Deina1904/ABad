@@ -1,0 +1,27 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  listadoext_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.migracion.PrClientesext id=listadoext_pr operationContext=OperationContext>
+	<refKColl refId=listadoext_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=listadoext_op>
+		<estadoPr id=1 operacion=listadoext_op>
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=1 operacion=listadoext_op estadoOP=1 jspFile=f001_listado_clientes>
+		<salidaPr id=1 operacion=listadoext_op estadoOP=excel jspFile=f001_listado_clientes_excel>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.migracion.PrClientesext>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=listadoext_pr-data>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

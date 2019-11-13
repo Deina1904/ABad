@@ -1,0 +1,23 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL cambio_pw_ope_om ------------------------------------------>
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<CircuitoUsuariosCol.OMCambioPWOpe id=cambio_pw_ope_om operationContext=OperationContext>
+	<refKColl refId=cambio_pw_ope_om-data>
+</CircuitoUsuariosCol.OMCambioPWOpe>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=cambio_pw_ope_om-data>
+	<field id=Alias>
+	<field id=Password1>
+	<field id=NewPassword>
+	<field id=Country>
+	<field id=Bank>
+	<field id=Opcion>
+	<!field id=maxErrors>
+</kColl>
+
+<! ---------------------------------------------------------------------------------->
+

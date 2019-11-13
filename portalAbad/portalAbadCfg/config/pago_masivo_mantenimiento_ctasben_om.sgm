@@ -1,0 +1,58 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL pago_masivo_mantenimiento_ctasben_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=pago_masivo_mantenimiento_ctasben_om operationContext=OperationContext>
+	<refKColl refId=pago_masivo_mantenimiento_ctasben_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=pago_masivo_mantenimiento_ctasben_om-data>
+	<field id=IdTx value=TxFN68ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=CODIGOPL>
+	  <iColl id=ListaBancos>
+	    <kColl id=Banco>
+	      <field id=CODBANCO>
+	      <field id=DESBANCO>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= pago_masivo_mantenimiento_ctasben_om-copiar>
+	<kColl id=a-TxFN68ENET>
+		<field id=Entrada value=TxFN68ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN68ENET>
+		<field id=Salida value=TxFN68ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

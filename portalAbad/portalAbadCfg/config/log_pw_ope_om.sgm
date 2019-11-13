@@ -1,0 +1,46 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operacion:  MULTICANAL log_pw_ope_om  ----------------------------------------------->
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=log_pw_ope_om operationContext=OperationContext>
+	<refKColl refId=log_pw_ope_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! ---------------------------------------------------------------------------------->
+
+
+<! DATOS ---------------------------------------------------------------------------->
+
+<kColl id=log_pw_ope_om-data>
+	<field id=IdTx value=TxF238ENET>
+	<kColl id=Entrada>
+	  <field id=CODIGO-ACCESO>
+	  <field id=CUENTA-VALIDACION>
+	  <field id=PALABRA-ACCESO-1>
+	  <field id=PALABRA-ACCESO-2>
+	  <field id=ASUNTO-PROPIO>
+	  <field id=ASUNTO-ASOCIADO>
+	  <field id=FECHA-1>
+	  <field id=FECHA-2>
+	  <field id=IMPORTE-PRINCIPAL>
+	  <field id=IMPORTE-AUXILIAR>
+	  <field id=INDICADOR-PAGINACION>
+	  <field id=INDICADOR-1>
+	  <field id=INDICADOR-2>
+	  <field id=CODIGO-AUXILIAR-1>
+	  <field id=CODIGO-AUXILIAR-2>
+	  <field id=NUMERO-AUXILIAR-1>
+	  <field id=NUMERO-AUXILIAR-2>
+	  <field id=AREA-PAGINACION>
+	</kColl>
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=log_pw_ope_om-copiar>
+	<kColl id=a-TxF238ENET>
+		<field id=Entrada value=TxF238ENETEntrada>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

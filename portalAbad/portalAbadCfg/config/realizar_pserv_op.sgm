@@ -1,0 +1,97 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION realizar_pserv_op  ---------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.ps.OPRealizarPServ id=realizar_pserv_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=PservRealizadoOPJspFmt>	
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>	
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>	
+
+	<refFormat name=htmlRequestFormat refId=DatosPservOPHTMLFmt>	
+
+	<refKColl refId=realizar_pserv_op-data>	
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=retorno_pserv_om>
+	
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>	
+		<estadoOP id=0 accion=continuar metodo=realizarPServ requestFmt=DatosPservOPHTMLFmt>				
+		<estadoOP id=1 accion=continuar metodo=realizarPServ requestFmt=DatosPservOPHTMLFmt>				
+		<estadoOP id=ERROR accion=continuar metodo=realizarPServ requestFmt=DatosPservOPHTMLFmt>				
+		<estadoOP id=MENSAJE accion=continuar metodo=realizarPServ requestFmt=DatosPservOPHTMLFmt>				
+	</navegacionOP>		
+	
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>	
+		<salidaOP id=1 jspFmt=PservRealizadoOPJspFmt>				
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>				
+	</resultadoOP>	
+</com.grupobbva.bc.col.web.ps.OPRealizarPServ>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=realizar_pserv_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+		
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=PservRealizadoOPJspFmt>
+	<fJsp>
+		<fString dataName=s_ip description=ip>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=DescripServ description=descripserv>
+		<fString dataName=Factura description=factura>
+		<record dataName=retorno_pserv_om-data.Salida description=PagoServ>	
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fNumString dataName=REFPAGO description=refpago>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fDate dataName=FECHAVEN description=fechaven>	
+			<fNumString dataName=IMPORTE description=importe>
+                </record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>		
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosPservOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

@@ -1,0 +1,303 @@
+<! BBVA  -------------------------------------------------------------------------------------------->
+<! Operación: PRESENTACION prog_opera_emp_op -------------------------------------------------------->
+<! OPERACION ---------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.poenet.OPTrasCtasPro id=prog_opera_emp_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionCtasOPJspFmt>
+    <refFormat name=jspFormat refId=ErrorOPJspFmt>
+    <refFormat name=jspFormat refId=DatosConfirmaOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ayudaOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=EntradaClaveOPHTMLFmt>
+	<refFormat name=jspFormat refId=DatosRealizaOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+    <refFormat name=htmlRequestFormat refId=CtaPropiaOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=EntradaOPHTMLFmt>
+	<refKColl refId=prog_opera_emp_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=prog_trans_petdatos_om>
+	<refOM refId=bloqueo_usuario_om>
+	<refOM refId=prog_realiza_traspro_om>
+
+<! -------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=inicio metodo=ctasOrden>
+		<estadoOP id=0 accion=traerCuentasP metodo=traerCtasP  requestFmt=CtaPropiaOPHTMLFmt>
+		<estadoOP id=0 accion=traerCuentasT metodo=traerCtasT  requestFmt=CtaPropiaOPHTMLFmt>
+
+		<estadoOP id=1 accion=inicio metodo=ctasOrden>
+		<estadoOP id=1 accion=ayuda metodo=ponerAyuda requestFmt=ayudaOPHTMLFmt>
+
+		<estadoOP id=1 accion=traerCuentasP metodo=traerCtasP  requestFmt=CtaPropiaOPHTMLFmt>
+		<estadoOP id=1 accion=traerCuentasT metodo=traerCtasT  requestFmt=CtaPropiaOPHTMLFmt>
+		<estadoOP id=1 accion=confirmar metodo=confOper        requestFmt=EntradaOPHTMLFmt>
+
+		<estadoOP id=2 accion=inicio metodo=ctasOrden>
+		<estadoOP id=2 accion=confirmar metodo=confOper        requestFmt=EntradaOPHTMLFmt>
+		<estadoOP id=2 accion=realizar metodo=realizaOper      requestFmt=EntradaClaveOPHTMLFmt>
+
+		<estadoOP id=3 accion=inicio metodo=ctasOrden>
+
+     	<estadoOP id=1 accion=ctasTerc metodo=ctasBent>
+     	<estadoOP id=2 accion=confirmar metodo=confOper        requestFmt=EntradaOPHTMLFmt>
+    	<estadoOP id=3 accion=realizar metodo=realizaOper      requestFmt=EntradaClaveOPHTMLFmt>
+
+    	<estadoOP id=4 accion=inicio metodo=ctasOrden>
+
+        <estadoOP id=ERROR accion=inicio metodo=ctasOrden>
+		<estadoOP id=AYUDA accion=ayuda metodo=ponerAyuda requestFmt=ayudaOPHTMLFmt>
+		<estadoOP id=AYUDA accion=continuar metodo=volverCtasPropias requestFmt=CtaPropiaOPHTMLFmt>
+
+
+		<estadoOP id=VALIDAR accion=inicio metodo=ctasOrden>
+
+ 	    <estadoOP id=ERROR accion=ctasTerc metodo=ctasBent>
+		<estadoOP id=ERROR accion=confirmar metodo=confOper    requestFmt=EntradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=realizar metodo=realizaOper  requestFmt=EntradaClaveOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=realizar metodo=realizaOper requestFmt=EntradaClaveOPHTMLFmt>
+        <estadoOP id=MENSAJE accion=confirmar metodo=confOper   requestFmt=EntradaOPHTMLFmt>
+        <estadoOP id=MENSAJE accion=volver metodo=volver>
+        <estadoOP id=AYUDA accion=volver metodo=volver>
+        <estadoOP id=2 accion=ayuda metodo=ayuda>
+
+   </navegacionOP>
+<! -------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=1 jspFmt=RelacionCtasOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=2 jspFmt=DatosConfirmaOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=RelacionCtasOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+		<salidaOP id=3 jspFmt=DatosRealizaOPJspFmt>
+		<salidaOP id=4 jspFmt=DatosRealizaOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.bc.col.web.poenet.OPTrasCtasPro>
+<! -------------------------------------------------------------------------------->
+<! DATOS -------------------------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<kColl id=prog_opera_emp_op-data>
+	<field id=Error>
+	<field id=NumConfirma>
+	<field id=CtaOrdenante>
+	<field id=Tipocuenta>
+	<field id=ClaveOperacion>
+    <field id=CtaBenPropia>
+	<field id=CtaBenTercero>
+	<field id=SaldoDisp>
+	<field id=Periodo>
+	<field id=Dia>
+	<field id=Mes>
+	<field id=Anio>
+	<field id=DiaMensual>
+	<field id=NumMes>
+	<field id=Valor>
+	<field id=Email>
+    <field id=Observaciones>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+
+	<iColl id=ListaCtasPro>
+		<kColl id=CuentaOrdenante>
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+
+	<field id=CtaBeneficiaria>
+	<iColl id=ListaCtasBen>
+		<kColl id=CuentaBeneficiaria>
+			<field id=Bancob>
+			<field id=Oficinab>
+			<field id=DControlb>
+			<field id=NumCuentab>
+			<field id=ClaveAsuntob>
+			<field id=Tipob>
+			<field id=Nombreb>
+			<field id=Cedulab>
+		</kColl>
+	</iColl>
+
+	<field id=CtaBeneficiariaT>
+	<iColl id=ListaCtasBenT>
+		<kColl id=CuentaBeneficiariaT>
+			<field id=Bancot>
+			<field id=Oficinat>
+			<field id=DControlt>
+			<field id=NumCuentat>
+			<field id=ClaveAsuntot>
+			<field id=Tipot>
+			<field id=Nombret>
+			<field id=Cedulat>
+		</kColl>
+	</iColl>
+</kColl>
+<! -------------------------------------------------------------------------------->
+<! formatos de salida para JSP ---------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=RelacionCtasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrdenante description=CtaOrdSel>
+		<fString dataName=Tipocuenta description=TipCta>
+		<fNumString dataName=SaldoDisp description=saldodis>
+		<iCollVector dataName=ListaCtasPro description=ListaCtasPro>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+		<iCollVector dataName=ListaCtasBen description=ListaCtasBen>
+			<record dataName=CuentaBeneficiaria>
+				<fString dataName=Bancob>
+				<fString dataName=Oficinab>
+				<fString dataName=DControlb>
+				<fString dataName=NumCuentab>
+				<fString dataName=ClaveAsuntob>
+				<fString dataName=Tipob>
+				<fString dataName=Nombreb>
+                <fString dataName=Cedulab>
+			</record>
+		</iCollVector>
+		<iCollVector dataName=ListaCtasBenT description=ListaCtasBenT>
+				<record dataName=CuentaBeneficiariaT>
+					<fString dataName=Bancot>
+					<fString dataName=Oficinat>
+					<fString dataName=DControlt>
+					<fString dataName=NumCuentat>
+					<fString dataName=ClaveAsuntot>
+					<fString dataName=Tipot>
+					<fString dataName=Nombret>
+					<fString dataName=Cedulat>
+				</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=DatosConfirmaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=prCtaOrd description=ctaord>
+		<fString dataName=prCtaDest description=ctaben>
+		<fString dataName=prNomTitular description=nomtitular>
+		<fString dataName=prIdTitular description=idtitular>
+    	<fString dataName=prCorreo description=correo>
+    	<fString dataName=prPeriodo description=periodo>
+    	<fDate dataName=prFechaOper description=fechapuntual>
+    	<fNumString dataName=prDiaTraspaso description=diamensual>
+    	<fNumString dataName=prNroMeses description=nummes>
+		<fNumString dataName=prImporte description=valor>
+    	<fString dataName=prObservaciones description=observaciones>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=DatosRealizaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_ip description=ip>		
+		<fString dataName=s_cod_nomempre description=empresa>
+	    <fString dataName=prCtaOrd description=ctaord>
+		<fString dataName=prCtaDest description=ctaben>
+		<fString dataName=prNomTitular description=nomtitular>
+		<fString dataName=prIdTitular description=idtitular>
+		<fString dataName=prCorreo description=correo>
+		<fString dataName=prPeriodo description=periodo>
+		<fDate dataName=prFechaOper description=fechapuntual>
+		<fNumString dataName=prDiaTraspaso description=diamensual>
+		<fNumString dataName=prNroMeses description=nummes>
+		<fNumString dataName=prImporte description=valor>
+	    <fString dataName=prObservaciones description=observaciones>
+		<record dataName=prog_realiza_traspro_om-data.Salida description=Traspaso>
+			<fNumString dataName=REFCARGO description=refcargo>
+			<fDate dataName=FECHOPER description=fechoper>
+			<fString dataName=INDICAOK description=indicaok>
+		</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+        <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->
+<! formatos de entrada ------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+<fmtDef id=EntradaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CtaOrdenante>
+		<fString dataName=CtaBenPropia>
+		<fString dataName=CtaBenTercero>
+        <fString dataName=Email>
+		<fString dataName=Periodo>
+		<fString dataName=Dia>
+		<fString dataName=Mes>
+		<fString dataName=Anio>
+		<fString dataName=DiaMensual>
+		<fString dataName=NumMes>
+		<fNumString dataName=Valor>
+		<fString dataName=Observaciones>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=EntradaClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=CtaPropiaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CtaOrdenante>
+		<fString dataName=Tipocuenta>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=ayudaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CtaOrdenante>
+	</fHTMLReq>
+</fmtDef>
+

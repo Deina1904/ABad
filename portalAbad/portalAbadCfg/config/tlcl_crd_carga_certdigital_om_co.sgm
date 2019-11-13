@@ -1,0 +1,24 @@
+<! BBVA - OM Creada por CE29628 para GP-9474 -------------------------------->
+<! Operación:  MULTICANAL tlcl_crd_carga_certdigital_om_co   -------------------------------->
+
+<! OPERACION -------------------------------------------------------------------------------------->
+<tlcl.co.multicanal.crd.cargacertificado.TLCLOmCargaCertDigital id=tlcl_crd_carga_certdigital_om_co operationContext=OperationContext>
+	<refKColl refId=tlcl_crd_carga_certdigital_om_co-data>
+</tlcl.co.multicanal.crd.cargacertificado.TLCLOmCargaCertDigital>
+<! ----------------------------------------------------------------------------------------------->
+
+
+<! DATOS ----------------------------------------------------------------------------------------->
+<kColl id=tlcl_crd_carga_certdigital_om_co-data>
+	<kColl id=entrada>
+		<field id=ficheroOrigen>				
+		<field id=logon>
+		<field id=extOriginal>
+	</kColl>
+			
+	<kColl id=salida>
+		<field id=respuesta>
+		<field id=mensaje>
+		<field id=codMensaje>
+	</kColl>
+</kColl>

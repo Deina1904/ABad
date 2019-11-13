@@ -1,0 +1,76 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ctas_ordfn_op  ------------------------------------------>
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.tpfn.OPCtasOrdFonte id=ctas_ordfn_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionOrdOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refKColl refId=ctas_ordfn_op-data>
+	<refOM refId=ctas_ordfn_om>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=menuOrdTras metodo=ordTras>
+		<estadoOP id=1 accion=menuOrdTras metodo=ordTras>
+		<estadoOP id=ERROR accion=menuOrdTras metodo=ordTras>
+		<estadoOP id=VALIDAR accion=menuOrdTras metodo=ordTras>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionOrdOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.tpfn.OPCtasOrdFonte>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ctas_ordfn_op-data>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionOrdOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=TipoDeFondo description=tipoDeFondo>
+		<iCollVector dataName=ctas_ordfn_om-data.SalidaCtasPropias.ListaCtasPropias description=ListaCtasOrd>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=CodForm>
+				<fString dataName=IAsunto>
+				<fString dataName=INumContrato>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+	</fJsp>
+
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->
+<! -------------------------------------------------------------------------------->

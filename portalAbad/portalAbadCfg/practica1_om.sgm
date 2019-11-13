@@ -1,0 +1,37 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación: PRESENTACION practica1_om  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+
+<com.cmc.practica1.OMpractica1 id=practica1_om operationContext=OperationContext>
+	<refKColl refId=practica1_om-data>
+</com.cmc.practica1.OMpractica1>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=practica1_om-data>
+	
+	<kColl id=Entrada>
+	  <field id=size>
+	  <field id=objetoU>
+	</kColl >
+      
+	<kColl id=Salida>
+		<field id=objetoU>
+		
+		<iColl id=listaDatos>
+			<kColl id=usuario>
+				<field id=nombre>
+				<field id=apellido>
+				<field id=edad>
+				<field id=fechaN>
+			</kColl>   
+		</iColl>
+  	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<! --------------------------------------------------------------------------------->
+

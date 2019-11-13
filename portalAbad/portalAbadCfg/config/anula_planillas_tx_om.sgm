@@ -1,0 +1,74 @@
+<! BBVA ---------------------------------------------------------------------------------------------------------------->
+<! Operación: MULTICANAL anula_planillas_tx_om -------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=anula_planillas_tx_om operationContext=OperationContext>
+
+	<refKColl refId=anula_planillas_tx_om-data>
+
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+
+<! --------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------->
+<kColl id=anula_planillas_tx_om-data>
+	<field id=IdTx value=TxFN64ENET>
+	<field id=MaxNumRegistros>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=INDICADOR-PAGINACION>
+	  <field id=BPAGINACION>
+	  <iColl id=ListaTransmisiones>
+	    <kColl id=Transmisiones>
+	      <field id=NRO-ORDEN>
+	      <field id=FECHA-APLICACION>
+	      <field id=IMPORTE>
+	      <field id=REGISTROS>
+	      <field id=EMISORA-SALIDA>
+	      <field id=ESTADO-LOTE>
+	      <field id=NUMERO-LOTE>
+	      <field id=FECHA-EJECUCION>
+	      <field id=CUENTA-ORIGEN>
+	      <field id=SERVICIO>
+	      <field id=PLANILLA>
+	    </kColl >
+	  </iColl >
+	  <field id=FECHA-SALIDA>
+	  <field id=NRO-ORDEN-SALIDA>
+	  <field id=NRO-LOTE-SALIDA>
+	  <field id=INDICADOR-MOVIMIENTOS>
+	</kColl >
+</kColl>
+
+<! COPIADOR ------------------------------------------------------------------------------------------------------------>
+
+<kColl id=anula_planillas_tx_om-copiar>
+	<kColl id=a-TxFN64ENET>
+		<field id=Entrada value=TxFN64ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN64ENET>
+		<field id=Salida value=TxFN64ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------->
+

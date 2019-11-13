@@ -1,0 +1,75 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION prog_tipotras_op  --------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.po.OPProgConsulTipoTras id=prog_consul_tipotras_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionTipoTrasOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refKColl refId=prog_consul_tipotras_op-data>
+<! --------------------------------------------------------------------------------->
+
+<! --------------------------------------------------------------------------------->
+<! ESTADOS DE LA OP ---------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=continuar metodo=tipoTrasp>
+		<estadoOP id=0 accion=contercero metodo=tipoTrastt>
+		<estadoOP id=1 accion=continuar metodo=tipoTrasp>
+		<estadoOP id=1 accion=contercero metodo=tipoTrastt>
+		<estadoOP id=2 accion=contercero metodo=tipoTrastt>
+		<estadoOP id=2 accion=continuar metodo=tipoTrasp>
+		<estadoOP id=ERROR accion=continuar metodo=tipoTrasp>
+		<estadoOP id=ERROR accion=contercero metodo=tipoTrastt>
+		<estadoOP id=VALIDAR accion=continuar metodo=tipoTrasp>
+		<estadoOP id=VALIDAR accion=terceros metodo=tipoTrastt>
+
+	</navegacionOP>
+
+<! --------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=1 jspFmt=RelacionTipoTrasOPJspFmt>
+		<salidaOP id=2 jspFmt=RelacionTipoTrasOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+
+	</resultadoOP>
+
+</com.grupobbva.bc.col.web.po.OPProgConsulTipoTras>
+
+<! --------------------------------------------------------------------------------->
+<! DATOS TEMPORALES DE LA OP ------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+<kColl id=prog_consul_tipotras_op-data>
+	<field id=Error>
+</kColl>
+
+<! --------------------------------------------------------------------------------->
+<! FORMATOS DE SALIDA JSPs --------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+
+<fmtDef id=RelacionTipoTrasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+	</fJsp>
+</fmtDef>

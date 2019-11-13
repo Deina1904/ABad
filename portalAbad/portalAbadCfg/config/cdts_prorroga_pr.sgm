@@ -1,0 +1,81 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  cdts_prorroga_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cdts.PrCdtsProrroga id=cdts_prorroga_pr operationContext=OperationContext>
+
+	<refKColl refId=cdts_prorroga_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=relacion_prorroga_op>
+
+		<estadoPr id=1 operacion=relacion_prorroga_op>
+		<estadoPr id=1 operacion=movimientos_ctas_op>
+
+		<estadoPr id=2 operacion=relacion_prorroga_op>
+		<estadoPr id=2 operacion=modifica_prorroga_op>
+
+		<estadoPr id=3 operacion=relacion_prorroga_op>
+		<estadoPr id=3 operacion=modifica_prorroga_op>
+		<estadoPr id=3 operacion=confirmar_prorroga_op>
+
+		<estadoPr id=4 operacion=relacion_prorroga_op>
+		<estadoPr id=4 operacion=confirmar_prorroga_op>
+		<estadoPr id=4 operacion=realiza_prorroga_op>
+
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=relacion_prorroga_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=relacion_prorroga_op estadoOP=1 jspFile=cd002_relacion_prorroga>
+		<salidaPr id=1 operacion=relacion_prorroga_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=movimientos_ctas_op estadoOP=1 jspFile=cd001_mod_prorroga>
+		<salidaPr id=2 operacion=movimientos_ctas_op estadoOP=2 jspFile=cd001_mod_prorroga>
+		<salidaPr id=2 operacion=modifica_prorroga_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=modifica_prorroga_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=3 operacion=modifica_prorroga_op estadoOP=1 jspFile=cd003_datos_prorroga>
+		<salidaPr id=3 operacion=confirmar_prorroga_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=confirmar_prorroga_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=4 operacion=confirmar_prorroga_op estadoOP=1 jspFile=cd004_conf_prorroga>
+		<salidaPr id=4 operacion=confirmar_prorroga_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=4 operacion=realiza_prorroga_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=4 operacion=realiza_prorroga_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=realiza_prorroga_op estadoOP=1 jspFile=cd005_realizada_prorroga>
+
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.cdts.PrCdtsProrroga>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=cdts_prorroga_pr-data>
+
+	<field id=ImporteInver>
+	<field id=Fecven>
+	<field id=Tasa>
+	<field id=DesPlazo>
+	<field id=DesPagInter>
+	<field id=DesProrroga>
+	<field id=Prorroga>
+	<field id=Titulo>
+	<field id=ClaveCdt>
+	<field id=ClaveAbo>
+	<field id=prtipo>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

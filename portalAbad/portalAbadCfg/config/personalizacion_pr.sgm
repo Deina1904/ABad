@@ -1,0 +1,41 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  personalizacion_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.per.PrPersonalizacion id=personalizacion_pr operationContext=OperationContext>
+	<refKColl refId=personalizacion_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=per_menu_op>
+		<estadoPr id=1 operacion=per_menu_op>
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=per_menu_op estadoOP=ERROR jspFile=gn001_error>
+		<!salidaPr id=0 operacion=per_menu_op estadoOP=VALIDAR jspFile=r002_traspasos>
+		<salidaPr id=0 operacion=per_menu_op estadoOP=1 jspFile=per001_rel_items>
+	</resultadoPr>
+</com.grupobbva.bc.col.web.per.PrPersonalizacion>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=personalizacion_pr-data>
+	  <field id=CodAplicacionPr>
+	  <field id=CodPerfilPr>
+	  <field id=ItemsUsuarioPr>
+	  <kColl id=ItemsPr>
+	  <iColl id=ListaItemsPr>
+	    <kColl id=ItemPr>
+  	  		<field id=CodItemPr>
+  	  		<field id=TituloItemPr>
+  	  		<field id=LinkItemPr>
+  	  		<field id=CodNivelPadrePr>
+  	  		<field id=CodNivelPr>
+	    </kColl >
+	  </iColl >
+	  </kColl >
+</kColl>
+<! --------------------------------------------------------------------------------->
+

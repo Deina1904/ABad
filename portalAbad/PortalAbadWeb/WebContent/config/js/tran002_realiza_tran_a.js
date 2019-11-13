@@ -1,0 +1,1 @@
+function Validar(form){var Importe=form.Importe.value;if(Importe==""){alert("Debe llenar el campo Valor");form.Importe.focus();form.Importe.select();return false;}if(!EsNumero(Importe)){alert("El Valor debe ser numérico");form.Importe.focus();form.Importe.select();return false;}form.submit();}

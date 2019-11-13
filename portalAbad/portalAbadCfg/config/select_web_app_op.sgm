@@ -1,0 +1,84 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION select_web_app_op  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.ecommerce.OPSelectWebApp id=select_web_app_op operationContext=OperationContext>
+
+   <refFormat name=jspFormat refId=ErrorOPJspFmt>
+   <refFormat name=jspFormat refId=SelectWebAppOPJspFmt>
+   <!refFormat name=htmlRequestFormat refId=EntradaPseOPHTMLFmt>
+   <refKColl refId=select_web_app_op-data>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+   <navegacionOP>
+      <estadoOP id=0 accion=redirectWebApp metodo=redirectWebApp >
+      <estadoOP id=1 accion=redirectWebApp metodo=redirectWebApp >
+      <estadoOP id=ERROR accion=redirectWebApp metodo=redirectWebApp >
+   </navegacionOP>
+
+<! SALIDAS -------------------------------------------------------------------------->
+   <resultadoOP>
+      <salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+      <salidaOP id=1 jspFmt=SelectWebAppOPJspFmt>
+   </resultadoOP>
+</com.grupobbva.bc.col.web.ecommerce.OPSelectWebApp>
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=select_web_app_op-data>
+
+   <iColl id=listaWebApps>
+      <kColl id=webApp>
+         <field id=descriptionData>
+         <field id=urlData>
+      </kColl>
+   </iColl>
+
+   <iColl id=lista_eComms>
+      <kColl id=eComm>
+         <field id=descriptionData>
+         <field id=urlData>
+         <field id=procRedir>
+         <field id=RefBBVAeComm>
+      </kColl>
+   </iColl>
+</kColl>
+
+
+
+<! FORMATOS DE SALIDA --------------------------------------------------------------->
+
+<fmtDef id=ErrorOPJspFmt>
+   <fJsp>
+      <fString dataName=Error description=mensaje>
+   </fJsp>
+</fmtDef>
+
+<fmtDef id=SelectWebAppOPJspFmt>
+   <fJsp>
+
+      <iCollVector dataName=listaWebApps description=listaWebApps>
+         <record dataName=webApp>
+            <fString dataName=descriptionData><nullCheck>
+            <fString dataName=urlData><nullCheck>
+         </record>
+      </iCollVector>
+
+      <iCollVector dataName=lista_eComms description=lista_eComms>
+         <record dataName=eComm>
+            <fString dataName=descriptionData><nullCheck>
+            <fString dataName=urlData><nullCheck>
+            <fString dataName=procRedir><nullCheck>
+            <fString dataName=RefBBVAeComm><nullCheck>
+         </record>
+      </iCollVector>
+
+   </fJsp>
+</fmtDef>
+
+<! ---------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<! ----------------------------------------------------------------------------------->

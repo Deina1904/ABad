@@ -1,0 +1,140 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION msj_proactivos_lista_msj_op  ------------------------------------>
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.msjproactivos.OPMsjProactivosListaMsj id=msj_proactivos_lista_msj_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionListaOPJspFmt>
+	<refFormat name=jspFormat refId=RelacionDetalleOPJspFmt>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=EliminarOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=DetalleOPHTMLFmt>
+	<refKColl refId=msj_proactivos_lista_msj_op-data>
+	<refOM refId=msj_proactivos_lista_msj_om>
+	<refOM refId=msj_proactivos_detalle_msj_om>
+
+<! -------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=continuar metodo=traerMsj>
+		<estadoOP id=1 accion=continuar metodo=traerMsj>
+		<estadoOP id=2 accion=continuar metodo=traerMsj>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+		<estadoOP id=1 accion=eliminar metodo=eliminarMsjs requestFmt=EliminarOPHTMLFmt>
+		<estadoOP id=1 accion=detalle metodo=detalleMsjs requestFmt=DetalleOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=traerMsj>
+	</navegacionOP>
+<! -------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=1 jspFmt=RelacionListaOPJspFmt>
+		<salidaOP id=2 jspFmt=RelacionDetalleOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.msjproactivos.OPMsjProactivosListaMsj>
+<! -------------------------------------------------------------------------------->
+<! DATOS -------------------------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<kColl id=msj_proactivos_lista_msj_op-data>
+	<field id=Error>
+
+	<field id=listaMsjEliminar value=" ">
+	<field id=mensajeDetalle>
+
+
+	<kColl id=Pagina>
+		<iColl id=ListaMensajesTotalOP>
+			<kColl id=Mensaje>
+	      		<field id=BSECUENC>
+	      		<field id=BTITULOM>
+	      		<field id=BESTADOM>
+	      		<field id=BFECHAAL>
+	      		<field id=BLIBREMM>
+			</kColl >
+		</iColl >
+
+		<iColl id=ListaMensajesPagOP>
+			<kColl id=Mensaje>
+	      		<field id=BSECUENC>
+	      		<field id=BTITULOM>
+	      		<field id=BESTADOM>
+	      		<field id=BFECHAAL>
+	      		<field id=BLIBREMM>
+			</kColl >
+		</iColl >
+	</kColl>
+
+</kColl>
+<! -------------------------------------------------------------------------------->
+<! formatos de salida para JSP lista mensajes ------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=RelacionListaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=MasDatosMsjProactivosWasPr description=masDatosMsjProactivosWasPr>
+		<fString dataName=MasDatosMsjProactivosHostPr description=masDatosMsjProactivosHostPr>
+		<fString dataName=IdMsjProactivosPr description=idMsjProactivosPr>
+
+		<iCollVector dataName=Pagina.ListaMensajesPagOP description=ListaMsj>
+			<record dataName=Mensaje>
+				<fString dataName=BSECUENC><nullCheck>
+				<fString dataName=BTITULOM><nullCheck>
+				<fString dataName=BESTADOM><nullCheck>
+				<fDate dataName=BFECHAAL><nullCheck>
+				<fString dataName=BLIBREMM><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->
+<! formatos de salida para JSP detalle -------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=RelacionDetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<record dataName=msj_proactivos_detalle_msj_om-data.Salida description=detalleMsj>
+			<fString dataName=BTITULOM description=titulo>
+			<fString dataName=DETALLE description=detalle>
+			<fDate dataName=FECHA description=fecha>
+		</record>
+
+	</fJsp>
+</fmtDef>
+
+
+
+<! -------------------------------------------------------------------------------->
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=EliminarOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=listaMsjEliminar>
+	</fHTMLReq>
+</fmtDef>
+
+
+<fmtDef id=DetalleOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=mensajeDetalle>
+	</fHTMLReq>
+</fmtDef>

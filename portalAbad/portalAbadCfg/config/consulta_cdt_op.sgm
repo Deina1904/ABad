@@ -1,0 +1,153 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consulta_cdt_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cdts.OPRealizaCon id=consulta_cdt_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+    <refFormat name=jspFormat refId=SaldosMvtosOPJspFmt>
+    <refFormat name=htmlRequestFormat refId=CtasOPHTMLFmt>
+	<refKColl refId=consulta_cdt_op-data>
+	<refOM refId=consulta_cdts_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+
+
+		<estadoOP id=1 accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=2 accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+
+
+		<estadoOP id=ERROR movimientos=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=2 jspFmt=SaldosMvtosOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.bc.col.web.cdts.OPRealizaCon>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_cdt_op-data>
+	<field id=Error>
+	<field id=MasDatos>
+	<field id=AsuntoPropio>
+	<field id=Cuenta>
+	<field id=AtrasDatos>
+	<field id=mov value=0>
+	<field id=movsup value=25>
+	<field id=SiguienteMovimiento>
+	<field id=tipo value=" ">
+	<field id=extracto>
+
+
+	<kColl id=Pagina>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+	      <field id=FechaValor>
+	      <field id=Concepto>
+	      <field id=Referencia>
+	      <field id=Observaciones>
+	      <field id=Importe>
+	      <field id=SaldoInicio>
+	      <field id=NumeroMovimiento>
+	      <field id=Estado>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Movimientos>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+	      <field id=FechaValor>
+	      <field id=Concepto>
+	      <field id=Referencia>
+	      <field id=Observaciones>
+	      <field id=Importe>
+	      <field id=SaldoInicio>
+	      <field id=NumeroMovimiento>
+	      <field id=Estado>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>
+
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=SaldosMvtosOPJspFmt>
+	<fJsp>
+
+
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=AsuntoPropio><nullCheck>
+		<fString dataName=mov><nullCheck>
+		<fString dataName=Cuenta><nullCheck>
+
+		<record dataName=consulta_cdts_om-data.Salida description=datos>
+              <fString dataName=nombret1><nullCheck>
+              <fString dataName=nombret2><nullCheck>
+              <fString dataName=nombret3><nullCheck>
+	          <fNumString dataName=saldo decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		      <fString dataName=fecha-exp><nullCheck>
+		      <fString dataName=fecha-ven><nullCheck>
+		      <fString dataName=fecha-fin><nullCheck>
+		      <fString dataName=metliq><nullCheck>
+		      <fString dataName=indestado><nullCheck>
+		      <fString dataName=fecha-can><nullCheck>
+		      <fString dataName=duracion><nullCheck>
+		      <fNumString dataName=tasaefec decimalsSepChar=. thousandsSepChar=, decPlaces=4 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		      <fString dataName=perliq><nullCheck>
+		      <fString dataName=baseliq><nullCheck>
+
+		</record>
+		      <iCollVector dataName=consulta_cdts_om-data.Salida.Movimientos description=Movimientos>
+			  		  <record dataName=Movimientos>
+			  		          <fString dataName=descrop><nullCheck>
+			  		  	      <fString dataName=fecha-op><nullCheck>
+			  		  	      <fString dataName=fecha-liqd><nullCheck>
+			  		  	      <fString dataName=fecha-liqh><nullCheck>
+			  		  	      <fString dataName=diaspos><nullCheck>
+			  		  	      <fNumString dataName=intbrut decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+			  		  	      <fNumString dataName=valrete decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+			  		  	      <fNumString dataName=intneto decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+			  		  	      <fString dataName=formapag><nullCheck>
+			  		  	      <fString dataName=fecha-pag><nullCheck>
+			  		  	  </record>
+	          </iCollVector>
+
+		</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=CtasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=extracto>
+		<fString dataName=tipo>
+		<fString dataName=mov>
+		<fString dataName=movsup>
+	</fHTMLReq>
+</fmtDef>
+
+
+
+<! --------------------------------------------------------------------------------->

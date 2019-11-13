@@ -1,0 +1,75 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  consulta_divisas_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.gp.PrConsultaDivisas id=consulta_divisas_pr operationContext=OperationContext>
+	<refKColl refId=consulta_divisas_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=consulta_divisas_op>
+
+		<estadoPr id=1 operacion=consulta_divisas_op>
+		<estadoPr id=1 operacion=movimientos_divisas_op>
+
+		<estadoPr id=2 operacion=consulta_divisas_op>
+		<estadoPr id=2 operacion=movimientos_divisas_op>
+		<estadoPr id=2 operacion=detalle_divisas_op>
+
+		<estadoPr id=3 operacion=detalle_divisas_op>
+		<estadoPr id=3 operacion=movimientos_divisas_op>
+		<estadoPr id=3 operacion=consulta_divisas_op>
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=consulta_divisas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=consulta_divisas_op estadoOP=VALIDAR jspFile=r002_traspasos>
+		<salidaPr id=0 operacion=consulta_divisas_op estadoOP=1 jspFile=busqueda_divisas>
+
+		<salidaPr id=1 operacion=consulta_divisas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=consulta_divisas_op estadoOP=1 jspFile=busqueda_divisas>
+		<salidaPr id=1 operacion=movimientos_divisas_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=movimientos_divisas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=movimientos_divisas_op estadoOP=1 jspFile=movimientos_divisas>
+		<salidaPr id=2 operacion=movimientos_divisas_op estadoOP=EXCEL jspFile=movimientos_divisas_excel>
+
+		<salidaPr id=3 operacion=detalle_divisas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=detalle_divisas_op estadoOP=1 jspFile=detalle_divisas>
+		<salidaPr id=3 operacion=consulta_divisas_op estadoOP=1 jspFile=busqueda_divisas>
+		<salidaPr id=3 operacion=movimientos_divisas_op estadoOP=1 jspFile=movimientos_divisas_excel>
+    	<salidaPr id=3 operacion=movimientos_divisas_op estadoOP=EXCEL jspFile=movimientos_divisas_excel>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.gp.PrConsultaDivisas>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_divisas_pr-data>
+
+	<iColl id=ListaMovimientosPr>
+	  <kColl id=Movimientos>
+ 		<field id=PrStrReferencia>
+ 		<field id=PrStrNumIden>
+		<field id=PrStrTipOper>
+		<field id=PrStrDesTOper>
+  		<field id=PrStrComOVen>
+ 		<field id=PrStrDivisas>
+		<field id=PrStrImporte>
+		<field id=PrStrImpAUSD>
+		<field id=PrStrImpACOP>
+		<field id=PrStrTCDivUS>
+		<field id=PrStrTCDivCO>
+		<field id=PrStrEstado>
+		<field id=PrStrDesOper>
+		<field id=PrStrFecha>
+      </kColl>
+    </iColl>
+	<field id=PrStrUltReferencia>
+
+</kColl>
+<! --------------------------------------------------------------------------------->

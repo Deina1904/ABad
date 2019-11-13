@@ -1,0 +1,102 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION oper_interbanca_confirmar_tras_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.operinter.OPOperInterbancaConfirmarTras id=oper_interbanca_confirmar_tras_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaTrasOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+	<refKColl refId=oper_interbanca_confirmar_tras_op-data>
+	<refOM refId=oper_interbanca_ctas_ben_om>
+	<refOM refId=consulta_comision_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaTrasOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.operinter.OPOperInterbancaConfirmarTras>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=oper_interbanca_confirmar_tras_op-data>
+	<field id=asuntoPropio>
+	<field id=entidadDestino>
+	<field id=asuntoTipo>
+	<field id=asuntoDestino>
+	<field id=idBeneficiario>
+	<field id=nomBeneficiario>
+	<field id=importe>
+	<field id=correoBenef>
+	<field id=observaciones>
+	<field id=datosAsuAso>
+	<field id=Error>
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaTrasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+		<fString dataName=DesEntidadBenfPr description=desEntidadBenfPr>
+		<fString dataName=DesCtaBenefPr description=desCtaBenefPr>
+		<fString dataName=ClaveCtaBenefPr description=claveCtaBenefPr>
+		<fString dataName=IdBeneficiarioPr description=idBeneficiarioPr>
+		<fString dataName=NomBeneficiarioPr description=nomBeneficiarioPr>
+		<fString dataName=FechaOpePr description=fechaOpePr>
+		<fNumString dataName=ImportePr description=importePr>
+		<fString dataName=CorreoBenefPr description=correoBenefPr>
+		<fString dataName=ObservacionesPr description=observacionesPr>
+		<fString dataName=ComisionPr description=comisionPr>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=asuntoPropio>
+		<fString dataName=entidadDestino>
+		<fString dataName=asuntoTipo>
+		<fString dataName=asuntoDestino>
+		<fString dataName=idBeneficiario>
+		<fString dataName=nomBeneficiario>
+		<fNumString dataName=importe>
+		<fString dataName=correoBenef>
+		<fString dataName=observaciones>
+		<fString dataName=datosAsuAso>
+
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

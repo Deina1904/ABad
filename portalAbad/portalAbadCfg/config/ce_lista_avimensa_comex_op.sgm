@@ -1,0 +1,140 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ce_lista_avimensa_comex_op  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.ce.op.ce.OPAviMensaComex id=ce_lista_avimensa_comex_op operationContext=OperationContext>
+	<refFormat name=htmlRequestFormat refId=AviMenComexOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=SiguienteAviMenOPHTMLFmt>
+	<refFormat name=jspFormat refId=AviMenComexOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=ce_lista_avimensa_comex_op-data>
+	<refOM refId=ce_lista_avimensa_comex_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=Mensaje metodo=mostrarAviMen requestFmt=AviMenComexOPHTMLFmt>
+		<estadoOP id=1 accion=Mensaje metodo=mostrarAviMen requestFmt=AviMenComexOPHTMLFmt>
+		<estadoOP id=ERROR accion=Mensaje metodo=mostrarAviMen requestFmt=AviMenComexOPHTMLFmt>
+
+		<estadoOP id=0 accion=Aviso metodo=mostrarAviMen requestFmt=AviMenComexOPHTMLFmt>
+		<estadoOP id=1 accion=Aviso metodo=mostrarAviMen requestFmt=AviMenComexOPHTMLFmt>
+		<estadoOP id=ERROR accion=Aviso metodo=mostrarAviMen requestFmt=AviMenComexOPHTMLFmt>
+
+		<estadoOP id=1 accion=masDatos metodo=hayMasDatos requestFmt=SiguienteAviMenOPHTMLFmt>
+		<estadoOP id=ERROR accion=masDatos metodo=hayMasDatos requestFmt=SiguienteAviMenOPHTMLFmt>
+		<estadoOP id=1 accion=menosDatos metodo=hayMenosDatos requestFmt=AnteriorAviMenOPHTMLFmt>
+		<estadoOP id=ERROR accion=menosDatos metodo=hayMenosDatos requestFmt=AnteriorAviMenOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1     jspFmt=AviMenComexOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.ce.op.ce.OPAviMensaComex>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ce_lista_avimensa_comex_op-data>
+	<field id=Error>
+	<field id=MaxNumRegistrosPag value=25>
+	<field id=siguientePag>
+	<field id=anteriorPag >
+	<field id=s_fecha_host>
+	<field id=s_hora_host>
+
+	<field id=hayMasDatos>
+	<field id=hayMenosDatos>
+
+       <field id=operSeleccionada>
+
+	<kColl id=AvisoMensajes>
+	  <iColl id=ListaOperaciones>
+	    <kColl id=Operaciones>
+	      <field id=Num_Secuencia_Form>
+	      <field id=Num_Secuencia>
+	      <field id=Tipo>
+	      <field id=Descripcion>
+	      <field id=FechaProc>
+	      <field id=secOpe>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Pagina>
+	  <iColl id=ListaAvimen>
+	    <kColl id=Operaciones>
+	      <field id=Num_Secuencia_Form>
+	      <field id=Num_Secuencia>
+	      <field id=Tipo>
+	      <field id=Descripcion>
+	      <field id=FechaProc>
+	      <field id=secOpe>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+    <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+    <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+    <fString dataName=s_fecha_host description=fecha_host><nullCheck>
+    <fString dataName=s_hora_host description=hora_host><nullCheck>
+    <fString dataName=Error description=mensaje><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AviMenComexOPJspFmt>
+	<fJsp>
+             <fString dataName=s_cod_nomempre description=empresa><nullCheck>
+             <fString dataName=s_cod_nomconta description=usuario><nullCheck>
+             <fString dataName=s_fecha_host description=fecha_host><nullCheck>
+             <fString dataName=s_hora_host description=hora_host><nullCheck>
+
+             <fString dataName=clase description=clase><nullCheck>
+             <fString dataName=descripcion description=descripcion><nullCheck>
+             <fString dataName=nrOpeForm description=nroOpera><nullCheck>
+             <fString dataName=accionf description=accionf><nullCheck>
+
+   	     <fString dataName=hayMasDatos description=hayMasDatos><nullCheck>
+   	     <fString dataName=hayMenosDatos description=hayMenosDatos><nullCheck>
+
+   	     <fNumString dataName=siguientePag description=siguientePag decPlaces=0 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=no showThousandsSep=no><nullCheck>
+   	     <fNumString dataName=anteriorPag  description=anteriorPag decPlaces=0 decimalsSepChar=. thousandsSepChar=, showDecimalsSep=no showThousandsSep=no><nullCheck>
+
+	     <iCollVector dataName=Pagina.ListaAvimen description=ListaOperaciones>
+		<record dataName=Operaciones>
+		     <fString dataName=Num_Secuencia_Form description=Num_Secuencia_Form><nullCheck>
+		     <fString dataName=secOpe description=secOpe><nullCheck>
+		     <fString dataName=Num_Secuencia description=Num_Secuencia><nullCheck>
+		     <fString dataName=Tipo description=Tipo ><nullCheck>
+		     <fString dataName=Descripcion description=descripcion ><nullCheck>
+		     <fString dataName=FechaProc description=FechaProc><nullCheck>
+		</record>
+	     </iCollVector>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=AviMenComexOPHTMLFmt>
+	<fHTMLReq>
+	        <fString dataName=operSeleccionada>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=SiguienteAviMenOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=siguientePag>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=AnteriorAviMenOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=anteriorPag>
+	</fHTMLReq>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+

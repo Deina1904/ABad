@@ -1,0 +1,58 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consultar_bloqtarje_om ----------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=consultar_bloqtarje_om operationContext=OperationContext>
+	<refKColl refId=consultar_bloqtarje_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=consultar_bloqtarje_om-data>
+	<field id=IdTx value=TxFN32ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+	<kColl id=Salida>
+	  <field id=INDBATCHMEP>
+	  <field id=NUMTARJETA>
+	  <field id=NUMCUENTA>
+	  <field id=IDMOTIVOBLOQ>
+	  <field id=FECHAOPER>
+	  <field id=HORAOPER>
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id=consultar_bloqtarje_om-copiar>
+	<kColl id=a-TxFN32ENET>
+		<field id=Entrada value=TxFN32ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN32ENET>
+		<field id=Salida value=TxFN32ENETSalida-01>
+	</kColl>
+</kColl>
+
+<! --------------------------------------------------------------------------------->
+
+

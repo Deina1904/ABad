@@ -1,0 +1,43 @@
+<! OPERACION ------------------------------------------------------------------------>
+
+<com.grupobbva.bc.col.web.contingencia.descargas.OpContingenciaDescargas id=contingencia_descargas_op operationContext=OperationContext>
+	<refKColl refId=contingencia_descargas_op-data>
+	
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=iniciar metodo=iniciar>
+		<estadoOP id=1 accion=iniciar metodo=iniciar>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ContingenciaDescargasOpJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.contingencia.descargas.OpContingenciaDescargas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=contingencia_descargas_op-data>
+	<iColl id=ListaDescargas>
+	    <kColl id=Items>
+	      <field id=IMG>
+		  <field id=URL>
+		  <field id=DESC>
+	    </kColl>
+	</iColl>
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=ContingenciaDescargasOpJspFmt>
+	<fJsp>
+		<iCollVector dataName=ListaDescargas description=ListaDescargas>
+			<record dataName=Items>
+				<fString dataName=IMG>
+				<fString dataName=URL>
+				<fString dataName=DESC>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>

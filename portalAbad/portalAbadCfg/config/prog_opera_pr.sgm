@@ -1,0 +1,97 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  prog_opera_pr ----------------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.po.PrProgOpera id=prog_opera_pr operationContext=OperationContext>
+	<refKColl refId=prog_opera_pr-data>
+
+<!------------------------------------------------------------------------------------>
+<! ESTADOS DEL PROCESO --------------------------------------------------------------->
+<!------------------------------------------------------------------------------------>
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=prog_tipotras_op>
+
+		<estadoPr id=1 operacion=prog_tipotras_op>
+		<estadoPr id=1 operacion=prog_trasctaspro_op>
+		<estadoPr id=1 operacion=prog_trasterc_op>
+
+		<estadoPr id=2 operacion=prog_tipotras_op>
+		<estadoPr id=2 operacion=prog_trasctaspro_op>
+		<estadoPr id=2 operacion=prog_trasterc_op>
+		<estadoPr id=2 operacion=prog_conf_ctaspro_op>
+		<estadoPr id=2 operacion=prog_conf_ctasterc_op>
+
+		<estadoPr id=3 operacion=prog_tipotras_op>
+		<estadoPr id=3 operacion=prog_conf_ctaspro_op>
+		<estadoPr id=3 operacion=prog_trasctaspro_op>
+		<estadoPr id=3 operacion=prog_trasterc_op>
+		<estadoPr id=3 operacion=prog_conf_ctasterc_op>
+		<estadoPr id=3 operacion=prog_realizar_traspro_op>
+		<estadoPr id=3 operacion=prog_realizar_trasterc_op>
+
+	</navegacionPr>
+<!------------------------------------------------------------------------------------>
+<! SALIDAS DEL JSPs POR CADA ESTADO DEL PROCESO Y DE LA OP --------------------------->
+<!------------------------------------------------------------------------------------>
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=prog_tipotras_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=prog_tipotras_op estadoOP=VALIDAR jspFile=po001_alta_clave>
+
+		<salidaPr id=1 operacion=prog_tipotras_op estadoOP=1 jspFile=po001_prog_opera>
+		<salidaPr id=1 operacion=prog_tipotras_op estadoOP=2 jspFile=po001_prog_opera2>
+		<salidaPr id=1 operacion=prog_tipotras_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=prog_trasctaspro_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=prog_trasterc_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=prog_trasctaspro_op estadoOP=1 jspFile=po003_pet_datos>
+		<salidaPr id=2 operacion=prog_trasctaspro_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=prog_trasterc_op estadoOP=1 jspFile=po002_pet_datos>
+		<salidaPr id=2 operacion=prog_trasterc_op estadoOP=AYUDA jspFile=po002_lst_benef>
+		<salidaPr id=2 operacion=prog_trasterc_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=prog_conf_ctaspro_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=prog_conf_ctasterc_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=prog_conf_ctaspro_op estadoOP=1 jspFile=po004_conf_prog>
+		<salidaPr id=3 operacion=prog_conf_ctasterc_op estadoOP=1 jspFile=po005_conf_prog>
+		<salidaPr id=3 operacion=prog_conf_ctasterc_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=prog_conf_ctasterc_op estadoOP=MENSAJE jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=prog_conf_ctasterc_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=prog_conf_ctaspro_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=prog_conf_ctaspro_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=prog_realizar_traspro_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=3 operacion=prog_realizar_traspro_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=prog_realizar_trasterc_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=prog_realizar_trasterc_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=prog_realizar_traspro_op estadoOP=1 jspFile=po006_realizado_traspro>
+		<salidaPr id=0 operacion=prog_realizar_traspro_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=prog_realizar_trasterc_op estadoOP=1 jspFile=po007_realizado_trasterc>
+		<salidaPr id=0 operacion=prog_realizar_trasterc_op estadoOP=ERROR jspFile=gn001_error>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.po.PrProgOpera>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------->
+<kColl id=prog_opera_pr-data>
+	<field id=CtaOrd>
+	<field id=CtaOrdClave>
+	<field id=TipoCtaOrd>
+	<field id=CtaBen>
+	<field id=CtaBenClave>
+	<field id=TipoCtaBen>
+	<field id=IdeBen>
+	<field id=NomBen>
+	<field id=TipoTras>
+	<field id=FecTra>
+	<field id=DiaTra>
+	<field id=NumMeses>
+	<field id=ValorTras>
+	<field id=Observ>
+	<field id=IndNva>
+	<field id=FecOpe>
+</kColl>
+
+

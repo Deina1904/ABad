@@ -1,0 +1,59 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL retorno_pagotarje_otros_om  ------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=retorno_pagotarje_otros_om operationContext=OperationContext>
+	<refKColl refId=retorno_pagotarje_otros_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=retorno_pagotarje_otros_om-data>
+	<field id=IdTx value=TxFN82ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=REFCARGO>
+	  <field id=REFABONO>
+      <field id=FECHOPER>
+      <field id=SALDODISP>
+      <field id=INDICAOK>
+      <field id=NUMAUTOR>
+      <field id=NOMBREBANCO>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= retorno_pagotarje_otros_om-copiar>
+	<kColl id=a-TxFN82ENET>
+		<field id=Entrada value=TxFN82ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN82ENET>
+		<field id=Salida value=TxFN82ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

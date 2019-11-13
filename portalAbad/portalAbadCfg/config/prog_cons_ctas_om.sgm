@@ -1,0 +1,69 @@
+<! BBVA ----------------------------------------------------------------------------------------------->
+<! Operación: MULTICANAL prog_cons_ctas_om  ----------------------------------------------------------->
+<! OPERACION ------------------------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.poenet.OMConsultarCtas id=prog_cons_ctas_om operationContext=OperationContext>
+	<refKColl refId=prog_cons_ctas_om-data>
+</com.grupobbva.bc.col.web.poenet.OMConsultarCtas>
+<! ---------------------------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------------------------->
+
+<kColl id=prog_cons_ctas_om-data>
+	<field id=IdTx value=TxF087ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2 >
+	  <field id=BASUNPRO >
+	  <field id=BASUNASO >
+	  <field id=BFECHA01 >
+	  <field id=BFECHA02 >
+	  <field id=BIMPORTE >
+	  <field id=BIMPOAUX >
+	  <field id=BINDPAGI >
+	  <field id=BINDAUX1 >
+	  <field id=BINDAUX2 >
+	  <field id=BCODAUX1 >
+	  <field id=BCODAUX2 >
+	  <field id=BNUMAUX1 >
+	  <field id=BNUMAUX2 >
+	  <field id=BPAGINAC >
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <field id=BPAGINAC>
+	  <iColl id=ListasCuentas>
+	    <kColl id=Registros>
+	      <field id=BNUMCONF>
+	      <field id=BASUPROP>
+	      <field id=BASUASOC>
+	      <field id=BTIPOPRO>
+	      <field id=BCONSECU>
+	      <field id=BFECHPRO>
+	      <field id=BOBSERVA>
+	      <field id=BNOMBREB>
+	      <field id=BCEDULAB>
+	      <field id=BIMPORTE>
+	      <field id=BESTADOP>
+	      <field id=BTOTPROG>
+	      <field id=BPAGPEND>
+	      <field id=BPAGREAL>
+	      <field id=BFECANUL>
+	    </kColl >
+	  </iColl >
+	  <field id=EMAIL>
+	</kColl >
+</kColl>
+
+<! COPIADOR ------------------------------------------------------------------------------------------->
+<kColl id= prog_cons_ctas_om-copiar>
+	<kColl id=a-TxF087ENET>
+		<field id=Entrada value=TxF087ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF087ENET>
+		<field id=Salida value=TxF087ENETSalida-01>
+	</kColl>
+</kColl>
+<! ---------------------------------------------------------------------------------------------------->

@@ -1,0 +1,435 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION fondo_plazo_sucr_reem_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+
+<com.grupobbva.bc.col.web.fplazo.OpFondoPlazoSucrReem id=fondo_plazo_sucr_reem_op operationContext=OperationContext>
+	<!-- FORMATOS DE SALIDA GENERALES -->
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+    <refFormat name=jspFormat refId=InicioOPJspFmt>
+    <refFormat name=jspFormat refId=AyudaOPJspFmt>
+    <refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<!-- FORMATOS DE SALIDA PARA SUSCRIPCIONES -->
+    <refFormat name=jspFormat refId=ConfirmacionSuscrOPJspFmt>
+    <refFormat name=jspFormat refId=RealizarSuscrOPJspFmt>
+	<!-- FORMATOS DE SALIDA PARA REEMBOLSOS -->
+    <refFormat name=jspFormat refId=ConfirmacionReemOPJspFmt>
+    <refFormat name=jspFormat refId=RealizarReemOPJspFmt>
+
+	<!-- FORMATOS DE ENTRADA GENERALES -->
+    <refFormat name=htmlRequestFormat refId=PeticionDatosOPHTMLFmt>
+	<!-- FORMATOS DE ENTRADA PARA SUSCRIPCIONES -->
+    <refFormat name=htmlRequestFormat refId=ConfirmacionSuscrOPHTMLFmt>
+    <refFormat name=htmlRequestFormat refId=RealizarSuscrOPHTMLFmt>
+	<!-- FORMATOS DE ENTRADA REEMBOLSOS -->
+    <refFormat name=htmlRequestFormat refId=ConfirmacionReemOPHTMLFmt>
+    <refFormat name=htmlRequestFormat refId=RealizarReemOPHTMLFmt>
+
+	<!-- DEFINICION DE LA OPERACIONES MULTICANAL A USAR -->
+	<refKColl refId=fondo_plazo_sucr_reem_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+	<refOM refId=fondo_plazo_sucr_om>
+	<refOM refId=fondo_plazo_reem_om>
+	<refOM refId=fondo_plazo_reem1_om>
+	<refOM refId=trans_petdatos_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=inicio metodo=inicioProceso>
+		<estadoOP id=INICIO accion=inicio metodo=inicioProceso>
+		<estadoOP id=VALIDAR accion=inicio metodo=inicioProceso>
+
+		<estadoOP id=PETDATOS-S accion=inicio metodo=inicioProceso>
+		<estadoOP id=CONFIRMAR-S accion=inicio metodo=inicioProceso>
+		<estadoOP id=REALIZAR-S accion=inicio metodo=inicioProceso>
+		<estadoOP id=PENDIENTE-S accion=inicio metodo=inicioProceso>
+
+		<estadoOP id=PETDATOS-R accion=inicio metodo=inicioProceso>
+		<estadoOP id=CONFIRMAR-R accion=inicio metodo=inicioProceso>
+		<estadoOP id=PENDIENTE-R accion=inicio metodo=inicioProceso>
+		<estadoOP id=REALIZAR-R accion=inicio metodo=inicioProceso>
+
+		<estadoOP id=AYUDA-S accion=volverAyudaSus metodo=volverDeAyudaSus>
+		<estadoOP id=AYUDA-R accion=volverAyudaRee metodo=volverDeAyudaRee>
+
+		<estadoOP id=INICIO accion=capturaDatosSuscr metodo=procesarDatosSuscr requestFmt=PeticionDatosOPHTMLFmt>
+		<estadoOP id=PETDATOS-S accion=confirmarSuscr metodo=confirmarSuscr requestFmt=ConfirmacionSuscrOPHTMLFmt>
+		<estadoOP id=CONFIRMAR-S accion=realizarSuscr metodo=realizarSuscr requestFmt=RealizarSuscrOPHTMLFmt>
+		<estadoOP id=CONFIRMAR-S accion=ponerAyudaSus metodo=ponerAyudaSus>
+
+		<estadoOP id=INICIO accion=capturaDatosReem metodo=procesarDatosReem requestFmt=PeticionDatosOPHTMLFmt>
+		<estadoOP id=PETDATOS-R accion=confirmarReem metodo=confirmarReem requestFmt=ConfirmacionReemOPHTMLFmt>
+		<estadoOP id=CONFIRMAR-R accion=realizarReem metodo=realizarReem requestFmt=RealizarReemOPHTMLFmt>
+		<estadoOP id=CONFIRMAR-R accion=ponerAyudaRee metodo=ponerAyudaRee>
+		<estadoOP id=CONFIRMAR-R accion=capturaDatosReem metodo=procesarDatosReem>
+		<estadoOP id=REALIZAR-R accion=capturaDatosReem metodo=procesarDatosReem>
+
+		<estadoOP id=ERROR accion=inicio metodo=inicioProceso>
+		<estadoOP id=ERROR accion=capturaDatosSuscr metodo=procesarDatosSuscr requestFmt=PeticionDatosOPHTMLFmt>
+		<estadoOP id=ERROR accion=confirmarSuscr metodo=confirmarSuscr requestFmt=ConfirmacionSuscrOPHTMLFmt>
+		<estadoOP id=ERROR accion=realizarSuscr metodo=realizarSuscr requestFmt=RealizarSuscrOPHTMLFmt>
+		<estadoOP id=ERROR accion=capturaDatosReem metodo=procesarDatosReem requestFmt=PeticionDatosOPHTMLFmt>
+		<estadoOP id=ERROR accion=confirmarReem metodo=confirmarReem requestFmt=ConfirmacionReemOPHTMLFmt>
+		<estadoOP id=ERROR accion=realizarReem metodo=realizarReem requestFmt=RealizarReemOPHTMLFmt>
+
+		<estadoOP id=MENSAJE accion=inicio metodo=inicioProceso>
+		<estadoOP id=MENSAJE accion=capturaDatosSuscr metodo=procesarDatosSuscr requestFmt=PeticionDatosOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=confirmarSuscr metodo=confirmarSuscr requestFmt=ConfirmacionSuscrOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=realizarSuscr metodo=realizarSuscr requestFmt=RealizarSuscrOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=capturaDatosReem metodo=procesarDatosReem requestFmt=PeticionDatosOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=confirmarReem metodo=confirmarReem requestFmt=ConfirmacionReemOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=realizarReem metodo=realizarReem requestFmt=RealizarReemOPHTMLFmt>
+
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=INICIO jspFmt=InicioOPJspFmt>
+
+		<salidaOP id=PETDATOS-R jspFmt=PeticionDatosReemOPJspFmt>
+		<salidaOP id=CONFIRMAR-R jspFmt=ConfirmacionReemOPJspFmt>
+		<salidaOP id=REALIZAR-R jspFmt=RealizarReemOPJspFmt>
+		<salidaOP id=PENDIENTE-R jspFmt=RealizarReemOPJspFmt>
+
+		<salidaOP id=PETDATOS-S jspFmt=PeticionDatosSuscrOPJspFmt>
+		<salidaOP id=CONFIRMAR-S jspFmt=ConfirmacionSuscrOPJspFmt>
+		<salidaOP id=REALIZAR-S jspFmt=RealizarSuscrOPJspFmt>
+		<salidaOP id=PENDIENTE-S jspFmt=RealizarSuscrOPJspFmt>
+
+		<salidaOP id=AYUDA-S jspFmt=AyudaOPJspFmt>
+		<salidaOP id=AYUDA-R jspFmt=AyudaOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.fplazo.OpFondoPlazoSucrReem>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=fondo_plazo_sucr_reem_op-data>
+	<!-- DATOS PARA VALIDACION DE CLAVE DE OPERACIONES -->
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+
+	<!-- DEFINICION DE DATOS DE FORMATOS DE ERROR -->
+	<field id=Error>
+
+	<!-- DEFINICION DE DATOS DE FORMATOS DE ENTRADA -->
+	<field id=inpStrAsuntoPropio>
+	<field id=inpStrAsuntoAsociado>
+	<field id=inpNumImporte value=0>
+	<field id=inpStrObservaciones value="">
+	<field id=inpStrClaveOperacion>
+	<field id=inpStrReembolsoAuto>
+	<field id=inpStrSuscripcionSel>
+
+
+	<!-- DEFINICION DE DATOS DE FORMATOS DE SALIDA Y DE CONTEXTO DE OP-->
+	<iColl id=opIcAsuntosPropios>
+		<kColl id=opKcAsuntoPropio>
+			<field id=opStrBanco>
+			<field id=opStrOficina>
+			<field id=opStrDcontrol>
+			<field id=opStrNumCuenta>
+			<field id=opStrPermiso>
+			<field id=opStrClaveAsunto>
+			<field id=opStrTipo>
+			<field id=opStrEstado>
+		</kColl >
+	</iColl >
+	<iColl id=opIcListaSuscripciones>
+		<kColl id=opKcSuscripcion>
+			<field id=opStrLlavePos>
+			<field id=opIndSeleccion>
+			<field id=opFechaSuscripcion>
+			<field id=opFechaVencimiento>
+			<field id=opFechaGracia>
+			<field id=opNumDisponiblePesos>
+			<field id=opStrCodigoOperacion>
+			<field id=opNumSecuencia>
+			<field id=opStrSubProducto>
+			<field id=opDatFechaOpeSucrip>
+			<field id=opNumNumeroOperacion>
+		</kColl >
+	</iColl >
+    <iColl id=opIcAsuntosAsociados>
+		<kColl id=opKcAsuntoAsociado>
+			<field id=opStrBanco>
+			<field id=opStrOficina>
+			<field id=opStrDcontrol>
+			<field id=opStrNumCuenta>
+			<field id=opStrPermiso>
+			<field id=opStrClaveAsunto>
+			<field id=opStrTipo>
+			<field id=opStrEstado>
+		</kColl >
+	</iColl >
+
+	<field id=opNumMaximoAutorizado>
+	<field id=opDatFechaOperacion>
+	<field id=opNumConfirmacion>
+	<field id=opStrContratoFondo>
+	<field id=opDatFechaVencimiento>
+	<field id=opStrCuentaAsoFondo>
+	<field id=opStrIndFaltante>
+	<field id=opNumImporteTotal>
+	<field id=opNumMontoReembolsar>
+	<field id=opNumRetenciones>
+	<field id=opNumPenalizacion>
+	<field id=opNumImpuestos>
+	<field id=opNumReserva>
+	<field id=opNumExcedente>
+	<field id=opNumSubTotal>
+	<field id=opNumImporteLibre1>
+
+</kColl>
+
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<!-- FORMATOS DE SALIDA PARA SUSCRIPCIONES Y REEMBOLSOS -->
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+		<iCollVector dataName=opIcAsuntosPropios description=opIcAsuntosPropios>
+			<record dataName=opKcAsuntoPropio>
+				<fString dataName=opStrBanco><nullCheck>
+				<fString dataName=opStrOficina><nullCheck>
+				<fString dataName=opStrDcontrol><nullCheck>
+				<fString dataName=opStrNumCuenta><nullCheck>
+				<fString dataName=opStrPermiso><nullCheck>
+				<fString dataName=opStrClaveAsunto><nullCheck>
+				<fString dataName=opStrTipo><nullCheck>
+				<fString dataName=opStrEstado><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<!-- FORMATO DE SALIDA PARA SUSCRIPCIONES -->
+<fmtDef id=PeticionDatosSuscrOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=inpStrAsuntoPropio description=inpStrAsuntoPropio>
+		<fDate dataName=opDatFechaOperacion description=opDatFechaOperacion>
+		<fNumString dataName=opNumMaximoAutorizado description=opNumMaximoAutorizado>
+
+		<iCollVector dataName=opIcAsuntosAsociados description=opIcAsuntosAsociados>
+			<record dataName=opKcAsuntoAsociado>
+				<fString dataName=opStrBanco><nullCheck>
+				<fString dataName=opStrOficina><nullCheck>
+				<fString dataName=opStrDcontrol><nullCheck>
+				<fString dataName=opStrNumCuenta><nullCheck>
+				<fString dataName=opStrPermiso><nullCheck>
+				<fString dataName=opStrClaveAsunto><nullCheck>
+				<fString dataName=opStrTipo><nullCheck>
+				<fString dataName=opStrEstado><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+<!-- FORMATO DE SALIDA PARA SUSCRIPCIONES -->
+<fmtDef id=ConfirmacionSuscrOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=inpStrAsuntoPropio description=inpStrAsuntoPropio>
+		<fString dataName=inpStrAsuntoAsociado description=inpStrAsuntoAsociado>
+		<fNumString dataName=inpNumImporte description=inpNumImporte>
+		<fString dataName=inpStrReembolsoAuto description=inpStrReembolsoAuto>
+		<fString dataName=inpStrObservaciones description=inpStrObservaciones>
+
+		<fString dataName=opStrContratoFondo description=opStrContratoFondo>
+		<fDate dataName=opDatFechaOperacion description=opDatFechaOperacion>
+		<!fDate dataName=opDatFechaVencimiento description=opDatFechaVencimiento>
+		<fString dataName=opDatFechaVencimiento description=opDatFechaVencimiento>
+	</fJsp>
+</fmtDef>
+<!-- FORMATO DE SALIDA PARA SUSCRIPCIONES -->
+<fmtDef id=RealizarSuscrOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_ip description=ip>
+		<fString dataName=inpStrAsuntoPropio description=inpStrAsuntoPropio>
+		<fString dataName=inpStrAsuntoAsociado description=inpStrAsuntoAsociado>
+		<fNumString dataName=inpNumImporte description=inpNumImporte>
+		<fString dataName=inpStrReembolsoAuto description=inpStrReembolsoAuto>
+		<fString dataName=inpStrObservaciones description=inpStrObservaciones>
+
+		<fNumString dataName=opNumConfirmacion description=opNumConfirmacion>
+		<fString dataName=opStrContratoFondo description=opStrContratoFondo>
+		<fDate dataName=opDatFechaOperacion description=opDatFechaOperacion>
+		<!fDate dataName=opDatFechaVencimiento description=opDatFechaVencimiento>
+		<fString dataName=opDatFechaVencimiento description=opDatFechaVencimiento>
+	</fJsp>
+</fmtDef>
+
+<!-- FORMATO DE SALIDA PARA REEMBOLSOS -->
+<fmtDef id=PeticionDatosReemOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=opStrContratoFondo description=opStrContratoFondo>
+		<fString dataName=opStrCuentaAsoFondo description=opStrCuentaAsoFondo>
+		<fNumString dataName=opNumMaximoAutorizado description=opNumMaximoAutorizado>
+
+		<fString dataName=inpStrAsuntoPropio description=inpStrAsuntoPropio>
+
+		<iCollVector dataName=opIcListaSuscripciones description=opIcListaSuscripciones>
+			<record dataName=opKcSuscripcion>
+				<fString dataName=opStrLlavePos><nullCheck>
+				<fString dataName=opIndSeleccion><nullCheck>
+				<!fDate dataName=opFechaSuscripcion><nullCheck>
+				<!fDate dataName=opFechaVencimiento><nullCheck>
+				<!fDate dataName=opFechaGracia><nullCheck>
+				<fString dataName=opFechaSuscripcion><nullCheck>
+				<fString dataName=opFechaVencimiento><nullCheck>
+				<fString dataName=opFechaGracia><nullCheck>
+				<fNumString dataName=opNumDisponiblePesos><nullCheck>
+				<fString dataName=opStrCodigoOperacion><nullCheck>
+				<fNumString dataName=opNumSecuencia><nullCheck>
+				<fString dataName=opStrSubProducto><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+<!-- FORMATO DE SALIDA PARA REEMBOLSOS -->
+<fmtDef id=ConfirmacionReemOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fDate dataName=opDatFechaOperacion description=opDatFechaOperacion>
+		<fString dataName=opStrContratoFondo description=opStrContratoFondo>
+		<fString dataName=opStrCuentaAsoFondo description=opStrCuentaAsoFondo>
+		<fString dataName=opStrIndFaltante description=opStrIndFaltante>
+		<fNumString dataName=opNumImporteTotal description=opNumImporteTotal>
+		<fNumString dataName=opNumMontoReembolsar description=opNumMontoReembolsar>
+		<fNumString dataName=opNumRetenciones description=opNumRetenciones>
+		<fNumString dataName=opNumPenalizacion description=opNumPenalizacion>
+		<fNumString dataName=opNumImpuestos description=opNumImpuestos>
+		<fNumString dataName=opNumReserva description=opNumReserva>
+		<fNumString dataName=opNumExcedente description=opNumExcedente>
+		<fNumString dataName=opNumSubTotal description=opNumSubTotal>
+		<fNumString dataName=opNumImporteLibre1 description=opNumImporteLibre1>
+
+		<fString dataName=inpStrAsuntoPropio description=inpStrAsuntoPropio>
+		<fNumString dataName=inpNumImporte description=inpNumImporte>
+	</fJsp>
+</fmtDef>
+<!-- FORMATO DE SALIDA PARA REEMBOLSOS -->
+<fmtDef id=RealizarReemOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_ip description=ip>
+		<fNumString dataName=opNumConfirmacion description=opNumConfirmacion>
+		<fDate dataName=opDatFechaOperacion description=opDatFechaOperacion>
+		<fString dataName=opStrContratoFondo description=opStrContratoFondo>
+		<fString dataName=opStrCuentaAsoFondo description=opStrCuentaAsoFondo>
+		<fString dataName=opStrIndFaltante description=opStrIndFaltante>
+		<fNumString dataName=opNumImporteTotal description=opNumImporteTotal>
+		<fNumString dataName=opNumRetenciones description=opNumRetenciones>
+		<fNumString dataName=opNumPenalizacion description=opNumPenalizacion>
+		<fNumString dataName=opNumImpuestos description=opNumImpuestos>
+		<fNumString dataName=opNumSubTotal description=opNumSubTotal>
+		<fNumString dataName=opNumReserva description=opNumReserva>
+		<fNumString dataName=opNumExcedente description=opNumExcedente>
+		<fNumString dataName=opNumImporteLibre1 description=opNumImporteLibre1>
+
+		<fString dataName=inpStrAsuntoPropio description=inpStrAsuntoPropio>
+		<fNumString dataName=inpNumImporte description=inpNumImporte>
+        <fString dataName=inpStrObservaciones description=inpStrObservaciones>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<!-- FORMATO DE ENTRADA COMUN PARA REEMBOLSO Y SUSCRIPCIONES -->
+<fmtDef id=PeticionDatosOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpStrAsuntoPropio>
+	</fHTMLReq>
+</fmtDef>
+
+<!-- FORMATO DE ENTRADA SOLO PARA SUSCRIPCIONES -->
+<fmtDef id=ConfirmacionSuscrOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpStrAsuntoAsociado>
+		<fNumString dataName=inpNumImporte>
+		<fString dataName=inpStrObservaciones>
+		<fString dataName=inpStrReembolsoAuto>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=RealizarSuscrOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpStrClaveOperacion>
+	</fHTMLReq>
+</fmtDef>
+
+<!-- FORMATO DE ENTRADA SOLO PARA REEMBOLSOS -->
+<fmtDef id=ConfirmacionReemOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpStrSuscripcionSel>
+		<fNumString dataName=inpNumImporte>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=RealizarReemOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=inpStrClaveOperacion>
+		<fString dataName=inpStrObservaciones>
+	</fHTMLReq>
+</fmtDef>
+
+
+
+<! --------------------------------------------------------------------------------->

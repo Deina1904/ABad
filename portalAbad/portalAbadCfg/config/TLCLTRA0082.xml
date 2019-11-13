@@ -1,0 +1,2311 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<cfgorden>
+    <params/>
+    <estructurafichero>
+        <!-- Primer registro cabecera obligatorio -->
+        <secuencia minocur="1" maxocur="1" idsecuencia="1110" posidsecuencia="1">
+            <campo nombre="codigoregistro" tipo="1" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="1110" cache="false" checkopermat="false"/>
+            <!-- Tipo Documento -->
+            <campo nombre="tipodocemisor" tipo="0" tipodato="3" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="true" checkopermat="false">
+                <params>
+                    <param nombre="regexp" valor="(01)|(02)|(03)|(04)|(05)|(06)|(07)|(08)|(09)"/>
+                </params>
+            </campo>
+            <!-- RIF Emisor -->
+            <campo nombre="numdocidentemisor" tipo="0" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="true" checkopermat="false"/>
+            <!-- Sufijo -->
+            <campo nombre="sufijo" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="true" checkopermat="false"/>
+            <!-- Fecha creacion fichero -->
+            <campo nombre="fechafichero" tipo="0" tipodato="2" obligatorio="true" longitud="8" inicio="25" campofijo="false" valorcampofijo="" checkopermat="false">
+                <params>
+                    <param nombre="formatofecha" valor="yyyyMMdd"/>
+                </params>
+            </campo>
+            <!-- Fecha proceso fichero -->
+            <campo nombre="fechaproceso" validaFestivo="true" tipo="0" tipodato="2" obligatorio="true" longitud="8" inicio="33" campofijo="false" valorcampofijo="" cache="true">
+                <params>
+                    <param nombre="formatofecha" valor="yyyyMMdd"/>
+                </params>
+            </campo>
+            <!-- Cuenta Ordenante-->
+            <campo nombre="asuntoemisor" tipo="0" tipodato="3" obligatorio="true" longitud="4" inicio="41" campofijo="false" valorcampofijo="" cache="true" checkopermat="false">
+                <params>
+                    <param nombre="regexp" valor="0013[\d]{16}"/>
+                </params>
+                <compuestopor separador="">
+                    <campo nombre="oficinaemisor" tipo="0" tipodato="1" obligatorio="true" longitud="4" inicio="45" campofijo="false" valorcampofijo="" cache="true" checkopermat="false">
+                        <params>
+                            <param nombre="admitirespacios" valor="false"/>
+                        </params>
+                    </campo>
+                    <campo nombre="dcemisor" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="49" campofijo="false" valorcampofijo="" cache="true" checkopermat="false"/>
+                    <campo nombre="cuentaemisor" tipo="0" tipodato="1" obligatorio="true" longitud="10" inicio="51" campofijo="false" valorcampofijo="" cache="true" checkopermat="false">
+                        <params>
+                            <param nombre="admitirespacios" valor="false"/>
+                        </params>
+                    </campo>
+                </compuestopor>
+            </campo>
+            <!-- Divisa de la Cuenta -->
+            <campo nombre="coddivisaasunto" tipo="0" tipodato="3" obligatorio="true" longitud="3" inicio="61" campofijo="false" valorcampofijo="" cache="true" checkopermat="false">
+                <params>
+                    <param nombre="regexp" valor="COP"/>
+                </params>
+            </campo>
+            <!-- Indicador devolucion -->
+            <campo nombre="inddevolucion" tipo="0" tipodato="3" obligatorio="true" longitud="1" inicio="64" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="regexp" valor="[0]"/>
+                </params>
+            </campo>
+            <!-- Nombre Fichero-->
+            <campo nombre="nombrefichero" tipo="0" tipodato="0" obligatorio="true" longitud="12" inicio="65" campofijo="false" valorcampofijo="" checkopermat="false"/>
+            <!-- Clave Emisor-->
+            <campo nombre="claveemisor" tipo="0" tipodato="0" obligatorio="true" longitud="15" inicio="77" campofijo="false" valorcampofijo="" checkopermat="false" cache="true"/>
+            <campo nombre="abonoefectivo" tipo="0" tipodato="0" obligatorio="false" longitud="1" inicio="92" campofijo="false" valorcampofijo="" checkopermat="false" cache="true"/> <!-- GP6285 -->
+        <!-- INI: GP11306 - Jun-2014 -->
+	    <campo nombre="desFichero" tipo="0" tipodato="0" obligatorio="false" longitud="18" inicio="153" campofijo="false" valorcampofijo="" checkopermat="false" cache="true"/>
+	<!-- FIN: GP11306 - Jun-2014 -->
+        </secuencia>
+        <!-- segundo registro cabecera obligatorio -->
+        <secuencia minocur="1" maxocur="1" idsecuencia="1120" posidsecuencia="1">
+            <campo nombre="codigoregistroregcab2" tipo="2" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="1120" cache="false" checkopermat="false"/>
+            <!-- Tipo Documento -->
+            <campo nombre="tipodocemisorregcab2" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="tipodocemisor"/>
+                </params>
+            </campo>
+            <!-- RIF Emisor -->
+            <campo nombre="numdocidentemisorregcab2" tipo="0" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="numdocidentemisor"/>
+                </params>
+            </campo>
+            <!-- Sufijo -->
+            <campo nombre="sufijoregcab2" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="sufijo"/>
+                </params>
+            </campo>
+            <!-- nombre Emisor -->
+            <campo nombre="nombreemisor" tipo="0" tipodato="0" obligatorio="true" longitud="36" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+            <!-- domicilio1 Emisor -->
+            <campo nombre="domicilioemisor1" tipo="0" tipodato="0" obligatorio="false" longitud="36" inicio="61" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+            <!-- domicilio2 Emisor -->
+            <campo nombre="domicilioemisor2" tipo="0" tipodato="0" obligatorio="false" longitud="36" inicio="97" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+        </secuencia>
+        <!-- tercer registro cabecera opcional -->
+        <secuencia minocur="0" maxocur="1" idsecuencia="1130" posidsecuencia="1">
+            <campo nombre="codigoregistroregcab3" tipo="2" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="1130" cache="false" checkopermat="false"/>
+            <!-- Tipo Documento -->
+            <campo nombre="tipodocemisorregcab3" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="tipodocemisor"/>
+                </params>
+            </campo>
+            <!-- RIF Emisor -->
+            <campo nombre="numdocidentemisorregcab3" tipo="0" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="numdocidentemisor"/>
+                </params>
+            </campo>
+            <!-- Sufijo -->
+            <campo nombre="sufijoregcab3" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="sufijo"/>
+                </params>
+            </campo>
+            <!-- poblacion Emisor -->
+            <campo nombre="localidademisor" tipo="0" tipodato="0" obligatorio="false" longitud="36" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+            <!-- codigo estado Emisor -->
+            <campo nombre="codigopostalemisor2" tipo="0" tipodato="0" obligatorio="false" longitud="2" inicio="61" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+            <!-- codigo postal Emisor -->
+            <campo nombre="codigopostalemisor" tipo="0" tipodato="0" obligatorio="false" longitud="5" inicio="63" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+        </secuencia>
+        <!-- primer registro individual  obligatorio-->
+        <secuencia minocur="1" maxocur="99999999" idsecuencia="1210" posidsecuencia="1">
+            <campo nombre="codigoregistroregindv1" tipo="3" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="1210" cache="false" checkopermat="false">
+                <semantica>
+                    <accion nombre="resetCampoIncremental">
+                        <param nombre="nomcontador" valor="incConceptos"/>
+                        <param nombre="valorcontador" valor="0"/>
+                    </accion>
+                </semantica>
+            </campo>
+            <!-- Tipo Documento -->
+            <campo nombre="tipodocemisorregindv1" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="tipodocemisor"/>
+                </params>
+            </campo>
+            <!-- RIF Emisor -->
+            <campo nombre="numdocidentemisorregindv1" tipo="0" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="numdocidentemisor"/>
+                </params>
+            </campo>
+            <!-- Sufijo -->
+            <campo nombre="sufijoregindv1" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="sufijo"/>
+                </params>
+            </campo>
+            <!-- Tipo Documento Beneficiario-->
+            <campo nombre="tipodocdocdestino" tipo="0" tipodato="0" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="true" checkopermat="false">
+                <params>
+                    <param nombre="regexp" valor="(01)|(02)|(03)|(04)|(05)|(06)|(07)|(08)|(09)"/>
+                </params>
+            </campo>
+            <!-- clave del beneficiario -->
+            <campo nombre="clavebeneficiario" tipo="0" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="true" checkopermat="false"/>
+            <!-- forma pago -->
+            <campo nombre="formapagodestino" tipo="0" tipodato="3" obligatorio="true" longitud="1" inicio="43" campofijo="false" valorcampofijo="" cache="true" checkopermat="false">
+                <params>
+                    <!-- GP11464 Entelgy SAS Agregando forma de pago 6 a la forma de pago -->
+                    <param nombre="regexp" valor="[123456]"/>
+                    <!-- FIN GP11464 Entelgy SAS -->
+                </params>
+            </campo>
+            <!-- Banco de la cuenta del Beneficiario-->
+            <campo nombre="codbancobeneficiario" tipo="0" tipodato="3" obligatorio="false" longitud="4" inicio="44" campofijo="false" valorcampofijo="" cache="true" checkopermat="false">
+                <params>
+                    <param nombre="regexp" valor="[\d]{4}"/>
+                </params>
+				 <semantica>           
+                    <accion nombre="dependenciaIF">
+                        <param nombre="IF" valor="@formapagodestino=2**3**5"/>
+                        <param nombre="THEN" valor="@codbancobeneficiario=0013"/>
+                        <param nombre="ELSE" valor="@codbancobeneficiario=OBL"/>
+                        <param nombre="validarCuentaBenef" valor="validarCuentaBenef"/>  
+                    </accion> 
+                </semantica>
+            </campo>
+            <!--  Cuenta del Beneficiario-->
+            <campo nombre="numerocuentabenef" tipo="0" tipodato="0" obligatorio="false" longitud="4" inicio="48" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                       <param nombre="admitirespacios" valor="true"/>
+                </params>
+                <compuestopor separador="">
+                    <campo nombre="dcbeneficiario" tipo="0" tipodato="1" obligatorio="false" longitud="2" inicio="52" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                    <campo nombre="cuentabeneficiario" tipo="0" tipodato="0" obligatorio="false" longitud="10" inicio="54" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="admitirespacios" valor="true"/>
+                        </params>
+                    </campo>
+                </compuestopor>
+				<!-- GP11864 Entelgy SAS-->
+                <semantica>
+                    <accion nombre="dependenciaIF">
+                        <param nombre="IF" valor="@formapagodestino=1**2**3**6"/>
+                        <param nombre="THEN" valor="@numerocuentabenef=OPC"/>
+                        <param nombre="ELSE" valor="@numerocuentabenef=0000000000000000"/>
+                    </accion> 
+                </semantica>
+				<!-- FIN GP11864 Entelgy SAS-->
+            </campo>
+            <!-- tipo cuenta nacham del beneficiario -->
+            <campo nombre="tipocuentanacham" tipo="0" tipodato="0" obligatorio="false" longitud="2" inicio="64" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+				<semantica>
+                    <accion nombre="dependenciaIF">
+                        <param nombre="IF" valor="@codbancobeneficiario=0013"/>
+                        <param nombre="THEN" valor="@tipocuentanacham=OPC"/>
+                        <param nombre="ELSE" valor="@tipocuentanacham=01*02*52"/><!-- GP-14520 -->
+                        <!-- GP11864 Entelgy SAS Validación de tipo de cuenta para forma de pago 6 -->
+                        <param nombre="VCD" valor="VCD"/>
+                        <param nombre="formapagodestino" valor="@formapagodestino"/>
+                        <param nombre="tipocuentanacham" valor="@tipocuentanacham"/>
+                        <param nombre="numerocuentabenef" valor="@numerocuentabenef"/>
+                        <param nombre="codbancobeneficiario" valor="@codbancobeneficiario"/>
+                        <param nombre="cuentanacham" valor="@cuentanacham"/><!-- GP-14520 -->
+                        <!-- GP11864 Entelgy SAS FIN -->
+                    </accion> 
+                </semantica>
+			</campo>
+            <!-- numero cuenta nacham del beneficiario -->
+            <campo nombre="cuentanacham" tipo="0" tipodato="0" obligatorio="false" longitud="17" inicio="66" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+            <!-- Importe-->
+            <campo nombre="importe" tipo="0" tipodato="3" obligatorio="true" longitud="13" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="true" checkexpresion="true">
+                <compuestopor separador=".">
+                    <campo nombre="importedec" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="96" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                </compuestopor>
+                <params>
+                    <param nombre="regexp" valor="[\d]{13}[\.]{1}[\d]{2}"/>
+                    <param nombre="mayorque" valor="0"/>
+                </params>
+            </campo>
+            <!-- Fecha proceso -->
+            <campo nombre="fechaproceso" tipo="0" tipodato="1" obligatorio="true" longitud="8" inicio="98" campofijo="false" valorcampofijo="" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="fechaproceso"/>
+                </params>
+            </campo>
+            <!-- Fecha limite pago -->
+            <campo nombre="fechavencimiento" tipo="0" tipodato="2" obligatorio="false" longitud="8" inicio="106" campofijo="false" valorcampofijo="" cache="false">
+                <params>
+                    <param nombre="formatofecha" valor="yyyyMMdd"/>
+                </params>
+				 <semantica>
+                    <accion nombre="dependenciaIF">
+                        <param nombre="IF" valor="@formapagodestino=2**3"/>
+                        <param nombre="THEN" valor="@fechavencimiento>@fechaproceso"/>
+                        <param nombre="ELSE" valor="@fechavencimiento=OPC"/>
+                    </accion>
+                </semantica>
+            </campo>
+            <!--  cod devolucion-->
+            <campo nombre="coddevolucion" tipo="0" tipodato="3" obligatorio="true" longitud="6" inicio="114" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="regexp" valor="[ ]{6}"/>
+                </params>
+            </campo>
+            <!--  referencia-->
+            <campo nombre="referencia" tipo="0" tipodato="0" obligatorio="false" longitud="15" inicio="120" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+            <!--  codigo oficina pagadora-->
+            <campo nombre="plazapagodestino" tipo="0" tipodato="1" obligatorio="false" longitud="4" inicio="135" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+              <semantica>
+                    <accion nombre="dependenciaIF">
+                        <param nombre="IF" valor="@formapagodestino=2**3"/>
+                        <param nombre="THEN" valor="@plazapagodestino=OBL"/>
+                        <param nombre="ELSE" valor="@plazapagodestino=OPC"/>
+                    </accion>
+                </semantica>
+			</campo>
+            <!-- segundo registro individual  obligatorio-->
+            <secuencia minocur="1" maxocur="1" idsecuencia="1220" posidsecuencia="1">
+                <campo nombre="codigoregistroregindv2" tipo="4" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="1220" cache="false" checkopermat="false"/>
+                <!-- Tipo Documento -->
+                <campo nombre="tipodocemisorregindv2" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="tipodocemisor"/>
+                    </params>
+                </campo>
+                <!-- RIF Emisor -->
+                <campo nombre="numdocidentemisorregindv2" tipo="0" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="numdocidentemisor"/>
+                    </params>
+                </campo>
+                <!-- Sufijo -->
+                <campo nombre="sufijoregindv2" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="sufijo"/>
+                    </params>
+                </campo>
+                <!-- Tipo Documento Beneficiario-->
+                <campo nombre="tipodocdocdestinoregindv2" tipo="0" tipodato="0" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="tipodocdocdestino"/>
+                    </params>
+                </campo>
+                <!-- clave del beneficiario -->
+                <campo nombre="clavebeneficiarioregindv2" tipo="0" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="clavebeneficiario"/>
+                    </params>
+                </campo>
+                <!-- nombre del beneficiario -->
+                <campo nombre="nombrebeneficiario" tipo="0" tipodato="0" obligatorio="true" longitud="36" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                <!-- direccion del beneficiario -->
+                <campo nombre="direccionbeneficiario" tipo="0" tipodato="0" obligatorio="false" longitud="36" inicio="79" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                <!-- direccion2 del beneficiario -->
+                <campo nombre="direccionbeneficiario2" tipo="0" tipodato="0" obligatorio="false" longitud="36" inicio="115" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+            </secuencia>
+            <!-- tercer registro individual  obligatorio-->
+            <secuencia minocur="1" maxocur="1" idsecuencia="1230" posidsecuencia="1">
+                <campo nombre="codigoregistroregindv3" tipo="4" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="1230" cache="false" checkopermat="false"/>
+                <!-- Tipo Documento -->
+                <campo nombre="tipodocemisorregindv3" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="tipodocemisor"/>
+                    </params>
+                </campo>
+                <!-- RIF Emisor -->
+                <campo nombre="numdocidentemisorregindv3" tipo="0" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="numdocidentemisor"/>
+                    </params>
+                </campo>
+                <!-- Sufijo -->
+                <campo nombre="sufijoregindv3" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="sufijo"/>
+                    </params>
+                </campo>
+                <!-- Tipo Documento Beneficiario-->
+                <campo nombre="tipodocdocdestinoregindv3" tipo="0" tipodato="0" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="tipodocdocdestino"/>
+                    </params>
+                </campo>
+                <!-- clave del beneficiario -->
+                <campo nombre="clavebeneficiarioregindv3" tipo="0" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="clavebeneficiario"/>
+                    </params>
+                </campo>
+                <!-- email del beneficiario -->
+                <campo nombre="email" tipo="0" tipodato="0" obligatorio="false" longitud="48" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+            </secuencia>
+            <!-- concepto Ordenes Gp9751 INICIO-->
+            <secuencia minocur="0" maxocur="453" idsecuencia="124" posidsecuencia="1">
+	    <!-- concepto Ordenes Gp9751 FIN-->
+                <campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="124" cache="false" checkopermat="false">
+                    <compuestopor separador="">
+                        <campo nombre="incremento" tipo="10" tipodato="1" obligatorio="true" longitud="1" inicio="4" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                            <semantica>
+                                <accion nombre="checkCampoIncremental" evento="0">
+                                    <param nombre="nomcontador" valor="incConceptos"/>
+                                    <param nombre="valorcontador" valor="0"/>
+                                </accion>
+                            </semantica>
+                        </campo>
+                    </compuestopor>
+                </campo>
+                <!-- Tipo Documento -->
+                <campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="tipodocemisor"/>
+                    </params>
+                </campo>
+                <!-- RIF Emisor -->
+                <campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="numdocidentemisor"/>
+                    </params>
+                </campo>
+                <!-- Sufijo -->
+                <campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="sufijo"/>
+                    </params>
+                </campo>
+                <!-- Tipo Documento Beneficiario-->
+                <campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="tipodocdocdestino"/>
+                    </params>
+                </campo>
+                <!-- clave del beneficiario -->
+                <campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                    <params>
+                        <param nombre="dependencia" valor="clavebeneficiario"/>
+                    </params>
+                </campo>
+                <!-- concepto 1-->
+                <campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                <!-- concepto 2-->
+                <campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                <!-- concepto 3 Gp9751 INICIO-->
+                <campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                
+	        	<secuencia minocur="0" maxocur="10" idsecuencia="125" posidsecuencia="1">
+                    <campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="125" cache="false" checkopermat="false"/>
+	    <!-- concepto 3 Gp9751 FIN-->
+                    <!-- Tipo Documento -->
+                    <campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="tipodocemisor"/>
+                        </params>
+                    </campo>
+                    <!-- RIF Emisor -->
+                    <campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="numdocidentemisor"/>
+                        </params>
+                    </campo>
+                    <!-- Sufijo -->
+                    <campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="sufijo"/>
+                        </params>
+                    </campo>
+                    <!-- Tipo Documento Beneficiario-->
+                    <campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="tipodocdocdestino"/>
+                        </params>
+                    </campo>
+                    <!-- clave del beneficiario -->
+                    <campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="clavebeneficiario"/>
+                        </params>
+                    </campo>
+                    <!-- concepto 1-->
+                    <campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                    <!-- concepto 2-->
+                    <campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+					<!-- concepto 3 GP9751 INI-->
+                    <campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+					<!-- concepto 3 GP9751 FIN-->
+                </secuencia>
+		<!-- concepto 3 Gp9751 INI-->
+                <secuencia minocur="0" maxocur="10" idsecuencia="126" posidsecuencia="1">
+                    <campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="126" cache="false" checkopermat="false"/>
+                    <!-- Tipo Documento -->
+                    <campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="tipodocemisor"/>
+                        </params>
+                    </campo>
+                    <!-- RIF Emisor -->
+                    <campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="numdocidentemisor"/>
+                        </params>
+                    </campo>
+                    <!-- Sufijo -->
+                    <campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="sufijo"/>
+                        </params>
+                    </campo>
+                    <!-- Tipo Documento Beneficiario-->
+                    <campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="tipodocdocdestino"/>
+                        </params>
+                    </campo>
+                    <!-- clave del beneficiario -->
+                    <campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="clavebeneficiario"/>
+                        </params>
+                    </campo>
+                    <!-- concepto 1-->
+                    <campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                    <!-- concepto 2-->
+                    <campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+					<!-- concepto 3 GP9751 INI-->
+                    <campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+					<!-- concepto 3 GP9751 FIN-->
+                </secuencia>
+                <secuencia minocur="0" maxocur="10" idsecuencia="127" posidsecuencia="1">
+                    <campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="127" cache="false" checkopermat="false"/>
+                    <!-- Tipo Documento -->
+                    <campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="tipodocemisor"/>
+                        </params>
+                    </campo>
+                    <!-- RIF Emisor -->
+                    <campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="numdocidentemisor"/>
+                        </params>
+                    </campo>
+                    <!-- Sufijo -->
+                    <campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="sufijo"/>
+                        </params>
+                    </campo>
+                    <!-- Tipo Documento Beneficiario-->
+                    <campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="tipodocdocdestino"/>
+                        </params>
+                    </campo>
+                    <!-- clave del beneficiario -->
+                    <campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                        <params>
+                            <param nombre="dependencia" valor="clavebeneficiario"/>
+                        </params>
+                    </campo>
+                    <!-- concepto 1-->
+                    <campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                    <!-- concepto 2-->
+                    <campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+					<!-- concepto 3 GP9751 INI-->
+                    <campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+					<!-- concepto 3 GP9751 FIN-->
+                </secuencia>
+                <!-- GP9751 INICIO -->
+                
+<secuencia minocur="0" maxocur="10" idsecuencia="128" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="128" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="129" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="129" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="130" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="130" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="131" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="131" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="132" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="132" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="133" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="133" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="134" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="134" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="135" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="135" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="136" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="136" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="137" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="137" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="138" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="138" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="139" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="139" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="140" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="140" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="141" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="141" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="142" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="142" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="143" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="143" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="144" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="144" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="145" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="145" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="146" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="146" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="147" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="147" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="148" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="148" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="149" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="149" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="150" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="150" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="151" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="151" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="152" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="152" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="153" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="153" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="154" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="154" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="155" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="155" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="156" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="156" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="157" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="157" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="158" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="158" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="159" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="159" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="160" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="160" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="161" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="161" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="162" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="162" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="163" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="163" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="164" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="164" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="165" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="165" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="166" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="166" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="167" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="167" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="168" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="168" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+<secuencia minocur="0" maxocur="10" idsecuencia="169" posidsecuencia="1">
+<campo nombre="codigoregistroregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="169" cache="false" checkopermat="false"/>
+<!-- Tipo Documento -->
+<campo nombre="tipodocemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocemisor"/>
+</params>
+</campo>
+<!-- RIF Emisor -->
+<campo nombre="numdocidentemisorregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="numdocidentemisor"/>
+</params>
+</campo>
+<!-- Sufijo -->
+<campo nombre="sufijoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="sufijo"/>
+</params>
+</campo>
+<!-- Tipo Documento Beneficiario-->
+<campo nombre="tipodocdocdestinoregcpto" tipo="10" tipodato="1" obligatorio="true" longitud="2" inicio="25" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="tipodocdocdestino"/>
+</params>
+</campo>
+<!-- clave del beneficiario -->
+<campo nombre="clavebeneficiarioregcpto" tipo="10" tipodato="0" obligatorio="true" longitud="16" inicio="27" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+    <params>
+<param nombre="dependencia" valor="clavebeneficiario"/>
+</params>
+</campo>
+<!-- concepto 1-->
+<campo nombre="cptotextoconcepto" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="43" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 2-->
+<campo nombre="cptotextoconcepto2" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="83" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 INI-->
+<campo nombre="cptotextoconcepto3" tipo="10" tipodato="0" obligatorio="false" longitud="40" inicio="123" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+<!-- concepto 3 GP9751 FIN-->
+</secuencia>
+                <!-- gp9751 FIN -->
+            </secuencia>
+        </secuencia>
+        <!-- registro pie obligatorio-->
+        <secuencia minocur="1" maxocur="1" idsecuencia="1910" posidsecuencia="1">
+            <campo nombre="codigoregistro" tipo="7" tipodato="1" obligatorio="true" longitud="0" inicio="0" campofijo="true" valorcampofijo="1910" cache="false" checkopermat="false"/>
+            <!-- Tipo Documento -->
+            <campo nombre="tipodocemisorregpie" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="5" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="tipodocemisor"/>
+                </params>
+            </campo>
+            <!-- RIF Emisor -->
+            <campo nombre="numdocidentemisorregpie" tipo="0" tipodato="1" obligatorio="true" longitud="16" inicio="7" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="numdocidentemisor"/>
+                </params>
+            </campo>
+            <!-- Sufijo -->
+            <campo nombre="sufijoregpie" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="23" campofijo="false" valorcampofijo="" cache="false" checkopermat="false">
+                <params>
+                    <param nombre="dependencia" valor="sufijo"/>
+                </params>
+            </campo>
+            <campo nombre="importetotal" tipo="0" tipodato="3" obligatorio="true" longitud="13" inicio="25" campofijo="false" valorcampofijo="" cache="true" checkopermat="false">
+                <compuestopor separador=".">
+                    <campo nombre="importetotaldec" tipo="0" tipodato="1" obligatorio="true" longitud="2" inicio="38" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+                </compuestopor>
+                <params>
+                    <param nombre="regexp" valor="[\d]{13}[\.]{1}[\d]{2}"/>
+                    <param nombre="mayorque" valor="0"/>
+                </params>
+            </campo>
+            <campo nombre="totaloperaciones" tipo="0" tipodato="1" obligatorio="true" longitud="8" inicio="40" campofijo="false" valorcampofijo="" cache="true" checkopermat="false"/>
+            <campo nombre="totalregistros" tipo="0" tipodato="1" obligatorio="true" longitud="8" inicio="48" campofijo="false" valorcampofijo="" cache="true" checkopermat="false"/>
+            <campo nombre="filler" tipo="0" tipodato="0" obligatorio="false" longitud="115" inicio="56" campofijo="false" valorcampofijo="" cache="false" checkopermat="false"/>
+        </secuencia>
+    </estructurafichero>
+    <contadores>
+        <contador nombre="totalregistros" validarcon="totalregistros">
+            <idsecuencia>1110</idsecuencia>
+            <idsecuencia>1120</idsecuencia>
+            <idsecuencia>1130</idsecuencia>
+            <idsecuencia>1210</idsecuencia>
+            <idsecuencia>1220</idsecuencia>
+            <idsecuencia>1230</idsecuencia>
+            <idsecuencia>124</idsecuencia>
+	    <!-- gp9751 INI -->
+            <idsecuencia>125</idsecuencia>
+            <idsecuencia>126</idsecuencia>
+            <idsecuencia>127</idsecuencia>
+            <idsecuencia>128</idsecuencia>
+			<idsecuencia>129</idsecuencia>
+			<idsecuencia>130</idsecuencia>
+			<idsecuencia>131</idsecuencia>
+			<idsecuencia>132</idsecuencia>
+			<idsecuencia>133</idsecuencia>
+			<idsecuencia>134</idsecuencia>
+			<idsecuencia>135</idsecuencia>
+			<idsecuencia>136</idsecuencia>
+			<idsecuencia>137</idsecuencia>
+			<idsecuencia>138</idsecuencia>
+			<idsecuencia>139</idsecuencia>
+			<idsecuencia>140</idsecuencia>
+			<idsecuencia>141</idsecuencia>
+			<idsecuencia>142</idsecuencia>
+			<idsecuencia>143</idsecuencia>
+			<idsecuencia>144</idsecuencia>
+			<idsecuencia>145</idsecuencia>
+			<idsecuencia>146</idsecuencia>
+			<idsecuencia>147</idsecuencia>
+			<idsecuencia>148</idsecuencia>
+			<idsecuencia>149</idsecuencia>
+			<idsecuencia>150</idsecuencia>
+			<idsecuencia>151</idsecuencia>
+			<idsecuencia>152</idsecuencia>
+			<idsecuencia>153</idsecuencia>
+			<idsecuencia>154</idsecuencia>
+			<idsecuencia>155</idsecuencia>
+			<idsecuencia>156</idsecuencia>
+			<idsecuencia>157</idsecuencia>
+			<idsecuencia>158</idsecuencia>
+			<idsecuencia>159</idsecuencia>
+			<idsecuencia>160</idsecuencia>
+			<idsecuencia>161</idsecuencia>
+			<idsecuencia>162</idsecuencia>
+			<idsecuencia>163</idsecuencia>
+			<idsecuencia>164</idsecuencia>
+			<idsecuencia>165</idsecuencia>
+			<idsecuencia>166</idsecuencia>
+			<idsecuencia>167</idsecuencia>
+			<idsecuencia>168</idsecuencia>
+			<idsecuencia>169</idsecuencia>
+		<!-- gp9751 FIN -->
+            <idsecuencia>1910</idsecuencia>
+        </contador>
+        <contador nombre="totaloperaciones" validarcon="totaloperaciones">
+            <idsecuencia>1210</idsecuencia>
+        </contador>
+    </contadores>
+    <operaciones>
+        <operacion nombre="importetotal" validarcon="importetotal" tipo="0">
+            <datooperacion nombre="importe" idsecuencia="1210"/>
+        </operacion>
+    </operaciones>
+</cfgorden>

@@ -1,0 +1,26 @@
+﻿
+<! Operations definition sample file for the server>
+
+<! Startup operation>
+
+<!StartupServerOp id=startupServerOp operationContext=startupServerCtx>
+	<!refFormat name=csReplyFormat refId=startupReqFmt>
+	<!refFormat name=htmlRequestFormat refId=startupHTMLFmt>
+<!/StartupServerOp>
+
+<! --------------------------------------------------------------------------------->
+
+<! End session operation>
+
+<!EndSessionServerOp id=endSessionServerOp operationContext=endSessionServerCtx>
+<!/EndSessionServerOp>
+
+<! --------------------------------------------------------------------------------->
+
+<! Event Manager internal operation. DO NOT MODIFY>
+
+<com.ibm.dse.base.EventManagerServerOperation id=eventManagerServerOperation>
+</com.ibm.dse.base.EventManagerServerOperation>
+
+<! BBV  --------------------------------------------------------------------------------->
+

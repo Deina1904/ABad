@@ -1,0 +1,161 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pago_masivo_mantenimiento_eliminar_ctas_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoMantenimientoEliminarCtas id=pago_masivo_mantenimiento_eliminar_ctas_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionCtasAEliminarOPJspFmt>
+	<refFormat name=jspFormat refId=RelacionRealizarEliminarCtasOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=AyudaOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosCuentasGeneralOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=DatosCuentasRealizarOPHTMLFmt>
+
+	<refKColl refId=pago_masivo_mantenimiento_eliminar_ctas_op-data>
+	<refOM refId=identificacion_operativa_om>
+ 	<refOM refId=pago_masivo_mantenimiento_eliminar_ctas_om>
+	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=confirmarEliminarCtas metodo=confirmarEliminarCtas requestFmt=DatosCuentasGeneralOPHTMLFmt>
+		<estadoOP id=1 accion=confirmarEliminarCtas metodo=confirmarEliminarCtas requestFmt=DatosCuentasGeneralOPHTMLFmt>
+		<estadoOP id=2 accion=confirmarEliminarCtas metodo=confirmarEliminarCtas requestFmt=DatosCuentasGeneralOPHTMLFmt>
+		<estadoOP id=AYUDA accion=confirmarEliminarCtas metodo=confirmarEliminarCtas requestFmt=DatosCuentasGeneralOPHTMLFmt>
+		<estadoOP id=ERROR accion=confirmarEliminarCtas metodo=confirmarEliminarCtas requestFmt=DatosCuentasGeneralOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=confirmarEliminarCtas metodo=confirmarEliminarCtas requestFmt=DatosCuentasGeneralOPHTMLFmt>
+
+		<estadoOP id=1 accion=volver metodo=volverConfClave>
+		<estadoOP id=MENSAJE accion=volver metodo=volverConfClave>
+
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=volverDeAyuda metodo=volverDeAyuda>
+
+		<estadoOP id=1 accion=realizarEliminarCtas metodo=realizarEliminarCtas requestFmt=DatosCuentasRealizarOPHTMLFmt>
+		<estadoOP id=2 accion=realizarEliminarCtas metodo=realizarEliminarCtas requestFmt=DatosCuentasRealizarOPHTMLFmt>
+
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionCtasAEliminarOPJspFmt>
+		<salidaOP id=2 jspFmt=RelacionRealizarEliminarCtasOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoMantenimientoEliminarCtas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_masivo_mantenimiento_eliminar_ctas_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+
+	<field id=DatosCuenta>
+	<field id=EliminarT>
+
+	<field id=FechaOper>
+	<field id=CuentasAEliminarOP>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+
+
+	<field id=ClaveOperacion>
+	<field id=Error>
+
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionCtasAEliminarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+
+ 		<fString dataName=NumeroCtaOrdPr description=numeroCtaOrd><nullCheck>
+ 		<fString dataName=TipoServicioPr description=tipoServicio><nullCheck>
+ 		<fString dataName=DesTipoServicioPr description=desTipoServicio><nullCheck>
+ 		<fString dataName=NombrePlantillaPr description=nombrePlantilla><nullCheck>
+ 		<fNumString dataName=CodigoPlantillaPr description=codigoPlantilla><nullCheck>
+
+ 		<fString dataName=CuentasAEliminarOP description=cuentasAEliminar><nullCheck>
+ 		<fString dataName=TipoEliminacionPr description=tipoEliminacion><nullCheck>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=RelacionRealizarEliminarCtasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+
+ 		<fString dataName=NumeroCtaOrdPr description=numeroCtaOrd><nullCheck>
+ 		<fString dataName=TipoServicioPr description=tipoServicio><nullCheck>
+ 		<fString dataName=DesTipoServicioPr description=desTipoServicio><nullCheck>
+ 		<fString dataName=NombrePlantillaPr description=nombrePlantilla><nullCheck>
+ 		<fNumString dataName=CodigoPlantillaPr description=codigoPlantilla><nullCheck>
+
+ 		<fString dataName=CuentasAEliminarOP description=cuentasAEliminar><nullCheck>
+		<fDate dataName=FechaOper description=fechaOper><nullCheck>
+ 		<fString dataName=TipoEliminacionPr description=tipoEliminacion><nullCheck>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosCuentasGeneralOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=DatosCuenta>
+		<fString dataName=EliminarT>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=DatosCuentasRealizarOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

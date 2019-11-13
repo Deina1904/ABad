@@ -1,0 +1,123 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pago_masivo_ejecutar_pago_cuentas_benef_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoEjecutarPagoCuentasBenef id=pago_masivo_ejecutar_pago_cuentas_benef_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionCuentasOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPlanillaGeneralOPHTMLFmt>
+
+	<refKColl refId=pago_masivo_ejecutar_pago_cuentas_benef_op-data>
+ 	<refOM refId=pago_masivo_mantenimiento_listactas_om>
+ 	<refOM refId=anula_planillas_real_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=ctasBenef metodo=ctasBenef requestFmt=DatosPlanillaGeneralOPHTMLFmt>
+		<estadoOP id=1 accion=ctasBenef metodo=ctasBenef requestFmt=DatosPlanillaGeneralOPHTMLFmt>
+		<estadoOP id=ERROR accion=ctasBenef metodo=ctasBenef requestFmt=DatosPlanillaGeneralOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=1 jspFmt=RelacionCuentasOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoEjecutarPagoCuentasBenef>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_masivo_ejecutar_pago_cuentas_benef_op-data>
+	<field id=datosPlanilla>
+
+
+	<iColl id=listaCuentasOrd>
+		<kColl id=cuenta>
+			<field id=banco>
+			<field id=oficina>
+			<field id=dControl>
+			<field id=numCuenta>
+			<field id=claveAsunto>
+			<field id=tipo>
+		</kColl>
+	</iColl>
+
+	<iColl id=ListaCuentas>
+			<kColl id=cuenta>
+				<field id=CODIGO-CUENTA>
+				<field id=NOMBRE-ENTIDAD>
+				<field id=TIPO-CUENTA>
+				<field id=NUMERO-CUENTA>
+				<field id=NOMBRE-TITULAR>
+				<field id=IDENTIFICACION>
+				<field id=VALOR>
+				<field id=CORREO>
+			</kColl>
+	</iColl>
+
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+
+<fmtDef id=RelacionCuentasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+ 		<fString dataName=NumeroCtaOrdPr description=numeroCtaOrd>
+ 		<fString dataName=TipoServicioPr description=tipoServicio>
+ 		<fString dataName=DesTipoServicioPr description=desTipoServicio>
+ 		<fString dataName=NombrePlantillaPr description=nombrePlantilla>
+ 		<fNumString dataName=CodigoPlantillaPr description=codigoPlantilla>
+
+ 		<iCollVector dataName=ListaCuentas description=ListaCuentas>
+ 			<record dataName=cuenta>
+ 				<fNumString dataName=CODIGO-CUENTA>
+ 				<fString dataName=NOMBRE-ENTIDAD>
+ 				<fString dataName=TIPO-CUENTA>
+ 				<fString dataName=NUMERO-CUENTA>
+ 				<fString dataName=NOMBRE-TITULAR>
+ 				<fString dataName=IDENTIFICACION>
+ 				<fNumString dataName=VALOR>
+ 				<fString dataName=CORREO>
+ 			</record>
+ 		</iCollVector>
+
+		<iCollVector dataName=listaCuentasOrd description=listaCuentasOrd>
+			<record dataName=cuenta>
+				<fString dataName=banco><nullCheck>
+				<fString dataName=oficina><nullCheck>
+				<fString dataName=dControl><nullCheck>
+				<fString dataName=numCuenta><nullCheck>
+				<fString dataName=claveAsunto><nullCheck>
+				<fString dataName=tipo><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosPlanillaGeneralOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=datosPlanilla>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

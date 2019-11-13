@@ -1,0 +1,55 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consultausu2_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=consultausu2_om operationContext=OperationContext>
+	<refKColl refId=consultausu2_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consultausu2_om-data>
+	<field id=IdTx value=TxMCO2ENET>
+	<kColl id=Entrada>
+
+	  <field id=REFERENCIA>
+	  <field id=OPCION>
+	  <field id=USUARIO>
+
+	</kColl >
+	<kColl id=Salida>
+		<iColl id=ListaConsulta>
+			    <kColl id=consulta>
+			      <field id=nom-usu>
+			      <field id=est-usu>
+			      <field id=pef-usu>
+			      <field id=adm-usu>
+			      <field id=coi-usu>
+			      <field id=fal-usu>
+			      <field id=tkn-usu>
+			      <field id=usr-usu>
+			      <field id=numaux1>
+			      <field id=numaux2>
+			      <field id=numaux3>
+
+ 		    </kColl >
+		</iColl >
+	  <field id=resultado>
+	</kColl >
+</kColl>
+
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= consultausu2_om-copiar>
+	<kColl id=a-TxMCO2ENET>
+		<field id=Entrada value=TxMCO2ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxMCO2ENET>
+		<field id=Salida value=TxMCO2ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

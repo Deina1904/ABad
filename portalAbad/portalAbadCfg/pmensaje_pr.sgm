@@ -1,0 +1,17 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pmensaje_pr  ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.cmc.mensaje.PRpmensaje id=pmensaje_pr operationContext=OperationContext>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=pmensaje_op>
+	</navegacionPr>
+	
+	<resultadoPr>				
+		<salidaPr id=0 operacion=pmensaje_op estadoOP=1 jspFile=pmensaje>		
+			
+	</resultadoPr>	
+
+</com.cmc.mensaje.PRpmensaje>
+<! --------------------------------------------------------------------------------->

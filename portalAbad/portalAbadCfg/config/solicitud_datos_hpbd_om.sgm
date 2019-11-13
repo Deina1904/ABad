@@ -1,0 +1,24 @@
+<! BBVA  --------------------------------------------------------------------------->
+<! Operación:  MULTICANAL solicitud_datos_hpbd_om    ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.col.web.homepage.OMSolicitudDatos id=solicitud_datos_hpbd_om operationContext=OperationContext>
+	<refKColl refId=solicitud_datos_hpbd_om-data>
+</com.grupobbva.col.web.homepage.OMSolicitudDatos>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=solicitud_datos_hpbd_om-data>
+    <kColl id=omLstCiudades>
+	  <iColl id=omListaCiudades>
+	    <kColl id=omCiudad>
+            <field id="OM_NOM_CIUDAD" >
+	    </kColl >
+	  </iColl >
+    </kColl >
+    <kColl id=omLstTipos>
+	  <iColl id=omListaTipos>
+	    <kColl id=omTipo>
+            <field id="OM_TIPOBIEN" >
+	    </kColl >
+	  </iColl >
+    </kColl >
+</kColl>

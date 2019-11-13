@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.grupobbva.bc.col.web.contingencia.base.OpGestionContingencia"/>
+<fullyQualifiedTypeName name="com.grupobbva.ii.sf.operacion.OpGestion"/>
+<fullyQualifiedTypeName name="com.ibm.dse.base.Context"/>
+<fullyQualifiedTypeName name="com.ibm.dse.base.IndexedCollection"/>
+<fullyQualifiedTypeName name="com.ibm.dse.base.DataElement"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="com.ibm.dse.base.KeyedCollection"/>
+<fullyQualifiedTypeName name="com.grupobbva.ii.sf.operacion.OperacionPresentacion"/>
+<fullyQualifiedTypeName name="com.grupobbva.ii.sf.operacion.Proceso"/>
+<fullyQualifiedTypeName name="com.grupobbva.ii.sf.operacion.OperacionMulticanal"/>
+<fullyQualifiedTypeName name="com.grupobbva.ii.sf.modelo.ConsultaBD"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+</qualifiedTypeNameHistroy>

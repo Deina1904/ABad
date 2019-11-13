@@ -1,0 +1,12 @@
+INDEX VERSION 1.4+C:\pr\abad\portalAbad\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1917603557.index
+2269809222.index
+2079219257.index
+3860147908.index
+3624683682.index
+2195641465.index
+2133475370.index
+597091454.index
+1956699767.index
+1901305354.index
+1882207126.index

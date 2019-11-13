@@ -1,0 +1,1080 @@
+<!  --- BBVA ---  >
+
+<!  CONTEXTO GLOBAL  >
+<kColl id=GlobalBbvaNetData>
+        <field id=BranchId>
+        <field id=BranchName>
+        <field id=BranchAddress>
+        <field id=UserBD value=ntcc001>
+        <field id=PasswordBD value=bbva2019>OperacionCBTFServlet?proceso=contingencia_inicio_pr&operacion=contingencia_inicio_op&accion=Iniciar
+        <field id=Aplicacion value=Colombianet>
+
+<! Ecommerce Redirection WebApps HiPSO 20040701--begin-------------------------------------------------->
+   <kColl id=infoWebApps>
+      <field id=WebApps value=3>
+      <field id=eCommServices value=2>
+      <kColl id=eComm0>
+         <field id=descriptionData value="Declaraci&oacute;n y Pago Electr&oacute;nico de Impuestos Distritales SHD. DyPE">
+         <field id=urlData value="https://www.e-bbva.com.co/bbvaecmco/portalnetco/LogonAnonimoServlet?proceso=select_web_app_pr&operacion=select_web_app_op&accion=redirectWebApp">
+         <field id=procRedir value="proceso=pago_dype_pr&operacion=ecomm_rpago_op&accion=verificar" >
+         <field id=RefBBVAeComm value=0047 >
+         <field id=redirecURL value="https://www.e-bbva.com.co/bbvaecmco/portalnetco/LogonAnonimoServlet?proceso=select_web_app_pr&operacion=select_web_app_op&accion=redirectWebApp">
+      </kColl>
+      <kColl id=eComm1>
+        <field id=descriptionData value="PSE - PROVEEDOR DE SERVICIOS ELECTRÓNICOS">
+        <field id=urlData value="https://www.e-bbva.com.co/bbvaecmco/portalnetco/LogonAnonimoServlet?proceso=select_web_app_pr&operacion=select_web_app_op&accion=redirectWebApp">
+        <field id=procRedir value="proceso=pago_pse_pr&operacion=ecomm_rpago_pse_op&accion=verificar" >
+        <field id=RefBBVAeComm value=PSE >
+      </kColl>
+      <kColl id=WebApp0>
+         <field id=descriptionData value="BBVA net">
+         <field id=urlData value="https://www.e-bbva.com.co/bbvaecm/colombianet/LogonOperacionServlet">
+      </kColl>
+      <kColl id=WebApp1>
+         <field id=descriptionData value="BBVA Vip">
+         <field id=urlData value="https://www.e-bbva.com.co/bbvaecmvip/colombiavip/LogonOperacionServlet">
+      </kColl>
+      <kColl id=WebApp2>
+         <field id=descriptionData value="BBVA net Empresas">
+         <field id=urlData value="https://www.e-bbva.com.co/bbvaecmemp/colombiaemp/LogonOperacionServlet">
+      </kColl>
+   </kColl>
+<! Ecommerce Redirection WebApps HiPSO 20040701--end---------------------------------------------------->
+
+</kColl>
+
+	<kColl id=GlobalComun>
+        <field id=UserBD value=ntcc001>
+		<field id=PasswordBD value=bbva2019>
+		<field id=NombreAccesoBD value="NETCONTI">
+        <field id=NombreConexionBD value="jdbc:db2://82.119.222.39:60017/NETCONTI">
+	</kColl>
+	<kColl id=GlobalIDC>
+		<field id=UserBD value=ntcc001>
+		<field id=PasswordBD value=bbva2019>
+		<field id=NombreAccesoBD value="NETCONTI">
+		<field id=NombreConexionBD value="jdbc:db2://82.119.222.39:60017/NETCONTI">
+	</kColl>
+	<field id=BDDefecto value=BDColombia>
+	<kColl id=BDColombia>
+	        <field id=UserBD value=db2inst1>
+		<field id=PasswordBD value=db2inst1>
+		<field id=NombreAccesoBD value="BNCMCO">
+		<field id=NombreConexionBD value="jdbc:db2://10.10.20.71:50001/BNCMCO">
+	</kColl>
+	<kColl id=GlobalComunHost>
+		<field id=UserBD value=ntcc001>
+		<field id=PasswordBD value=bbva2019>
+		<field id=NombreAccesoBD value="NETCONTI">
+		<field id=NombreConexionBD value="jdbc:db2://82.119.222.39:60017/NETCONTI">
+	</kColl>
+	<kColl id=CashLatamContingencia>
+	        <field id=UserBD value=ntcc001>
+	        <field id=PasswordBD value=bbva2019>
+	        <field id=NombreAccesoBD value="NETCONTI">
+	        <field id=NombreConexionBD value="jdbc:db2://82.119.222.39:60017/NETCONTI">
+	</kColl>
+
+<!  CONTEXTO SESION  >
+<kColl id=SesionDatosGenerales>
+   <field id=usuario_prueba >
+   <field id=id_sesion >
+   <field id=s_Colectivo value="pr_co">
+   <field id=v_grupos>
+   <!--DATOS CAMPOS HEADER para CADAS - INICIO -->
+   <field id=s_eai_iv-tipoaut value="0000" descripcion="tipo de autenticacion realizada en EAI">
+   <field id=s_eai_num_disp value="0000000000000000" descripcion="Serial del dispositivo de seguridad asignado al cliente ()Tarjeta de coordenadas)">
+   <field id=s_eai_codigo_cliente value="00000000" descripcion="Codigo de usuario altamira entregado por EAI">
+   <field id=s_eai_tjc_estado value="SINTJC" descripcion="Estado de la tarjeta de coordenadas entregado por EAI">
+   <field id=s_eai_accion_origen value="nada" descripcion="origen de autenticació llamado en login EAI">
+   <!--DATOS CAMPOS HEADER para CADAS - FIN    -->
+   <field id=s_ip descripcion="IP del cliente remoto que esta transando">
+    <!-- CAMBIO OLVIDO IP ANONIMA INICIO    -->
+   <field id=s_ip_anonimo descripcion="IP del cliente remoto que esta transando anonimo">
+   <field id=user_agent_anonimo descripcion="Navegador del cliente remoto anonimo">
+   <field id=idioma_navegador_anonimo descripcion="Idioma del navegador del cliente remoto anonimo">
+   <!-- CAMBIO OLVIDO IP ANONIMA FIN    -->
+   <!-- GP-12483 INICIO -->
+   <field id=s_IPCliente descripcion="IP del cliente remoto que esta transando">
+   <field id=s_hay_sesion value="no">
+   <field id=s_serial_token value="">
+   <field id=s_cod_usuarisc value="" description="Codigo del ususario">
+   <!GP-12483 FIN !>
+   <field id=s_canal value=11 description="Canal de SSTT de la Ref. Externa">
+   <field id=s_cod_bancocsb value=182 description="Banco CSB de la Ref. Externa">
+    <field id=s_ip descripcion="IP del cliente remoto que esta transando">
+   <field id=s_cod_bancoint value=1 description="Banco Interno de la Ref. Externa">
+   <field id=s_producto value=1058 description="Producto contratado">
+   <field id=s_subproducto value=0 description="Subproducto contratado">
+   <field id=s_cod_bancoprcsb value=182 description="Banco CSB del Producto">
+   <field id=s_cod_bancoprint value=1 description="Banco CSB Interno del producto">
+   <field id=s_idioma value=1 description="Idioma de la Ref. Externa">
+   <field id=s_lit_idioma value=CAS description="Sufijo del Idioma de la Ref. Externa">
+   <field id=s_password description="">
+   <field id=s_cod_logon description="">
+   <field id=s_cod_password description="">
+   <field id=s_cod_cbanco description="Banco CSB del Contrato de SSTT">
+   <field id=s_cod_cofici description="Oficina del Contrato de SSTT">
+   <field id=s_cod_ccontr description="Contrapartida del Contrato de SSTT">
+   <field id=s_cod_cfolio description="Folio del Contrato de SSTT">
+   <field id=s_cod_nomconta description="Nombre del usuario">
+   <field id=s_cod_nomempre value="GRUPO GANAEMPRESA S.A." description="Nombre de la empresa">
+   <field id=s_cod_codocup>
+   <field id=s_user>
+   <!--field id=s_cod_buzon value="0026008200100196"--><!GP-12483 NO SE DEBE UTILIZAR, REPETIDO>
+   <field id=s_registros value="0">
+   <field id=s_valor value="0">
+   <field id=s_cod_desocup>
+   <field id=s_cod_sexconta>
+   <field id=s_correo_op>
+   <field id=s_correo_con>
+   <field id=s_ult_acceso>
+   <field id=UltimoPr>
+   <field id=s_ip >
+   <field id=s_dias value="61">
+   <field id=fecha_ing >
+   <field id=s_fecha_ini="2011-03-20">
+   <field id=UltimaOP>
+   <field id=UltimoJspFile>
+   <field id=UltimaJspData>
+   <field id=UltimaJspUrl>
+   <field id=s_operacion_monetaria value = Si>
+   <field id=s_operacion_mensajes  value = Si>
+   <field id=s_Banco value=0179 description="BancoNet">
+   <field id=s_Oficina value=1000 description="OficinaNet">
+   <field id=s_CodCanal value=0005 description="Codigo de canal">
+   <field id=s_CodMedioAcceso value=0007 description="Medio de acceso">
+   <field id=s_CodServicio value=0001 description="Servicio o ni idea">
+   <field id=s_CodServicioPortal value=0001 description="Servicio o Portal">
+   <field id=s_TipoIdCliente value=01 description="Tipo identificacion cliente">
+   <field id=s_IdCliente value=7777777 description="Identificacion cliente">
+   <field id=s_IdClienteExt>
+   <field id=s_IdEstCliente>
+   <field id=s_NumeroOperacion value=222222222>
+   <field id=numOPSesion value=0 description="Número de operaciones realizadas">
+   <field id=numOPRequest value=0 description="Número de operaciones solicitadas">
+   <field id=PR_en_ejecucion value="0">
+   <field id=gif value="prueba.gif">
+   <field id=s_Primera_entrada>
+   <field id=s_Datos_ok value="NOK">
+   <field id=ModulosActivosPr value="0">
+   <field id=ApliError value="NO">
+   <field id=forward value="pruebaerror">
+   <field id=url>
+   <field id=s_user>
+   <field id=mensaje>
+   <field id=formato value="SI">
+   <field id=monetaria value="NO">
+
+<!  INICIO DATOS REFERENTES A PAGINACION POSICION GLOBAL  -------------------------  >
+
+   <field id=s_pg_RegistrosPaginacion value=15>
+   <field id=s_pg_MasDatosCuentas value="n">
+   <field id=s_pg_MasDatosTarjetas value="n">
+   <field id=s_pg_MasDatosPrestamos value="n">
+   <field id=s_pg_MasDatosFondos value="n">
+   <field id=s_pg_MasDatosCupo value="n">
+    <!-- GP11189 - Novatec Solutions 03/04/2014 INICIO -->
+    <field id=s_pg_MasDatosDepositoElec value="n">
+     <!-- GP11189 - Novatec Solutions 03/04/2014 FIN    -->
+   <! JAAG -->
+   <field id=s_pg_MasDatosPensiones value="n">
+    <!-- GP9811 INICIO -->
+    <field id=s_pg_MasDatosLeasing value="n">
+    <!-- GP9811 FIN -->
+   <field id=s_pg_IdMovimientoCuentas value=0>
+   <field id=s_pg_IdMovimientoTarjetas value=0>
+   <field id=s_pg_IdMovimientoPrestamos value=0>
+   <field id=s_pg_IdMovimientoFondos value=0>
+   <field id=s_pg_IdMovimientoCupo value=0>
+   <! JAAG -->
+   <field id=s_pg_IdMovimientoPensiones value=0>
+    <!-- GP9811 INICIO -->
+    <field id=s_pg_IdMovimientoLeasing value=0>
+    <!-- GP9811 FIN -->
+    <!-- GP11189 - Novatec Solutions 03/04/2014 INICIO -->
+    <field id=s_pg_IdMovimientoDepositoElec value=0>
+    <!-- GP11189 - Novatec Solutions 03/04/2014 FIN    -->
+   <iColl id=s_pg_lista_posicion_global_cuentas>
+      <kColl id=s_cuenta>
+         <field id=s_banco>
+         <field id=s_oficina>
+         <field id=s_dcontrol>
+         <field id=s_num_cuenta>
+         <field id=s_tipo>
+         <field id=s_estado>
+         <field id=s_valaso>
+         <field id=s_permiso>
+         <field id=s_saldo_puntual>
+         <field id=s_saldo_disponible>
+         <field id=s_divisa>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+      </kColl>
+   </iColl>
+
+   <iColl id=s_pg_lista_posicion_global_tarjetas>
+      <kColl id=s_tarjeta>
+         <field id=s_pan1>
+         <field id=s_pan2>
+         <field id=s_pan3>
+         <field id=s_pan4>
+         <field id=s_tipo>
+         <field id=s_estado>
+         <field id=s_valaso>
+         <field id=s_permiso>
+         <field id=s_saldo_puntual>
+         <field id=s_saldo_disponible>
+         <field id=s_divisa>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+      </kColl>
+   </iColl>
+
+   <iColl id=s_pg_lista_posicion_global_prestamos>
+      <kColl id=s_prestamos>
+         <field id=s_bancop>
+         <field id=s_oficinap>
+         <field id=s_dcontrolp>
+         <field id=s_num_cuentap>
+         <field id=s_tipop>
+         <field id=s_estadop>
+         <field id=s_valasop>
+         <field id=s_permisop>
+         <field id=s_saldo_puntualp>
+         <field id=s_saldo_disponiblep>
+         <field id=s_divisap>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+      </kColl>
+   </iColl>
+
+   <iColl id=s_pg_lista_posicion_global_fondos>
+      <kColl id=s_cuenta>
+         <field id=s_banco>
+         <field id=s_oficina>
+         <field id=s_dcontrol>
+         <field id=s_num_cuenta>
+         <field id=s_tipo>
+         <field id=s_estado>
+         <field id=s_valaso>
+         <field id=s_permiso>
+         <field id=s_saldo_puntual>
+         <field id=s_saldo_disponible>
+         <field id=s_divisa>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+      </kColl>
+   </iColl>
+
+   <iColl id=s_pg_lista_posicion_global_cupo>
+      <kColl id=s_tarjeta>
+         <field id=s_pan1>
+         <field id=s_pan2>
+         <field id=s_pan3>
+         <field id=s_pan4>
+         <field id=s_tipo>
+         <field id=s_estado>
+         <field id=s_valaso>
+         <field id=s_permiso>
+         <field id=s_saldo_puntual>
+         <field id=s_saldo_disponible>
+         <field id=s_divisa>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+      </kColl>
+   </iColl>
+
+   <! JAAG -->
+   <iColl id=s_pg_lista_posicion_global_pensiones>
+      <kColl id=s_pension>
+         <field id=s_bancop>
+         <field id=s_oficinap>
+         <field id=s_dcontrolp>
+         <field id=s_num_cuentap>
+         <field id=s_tipop>
+         <field id=s_estadop>
+         <field id=s_valasop>
+         <field id=s_permisop>
+         <field id=s_saldo_puntualp>
+            <field id=s_saldo_disponiblep>
+         <field id=s_divisap>
+         <field id=s_clave_asuntop>
+          <field id=s_indicador>
+            <field id=s_alias>
+      </kColl>
+   </iColl>
+   <!-- GP10687 INICIO -->
+   <iColl id=s_pg_lista_posicion_global_valores>
+        <kColl id=s_valores>
+
+            <field id=s_num_cuentap>
+        <field id=s_tipop>
+            <field id=s_estadop>
+            <field id=s_valasop>
+            <field id=s_permisop>
+            <field id=s_saldo_puntualp>
+            <field id=s_saldo_disponiblep>
+            <field id=s_divisap>
+            <field id=s_clave_asuntop>
+        </kColl>
+     </iColl>
+   <!-- GP10687 FIN -->
+   <!-- GP9811 INICIO -->
+    <iColl id=s_pg_lista_posicion_global_leasing>
+        <kColl id=s_leasing>
+            <field id=s_banco>
+            <field id=s_oficina>
+            <field id=s_dcontrol>
+            <field id=s_num_cuenta>
+            <field id=s_tipo>
+            <field id=s_estado>
+            <field id=s_valaso>
+            <field id=s_permiso>
+            <field id=s_saldo_puntual>
+            <field id=s_saldo_disponible>
+            <field id=s_divisa>
+            <field id=s_clave_asunto>
+            <field id=s_indicador>
+            <field id=s_alias>
+        </kColl>
+    </iColl>
+    <!-- GP9811 FIN -->
+<!  FIN DATOS REFERENTES A PAGINACION POSICION GLOBAL  -------------------------  >
+
+
+
+   <kColl id=s_salida_cuentas>
+     <iColl id=s_lista_cuentas>
+       <kColl id=s_cuenta>
+         <field id=s_banco>
+         <field id=s_oficina>
+         <field id=s_dcontrol>
+         <field id=s_num_cuenta>
+         <field id=s_permiso>
+         <field id=s_clave_asunto>
+         <field id=s_tipo>
+         <field id=s_estado>
+         <field id=s_valaso>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <kColl id=s_salida_tarjetas>
+     <iColl id=s_lista_tarjetas>
+       <kColl id=s_tarjeta>
+         <field id=s_pan1>
+         <field id=s_pan2>
+         <field id=s_pan3>
+         <field id=s_pan4>
+         <field id=s_permiso>
+         <field id=s_clave_asunto>
+         <field id=s_tipo>
+         <field id=s_estado>
+         <field id=s_valaso>
+         <field id=s_clase>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <kColl id=s_salida_prestamos>
+     <iColl id=s_lista_prestamos>
+       <kColl id=s_prestamos>
+         <field id=s_bancop>
+         <field id=s_oficinap>
+         <field id=s_dcontrolp>
+         <field id=s_num_cuentap>
+         <field id=s_permisop>
+         <field id=s_clave_asunto>
+         <field id=s_tipop>
+         <field id=s_estadop>
+         <field id=s_valasop>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <kColl id=s_salida_fondos>
+     <iColl id=s_lista_fondos>
+       <kColl id=s_cuenta>
+         <field id=s_banco>
+         <field id=s_oficina>
+         <field id=s_dcontrol>
+         <field id=s_num_cuenta>
+         <field id=s_permiso>
+         <field id=s_clave_asunto>
+         <field id=s_tipo>
+         <field id=s_estado>
+         <field id=s_valaso>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <kColl id=s_salida_cupo>
+     <iColl id=s_lista_cupo>
+       <kColl id=s_tarjeta>
+         <field id=s_pan1>
+         <field id=s_pan2>
+         <field id=s_pan3>
+         <field id=s_pan4>
+         <field id=s_permiso>
+         <field id=s_clave_asunto>
+         <field id=s_tipo>
+         <field id=s_estado>
+         <field id=s_valaso>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <! JAAG -->
+   <kColl id=s_salida_pensiones>
+     <iColl id=s_lista_pensiones>
+       <kColl id=s_pension>
+         <field id=s_bancop>
+         <field id=s_oficinap>
+         <field id=s_dcontrolp>
+         <field id=s_num_cuentap>
+         <field id=s_permisop>
+         <field id=s_clave_asuntop>
+         <field id=s_tipop>
+         <field id=s_estadop>
+         <field id=s_valasop>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+   <!-- GP10687 INICIO -->
+   <kColl id=s_salida_valores>
+       <iColl id=s_lista_valores>
+         <kColl id=s_valores>
+
+           <field id=s_num_cuentap>
+           <field id=s_permisop>
+           <field id=s_clave_asuntop>
+           <field id=s_tipop>
+           	      <field id=s_indicador>
+           <field id=s_estadop>
+           <field id=s_valasop>
+           <field id=s_nombre>
+           <field id=s_saldocaja>
+           <field id=s_valorporta>
+           <field id=s_comcompra>
+           <field id=s_comventa>
+           <field id=s_saldofinal>
+
+         </kColl >
+       </iColl >
+     </kColl >
+     <!-- GP10687 FIN -->
+     <!-- GP9811 INICIO -->
+    <kColl id=s_salida_leasing>
+      <iColl id=s_lista_leasing>
+        <kColl id=s_leasing>
+          <field id=s_banco>
+          <field id=s_oficina>
+          <field id=s_dcontrol>
+          <field id=s_num_cuenta>
+          <field id=s_permiso>
+          <field id=s_clave_asunto>
+          <field id=s_tipo>
+          <field id=s_estado>
+          <field id=s_valaso>
+          <field id=s_indicador>
+          <field id=s_alias>
+        </kColl >
+      </iColl >
+    </kColl >
+    <!-- GP9811 FIN -->
+<!-- GP11189 - Novatec Solutions 02/04/2014 INICIO -->
+    <kColl id=s_salida_deposito_elec>
+      <iColl id=s_lista_deposito_elec>
+        <kColl id=s_deposito_elec>
+          <field id=s_banco>
+          <field id=s_oficina>
+          <field id=s_dcontrol>
+          <field id=s_num_cuenta>
+          <field id=s_celular>
+          <field id=s_permiso>
+          <field id=s_clave_asunto>
+          <field id=s_tipo>
+          <field id=s_estado>
+          <field id=s_valaso>
+          <field id=s_indicador>
+          <field id=s_alias>
+        </kColl >
+      </iColl >
+    </kColl >
+<!-- GP11189 - Novatec Solutions 02/04/2014 FIN    -->
+<!  DATOS ASUNTOS POSICION GLOBAL  -------------------------  >
+
+    <field id=s_mensajes value=0>
+
+   <kColl id=s_salida_posicion_global_cuentas>
+     <iColl id=s_lista_posicion_global_cuentas>
+       <kColl id=s_cuenta>
+         <field id=s_banco>
+         <field id=s_oficina>
+         <field id=s_dcontrol>
+         <field id=s_num_cuenta>
+         <field id=s_tipo>
+               <field id=s_estado>
+         <field id=s_valaso>
+         <field id=s_permiso>
+         <field id=s_saldo_puntual>
+         <field id=s_saldo_disponible>
+         <field id=s_divisa>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <kColl id=s_salida_posicion_global_tarjetas>
+     <iColl id=s_lista_posicion_global_tarjetas>
+       <kColl id=s_tarjeta>
+         <field id=s_pan1>
+         <field id=s_pan2>
+         <field id=s_pan3>
+         <field id=s_pan4>
+               <field id=s_tipo>
+               <field id=s_estado>
+         <field id=s_valaso>
+               <field id=s_permiso>
+         <field id=s_saldo_puntual>
+         <field id=s_saldo_disponible>
+         <field id=s_divisa>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <kColl id=s_salida_posicion_global_prestamos>
+     <iColl id=s_lista_posicion_global_prestamos>
+       <kColl id=s_prestamos>
+         <field id=s_bancop>
+         <field id=s_oficinap>
+         <field id=s_dcontrolp>
+         <field id=s_num_cuentap>
+         <field id=s_tipop>
+               <field id=s_estadop>
+         <field id=s_valasop>
+         <field id=s_permisop>
+         <field id=s_saldo_puntualp>
+         <field id=s_saldo_disponiblep>
+         <field id=s_divisap>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <kColl id=s_salida_posicion_global_fondos>
+     <iColl id=s_lista_posicion_global_fondos>
+       <kColl id=s_cuenta>
+         <field id=s_banco>
+         <field id=s_oficina>
+         <field id=s_dcontrol>
+         <field id=s_num_cuenta>
+         <field id=s_tipo>
+               <field id=s_estado>
+         <field id=s_valaso>
+         <field id=s_permiso>
+         <field id=s_saldo_puntual>
+         <field id=s_saldo_disponible>
+         <field id=s_divisa>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <kColl id=s_salida_posicion_global_cupo>
+     <iColl id=s_lista_posicion_global_cupo>
+       <kColl id=s_tarjeta>
+         <field id=s_pan1>
+         <field id=s_pan2>
+         <field id=s_pan3>
+         <field id=s_pan4>
+           <field id=s_tipo>
+           <field id=s_estado>
+         <field id=s_valaso>
+           <field id=s_permiso>
+         <field id=s_saldo_puntual>
+         <field id=s_saldo_disponible>
+         <field id=s_divisa>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+    <! JAAG -->
+   <kColl id=s_salida_posicion_global_pensiones>
+     <iColl id=s_lista_posicion_global_pensiones>
+       <kColl id=s_pension>
+         <field id=s_bancop>
+         <field id=s_oficinap>
+         <field id=s_dcontrolp>
+         <field id=s_num_cuentap>
+         <field id=s_tipop>
+           <field id=s_estadop>
+         <field id=s_valasop>
+         <field id=s_permisop>
+         <field id=s_saldo_puntualp>
+         <field id=s_saldo_disponiblep>
+         <field id=s_divisap>
+         <field id=s_clave_asuntop>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+   <!-- GP10687 INICIO -->
+   <kColl id=s_salida_posicion_global_valores>
+       <iColl id=s_lista_posicion_global_valores>
+         <kColl id=s_valor>
+           <field id=s_bancop>
+           <field id=s_oficinap>
+           <field id=s_dcontrolp>
+           <field id=s_num_cuentap>
+           <field id=s_tipop>
+        	  <field id=s_estadop>
+           <field id=s_valasop>
+           <field id=s_permisop>
+           <field id=s_saldo_puntualp>
+           <field id=s_saldo_disponiblep>
+           <field id=s_divisap>
+           <field id=s_clave_asuntop>
+         </kColl >
+       </iColl >
+     </kColl >
+   <!-- GP10687 FIN -->
+    <!-- GP11189 - Novatec Solutions 02/04/2014 INICIO -->
+    <kColl id=s_salida_posicion_global_deposito_elect>
+      <iColl id=s_lista_posicion_global_deposito_elect>
+        <kColl id=s_deposito_elect>
+          <field id=s_banco>
+          <field id=s_oficina>
+          <field id=s_dcontrol>
+          <field id=s_num_cuenta>
+          <field id=s_celular>
+          <field id=s_tipo>
+           <field id=s_estado>
+          <field id=s_valaso>
+          <field id=s_permiso>
+          <field id=s_saldo_puntual>
+          <field id=s_saldo_disponible>
+          <field id=s_divisa>
+          <field id=s_clave_asunto>
+          <field id=s_indicador>
+          <field id=s_alias>
+        </kColl >
+      </iColl >
+    </kColl >
+    <!-- GP11189 - Novatec Solutions 02/04/2014 FIN    -->
+   <kColl id=s_salida_cuentas_ordenantes>
+     <iColl id=s_lista_cuentas_ordenantes>
+       <kColl id=s_ordenantes>
+         <field id=s_banco>
+         <field id=s_oficina>
+         <field id=s_dcontrol>
+         <field id=s_num_cuenta>
+         <field id=s_cod_form>
+         <field id=s_iasunto>
+         <field id=s_iestado>
+         <field id=s_ivalaso>
+         <field id=s_clave_asunto>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+
+   <kColl id=s_salida_cuentas_beneficiarias>
+     <iColl id=s_lista_cuentas_beneficiarias>
+       <kColl id=s_beneficiarias>
+         <field id=s_banco>
+         <field id=s_oficina>
+         <field id=s_dcontrol>
+         <field id=s_num_cuenta>
+         <field id=s_cod_form>
+         <field id=s_iasunto>
+         <field id=s_clave_asunto>
+         <field id=s_num_contrato>
+          <field id=s_indicador>
+            <field id=s_alias>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <kColl id=s_salida_funciones>
+     <iColl id=s_lista_funciones>
+       <kColl id=s_funcion>
+         <field id=s_cod_funcion>
+         <field id=s_ind_asunto>
+         <field id=s_ind_operacion_monetaria>
+         <field id=s_estado>
+       </kColl >
+     </iColl >
+   </kColl >
+
+   <kColl id=s_salida_pendientes>
+     <iColl id=s_lista_pendientes>
+       <kColl id=s_pendientes>
+         <field id=s_funcion>
+         <field id=s_secuencia>
+         <field id=s_descripcion_funcion>
+         <field id=s_nombre_usuario>
+         <field id=s_importe>
+         <field id=s_divisa>
+         <field id=s_fecha_alta>
+       </kColl >
+     </iColl >
+   </kColl >
+    <!-- GP9811 INICIO -->
+    <kColl id=s_salida_posicion_global_leasing>
+      <iColl id=s_lista_posicion_global_leasing>
+        <kColl id=s_leasing>
+          <field id=s_banco>
+          <field id=s_oficina>
+          <field id=s_dcontrol>
+          <field id=s_num_cuenta>
+          <field id=s_tipo>
+          <field id=s_estado>
+          <field id=s_valaso>
+          <field id=s_permiso>
+          <field id=s_saldo_puntual>
+          <field id=s_saldo_disponible>
+          <field id=s_divisa>
+          <field id=s_clave_asunto>
+          <field id=s_indicador>
+          <field id=s_alias>
+        </kColl >
+      </iColl >
+    </kColl >
+    <!-- GP9811 FIN -->
+	<!--GP-12483 kColl de Servicios App Contingencia INICIO-->
+	<field id=s_ind_canal_contingencia value="N">
+	<field id=s_ind_firmas_ficheros value="N">
+	<kColl id=s_salida_servicios>
+	  <iColl id=s_lista_servicios>
+	    <kColl id=s_servicio>
+	      <field id=s_codServicio>
+	      <field id=s_codClaseOrd>
+	      <field id=s_indFirma><!--Indicador si el usuario tiene algun poder de firma sobre el servicio-->
+	      <field id=s_desServicio>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=s_salida_cuentas_servicios>
+	    <iColl id=s_lista_cuentas_servicios>
+		       <kColl id=s_cuenta_servicio>
+		         <field id=s_codServicio>
+		         <field id=s_codCuenta>
+		       </kColl >
+	      </iColl >
+	</kColl >
+
+
+	<field id=s_cod_buzon >                                 <! Buzón >
+	<field id=s_cod_refext >                                 <! Buzón >
+
+	<!-- @@FORMATOS DE FECHA/IMPORTE@@ -->
+    <! formato de fecha >
+    <field id = s_for_fec value="aaaammdd">
+
+    <! formato de importe >
+    <field id = s_for_imp value="0.000,00">
+
+	<field id=g_bancos>
+	<field id=codReferenciaExt>
+	<field id=codUsuario>
+	<field id=NumSerieToken>
+	<!-- GP-12483 FIN-->
+</kColl>
+<!  DATOS COMUNES TRANSACCIONES  -------------------------  >
+<kColl id=DatosComunesTx>
+   <field id=ModoOperacion value=Consulta>
+   <field id=Timeout value=120>
+   <field id=LongitudCabeceraHost value=195>
+</kColl>
+
+<!  --- CABECERA GENERAL ---  >
+<kColl id=CabGeneral>
+   <field id=CodTransac value=" ">
+   <field id=Espacio value=" ">
+   <field id=FmtCabecera value="AA01">
+</kColl>
+
+<!  --- CABECERA AA01 ---  >
+<kColl id=CabAA01>
+   <! -- Subcabecera Aplicacion -->
+   <field id=CodTransac value=" ">
+   <field id=CodTipOper value=0>
+   <field id=CodSubtipo value=0>
+   <field id=CodVersion value=0>
+   <field id=CodBanco    value=0179>
+   <field id=CodOficina  value=1000>
+
+   <! -- Subcabecera Personalizacion -->
+   <field id=CodCanal    value=0005>
+   <field id=CodMedioAcceso value=0007>
+   <field id=CodServicio value=0001>
+   <field id=FecOper     value=19000101>
+   <field id=HoraOper     value=010101>
+   <field id=NumOper     value=1>
+   <field id=XtiClien  value=06>
+   <field id=CodClien     value="22222222">
+
+   <! -- Subcabecera Respuesta -->
+   <field id=CodRetorno value=" ">
+   <field id=CodError   value=" ">
+   <field id=DesTexto   value=" ">
+   <field id=XtiSalida  value="00">
+</kColl>
+
+
+<kColl id=CabeceraHost>
+   <refData refId=CabGeneral>
+   <refData refId=CabAA01>
+</kColl>
+
+<!  DATOS COMUNES PROCESO -------------------------  >
+<kColl id=PrComun>
+   <field id=nombrePr>
+   <field id=estadoPr>
+   <field id=nombreOperacionInvocada>
+   <field id=nombreOperacionEjecutada>
+   <field id=jsp>
+   <field id=jspData>
+   <field id=urlData>
+</kColl>
+
+<!  DATOS COMUNES OP -------------------------  >
+<kColl id=OPComun>
+   <field id=nombreOP>
+   <field id=estadoOP>
+   <field id=accion>
+</kColl>
+
+<!  DATOS COMUNES OM -------------------------  >
+<kColl id=OMComun>
+   <field id=ModoOperacion value="">
+   <field id=NumeroOperacion>
+   <field id=CodigoError>
+   <field id=DescripcionError>
+   <field id=NumeroSalida>
+   <field id=VidaDatos value=9223372036854775807 > <! Dejar que pervalezca el tiempo de vida definido en la transacción (Long.MAX_VALUE) >
+   <kColl id=AnulacionAutomatica>
+      <field id=IdAnulacion value="">
+      <field id=MensajeError value="">
+      <field id=CodigoErrorTx value="">
+      <field id=DescripcionErrorTx value="">
+   </kColl>
+
+</kColl>
+
+<! -----DATOS PARA EL SERVICIO DUMMY DE COMUNICACIONES ----->
+
+<kColl id=CodigoTXEntrada>
+   <field id=Dummy>
+   <field id=IdTx>
+</kColl>
+
+<! ------------------------------  >
+
+<! ----- DEFINICION DE ARQUITECTURAS DE COMUNICACIONES ----->
+<kColl id=ArquitecturaCics>
+   <kColl id=CapaControl>
+      <field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.cics.CapaControlCics>
+      <field id=UsarCache value=si>
+      <field id=ServicioCache value=CacheBBVACICS>
+   </kColl>
+   <kColl id=CapaFormateo>
+      <field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.cics.CapaFormateoCics>
+      <field id=DatosCabeceraEnvio value=CabeceraHost>
+      <field id=FormatoCabeceraEnvio value=CabeceraHost>
+      <field id=DatosCabeceraRecepcion value=CabeceraHost>
+      <field id=FormatoCabeceraRecepcion value=CabeceraHost>
+      <field id=LongitudCabeceraRecepcion value=195>
+   </kColl>
+   <kColl id=CapaComunicaciones>
+      <field id=Nombre value=com.grupobbva.ii.sf.comunicaciones.cics.CapaComunicacionesCics>
+      <kColl id=Consulta>
+         <field id=SufijoServicioComunicaciones value="">
+         <field id=NumeroReintentos value=1>
+         <field id=TimeoutReintentos value=5>
+         <field id=Timeout value=30>
+      </kColl>
+      <kColl id=TxSincrono>
+         <field id=SufijoServicioComunicaciones value="">
+         <field id=NumeroReintentos value=1>
+         <field id=TimeoutReintentos value=5>
+         <field id=Timeout value=120>
+      </kColl>
+      <kColl id=Sincrono>
+         <field id=SufijoServicioComunicaciones value="Sincrono">
+         <field id=NumeroReintentos value=0>
+         <field id=TimeoutReintentos value=5>
+         <field id=Timeout value=30>
+      </kColl>
+      <kColl id=Asincrono>
+         <field id=SufijoServicioComunicaciones value="Sincrono">
+         <field id=NumeroReintentos value=0>
+         <field id=TimeoutReintentos value=5>
+         <field id=Timeout value=0>
+      </kColl>
+
+   </kColl>
+</kColl>
+
+<! -----DATOS PARA EL SERVICIO DE LOG ----->
+
+<kColl id = DiarioDataSesion>
+   <field id = tipo_log>
+   <field id = info_capa>
+   <field id = timestamp>
+   <field id = aplicacion>
+   <field id = id_sesion>
+   <field id = cod_logon>
+   <field id = canal>
+   <field id = cod_bancoint>
+   <field id = cod_producto>
+   <field id = cod_subproducto>
+   <field id = cod_bancoprint>
+   <field id = msg_error>
+</kColl>
+<kColl id = DiarioDataOperacion>
+   <field id = tipo_log>
+   <field id = info_capa>
+   <field id = timestamp>
+   <field id = aplicacion>
+   <field id = id_sesion>
+   <field id = cod_logon>
+   <field id = canal>
+   <field id = cod_bancoint>
+   <field id = cod_producto>
+   <field id = cod_subproducto>
+   <field id = cod_bancoprint>
+   <field id = proceso>
+   <field id = operacion>
+   <field id = accion>
+   <field id = estado_pr>
+   <field id = estado_op>
+   <field id = msg_error>
+</kColl>
+<kColl id = DiarioDataMulticanal>
+   <field id = tipo_log>
+   <field id = info_capa>
+   <field id = timestamp>
+   <field id = aplicacion>
+   <field id = id_sesion>
+   <field id = cod_logon>
+   <field id = canal>
+   <field id = cod_bancoint>
+   <field id = cod_producto>
+   <field id = cod_subproducto>
+   <field id = cod_bancoprint>
+   <field id = operacion>
+   <field id = contexto>
+   <field id = msg_error>
+</kColl>
+<kColl id = DiarioDataTransaccion>
+   <field id = tipo_log>
+   <field id = info_capa>
+   <field id = timestamp>
+   <field id = aplicacion>
+   <field id = id_sesion>
+   <field id = cod_logon>
+   <field id = canal>
+   <field id = cod_bancoint>
+   <field id = cod_producto>
+   <field id = cod_subproducto>
+   <field id = cod_bancoprint>
+   <field id = id_transaccion>
+   <field id = mensaje>
+   <field id = msg_error>
+</kColl>
+<kColl id = DiarioDataBBDD>
+   <field id = tipo_log>
+   <field id = info_capa>
+   <field id = timestamp>
+   <field id = aplicacion>
+   <field id = id_sesion>
+   <field id = cod_logon>
+   <field id = canal>
+   <field id = cod_bancoint>
+   <field id = cod_producto>
+   <field id = cod_subproducto>
+   <field id = cod_bancoprint>
+   <field id = sql>
+   <field id = msg_error>
+</kColl>
+<kColl id = DiarioDataExcepcion>
+   <field id = tipo_log>
+   <field id = info_capa>
+   <field id = timestamp>
+   <field id = aplicacion>
+   <field id = id_sesion>
+   <field id = cod_logon>
+   <field id = canal>
+   <field id = cod_bancoint>
+   <field id = cod_producto>
+   <field id = cod_subproducto>
+   <field id = cod_bancoprint>
+   <field id = clase>
+   <field id = codigoError>
+</kColl>
+<kColl id = DiarioDataNGExcepcion>
+        <field id = info_capa>
+        <field id = tipo_log>
+        <field id = timestamp>
+        <field id = aplicacion>
+        <field id = id_sesion>
+        <field id = emulada>
+        <field id = usu_emulador>
+        <field id = cod_logon>
+        <field id = canal>
+        <field id = cod_bancoint>
+        <field id = cod_producto>
+        <field id = cod_subproducto>
+        <field id = cod_bancoprint>
+        <field id = funcionalidad>
+        <field id = capa>
+        <field id = tipo_error>
+        <field id = subtipo_error>
+        <field id = severidad>
+        <field id = proceso>
+        <field id = operacion_presentacion>
+        <field id = operacion_multicanal>
+        <field id = servicio>
+        <field id = clase>
+        <field id = mensaje_programador>
+        <field id = codigoError>
+        <field id = fuente_error>
+        <field id = code_error>
+        <field id = descripcion_bd>
+</kColl>

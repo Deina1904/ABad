@@ -1,0 +1,74 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  traspasosbd_pr  --------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.tpbdolar.PrTraspasosBDolar id=traspasosbd_pr operationContext=OperationContext>
+	<refKColl refId=traspasosbd_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=ctas_ordbd_op>
+
+		<estadoPr id=1 operacion=ctas_ordbd_op>
+		<estadoPr id=1 operacion=relacion_trasbd_op>
+		<estadoPr id=1 operacion=ctas_beneficiariasbd_op>
+
+		<estadoPr id=2 operacion=confirmar_trasbd_op>
+		<estadoPr id=2 operacion=ctas_ordbd_op>
+		<estadoPr id=2 operacion=relacion_trasbd_op>
+
+		<estadoPr id=3 operacion=confirmar_trasbd_op>
+		<estadoPr id=3 operacion=realizar_trasbd_op>
+		<estadoPr id=3 operacion=ctas_ordbd_op>
+		<estadoPr id=3 operacion=relacion_trasbd_op>
+
+		<estadoPr id=4 operacion=relacion_trasbd_op>
+		<estadoPr id=4 operacion=ctas_ordbd_op>
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=ctas_ordbd_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=ctas_ordbd_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=ctas_ordbd_op estadoOP=1 jspFile=tp001_rel_ordenantesbd>
+		<salidaPr id=1 operacion=ctas_beneficiariasbd_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=ctas_beneficiariasbd_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=1 operacion=realizar_trasbd_op estadoOP=1 jspFile=tp004_realizado_trasbd>
+		<salidaPr id=1 operacion=realizar_trasbd_op estadoOP=2 jspFile=tp004_transbd_por_autorizar>
+		<salidaPr id=1 operacion=realizar_trasbd_op estadoOP=ERROR jspFile=gn001bd_error>
+		<salidaPr id=1 operacion=relacion_trasbd_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=ctas_beneficiariasbd_op estadoOP=1 jspFile=tp002_rel_beneficiariasbd>
+		<salidaPr id=2 operacion=realizar_trasbd_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=3 operacion=confirmar_trasbd_op estadoOP=1 jspFile=tp003_conf_trasbd>
+		<salidaPr id=3 operacion=confirmar_trasbd_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=confirmar_trasbd_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=3 operacion=realizar_trasbd_op estadoOP=ERROR jspFile=gn001bd_error>
+
+		<salidaPr id=4 operacion=relacion_trasbd_op estadoOP=1 jspFile=tp005_rel_trasbd>
+		<salidaPr id=4 operacion=relacion_trasbd_op estadoOP=2 jspFile=tp006_detalle_trasbd>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.tpbdolar.PrTraspasosBDolar>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=traspasosbd_pr-data>
+	<field id=ClaveCtaOrd>
+	<field id=TipoOrd>
+	<field id=CtaOrd>
+	<!field id=AsuntoBenef>
+	<field id=ClaveCtaBenef>
+	<field id=NumContrato>
+	<field id=TipoBenef>
+	<field id=FechaOpe>
+	<field id=Divisa>
+	<field id=Ups>
+	<field id=ImporteTras>
+	<field id=ObservTras>
+	<field id=NumeroCtaBenef>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

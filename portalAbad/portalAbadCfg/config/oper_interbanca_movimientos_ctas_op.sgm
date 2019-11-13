@@ -1,0 +1,146 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION oper_interbanca_movimientos_ctas_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.operinter.OPOperInterbancaMovimientosCtas id=oper_interbanca_movimientos_ctas_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=MovimientosOPJspFmt>
+	<refFormat name=jspFormat refId=MoviDetalleOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosInputOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=DetalleInputOPHTMLFmt>
+	<refKColl refId=oper_interbanca_movimientos_ctas_op-data>
+	<refOM refId=oper_interbanca_movimientos_ctas_om>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=ERROR accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=0 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=1 accion=detalle metodo=detalle requestFmt=DetalleInputOPHTMLFmt>
+		<estadoOP id=2 accion=detalle metodo=detalle requestFmt=DetalleInputOPHTMLFmt>
+		<estadoOP id=2 accion=volver metodo=volver>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=MovimientosOPJspFmt>
+		<salidaOP id=2 jspFmt=MoviDetalleOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.operinter.OPOperInterbancaMovimientosCtas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=oper_interbanca_movimientos_ctas_op-data>
+	<field id=asuntoPropio>
+	<field id=Error>
+
+	<field id=NombreBenOP>
+	<field id=BancoDestOP>
+	<field id=ValorOP>
+	<field id=FechaEnvioOP>
+	<field id=ObserOP>
+
+	<kColl id=Pagina>
+		<iColl id=ListaMovimientosTotalOP>
+			<kColl id=Movimiento>
+				<field id=NUMERO-MOVTO>
+				<field id=CTA-BENEF>
+				<field id=NOM-BENEF>
+				<field id=FECHA-ENVIO>
+				<field id=ESTADO-OPER>
+				<field id=BANCO-DEST>
+				<field id=IMPORTE>
+				<field id=OBSERVACION>
+			</kColl >
+		</iColl >
+
+		<iColl id=ListaMovimientosPagOP>
+			<kColl id=Movimiento>
+				<field id=NUMERO-MOVTO>
+				<field id=CTA-BENEF>
+				<field id=NOM-BENEF>
+				<field id=FECHA-ENVIO>
+				<field id=ESTADO-OPER>
+				<field id=BANCO-DEST>
+				<field id=IMPORTE>
+				<field id=OBSERVACION>
+			</kColl >
+		</iColl >
+	</kColl>
+
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MovimientosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+		<fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+		<iCollVector dataName=Pagina.ListaMovimientosPagOP description=ListaMovtos>
+			<record dataName=Movimiento>
+				<fString dataName=NUMERO-MOVTO><nullCheck>
+				<fString dataName=CTA-BENEF><nullCheck>
+				<fString dataName=NOM-BENEF><nullCheck>
+				<fDate   dataName=FECHA-ENVIO><nullCheck>
+				<fString dataName=ESTADO-OPER><nullCheck>
+				<fString dataName=BANCO-DEST><nullCheck>
+				<fNumString dataName=IMPORTE><nullCheck>
+				<fString dataName=OBSERVACION><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MoviDetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+
+		<fString dataName=NombreBenOP description=nombreBenOP>
+		<fString dataName=BancoDestOP description=bancoDestOP>
+		<fNumString dataName=ValorOP description=valorOP>
+		<fString dataName=FechaEnvioOP description=fechaEnvioOP>
+		<fString dataName=ObserOP description=obserOP>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=asuntoPropio>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DetalleInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=NombreBenOP>
+		<fString dataName=BancoDestOP>
+		<fNumString dataName=ValorOP>
+		<fString dataName=FechaEnvioOP>
+		<fString dataName=ObserOP>
+	</fHTMLReq>
+</fmtDef>

@@ -1,0 +1,32 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  contingencia_registro_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.contingencia.registro.PrContingenciaRegistro id=contingencia_registro_pr operationContext=OperationContext>
+	<refKColl refId=contingencia_registro_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=contingencia_registro_op>
+		<estadoPr id=1 operacion=contingencia_registro_op>
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>				
+		<salidaPr id=0 operacion=contingencia_registro_op estadoOP=0 jspFile=contingencia_registro_formulario>
+		<salidaPr id=0 operacion=contingencia_registro_op estadoOP=1 jspFile=contingencia_registro_formulario>
+		<salidaPr id=0 operacion=contingencia_registro_op estadoOP=2 jspFile=contingencia_registro_firma>
+		<salidaPr id=0 operacion=contingencia_registro_op estadoOP=3 jspFile=contingencia_registro_confirmacion>
+		
+		<salidaPr id=0 operacion=contingencia_registro_op estadoOP=ERROR jspFile=contingencia_registro_error>
+		
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.contingencia.registro.PrContingenciaRegistro>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=contingencia_registro_pr-data>
+
+</kColl>
+<! --------------------------------------------------------------------------------->

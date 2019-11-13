@@ -1,0 +1,66 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL retorno_cdts_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=retorno_cdts_om operationContext=OperationContext>
+	<refKColl refId=retorno_cdts_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=retorno_cdts_om-data>
+	<field id=IdTx value=TxFN56ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=RENBRUTO>
+	  <field id=RENNETO>
+	  <field id=RETFUENTE>
+	  <field id=ABONOINT>
+	  <field id=TASAEA>
+	  <field id=FECVEN>
+	  <field id=FECVAL>
+	  <field id=INDICAOK>
+	  <field id=NROCONF>
+	  <field id=NROCDT>
+
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=retorno_cdts_om-copiar>
+	<kColl id=a-TxFN56ENET>
+		<field id=Entrada value=TxFN56ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN56ENET>
+		<field id=Salida value=TxFN56ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+
+

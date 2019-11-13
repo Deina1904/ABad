@@ -1,0 +1,108 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION contingencia_llaves_op  ------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.contingencia.cargallavepublica.OpContingenciaLlaves id=contingencia_llaves_op operationContext=OperationContext>
+	<refKColl refId=contingencia_llaves_op-data>
+	<refOM refId=contingencia_estado_canal_om>
+	<refOM refId=tlcl_crd_carga_certdigital_om_co>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=iniciar 			metodo=iniciar 			>
+		<estadoOP id=1 accion=iniciar 			metodo=iniciar 			>
+		<estadoOP id=2 accion=iniciar 			metodo=iniciar 			>
+		<estadoOP id=3 accion=iniciar 			metodo=iniciar 			>
+		<estadoOP id=1 accion=validar 			metodo=validar 			requestFmt=DatosRegistroOPHTMLFmt>
+		<estadoOP id=2 accion=validar 			metodo=validar 			requestFmt=DatosRegistroOPHTMLFmt>
+		<estadoOP id=3 accion=validar 			metodo=validar 			requestFmt=DatosRegistroOPHTMLFmt>
+		<estadoOP id=1 accion=registrar 		metodo=registrar 		requestFmt=DatosFirmaOPHTMLFmt>
+		<estadoOP id=2 accion=registrar 		metodo=registrar 		requestFmt=DatosFirmaOPHTMLFmt>
+		<estadoOP id=3 accion=registrar 		metodo=registrar 		requestFmt=DatosFirmaOPHTMLFmt>
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>		
+		<salidaOP id=0 jspFmt=InicioOPJspFmt>
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=2 jspFmt=infoFinalizaOpJspFmt>
+		<salidaOP id=3 jspFmt=infoFinalizaOpJspFmt>
+		<salidaOP id=ERRORCANAL jspFmt=ErrorCanalOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.contingencia.cargallavepublica.OpContingenciaLlaves>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=contingencia_llaves_op-data>
+	<field id=codReferencia>
+	<field id=codReferenciaExt>
+	<field id=codUsuario>
+	<field id=emailUsuario>
+	<field id=tipoUsuario>
+	<field id=nombreUsuario>
+	<field id=estadoUsuario>
+	<field id=Estado>
+	<field id=Mensaje>
+	
+	<field id=pdToken>
+	<field id=pdClaveOperaciones>
+	<field id=nombreCompletoFichero>
+	<field id=nomFichero>
+	<field id=filesize>
+	<field id=tipoOrden>
+</kColl>
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>		
+	
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=infoFirmaOPJspFmt>
+	<fJsp>		
+		<fString dataName=codReferencia description=codReferencia>
+		<fString dataName=nomFichero description=nomFichero>
+		<fString dataName=codUsuario description=codUsuario>
+		<fString dataName=emailUsuario description=emailUsuario>
+		<fString dataName=nombreUsuario description=nombreUsuario>
+		<fString dataName=tipoUsuario description=tipoUsuario>
+		<fString dataName=estadoUsuario description=estadoUsuario>
+	</fJsp>
+</fmtDef>
+<fmtDef id=infoFinalizaOpJspFmt>
+	<fJsp>
+		<fString dataName=codReferencia description=codReferencia>
+		<fString dataName=codUsuario description=codUsuario>
+		<fString dataName=emailUsuario description=emailUsuario>
+		<fString dataName=nombreUsuario description=nombreUsuario>
+		<fString dataName=tipoUsuario description=tipoUsuario>
+		<fString dataName=estadoUsuario description=estadoUsuario>
+		<fString dataName=nomFichero description=nomFichero>
+		<fString dataName=Estado description=Estado>
+		<fString dataName=Mensaje description=Mensaje>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorCanalOPJspFmt>
+	<fJsp>		
+		<fString dataName=Estado description=Estado>
+	</fJsp>
+</fmtDef>
+<! FORMATOS DE ENTRADA --------------------------------------------------------------->
+<fmtDef id=DatosRegistroOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=tipoOrden><nullCheck>		
+		<fString dataName=nombreCompletoFichero><nullCheck>
+		<fString dataName=nomFichero><nullCheck>
+		<fString dataName=filesize><nullCheck>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=DatosFirmaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=pdToken>
+		<fString dataName=pdClaveOperaciones>
+	</fHTMLReq>
+</fmtDef>

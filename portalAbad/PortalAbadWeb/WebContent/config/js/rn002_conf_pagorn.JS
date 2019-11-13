@@ -1,0 +1,1 @@
+function ValidarFac(form){var facturainput=form.Facturaop.value;var bResultado=true;if(!EsNumero(facturainput)){alert("El Número de la Factura debe ser Numérico");form.Facturaop.focus();form.Facturaop.select();bResultado=false;}if(bResultado){form.submit();}}

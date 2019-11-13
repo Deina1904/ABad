@@ -1,0 +1,125 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pago_prestamos_terceros_ctasord_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.prest.OPPagoPrestamosTercerosCtasord id=pago_prestamos_terceros_ctasord_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionCtasOrdJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=CtaPropiaOPHTMLFmt>
+	<refKColl refId=pago_prestamos_terceros_ctasord_op-data>
+	<refOM refId=trans_petdatos_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=ctasord metodo=ctasord>
+		<estadoOP id=1 accion=ctasord metodo=ctasord>
+		<estadoOP id=0 accion=traerPrestamos metodo=traerPrestamos      requestFmt=CtaPropiaOPHTMLFmt>
+		<estadoOP id=1 accion=traerPrestamos metodo=traerPrestamos      requestFmt=CtaPropiaOPHTMLFmt>
+		<estadoOP id=ERROR accion=ctasord metodo=ctasord>
+		<estadoOP id=VALIDAR accion=ctasord metodo=ctasord>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionCtasOrdJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.prest.OPPagoPrestamosTercerosCtasord>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_prestamos_terceros_ctasord_op-data>
+	<field id=AsuntoPropio>
+	<field id=Error>
+
+	<iColl id=listaCuentas>
+		<kColl id=prestamo>
+			<field id=banco>
+			<field id=oficina>
+			<field id=dControl>
+			<field id=numCuenta>
+			<field id=claveAsunto>
+			<field id=tipo>
+		</kColl>
+	</iColl>
+
+	<iColl id=listaPrestamos>
+		<kColl id=prestamo>
+			<field id=banco>
+			<field id=oficina>
+			<field id=dControl>
+			<field id=numCuenta>
+			<field id=permiso>
+			<field id=claveAsunto>
+			<field id=tipo>
+		</kColl>
+	</iColl>
+
+</kColl>
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionCtasOrdJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=AsuntoPropio description=asuntoP><nullCheck>
+
+		<iCollVector dataName=listaCuentas description=listaCuentas>
+			<record dataName=prestamo>
+				<fString dataName=banco><nullCheck>
+				<fString dataName=oficina><nullCheck>
+				<fString dataName=dControl><nullCheck>
+				<fString dataName=numCuenta><nullCheck>
+				<fString dataName=claveAsunto><nullCheck>
+				<fString dataName=tipo><nullCheck>
+			</record>
+		</iCollVector>
+
+		<iCollVector dataName=listaPrestamos description=listaPrestamos>
+			<record dataName=prestamo>
+				<fString dataName=banco><nullCheck>
+				<fString dataName=oficina><nullCheck>
+				<fString dataName=dControl><nullCheck>
+				<fString dataName=numCuenta><nullCheck>
+				<fString dataName=permiso><nullCheck>
+				<fString dataName=claveAsunto><nullCheck>
+				<fString dataName=tipo><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+
+	</fJsp>
+
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=CtaPropiaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! -------------------------------------------------------------------------------->

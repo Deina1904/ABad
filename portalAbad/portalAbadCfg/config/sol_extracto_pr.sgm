@@ -1,0 +1,66 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  sol_extracto_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.extractos.PrSolExtracto id=sol_extracto_pr operationContext=OperationContext>
+	<refKColl refId=sol_extracto_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=sol_datos_envio_op>
+
+		<estadoPr id=1 operacion=sol_datos_envio_op>
+		<estadoPr id=1 operacion=sol_conf_envio_op>
+
+		<estadoPr id=2 operacion=sol_datos_envio_op>
+		<estadoPr id=2 operacion=sol_conf_envio_op>
+		<estadoPr id=2 operacion=sol_realiza_envio_op>
+
+		<estadoPr id=3 operacion=sol_datos_envio_op>
+
+
+
+</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=sol_datos_envio_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=sol_datos_envio_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=sol_datos_envio_op estadoOP=1 jspFile=ex001_extracto_mensual>
+		<salidaPr id=1 operacion=sol_datos_envio_op estadoOP=ERROR jspFile=gn001_error>
+<! JASA01----->
+		<salidaPr id=1 operacion=sol_datos_envio_op estadoOP=ESTRUCTURA jspFile=ex005_estructura_archivo>
+		<salidaPr id=1 operacion=sol_datos_envio_op estadoOP=ERROR jspFile=gn001_error>
+<! JASA01----->
+		<salidaPr id=2 operacion=sol_conf_envio_op estadoOP=1 jspFile=ex002_soli_extracto>
+
+		<salidaPr id=2 operacion=sol_conf_envio_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=sol_conf_envio_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=sol_realiza_envio_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=sol_realiza_envio_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=3 operacion=sol_realiza_envio_op estadoOP=1 jspFile=ex004_conf_solici>
+
+		<salidaPr id=0 operacion=sol_realiza_envio_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=sol_realiza_envio_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=0 operacion=sol_realiza_envio_op estadoOP=1 jspFile=ex004_conf_solici>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.extractos.PrSolExtracto>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=sol_extracto_pr-data>
+	<field id=TipSolici>
+	<field id=DesSolici>
+	<field id=TipCtaDeb>
+	<field id=NumeroCtaaDebita>
+	<field id=Email>
+	<field id=ClaveDeb>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

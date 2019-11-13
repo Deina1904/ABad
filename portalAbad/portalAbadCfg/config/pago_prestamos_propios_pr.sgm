@@ -1,0 +1,96 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  pago_prestamos_propios_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.prest.PrPagoPrestamosPropios id=pago_prestamos_propios_pr operationContext=OperationContext>
+
+	<refKColl refId=pago_prestamos_propios_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=pago_prestamos_propios_ctasord_op>
+
+		<estadoPr id=1 operacion=pago_prestamos_propios_consulta_op>
+		<estadoPr id=1 operacion=pago_prestamos_propios_ctasord_op>
+
+		<estadoPr id=2 operacion=pago_prestamos_propios_ctasord_op>
+		<estadoPr id=2 operacion=pago_prestamos_propios_confirmacion_op>
+		<estadoPr id=2 operacion=pago_prestamos_propios_consulta_op>
+
+		<estadoPr id=3 operacion=pago_prestamos_propios_consulta_op>
+		<estadoPr id=3 operacion=pago_prestamos_propios_ctasord_op>
+		<estadoPr id=3 operacion=pago_prestamos_propios_realizar_op>
+		<estadoPr id=3 operacion=pago_prestamos_propios_confirmacion_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=pago_prestamos_propios_ctasord_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=pago_prestamos_propios_ctasord_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=pago_prestamos_propios_ctasord_op estadoOP=1 jspFile=pago_prestamos_propios_001>
+		<salidaPr id=1 operacion=pago_prestamos_propios_consulta_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=pago_prestamos_propios_confirmacion_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=pago_prestamos_propios_consulta_op estadoOP=1 jspFile=pago_prestamos_propios_002>
+		<salidaPr id=2 operacion=pago_prestamos_propios_consulta_op estadoOP=2 jspFile=pago_prestamos_propios_0021>
+		<salidaPr id=2 operacion=pago_prestamos_propios_confirmacion_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=pago_prestamos_propios_confirmacion_op estadoOP=1 jspFile=pago_prestamos_propios_003>
+		<salidaPr id=3 operacion=pago_prestamos_propios_confirmacion_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+
+		<salidaPr id=3 operacion=pago_prestamos_propios_realizar_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=pago_prestamos_propios_realizar_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=pago_prestamos_propios_realizar_op estadoOP=1 jspFile=pago_prestamos_propios_004>
+		<salidaPr id=0 operacion=pago_prestamos_propios_realizar_op estadoOP=2 jspFile=pago_prestamos_propios_pend_005>
+
+
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.prest.PrPagoPrestamosPropios>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_prestamos_propios_pr-data>
+
+	<field id=ClaveCtaPr>
+	<field id=NumeroCtaOrdPr>
+	<field id=TipoCtaPr>
+
+	<field id=ClavePrestPr>
+	<field id=NumeroPrestPr>
+	<field id=TipoPrestPr>
+
+	<field id=ModalidadPagoPr>
+
+	<field id=DivisaPr>
+
+	<field id=FechaOperaPr>
+	<field id=NumeroMovimientoPr>
+	<field id=ValorCapitalPr>
+	<field id=InteresCorrientePr>
+	<field id=InteresMoraPr>
+	<field id=GastosSegurosPr>
+	<field id=ValorTotalCuotaPr>
+	<field id=CuotasVencidasPr>
+	<field id=TipoPagoPr>
+	<field id=DesTipoPagoPr>
+	<field id=OtroValorPr>
+	<field id=ImportePr>
+	<field id=NumeroCtaHonPr>
+	<field id=HonorariosPr>
+	<field id=HonorarioPr>
+	<field id=RelPr>
+	<field id=NombreprePr>
+	<field id=CuentaorePr>
+	<field id=NombrejrPr>
+	<field id=CuentajrPr>
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

@@ -1,0 +1,71 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consulta_prestamos_dbasicos_detalle_om  ----------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=consulta_prestamos_dbasicos_detalle_om operationContext=OperationContext>
+   <refKColl refId=consulta_prestamos_dbasicos_detalle_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_prestamos_dbasicos_detalle_om-data>
+   <field id=IdTx value=TxFN26ENET>
+   <kColl id=Entrada>
+     <field id=BCODACCC>
+     <field id=BCODCTAA>
+     <field id=BPALACCE>
+     <field id=BPALACC2>
+     <field id=BASUNPRO>
+     <field id=BASUNASO>
+     <field id=BFECHA01>
+     <field id=BFECHA02>
+     <field id=BIMPORTE>
+     <field id=BIMPOAUX>
+     <field id=BINDPAGI>
+     <field id=BINDAUX1>
+     <field id=BINDAUX2>
+     <field id=BCODAUX1>
+     <field id=BCODAUX2>
+     <field id=BNUMAUX1>
+     <field id=BNUMAUX2>
+     <field id=BPAGINAC>
+   </kColl >
+
+   <kColl id=Salida>
+     <field id="DESCRIPCION-PRESTAMO" >
+     <field id="OFICINA" >
+     <field id="FECHA-DESEMBOLSO" >
+     <field id="VALOR-DESEMBOLSADO" >
+     <field id="CTA-DOMICILIACION" >
+     <field id="MODALIDAD-PAGO" >
+     <field id="PLAZO-LITERAL" >
+     <field id="PLAZO-NUMERICO" >
+     <field id="DIA-PAGO" >
+     <field id="PERIODICIDAD-CAPITAL" >
+     <field id="PERIODICIDAD-INTERES" >
+     <field id="TIPO-AMORTIZACION" >
+     <field id="TOTAL-ADEUDADO" >
+     <field id="TOTAL-VENCIDO" >
+     <field id="CUOTAS-PAGADAS" >
+     <field id="CUOTAS-VENCIDAS" >
+     <field id="CUOTAS-PENDIENTES" >
+     <field id="TASA-INTERES-NOMINAL" >
+     <field id="TASA-INTERES-ANUAL" >
+     <field id="FECHA-PROXIMA-LIQUDA" >
+     <field id="SALDO-A-FAVOR-CLIENTE" >
+   </kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= consulta_prestamos_dbasicos_detalle_om-copiar>
+   <kColl id=a-TxFN26ENET>
+      <field id=Entrada value=TxFN26ENETEntrada>
+   </kColl>
+   <kColl id=desde-TxFN26ENET>
+      <field id=Salida value=TxFN26ENETSalida-01>
+   </kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

@@ -1,0 +1,107 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pago_prestamos_propios_realizar_cl_op  ---------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.prest.OPPagoPrestamosPropiosRealizarCL id=pago_prestamos_propios_realizar_cl_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=RelacionConfirmacionPagoPrestOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosRealizarOPHTMLFmt>
+
+	<refKColl refId=pago_prestamos_propios_realizar_cl_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=pago_prestamos_propios_realizar_cl_om>
+	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=realizar metodo=realizarPagoPrestamo requestFmt=DatosRealizarOPHTMLFmt>
+		<estadoOP id=1 accion=realizar metodo=realizarPagoPrestamo requestFmt=DatosRealizarOPHTMLFmt>
+		<estadoOP id=2 accion=realizar metodo=realizarPagoPrestamo requestFmt=DatosRealizarOPHTMLFmt>
+		<estadoOP id=ERROR accion=realizar metodo=realizarPagoPrestamo requestFmt=DatosRealizarOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=realizar metodo=realizarPagoPrestamo requestFmt=DatosRealizarOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionConfirmacionPagoPrestOPJspFmt>
+		<salidaOP id=2 jspFmt=RelacionConfirmacionPagoPrestOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.prest.OPPagoPrestamosPropiosRealizarCL>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_prestamos_propios_realizar_cl_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=RelacionConfirmacionPagoPrestOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_ip description=ip>
+		<fString dataName=NumeroCtaOrdPr description=numeroCtaOrd>
+		<fString dataName=NumeroPrestPr description=numeroPrest>
+		<fDate dataName=FechaOperaPr description=fechaOpera>
+		<fNumString dataName=NumeroMovimientoPr description=numeroMovimiento>
+		<fString dataName=ObservacionesPr description=observaciones>
+
+		<fString dataName=ModalidadPagoPr description=modalidadPago>
+
+		<fNumString dataName=ValorCapitalPr description=valorCapital>
+		<fNumString dataName=InteresCorrientePr description=interesCorriente>
+		<fNumString dataName=InteresMoraPr description=InteresMora>
+		<fNumString dataName=InteresMoraPr description=interesMora>
+		<fNumString dataName=GastosSegurosPr description=gastosSeguros>
+		<fNumString dataName=ValorTotalCuotaPr description=valorTotalCuota>
+		<fNumString dataName=CuotasVencidasPr description=cuotasVencidas>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosRealizarOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<!fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

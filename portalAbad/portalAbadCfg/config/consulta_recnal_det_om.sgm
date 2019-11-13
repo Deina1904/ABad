@@ -1,0 +1,53 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consulta_recnal_det_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.crn.OmDetalleRecNal  id=consulta_recnal_det_om operationContext=OperationContext>
+	<refKColl refId=consulta_recnal_det_om-data>
+</com.grupobbva.bc.col.multicanal.crn.OmDetalleRecNal>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consulta_recnal_det_om-data>
+	<field id=IdTx value=TxF071ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01 value=&@D06/16/2000>
+	  <field id=BFECHA02 value=&@D06/16/2000>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+      <field id=NOMBRE-SUC>
+      <field id=NOMBRE-CIUDAD>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id=consulta_recnal_det_om-copiar>
+	<kColl id=a-TxF071ENET>
+		<field id=Entrada value=TxF071ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF071ENET>
+		<field id=Salida value=TxF071ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

@@ -1,0 +1,80 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  oper_interbanca_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.operinter.PrOperInterbanca id=oper_interbanca_pr operationContext=OperationContext>
+	<refKColl refId=oper_interbanca_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=oper_interbanca_ctas_ord_op>
+		<estadoPr id=0 operacion=oper_interbanca_ctas_ben_op>
+
+		<estadoPr id=1 operacion=oper_interbanca_ctas_ord_op>
+		<estadoPr id=1 operacion=oper_interbanca_ctas_ben_op>
+		<estadoPr id=1 operacion=oper_interbanca_confirmar_tras_op>
+
+		<estadoPr id=2 operacion=oper_interbanca_ctas_ben_op>
+		<estadoPr id=2 operacion=oper_interbanca_confirmar_tras_op>
+		<estadoPr id=2 operacion=oper_interbanca_realizar_tras_op>
+		<estadoPr id=2 operacion=oper_interbanca_ctas_ord_op>
+
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=oper_interbanca_ctas_ord_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=oper_interbanca_ctas_ord_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=oper_interbanca_ctas_ord_op estadoOP=2 jspFile=oper_interbanca_001>
+		<salidaPr id=1 operacion=oper_interbanca_ctas_ben_op estadoOP=1 jspFile=oper_interbanca_0012>
+		<salidaPr id=1 operacion=oper_interbanca_ctas_ben_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=oper_interbanca_ctas_ben_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=1 operacion=oper_interbanca_ctas_ben_op estadoOP=AYUDA jspFile=oper_interbanca_ayuda>
+		<salidaPr id=1 operacion=oper_interbanca_ctas_ord_op estadoOP=AYUDA jspFile=oper_interbanca_ayuda>
+		<salidaPr id=1 operacion=oper_interbanca_realizar_tras_op estadoOP=1 jspFile=oper_interbanca_003>
+		<salidaPr id=1 operacion=oper_interbanca_realizar_tras_op estadoOP=2 jspFile=oper_interbanca_pen_004>
+
+		<salidaPr id=1 operacion=oper_interbanca_realizar_tras_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=oper_interbanca_confirmar_tras_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=oper_interbanca_confirmar_tras_op estadoOP=1 jspFile=oper_interbanca_002>
+		<salidaPr id=2 operacion=oper_interbanca_confirmar_tras_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=oper_interbanca_confirmar_tras_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+
+		<salidaPr id=1 operacion=oper_interbanca_realizar_tras_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=oper_interbanca_realizar_tras_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=2 operacion=oper_interbanca_realizar_tras_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=oper_interbanca_realizar_tras_op estadoOP=MENSAJE jspFile=gn001_error>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.operinter.PrOperInterbanca>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=oper_interbanca_pr-data>
+		<field id=ClaveCtaOrdPr>
+		<field id=CtaOrdPr>
+		<field id=TipoOrdPr>
+
+		<field id=CodEntidadBenfPr>
+		<field id=DesEntidadBenfPr>
+
+		<field id=TipoCtaBenefPr>
+		<field id=DesCtaBenefPr>
+		<field id=ClaveCtaBenefPr>
+
+		<field id=IdBeneficiarioPr>
+		<field id=NomBeneficiarioPr>
+
+		<field id=FechaOpePr>
+		<field id=HoraOpePr>
+		<field id=DivisaPr>
+		<field id=ImportePr>
+		<field id=CorreoBenefPr>
+		<field id=ObservacionesPr>
+		<field id=ComisionPr>
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

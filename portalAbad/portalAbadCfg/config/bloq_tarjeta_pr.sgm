@@ -1,0 +1,62 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  bloq_tarjeta_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.bt.PrBloqTarje id=bloq_tarjeta_pr operationContext=OperationContext>
+
+	<refKColl refId=bloq_tarjeta_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=ctas_btarje_op>
+
+		<estadoPr id=1 operacion=consultar_bloqtarje_op>
+		<estadoPr id=1 operacion=ctas_btarje_op>
+
+		<estadoPr id=2 operacion=ctas_btarje_op>
+		<estadoPr id=2 operacion=confirmar_bloqtarje_op>
+		<estadoPr id=2 operacion=consultar_bloqtarje_op>
+
+		<estadoPr id=3 operacion=ctas_btarje_op>
+		<estadoPr id=3 operacion=confirmar_bloqtarje_op>
+		<estadoPr id=3 operacion=realizar_bloqtarje_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=ctas_btarje_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=ctas_btarje_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=ctas_btarje_op estadoOP=1 jspFile=bl001_tarjs_ordenantes>
+		<salidaPr id=1 operacion=consultar_bloqtarje_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=consultar_bloqtarje_op estadoOP=1 jspFile=bl002_tarjs_motivo>
+		<salidaPr id=2 operacion=confirmar_bloqtarje_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=confirmar_bloqtarje_op estadoOP=1 jspFile=bl003_tarjs_confirmar>
+		<salidaPr id=3 operacion=confirmar_bloqtarje_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=realizar_bloqtarje_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=realizar_bloqtarje_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=realizar_bloqtarje_op estadoOP=1 jspFile=bl004_tarjs_realizado>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.bt.PrBloqTarje>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=bloq_tarjeta_pr-data>
+	<field id=IndBatchMP>
+	<field id=ClaveTarjeBTarje>
+	<field id=NumeroTarjeta>
+	<field id=FechaOpe>
+    <field id=MotivoBloq>
+	<field id=DescripBloq>
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

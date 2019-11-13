@@ -1,0 +1,59 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PRESENTACION tlcl_env_configurar_seleccion_op_multipais  -------------------------------->
+<! OPERACION ------------------------------------------------------------------------->
+<tlcl.multipais.web.env.enviodirecto.TLCLOpEnvConfigurarSeleccion id=tlcl_env_configurar_seleccion_op_multipais operationContext=OperationContext>
+	<refFormat name=jspFormat refId=configurar_seleccion_JspFmt>
+	<refFormat name=htmlRequestFormat refId=Id_HTMLFmt>
+	<refKColl refId=tlcl_env_configurar_seleccion_op_multipais-data>
+	<refOM refId=tlcl_env_listaClasesOrdenEnvio_om_multipais>
+<! ----------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=execute metodo=execute requestFmt=Id_HTMLFmt>
+		<estadoOP id=2 accion=execute metodo=execute requestFmt=Id_HTMLFmt>
+
+	</navegacionOP>
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=0 jspFmt=configurar_seleccion_JspFmt>
+		<salidaOP id=2 jspFmt=configurar_seleccion_JspFmt>
+	</resultadoOP>
+</tlcl.multipais.web.env.enviodirecto.TLCLOpEnvConfigurarSeleccion>
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=tlcl_env_configurar_seleccion_op_multipais-data>
+<field id=pais> <! EMX07F2004 EDA -->
+<iColl id=listaClasesOrdenIncorp>
+			    <kColl id=detalleClaseOrden>
+			      <field id=codClaseOrd>
+			      <field id=codExtensio>
+			      <field id=codAsunbanc>
+			      <field id=descClaseOrd>
+			      <field id=descAsunbanc>
+			    </kColl>
+			  </iColl>
+</kColl>
+
+<! FORMATOS DE SALIDA -------------------------------------------------------------------------->
+<fmtDef id=configurar_seleccion_JspFmt>
+	<fJsp>
+		<iCollVector dataName=listaClasesOrdenIncorp description=listaClasesOrdenIncorp>
+			<record dataName=detalleClaseOrden>
+				<fString dataName=codClaseOrd><nullCheck>
+				<fString dataName=codExtensio><nullCheck>
+				<fNumString dataName=codAsunbanc><nullCheck>
+				<fString dataName=descAsunbanc><nullCheck>
+				<fString dataName=descClaseOrd><nullCheck>
+			</record>
+		</iCollVector>
+
+        <fString dataName=pais><nullCheck> <! EMX07F2004 EDA -->
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=Id_HTMLFmt>
+	<fHTMLReq>
+
+	</fHTMLReq>
+</fmtDef>

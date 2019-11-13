@@ -1,0 +1,113 @@
+<! BBVA  -------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PRESENTACION banca_movil_alertas_confirmar_op  ------------------------------------------------------------------------>
+
+<! OPERACION ---------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.bancamovil.OpConfirmarBancaMovilAlertas id=banca_movil_alertas_confirmar_op operationContext=OperationContext>
+
+	<!-- FORMATOS DE SALIDA GENERALES -->
+	<refFormat name=jspFormat refId=ConfirmacionBancaMovilOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=BancaMovilOPHTMLFmt>
+	<refKColl refId=banca_movil_alertas_confirmar_op-data>
+<! -------------------------------------------------------------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------>
+	<navegacionOP>
+		<estadoOP id=0 accion=confirmar metodo=confirmar     requestFmt=BancaMovilOPHTMLFmt>
+		<estadoOP id=0 accion=cancelar metodo=cancelar>
+		<estadoOP id=0 accion=volver metodo=volverConfClave>
+
+		<estadoOP id=1 accion=confirmar metodo=confirmar     requestFmt=BancaMovilOPHTMLFmt>
+		<estadoOP id=1 accion=volver metodo=volverConfClave>
+		<estadoOP id=1 accion=cancelar metodo=cancelar>
+
+		<estadoOP id=ERROR accion=confirmar metodo=confirmar requestFmt=BancaMovilOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=confirmar metodo=confirmar requestFmt=BancaMovilOPHTMLFmt>
+
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=volver metodo=volverConfClave>
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------------------------------------------------------------>
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmacionBancaMovilOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.bancamovil.OpConfirmarBancaMovilAlertas>
+
+<! DATOS -------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=banca_movil_alertas_confirmar_op-data>
+	<!-- DEFINICION DE DATOS DE FORMATOS DE ERROR -->
+	<field id=Error>
+
+	<!-- DEFINICION DE DATOS DE FORMATOS DE ENTRADA -->
+	<field id=OpStrRadioSeleccion>
+	<field id=OpStrIndicadorDatos>
+	<field id=OpStrTipoTelefono1>
+	<field id=OpStrPrefijoTelefono1>
+	<field id=OpStrNumeroTelefono1>
+	<field id=OpStrNumeroExtension1>
+	<field id=OpStrTipoTelefono2>
+	<field id=OpStrPrefijoTelefono2>
+	<field id=OpStrNumeroTelefono2>
+	<field id=OpStrNumeroExtension2>
+	<field id=OpStrTipoTelefono3>
+	<field id=OpStrPrefijoTelefono3>
+	<field id=OpStrNumeroTelefono3>
+	<field id=OpStrNumeroExtension3>
+	<field id=OpStrPrefijoTelefonoM>
+	<field id=OpStrNumeroTelefonoM>
+	<field id=OpStrIndicadorPe001>
+
+</kColl>
+
+<! FORMATOS ----------------------------------------------------------------------------------------------------------------------------->
+<fmtDef id=ConfirmacionBancaMovilOPJspFmt>
+	<fJsp>
+
+	  <fString dataName=s_cod_nomconta description=usuario>
+	  <fString dataName=s_cod_nomempre description=empresa>
+	  <fString dataName=OpStrRadioSeleccion description=OpStrRadioSeleccion >
+	  <fString dataName=OpStrPrefijoTelefono3 description=OpStrPrefijoTelefono3 >
+	  <fString dataName=OpStrNumeroTelefono3 description=OpStrNumeroTelefono3 >
+	  <fString dataName=OpStrPrefijoTelefonoM description=OpStrPrefijoTelefonoM >
+	  <fString dataName=OpStrNumeroTelefonoM description=OpStrNumeroTelefonoM >
+      <fString dataName=PrStrPrefijoTelefono3Antes description=PrStrPrefijoTelefono3Antes >
+      <fString dataName=PrStrNumeroTelefono3Antes description=PrStrNumeroTelefono3Antes >
+      <fString dataName=PrStrIndicadorTelefonico description=PrStrIndicadorTelefonico >
+      <fString dataName=PrStrIndicadorTelefonicoBP description=PrStrIndicadorTelefonicoBP >
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+
+<! -------------------------------------------------------------------------------------------------------------------------------------->
+<! FORMATOS  DE ENTRADA------------------------------------------------------------------------------------------------------------------>
+<fmtDef id=BancaMovilOPHTMLFmt>
+   <fHTMLReq>
+
+	   	<fString dataName=OpStrRadioSeleccion>
+	   	<fString dataName=OpStrPrefijoTelefono3>
+    	<fString dataName=OpStrNumeroTelefono3>
+	   	<fString dataName=OpStrPrefijoTelefonoM>
+	   	<fString dataName=OpStrNumeroTelefonoM>
+
+   </fHTMLReq>
+</fmtDef>
+<! -------------------------------------------------------------------------------------------------------------------------------------->

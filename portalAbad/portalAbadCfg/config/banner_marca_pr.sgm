@@ -1,0 +1,20 @@
+<!-- BBVA  ---------------------------------------------------------------------------->
+<!-- Operación:  carga parametría banner  ------------------------------------------>
+<!-- OPERACION  ----------------------------------------------------------------------->
+<com.grupobbva.emp.banner.marcar.PrMarcacion id=banner_marca_pr operationContext=OperationContext>
+	<refKColl refId=banner_marca_pr-data>
+<!-- ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=banner_marca_op>
+	</navegacionPr>
+<!-- SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=banner_marca_op estadoOP=ERROR jspFile=sass_error_01>
+		<salidaPr id=0 operacion=banner_marca_op estadoOP=1 jspFile=banner_marcar_nuevo>
+
+	</resultadoPr>
+</com.grupobbva.emp.banner.marcar.PrMarcacion>
+<!-- DATOS  --------------------------------------------------------------------------->
+<kColl id=banner_marca_pr-data>
+</kColl>
+<!--  ------------------------------------------------------------------------------->

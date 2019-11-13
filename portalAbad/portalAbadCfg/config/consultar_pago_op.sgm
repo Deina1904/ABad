@@ -1,0 +1,85 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consultar_pago_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.ps.OPConsultarPago id=consultar_pago_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionConsultarPSOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPServOPHTMLFmt>	
+	<refKColl refId=consultar_pago_op-data>
+	<refOM refId=consultar_pago_om>
+	
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>	
+		<estadoOP id=0 accion=continuar metodo=consultarPServ     requestFmt=DatosPServOPHTMLFmt>	
+		<estadoOP id=1 accion=continuar metodo=consultarPServ     requestFmt=DatosPServOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>	
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>	
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=ERROR accion=continuar metodo=consultarPServ requestFmt=DatosPServOPHTMLFmt>		
+	</navegacionOP>		
+	
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>	
+		<salidaOP id=1 jspFmt=RelacionConsultarPSOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>	
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>					
+	</resultadoOP>	
+</com.grupobbva.bc.col.web.ps.OPConsultarPago>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consultar_pago_op-data>
+	<field id=AsuntoPropio>
+	<field id=Servicio>
+	<field id=Facturaop>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionConsultarPSOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_correo_op description=correoop>				
+		<fString dataName=DescripServ description=descripserv>
+		<fString dataName=CtaPServ description=ctapserv>
+		<fString dataName=Factura description=factura>			
+		<record dataName=consultar_pago_om-data.Salida description=Consultar>	
+			<fNumString dataName=IMPORTE description=importe>
+			<fDate dataName=FECHAVEN description=fechaven>			
+		</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosPServOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=Servicio>
+		<fString dataName=Facturaop>
+	</fHTMLReq>
+</fmtDef>	
+
+<! --------------------------------------------------------------------------------->

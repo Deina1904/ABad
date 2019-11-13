@@ -1,0 +1,39 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION datos_cdts_op  ----------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cdts.OPDatosCdts id=datos_cdts_op operationContext=OperationContext>
+	<refKColl refId=datos_cdts_op-data>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=datosini metodo=datosini>
+		<estadoOP id=1 accion=datosini metodo=datosini>
+		<!estadoOP id=1 accion=terminos metodo=terminos>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=MensajeOPJspFmt>
+		<salidaOP id=1 jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+
+</com.grupobbva.bc.col.web.cdts.OPDatosCdts>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=datos_cdts_op-data>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+<! --------------------------------------------------------------------------------->

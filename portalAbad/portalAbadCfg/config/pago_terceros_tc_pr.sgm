@@ -1,0 +1,92 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  pago_terceros_tc_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.ptcter.PrPagoTercerosTc id=pago_terceros_tc_pr operationContext=OperationContext>
+
+	<refKColl refId=pago_terceros_tc_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=ctas_pagotcter_op>
+
+		<estadoPr id=1 operacion=consultar_pagotcter_op>
+		<estadoPr id=1 operacion=ctas_pagotcter_op>
+
+		<estadoPr id=2 operacion=confirmar_pagotcter_op>
+		<estadoPr id=2 operacion=consultar_pagotcter_op>
+		<estadoPr id=2 operacion=ctas_pagotcter_op>
+
+		<estadoPr id=3 operacion=realizar_pagotcter_op>
+		<estadoPr id=3 operacion=ctas_pagotcter_op>
+		<estadoPr id=3 operacion=confirmar_pagotcter_op>
+
+		<estadoPr id=4 operacion=ctas_pagotcter_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=ctas_pagotcter_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=ctas_pagotcter_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=ctas_pagotcter_op estadoOP=1 jspFile=ptt01_pet_pagotc>
+		<salidaPr id=1 operacion=consultar_pagotcter_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=confirmar_pagotcter_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=consultar_pagotcter_op estadoOP=1 jspFile=ptt02_conf_pagotcter>
+		<salidaPr id=2 operacion=confirmar_pagotcter_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=confirmar_pagotcter_op estadoOP=1 jspFile=ptt03_conf_pagotcter>
+		<salidaPr id=3 operacion=confirmar_pagotcter_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=realizar_pagotcter_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=realizar_pagotcter_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=3 operacion=realizar_pagotcter_op estadoOP=1 jspFile=ptt04_pttercer_realizado>
+		<salidaPr id=3 operacion=realizar_pagotcter_op estadoOP=2 jspFile=ptt05_pttercer_por_autorizar>
+
+		<salidaPr id=0 operacion=realizar_pagotcter_op estadoOP=1 jspFile=ptt04_pttercer_realizado>
+		<salidaPr id=0 operacion=realizar_pagotcter_op estadoOP=2 jspFile=ptt05_pttercer_por_autorizar>
+		<salidaPr id=0 operacion=realizar_pagotcter_op estadoOP=ERROR jspFile=gn001_error>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.ptcter.PrPagoTercerosTc>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_terceros_tc_pr-data>
+	<field id=CtaOrd>
+		<field id=CtaOrdClave>
+		<field id=CtaBen>
+		<field id=CtaBenClave>
+		<field id=IdeBen>
+		<field id=CorrBen>
+		<field id=NomBen>
+		<field id=ValTra>
+		<field id=Observ>
+		<field id=IndNva>
+		<field id=FecOpe>
+		<field id=NumCli>
+	<field id=CodAcc>
+	<field id=ClaveCtaPTarje>
+	<field id=TipoCtaPTarje>
+	<field id=CtaPTarje>
+	<field id=ClaveTarjePTarje>
+	<field id=NumeroTarjeta>
+	<field id=FechaOpe>
+	<field id=Divisa>
+	<field id=Email>
+	<field id=Nombre>
+	<field id=PagoMinimo>
+	<field id=SaldoTotal>
+	<field id=OtroVal>
+	<field id=TipoPago>
+	<field id=Importe>
+	<field id=FechaVen>
+	<field id=DescripTarje>
+	<field id=ObservPago>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

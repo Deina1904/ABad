@@ -1,0 +1,60 @@
+﻿<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL sorteo_seguro_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=sorteo_seguro_om operationContext=OperationContext>
+	<refKColl refId=sorteo_seguro_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=sorteo_seguro_om-data>
+	<field id=IdTx value=TxFN03ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+		<field id=INDICADOR-PAGINACION>
+  		<iColl id=ListaCupones>
+		    <kColl id=Cupones>
+		    	<field id=FECHA-CONSIGNACION>
+	    		<field id=CUPON>
+	    	</kColl >
+	    </iColl >
+	    <field id=TIMESTAMP>
+	</kColl >
+</kColl>
+
+
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= sorteo_seguro_om-copiar>
+	<kColl id=a-TxFN03ENET>
+		<field id=Entrada value=TxFN03ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN03ENET>
+		<field id=Salida value=TxFN03ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

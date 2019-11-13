@@ -1,0 +1,89 @@
+<! OPERACION ------------------------------------------------------------------------>
+
+<com.grupobbva.bc.col.web.contingencia.olvidousuario.OpContingenciaOlvido id=contingencia_olvido_op operationContext=OperationContext>
+	<refOM refId=contingencia_olvido_alta_om>
+	<refOM refId=contingencia_consulta_datos_usuario_om>
+	<refOM refId=contingencia_registro_host2_om>
+	<refOM refId=sign_on_om>
+	<refKColl refId=contingencia_olvido_op-data>
+	
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=iniciar metodo=iniciar>
+		<estadoOP id=1 accion=iniciar metodo=iniciar>
+		<estadoOP id=2 accion=iniciar metodo=iniciar>
+		<estadoOP id=3 accion=iniciar metodo=iniciar>
+		<estadoOP id=1 accion=validar metodo=validar requestFmt=ContigenciaValidaOpHTMLFmt>
+		<estadoOP id=2 accion=firmar metodo=firmar requestFmt=ContingenciaFirmaOpHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ContingenciaValidaOpJspFmt>
+		<salidaOP id=2 jspFmt=ContingenciaFinalizaOpJspFmt>
+		<salidaOP id=3 jspFmt=ContingenciaFinalizaOpJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.contingencia.olvidousuario.OpContingenciaOlvido>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=contingencia_olvido_op-data>
+	<field id=codReferencia>
+	<field id=codReferenciaExt>
+	<field id=codUsuario>
+	<field id=emailUsuario>
+	<field id=password>
+	<field id=confPassword>
+	<field id=tipoUsuario>
+	<field id=nombreUsuario>
+	<field id=estadoUsuario>
+	<field id=Estado>
+	<field id=Error>
+	
+	<!--DATOS PARA LDAP-->
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=NumSerieToken>
+	<field id=pdToken>
+	<field id=pdClaveOperaciones>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=ContingenciaValidaOpJspFmt>
+	<fJsp>
+		<fString dataName=Estado description=Estado>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ContingenciaFinalizaOpJspFmt>
+	<fJsp>
+		<fString dataName=codReferencia description=codReferencia>
+		<fString dataName=codUsuario description=codUsuario>
+		<fString dataName=emailUsuario description=emailUsuario>
+		<fString dataName=nombreUsuario description=nombreUsuario>
+		<fString dataName=tipoUsuario description=tipoUsuario>
+		<fString dataName=estadoUsuario description=estadoUsuario>
+		<fString dataName=Estado description=Estado>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ContigenciaValidaOpHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=codReferencia>
+		<fString dataName=codUsuario>
+		<fString dataName=emailUsuario>
+		<fString dataName=password>
+		<fString dataName=confPassword>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=ContingenciaFirmaOpHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=pdToken>
+		<fString dataName=pdClaveOperaciones>
+	</fHTMLReq>
+</fmtDef>

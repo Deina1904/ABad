@@ -1,0 +1,288 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL posicion_global_om  --------------------------------------->
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.multicanal.pg.OMPosicionGlobal id=posicion_global_om operationContext=OperationContext>
+	<refKColl refId=posicion_global_om-data>
+</com.grupobbva.bc.col.multicanal.pg.OMPosicionGlobal>
+<! ---------------------------------------------------------------------------------->
+
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=posicion_global_om-data>
+	<field id=IdTx value=TxFN10ENET>
+	<kColl id=Entrada>
+	</kColl>
+
+        <kColl id=Salida>
+       	  <field id=INDICADOR-PAGINACION>
+	  <iColl id=ListaSaldos>
+	    <kColl id=Saldo>
+	      <field id=TIPO-ASUNTO>
+	      <field id=ASUNTO>
+	      <field id=DIVISA>
+	      <field id=SALDO-1>
+	      <field id=SALDO-2>
+	      <field id=NUMERO-1>
+	      <field id=NUMERO-2>
+	      <field id=FECHA-1>
+	      <field id=FECHA-2>
+	       <field id=INDICADOR>
+	      <field id=ALIAS>
+	    </kColl>
+	  </iColl>
+	  <field id=AREA-PAGINACION>
+        </kColl >
+
+	<kColl id=Cuentas>
+	  <iColl id=ListaCuentas>
+	    <kColl id=Cuenta>
+	      <field id=Banco>
+	      <field id=Oficina>
+	      <field id=DControl>
+	      <field id=NumCuenta>
+	      <field id=Permiso>
+	      <field id=ClaveAsunto>
+	      <field id=Tipo>
+	      <field id=Estado>
+	      <field id=Valaso>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Tarjetas>
+	  <iColl id=ListaTarjetas>
+	    <kColl id=Tarjeta>
+	      <field id=PAN1>
+	      <field id=PAN2>
+	      <field id=PAN3>
+	      <field id=PAN4>
+	      <field id=Permiso>
+	      <field id=ClaveAsunto>
+	      <field id=Tipo>
+	      <field id=Estado>
+	      <field id=Valaso>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Prestamos>
+	  <iColl id=ListaPrestamos>
+	    <kColl id=Prestamos>
+	      <field id=Bancop>
+	      <field id=Oficinap>
+	      <field id=DControlp>
+	      <field id=NumCuentap>
+	      <field id=Permisop>
+	      <field id=ClaveAsuntop>
+	      <field id=Tipop>
+	      <field id=Estadop>
+	      <field id=Valasop>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Fondos>
+	  <iColl id=ListaFondos>
+	    <kColl id=Cuenta>
+	      <field id=Banco>
+	      <field id=Oficina>
+	      <field id=DControl>
+	      <field id=NumCuenta>
+	      <field id=Permiso>
+	      <field id=ClaveAsunto>
+	      <field id=Tipo>
+	      <field id=Estado>
+	      <field id=Valaso>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Cupo>
+	  <iColl id=ListaCupo>
+	    <kColl id=Tarjeta>
+	      <field id=PAN1>
+	      <field id=PAN2>
+	      <field id=PAN3>
+	      <field id=PAN4>
+	      <field id=Permiso>
+	      <field id=ClaveAsunto>
+	      <field id=Tipo>
+	      <field id=Estado>
+	      <field id=Valaso>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<! JAAG -->
+	<kColl id=Pensiones>
+	  <iColl id=ListaPensiones>
+	    <kColl id=Pensiones>
+	      <field id=Bancop>
+	      <field id=Oficinap>
+	      <field id=DControlp>
+	      <field id=NumCuentap>
+	      <field id=Permisop>
+	      <field id=ClaveAsuntop>
+	      <field id=Tipop>
+	      <field id=Estadop>
+	      <field id=Valasop>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SaldosCuentas>
+	  <iColl id=ListaSaldosCuentas>
+	    <kColl id=Cuenta>
+	      <field id=Banco>
+	      <field id=Oficina>
+	      <field id=DControl>
+	      <field id=NumCuenta>
+	      <field id=Tipo>
+	      <field id=Estado>
+	      <field id=Valaso>
+	      <field id=Permiso>
+	      <field id=SaldoPuntual>
+	      <field id=SaldoDisponible>
+	      <field id=Divisa>
+	      <field id=ClaveAsunto>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SaldosTarjetas>
+	  <iColl id=ListaSaldosTarjetas>
+	    <kColl id=Tarjeta>
+	      <field id=PAN1>
+	      <field id=PAN2>
+	      <field id=PAN3>
+	      <field id=PAN4>
+      	      <field id=Tipo>
+      	      <field id=Estado>
+	      <field id=Valaso>
+      	      <field id=Permiso>
+	      <field id=SaldoPuntual>
+	      <field id=SaldoDisponible>
+	      <field id=Divisa>
+	      <field id=ClaveAsunto>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SaldosPrestamos>
+	  <iColl id=ListaSaldosPrestamos>
+	    <kColl id=Prestamos>
+	      <field id=Bancop>
+	      <field id=Oficinap>
+	      <field id=DControlp>
+	      <field id=NumCuentap>
+	      <field id=Tipop>
+	      <field id=Estadop>
+	      <field id=Valasop>
+	      <field id=Permisop>
+	      <field id=SaldoPuntualp>
+	      <field id=SaldoDisponiblep>
+	      <field id=Divisap>
+	      <field id=ClaveAsuntop>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+
+	<kColl id=SaldosFondos>
+	  <iColl id=ListaSaldosFondos>
+	    <kColl id=Cuenta>
+	      <field id=Banco>
+	      <field id=Oficina>
+	      <field id=DControl>
+	      <field id=NumCuenta>
+	      <field id=Tipo>
+	      <field id=Estado>
+	      <field id=Valaso>
+	      <field id=Permiso>
+	      <field id=SaldoPuntual>
+	      <field id=SaldoDisponible>
+	      <field id=Divisa>
+	      <field id=ClaveAsunto>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SaldosCupo>
+	  <iColl id=ListaSaldosCupo>
+	    <kColl id=Tarjeta>
+	      <field id=PAN1>
+	      <field id=PAN2>
+	      <field id=PAN3>
+	      <field id=PAN4>
+      	  <field id=Tipo>
+      	  <field id=Estado>
+	      <field id=Valaso>
+      	  <field id=Permiso>
+	      <field id=SaldoPuntual>
+	      <field id=SaldoDisponible>
+	      <field id=Divisa>
+	      <field id=ClaveAsunto>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<! JAAG -->
+	<kColl id=SaldosPensiones>
+	  <iColl id=ListaSaldosPensiones>
+	    <kColl id=Pensiones>
+	      <field id=Bancop>
+	      <field id=Oficinap>
+	      <field id=DControlp>
+	      <field id=NumCuentap>
+	      <field id=Tipop>
+	      <field id=Estadop>
+	      <field id=Valasop>
+	      <field id=Permisop>
+	      <field id=SaldoPuntualp>
+	      <field id=SaldoDisponiblep>
+	      <field id=Divisap>
+	      <field id=ClaveAsuntop>
+	       <field id=Indicador>
+	      <field id=Alias>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR ------------------------------------------------------------------------->
+<kColl id= posicion_global_om-copiar>
+
+	<kColl id=a-TxFN10ENET>
+	  <field id=Entrada value=TxFN10ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN10ENET>
+	  <field id=Salida value=TxFN10ENETSalida-01>
+	</kColl>
+</kColl>
+<! ---------------------------------------------------------------------------------->
+

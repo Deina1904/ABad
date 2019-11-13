@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<cfgexportacion>
+
+    <funcionalidad id="ORD_NOM_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenes</claseimp>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_NOM_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="ORD_PNS_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenes</claseimp>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_PNS_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="ORD_TRA_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenes</claseimp>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_TRA_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+
+    <funcionalidad id="ORD_REC_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenes</claseimp>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_REC_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="ORD_PAP_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenes</claseimp>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_PAP_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+
+    <funcionalidad id="IMP_NOM_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_NOM_BRE_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_PNS_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_PNS_BRE_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_TRA_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_TRA_BRE_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_REC_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_REC_BRE_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_PAP_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_PAP_BRE_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+
+    <funcionalidad id="IMP_DVN_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_DVN_BRE_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DVP_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_DVP_BRE_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DVR_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_DVR_BRE_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DVT_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_DVT_BRE_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DVO_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_DVO_BRE_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+
+    <funcionalidad id="IMP_DET_NOM_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_NOM_DET_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DET_PNS_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_PNS_DET_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DET_TRA_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_TRA_DET_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DET_REC_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_REC_DET_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DET_PAP_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_PAP_DET_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+
+    <funcionalidad id="IMP_DET_DVN_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_DVN_DET_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DET_DVP_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_DVP_DET_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DET_DVR_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_DVR_DET_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DET_DVT_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_DVT_DET_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="IMP_DET_DVO_CO">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnGeneradorOrdenesImpresion</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_DVO_DET_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+
+    <funcionalidad id="EXP_ADT_CFC_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_CFC_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="EXP_ADT_NOM_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_NOM_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="EXP_ADT_PNS_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_PNS_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="EXP_ADT_TRA_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_TRA_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+
+    <funcionalidad id="EXP_ADT_REC_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_REC_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="EXP_ADT_PAP_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_EXP_PAP_CO.xslt</hojaestilo>
+        <tipo>0</tipo>
+    </funcionalidad>
+    
+    <funcionalidad id="CON_BRE_NOM_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_NOM_BRE_CO_.xslt</hojaestilo>
+        <extension>html</extension>
+        <tipo>0</tipo>
+    </funcionalidad>
+	
+	    <funcionalidad id="CON_BRE_PNS_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_PNS_BRE_CO_.xslt</hojaestilo>
+        <extension>html</extension>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="CON_BRE_TRA_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_TRA_BRE_CO_.xslt</hojaestilo>
+        <extension>html</extension>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="CON_BRE_REC_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_REC_BRE_CO_.xslt</hojaestilo>
+        <extension>html</extension>
+        <tipo>0</tipo>
+    </funcionalidad>
+    <funcionalidad id="CON_BRE_PAP_0082">
+        <claseimp>tlcl.exportacion.exportadores.ordenes.TLCLOnExportadorEnvioDirecto</claseimp>
+        <pathexport>/pr/bdfv_contingencia/online/co/webenet/tmp</pathexport>
+        <hojaestilo>/pr/bdfv_contingencia/online/co/webenet/dat/xslt/TLCL_IMP_PAP_BRE_CO_.xslt</hojaestilo>
+        <extension>html</extension>
+        <tipo>0</tipo>
+    </funcionalidad>
+    
+</cfgexportacion>

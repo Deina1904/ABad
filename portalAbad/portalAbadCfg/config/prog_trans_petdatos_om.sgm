@@ -1,0 +1,82 @@
+<! BBVA ------------------------------------------------------------------------------------------------->
+<! Operaci¢n: MULTICANAL prog_trans_petdatos_om---------------------------------------------------------->
+<! OPERACION -------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.tt.OMCtasBen id=prog_trans_petdatos_om operationContext=OperationContext>
+	<refKColl refId=prog_trans_petdatos_om-data>
+</com.grupobbva.bc.col.multicanal.tt.OMCtasBen>
+<! ------------------------------------------------------------------------------------------------------>
+<! DATOS ------------------------------------------------------------------------------------------------>
+<! ------------------------------------------------------------------------------------------------------>
+<kColl id=prog_trans_petdatos_om-data>
+	<field id=IdTx value=TxF015ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <field id=BPAGINAC>
+	  <iColl id=ListaAsuntos>
+	    <kColl id=AsuntoAsociado>
+	      <field id=BCODFORM>
+	      <field id=BIASUNTO>
+	      <field id=NOMTASUN>
+	      <field id=IDENASUN>
+	      <field id=IVALICTA>
+	    </kColl >
+	  </iColl >
+	  <field id=FOPERACI>
+	  <field id=NUMCLIEN>
+	  <field id=CODIACCC>
+	  <field id=SALDODIS>
+	</kColl >
+
+	<kColl id=SalidaCtasBen>
+	     <field id=Foperaci>
+	     <field id=Numclien>
+	     <field id=Codiaccc>
+	     <iColl id=LstCtasBen>
+  		<kColl id=CuentaBeneficiaria>
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+			<field id=NombreBen>
+			<field id=Identificacion>
+			<field id=IndValCta>
+		</kColl>
+   	    </iColl>
+	</kColl >
+</kColl>
+
+<! ------------------------------------------------------------------------------------------------------>
+<! COPIADOR --------------------------------------------------------------------------------------------->
+<! ------------------------------------------------------------------------------------------------------>
+<kColl id=prog_trans_petdatos_om-copiar>
+	<kColl id=a-TxF015ENET>
+		<field id=Entrada value=TxF015ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF015ENET>
+		<field id=Salida value=TxF015ENETSalida-01>
+	</kColl>
+</kColl>
+<! ----------------------------------------------------------------------------------------------------->

@@ -1,0 +1,104 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION desbloqueo_op --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.migracion.OpDesBloqueo id=desbloqueo_op operationContext=OperationContext>
+	<refKColl refId=desbloqueo_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=funciones_om>
+	<refOM refId=retorno_pagotarjespc_om>
+	<refOM refId=log_par_om>
+
+
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=param metodo=param requestFmt=TipoOPHTMLFmt>
+		<estadoOP id=1 accion=uploadFile metodo=uploadFile >
+		<estadoOP id=2 accion=param metodo=param requestFmt=TipoOPHTMLFmt>
+		<estadoOP id=fun accion=param metodo=param requestFmt=TipoOPHTMLFmt>
+		<estadoOP id=fun1 accion=param metodo=param requestFmt=TipoOPHTMLFmt>
+		<estadoOP id=fun accion=continuar metodo=continuar >
+		<estadoOP id=1 accion=param metodo=param requestFmt=TipoOPHTMLFmt>
+		<estadoOP id=ERROR accion=param metodo=param requestFmt=TipoOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=funciones>
+
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=2 jspFmt=InicioOPJspFmt>
+		<salidaOP id=fun jspFmt=InicioOPJspFmt>
+		<salidaOP id=fun1 jspFmt=FuncionesOPJspFmt>
+		<salidaOP id=ERROR jspFmt=InicioOPJspFmt>
+
+
+	</resultadoOP>
+</com.grupobbva.bc.col.migracion.OpDesBloqueo>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=desbloqueo_op-data>
+	<field id=Resultado>
+	<field id=Mensaje>
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=Error>
+	<field id=tipo>
+	<field id=opRequest>
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+
+<! -------------------------------------------------------------------------------->
+
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+	</fJsp>
+</fmtDef>
+<fmtDef id=FuncionesOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<iCollVector dataName=funciones_om-data.Salida.ListaFunciones description=ListaFunciones>
+					  		  <record dataName=FUNCIONES>
+					  		          <fString dataName=FUNCION><nullCheck>
+					  		          <fString dataName=SERVICIO><nullCheck>
+
+					  	  	  </record>
+	      </iCollVector>
+
+
+	</fJsp>
+</fmtDef>
+
+
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=opRequest>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=TipoOPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=tipo>
+	</fHTMLReq>
+</fmtDef>
+
+
+
+
+
+
+

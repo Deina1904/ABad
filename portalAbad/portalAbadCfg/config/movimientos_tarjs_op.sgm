@@ -1,0 +1,162 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION movimientos_tarjs_op      ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pg.OPMovimientosTarjs id=movimientos_tarjs_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+        <refFormat name=jspFormat refId=SaldosMvtosOPJspFmt>
+        <refFormat name=htmlRequestFormat refId=TarjsOPHTMLFmt>
+        <refFormat name=htmlRequestFormat refId=SiguienteMovimientoOPHTMLFmt>
+        <refKColl refId=movimientos_tarjs_op-data>
+        <refOM refId=movimientos_tarjs_om>
+        <refOM refId=saldos_tarjs_om>
+        <refOM refId=tarjetas_credito_programa_puntos_consul_puntos_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=movimientos metodo=movimientos requestFmt=TarjsOPHTMLFmt>
+		<estadoOP id=1 accion=movimientos metodo=movimientos requestFmt=TarjsOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+		<estadoOP id=2 accion=movimientos metodo=movimientos requestFmt=TarjsOPHTMLFmt>
+		<estadoOP id=3 accion=movimientos metodo=movimientos requestFmt=TarjsOPHTMLFmt>
+		<estadoOP id=3 accion=masDatos metodo=masDatos>
+		<estadoOP id=3 accion=atrasDatos metodo=atrasDatos>
+		<estadoOP id=ERROR accion=movimientos metodo=movimientos requestFmt=TarjsOPHTMLFmt>
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=2 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=3 jspFmt=SaldosMvtosOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pg.OPMovimientosTarjs>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=movimientos_tarjs_op-data>
+	<field id=MaxNumRegistros value=25>
+	<field id=AsuntoPropio>
+	<field id=SeleccionMes>
+	<field id=NumTarjeta>
+	<field id=Error>
+	<field id=SiguienteMovimiento>
+	<field id=MasDatos>
+	<field id=AtrasDatos>
+
+	<kColl id=Pagina>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+	      <field id=Descripcion>
+	      <field id=Referencia>
+	      <field id=Lugar>
+	      <field id=Importe>
+	      <field id=NumeroMovimiento>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Movimientos>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+	      <field id=Descripcion>
+	      <field id=Referencia>
+	      <field id=Lugar>
+	      <field id=Importe>
+	      <field id=NumeroMovimiento>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=SaldosMvtosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=NumTarjeta><nullCheck>
+		<fString dataName=MasDatos description=MasDatos><nullCheck>
+		<fString dataName=AtrasDatos description=AtrasDatos><nullCheck>
+		<fString dataName=SiguienteMovimiento description=SiguienteMovimiento><nullCheck>
+
+
+		<record dataName=saldos_tarjs_om-data.Salida description=TarjsSaldo>
+            		<fString dataName=TIPO-TARJETA><nullCheck>
+            		<fString dataName=CONTRATO-TARJETA><nullCheck>
+            		<fString dataName=TITULARIDAD><nullCheck>
+            		<fDate   dataName=FECHA-CADU><nullCheck>
+	      		<fDate dataName=FECHA-CORTE><nullCheck>
+	        	<fString dataName=DESCRIP-PAGO><nullCheck>
+			<fNumString dataName=LIMITE-CREDITO decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+			<fNumString dataName=DISPONIB decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+			<fNumString dataName=NUM-ACLARA><nullCheck>
+			<fNumString dataName=TASA><nullCheck>
+			<fDate dataName=FECHA-PAGO><nullCheck>
+			<fNumString dataName=SOBREGIRO><nullCheck>
+			<fNumString dataName=PAGO-MINIMO decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+			<fNumString dataName=IMPORTE-ACLARA decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+			<fString dataName=ESTADO-TARJETA><nullCheck>
+		</record>
+
+		<iCollVector dataName=Pagina.ListaMovimientos description=ListaMovtos>
+			<record dataName=Movimiento>
+	      			<fDate dataName=FechaOperacion><nullCheck>
+				<fString dataName=Descripcion><nullCheck>
+				<fString dataName=Referencia><nullCheck>
+				<fString dataName=Lugar><nullCheck>
+				<fNumString dataName=Importe decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+				<fNumString dataName=NumeroMovimiento><nullCheck>
+			</record>
+		</iCollVector>
+
+		<record dataName=tarjetas_credito_programa_puntos_consul_puntos_om-data.Salida description=SaldoPuntos>
+            		<fString dataName=CONTRATO><nullCheck>
+            		<fNumString dataName=SALPUNTOS><nullCheck>
+            		<fNumString dataName=MINPUNTOS><nullCheck>
+            		<fString dataName=INDICAOK><nullCheck>
+            		<fNumString dataName=SANDOANT><nullCheck>
+            		<fNumString dataName=PUNTOSMES><nullCheck>
+            		<fNumString dataName=BONOSPUNT><nullCheck>
+            		<fNumString dataName=AJUSTPUNT><nullCheck>
+            		<fNumString dataName=REDENCIONES><nullCheck>
+            		<fNumString dataName=PUNTOSEXP><nullCheck>
+            		<fNumString dataName=SALDOAFECHA><nullCheck>
+            		<fNumString dataName=PROXIVENCER><nullCheck>
+		</record>
+     </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=TarjsOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=SeleccionMes>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=SiguienteMovimientoOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=SiguienteMovimiento>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

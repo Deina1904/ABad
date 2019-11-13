@@ -1,0 +1,80 @@
+! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL planillas_movimiento_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=planillas_movimiento_om operationContext=OperationContext>
+	<refKColl refId=planillas_movimiento_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=planillas_movimiento_om-data>
+	<field id=IdTx value=TxFN62ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=omIndPaginacion>
+	  <field id=omAreaPaginacion>
+	  <iColl id=omListaOrdenes>
+	    <kColl id=omOrden>
+	      <field id=omNroOrden>
+	      <field id=omFechaTx>
+	      <field id=omFechaApl>
+	      <field id=omImporte>
+		  <field id=omNroRegistros>
+		  <field id=omEstadoTx>
+		  <field id=omSucursal>
+		  <field id=omEmisora>
+		  <field id=omEstadoAnu>
+		  <field id=omAplEspecial>
+		  <field id=omUsuarioTx>
+		  <field id=omCuentaTx>
+		  <field id=omTipoTx>
+		  <field id=omNombreTx>
+	    </kColl >
+	  </iColl >
+	  <field id=omClienteSal>
+	  <field id=omFechaSal>
+	  <field id=omNroOrdenSal>
+	  <field id=omCentroSal>
+	  <field id=omIndMasDatosHost>
+	  <field id=omCuenta>
+	  <field id=omServicio>
+	  <field id=omNombre>
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=planillas_movimiento_om-copiar>
+	<kColl id=a-TxFN62ENET>
+		<field id=Entrada value=TxFN62ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN62ENET>
+		<field id=Salida value=TxFN62ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

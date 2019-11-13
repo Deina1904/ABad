@@ -1,0 +1,77 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION consultar_pagotcter_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.ptcter.OPConsultarPagoTcTer id=consultar_pagotcter_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionConsultarPTOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPTarjeOPHTMLFmt>
+	<refKColl refId=consultar_pagotcter_op-data>
+	<refOM refId=consultar_pagotcter_om>
+	<refOM refId=trans_petdatos_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=consultarPagoTarje     requestFmt=DatosPTarjeOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=consultarPagoTarje     requestFmt=DatosPTarjeOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=consultarPagoTarje requestFmt=DatosPTarjeOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=consultarPagoTarje requestFmt=DatosPTarjeOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionConsultarPTOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.ptcter.OPConsultarPagoTcTer>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consultar_pagotcter_op-data>
+	<field id=tc>
+	<field id=tipo>
+	<field id=Correo>
+	<field id=CuentaOrdenante>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionConsultarPTOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=CtaPTarje description=ctaptarje>
+		<fString dataName=NumeroTarjeta description=numtarjeta>
+		<fString dataName=Email description=email>
+		<record dataName=consultar_pagotcter_om-data.Salida description=Consultar>
+			<fNumString dataName=PAGOMIN description=pagomin>
+			<fNumString dataName=SALDOTOT description=saldotot>
+			<fDate dataName=FECHAVEN description=fechaven>
+			<fNumString dataName=SALDODIS description=saldodis>
+			<fString dataName=NOMBRE description=nombre>
+		</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosPTarjeOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=tc>
+		<fString dataName=tipo>
+		<fString dataName=Correo>
+		<fString dataName=CuentaOrdenante>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

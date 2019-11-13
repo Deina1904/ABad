@@ -1,0 +1,101 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION anula_planillas_real_op  ------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.anulaplanillas.OPRealizarAnulaPlanillas id=anula_planillas_real_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=TrasRealizadaOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosTrasOPHTMLFmt>
+
+	<refKColl refId=anula_planillas_real_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=anula_planillas_real_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=realizarAnu requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=realizarAnu requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=realizarAnu requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=realizarAnu requestFmt=DatosTrasOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=TrasRealizadaOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.anulaplanillas.OPRealizarAnulaPlanillas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=anula_planillas_real_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=TrasRealizadaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+	    <fString dataName=Nro-Orden description=Nro-Orden>
+        <fString dataName=Numero-Lote description=Numero-Lote>
+        <fString dataName=Servicio description=Servicio>
+	    <fString dataName=Importe description=Importe>
+        <fString dataName=Cuenta-Origen description=Cuenta-Origen>
+	    <fString dataName=Emisora-Salida description=Emisora-Salida>
+        <fString dataName=Planilla description=Planilla>
+        <fString dataName=Fecha-Ejecucion description=Fecha-Ejecucion>
+	    <fString dataName=Registros description=Registros>
+		<record dataName=anula_planillas_real_om-data.Salida description=AnulaPlanilla>
+			<fDate dataName=FECHA description=fecha>
+		</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosTrasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

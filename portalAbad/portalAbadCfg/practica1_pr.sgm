@@ -1,0 +1,20 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION practica1_pr  ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.cmc.practica1.PRpractica1 id=practica1_pr operationContext=OperationContext>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=practica1_op>
+	</navegacionPr>
+	
+	<resultadoPr>				
+		<salidaPr id=0 operacion=practica1_op estadoOP=1 jspFile=practica1>
+		<salidaPr id=0 operacion=practica1_op estadoOP=2 jspFile=formulario>
+		<salidaPr id=0 operacion=practica1_op estadoOP=3 jspFile=viewDatos>	
+		<salidaPr id=0 operacion=practica1_op estadoOP=4 jspFile=datosRegistrados>	
+					
+	</resultadoPr>	
+
+</com.cmc.practica1.PRpractica1>
+<! --------------------------------------------------------------------------------->

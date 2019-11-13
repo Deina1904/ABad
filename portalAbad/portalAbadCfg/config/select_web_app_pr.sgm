@@ -1,0 +1,26 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  select_web_app_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.ecommerce.PrSelectWebApp id=select_web_app_pr operationContext=OperationContext>
+   <refKColl refId=select_web_app_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+   <navegacionPr>
+      <estadoPr id=0 operacion=select_web_app_op>
+      <estadoPr id=1 operacion=select_web_app_op>
+   </navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+   <resultadoPr>
+      <salidaPr id=0 operacion=select_web_app_op estadoOP=ERROR jspFile=ec001_error>
+      <salidaPr id=0 operacion=select_web_app_op estadoOP=1 jspFile=redirec_webapp>
+      <salidaPr id=1 operacion=select_web_app_op estadoOP=1 jspFile=redirec_webapp>
+      <salidaPr id=1 operacion=select_web_app_op estadoOP=ERROR jspFile=ec001_error>
+   </resultadoPr>
+
+</com.grupobbva.bc.col.web.ecommerce.PrSelectWebApp>
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=select_web_app_pr-data>
+</kColl>
+<! ----------------------------------------------------------------------------------->

@@ -1,0 +1,59 @@
+﻿<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL validacion_fuerte_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=validacion_fuerte_om operationContext=OperationContext>
+	<refKColl refId=validacion_fuerte_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<!kColl id=validacion_fuerte_om-data dynamic=false >
+<kColl id=validacion_fuerte_om-data>
+	<field id=IdTx value=TxF200ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <!field id=BCODCTAA>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <!field id=BCODAUX1 printValue="****">
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	      <field id=NOMBRE-CLIENTE>
+	      <field id=INDTARJ-COORDENADAS>
+	</kColl>
+
+
+</kColl >
+<! COPIADOR ------------------------------------------------------------------------->
+<kColl id=validacion_fuerte_om-copiar>
+	<kColl id=a-TxF200ENET>
+	  <field id=Entrada value=TxF200ENETEntrada>
+	</kColl>
+
+	<kColl id=desde-TxF200ENET>
+		<field id=Salida value=TxF200ENETSalida-01>
+	</kColl>
+
+</kColl>
+<! ---------------------------------------------------------------------------------->

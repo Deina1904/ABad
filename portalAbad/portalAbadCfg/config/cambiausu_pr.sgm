@@ -1,0 +1,43 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  cambiausu_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.migracion.PrBorra id=cambiausu_pr operationContext=OperationContext>
+
+	<refKColl refId=cambiausu_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=cambiausu_op>
+
+		<estadoPr id=1 operacion=cambiausu_op>
+
+
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=cambiausu_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=cambiausu_op estadoOP=ERROR jspFile=gn001_error>
+
+
+		<salidaPr id=1 operacion=cambiausu_op estadoOP=1 jspFile=cambia_usu_01>
+		<salidaPr id=1 operacion=cambiausu_op estadoOP=2 jspFile=cambia_usu_02>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.migracion.PrBorra>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=cambiausu_pr-data>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

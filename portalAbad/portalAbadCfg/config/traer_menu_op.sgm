@@ -1,0 +1,55 @@
+<! BBVA  ----------------------------------------------------------------------------->
+<! Operación:  PRESENTACION traer_menu_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.per.OPTraerMenu id=traer_menu_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=TraerMenuOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=traer_menu_op-data>
+	<refOM refId=traer_menu_om>
+<! ----------------------------------------------------------------------------------->
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=cargarMenu metodo=cargarMenu>
+		<estadoOP id=1 accion=cargarMenu metodo=cargarMenu>
+		<estadoOP id=ERROR accion=cargarMenu metodo=cargarMenu>
+	</navegacionOP>
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=TraerMenuOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.per.OPTraerMenu>
+
+<! DATOS ----------------------------------------------------------------------------->
+<kColl id=traer_menu_op-data>
+	<field id=Error>
+</kColl>
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=TraerMenuOPJspFmt>
+	<fJsp>
+		<record dataName=traer_menu_om-data.Salida description=Datos>
+			<fString dataName=CodAplicacion><nullCheck>
+			<fString dataName=CodPerfil><nullCheck>
+			<fString dataName=CodUsuario><nullCheck>
+		</record>
+	        <iCollVector dataName=traer_menu_om-data.Salida.Items.ListaItems description=ListaItems>
+			<record dataName=Item>
+				<fString dataName=CodItem><nullCheck>
+				<fString dataName=CodSecuencia><nullCheck>
+				<fString dataName=CodNivel><nullCheck>
+				<fString dataName=TituloItem><nullCheck>
+				<fString dataName=LinkItem><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_desocup description=titulo>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! ----------------------------------------------------------------------------------->

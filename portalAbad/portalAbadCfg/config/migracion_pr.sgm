@@ -1,0 +1,42 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  migracion_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.migracion.PrFunciones id=migracion_pr operationContext=OperationContext>
+
+	<refKColl refId=migracion_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=funciones_op>
+
+		<estadoPr id=1 operacion=funciones_op>
+
+
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=funciones_op estadoOP=ERROR jspFile=gn001_error>
+
+
+		<salidaPr id=1 operacion=funciones_op estadoOP=1 jspFile=funcion_01>
+		<salidaPr id=1 operacion=funciones_op estadoOP=2 jspFile=funcion_02>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.migracion.PrFunciones>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=migracion_pr-data>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

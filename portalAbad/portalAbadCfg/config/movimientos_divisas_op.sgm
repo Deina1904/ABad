@@ -1,0 +1,150 @@
+<! BBVA  ------------------------------------------------------------------------------------------------------------------------------------------>
+<! Operación:  PRESENTACION movimientos_divisas_op  ------------------------------------------------------------------------------->
+
+<! OPERACION -------------------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.gp.OpTraeMovimientosDiv id=movimientos_divisas_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=MovimientosDivisasOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=MovimientosDivisasOPHTMLFmt>
+	<refKColl refId=movimientos_divisas_op-data>
+	<refOM refId=consulta_divisas_om>
+
+<! ------------------------------------------------------------------------------------------------------------------------------------------------>
+
+<! ESTADOS ---------------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=consulta metodo=traeMvtosDivisas requestFmt=MovimientosDivisasOPHTMLFmt>
+		<estadoOP id=1 accion=consulta metodo=traeMvtosDivisas requestFmt=MovimientosDivisasOPHTMLFmt>
+		<estadoOP id=ERROR accion=consulta metodo=traeMvtosDivisas requestFmt=MovimientosDivisasOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=consulta metodo=traeMvtosDivisas requestFmt=MovimientosDivisasOPHTMLFmt>
+        <estadoOP id=1 accion=excel metodo=traeMvtosExcelDiv >
+        <estadoOP id=EXCEL accion=excel metodo=traeMvtosExcelDiv >
+        <estadoOP id=EXCEL accion=consulta metodo=traeMvtosDivisas requestFmt=MovimientosDivisasOPHTMLFmt>
+
+	</navegacionOP>
+
+<! SALIDAS ---------------------------------------------------------------------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=MovimientosDivisasOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+		<salidaOP id=EXCEL jspFmt=MovimientosDivisasOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.gp.OpTraeMovimientosDiv>
+
+<! DATOS ------------------------------------------------------------------------------------------------------------------------------------------>
+<kColl id=movimientos_divisas_op-data>
+	<!-- DEFINICION DE DATOS DE FORMATOS DE ERROR -->
+	<field id=Error>
+	<!-- DEFINICION DE DATOS DE FORMATOS DE MENSAJE -->
+	<field id=Mensaje>
+
+	<!-- DEFINICION DE DATOS DE FORMATOS DE ENTRADA -->
+ 	<field id=OpStrOpcion>
+    <field id=OpStrDia>
+	<field id=OpStrMes>
+	<field id=OpStrAnio>
+	<field id=OpStrDiaDesde>
+	<field id=OpStrMesDesde>
+	<field id=OpStrAnioDesde>
+	<field id=OpStrDiaHasta>
+	<field id=OpStrMesHasta>
+	<field id=OpStrAnioHasta>
+	<field id=OpStrNumDias>
+
+	<iColl id=ListaMovimientosOp>
+	  <kColl id=MovimientosOp>
+		<field id=OpStrReferencia>
+		<field id=OpStrNumIden>
+		<field id=OpStrTipOper>
+		<field id=OpStrDesTOper>
+		<field id=OpStrComOVen>
+		<field id=OpStrDivisas>
+		<field id=OpStrImporte>
+		<field id=OpStrImpAUSD>
+		<field id=OpStrImpACOP>
+		<field id=OpStrTCDivUS>
+		<field id=OpStrTCDivCO>
+		<field id=OpStrEstado>
+	 	<field id=OpStrDesOper>
+	 	<field id=OpStrFecha>
+	  </kColl>
+	</iColl>
+	<field id=OpStrIMasReg>
+
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------------------------------------------------------------------->
+
+<fmtDef id=MovimientosDivisasOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=OpStrOpcion>
+		<fString dataName=OpStrDia>
+		<fString dataName=OpStrMes>
+		<fString dataName=OpStrAnio>
+		<fString dataName=OpStrDiaDesde>
+		<fString dataName=OpStrMesDesde>
+		<fString dataName=OpStrAnioDesde>
+		<fString dataName=OpStrDiaHasta>
+		<fString dataName=OpStrMesHasta>
+		<fString dataName=OpStrAnioHasta>
+
+		<iCollVector dataName=ListaMovimientosOp description=ListaMovimientosOp>
+			<record dataName=MovimientosOp>
+		 		<fNumString dataName=OpStrReferencia showDecimalsSep=no showThousandsSep=no ><nullCheck>
+				<fString dataName=OpStrNumIden>
+		        <fString dataName=OpStrTipOper>
+				<fString dataName=OpStrDesTOper>
+		        <fString dataName=OpStrComOVen>
+				<fString dataName=OpStrDivisas>
+				<fNumString dataName=OpStrImporte decPlaces=2>
+				<fNumString dataName=OpStrImpAUSD decPlaces=2>
+				<fNumString dataName=OpStrImpACOP decPlaces=2>
+				<fNumString dataName=OpStrTCDivUS decPlaces=4>
+				<fNumString dataName=OpStrTCDivCO decPlaces=2>
+				<fString dataName=OpStrEstado>
+				<fString dataName=OpStrDesOper>
+				<fString dataName=OpStrFecha>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Mensaje description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA!>
+
+<fmtDef id=MovimientosDivisasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=OpStrOpcion>
+		<fString dataName=OpStrDia>
+		<fString dataName=OpStrMes>
+		<fString dataName=OpStrAnio>
+		<fString dataName=OpStrDiaDesde>
+		<fString dataName=OpStrMesDesde>
+		<fString dataName=OpStrAnioDesde>
+		<fString dataName=OpStrDiaHasta>
+		<fString dataName=OpStrMesHasta>
+		<fString dataName=OpStrAnioHasta>
+		<fString dataName=OpStrNumDias>
+	</fHTMLReq>
+</fmtDef>
+
+<! ------------------------------------------------------------------------------------------------------------------------------------------------>

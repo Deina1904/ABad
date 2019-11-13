@@ -1,0 +1,78 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION serv_pub_contratados_op  ---------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.ps.OPPServContrat id=serv_pub_contratados_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=PServContratOPJspFmt>	
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>	
+
+	<refFormat name=htmlRequestFormat refId=PServContratOPHTMLFmt>	
+
+	<refKColl refId=serv_pub_contratados_op-data>	
+	<refOM refId=asunto_PServ_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>	
+		<estadoOP id=0 accion=continuar metodo=ordPServ requestFmt=PServContraOPHTMLFmt>			
+		<estadoOP id=1 accion=continuar metodo=ordPserv requestFmt=PServContraOPHTMLFmt>			
+	</navegacionOP>		
+	
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>	
+		<salidaOP id=1 jspFmt=PServContratOPJspFmt>				
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>				
+	</resultadoOP>	
+</com.grupobbva.bc.col.web.ps.OPPServContrat>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=serv_pub_contratados_op-data>
+	<field id=AsuntoPServ>	
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=DatosPServOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrd>
+		<iCollVector dataName=asunto_PServ_om-data.SalidaServContratados.ListaServContratados description=ListaServContratados>
+			<record dataName=ServicioContratado>				
+				<fString dataName=Banco>
+				<fString dataName=Ciudad>
+				<fString dataName=TipoServicio>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=CodForm>
+				<fString dataName=IAsunto>
+			</record>								
+		</iCollVector>
+		<fString dataName=FechaOpe>
+		<fString dataName=Divisa>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosPServOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPServ>
+	</fHTMLReq>
+</fmtDef>	
+
+<! --------------------------------------------------------------------------------->
+

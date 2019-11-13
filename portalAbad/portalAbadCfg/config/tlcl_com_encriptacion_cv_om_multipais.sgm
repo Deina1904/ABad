@@ -1,0 +1,24 @@
+<! BBVA - OM Creada por CE29628 para GP-9474 -------------------------------->
+<! Operación:  MULTICANAL tlcl_com_encriptacion_cv_om_multipais   -------------------------------->
+
+<! OPERACION -------------------------------------------------------------------------------------->
+<tlcl.multipais.multicanal.comun.TLCLOmGenEncriptacionCV id=tlcl_com_encriptacion_cv_om_multipais operationContext=OperationContext>
+	<refKColl refId=tlcl_com_encriptacion_cv_om_multipais-data>
+</tlcl.multipais.multicanal.comun.TLCLOmGenEncriptacionCV>
+<! ----------------------------------------------------------------------------------------------->
+
+
+<! DATOS ----------------------------------------------------------------------------------------->
+<kColl id=tlcl_com_encriptacion_cv_om_multipais-data>
+	<kColl id=entrada>
+		<field id=ficheroOrigen>
+		<field id=modo>
+		<field id=referencia>
+	</kColl>
+			
+	<kColl id=salida>
+		<field id=respuesta><nullCheck>
+		<field id=mensaje><nullCheck>
+		<field id=codMensaje><nullCheck>
+	</kColl>
+</kColl>

@@ -1,0 +1,76 @@
+<! BBVA --------------------------------------------------------------------------->
+<! Operación:  MULTICANAL ce_detoper_comex_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=ce_detoper_comex_om operationContext=OperationContext>
+	<refKColl refId=ce_detoper_comex_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ce_detoper_comex_om-data>
+	<field id=IdTx value=TxF137ENET>
+	<field id=MaxNumRegistros>
+	<kColl id=Entrada>
+ 	  <field id=BNUMTARJ>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BARGBUSQ>
+	</kColl>
+
+	<kColl id=Salida>
+      	  <field id="IMPORTE_SALDO" >
+      	  <field id="FECHA_PROX_VENC" >
+      	  <field id="FECHA_PAGO" >
+      	  <field id="IMPORTE_NEGOCIADO" >
+      	  <field id="BEN_ORD_GIR" >
+      	  <field id="FECHA_ENVIO_REG" >
+      	  <field id="STATUS" >
+      	  <field id="FECHA_VALIDEZ" >
+      	  <field id="REF_GIRADA" >
+      	  <field id="STATUS_PROTESTO" >
+      	  <field id="FECHA_DESEMBOLSO" >
+      	  <field id="FECHA_VENC_FIN" >
+      	  <field id="IMPORTE_PROX_CUOTA" >
+       	  <field id="SALDO_POS_PROX" >
+      	  <field id="TIPO_EMBARQUE" >
+      	  <field id="NOMBRE_COURIER" >
+      	  <field id="NUMERO_GUIA" >
+      	  <field id="FECHA_ACUSE_REC" >
+      	  <field id="FECHA_ACEPTACION" >
+      	  <field id="IMPORTE_INICIAL" >
+      	  <field id="STATUS_ACEPTACI">
+           <field id="DESCRIPCION_FAC">
+	</kColl>
+
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=ce_detoper_comex_om-copiar>
+	<kColl id=a-TxF137ENET>
+		<field id=Entrada value=TxF137ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF137ENET>
+		<field id=Salida value=TxF137ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

@@ -1,0 +1,191 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION constructor_op --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.constructor.OpConstructor id=constructor_op operationContext=OperationContext>
+	<refKColl refId=constructor_op-data>
+	<refOM refId=pivote_om>
+	<refOM refId=constructor_om>
+
+
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=inicio metodo=inicio>
+		<estadoOP id=1 accion=continuar metodo=extracto requestFmt=DatosPWOPHTMLFmt>
+		<estadoOP id=1 accion=inicio metodo=inicio>
+		<estadoOP id=2 accion=inicio metodo=inicio>
+		<estadoOP id=3 accion=inicio metodo=inicio>
+		<estadoOP id=2 accion=excel  metodo=excel>
+		<estadoOP id=3 accion=excel  metodo=excel>
+
+		<estadoOP id=ERROR accion=inicio metodo=inicio>
+
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=2 jspFmt=ExtractoOPJspFmt>
+		<salidaOP id=3 jspFmt=ExtractoOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.constructor.OpConstructor>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=constructor_op-data>
+
+	<field id=llave>
+	<field id=CuentaOrdenante>
+	<field id=mes>
+	<iColl id=listaPrestamos>
+			<kColl id=prestamo>
+				<field id=banco>
+				<field id=oficina>
+				<field id=dControl>
+				<field id=numCuenta>
+				<field id=permiso>
+				<field id=claveAsunto>
+				<field id=tipo>
+			</kColl>
+	</iColl>
+	<field id=Error>
+
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+
+<! -------------------------------------------------------------------------------->
+
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<iCollVector dataName=listaPrestamos description=listaPrestamos>
+					<record dataName=prestamo>
+						<fString dataName=banco><nullCheck>
+						<fString dataName=oficina><nullCheck>
+						<fString dataName=dControl><nullCheck>
+						<fString dataName=numCuenta><nullCheck>
+						<fString dataName=permiso><nullCheck>
+						<fString dataName=claveAsunto><nullCheck>
+						<fString dataName=tipo><nullCheck>
+					</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ExtractoOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<iCollVector dataName=constructor_om-data.Listareg3 description=Listareg3>
+					  		  <record dataName=reg3>
+					  		          <fString dataName=recorte><nullCheck>
+					  		          <fString dataName=saldospesos><nullCheck>
+					  		          <fString dataName=saldosuvr><nullCheck>
+					  		          <fString dataName=intctes><nullCheck>
+					  		          <fString dataName=intmora><nullCheck>
+									  <fString dataName=correcion><nullCheck>
+					  		          <fString dataName=uvr><nullCheck>
+					  	  	  </record>
+	      </iCollVector>
+	      <iCollVector dataName=constructor_om-data.Listareg4 description=Listareg4>
+		  					  		  <record dataName=reg4>
+		  					  		          <fString dataName=fechamov><nullCheck>
+		  					  		          <fString dataName=concepto><nullCheck>
+		  					  		          <fString dataName=intctes><nullCheck>
+		  					  		          <fString dataName=capital><nullCheck>
+		  					  		          <fString dataName=vruvrmov><nullCheck>
+		  									  <fString dataName=saldouvr><nullCheck>
+		  					  		          <fString dataName=saldopesos><nullCheck>
+		  					  		          <fString dataName=valoruvr><nullCheck>
+		  					  		          <fString dataName=saldofec><nullCheck>
+		  					  	  	  </record>
+	      </iCollVector>
+		<record dataName=constructor_om-data description=Datos>
+			<fString dataName=Cuenta><nullCheck>
+			<fString dataName=FechaProceso><nullCheck>
+			<fString dataName=contrato><nullCheck>
+			<fString dataName=entidad><nullCheck>
+			<fString dataName=oficina><nullCheck>
+			<fString dataName=numercontr><nullCheck>
+			<fString dataName=calidadperticipe><nullCheck>
+			<fString dataName=numorden><nullCheck>
+		  	<fString dataName=aplicacion><nullCheck>
+		  	<fString dataName=idencli><nullCheck>
+			<fString dataName=nroform><nullCheck>
+			<fString dataName=sociedad><nullCheck>
+			<fString dataName=oficinaoper><nullCheck>
+			<fString dataName=oficinagestora><nullCheck>
+			<fString dataName=tipoincidencia><nullCheck>
+			<fString dataName=afagirdoc><nullCheck>
+			<fString dataName=inddirec><nullCheck>
+		  	<fString dataName=formato><nullCheck>
+		  	<fString dataName=interfaz><nullCheck>
+			<fString dataName=integracion><nullCheck>
+			<fString dataName=longdatos><nullCheck>
+			<fString dataName=fechacierre><nullCheck>
+			<fString dataName=numcta><nullCheck>
+			<fString dataName=desdiv><nullCheck>
+			<fString dataName=hojaanual><nullCheck>
+			<fString dataName=desproduc><nullCheck>
+		  	<fString dataName=despet><nullCheck>
+		  	<fString dataName=tiular1><nullCheck>
+			<fString dataName=tiular2><nullCheck>
+			<fString dataName=tiular3><nullCheck>
+			<fString dataName=tiular4><nullCheck>
+			<fString dataName=tiular5><nullCheck>
+			<fString dataName=tiular6><nullCheck>
+			<fString dataName=nomofic><nullCheck>
+			<fString dataName=fechaproc><nullCheck>
+		  	<fString dataName=hoja><nullCheck>
+		  	<fString dataName=extracto><nullCheck>
+			<fString dataName=nomclien><nullCheck>
+			<fString dataName=proyecto><nullCheck>
+			<fString dataName=gestora><nullCheck>
+			<fString dataName=nomproyecto><nullCheck>
+			<fString dataName=credito><nullCheck>
+			<fString dataName=imp-concedido><nullCheck>
+			<fString dataName=reforma><nullCheck>
+			<fString dataName=tasa><nullCheck>
+		  	<fString dataName=plazo><nullCheck>
+		  	<fString dataName=fechavenci><nullCheck>
+			<fString dataName=fechaliq><nullCheck>
+			<fString dataName=periodo><nullCheck>
+
+			<fString dataName=saldocorte><nullCheck>
+			<fString dataName=intcorte><nullCheck>
+			<fString dataName=moracorte><nullCheck>
+			<fString dataName=saldoantcorte><nullCheck>
+		 </record>
+
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+
+
+<fmtDef id=DatosPWOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CuentaOrdenante>
+		<fString dataName=mes>
+
+
+	</fHTMLReq>
+</fmtDef>
+
+
+
+
+
+

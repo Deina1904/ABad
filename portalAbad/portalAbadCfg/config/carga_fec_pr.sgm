@@ -1,0 +1,45 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  carga_fec_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.migracion.PrCargaFec id=carga_fec_pr operationContext=OperationContext>
+
+	<refKColl refId=carga_fec_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=carga_fec_op>
+
+		<estadoPr id=1 operacion=carga_fec_op>
+
+
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=carga_fec_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=carga_fec_op estadoOP=ERROR jspFile=gn001_error>
+
+
+		<salidaPr id=1 operacion=carga_fec_op estadoOP=1 jspFile=carga_fec_01>
+		<salidaPr id=1 operacion=carga_fec_op estadoOP=fun jspFile=fec_01>
+		<salidaPr id=1 operacion=carga_fec_op estadoOP=fun1 jspFile=fec_02>
+		<salidaPr id=1 operacion=carga_fec_op estadoOP=2 jspFile=carga_fec_02>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.migracion.PrCargaFec>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=carga_fec_pr-data>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

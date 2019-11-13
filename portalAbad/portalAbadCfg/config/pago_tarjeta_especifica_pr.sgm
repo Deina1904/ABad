@@ -1,0 +1,100 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  pago_tarjeta_especifica_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pte.PrPagoTarjespc id=pago_tarjeta_especifica_pr operationContext=OperationContext>
+
+	<refKColl refId=pago_tarjeta_especifica_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=ctas_ptarje_especifica_op>
+        <estadoPr id=1 operacion=ctas_ptarje_especifica_op>
+		<estadoPr id=2 operacion=ctas_ptarje_especifica_op>
+		<estadoPr id=3 operacion=ctas_ptarje_especifica_op>
+		<estadoPr id=4 operacion=ctas_ptarje_especifica_op>
+		<estadoPr id=5 operacion=ctas_ptarje_especifica_op>
+
+		<estadoPr id=1 operacion=comprasespecificas_tarj_op>
+		<estadoPr id=2 operacion=comprasespecificas_tarj_op>
+
+		<estadoPr id=2 operacion=confirmar_pagotarjespc_op>
+		<estadoPr id=3 operacion=confirmar_pagotarjespc_op>
+		<estadoPr id=3 operacion=realizar_pagotarjespc_op>
+		<estadoPr id=4 operacion=realizar_pagotarjespc_op>
+		<estadoPr id=4 operacion=realizado_pagotarjespc_op>
+		<estadoPr id=5 operacion=realizado_pagotarjespc_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=ctas_ptarje_especifica_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=ctas_ptarje_especifica_op estadoOP=VALIDAR jspFile=r002_traspasos>
+		<salidaPr id=0 operacion=ctas_ptarje_especifica_op estadoOP=1 jspFile=pt001_pet_pagotarjespc>
+		<salidaPr id=2 operacion=ctas_ptarje_especifica_op estadoOP=1 jspFile=pt001_pet_pagotarjespc>
+		<salidaPr id=3 operacion=ctas_ptarje_especifica_op estadoOP=1 jspFile=pt001_pet_pagotarjespc>
+		<salidaPr id=4 operacion=ctas_ptarje_especifica_op estadoOP=1 jspFile=pt001_pet_pagotarjespc>
+		<salidaPr id=1 operacion=ctas_ptarje_especifica_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=ctas_ptarje_especifica_op estadoOP=VALIDAR jspFile=r002_traspasos>
+		<salidaPr id=1 operacion=ctas_ptarje_especifica_op estadoOP=1 jspFile=pt001_pet_pagotarjespc><salidaPr id=2 operacion=comprasespecificas_tarj_op estadoOP=0 jspFile=pg005_ComprasEsp_Tar>
+		<salidaPr id=2 operacion=comprasespecificas_tarj_op estadoOP=1 jspFile=pg005_ComprasEsp_Tar>
+		<salidaPr id=2 operacion=comprasespecificas_tarj_op estadoOP=2 jspFile=pg005_ComprasEsp_Tar>
+		<salidaPr id=2 operacion=comprasespecificas_tarj_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=comprasespecificas_tarj_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=comprasespecificas_tarj_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+
+		<salidaPr id=2 operacion=confirmar_pagotarjespc_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=confirmar_pagotarjespc_op estadoOP=1 jspFile=pt002_conf_pagotarjespc>
+		<salidaPr id=2 operacion=confirmar_pagotarjespc_op estadoOP=1 jspFile=pt002_conf_pagotarjespc>
+
+		<salidaPr id=3 operacion=realizar_pagotarjespc_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=4 operacion=realizar_pagotarjespc_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=realizar_pagotarjespc_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=4 operacion=realizar_pagotarjespc_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=4 operacion=realizar_pagotarjespc_op estadoOP=1 jspFile=pt003_conf_pagotarjespc>
+		<salidaPr id=3 operacion=realizar_pagotarjespc_op estadoOP=1 jspFile=pt003_conf_pagotarjespc>
+
+
+		<salidaPr id=4 operacion=realizado_pagotarjespc_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=5 operacion=realizado_pagotarjespc_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=5 operacion=realizado_pagotarjespc_op estadoOP=1 jspFile=pt004_conf_pagotarjespc>
+		<salidaPr id=4 operacion=realizado_pagotarjespc_op estadoOP=1 jspFile=pt004_conf_pagotarjespc>
+		<salidaPr id=5 operacion=realizado_pagotarjespc_op estadoOP=2 jspFile=pt004_conf_pagotarjespc>
+		<salidaPr id=4 operacion=realizado_pagotarjespc_op estadoOP=2 jspFile=pt004_conf_pagotarjespc>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.pte.PrPagoTarjespc>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_tarjeta_especifica_pr-data>
+	<field id=ClaveCtaPTarje>
+	<field id=TipoCtaPTarje>
+	<field id=CtaPTarje>
+	<field id=ClaveTarjePTarje>
+	<field id=FechaOpe>
+	<field id=NumCuentaPr>
+	<field id=numtarjetapr>
+	<field id=ctaptarjepr>
+	<field id=TipoPago>
+	<field id=ImportePr>
+	<field id=ImporteAuxPr>
+	<field id=ComprobantePr>
+	<field id=TasaPr>
+	<field id=DescripcionPr>
+	<field id=Divisa>
+	<field id=refcargo>
+	<field id=fechaval>
+	<field id=extractoPr>
+	<field id=nmovicPr>
+	<field id=numero>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

@@ -1,0 +1,59 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL enviar_usuario_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=enviar_usuario_om operationContext=OperationContext>
+	<refKColl refId=enviar_usuario_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=enviar_usuario_om-data>
+	<field id=IdTx value=TxF026ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	      <field id=CODIGO>
+	      <field id=CAMPO1>
+	      <field id=CAMPO2>
+	      <field id=CAMPO3>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id= enviar_usuario_om-copiar>
+	<kColl id=a-TxF026ENET>
+		<field id=Entrada value=TxF026ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF026ENET>
+		<field id=Salida value=TxF026ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

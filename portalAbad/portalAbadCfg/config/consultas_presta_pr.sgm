@@ -1,0 +1,45 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  consultas_presta_pr  ---------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.prest.PrConsultaPrestamos id=consultas_presta_pr operationContext=OperationContext>
+   <refKColl refId=consultas_presta_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+   <navegacionPr>
+      <estadoPr id=0 operacion=relacion_presta_op>
+      <estadoPr id=1 operacion=relacion_presta_op>
+      <estadoPr id=1 operacion=movimientos_presta_op>
+   </navegacionPr>
+
+   <! SALIDAS --------------------------------------------------------------------------->
+   <resultadoPr>
+      <salidaPr id=0 operacion=relacion_presta_op estadoOP=ERROR jspFile=gn001_error>
+      <salidaPr id=1 operacion=relacion_presta_op estadoOP=1 jspFile=pr002_relacion_presta>
+      <salidaPr id=1 operacion=movimientos_presta_op estadoOP=1 jspFile=pr003_mvtos_saldos_presta>
+      <salidaPr id=1 operacion=movimientos_presta_op estadoOP=2 jspFile=pr004_saldos_presta>
+      <salidaPr id=1 operacion=movimientos_presta_op estadoOP=3 jspFile=pr005_mvtos_presta>
+      <salidaPr id=1 operacion=movimientos_presta_op estadoOP=ERROR jspFile=gn001_error>
+      <salidaPr id=1 operacion=movimientos_presta_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+   </resultadoPr>
+
+</com.grupobbva.bc.col.web.prest.PrConsultaPrestamos>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consultas_presta_pr-data>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+<! COPIADOR PR--------------------------------------------------------------------------->
+<kColl id=consultas_presta_pr-copiar>
+   <kColl id=a-relacion_presta_op>
+   </kColl>
+   <kColl id=desde-relacion_presta_op>
+   </kColl>
+   <kColl id=a-movimientos_presta_op>
+   </kColl>
+   <kColl id=desde-movimientos_presta_op>
+   </kColl>
+</kColl>
+

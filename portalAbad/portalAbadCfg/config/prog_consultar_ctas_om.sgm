@@ -1,0 +1,100 @@
+
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL prog_consultar_ctas_om  -------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.po.OMConsultarCtas id=prog_consultar_ctas_om operationContext=OperationContext>
+	<refKColl refId=prog_consultar_ctas_om-data>
+</com.grupobbva.bc.col.multicanal.po.OMConsultarCtas>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=prog_consultar_ctas_om-data>
+	<field id=IdTx value=TxF020ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2 >
+	  <field id=BASUNPRO >
+	  <field id=BASUNASO >
+	  <field id=BFECHA01 >
+	  <field id=BFECHA02 >
+	  <field id=BIMPORTE >
+	  <field id=BIMPOAUX >
+	  <field id=BINDPAGI >
+	  <field id=BINDAUX1 >
+	  <field id=BINDAUX2 >
+	  <field id=BCODAUX1 >
+	  <field id=BCODAUX2 >
+	  <field id=BNUMAUX1 >
+	  <field id=BNUMAUX2 >
+	  <field id=BPAGINAC >
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <field id=BPAGINAC>
+	  <iColl id=ListasCuentas>
+	    <kColl id=Registros>
+	      <field id=BNUMCONF>
+	      <field id=BASUPROP>
+	      <field id=BASUASOC>
+	      <field id=BTIPOPRO>
+	      <field id=BCONSECU>
+	      <field id=BFECHPRO>
+	      <field id=BOBSERVA>
+	      <field id=BNOMBREB>
+	      <field id=BCEDULAB>
+	      <field id=BIMPORTE>
+	      <field id=BESTADOP>
+	      <field id=BTOTPROG>
+	      <field id=BPAGPEND>
+	      <field id=BPAGREAL>
+	      <field id=BFECANUL>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SalidaCtas>
+	  <iColl id=ListaCuentas>
+	    <kColl id=Cuentas>
+	    	<field id=BancoO>
+		<field id=OficinaO>
+		<field id=DControlO>
+		<field id=NumCuentaO>
+		<field id=ClaveAsuntoO>
+		<field id=BancoB>
+		<field id=OficinaB>
+		<field id=DControlB>
+		<field id=NumCuentaB>
+		<field id=ClaveAsuntoB>
+		<field id=FechaProg>
+		<field id=Estado>
+		<field id=PagosTotal>
+		<field id=PagosReal>
+		<field id=NombreBene>
+		<field id=CedulaBene>
+		<field id=Periodicidad>
+		<field id=Importe>
+		<field id=Observaciones>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= prog_consultar_ctas_om-copiar>
+	<kColl id=a-TxF020ENET>
+		<field id=Entrada value=TxF020ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF020ENET>
+		<field id=Salida value=TxF020ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

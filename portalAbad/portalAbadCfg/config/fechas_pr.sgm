@@ -1,0 +1,34 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operacion:  PROCESO  fechas_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.fechas.PrFechas id=fechas_pr operationContext=OperationContext>
+   <refKColl refId=fechas_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+   <navegacionPr>
+      <estadoPr id=0 operacion=fechas_op>
+      <estadoPr id=1 operacion=fechas_op>
+   </navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+   <resultadoPr>
+      <salidaPr id=0 operacion=fechas_op estadoOP=ERROR jspFile=gn001_error>
+      <salidaPr id=1 operacion=fechas_op estadoOP=ERROR jspFile=gn001_error>
+      <salidaPr id=1 operacion=fechas_op estadoOP=1 jspFile=fechas_1>
+      <salidaPr id=1 operacion=fechas_op estadoOP=2 jspFile=fechas_2>
+   </resultadoPr>
+
+</com.grupobbva.bc.col.fechas.PrFechas>
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=fechas_pr-data>
+</kColl>
+
+<! COPIADOR PR--------------------------------------------------------------------------->
+<kColl id=fechas_pr-copiar>
+   <kColl id=a-fechas_op>
+   </kColl>
+   <kColl id=desde-fechas_op>
+   </kColl>
+</kColl>

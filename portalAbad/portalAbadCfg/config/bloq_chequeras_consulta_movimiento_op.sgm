@@ -1,0 +1,195 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION bloq_chequeras_consulta_movimiento_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.blqchequeras.OPMovimientosChequeras id=bloq_chequeras_consulta_movimiento_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=MovimientosOPJspFmt>
+	<refFormat name=jspFormat refId=MoviDetalleOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosInputOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=DetalleInputOPHTMLFmt>
+
+
+
+	<refKColl refId=bloq_chequeras_consulta_movimiento_op-data>
+	<refOM refId=chequeras_movimiento_om>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=ERROR accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=0 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+
+
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=1 accion=detalle metodo=detalle requestFmt=DetalleInputOPHTMLFmt>
+
+
+		<estadoOP id=2 accion=detalle metodo=detalle requestFmt=DetalleInputOPHTMLFmt>
+
+		<estadoOP id=2 accion=volver metodo=volver>
+
+		<estadoOP id=2 accion=realizar metodo=confClave requestFmt=DetalleInputOPHTMLFmt>
+
+		<estadoOP id=2 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+
+
+
+		<estadoOP id=2 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+
+
+
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=MovimientosOPJspFmt>
+		<salidaOP id=2 jspFmt=MoviDetalleOPJspFmt>
+		<!salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.bc.col.web.blqchequeras.OPMovimientosChequeras>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=bloq_chequeras_consulta_movimiento_op-data>
+	<field id=asuntoPropio>
+
+
+	<field id=Error>
+
+	<field id=PrimerCheque>
+	<field id=UltimoCheque>
+	<field id=Numtalonario>
+    <field id=Chinutilizado>
+
+
+
+
+	<kColl id=Pagina>
+		<iColl id=ListaMovimientosTotalOP>
+			<kColl id=Movimiento>
+				<field id=PRIMER-CHEQUE>
+				<field id=ULTIMO-CHEQUE>
+				<field id=NUM-TALONARIO>
+				<field id=CH-SIN-UTILIZAR>
+				<field id=FECHA-PETICION>
+				<field id=FECHA-ENTREGA>
+				<field id=ESTADO>
+
+
+			</kColl >
+		</iColl >
+
+		<iColl id=ListaMovimientosPagOP>
+			<kColl id=Movimiento>
+				<field id=PRIMER-CHEQUE>
+				<field id=ULTIMO-CHEQUE>
+				<field id=NUM-TALONARIO>
+				<field id=CH-SIN-UTILIZAR>
+				<field id=FECHA-PETICION>
+				<field id=FECHA-ENTREGA>
+				<field id=ESTADO>
+
+
+			</kColl >
+		</iColl >
+	</kColl>
+
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MovimientosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+		<!fString dataName=opcionconsul description=opcionc>
+		<fString dataName=opGrupo1 description=jspGrupo1>
+
+        <fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+		<iCollVector dataName=Pagina.ListaMovimientosPagOP description=ListaMovtos>
+			<record dataName=Movimiento>
+
+				<fString dataName=PRIMER-CHEQUE><nullCheck>
+				<fString dataName=ULTIMO-CHEQUE><nullCheck>
+				<fString dataName=NUM-TALONARIO><nullCheck>
+				<fString dataName=CH-SIN-UTILIZAR><nullCheck>
+				<fString dataName=FECHA-PETICION><nullCheck>
+				<fString dataName=FECHA-ENTREGA><nullCheck>
+				<fString dataName=ESTADO><nullCheck>
+
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MoviDetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_correo_op    description=correoop>
+		<fString dataName=CtaOrdPr description=ctaOrdPr>
+
+
+		<fString dataName=PrimerCheque description=primercheq>
+		<fString dataName=UltimoCheque description=ultimocheq>
+		<fString dataName=Numtalonario description=numtalonario>
+        <fString dataName=Chinutilizado description=cheqsin>
+        <fString dataName=opFecha description=fecha>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=asuntoPropio>
+
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DetalleInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=PrimerCheque>
+		<fString dataName=UltimoCheque>
+		<fString dataName=Numtalonario>
+        <fString dataName=Chinutilizado>
+
+
+	</fHTMLReq>
+</fmtDef>

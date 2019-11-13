@@ -1,0 +1,106 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION bloq_chequeras_realizar_op ---------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.blqchequeras.OPRealizarChequeras id=bloq_chequeras_realizar_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=PeticionRealizadoOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosPagoOPHTMLFmt>
+
+	<refKColl refId=bloq_chequeras_realizar_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=bloq_chequeras_om>
+	<refOM refId=actualizar_relac_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=realizar metodo=realizarPeticionChq requestFmt=DatosPagoOPHTMLFmt>
+		<estadoOP id=1 accion=realizar metodo=realizarPeticionChq requestFmt=DatosPagoOPHTMLFmt>
+		<estadoOP id=ERROR accion=realizar metodo=realizarPeticionChq requestFmt=DatosPagoOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=realizar metodo=realizarPeticionChq requestFmt=DatosPagoOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=PeticionRealizadoOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.blqchequeras.OPRealizarChequeras>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=bloq_chequeras_realizar_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=FechaOper>
+	<field id=NumeOper>
+	<field id=opcion>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=PeticionRealizadoOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=ClaveCtaOrdPr description=ctaptarje>
+		<fString dataName=opUltimochq description=ultimochq>
+		<fString dataName=opPrimerochq description=primerchq>
+        <fString dataName=opDisponiblechq description=dispchq>
+		<fString dataName=NumeOper description=numeoper>
+		<fString dataName=opFecha description=fechaoper>
+		<fString dataName=opnombre description=motivo>
+
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosPagoOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=Correo>
+		<fString dataName=FechaOper>
+		<fString dataName=NumeOper>
+		<fString dataName=opcion>
+
+
+
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

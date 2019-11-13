@@ -1,0 +1,120 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION movimientos_pagos_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pagosmasivos.OPMovimientosPagos id=movimientos_pagos_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=MovimientosOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosInputOPHTMLFmt>
+	<refKColl refId=movimientos_pagos_op-data>
+	<refOM refId=movimientos_pagos_om>
+
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=ERROR accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=0 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=traerMovimientos requestFmt=DatosInputOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+		<estadoOP id=1 accion=volver metodo=volver>
+
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=MovimientosOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagosmasivos.OPMovimientosPagos>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=movimientos_pagos_op-data>
+	<field id=AsuntoPropio value = " ">
+	<field id=Valores value = " ">
+
+
+	<field id=Error>
+
+	<kColl id=Pagina>
+		<iColl id=ListaMovimientosTotalOP>
+			<kColl id=Movimiento>
+				<field id=OPERACION>
+				<field id=NOMBRE>
+				<field id=IDENTIFICACION>
+				<field id=VALOR>
+				<field id=FECHAHORA>
+		  		<field id=SUCUR>
+			</kColl >
+		</iColl >
+
+		<iColl id=ListaMovimientosPagOP>
+			<kColl id=Movimiento>
+				<field id=OPERACION>
+				<field id=NOMBRE>
+				<field id=IDENTIFICACION>
+				<field id=VALOR>
+				<field id=FECHAHORA>
+		  		<field id=SUCUR>
+			</kColl >
+		</iColl >
+	</kColl>
+
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=MovimientosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=fechaalta description=fechaalta>
+        <fString dataName=tiporden description=tiporden>
+        <fString dataName=cliente description=cliente>
+        <fNumString dataName=orden description=orden>
+        <!fString dataName=status description=status>
+        <fString dataName=opcionconsul description=opcionc>
+        <fString dataName=desopcion description=desopcion>
+		<fNumString dataName=regs description=regs>
+		<fString dataName=importe description=importe>
+		<fString dataName=canal description=canal>
+
+		<fString dataName=MasDatosMovimientosWasPr description=masDatosMovimientosWasPr>
+		<fString dataName=MasDatosMovimientosHostPr description=masDatosMovimientosHostPr>
+		<fString dataName=IdMovimientosPr description=idMovimientosPr>
+		<iCollVector dataName=Pagina.ListaMovimientosPagOP description=ListaMovtos>
+			<record dataName=Movimiento>
+				<fNumString dataName=OPERACION><nullCheck>
+				<fString dataName=NOMBRE><nullCheck>
+				<fString dataName=IDENTIFICACION><nullCheck>
+				<fNumString dataName=VALOR><nullCheck>
+				<fString dataName=FECHAHORA><nullCheck>
+				<fString dataName=SUCUR><nullCheck>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosInputOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=Valores>
+
+	</fHTMLReq>
+</fmtDef>
+

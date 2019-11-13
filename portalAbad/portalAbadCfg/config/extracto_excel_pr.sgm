@@ -1,0 +1,44 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  extracto_excel_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.ce.PrExtractoExcel id=extracto_excel_pr operationContext=OperationContext>
+	<refKColl refId=extracto_excel_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=extracto_excel_op>
+		<estadoPr id=1 operacion=extracto_excel_op>
+		<estadoPr id=0 operacion=extracto_excelChq_op>
+		<estadoPr id=1 operacion=extracto_excelChq_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=extracto_excel_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=extracto_excel_op estadoOP=1 jspFile=ce001_extracto_excel>
+		<salidaPr id=0 operacion=extracto_excel_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=1 operacion=extracto_excel_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=extracto_excel_op estadoOP=1 jspFile=ce001_extracto_excel>
+		<salidaPr id=1 operacion=extracto_excel_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+
+		<salidaPr id=0 operacion=extracto_excelChq_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=extracto_excelChq_op estadoOP=1 jspFile=ce001_extracto_excelChq>
+		<salidaPr id=0 operacion=extracto_excelChq_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=1 operacion=extracto_excelChq_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=extracto_excelChq_op estadoOP=1 jspFile=ce001_extracto_excelChq>
+		<salidaPr id=1 operacion=extracto_excelchq_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.ce.PrExtractoExcel>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=extracto_excel_pr-data>
+	<field id=CtaOrdPr>
+	<field id=opPrimTal>
+	<field id=prtipo value="ctas">
+</kColl>
+<! --------------------------------------------------------------------------------->
+

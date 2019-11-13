@@ -1,0 +1,1271 @@
+<?xml version="1.0"  encoding="ISO-8859-1"?>
+<remesa>
+<cabecera>
+<nombreemisor>POLICIA NACIONAL DE COLOMBIA</nombreemisor>
+<claveemisor>SER PERS ACTIVO</claveemisor>
+<codservicio>8600</codservicio>
+<fechaproceso>20170830</fechaproceso>
+<codigopostalemisor2></codigopostalemisor2>
+<tiposervicio></tiposervicio>
+<localidademisor></localidademisor>
+<coddivisaasunto>COP</coddivisaasunto>
+<horafichero>1229</horafichero>
+<tipodocemisor>03</tipodocemisor>
+<tipoemisor></tipoemisor>
+<importefinanciar></importefinanciar>
+<asuntoemisor>00130309000100031607</asuntoemisor>
+<nombrefichero>masivo b.NOM</nombrefichero>
+<domicilioemisor2></domicilioemisor2>
+<fechafichero>20170830</fechafichero>
+<ordenpago></ordenpago>
+<domicilioemisor1>CARRERA 59 NO. 26-21</domicilioemisor1>
+<codigoempresa>0026008200002213</codigoempresa>
+<referenciafichero>NOMWed Aug 30 00:00:00 COT 2017</referenciafichero>
+<indmodalidad>A</indmodalidad>
+<numremesa></numremesa>
+<validacionpertenencia></validacionpertenencia>
+<numdocidentemisor>0000008001413975</numdocidentemisor>
+<codigopostalemisor>0</codigopostalemisor>
+</cabecera>
+<ordenes>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000722801840</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001382218.77</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>JIMENEZ PUELLO DANILO JOSE          </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700019777                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010790122140</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001249865.91</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>AVILA COTRINA LEIDI ANDREA          </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700019948                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011056924000</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000440013.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>VARGAS HERRAN NELSON                </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700019950                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011221444970</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000195339.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>DUARTE SANTAFE JOSE RAUL            </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700019954                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011180295180</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000195339.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>VILLALBA BOLANOS RIBALDO            </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700019956                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000602663650</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000004296483.04</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>GARCIA ALFARO ALY                   </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021209                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011221209480</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001207276.22</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>RUIZ GONZALEZ JUDY MARCELA          </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021210                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011221209480</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000936927.52</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>RUIZ GONZALEZ JUDY MAR              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021211                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011221209480</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001104493.46</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>RUIZ GONZALEZ JUDY MARCELA          </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021212                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011221209480</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001105843.46</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>RUIZ GONZALEZ JUDY MARCELA          </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021213                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010136704460</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000195339.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>SAAVEDRA ROJAS JOHANN               </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021235                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010171249040</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000002467661.01</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>RIVERA GARAY LORENA                 </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021236                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010171262840</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001622298.19</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>LONDONO SUAREZ JOHN JA              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021237                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010204486930</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001499271.53</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>AGUDELO FORONDA HUGO F              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021238                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010224391760</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000440013.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>SUAREZ MELO DANIEL JUL              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021239                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010238771210</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000998708.62</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>BELTRAN LEON JOSE WILS              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021240                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010338134800</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000440013.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>MARIN ARCILA ANDRES FE              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021243                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000103478360</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000108800.77</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>AGUIRRE MUNOZ LUIS ALB              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021244                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010430046700</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001052921.12</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>VIZCAINO SANTACRUZ EDU              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021245                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010473739450</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000903883.53</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>CASTRO CASTRO JUAN CAR              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021246                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010529674150</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001112884.04</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>SOLIS LOPEZ WILMAN JOS              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021247                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010538025780</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001130137.52</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>LOPEZ GIRALDO VICTOR M              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021248                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010545708600</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000195339.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>MONA TORRES CHRISTIAN               </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021249                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010617945990</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000221496.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>CARMONA CABRERA JUAN P              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021251                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010631555300</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000915587.53</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>LOPEZ CUADRADO YEISON               </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021252                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010706257130</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000440013.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>BERMUDEZ ORTIZ JUAN DA              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021253                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010721974840</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000440013.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>GARCIA MOTTA JESUS AND              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021254                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010738183870</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001113201.36</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>HERRERA LLORENTE DALMA              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021255                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010821268450</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000869618.52</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>MARTINEZ RUIZ BLANCA R              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021256                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010882776100</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001723140.67</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>LOPEZ MARTINEZ TATIANA              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021257                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011028313530</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001368138.14</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>ROMERO PEREZ CARLOS EM              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021258                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011127907720</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000498665.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>GARCIA SANCHEZ VICTOR               </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021259                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011136864380</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000221496.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>LUCUMI SANCHEZ JUAN MA              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021260                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011136923780</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000498665.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>ASPRILLA VALENCIA BRES              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021261                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000111855590</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000002460306.05</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>CONTO OBREGON JOHN JAI              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021262                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011218958260</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001161095.59</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>RUEDA ALVAREZ DIEGO AN              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021263                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011275389440</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000195339.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>OCAMPO SALGADO DANIEL               </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021264                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011284229320</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000002201498.81</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>PABON GOMEZ LINA TATIA              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021265                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011295234280</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000002122136.56</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>OBREGON CANO MIGUEL SE              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021266                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011440446410</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001601485.38</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>CALPA TORRENTE MICHAEL              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021267                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000011440888050</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000498665.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>ARTEAGA OSPINA JUAN FE              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021268                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000137412310</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001212897.58</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>RAYO QUIROGA EDWIN IVA              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021269                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000184687720</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001894361.19</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>LONDONO ACOSTA YAMIT                </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021272                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000708564490</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000002402083.55</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>ECHEVERRI LOPEZ ELKIN               </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021273                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000713948670</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000002549270.25</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>LONDONO MONTOYA ERNEY               </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021274                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000071864840</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001697618.11</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>HERNANDEZ RONDON JAIRO              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021275                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000722801510</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001251055.24</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>DE LEON VANEGAS CARLOS              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021276                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000723343950</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000797922.27</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>TORRES ACOSTA PEDRO AN              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021277                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000751585380</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000002308101.24</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>AGUDELO VILLALBA CAMIL              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021279                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000798602350</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001619557.38</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>FANDINO AREVALO LEONAR              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021280                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000799676310</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000003083768.56</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>BERBEO CHICO JAIDER YE              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021281                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000799973180</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000002331189.45</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>SARMIENTO MORA JULIAN               </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021282                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000800557410</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001336050.51</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>ORTEGA CHAVARRO GIOVAN              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021283                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000801139140</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001117148.12</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>TAPIERO REYES ROBERTO               </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021284                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000832458480</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000007749600.68</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>RODRIGUEZ ANDRADE JOHN              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021286                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000832525620</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001352492.19</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>ESPANA VARGAS ANDRO                 </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021287                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000084320660</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001474892.54</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>PARRA ACOSTA JHONNY AN              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021288                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000860394410</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000005514659.21</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>PERALTA ROJAS HENRY AL              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021289                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000860699960</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000000026202.00</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>ZULETA GIRALDO JHON FA              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021290                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000882512020</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000002504655.67</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>PENALOZA GARAVIZ GERSO              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021291                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000883105220</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001104904.13</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>PALACIOS SUAREZ HEBER               </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021292                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000088606310</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001881739.11</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>GIL ORTEGA TULIO ARMAN              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021293                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000099720540</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001540867.88</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>DUQUE DUQUE JOHN JAMES              </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021294                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000010697343070</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001332223.12</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>RODRIGUEZ CRUZ SINDY YULIET         </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021425                              </cptotextoconcepto>
+</concepto>
+</orden>
+<orden>
+<tipodocdocdestino>01</tipodocdocdestino>
+<clavebeneficiario>0000000807659510</clavebeneficiario>
+<formapagodestino>3</formapagodestino>
+<codbancobeneficiario>0013</codbancobeneficiario>
+<numerocuentabenef>0000000000000000</numerocuentabenef>
+<tipocuentanacham>00</tipocuentanacham>
+<cuentanacham>00000000000000000</cuentanacham>
+<importe>0000001225846.11</importe>
+<fechavencimiento>20170908</fechavencimiento>
+<plazapagodestino>9999</plazapagodestino>
+<nombrebeneficiario>DIAZ GONZALEZ JUAN PABLO            </nombrebeneficiario>
+<direccionbeneficiario>BOGOTA                              </direccionbeneficiario>
+<direccionbeneficiario2>                                    </direccionbeneficiario2>
+<email>diraf.arfin-guteg6@policia.gov.co               </email>
+<concepto>
+<cptotextoconcepto>1700021426                              </cptotextoconcepto>
+</concepto>
+</orden>
+</ordenes>
+<totales>
+<totaloperaciones>65</totaloperaciones>
+<importetotal>92140736.41</importetotal>
+</totales>
+</remesa>

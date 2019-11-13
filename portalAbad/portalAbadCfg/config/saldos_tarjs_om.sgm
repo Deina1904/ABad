@@ -1,0 +1,65 @@
+﻿<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL saldos_tarjs_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=saldos_tarjs_om operationContext=OperationContext>
+	<refKColl refId=saldos_tarjs_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=saldos_tarjs_om-data>
+	<field id=IdTx value=TxFN60ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	      <field id=TIPO-TARJETA>
+	      <field id=CONTRATO-TARJETA>
+	      <field id=TITULARIDAD>
+	      <field id=FECHA-CADU>
+	      <field id=FECHA-CORTE>
+	      <field id=DESCRIP-PAGO>
+	      <field id=LIMITE-CREDITO>
+	      <field id=DISPONIB>
+	      <field id=PAGO-MINIMO>
+	      <field id=TASA>
+	      <field id=NUM-ACLARA>
+	      <field id=IMPORTE-ACLARA>
+	      <field id=FECHA-PAGO>
+	      <field id=SOBREGIRO>
+	      <field id=ESTADO-TARJETA>
+	</kColl >
+</kColl >
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= saldos_tarjs_om-copiar>
+	<kColl id=a-TxFN60ENET>
+		<field id=Entrada value=TxFN60ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN60ENET>
+		<field id=Salida value=TxFN60ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

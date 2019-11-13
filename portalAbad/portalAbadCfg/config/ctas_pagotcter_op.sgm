@@ -1,0 +1,135 @@
+<! BBVA  ---------------------------------------------------------------------------->
+
+<! Operación:  PRESENTACION ctas_pagotcter_op ------------------------------------------>
+<! ---------------------------------------------------------------------------------->
+
+
+
+<! OPERACION ------------------------------------------------------------------------>
+
+<com.grupobbva.bc.col.web.ptcter.OPCtasPagoTcTer id=ctas_pagotcter_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionCtaPTarjeOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=CtaPropiaOPHTMLFmt>
+	<refKColl refId=ctas_pagotcter_op-data>
+	<refOM refId=trans_petdatos_om>
+<! --------------------------------------------------------------------------------->
+
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=menuPagTarje metodo=ordPTarje requestFmt=CtaPropiaOPHTMLFmt>
+		<estadoOP id=1 accion=menuPagTarje metodo=ordPTarje requestFmt=CtaPropiaOPHTMLFmt>
+		<estadoOP id=ERROR accion=menuPagTarje metodo=ordPTarje requestFmt=CtaPropiaOPHTMLFmt>
+		<estadoOP id=VALIDAR accion=menuOrdTras metodo=ordTras>
+
+	</navegacionOP>
+
+
+
+<! SALIDAS ------------------------------------------------------------------------->
+
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionCtaPTarjeOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+
+</com.grupobbva.bc.col.web.ptcter.OPCtasPagoTcTer>
+
+
+<! DATOS VARIABLES LOCALES DE LA OP ---------------------------------------------------->
+
+<kColl id=ctas_pagotcter_op-data>
+	<field id=Error>
+	<field id=CuentaOrdenante>
+
+<! CUENTAS PROPIAS DEL CLIENTE --------------------------------------------------------->
+
+	<iColl id=ListaCtasPTarje>
+		<kColl id=CuentaOrdenante>
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+
+	<iColl id=ListaTarjetasAsoc>
+		<kColl id=tarjetaAsoCuenta>
+			<field id=numTarjeta>
+		</kColl>
+	</iColl>
+
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+
+<fmtDef id=RelacionCtaPTarjeOPJspFmt>
+
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+		<fString dataName=CuentaOrdenante description=cuenta_seleccionada>
+		<iCollVector dataName=ListaCtasPTarje description=ListaCtasPTarje>
+			<record dataName=CuentaOrdenante>
+				<fString dataName=Banco>
+				<fString dataName=Oficina>
+				<fString dataName=DControl>
+				<fString dataName=NumCuenta>
+				<fString dataName=ClaveAsunto>
+				<fString dataName=Tipo>
+			</record>
+		</iCollVector>
+
+		<iCollVector dataName=ListaTarjetasAsoc description=ListaTarjetasAsoc>
+			<record dataName=tarjetaAsoCuenta>
+				<fString dataName=numTarjeta>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+
+</fmtDef>
+
+
+
+<fmtDef id=ErrorOPJspFmt>
+
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+
+	</fJsp>
+
+</fmtDef>
+
+<fmtDef id=ValidarOPJspFmt>
+
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+
+	</fJsp>
+
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=CtaPropiaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CuentaOrdenante>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! -------------------------------------------------------------------------------->
+
+
+

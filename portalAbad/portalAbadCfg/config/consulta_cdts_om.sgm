@@ -1,0 +1,86 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL retorno_cdts_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=consulta_cdts_om operationContext=OperationContext>
+	<refKColl refId=consulta_cdts_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=consulta_cdts_om-data>
+	<field id=IdTx value=TxF193ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	   <field id=nombret1>
+	   	  <field id=nombret2>
+	   	  <field id=nombret3>
+	   	  <field id=saldo>
+	   	  <field id=fecha-exp>
+	   	  <field id=fecha-ven>
+	   	  <field id=fecha-fin>
+	   	  <field id=metliq>
+	   	  <field id=indestado>
+	   	  <field id=fecha-can>
+	   	  <field id=duracion>
+	   	  <field id=tasaefec>
+	   	  <field id=perliq>
+	   	  <field id=baseliq>
+			<iColl id=Movimientos>
+			    <kColl id=Movimientos>
+				      <field id=descrop>
+				      <field id=fecha-op>
+				      <field id=fecha-liqd>
+				      <field id=fecha-liqh>
+				      <field id=diaspos>
+				      <field id=intbrut>
+				      <field id=valrete>
+				      <field id=intneto>
+				      <field id=formapag>
+				      <field id=fecha-pag>
+			    </kColl >
+			  </iColl >
+
+	</kColl >
+
+
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=consulta_cdts_om-copiar>
+	<kColl id=a-TxF193ENET>
+		<field id=Entrada value=TxF193ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF193ENET>
+		<field id=Salida value=TxF193ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+
+

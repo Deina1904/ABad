@@ -1,0 +1,43 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  bloqueo_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.migracion.PrBloqueo id=bloqueo_pr operationContext=OperationContext>
+
+	<refKColl refId=bloqueo_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=bloqueo_op>
+
+		<estadoPr id=1 operacion=bloqueo_op>
+
+
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=bloqueo_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=bloqueo_op estadoOP=ERROR jspFile=gn001_error>
+
+
+		<salidaPr id=1 operacion=bloqueo_op estadoOP=1 jspFile=carga_bloqueo_01>
+		<salidaPr id=1 operacion=bloqueo_op estadoOP=2 jspFile=carga_bloqueo_02>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.migracion.PrBloqueo>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=bloqueo_pr-data>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

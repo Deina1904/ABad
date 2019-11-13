@@ -1,0 +1,33 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  consultas_presta_cl_pr  ---------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.prest.PrConsultaPrestamosCL id=consultas_presta_cl_pr operationContext=OperationContext>
+	<refKColl refId=consultas_presta_cl_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=relacion_presta_cl_op>
+		<estadoPr id=1 operacion=relacion_presta_cl_op>
+		<estadoPr id=1 operacion=movimientos_presta_cl_op>
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=relacion_presta_cl_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=relacion_presta_cl_op estadoOP=1 jspFile=cl002_relacion_presta>
+		<salidaPr id=1 operacion=movimientos_presta_cl_op estadoOP=1 jspFile=cl003_mvtos_saldos_presta>
+		<salidaPr id=1 operacion=movimientos_presta_cl_op estadoOP=2 jspFile=cl004_saldos_presta>
+		<salidaPr id=1 operacion=movimientos_presta_cl_op estadoOP=3 jspFile=cl005_mvtos_presta>
+		<salidaPr id=1 operacion=movimientos_presta_cl_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=movimientos_presta_cl_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.prest.PrConsultaPrestamosCL>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consultas_presta_cl_pr-data>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

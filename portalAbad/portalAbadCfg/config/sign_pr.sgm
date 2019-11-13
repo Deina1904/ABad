@@ -1,0 +1,25 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  sign_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.og.PrSign id=sign_pr operationContext=OperationContext>
+	<refKColl refId=sign_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=inicio_op>
+	</navegacionPr>		
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>	
+		<salidaPr id=1 operacion=inicio_op estadoOP=0 jspFile=so0001_nombre_usu>			
+	</resultadoPr>	
+
+</com.grupobbva.bc.col.web.og.PrSign>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=sign_pr-data>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

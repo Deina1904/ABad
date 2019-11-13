@@ -1,0 +1,47 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ejemplo_pr  ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.cmc.ejemplo.PRejemplo id=ejemplo_pr operationContext=OperationContext>
+	<refKColl refId=ejemplo_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=ejemplo_op>
+	</navegacionPr>
+	
+	<resultadoPr>				
+		<salidaPr id=0 operacion=ejemplo_op estadoOP=1 jspFile=pSesion_1>
+		<salidaPr id=0 operacion=ejemplo_op estadoOP=2 jspFile=pRegistro_2>		
+		<salidaPr id=0 operacion=ejemplo_op estadoOP=3 jspFile=pFormuOne_3>	
+		<salidaPr id=0 operacion=ejemplo_op estadoOP=4 jspFile=pFormuTwo_4>	
+		<salidaPr id=0 operacion=ejemplo_op estadoOP=5 jspFile=pFormuFour_5>	
+		<salidaPr id=0 operacion=ejemplo_op estadoOP=6 jspFile=pFormuExitoso_6>
+		<salidaPr id=0 operacion=ejemplo_op estadoOP=7 jspFile=pFormuExitoso_7>
+			
+	</resultadoPr>	
+
+</com.cmc.ejemplo.PRejemplo>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ejemplo_pr-data>
+		<field id=nombrePr>
+		<field id=apellidoPr>
+		<field id=usuarioPr>
+		
+		<field id=correoPr>
+		<field id=direccionPr>
+		<field id=telefonoPr>
+		
+		<field id=estCivilPr>
+		<field id=noCuentaPr>
+		<field id=tipoCuentaPr>
+		<field id=sexoPr>
+		
+		<field id=imagenPr>	
+		<field id=textoPr>
+		
+			
+</kColl>
+<! --------------------------------------------------------------------------------->
+

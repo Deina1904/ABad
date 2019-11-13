@@ -1,0 +1,110 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION usuarios_op --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.migracion.OpUsuarios id=usuarios_op operationContext=OperationContext>
+	<refKColl refId=usuarios_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=usuarios_om>
+	<refOM refId=usuarios1_om>
+	<refOM refId=retorno_pagotarjespc_om>
+
+
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=param metodo=param>
+		<estadoOP id=1 accion=param metodo=param>
+		<estadoOP id=2 accion=param metodo=param>
+
+
+		<estadoOP id=ERROR accion=param metodo=param>
+		<estadoOP id=1 accion=continuar metodo=funciones>
+
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=2 jspFmt=FuncionesOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+
+
+	</resultadoOP>
+</com.grupobbva.bc.col.migracion.OpUsuarios>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=usuarios_op-data>
+
+
+
+		<field id=Resultado>
+		<field id=Mensaje>
+		<field id=PDGroup>
+		<field id=Country>
+		<field id=Bank>
+	<field id=MaxErrors>
+
+	<field id=Error>
+	<kColl id=user>
+     <iColl id=ListaUser>
+	        <kColl id=USER>
+	          <field id=CLIENTE>
+	          <field id=REFERENCIA>
+	          <field id=INDMIG>
+	        </kColl >
+     </iColl >
+     </kColl >
+
+
+
+
+
+
+
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+
+<! -------------------------------------------------------------------------------->
+
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+	</fJsp>
+</fmtDef>
+
+
+
+<fmtDef id=FuncionesOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<iCollVector dataName=user.ListaUser description=ListaUsuarios>
+					  		  <record dataName=USER>
+					  		          <fString dataName=CLIENTE><nullCheck>
+					  		          <fString dataName=REFERENCIA><nullCheck>
+					  		          <fString dataName=INDMIG><nullCheck>
+
+					  	  	  </record>
+	      </iCollVector>
+
+
+	</fJsp>
+</fmtDef>
+
+<
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+

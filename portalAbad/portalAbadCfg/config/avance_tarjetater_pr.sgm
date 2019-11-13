@@ -1,0 +1,88 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  avance_tarjetater_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.atter.PrAvanceTarjetater id=avance_tarjetater_pr operationContext=OperationContext>
+	<refKColl refId=avance_tarjetater_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=ctas_avantarjeter_op>
+
+		<estadoPr id=1 operacion=ctas_avantarjeter_op>
+		<estadoPr id=1 operacion=solicitar_avantarjeter_op>
+
+		<estadoPr id=2 operacion=ctas_avantarjeter_op>
+		<estadoPr id=2 operacion=solicitar_avantarjeter_op>
+		<estadoPr id=2 operacion=confirmar_avancetarjeter_op>
+
+		<estadoPr id=3 operacion=ctas_avantarjeter_op>
+		<estadoPr id=3 operacion=solicitar_avantarjeter_op>
+		<estadoPr id=3 operacion=confirmar_avancetarjeter_op>
+		<estadoPr id=3 operacion=realizar_avancetarjeter_op>
+
+	</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=ctas_avantarjeter_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=ctas_avantarjeter_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=ctas_avantarjeter_op estadoOP=1 jspFile=at001_petctas_avantarjeter>
+		<salidaPr id=1 operacion=ctas_avantarjeter_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=solicitar_avantarjeter_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=solicitar_avantarjeter_op estadoOP=1 jspFile=at002_valor_avantarjeter>
+		<salidaPr id=2 operacion=solicitar_avantarjeter_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=confirmar_avancetarjeter_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=2 operacion=confirmar_avancetarjeter_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=confirmar_avancetarjeter_op estadoOP=1 jspFile=at003_conf_avantarjeter>
+		<salidaPr id=3 operacion=confirmar_avancetarjeter_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=confirmar_avancetarjeter_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=realizar_avancetarjeter_op estadoOP=1 jspFile=at004_realizado_avantarjeter>
+		<salidaPr id=3 operacion=realizar_avancetarjeter_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=realizar_avancetarjeter_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=3 operacion=realizar_avancetarjeter_op estadoOP=2 jspFile=at005_realizado_por_autorizar>
+
+		<salidaPr id=0 operacion=realizar_avancetarjeter_op estadoOP=1 jspFile=at004_realizado_avantarjeter>
+		<salidaPr id=0 operacion=realizar_avancetarjeter_op estadoOP=2 jspFile=at005_realizado_por_autorizar>
+		<salidaPr id=0 operacion=realizar_avancetarjeter_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=realizar_avancetarjeter_op estadoOP=MENSAJE jspFile=gn002_error>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.atter.PrAvanceTarjetater>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=avance_tarjetater_pr-data>
+	<field id=ClaveCtaOrd>
+	<field id=TipoOrd>
+	<field id=CtaOrd>
+	<field id=ClaveCtaBenef>
+	<field id=TipoBenef>
+	<field id=FechaOpe>
+	<field id=Divisa>
+	<field id=ImporteTras>
+	<field id=ObservTras>
+	<field id=NumeroCtaBenef>
+	<field id=ClaveCtaPTarje>
+	<field id=TipoCtaPTarje>
+	<field id=CtaPTarje>
+	<field id=ClaveTarjePTarje>
+	<field id=NumeroTarjeta>
+	<field id=Importe>
+	<field id=DescripTarje>
+	<field id=ObservPago>
+	<field id=NumeOper>
+	<field id=Email>
+	<field id=Cedula>
+	<field id=Valor>
+	<field id=Nombre>
+	<field id=Fecha>
+	<field id=ComisionPr>
+
+</kColl>
+<! --------------------------------------------------------------------------------->
+

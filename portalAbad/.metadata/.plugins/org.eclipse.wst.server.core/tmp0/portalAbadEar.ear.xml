@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive>
+    <archive targetInArchive="/PortalAbadWeb.war">
+        <dir sourceOnDisk="C:\pr\abad\portalAbad\PortalAbadWeb\WebContent" targetInArchive="/"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ATAEFileTransferRequest.jar" targetInArchive="/ATAEFileTransferRequest.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\BDFVSvGeneralBuzon.jar" targetInArchive="/BDFVSvGeneralBuzon.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\BDFVSvGeneralControl.jar" targetInArchive="/BDFVSvGeneralControl.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\BancaMov.jar" targetInArchive="/BancaMov.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\BbvaArquitecturaColombia.jar" targetInArchive="/BbvaArquitecturaColombia.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\BbvaArquitecturaColombiaII.jar" targetInArchive="/BbvaArquitecturaColombiaII.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\BbvaArquitecturaEspana.jar" targetInArchive="/BbvaArquitecturaEspana.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\Btf.jar" targetInArchive="/Btf.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\CircuitoUsuariosCo.jar" targetInArchive="/CircuitoUsuariosCo.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\CircuitoUsuariosCoII.jar" targetInArchive="/CircuitoUsuariosCoII.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaCashMigracion.jar" targetInArchive="/ColombiaCashMigracion.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaContingencia.jar" targetInArchive="/ColombiaContingencia.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNet.jar" targetInArchive="/ColombiaNet.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetI.jar" targetInArchive="/ColombiaNetI.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetII.jar" targetInArchive="/ColombiaNetII.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetIII.jar" targetInArchive="/ColombiaNetIII.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetIV.jar" targetInArchive="/ColombiaNetIV.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetIX.jar" targetInArchive="/ColombiaNetIX.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetV.jar" targetInArchive="/ColombiaNetV.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetVI.jar" targetInArchive="/ColombiaNetVI.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetVII.jar" targetInArchive="/ColombiaNetVII.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetVIII.jar" targetInArchive="/ColombiaNetVIII.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetXII.jar" targetInArchive="/ColombiaNetXII.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetXIII.jar" targetInArchive="/ColombiaNetXIII.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ColombiaNetXIV.jar" targetInArchive="/ColombiaNetXIV.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\Colombiaknet.jar" targetInArchive="/Colombiaknet.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\IndraUtil.jar" targetInArchive="/IndraUtil.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\MQSeries.jar" targetInArchive="/MQSeries.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\axis.jar" targetInArchive="/axis.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\bancamovil.jar" targetInArchive="/bancamovil.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\clasesmodelo.jar" targetInArchive="/clasesmodelo.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\db2jcc.jar" targetInArchive="/db2jcc.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\db2jcc_license_cu.jar" targetInArchive="/db2jcc_license_cu.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\fileTransfer.jar" targetInArchive="/fileTransfer.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ftServer.jar" targetInArchive="/ftServer.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\itext-1.4.5.jar" targetInArchive="/itext-1.4.5.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\jakarta-oro-2.0.1.jar" targetInArchive="/jakarta-oro-2.0.1.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\log4j-1.2.11.jar" targetInArchive="/log4j-1.2.11.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\log4j.jar" targetInArchive="/log4j.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\mail.jar" targetInArchive="/mail.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ojdbc14.jar" targetInArchive="/ojdbc14.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\ojdbc6-11.2.0.2.0.jar" targetInArchive="/ojdbc6-11.2.0.2.0.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\pauClientev1.6.jar" targetInArchive="/pauClientev1.6.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\tlcl_apl_mul_comu_mp.jar" targetInArchive="/tlcl_apl_mul_comu_mp.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\tlcl_apl_web_comu_mp.jar" targetInArchive="/tlcl_apl_web_comu_mp.jar"/>
+        <file sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar\META-INF\lib\tlcl_inf_mul_comu_mp.jar" targetInArchive="/tlcl_inf_mul_comu_mp.jar"/>
+    </archive>
+    <dir sourceOnDisk="C:\pr\abad\portalAbad\portalAbadEar" targetInArchive="/"/>
+</archive>

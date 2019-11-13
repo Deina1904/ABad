@@ -1,0 +1,94 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pago_masivo_ejecutar_pago_confirmacion_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoEjecutarPagoConfirmacion id=pago_masivo_ejecutar_pago_confirmacion_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionPlanillaOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=AyudaOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPlanillaOPHTMLFmt>
+	<refKColl refId=pago_masivo_ejecutar_pago_confirmacion_op-data>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=confirmar metodo=confirmar     requestFmt=DatosPlanillaOPHTMLFmt>
+		<estadoOP id=1 accion=confirmar metodo=confirmar     requestFmt=DatosPlanillaOPHTMLFmt>
+		<estadoOP id=AYUDA accion=confirmar metodo=confirmar     requestFmt=DatosPlanillaOPHTMLFmt>
+		<estadoOP id=ERROR accion=confirmar metodo=confirmar requestFmt=DatosPlanillaOPHTMLFmt>
+
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=volverDeAyuda metodo=volverDeAyuda>
+
+		<estadoOP id=0 accion=volver metodo=volver>
+		<estadoOP id=1 accion=volver metodo=volver>
+
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionPlanillaOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pagomasivo.OPPagoMasivoEjecutarPagoConfirmacion>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_masivo_ejecutar_pago_confirmacion_op-data>
+	<field id=AsuntoPropio>
+	<field id=FechaPago>
+	<field id=Error>
+	<field id=ValorTotalPlanilla1>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionPlanillaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+
+ 		<fString dataName=NumeroCtaOrdPr description=numeroCtaOrd>
+ 		<fString dataName=TipoServicioPr description=tipoServicio>
+ 		<fString dataName=DesTipoServicioPr description=desTipoServicio>
+ 		<fString dataName=NombrePlantillaPr description=nombrePlantilla>
+ 		<fNumString dataName=CodigoPlantillaPr description=codigoPlantilla>
+
+ 		<fString dataName=TipoFechaPagoPr description=tipoFechaPago>
+ 		<fDate dataName=FechaEjecucionPr description=fechaEjecucion>
+ 		<fNumString dataName=ValorTotalPlanillaPr description=valorTotalPlanilla>
+ 		<fNumString dataName=NumeroCtasAbonarPr description=numeroCtasAbonar>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosPlanillaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=TipoFechaPagoPr>
+		<fString dataName=FechaPago>
+		<fString dataName=DatosCuentasPr>
+		<fString dataName=ValorTotalPlanilla1>
+	</fHTMLReq>
+</fmtDef>
+<! --------------------------------------------------------------------------------->

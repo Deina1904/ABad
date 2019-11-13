@@ -1,0 +1,33 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL resgistro_usuario_lpad_om ----------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.contigencia.registro.OmResgistroUsuarioLdap id=resgistro_usuario_lpad_om operationContext=OperationContext>
+	<refKColl refId=resgistro_usuario_lpad_om-data>
+</com.grupobbva.bc.col.web.contigencia.registro.OmResgistroUsuarioLdap>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=resgistro_usuario_lpad_om-data>
+	<kColl id=Entrada>
+	  <field id=Alias>
+	  <field id=Password>
+	  <field id=OperPassword>
+	  <field id=Country>
+	  <field id=Bank>
+	  <field id=PDGroup>
+	</kColl >
+	
+	<kColl id=Salida>
+	  <field id=CODRESPUESTA>
+	  <field id=RESPUESTA>
+	</kColl >
+
+</kColl>
+
+
+

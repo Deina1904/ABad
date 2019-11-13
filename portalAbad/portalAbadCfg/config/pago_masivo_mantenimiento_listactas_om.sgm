@@ -1,0 +1,67 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL pago_masivo_mantenimiento_listactas_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=pago_masivo_mantenimiento_listactas_om operationContext=OperationContext>
+	<refKColl refId=pago_masivo_mantenimiento_listactas_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=pago_masivo_mantenimiento_listactas_om-data>
+	<field id=IdTx value=TxF019ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <iColl id=ListaCuentas>
+	    <kColl id=Cuenta>
+	      <field id=CODIGO-CUENTA>
+	      <field id=NOMBRE-ENTIDAD>
+	      <field id=TIPO-CUENTA>
+		  <field id=NUMERO-CUENTA>
+		  <field id=NOMBRE-TITULAR>
+		  <field id=IDENTIFICACION>
+		  <field id=VALOR>
+	      <field id=CORREO>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=pago_masivo_mantenimiento_listactas_om-copiar>
+	<kColl id=a-TxF019ENET>
+		<field id=Entrada value=TxF019ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF019ENET>
+		<field id=Salida value=TxF019ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

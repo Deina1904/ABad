@@ -1,0 +1,29 @@
+<! ------------------------------------------------------------------------->
+<! Operación:  PROCESO  tlcl_env_enviodirecto_pr_multipais ---------------------------------------->
+<! OPERACION ------------------------------------------------------------------------->
+<tlcl.multipais.web.env.enviodirecto.TLCLPrEnvEnvioDirecto id=tlcl_env_enviodirecto_pr_multipais operationContext=OperationContext>
+	<refKColl refId=tlcl_env_enviodirecto_pr_multipais-data>
+
+	<! ESTADOS --------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=tlcl_env_configurar_seleccion_op_multipais>
+		<estadoPr id=0 operacion=tlcl_env_enviarfichero_op_multipais>
+	</navegacionPr>
+
+	<! SALIDAS -------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=tlcl_env_configurar_seleccion_op_multipais estadoOP=1 jspFile=tlcl_env_datos_multipais>
+		<salidaPr id=0 operacion=tlcl_env_configurar_seleccion_op_multipais estadoOP=0 jspFile=tlcl_env_enviodirecto_multipais>
+
+		<salidaPr id=0 operacion=tlcl_env_enviarfichero_op_multipais estadoOP=0 jspFile=tlcl_env_resultado_envio_multipais>
+		<salidaPr id=0 operacion=tlcl_env_configurar_seleccion_op_multipais estadoOP=2 jspFile=tlcl_env_enviodirecto_multipais_http>
+		<! OGB ERE07F2006 8-9-2008 ->
+		<salidaPr id=0 operacion=tlcl_env_enviarfichero_op_multipais estadoOP=1 jspFile=tlcl_env_resultado_envio_pgp_multipais>
+		<! OGB ERE07F2006 ->
+	</resultadoPr>
+</tlcl.multipais.web.env.enviodirecto.TLCLPrEnvEnvioDirecto>
+
+<! DATOS ------------------------------------------------------------------------------->
+<kColl id=tlcl_env_enviodirecto_pr_multipais-data>
+
+</kColl>

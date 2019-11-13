@@ -1,0 +1,99 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION carga_usuarios_op --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.migracion.OpCargaUsuarios id=carga_usuarios_op operationContext=OperationContext>
+	<refKColl refId=carga_usuarios_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=usuarios7_om>
+	<refOM refId=usuariosusu_om>
+	<refOM refId=usuariosapr_om>
+	<refOM refId=usuariosexe_om>
+	<refOM refId=usuarioslic_om>
+	<refOM refId=usuariosacc_om>
+	<refOM refId=usuarioscef_om>
+	<refOM refId=usuarios8_om>
+		<refOM refId=usuariosus2_om>
+		<refOM refId=usuariosap2_om>
+		<refOM refId=usuariosex2_om>
+		<refOM refId=usuariosli2_om>
+		<refOM refId=usuariosac2_om>
+	<refOM refId=usuariosce2_om>
+	<refOM refId=retorno_pagotarjespc_om>
+
+
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=param metodo=param requestFmt=OpcionOPHTMLFmt>
+		<estadoOP id=1 accion=uploadFile metodo=uploadFile>
+
+
+
+
+		<estadoOP id=2 accion=param metodo=param requestFmt=OpcionOPHTMLFmt>>
+		<estadoOP id=1 accion=param metodo=param requestFmt=OpcionOPHTMLFmt>>
+
+
+		<estadoOP id=ERROR accion=param metodo=param>
+		<estadoOP id=1 accion=continuar metodo=funciones>
+
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=2 jspFmt=InicioOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+
+
+	</resultadoOP>
+</com.grupobbva.bc.col.migracion.OpCargaUsuarios>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=carga_usuarios_op-data>
+	<field id=Resultado>
+	<field id=Mensaje>
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=tipo>
+	<field id=MaxErrors>
+	<field id=Error>
+	<field id=opRequest>
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+
+<! -------------------------------------------------------------------------------->
+
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=tipo description=tipo><nullCheck>
+	</fJsp>
+</fmtDef>
+
+
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje><nullCheck>
+	</fJsp>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=opRequest>
+	</fHTMLReq>
+</fmtDef>
+
+<fmtDef id=OpcionOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=tipo>
+	</fHTMLReq>
+</fmtDef>
+
+

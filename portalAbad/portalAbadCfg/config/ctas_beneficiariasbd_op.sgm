@@ -1,0 +1,81 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION ctas_beneficiariasbd_op  -------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.tpbdolar.OPCtasBeneficiariasBDolar id=ctas_beneficiariasbd_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=DatosBenefOPJspFmt>	
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=BenefTrasOPHTMLFmt>
+	<refKColl refId=ctas_beneficiariasbd_op-data>	
+	<refOM refId=asuntos_asociadosbd_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>	
+		<estadoOP id=0 accion=continuar metodo=ordBenef requestFmt=BenefTrasOPHTMLFmt>					
+		<estadoOP id=1 accion=continuar metodo=ordBenef requestFmt=BenefTrasOPHTMLFmt>					
+		<estadoOP id=ERROR accion=continuar metodo=ordBenef requestFmt=BenefTrasOPHTMLFmt>					
+	</navegacionOP>		
+	
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>	
+		<salidaOP id=1 jspFmt=DatosBenefOPJspFmt>				
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>	
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>	
+	</resultadoOP>	
+</com.grupobbva.bc.col.web.tpbdolar.OPCtasBeneficiariasBDolar>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ctas_beneficiariasbd_op-data>
+	<field id=AsuntoPropio>	
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=DatosBenefOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=CtaOrd>
+		<fString dataName=NumContrato>
+		<iCollVector dataName=s_salida_cuentas_beneficiarias.s_lista_cuentas_beneficiarias description=ListaCtasBenef>
+			<record dataName=s_beneficiarias>				
+				<fString dataName=s_banco>
+				<fString dataName=s_oficina>
+				<fString dataName=s_dcontrol>
+				<fString dataName=s_num_cuenta>
+				<fString dataName=s_cod_form>
+				<fString dataName=s_iasunto>	
+				<fString dataName=s_num_contrato>	
+			</record>								
+		</iCollVector>
+		<fString dataName=FechaOpe>
+		<fString dataName=Divisa>
+		<record dataName=asuntos_asociadosbd_om-data.Salida description=Saldo>	
+			<fNumString dataName=SALDODIS description=saldodis>
+		</record>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=BenefTrasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+	</fHTMLReq>
+</fmtDef>	
+
+<! --------------------------------------------------------------------------------->
+

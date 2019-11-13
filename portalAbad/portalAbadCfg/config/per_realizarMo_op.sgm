@@ -1,0 +1,83 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION per_realizarMo_op  ---------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.per.OPPerRealizarMo id=per_realizarMo_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=PerRealizadaOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPerOPHTMLFmt>
+	<refKColl refId=per_realizarMo_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=per_realizarMo_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=realizarPer metodo=realizarPer requestFmt=DatosPerOPHTMLFmt>
+		<estadoOP id=1 accion=realizarPer metodo=realizarPer requestFmt=DatosPerOPHTMLFmt>
+		<estadoOP id=ERROR accion=realizarPer metodo=realizarPer requestFmt=DatosPerOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=realizarPer metodo=realizarPer requestFmt=DatosPerOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=PerRealizadaOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.per.OPPerRealizarMo>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=per_realizarMo_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=PerRealizadaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosPerOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

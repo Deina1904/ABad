@@ -1,0 +1,33 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL obtener_usuario_interno_om  ------------------------------->
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.multicanal.og.OMObtenerUsuarioInterno id=obtener_usuario_interno_om operationContext=OperationContext>
+	<refKColl refId=obtener_usuario_interno_om-data>
+</com.grupobbva.bc.col.multicanal.og.OMObtenerUsuarioInterno>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+
+<kColl id=obtener_usuario_interno_om-data>
+	<field id=CodUsuaExt>
+		<field id=CodUsuaInt>
+		<field id=EstUsuario>
+		<field id=Usuario>
+		<field id=IdUsuario>
+		<field id=IdBanner>
+		<field id=CtaOrd>
+		<field id=CtaBenef>
+		<field id=TimTransfer>
+		<field id=Importe>
+		<field id=fechalas>
+		<field id=CodDivisa>
+		<field id=RefCargo>
+		<field id=RefAbono>
+		<field id=FechaOpe>
+		<field id=FechaValor>
+	<field id=Observaciones>
+</kColl>
+
+<! ---------------------------------------------------------------------------------->

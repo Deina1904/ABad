@@ -1,0 +1,84 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  pago_tarjeta_otros_pr  -------------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.pto.PrPagoTarje id=pago_tarjeta_otros_pr operationContext=OperationContext>
+
+	<refKColl refId=pago_tarjeta_otros_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=ctas_ptarje_otros_op>
+
+		<estadoPr id=1 operacion=consultar_pagotarje_otros_op>
+		<estadoPr id=1 operacion=ctas_ptarje_otros_op>
+
+		<estadoPr id=2 operacion=ctas_ptarje_otros_op>
+		<estadoPr id=2 operacion=confirmar_pagotarje_otros_op>
+		<estadoPr id=2 operacion=consultar_pagotarje_otros_op>
+
+		<estadoPr id=3 operacion=realizar_pagotarje_otros_op>
+		<estadoPr id=3 operacion=ctas_ptarje_otros_op>
+		<estadoPr id=3 operacion=confirmar_pagotarje_otros_op>
+        <estadoPr id=3 operacion=consultar_pagotarje_otros_op>
+
+
+		<estadoPr id=4 operacion=ctas_ptarje_otros_op>
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+        <salidaPr id=0 operacion=ctas_ptarje_otros_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=ctas_ptarje_otros_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=ctas_ptarje_otros_op estadoOP=1 jspFile=pt001_pet_pagotarje_otros>
+		<salidaPr id=1 operacion=consultar_pagotarje_otros_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=consultar_pagotarje_otros_op estadoOP=1 jspFile=pt002_conf_pagotarje_otros>
+		<salidaPr id=2 operacion=confirmar_pagotarje_otros_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=3 operacion=confirmar_pagotarje_otros_op estadoOP=1 jspFile=pt003_conf_pagotarje_otros>
+		<salidaPr id=3 operacion=confirmar_pagotarje_otros_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=3 operacion=realizar_pagotarje_otros_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=realizar_pagotarje_otros_op estadoOP=MENSAJE jspFile=gn002_error>
+        <salidaPr id=3 operacion=realizar_pagotarje_otros_op estadoOP=1 jspFile=pt004_realizado_ptarje_otros>
+		<salidaPr id=3 operacion=realizar_pagotarje_otros_op estadoOP=2 jspFile=pt005_ptotros_por_autorizar>
+
+		<salidaPr id=0 operacion=realizar_pagotarje_otros_op estadoOP=1 jspFile=pt004_realizado_ptarje_otros>
+		<salidaPr id=0 operacion=realizar_pagotarje_otros_op estadoOP=2 jspFile=pt005_ptotros_por_autorizar>
+		<salidaPr id=0 operacion=realizar_pagotarje_otros_op estadoOP=ERROR jspFile=gn001_error>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.pto.PrPagoTarje>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_tarjeta_otros_pr-data>
+	<field id=ClaveCtaPTarje>
+	<field id=TipoCtaPTarje>
+	<field id=CtaPTarje>
+	<field id=ClaveTarjePTarje>
+	<field id=NumeroTarjeta>
+	<field id=NumTarj>
+	<field id=Correo>
+	<field id=NombreBanco>
+	<field id=FechaOpe>
+	<field id=Divisa>
+	<field id=PagoMinimo>
+	<field id=SaldoDisp>
+	<field id=OtroVal>
+	<field id=TipoPago>
+	<field id=Importe>
+	<field id=FechaVen>
+	<field id=DescripTarje>
+	<field id=ObservPago>
+	<field id=NumeOper value = 0 >
+	<field id=Numaut value = " ">
+</kColl>
+<! --------------------------------------------------------------------------------->
+

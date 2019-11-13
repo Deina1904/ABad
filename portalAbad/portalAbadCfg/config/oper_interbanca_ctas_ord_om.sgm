@@ -1,0 +1,64 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL oper_interbanca_ctas_ord_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=oper_interbanca_ctas_ord_om operationContext=OperationContext>
+	<refKColl refId=oper_interbanca_ctas_ord_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=oper_interbanca_ctas_ord_om-data>
+	<field id=IdTx value=TxF016ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <iColl id=ListaBancos>
+	    <kColl id=Banco>
+	      <field id=CODBANCO>
+	      <field id=DESBANCO>
+	    </kColl >
+	  </iColl >
+  	  <field id=SALDODIS>
+	</kColl >
+
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=oper_interbanca_ctas_ord_om-copiar>
+	<kColl id=a-TxF016ENET>
+		<field id=Entrada value=TxF016ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF016ENET>
+		<field id=Salida value=TxF016ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

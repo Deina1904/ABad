@@ -1,0 +1,80 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL movimientos_presta_om  ------------------------------------>
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.pg.OMMovimientosPresta id=movimientos_presta_om operationContext=OperationContext>
+	<refKColl refId=movimientos_presta_om-data>
+</com.grupobbva.bc.col.multicanal.pg.OMMovimientosPresta>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=movimientos_presta_om-data>
+	<field id=IdTx value=TxFN35ENET>
+	<field id=MaxNumRegistros>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=INDICADOR-PAGINACION>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimientos>
+	      <field id=FECHA-OPER>
+	      <field id=VALOR-CAPITAL>
+	      <field id=VALOR-INT-CTES>
+	      <field id=VALOR-INT-MORA>
+	      <field id=VALOR-GASTOS>
+	      <field id=VALOR-PAGADO>
+	      <field id=VALOR-SALDO>
+	      <field id=VALOR-INTREQ>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Movimientos>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+	      <field id=ValorCapital>
+	      <field id=ValorIntCtes>
+	      <field id=ValorIntMora>
+	      <field id=ValorGastos>
+	      <field id=ValorPagado>
+	      <field id=ValorSaldo>
+	      <field id=ValorIntReq>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=movimientos_presta_om-copiar>
+	<kColl id=a-TxFN35ENET>
+		<field id=Entrada value=TxFN35ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN35ENET>
+		<field id=Salida value=TxFN35ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

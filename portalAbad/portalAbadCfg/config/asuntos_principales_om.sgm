@@ -1,0 +1,176 @@
+﻿<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL asuntos_principales_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.og.OMAsuntosPrincipales id=asuntos_principales_om operationContext=OperationContext>
+	<refKColl refId=asuntos_principales_om-data>
+</com.grupobbva.bc.col.multicanal.og.OMAsuntosPrincipales>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=asuntos_principales_om-data>
+	<field id=IdTx value=TxF080ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2 >
+	  <field id=BASUNPRO >
+	  <field id=BASUNASO >
+	  <field id=BFECHA01 value=&@D06/16/2000 >
+	  <field id=BFECHA02 value=&@D06/16/2000 >
+	  <field id=BIMPORTE >
+	  <field id=BIMPOAUX >
+	  <field id=BINDPAGI >
+	  <field id=BINDAUX1 >
+	  <field id=BINDAUX2 >
+	  <field id=BCODAUX1 >
+	  <field id=BCODAUX2 >
+	  <field id=BNUMAUX1 >
+	  <field id=BNUMAUX2 >
+	  <field id=BPAGINAC >
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <field id=BPAGINAC>
+	  <iColl id=ListaSalida>
+	    <kColl id=CuentaTarjeta>
+	      <field id=BCODFORM >
+	      <field id=BIASUNTO >
+	      <field id=BIESTADO >
+	      <field id=BIVALASO >
+	      <field id=BCODFUNC >
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SalidaPag>
+	  <field id=BINDPAGI>
+	  <field id=BPAGINAC>
+	  <iColl id=ListaSalida>
+	    <kColl id=CuentaTarjeta>
+	      <field id=BCODFORM >
+	      <field id=BIASUNTO >
+	      <field id=BIESTADO >
+	      <field id=BIVALASO >
+	      <field id=BCODFUNC >
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SalidaCuentas>
+	  <iColl id=ListaCuentas>
+	    <kColl id=Cuenta>
+	      <field id=Banco>
+	      <field id=Oficina>
+	      <field id=DControl>
+	      <field id=NumCuenta>
+	      <field id=Permiso>
+	      <field id=ClaveAsunto>
+	      <field id=Tipo>
+	      <field id=Estado>
+	      <field id=Valaso>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SalidaFondos>
+	  <iColl id=ListaFondos>
+	    <kColl id=Cuenta>
+	      <field id=Banco>
+	      <field id=Oficina>
+	      <field id=DControl>
+	      <field id=NumCuenta>
+	      <field id=Permiso>
+	      <field id=ClaveAsunto>
+	      <field id=Tipo>
+	      <field id=Estado>
+	      <field id=Valaso>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SalidaTarjetas>
+	  <iColl id=ListaTarjetas>
+	    <kColl id=Tarjeta>
+	      <field id=PAN1>
+	      <field id=PAN2>
+	      <field id=PAN3>
+	      <field id=PAN4>
+	      <field id=Permiso>
+	      <field id=ClaveAsunto>
+	      <field id=Tipo>
+	      <field id=Estado>
+	      <field id=Valaso>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=SalidaPrestamos>
+	  <iColl id=ListaPrestamos>
+	    <kColl id=Prestamo>
+	      <field id=Bancop>
+	      <field id=Oficinap>
+	      <field id=DControlp>
+	      <field id=NumCuentap>
+	      <field id=Permisop>
+	      <field id=ClaveAsuntop>
+	      <field id=Tipop>
+	      <field id=Estadop>
+	      <field id=Valasop>
+	    </kColl >
+	  </iColl >
+	</kColl >
+	<kColl id=SalidaCupo>
+	  <iColl id=ListaCupo>
+	    <kColl id=Tarjeta>
+	      <field id=PAN1>
+	      <field id=PAN2>
+	      <field id=PAN3>
+	      <field id=PAN4>
+	      <field id=Permiso>
+	      <field id=ClaveAsunto>
+	      <field id=Tipo>
+	      <field id=Estado>
+	      <field id=Valaso>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+    <! JAAG -->
+	<kColl id=SalidaPensiones>
+	  <iColl id=ListaPensiones>
+	    <kColl id=Pension>
+	      <field id=Bancofp>
+	      <field id=Oficinafp>
+	      <field id=DControlfp>
+	      <field id=NumCuentafp>
+	      <field id=Permisofp>
+	      <field id=ClaveAsuntofp>
+	      <field id=Tipofp>
+	      <field id=Estadofp>
+	      <field id=Valasofp>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id= asuntos_principales_om-copiar>
+	<kColl id=a-TxF080ENET>
+		<field id=Entrada value=TxF080ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF080ENET>
+		<field id=Salida value=TxF080ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

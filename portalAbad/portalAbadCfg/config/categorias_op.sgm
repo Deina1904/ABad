@@ -1,0 +1,85 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION categorias_op  --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.rn.OPCategorias id=categorias_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionRecaudosOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=ValidarOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=ayudaOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=filtroOPHTMLFmt>
+	<refKColl refId=categorias_op-data>
+	<refOM refId=categorias_om>
+
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=ordLRecaudo>
+		<estadoOP id=1 accion=continuar metodo=ordLRecaudo requestFmt=filtroOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=ordLRecaudos>
+		<estadoOP id=VALIDAR accion=menuOrdTras metodo=ordTras>
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionRecaudosOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=VALIDAR jspFmt=ValidarOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.rn.OPCategorias>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=categorias_op-data>
+	<field id=Error>
+	<field id=recSeleccion>
+	<field id=recSeleccionado>
+	<field id=categoriasDeRecaudos>
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+<fmtDef id=RelacionRecaudosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<record dataName=categorias_om-data.Recaudos description=recaudos>
+		    <fString dataName=ARREGLOSUBCAT>
+		</record>
+			<iCollVector dataName=categorias_om-data.Recaudos.LstRecaudosPfac description=lstcategorias>
+			<!iCollVector dataName=recaudos.LstRecaudosPfac description=lstcategorias>
+				 <record dataName=Funcion>
+				   <fString dataName=CODIGO-CATEGORIA>
+				   <fString dataName=DESCRIPCION-CATEGORIA>
+				 </record>
+			</iCollVector>
+
+
+
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<fmtDef id=ValidarOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa>
+
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+<! formatos de entrada  ----------------------------------------------------------->
+<! la variables de aqui edeben estar definidas en la data de la op -->
+<fmtDef id=ayudaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=recSeleccion>
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=filtroOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=categoriasDeRecaudos>
+	</fHTMLReq>
+</fmtDef>
+
+

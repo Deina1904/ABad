@@ -1,0 +1,43 @@
+<! BBVA  --------------------------------------------------------------------------------------------------------------------------------->
+<! Operación:  PROCESO  carga_usuarios_pr  --------------------------------------------------------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.migracion.PrCargaUsuarios id=carga_usuarios_pr operationContext=OperationContext>
+
+	<refKColl refId=carga_usuarios_pr-data>
+
+<! ESTADOS ------------------------------------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=carga_usuarios_op>
+
+		<estadoPr id=1 operacion=carga_usuarios_op>
+
+
+
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=carga_usuarios_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=carga_usuarios_op estadoOP=ERROR jspFile=gn001_error>
+
+
+		<salidaPr id=1 operacion=carga_usuarios_op estadoOP=1 jspFile=carga_usuarios_01>
+		<salidaPr id=1 operacion=carga_usuarios_op estadoOP=2 jspFile=carga_usuarios_02>
+
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.migracion.PrCargaUsuarios>
+<! --------------------------------------------------------------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------------------------------------------------------------->
+<kColl id=carga_usuarios_pr-data>
+
+
+
+</kColl>
+<! --------------------------------------------------------------------------------------------------------------------------------------->

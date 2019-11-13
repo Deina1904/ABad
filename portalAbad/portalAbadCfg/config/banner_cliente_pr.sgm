@@ -1,0 +1,19 @@
+<!-- BBVA  ---------------------------------------------------------------------------->
+<!-- Operación:  Consulta parametría banner  ------------------------------------------>
+<!-- OPERACION  ----------------------------------------------------------------------->
+<com.grupobbva.emp.banner.cliente.PrConsultaCliente id=banner_cliente_pr operationContext=OperationContext>
+	<refKColl refId=banner_cliente_pr-data>
+<!-- ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=banner_cliente_op>
+	</navegacionPr>
+<!-- SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=banner_cliente_op estadoOP=ERROR jspFile=sass_error_01>
+		<salidaPr id=0 operacion=banner_cliente_op estadoOP=1 jspFile=banner_cliente_lista>
+	</resultadoPr>
+</com.grupobbva.emp.banner.cliente.PrConsultaCliente>
+<!-- DATOS  --------------------------------------------------------------------------->
+<kColl id=banner_cliente_pr-data>
+</kColl>
+<!--  ------------------------------------------------------------------------------->

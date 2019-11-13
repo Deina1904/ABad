@@ -1,0 +1,174 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION movimientos_presta_op  ---------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pg.OPMovimientosPresta id=movimientos_presta_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+        <refFormat name=jspFormat refId=SaldosMvtosOPJspFmt>
+
+        <refFormat name=htmlRequestFormat refId=PrestaOPHTMLFmt>
+
+	<refKColl refId=movimientos_presta_op-data>
+	<refOM refId=movimientos_presta_om>
+	<refOM refId=saldos_presta_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=movimientos metodo=movimientos requestFmt=PrestaOPHTMLFmt>
+
+		<estadoOP id=1 accion=movimientos metodo=movimientos requestFmt=PrestaOPHTMLFmt>
+		<estadoOP id=1 accion=masDatos metodo=masDatos>
+		<estadoOP id=1 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=2 accion=movimientos metodo=movimientos requestFmt=PrestaOPHTMLFmt>
+
+		<estadoOP id=3 accion=movimientos metodo=movimientos requestFmt=PrestaOPHTMLFmt>
+		<estadoOP id=3 accion=masDatos metodo=masDatos>
+		<estadoOP id=3 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=4 accion=movimientos metodo=movimientos requestFmt=PrestaOPHTMLFmt>
+
+		<estadoOP id=4 accion=masDatos metodo=masDatos>
+		<estadoOP id=4 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=5 accion=movimientos metodo=movimientos requestFmt=PrestaOPHTMLFmt>
+		<estadoOP id=5 accion=atrasDatos metodo=atrasDatos>
+
+		<estadoOP id=ERROR accion=movimientos metodo=movimientos requestFmt=PrestaOPHTMLFmt>
+
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=2 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=3 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=4 jspFmt=SaldosMvtosOPJspFmt>
+		<salidaOP id=5 jspFmt=SaldosMvtosOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pg.OPMovimientosPresta>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=movimientos_presta_op-data>
+	<field id=MaxNumRegistros value=25>
+	<field id=MaxNumRegistrosFiltro value=150>
+	<field id=AsuntoPropio>
+	<field id=Grupo1>
+	<field id=Dia>
+	<field id=Mes>
+	<field id=Anio>
+	<field id=DiaDesde>
+	<field id=MesDesde>
+	<field id=AnioDesde>
+	<field id=DiaHasta>
+	<field id=MesHasta>
+	<field id=AnioHasta>
+	<field id=DiasUlti>
+	<field id=Grupo2>
+	<field id=ImportDeter>
+	<field id=ImportDesde>
+	<field id=ImportHasta>
+	<field id=NumCuenta>
+	<field id=DescCriterio>
+	<field id=Error>
+	<field id=MasDatos>
+	<field id=AtrasDatos>
+	<field id=SiguienteMovimiento>
+
+	<kColl id=Pagina>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+	      <field id=ValorCapital>
+	      <field id=ValorIntCtes>
+	      <field id=ValorIntMora>
+	      <field id=ValorGastos>
+	      <field id=ValorPagado>
+	      <field id=ValorSaldo>
+	      <field id=ValorIntReq>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+	<kColl id=Movimientos>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+	      <field id=FechaOperacion>
+	      <field id=ValorCapital>
+	      <field id=ValorIntCtes>
+	      <field id=ValorIntMora>
+	      <field id=ValorGastos>
+	      <field id=ValorPagado>
+	      <field id=ValorSaldo>
+	      <field id=ValorIntReq>
+	    </kColl >
+	  </iColl >
+	</kColl >
+</kColl>
+
+
+<! FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=SaldosMvtosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=NumCuenta><nullCheck>
+		<fString dataName=DescCriterio><nullCheck>
+		<fString dataName=MasDatos description=MasDatos><nullCheck>
+		<fString dataName=AtrasDatos description=AtrasDatos><nullCheck>
+		<fString dataName=SiguienteMovimiento description=SiguienteMovimiento><nullCheck>
+
+		<record dataName=saldos_presta_om-data.Salida description=Saldo>
+                      <fString dataName=DESCRIP-PRESTAMO><nullCheck>
+	              <fString dataName=OFICINA-PRESTAMO><nullCheck>
+		      <fNumString dataName=TOTAL-ADEUDADO decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		      <fNumString dataName=TOTAL-VENCIDO decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		      <fNumString dataName=VALOR-DESEMBOLSO decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		      <fNumString dataName=VALOR-PROX-PAGO decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		      <fDate dataName=FECHA-PROX-PAGO><nullCheck>
+		      <fNumString dataName=CUOTAS-PAGADAS><nullCheck>
+		      <fNumString dataName=CUOTAS-VENCIDAS><nullCheck>
+		      <fNumString dataName=CUOTAS-PENDIENTES><nullCheck>
+		      <fNumString dataName=VALOR-UVR><nullCheck>
+		      <fNumString dataName=TOTAL-ADEUDADO-UVR decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		      <fNumString dataName=TOTAL-VENCIDO-UVR decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		      <fNumString dataName=VALOR-PROX-PAGO-UVR decimalsSepChar=. thousandsSepChar=, decPlaces=2 showDecimalsSep=yes showThousandsSep=yes><nullCheck>
+		</record>
+
+		<iCollVector dataName=Pagina.ListaMovimientos description=ListaMovimientos>
+			<record dataName=Movimiento>
+      				<fDate dataName=FechaOperacion><nullCheck>
+				<fNumString dataName=ValorCapital><nullCheck>
+				<fNumString dataName=ValorIntCtes><nullCheck>
+				<fNumString dataName=ValorIntMora><nullCheck>
+				<fNumString dataName=ValorGastos><nullCheck>
+				<fNumString dataName=ValorPagado><nullCheck>
+				<fNumString dataName=ValorSaldo><nullCheck>
+				<fNumString dataName=ValorIntReq><nullCheck>
+			</record>
+		</iCollVector>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=PrestaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->

@@ -1,0 +1,54 @@
+<!-- Operación:  CLAVE  ------------------------------------>
+<!-- OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.emp.banner.clave.OpClave id=banner_clave_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+    <refFormat name=jspFormat refId=DatosOPJspFmt>
+    <refFormat name=htmlRequestFormat refId=DatosEntradaOPHTMLFmt>
+	<refKColl refId=banner_clave_op-data>
+<!-- ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=iniciar metodo=cambiar>
+		<estadoOP id=1 accion=iniciar metodo=cambiar>
+		<estadoOP id=2 accion=iniciar metodo=cambiar>
+		<estadoOP id=3 accion=iniciar metodo=cambiar>
+		<estadoOP id=4 accion=iniciar metodo=cambiar>
+		<estadoOP id=1 accion=cambiarClave metodo=cambiar>
+		<estadoOP id=1 accion=restaurarClave metodo=restaurar>
+		<estadoOP id=2 accion=guardarClave metodo=guardar  requestFmt=DatosEntradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=acciones metodo=mostrarMenu>
+	</navegacionOP>
+<!-- SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=DatosOPJspFmt>
+		<salidaOP id=2 jspFmt=DatosOPJspFmt>
+		<salidaOP id=3 jspFmt=DatosOPJspFmt>
+		<salidaOP id=4 jspFmt=DatosOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.emp.banner.clave.OpClave >
+<!-- DATOS --------------------------------------------------------------------------->
+<kColl id=banner_clave_op-data>
+	<field id=user>
+	<field id=claveAntigua>
+	<field id=claveNueva>
+	<field id=Error>
+</kColl>
+<!-- FORMATOS  DE SALIDA --------------------------------------------------------------->
+<fmtDef id=DatosOPJspFmt>
+	<fJsp>
+
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+<!-- FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosEntradaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=claveAntigua>
+		<fString dataName=claveNueva>
+	</fHTMLReq>
+</fmtDef>
+<!-- --------------------------------------------------------------------------------->

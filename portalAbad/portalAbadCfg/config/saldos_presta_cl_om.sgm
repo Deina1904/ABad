@@ -1,0 +1,64 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL saldos_presta_cl_om  ----------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=saldos_presta_cl_om operationContext=OperationContext>
+	<refKColl refId=saldos_presta_cl_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=saldos_presta_cl_om-data>
+	<field id=IdTx value=TxFN25ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=DESCRIP-PRESTAMO>
+	  <field id=OFICINA-PRESTAMO>
+	  <field id=TOTAL-ADEUDADO>
+	  <field id=TOTAL-VENCIDO>
+	  <field id=VALOR-DESEMBOLSO>
+	  <field id=VALOR-PROX-PAGO>
+	  <field id=FECHA-PROX-PAGO>
+	  <field id=CUOTAS-PAGADAS>
+	  <field id=CUOTAS-VENCIDAS>
+	  <field id=CUOTAS-PENDIENTES>
+	  <field id=VALOR-UVR>
+	  <field id=TOTAL-ADEUDADO-UVR>
+	  <field id=TOTAL-VENCIDO-UVR>
+	  <field id=VALOR-PROX-PAGO-UVR>
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= saldos_presta_cl_om-copiar>
+	<kColl id=a-TxFN25ENET>
+		<field id=Entrada value=TxFN25ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN25ENET>
+		<field id=Salida value=TxFN25ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

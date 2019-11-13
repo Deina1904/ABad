@@ -1,0 +1,62 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION confirmar_pago_op  -------------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.ps.OPConfirmarPago id=confirmar_pago_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaPagoOPJspFmt>
+		
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+
+	<refKColl refId=confirmar_pago_op-data>	
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>	
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>	
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>	
+		<estadoOP id=0 accion=volver metodo=reConfClave>	
+	</navegacionOP>		
+	
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>	
+		<salidaOP id=1 jspFmt=ConfirmaPagoOPJspFmt>				
+	</resultadoOP>	
+</com.grupobbva.bc.col.web.ps.OPConfirmarPago>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=confirmar_pago_op-data>
+	<field id=AsuntoPropio>
+	<field id=AsuntoPServ>
+	<field id=Factura>
+	<field id=Importe>
+	<field id=Observaciones>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaPagoOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>				
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Divisa description=divisa>
+		<fString dataName=CtaOrd description=ctaord>
+		<fString dataName=Factura description=factura>
+		<fString dataName=Importe description=importe>
+		<fString dataName=Observaciones description=observaciones>
+		<fString dataName=FechaOpe description=fechaope>			
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=AsuntoPServ>
+		<fString dataName=Factura>
+		<fString dataName=Importe>			
+		<fString dataName=Observaciones>
+	</fHTMLReq>
+</fmtDef>	
+
+<! --------------------------------------------------------------------------------->

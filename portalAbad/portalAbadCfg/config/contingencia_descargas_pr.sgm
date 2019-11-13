@@ -1,0 +1,14 @@
+<com.grupobbva.bc.col.web.contingencia.descargas.PrContingenciaDescargas id=contingencia_descargas_pr operationContext=OperationContext>
+	<refKColl refId=contingencia_descargas_pr-data>
+<! ESTADOS --------------------------------------------------------------------------->
+		<navegacionPr>
+			<estadoPr id=0 operacion=contingencia_descargas_op>
+		</navegacionPr>
+<! SALIDAS --------------------------------------------------------------------------->
+		<resultadoPr>
+			<salidaPr id=0 operacion=contingencia_descargas_op estadoOP=1 jspFile=contingencia_descargas>
+		</resultadoPr>
+</com.grupobbva.bc.col.web.contingencia.descargas.PrContingenciaDescargas>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=contingencia_descargas_pr-data>
+</kColl>

@@ -1,0 +1,20 @@
+<!-- BBVA  ---------------------------------------------------------------------------->
+<!-- Operación:  borrar parametría banner  ------------------------------------------>
+<!-- OPERACION  ----------------------------------------------------------------------->
+<com.grupobbva.emp.banner.borrar.PrBorrar id=banner_borrar_pr operationContext=OperationContext>
+	<refKColl refId=banner_borrar_pr-data>
+<!-- ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=banner_borrar_op>
+	</navegacionPr>
+<!-- SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=banner_borrar_op estadoOP=ERROR jspFile=sass_error_01>
+		<salidaPr id=0 operacion=banner_borrar_op estadoOP=1 jspFile=banner_borrar_filtro>
+		<salidaPr id=0 operacion=banner_borrar_op estadoOP=3 jspFile=banner_borrar_exito>
+	</resultadoPr>
+</com.grupobbva.emp.banner.borrar.PrBorrar>
+<!-- DATOS  --------------------------------------------------------------------------->
+<kColl id=banner_borrar_pr-data>
+</kColl>
+<!--  ------------------------------------------------------------------------------->

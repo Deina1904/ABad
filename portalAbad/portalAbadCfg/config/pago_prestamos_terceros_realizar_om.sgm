@@ -1,0 +1,70 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL pago_prestamos_terceros_realizar_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=pago_prestamos_terceros_realizar_om operationContext=OperationContext>
+	<refKColl refId=pago_prestamos_terceros_realizar_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=pago_prestamos_terceros_realizar_om-data>
+	<field id=IdTx value=TxFN29ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+
+	<kColl id=Salida>
+		<field id=FECHACON>
+		<field id=NUMMOVIM>
+		<field id=DESNOMDV>
+		<field id=SUBPRODU>
+		<field id=DESSUBPR>
+		<field id=IDENTIFI>
+		<field id=NOMTITUL>
+		<field id=CAPITALP>
+		<field id=INTERESP>
+		<field id=INTEMORA>
+		<field id=GASTOSPE>
+		<field id=COMISION>
+		<field id=SEGUROSP>
+		<field id=NUMRECIB>
+		<field id=TOTALPAP>
+		<field id=INDICAOK>
+		<field id=NUMMPEND>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= pago_prestamos_terceros_realizar_om-copiar>
+	<kColl id=a-TxFN29ENET>
+		<field id=Entrada value=TxFN29ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN29ENET>
+		<field id=Salida value=TxFN29ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

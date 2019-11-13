@@ -1,0 +1,19 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL categorias_om  ------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.rn.OMCategorias id=categorias_om operationContext=OperationContext>
+	<refKColl refId=categorias_om-data>
+</com.grupobbva.bc.col.multicanal.rn.OMCategorias>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=categorias_om-data>
+	<kColl id=Recaudos>
+      <iColl id=LstRecaudosPfac>
+	    <kColl id=Funcion>
+	      <field id="CODIGO-CATEGORIA" >
+          <field id="DESCRIPCION-CATEGORIA" >
+         </kColl >
+	  </iColl >
+	  <field id="ARREGLOSUBCAT">
+	</kColl >
+</kColl>

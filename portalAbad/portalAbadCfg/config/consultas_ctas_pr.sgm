@@ -1,0 +1,73 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  consultas_ctas_pr  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cp.PrConsultaCtasPers id=consultas_ctas_pr operationContext=OperationContext>
+	<refKColl refId=consultas_ctas_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=relacion_ctas_op>
+		<estadoPr id=1 operacion=relacion_ctas_op>
+		<estadoPr id=2 operacion=relacion_ctas_op>
+		<estadoPr id=0 operacion=movimientos_ctas_op>
+		<estadoPr id=1 operacion=movimientos_ctas_op>
+		<estadoPr id=2 operacion=movimientos_ctas_op>
+		<estadoPr id=0 operacion=detalle_ctas_op>
+		<estadoPr id=1 operacion=detalle_ctas_op>
+		<estadoPr id=2 operacion=detalle_ctas_op>
+		<estadoPr id=0 operacion=sorteo_seguro_op>
+		<estadoPr id=1 operacion=sorteo_seguro_op>
+		<estadoPr id=2 operacion=sorteo_seguro_op>		
+
+	</navegacionPr>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+		<salidaPr id=0 operacion=relacion_ctas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=relacion_ctas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=relacion_ctas_op estadoOP=1 jspFile=cp002_relacion_ctas>
+		<salidaPr id=1 operacion=relacion_ctas_op estadoOP=2 jspFile=cp003_relacion_ctas_filtro>
+		<salidaPr id=0 operacion=relacion_ctas_op estadoOP=1 jspFile=cp003_relacion_ctas_filtro>
+		<salidaPr id=0 operacion=relacion_ctas_op estadoOP=2 jspFile=cp003_relacion_ctas_filtro>
+
+		<salidaPr id=2 operacion=relacion_ctas_op estadoOP=1 jspFile=cp003_relacion_ctas>
+		<salidaPr id=2 operacion=relacion_ctas_op estadoOP=1 jspFile=cp003_relacion_ctas_filtro>
+		<salidaPr id=2 operacion=relacion_ctas_op estadoOP=2 jspFile=cp003_relacion_ctas_filtro>
+
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=1 jspFile=pg003_mvtos_saldos_ctas>
+		<salidaPr id=2 operacion=movimientos_ctas_op estadoOP=1 jspFile=pg003_mvtos_saldos_ctas>
+
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=2 jspFile=pg004_saldos_ctas>
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=3 jspFile=pg005_mvtos_ctas>
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=4 jspFile=pg006_mvtos_filtro_ctas>
+		<salidaPr id=0 operacion=movimientos_ctas_op estadoOP=4 jspFile=pg006_mvtos_filtro_ctas>
+		<salidaPr id=0 operacion=movimientos_ctas_op estadoOP=5 jspFile=pg006_mvtos_filtro_ctas>
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=5 jspFile=pg006_mvtos_filtro_ctas>
+		<salidaPr id=0 operacion=movimientos_ctas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=movimientos_ctas_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+
+		<salidaPr id=2 operacion=detalle_ctas_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=detalle_ctas_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>
+		<salidaPr id=2 operacion=detalle_ctas_op estadoOP=1 jspFile=pg004_detalle_movs>
+
+		<salidaPr id=2 operacion=movimientos_ctas_op estadoOP=4 jspFile=pg006_mvtos_filtro_ctas>
+		<salidaPr id=2 operacion=movimientos_ctas_op estadoOP=5 jspFile=pg006_mvtos_filtro_ctas>
+
+		<salidaPr id=1 operacion=sorteo_seguro_op estadoOP=1 jspFile=ss001_lista_cupones>
+		<salidaPr id=2 operacion=sorteo_seguro_op estadoOP=1 jspFile=ss001_lista_cupones>
+		<salidaPr id=1 operacion=sorteo_seguro_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=sorteo_seguro_op estadoOP=TRANSGRESION jspFile=gn004_mensaje_col>		
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.cp.PrConsultaCtasPers>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consultas_ctas_pr-data>
+	<field id=prtipo>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

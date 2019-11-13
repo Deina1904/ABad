@@ -1,0 +1,60 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL qe_scretorno_om  ------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=qe_scretorno_om operationContext=OperationContext>
+	<refKColl refId=qe_scretorno_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=qe_scretorno_om-data>
+	<field id=IdTx value=TxFN96ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=TALONPEN>
+	  <field id=TALONDIA>
+	  <field id=DIRECCION>
+	  <field id=FECHAOPER>
+	  <field id=NUMEOPER>
+	  <field id=IMPORTE>
+	  <field id=INDICAOK>
+      <field id=NUMAUTOR>
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id= qe_scretorno_om-copiar>
+	<kColl id=a-TxFN96ENET>
+		<field id=Entrada value=TxFN96ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN96ENET>
+		<field id=Salida value=TxFN96ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

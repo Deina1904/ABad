@@ -1,0 +1,64 @@
+! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL planillas_conserror_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=planillas_conserror_om operationContext=OperationContext>
+	<refKColl refId=planillas_conserror_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=planillas_conserror_om-data>
+	<field id=IdTx value=TxFN63ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+
+	<kColl id=Salida>
+	  <field id=omIndPaginacion>
+	  <field id=omAreaPaginacion>
+	  <iColl id=omListaErrores>
+	    <kColl id=omError>
+	      <field id=omTipoRegistro>
+	      <field id=omClaveRegistro>
+	      <field id=omDescripcionError>
+	    </kColl >
+	  </iColl >
+	  <field id=omTimestSal>
+	  <field id=omIndMasDatosHost>
+	</kColl >
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=planillas_conserror_om-copiar>
+	<kColl id=a-TxFN63ENET>
+		<field id=Entrada value=TxFN63ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN63ENET>
+		<field id=Salida value=TxFN63ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

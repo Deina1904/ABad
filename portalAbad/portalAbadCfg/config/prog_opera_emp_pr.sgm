@@ -1,0 +1,58 @@
+<! BBVA ------------------------------------------------------------------------------------------->
+<! Operación: PROCESO prog_opera_emp_pr ----------------------------------------------------------->
+<! OPERACION -------------------------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.poenet.PrProgOpera id=prog_opera_emp_pr operationContext=OperationContext>
+	<refKColl refId=prog_opera_emp_pr-data>
+
+<!------------------------------------------------------------------------------------------------->
+<! ESTADOS DEL PROCESO ---------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+	<navegacionPr>
+
+		<estadoPr id=0 operacion=prog_opera_emp_op>
+		<estadoPr id=1 operacion=prog_opera_emp_op>
+
+    </navegacionPr>
+<!------------------------------------------------------------------------------------------------->
+<! SALIDAS DEL JSPs POR CADA ESTADO DEL PROCESO Y DE LA OP ---------------------------------------->
+<!------------------------------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=prog_opera_emp_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=prog_opera_emp_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=1 operacion=prog_opera_emp_op estadoOP=1 jspFile=prog_oper_pet_datos>
+		<salidaPr id=1 operacion=prog_opera_emp_op estadoOP=2 jspFile=prog_oper_confirma>
+		<salidaPr id=1 operacion=prog_opera_emp_op estadoOP=3 jspFile=prog_oper_realizado>
+		<salidaPr id=1 operacion=prog_opera_emp_op estadoOP=4 jspFile=prog_oper_pendiente>
+		<salidaPr id=1 operacion=prog_opera_emp_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=1 operacion=prog_opera_emp_op estadoOP=MENSAJE jspFile=gn002_error>
+
+	</resultadoPr>
+</com.grupobbva.bc.col.web.poenet.PrProgOpera>
+<!------------------------------------------------------------------------------------------------->
+<! DATOS ------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------->
+<kColl id=prog_opera_emp_pr-data>
+
+	<field id=prCtaOrd>
+	<field id=prCtaOrdClave>
+	<field id=prTipoCtaOrd>
+	<field id=prCtaDest>
+	<field id=prCtaBenClave>
+	<field id=prTipoCtaBen>
+	<field id=prCtaDestT>
+	<field id=prCtaBenClaveT>
+	<field id=prTipoCtaBenT>
+	<field id=prSaldoDisp>
+	<field id=prPeriodo>
+	<field id=prFechaOper>
+	<field id=prDiaTraspaso>
+	<field id=prNroMeses>
+	<field id=prImporte>
+    <field id=prCorreo>
+	<field id=prObservaciones>
+	<field id=prNomTitular>
+	<field id=prIdTitular>
+
+</kColl>
+<!------------------------------------------------------------------------------------------------->

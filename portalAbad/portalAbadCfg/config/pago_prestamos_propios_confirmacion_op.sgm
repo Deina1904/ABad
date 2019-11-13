@@ -1,0 +1,93 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION pago_prestamos_propios_confirmacion_op  -------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.prest.OPPagoPrestamosPropiosConfirmacion id=pago_prestamos_propios_confirmacion_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionConfirmacionPagoPrestOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=DatosPagoPrestOPHTMLFmt>
+	<refKColl refId=pago_prestamos_propios_confirmacion_op-data>
+	<refOM refId=pago_prestamos_propios_realizar_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=confirmar metodo=confirmarPagoPrestamos     requestFmt=DatosPagoPrestOPHTMLFmt>
+		<estadoOP id=0 accion=volver metodo=confirmarPagoPrestamos requestFmt=DatosPagoPrestOPHTMLFmt>
+		<estadoOP id=1 accion=confirmar metodo=confirmarPagoPrestamos     requestFmt=DatosPagoPrestOPHTMLFmt>
+		<estadoOP id=1 accion=volver metodo=volverConfClave>
+		<estadoOP id=ERROR accion=confirmar metodo=confirmarPagoPrestamos requestFmt=DatosPagoPrestOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=volver metodo=volverConfClave>
+	</navegacionOP>
+
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=RelacionConfirmacionPagoPrestOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.prest.OPPagoPrestamosPropiosConfirmacion>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=pago_prestamos_propios_confirmacion_op-data>
+	<field id=TipoPago>
+	<field id=OtroValor>
+	<field id=Error>
+</kColl>
+
+
+<! FORMATOS ------------------------------------------------------------------------>
+
+<fmtDef id=RelacionConfirmacionPagoPrestOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=NumeroCtaOrdPr description=numeroCtaOrd>
+		<fString dataName=NumeroPrestPr description=numeroPrest>
+		<fDate dataName=FechaOperaPr description=fechaOpera>
+		<fNumString dataName=ValorCapitalPr description=valorCapital>
+		<fNumString dataName=InteresCorrientePr description=interesCorriente>
+		<fNumString dataName=InteresMoraPr description=InteresMora>
+		<fNumString dataName=InteresMoraPr description=interesMora>
+		<fNumString dataName=GastosSegurosPr description=gastosSeguros>
+		<fNumString dataName=ValorTotalCuotaPr description=valorTotalCuota>
+		<fNumString dataName=CuotasVencidasPr description=cuotasVencidas>
+		<fNumString dataName=RelPr description=RelPr>
+				<fString dataName=NombreprePr description=NombreprePr>
+				<fString dataName=CuentaorePr description=CuentaorePr>
+				<fString dataName=NombrejrPr description=NombrejrPr>
+				<fString dataName=CuentajrPr description=CuentajrPr>
+		<fNumString dataName=HonorariosPr description=HonorariosPr>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+
+<! -------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=DatosPagoPrestOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=TipoPago>
+		<fString dataName=OtroValor>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

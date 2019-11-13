@@ -1,0 +1,19 @@
+﻿<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL reactivacion_usuario_om ----------------------------------->
+
+
+<! OPERACION ------------------------------------------------------------------------>
+<CircuitoUsuariosCol.OMReactivacionUsuario id=reactivacion_usuario_om operationContext=OperationContext>
+	<refKColl refId=reactivacion_usuario_om-data>
+</CircuitoUsuariosCol.OMReactivacionUsuario>
+<! ---------------------------------------------------------------------------------->
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=reactivacion_usuario_om-data>
+	<field id=Alias>
+	<field id=Country>
+	<field id=Bank>
+</kColl>
+
+<! ---------------------------------------------------------------------------------->
+

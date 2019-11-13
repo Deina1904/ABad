@@ -1,0 +1,2 @@
+
+function openWin(html,name,w,h){myWin=open(html,name,"width="+w+",height="+h+",status=no,titlebar=yes,toolbar=no,left=200,top=100,menubar=no,scrollbars=yes");};function eligeOpcion(nombre,valor){minombre=eval("window.opener.document.forms[0]."+nombre);minombre.value=valor;window.close();}

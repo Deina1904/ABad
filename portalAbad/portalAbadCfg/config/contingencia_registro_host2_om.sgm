@@ -1,0 +1,54 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL contingencia_registro_host2_om ----------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=contingencia_registro_host2_om operationContext=OperationContext>
+	<refKColl refId=contingencia_registro_host2_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=contingencia_registro_host2_om-data>
+	<field id=IdTx value=TxFCT2PNET>
+	<kColl id=Entrada>
+		<field id="CODIGO ACCESO" >
+       <field id="CUENTA VALIDACION" >
+       <field id="PALABRA ACCESO 1" >
+       <field id="PALABRA ACCESO 2" >
+       <field id="ASUNTO PROPIO" >
+       <field id="ASUNTO ASOCIADO" >
+       <field id="FECHA 1" >
+       <field id="FECHA 2" >
+       <field id="IMPORTE PRINCIPAL" >
+       <field id="IMPORTE AUXILIAR" >
+       <field id="INDICADOR PAGINACION" >
+       <field id="INDICADOR 1" >
+       <field id="INDICADOR 2" >
+       <field id="CODIGO AUXILIAR 1" >
+       <field id="CODIGO AUXILIAR 2" >
+       <field id="NUMERO AUXILIAR 1" >
+       <field id="NUMERO AUXILIAR 2" >
+       <field id="AREA PAGINACION" >
+	</kColl >
+
+	<kColl id=Salida>
+		<field id=FT2S-RTA>
+	</kColl >
+</kColl>
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=contingencia_registro_host2_om-copiar>
+	<kColl id=a-TxFCT2PNET>
+		<field id=Entrada value=TxFCT2PNETEntrada>
+	</kColl>
+	<kColl id=desde-TxFCT2PNET>
+		<field id=Salida value=TxFCT2PNETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

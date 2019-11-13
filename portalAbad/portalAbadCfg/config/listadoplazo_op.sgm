@@ -1,0 +1,102 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION listadoplazo_op --------------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.migracion.OpPlazo id=listadoplazo_op operationContext=OperationContext>
+	<refKColl refId=listadoplazo_op-data>
+	<refOM refId=listadoplazo_om>
+
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=inicio metodo=inicio>
+		<estadoOP id=1 accion=inicio metodo=inicio>
+		<estadoOP id=excel accion=inicio metodo=inicio>
+		<estadoOP id=1 accion=excel metodo=excel>
+
+		<estadoOP id=ERROR accion=param metodo=param>
+
+	</navegacionOP>
+<! SALIDAS ------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=InicioOPJspFmt>
+		<salidaOP id=excel jspFmt=InicioOPJspFmt>
+
+
+	</resultadoOP>
+</com.grupobbva.bc.col.migracion.OpPlazo>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=listadoplazo_op-data>
+
+
+
+		<field id=Resultado>
+		<field id=Mensaje>
+		<field id=PDGroup>
+		<field id=Country>
+		<field id=Bank>
+		<field id=MaxErrors>
+
+		<field id=Error>
+
+	  <iColl id=ListadoClientes>
+	    <kColl id=Clientes>
+	    <field id=cliente>
+	      <field id=nombre>
+	      <field id=cncclipu>
+	      <field id=correo>
+	      <field id=telefono>
+	      <field id=direccion>
+	      <field id=oficina>
+	    </kColl >
+	  </iColl >
+
+
+
+
+
+
+</kColl>
+<! FORMATOS ------------------------------------------------------------------------>
+
+<! -------------------------------------------------------------------------------->
+
+
+
+
+<fmtDef id=InicioOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<iCollVector dataName=ListadoClientes description=ListadoClientes>
+					  		  <record dataName=Clientes>
+					  		 		 <fString dataName=cliente><nullCheck>
+					  		          <fString dataName=nombre><nullCheck>
+					  		          <fString dataName=cncclipu><nullCheck>
+					  		          <fString dataName=correo><nullCheck>
+					  		          <fString dataName=telefono><nullCheck>
+					  		          <fString dataName=direccion><nullCheck>
+					  		          <fString dataName=oficina><nullCheck>
+
+					  	  	  </record>
+	      </iCollVector>
+
+
+	</fJsp>
+</fmtDef>
+
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+
+
+
+
+
+
+
+

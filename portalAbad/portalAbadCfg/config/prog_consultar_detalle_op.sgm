@@ -1,0 +1,80 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION prog_consultar_detalle_op  ------------------------------------>
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.po.OPProg_Consultar_Detalle id=prog_consultar_detalle_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionDetalleOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=EntradaOPHTMLFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refKColl refId=prog_consultar_detalle_op-data>
+	<refOM refId=prog_consultar_detalle_om>
+<! -------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=continuar metodo=consultarDetalle requestFmt=EntradaOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=consultarDetalle requestFmt=EntradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=consultarDetalle requestFmt=EntradaOPHTMLFmt>
+
+	</navegacionOP>
+<! -------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------>
+<! -------------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=1 jspFmt=RelacionDetalleOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.bc.col.web.po.OPProg_Consultar_Detalle>
+<! -------------------------------------------------------------------------------->
+<! DATOS -------------------------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<kColl id=prog_consultar_detalle_op-data>
+	<field id=Error>
+	<field id=CtaOri>
+	<field id=CtaDesti>
+	<field id=FechaPro>
+</kColl>
+<! -------------------------------------------------------------------------------->
+<! formatos de salida para JSP ---------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=RelacionDetalleOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=ProcesoAnterior description=ProcesoAnterior>
+		<fString dataName=SelConsulta description=SelConsulta>
+		<fString dataName=CtaOrd>
+		<fString dataName=CtaBen>
+		<fString dataName=TipoCtaOrd>
+		<fString dataName=TipoCtaBen>
+		<fString dataName=IndNva>
+		<fString dataName=NomBen>
+		<fString dataName=IdeBen>
+		<fDate   dataName=FecTra>
+		<fNumString dataName=PagosTotal>
+		<fNumString dataName=PagosReal>
+		<fString dataName=TipoTras>
+		<fNumString dataName=ValorTras>
+		<fString dataName=Observ>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario><nullCheck>
+		<fString dataName=s_cod_nomempre description=empresa><nullCheck>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=EntradaOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=CtaOri>
+		<fString dataName=CtaDesti>
+		<fString dataName=FechaPro>
+	</fHTMLReq>
+</fmtDef>
+

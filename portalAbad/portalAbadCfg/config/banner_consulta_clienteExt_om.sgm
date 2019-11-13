@@ -1,0 +1,80 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consulta_adquirencia_facturas_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=consulta_adquirencia_facturas_om operationContext=OperationContext>
+	<refKColl refId=consulta_adquirencia_facturas_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=consulta_adquirencia_facturas_om-data>
+	<field id=IdTx value=TxFN43ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=BINDPAGI>
+	  <field id=AREAPAGI>
+	  <iColl id=ListaMovimientos>
+	    <kColl id=Movimiento>
+		  <field id="NUMERO-FACTURA" >
+		  <field id="NUMERO-COMPROBANTE" >
+		  <field id="FECHA-OPERACION" >
+		  <field id="CAUSAL-DEVOLUCION" >
+		  <field id="NUMERO-TARJETA" >
+		  <field id="VENTA-TOTAL-BRUTA" >
+		  <field id="VALOR-TOTAL-IVA" >
+		  <field id="VALOR-TOTAL-PROPINA" >
+		  <field id="VALOR-VENTA-NETA" >
+		  <field id="NUMERO-AUTORIZACION" >
+		  <field id="FECHA-VENCIMIENTO" >
+		  <field id="COMISION" >
+		  <field id="CARGO-RETEFUENTE" >
+		  <field id="CARGO-RETEIVA" >
+		  <field id="CARGO-RETEICA" >
+		  <field id="CODIGO-DATAFONO" >
+		  <field id="TASA-DE-COMERCIO" >
+		  <field id="DEPOSITO" >
+		  <field id="TIPO-DE-TRANSACCION" >
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=consulta_adquirencia_facturas_om-copiar>
+	<kColl id=a-TxFN43ENET>
+		<field id=Entrada value=TxFN43ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFN43ENET>
+		<field id=Salida value=TxFN43ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

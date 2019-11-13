@@ -1,0 +1,145 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION confirmar_pagorn_op  -------------------------------------->
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.rn.OPConfirmarPagoRN id=confirmar_pagorn_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaPagoRNOPJspFmt>
+	<refFormat name=jspFormat refId=PagoOPHTMLFmt>
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+	<refKColl refId=confirmar_pagorn_op-data>
+	<refOM refId=consultar_pago_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=confOperacion requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=confOperacion requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ponerAyuda requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=volverAtras metodo=volverConOperacion>
+		<estadoOP id=2 accion=continuar metodo=confImporte requestFmt=PagoOPHTMLFmt>
+		<estadoOP id=3 accion=continuar metodo=confImporte requestFmt=PagoOPHTMLFmt>
+		<estadoOP id=AYUDA accion=ayuda metodo=ponerAyuda>
+		<estadoOP id=AYUDA accion=regresar metodo=volverConOperacion requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=confOperacion requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=ERRORFAC accion=continuar metodo=confOperacion requestFmt=ClaveOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaPagoRNOPJspFmt>
+		<salidaOP id=2 jspFmt=ConfirmaPagoRNOPJspFmt>
+		<salidaOP id=3 jspFmt=ConfirmaPagoRNOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=ERRORFAC jspFmt=ConfirmaPagoRNOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.rn.OPConfirmarPagoRN>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=confirmar_pagorn_op-data>
+	<field id=Error>
+	<field id=AsuntoPropio>
+	<field id=Servicio>
+	<field id=Facturaop>
+	<field id=Importe>
+	<field id=ImporteString>
+	<field id=Mensaje>
+	<field id=ConFacturaop>
+	<field id=ConImporte>
+	<field id=Facturaop2>
+    <field id=ConFacturaop2>
+    <field id=Adicionalop>
+	<field id=TipoPago>
+	<field id=OtroValor>
+	<field id=opNumTarjeta>
+
+
+
+	<iColl id=ListaCtasPServ>
+		<kColl id=CuentaOrdenante>
+			<field id=Banco>
+			<field id=Oficina>
+			<field id=DControl>
+			<field id=NumCuenta>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+<! TARJETAS DE CREDITO PROPIAS DEL CLIENTE -------------------------------------------->
+	<iColl id=ListaTarjePTarje>
+		<kColl id=NumTarjeta>
+			<field id=NumeroBin1>
+			<field id=NumeroBin2>
+			<field id=NumTarjeta1>
+			<field id=NumTarjeta2>
+			<field id=ClaveAsunto>
+			<field id=Tipo>
+		</kColl>
+	</iColl>
+</kColl>
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaPagoRNOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_correo_op description=correoop>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=Divisa description=divisa>
+		<fString dataName=FechaOpe description=fechaope>
+		<fString dataName=ClaveCtaPRN description=clavectaprn>
+		<fString dataName=TipoCtaPRN description=tipoctaprn>
+		<fString dataName=TipoRecaudo description=tiporecaudo>
+		<fString dataName=Factura description=factura>
+		<fString dataName=Factura2 description=factura2>
+		<fString dataName=AdicionalP description=adicional>
+
+		<fString dataName=DescripRN description=desRecaudo>
+		<fString dataName=CtaPRN description=ctaprn>
+		<fNumString dataName=ImportePago description=importe>
+		<!fString dataName=CtaDelRecaudo description=ctadelrecaudo>
+		<fString dataName=ValidaBDatos description=validabdatos>
+		<fString dataName=ImporteString description=importestring>
+		<fString dataName=Cuota description=cuotas>
+
+	</fJsp>
+</fmtDef>
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+		<fString dataName=Facturaop>
+		<fString dataName=Importe>
+		<fString dataName=ConFacturaop>
+		<fString dataName=ConImporte>
+		<fString dataName=Facturaop2>
+        <fString dataName=ConFacturaop2>
+        <fString dataName=Adicionalop>
+		<fString dataName=opNumTarjeta>
+		<fString dataName=Cuotas>
+
+
+	</fHTMLReq>
+</fmtDef>
+<fmtDef id=PagoOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=TipoPago>
+		<fString dataName=OtroValor>
+	</fHTMLReq>
+</fmtDef>
+<! --------------------------------------------------------------------------------->
+

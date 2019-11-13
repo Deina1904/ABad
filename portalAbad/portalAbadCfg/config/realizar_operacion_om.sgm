@@ -1,0 +1,84 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL realizar_operacion_om  ------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple  id=realizar_operacion_om operationContext=OperationContext>
+	<refKColl refId=realizar_operacion_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+<kColl id=realizar_operacion_om-data>
+	<field id=IdTx value=TxFE12ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <field id=REFCARGO>
+	  <field id=REFABONO>
+	  <field id=FECHOPER>
+	  <field id=FECHAVAL>
+	  <field id=INDICAOK>
+	  <field id=NUMAUTOR>
+	  <field id=UPSFONDO>
+	  <field id=IMRENDBR>
+	  <field id=IMPRENDN>
+	  <field id=IMRETEFU>
+	  <field id=TASAEFAN>
+	  <field id=FECHVENC>
+	  <field id=FECHCONS>
+	  <field id=CODENDIT>
+	  <field id=NOMENDIT>
+	  <field id=NOMASOCI>
+	  <field id=IDEASOCI>
+	  <field id=INDICAD1>
+	  <field id=INDICAD2>
+	  <field id=INDICAD3>
+	  <field id=IMPLIBR1>
+	  <field id=IMPLIBR2>
+	  <field id=IMPLIBR3>
+	  <field id=IMPLIBR4>
+	  <field id=FECHALI1>
+	  <field id=FECHALI2>
+	  <field id=FECHALI3>
+	  <field id=LILERAL1>
+	  <field id=LILERAL2>
+	  <field id=LILERAL3>
+	  <field id=LILERAL4>
+
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+<kColl id=realizar_operacion_om-copiar>
+	<kColl id=a-TxFE12ENET>
+		<field id=Entrada value=TxFE12ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxFE12ENET>
+		<field id=Salida value=TxFE12ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

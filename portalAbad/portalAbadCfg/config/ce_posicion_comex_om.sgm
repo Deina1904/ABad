@@ -1,0 +1,74 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL ce_posicion_comex_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ce.om.ce.OMPosicionComex id=ce_posicion_comex_om operationContext=OperationContext>
+	<refKColl refId=ce_posicion_comex_om-data>
+</com.grupobbva.ce.om.ce.OMPosicionComex>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ce_posicion_comex_om-data>
+	<field id=IdTx value=TxF135ENET>
+	<field id=MaxNumRegistros>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2 >
+	  <field id=BASUNPRO >
+	  <field id=BASUNASO >
+	  <field id=BFECHA01 >
+	  <field id=BFECHA02 >
+	  <field id=BIMPORTE >
+	  <field id=BIMPOAUX >
+	  <field id=BINDPAGE >
+	  <field id=BINDAUX1 >
+	  <field id=BINDAUX2 >
+	  <field id=BCODAUX1 >
+	  <field id=BCODAUX2 >
+	  <field id=BNUMAUX1 >
+	  <field id=BNUMAUX2 >
+	  <field id=BPAGINAC >
+	</kColl>
+
+	<kColl id=Salida>
+		<field id="INDICADOR_PAGINACION" >
+		<field id="ARGUMENTO_BUSQUEDA" >
+		<iColl id="ListaOperComex" >
+    			<kColl id="GruposComex" dynamic=false >
+      				<field id="CLASE_GRUPO" >
+      				<field id="DESCRIP_GRUPO" >
+      				<field id="NUM_DOCUMENTOS" >
+      				<field id="IMPORTE" >
+			</kColl >
+  		</iColl >
+	</kColl>
+
+	<kColl id=Movimientos>
+	  <iColl id=ListaOperComex>
+	    <kColl id=GruposComex>
+      		<field id="clase" >
+      		<field id="descripcion" >
+      		<field id="num_doc" >
+      		<field id="importe" >
+	   </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=ce_posicion_comex_om-copiar>
+	<kColl id=a-TxF135ENET>
+		<field id=Entrada value=TxF135ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF135ENET>
+		<field id=Salida value=TxF135ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

@@ -1,0 +1,73 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION realizar_pagotarjespc_op  --------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.pte.OPRealizarPagoTarjeEsp id=realizar_pagotarjespc_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=ConfirmaPagoTarjeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=ClaveOPHTMLFmt>
+
+	<refKColl refId=realizar_pagotarjespc_op-data>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=confClave requestFmt=ClaveOPHTMLFmt>
+		<estadoOP id=1 accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=ayuda metodo=ayudaClaveOper>
+		<estadoOP id=AYUDA accion=continuar metodo=volverConfClave>
+		<estadoOP id=1 accion=volverAtras metodo=volverConfClave>
+		<estadoOP id=0 accion=volver metodo=reConfClave>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=ConfirmaPagoTarjeOPJspFmt>
+		<salidaOP id=AYUDA jspFmt=AyudaOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.pte.OPRealizarPagoTarjeEsp>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=realizar_pagotarjespc_op-data>
+	<field id=TipoPago>
+	<field id=OtroValor>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=ConfirmaPagoTarjeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=ctaptarjepr description=ctaptarjepr>
+		<fString dataName=NumCuentaPr description=NumCuentaPr>
+		<fNumString dataName=ComprobantePr description=ComprobantePr>
+		<fNumString dataName=TasaPr description=TasaPr>
+		<fNumString dataName=ImporteAuxPr description=ImportePr>
+		<fString dataName=FechaOpe description=FechaOpe>
+		<fString dataName=DescripcionPr description=DescripcionPr>
+
+		<fString dataName=TipoPago description=tipopago>
+
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=AyudaOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+	</fJsp>
+</fmtDef>
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ClaveOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=TipoPago>
+		<fString dataName=OtroValor>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->

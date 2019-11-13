@@ -1,0 +1,69 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL pago_masivo_mantenimiento_listaplanillas_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=pago_masivo_mantenimiento_listaplanillas_om operationContext=OperationContext>
+	<refKColl refId=pago_masivo_mantenimiento_listaplanillas_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=pago_masivo_mantenimiento_listaplanillas_om-data>
+	<field id=IdTx value=TxF018ENET>
+	<kColl id=Entrada>
+	  <field id=BCODACCC>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPACACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGE>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BPAGINAC>
+	</kColl >
+
+	<kColl id=Salida>
+	  <iColl id=ListaPlanillas>
+	    <kColl id=Planilla>
+	      <field id=CODIGO-PLANILLA>
+	      <field id=NOMBRE-PLANILLA>
+	      <field id=TIPO-CUENTA>
+	      <field id=NUMERO-CUENTA>
+	      <field id=TIPO-SERVICIO>
+	      <field id=ESTADO>
+	      <field id=FECHA-EJECUCION>
+	      <field id=FECHA-UILT-EJECUCION>
+	      <field id=IMPORTE>
+	      <field id=NUMERO-DE-CUENTAS>
+	    </kColl >
+	  </iColl >
+	</kColl >
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=pago_masivo_mantenimiento_listaplanillas_om-copiar>
+	<kColl id=a-TxF018ENET>
+		<field id=Entrada value=TxF018ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF018ENET>
+		<field id=Salida value=TxF018ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

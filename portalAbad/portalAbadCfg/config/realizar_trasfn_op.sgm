@@ -1,0 +1,125 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION realizar_trasfn_op  ------------------------------------->
+
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.bc.col.web.tpfn.OPRealizarTrasFonte id=realizar_trasfn_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=TrasRealizadaOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=jspFormat refId=MensajeOPJspFmt>
+
+	<refFormat name=htmlRequestFormat refId=DatosTrasOPHTMLFmt>
+
+	<refKColl refId=realizar_trasfn_op-data>
+	<refOM refId=identificacion_operativa_om>
+	<refOM refId=retorno_trasfn_om>
+	<refOM refId=retorno_trasbbvafam_om>
+	<refOM refId=actualizar_relacfn_om>
+	<refOM refId=bloqueo_usuario_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=continuar metodo=realizarTras requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=1 accion=continuar metodo=realizarTras requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=2 accion=continuar metodo=realizarTras requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=ERROR accion=continuar metodo=realizarTras requestFmt=DatosTrasOPHTMLFmt>
+		<estadoOP id=MENSAJE accion=continuar metodo=realizarTras requestFmt=DatosTrasOPHTMLFmt>
+	</navegacionOP>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=1 jspFmt=TrasRealizadaOPJspFmt>
+		<salidaOP id=2 jspFmt=TrasRealizadaOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=MENSAJE jspFmt=MensajeOPJspFmt>
+	</resultadoOP>
+</com.grupobbva.bc.col.web.tpfn.OPRealizarTrasFonte>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=realizar_trasfn_op-data>
+	<field id=PasswordOpe>
+	<field id=Resultado>
+	<field id=Mensaje>
+
+	<!field id=RefCargo>
+	<!field id=RefAbono>
+	<!field id=FechaOPe>
+	<!field id=FechaValor>
+
+	<field id=PDGroup>
+	<field id=Country>
+	<field id=Bank>
+	<field id=MaxErrors>
+	<field id=ClaveOperacion>
+	<field id=Correo>
+	<field id=Error>
+	<field id=OpREFCARGO>
+	<field id=OpREFABONO>
+	<field id=OpFECHOPER>
+	<field id=OpFECHAVAL>
+	<field id=INDICAOK>
+	<field id=NUMAUTOR>
+	<field id=VLRRETEFUENTE>
+	<field id=VLRNETOABOCTA>
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+
+<fmtDef id=TrasRealizadaOPJspFmt>
+	<fJsp>
+	    <fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_ip description=ip>
+	    <fString dataName=TipoDeFondo description=tipoDeFondo>
+	    <fString dataName=CtaOrd description=ctaord>
+	    <fString dataName=NumeroCtaBenef description=cuenta>
+	    <fString dataName=NumContrato description=numcontrato>
+	    <fString dataName=ObservTras description=observaciones>
+	    <fNumString dataName=ImporteTras description=importe>
+	    <fNumString dataName=Ups description=ups>
+
+	    <fNumString dataName=OpREFCARGO description=refcargo>
+	    <fNumString dataName=OpREFABONO description=refabono>
+	    <fDate dataName=OpFECHOPER description=fechoper>
+	    <fDate dataName=OpFECHAVAL description=fechaval>
+	    <fString dataName=INDICAOK description=indicaok>
+		<fNumString dataName=NUMAUTOR description=numautor>
+		<fNumString dataName=VLRRETEFUENTE description=vlrRetFte>
+		<fNumString dataName=VLRNETOABOCTA description=vlrAboCta>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=TipoDeFondo description=tipoDeFondo>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=MensajeOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=Mensaje description=mensaje>
+		<fString dataName=s_IdEstCliente description=estado_usuario>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+
+<fmtDef id=DatosTrasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=ClaveOperacion>
+		<fString dataName=Correo>
+	</fHTMLReq>
+</fmtDef>
+
+<! --------------------------------------------------------------------------------->
+

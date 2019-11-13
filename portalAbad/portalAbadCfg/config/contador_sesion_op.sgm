@@ -1,0 +1,52 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION contador_sesion_op  ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.contadorsesion.OPContadorSesion id=contador_sesion_op operationContext=OperationContext>
+
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>		
+	<refFormat name=jspFormat refId=ContadorSesionOPJspFmt>	
+	<refFormat name=htmlRequestFormat refId=ContadorSesionOPHTMLFmt>	
+	<refKColl refId=contador_sesion_pr-data>		
+	<refOM refId=contador_sesion_om>
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>	
+		<estadoOP id=0 accion=obtenerSesion metodo=genIDOP requestFmt=ContadorSesionOPHTMLFmt>	
+		<estadoOP id=1 accion=obtenerSesion metodo=noIDOP>	
+		<estadoOP id=ERROR accion=obtenerSesion metodo=noIDOP requestFmt=ErrorOPJspFmt>	
+	</navegacionOP>		
+	
+<! SALIDAS -------------------------------------------------------------------------->
+	<resultadoOP>	
+		
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>				
+		<salidaOP id=1 jspFmt=ContadorSesionOPJspFmt>				
+	</resultadoOP>	
+</com.grupobbva.bc.col.contadorsesion.OPContadorSesion>
+
+<! DATOS ---------------------------------------------------------------------------->
+<kColl id=contador_sesion_pr-data>
+</kColl>
+
+
+
+<! FORMATOS DE SALIDA --------------------------------------------------------------->
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+	</fJsp>	
+</fmtDef>
+<fmtDef id=ContadorSesionOPJspFmt>
+	<fJsp>
+	</fJsp>	
+</fmtDef>
+
+<! ---------------------------------------------------------------------------------->
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=ContadorSesionOPHTMLFmt>
+	<fHTMLReq>
+	</fHTMLReq>
+</fmtDef>
+<! ----------------------------------------------------------------------------------->

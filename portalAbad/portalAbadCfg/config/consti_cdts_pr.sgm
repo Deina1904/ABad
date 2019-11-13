@@ -1,0 +1,89 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PROCESO  consti_cdts_pr  ------------------------------------------>
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cdts.PrConstiCdts id=consti_cdts_pr operationContext=OperationContext>
+	<refKColl refId=consti_cdts_pr-data>
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionPr>
+		<estadoPr id=0 operacion=terminos_cdts_op>
+
+		<estadoPr id=1 operacion=terminos_cdts_op>
+		<estadoPr id=1 operacion=datos_cdts_op>
+
+		<estadoPr id=2 operacion=terminos_cdts_op>
+		<estadoPr id=2 operacion=datos_cdts_op>
+		<estadoPr id=2 operacion=datos_ctas_cdts_op>
+		<estadoPr id=2 operacion=relacion_tasas_op>
+
+		<estadoPr id=3 operacion=terminos_cdts_op>
+		<estadoPr id=3 operacion=datos_ctas_cdts_op>
+		<estadoPr id=3 operacion=confirmar_cdts_op>
+
+		<estadoPr id=4 operacion=terminos_cdts_op>
+		<estadoPr id=4 operacion=confirmar_cdts_op>
+		<estadoPr id=4 operacion=realiza_cdts_op>
+
+
+</navegacionPr>
+
+<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoPr>
+
+		<salidaPr id=0 operacion=terminos_cdts_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=0 operacion=terminos_cdts_op estadoOP=VALIDAR jspFile=r002_traspasos>
+
+		<salidaPr id=1 operacion=terminos_cdts_op estadoOP=1 jspFile=cdt_contratoop>
+		<salidaPr id=1 operacion=terminos_cdts estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=2 operacion=datos_cdts_op estadoOP=1 jspFile=cd003_consti_cdts>
+
+		<salidaPr id=2 operacion=relacion_tasas_op estadoOP=1 jspFile=tasas_meses_cdts>
+
+		<salidaPr id=2 operacion=datos_ctas_cdts_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=2 operacion=datos_ctas_cdts_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=3 operacion=datos_ctas_cdts_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=3 operacion=datos_ctas_cdts_op estadoOP=MENSAJE jspFile=gn002_error>
+		<salidaPr id=3 operacion=datos_ctas_cdts_op estadoOP=1 jspFile=cd004_preconst_cdts>
+		<salidaPr id=3 operacion=confirmar_cdts_op estadoOP=ERROR jspFile=gn001_error>
+
+		<salidaPr id=4 operacion=confirmar_cdts_op estadoOP=1 jspFile=cd004_conf_cdts>
+		<salidaPr id=4 operacion=confirmar_cdts_op estadoOP=AYUDA jspFile=ayuda_clave_oper>
+		<salidaPr id=4 operacion=realiza_cdts_op estadoOP=ERROR jspFile=gn001_error>
+		<salidaPr id=4 operacion=realiza_cdts_op estadoOP=MENSAJE jspFile=gn002_error>
+
+		<salidaPr id=0 operacion=realiza_cdts_op estadoOP=1 jspFile=cd005_realizada_cdts>
+		<salidaPr id=0 operacion=realiza_cdts_op estadoOP=2 jspFile=cd006_mancomunada_cdts>
+
+	</resultadoPr>
+
+</com.grupobbva.bc.col.web.cdts.PrConstiCdts>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=consti_cdts_pr-data>
+	<field id=ImporteInver>
+	<field id=RBruto>
+	<field id=RNeto>
+	<field id=RteFte>
+	<field id=Abono>
+	<field id=Fecven>
+	<field id=Tasa>
+	<field id=TipPlazo>
+	<field id=DesPlazo>
+	<field id=Plazo>
+	<field id=PerPagInter>
+	<field id=DesPagInter>
+	<field id=TipProrroga>
+	<field id=DesProrroga>
+	<field id=TipCtaDeb>
+	<field id=NumeroCtaaDebita>
+	<field id=TipCtaAbo>
+	<field id=NumeroCtaaAbonar>
+	<field id=ClaveDeb>
+	<field id=ClaveAbo>
+</kColl>
+<! --------------------------------------------------------------------------------->
+

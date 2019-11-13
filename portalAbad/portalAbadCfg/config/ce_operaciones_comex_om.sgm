@@ -1,0 +1,68 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL ce_operaciones_comex_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ce.om.ce.OMOperComex id=ce_operaciones_comex_om operationContext=OperationContext>
+	<refKColl refId=ce_operaciones_comex_om-data>
+</com.grupobbva.ce.om.ce.OMOperComex>
+<! --------------------------------------------------------------------------------->
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=ce_operaciones_comex_om-data>
+	<field id=IdTx value=TxF136ENET>
+	<field id=MaxNumRegistros>
+	<kColl id=Entrada>
+ 	  <field id=BNUMTARJ>
+	  <field id=BCODCTAA>
+	  <field id=BPALACCE>
+	  <field id=BPALACC2>
+	  <field id=BASUNPRO>
+	  <field id=BASUNASO>
+	  <field id=BFECHA01>
+	  <field id=BFECHA02>
+	  <field id=BIMPORTE>
+	  <field id=BIMPOAUX>
+	  <field id=BINDPAGI>
+	  <field id=BINDAUX1>
+	  <field id=BINDAUX2>
+	  <field id=BCODAUX1>
+	  <field id=BCODAUX2>
+	  <field id=BNUMAUX1>
+	  <field id=BNUMAUX2>
+	  <field id=BARGBUSQ>
+	</kColl>
+
+	<kColl id=Salida>
+	  <field id="INDICADOR_PAGINACION" >
+	  <field id="ARGUMENTO_BUSQUEDA" >
+	  <iColl id="ListaOperaciones" >
+    		<kColl id="Operaciones" dynamic=false >
+      		      <field id="NUM_OPERACION" >
+      		      <field id="IMPORTE_SALDO" >
+      		      <field id="MONEDA" >
+      		      <field id="BEN_ORD_GIR" >
+      		      <field id="IMPORTE_INICIAL" >
+      		      <field id="FECHA_PROX_VENC" >
+      		      <field id="TIPO_EMBARQUE" >
+      		      <field id="STATUS" >
+		</kColl >
+  	  </iColl >
+	</kColl>
+
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=ce_operaciones_comex_om-copiar>
+	<kColl id=a-TxF136ENET>
+		<field id=Entrada value=TxF136ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF136ENET>
+		<field id=Salida value=TxF136ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+
+

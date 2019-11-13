@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;portalAbadCfg/acciones_nal_reem1_om.sgm&apos; to &apos;practica1_om.sgm&apos;" description="Rename resource &apos;acciones_nal_reem1_om.sgm&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="acciones_nal_reem1_om.sgm" name="practica1_om.sgm" stamp="1570205232759" updateReferences="true"/>
+</session>

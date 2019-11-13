@@ -1,0 +1,89 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION detalle_ctas_op      ------------------------------->
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.web.cp.OPDetalleCtas id=detalle_ctas_op operationContext=OperationContext>
+
+		<refFormat name=jspFormat refId=ErrorOPJspFmt>
+        <refFormat name=jspFormat refId=DetaMvtosOPJspFmt>
+
+        <refFormat name=htmlRequestFormat refId=CtasOPHTMLFmt>
+
+        <refKColl refId=detalle_ctas_op-data>
+        <refOM refId=detalle_ctas_om>
+
+<! --------------------------------------------------------------------------------->
+
+<! ESTADOS --------------------------------------------------------------------------->
+	<navegacionOP>
+		<estadoOP id=0 accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=1 accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+		<estadoOP id=ERROR accion=movimientos metodo=movimientos requestFmt=CtasOPHTMLFmt>
+	</navegacionOP>
+
+	<! SALIDAS --------------------------------------------------------------------------->
+	<resultadoOP>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+		<salidaOP id=TRANSGRESION jspFmt=ErrorOPJspFmt>
+		<salidaOP id=1 jspFmt=DetaMvtosOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.bc.col.web.cp.OPDetalleCtas>
+
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=detalle_ctas_op-data>
+
+	<field id=AsuntoPropio value=" ">
+
+
+</kColl>
+
+
+<! FORMATOS --------------------------------------------------------------------------->
+<fmtDef id=DetaMvtosOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<!fString dataName=AtrasDatos description=AtrasDatos><nullCheck>
+		<record dataName=detalle_ctas_om-data.Salida description=movimiento>
+					<fString dataName=NUMCTA description=cuenta>
+					<fNumString dataName=NROMOV description=nummov>
+					<fDate dataName=FECOPER description=fechaoper>
+					<fDate dataName=FECVAL description=fechaval>
+					<fString dataName=HORA description=hora>
+					<fNumString dataName=VALOR description=valor>
+					<fNumString dataName=SALDO description=saldo>
+					<fNumString dataName=CHEQUE description=cheque>
+					<fString dataName=CODIGO description=codoper>
+					<fString dataName=DESCRIP description=descod>
+					<fString dataName=OBSERV description=observ>
+					<fString dataName=CEORI description=centro>
+					<fString dataName=PLAZA description=plaza>
+					<fString dataName=CTATRAS description=ctatras>
+					<fString dataName=TIPO description=tipo>
+		</record>
+
+
+     </fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+		<fString dataName=s_cod_nomempre description=empresa>
+		<fString dataName=s_cod_nomconta description=usuario>
+		<fString dataName=Error description=mensaje>
+	</fJsp>
+</fmtDef>
+
+
+<! FORMATOS  DE ENTRADA-------------------------------------------------------------->
+<fmtDef id=CtasOPHTMLFmt>
+	<fHTMLReq>
+		<fString dataName=AsuntoPropio>
+
+	</fHTMLReq>
+</fmtDef>
+
+
+<! --------------------------------------------------------------------------------->
+

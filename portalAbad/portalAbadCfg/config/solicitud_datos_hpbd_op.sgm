@@ -1,0 +1,98 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  PRESENTACION solicitud_datos_hpbd_op --------------------------------->
+<! OPERACION ------------------------------------------------------------------------>
+<com.grupobbva.col.web.homepage.OPSolicitudDatos id=solicitud_datos_hpbd_op operationContext=OperationContext>
+	<refFormat name=jspFormat refId=RelacionBienesOPJspFmt>
+	<refFormat name=jspFormat refId=ErrorOPJspFmt>
+	<refFormat name=htmlRequestFormat refId=entradaOPHTMLFmt>
+	<refKColl refId=solicitud_datos_hpbd_op-data>
+	<refOM refId=solicitud_datos_hpbd_om>
+<! --------------------------------------------------------------------------------->
+<! ESTADOS ------------------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+	<navegacionOP>
+
+		<estadoOP id=0 accion=solicitud metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=1 accion=solicitud metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+		<estadoOP id=ERROR accion=solicitud metodo=procesoInicial requestFmt=entradaOPHTMLFmt>
+
+	</navegacionOP>
+<! --------------------------------------------------------------------------------->
+<! SALIDAS ------------------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+	<resultadoOP>
+
+		<salidaOP id=1 jspFmt=RelacionBienesOPJspFmt>
+		<salidaOP id=ERROR jspFmt=ErrorOPJspFmt>
+
+	</resultadoOP>
+</com.grupobbva.col.web.homepage.OPSolicitudDatos>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+<kColl id=solicitud_datos_hpbd_op-data>
+	<field id=opDepto>
+	<field id=opCiudad>
+	<field id=opTipoBien>
+	<field id=opRango1>
+	<field id=opRango2>
+	<iColl id=opListaCiudades>
+		<kColl id=opDatosCiudad>
+			<field id=nomCiudad>
+		</kColl>
+	</iColl>
+	<iColl id=opListaTipos>
+		<kColl id=opDatosTipo>
+			<field id=tipoBien>
+		</kColl>
+	</iColl>
+</kColl>
+<! --------------------------------------------------------------------------------->
+<! FORMATOS SALIDA    -------------------------------------------------------------->
+<! --------------------------------------------------------------------------------->
+<fmtDef id=RelacionBienesOPJspFmt>
+	<fJsp>
+
+		<fString dataName=prDeptoSel description=jspDeptoSel>
+		<fString dataName=prCiudadSel description=jspCiudadSel>
+		<fString dataName=prTipoBienSel description=jspTipoBienSel>
+		<fString dataName=prRango1Sel description=jspRango1Sel>
+		<fString dataName=prRango2Sel description=jspRango2Sel>
+
+		<iCollVector dataName=opListaCiudades description=jspListaCiudades>
+			<record dataName=opDatosCiudad>
+				<fString dataName=nomCiudad>
+			</record>
+		</iCollVector>
+		<iCollVector dataName=opListaTipos description=jspListaTipos>
+			<record dataName=opDatosTipo>
+				<fString dataName=tipoBien>
+			</record>
+		</iCollVector>
+
+	</fJsp>
+</fmtDef>
+
+<fmtDef id=ErrorOPJspFmt>
+	<fJsp>
+
+		<fString dataName=Error description=mensaje>
+
+	</fJsp>
+</fmtDef>
+<! -------------------------------------------------------------------------------->
+<! FORMATO DE ENTRADA   ----------------------------------------------------------->
+<! -------------------------------------------------------------------------------->
+<fmtDef id=entradaOPHTMLFmt>
+	<fHTMLReq>
+
+		<fString dataName=opDepto>
+		<fString dataName=opCiudad>
+		<fString dataName=opTipoBien>
+		<fString dataName=opRango1>
+		<fString dataName=opRango2>
+
+	</fHTMLReq>
+</fmtDef>
+
+

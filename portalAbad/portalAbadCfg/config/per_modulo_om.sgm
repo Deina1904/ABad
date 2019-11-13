@@ -1,0 +1,28 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL per_modulo_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.bc.col.multicanal.per.OMPerModulo id=per_modulo_om operationContext=OperationContext>
+	<refKColl refId=per_modulo_om-data>
+</com.grupobbva.bc.col.multicanal.per.OMPerModulo>
+<! --------------------------------------------------------------------------------->
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=per_modulo_om-data>
+	<kColl id=Entrada>
+	  <field id=CodUsuaExt>
+	  <field id=CodAcceso>
+	</kColl>
+	<kColl id=Salida>
+	  <kColl id=Modulos>
+	  <iColl id=ListaMods>
+	    <kColl id=Modulo>
+  	  		<field id=CodMod>
+  	  		<field id=TituloMod>
+  	  		<field id=DescripMod>
+	    </kColl >
+	  </iColl >
+	  </kColl >
+	</kColl>
+</kColl>
+<! ---------------------------------------------------------------------------------->

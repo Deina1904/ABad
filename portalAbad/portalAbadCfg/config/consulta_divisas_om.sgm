@@ -1,0 +1,63 @@
+<! BBVA  ---------------------------------------------------------------------------->
+<! Operación:  MULTICANAL consulta_divisas_om  ---------------------------------------------->
+
+
+<! OPERACION ----------------------------------------------------------------------->
+<com.grupobbva.ii.sf.operacion.OMTransaccionSimple id=consulta_divisas_om operationContext=OperationContext>
+	<refKColl refId=consulta_divisas_om-data>
+</com.grupobbva.ii.sf.operacion.OMTransaccionSimple>
+<! --------------------------------------------------------------------------------->
+
+
+<! DATOS --------------------------------------------------------------------------->
+
+
+<kColl id=consulta_divisas_om-data>
+	<field id=IdTx value=TxF024ENET>
+	<kColl id=Entrada>
+	  <field id=OPCION>
+	  <field id=FECINI>
+	  <field id=FECFIN>
+	  <field id=NUMDIAS>
+	  <field id=NUMREF>
+	  <field id=NUMLLAM>
+	  <field id=NUMLIBRE>
+	  <field id=TEXLIBRE>
+	</kColl>
+
+	<kColl id=Salida>
+
+		<iColl id=ListaMovimientosOm>
+		  <kColl id=MovimientosOm>
+			<field id=OmStrReferencia>
+			<field id=OmStrNumIden>
+			<field id=OmStrTipOper>
+			<field id=OmStrDesTOper>
+			<field id=OmStrComOVen>
+			<field id=OmStrDivisas>
+			<field id=OmStrImporte>
+			<field id=OmStrImpAUSD>
+			<field id=OmStrImpACOP>
+			<field id=OmStrTCDivUS>
+			<field id=OmStrTCDivCO>
+			<field id=OmStrEstado>
+		 	<field id=OmStrDesOper>
+		 	<field id=OmStrFecha>
+		  </kColl>
+		</iColl>
+        <field id=OmStrIMasreg>
+	</kColl>
+
+</kColl>
+
+<! COPIADOR --------------------------------------------------------------------------->
+
+<kColl id=consulta_divisas_om-copiar>
+	<kColl id=a-TxF024ENET>
+		<field id=Entrada value=TxF024ENETEntrada>
+	</kColl>
+	<kColl id=desde-TxF024ENET>
+		<field id=Salida value=TxF024ENETSalida-01>
+	</kColl>
+</kColl>
+<! --------------------------------------------------------------------------------->

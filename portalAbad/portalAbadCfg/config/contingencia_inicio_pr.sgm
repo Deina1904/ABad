@@ -1,0 +1,15 @@
+<com.grupobbva.bc.col.web.contingencia.inicio.PrContingenciaInicio id=contingencia_inicio_pr operationContext=OperationContext>
+	<refKColl refId=contingencia_inicio_pr-data>
+<! ESTADOS --------------------------------------------------------------------------->
+		<navegacionPr>
+			<estadoPr id=0 operacion=contingencia_inicio_op>
+		</navegacionPr>
+<! SALIDAS --------------------------------------------------------------------------->
+		<resultadoPr>
+			<salidaPr id=0 operacion=contingencia_inicio_op estadoOP=1 jspFile=Bienvenido>
+			<salidaPr id=0 operacion=contingencia_inicio_op estadoOP=ERRORCANAL jspFile=contingencia_error_canal>
+		</resultadoPr>
+</com.grupobbva.bc.col.web.contingencia.inicio.PrContingenciaInicio>
+<! DATOS --------------------------------------------------------------------------->
+<kColl id=contingencia_inicio_pr-data>
+</kColl>
